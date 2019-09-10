@@ -17,4 +17,19 @@
   <ItemGroup>
     <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\InlineCssGradientPage.xaml.cs">
+      <DependentUpon>InlineCssGradientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\InlineGradientPage.xaml.cs">
+      <DependentUpon>InlineGradientPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\InlineGradientPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

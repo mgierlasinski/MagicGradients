@@ -1,14 +1,10 @@
-﻿using System;
+﻿using Playground.Services;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Playground.Services;
-using Playground.Views;
 
 namespace Playground
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();

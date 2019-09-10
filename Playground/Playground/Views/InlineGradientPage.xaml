@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="Playground.Views.InlineGradientPage" 
+             Title="Inline Gradient">
+    <Grid>
+        <magic:LinearGradientView>
+            <magic:LinearGradientView.GradientSource>
+                <magic:LinearGradientSource>
+                    <magic:LinearGradient Angle="45">
+                        <magic:LinearGradientStop Color="Red" Offset="0" />
+                        <magic:LinearGradientStop Color="Yellow" Offset="1" />
+                    </magic:LinearGradient>
+                </magic:LinearGradientSource>
+            </magic:LinearGradientView.GradientSource>
+        </magic:LinearGradientView>
+    </Grid>
+</ContentPage>
