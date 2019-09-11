@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\GalleryPreviewPage.xaml.cs">
+      <DependentUpon>GalleryPreviewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\InlineCssGradientPage.xaml.cs">
       <DependentUpon>InlineCssGradientPage.xaml</DependentUpon>
     </Compile>
@@ -28,6 +31,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\GalleryPreviewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\GalleryListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\InlineGradientPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

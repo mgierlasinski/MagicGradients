@@ -2,12 +2,20 @@
 using SkiaSharp.Views.Forms;
 using System;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace MagicGradients
 {
     public class LinearGradientView : SKCanvasView
     {
-        public ILinearGradientSource GradientSource { get; set; }
+        public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
+            nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView));
+
+        public ILinearGradientSource GradientSource
+        {
+            get => (ILinearGradientSource)GetValue(GradientSourceProperty);
+            set => SetValue(GradientSourceProperty, value);
+        }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
         {

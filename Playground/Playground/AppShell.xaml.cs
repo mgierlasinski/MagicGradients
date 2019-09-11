@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Playground.Views;
+using Xamarin.Forms;
 
 namespace Playground
 {
@@ -7,6 +8,8 @@ namespace Playground
         public AppShell()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute("//gallery/preview", typeof(GalleryPreviewPage));
         }
     }
 }

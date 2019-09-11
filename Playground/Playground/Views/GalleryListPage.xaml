@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             mc:Ignorable="d"
+             x:Class="Playground.Views.GalleryListPage"
+             Title="Gallery">
+
+    <ContentPage.BindingContext>
+        <vm:GalleryListViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <ListView x:Name="GalleryList" HasUnevenRows="True"
+                  ItemsSource="{Binding Gradients}" 
+                  SelectedItem="{Binding SelectedItem}" 
+                  ItemSelected="GalleryList_OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="10,10,10,0">
+                            <magic:LinearGradientView GradientSource="{Binding}" HeightRequest="200" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+    
+</ContentPage>

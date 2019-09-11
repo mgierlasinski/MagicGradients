@@ -23,6 +23,14 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid Padding="20,40">
+                <Label Text="This is true magic!" FontSize="Medium" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
     <FlyoutItem Title="Inline">
         <Tab>
             <ShellContent Title="Inline Gradient" ContentTemplate="{DataTemplate local:InlineGradientPage}" />
@@ -30,34 +38,6 @@
         </Tab>
     </FlyoutItem>
 
-    <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" />
+    <ShellContent Route="gallery" Title="Gallery" ContentTemplate="{DataTemplate local:GalleryListPage}" />
 
-    <!-- Optional Templates 
-    // These may be provided inline as below or as separate classes.
-
-    // This header appears at the top of the Flyout.
-    <Shell.FlyoutHeaderTemplate>
-	    <DataTemplate>
-            <Grid>ContentHere</Grid>
-        </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>
-
-    // ItemTemplate is for ShellItems as displayed in a Flyout
-    <Shell.ItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Title, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.ItemTemplate>
-
-    // MenuItemTemplate is for MenuItems as displayed in a Flyout
-    <Shell.MenuItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Text, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.MenuItemTemplate>
-    -->
 </Shell>
