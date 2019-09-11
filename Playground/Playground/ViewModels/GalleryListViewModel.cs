@@ -15,7 +15,11 @@ namespace Playground.ViewModels
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value, onChanged: async () =>
             {
-                await Shell.Current.GoToAsync("//gallery/preview");
+                if (_selectedItem == null)
+                    return;
+
+                var id = SelectedItem?.Id ?? 0;
+                await Shell.Current.GoToAsync($"GalleryPreview?id={id}");
             });
         }
 

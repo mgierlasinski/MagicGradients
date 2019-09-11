@@ -9,7 +9,7 @@ namespace Playground
         {
             InitializeComponent();
 
-            Routing.RegisterRoute("//gallery/preview", typeof(GalleryPreviewPage));
+            Routing.RegisterRoute("GalleryPreview", typeof(GalleryPreviewPage));
         }
     }
 }
