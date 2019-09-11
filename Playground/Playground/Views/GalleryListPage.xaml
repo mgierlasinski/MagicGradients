@@ -8,11 +8,9 @@
              mc:Ignorable="d"
              x:Class="Playground.Views.GalleryListPage"
              Title="Gallery">
-
     <ContentPage.BindingContext>
         <vm:GalleryListViewModel />
     </ContentPage.BindingContext>
-
     <Grid>
         <ListView x:Name="GalleryList" HasUnevenRows="True"
                   ItemsSource="{Binding Gradients}" 
@@ -29,5 +27,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
-    
 </ContentPage>
