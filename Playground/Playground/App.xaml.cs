@@ -9,7 +9,6 @@ namespace Playground
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             DependencyService.Register<GalleryService>();
 
             MainPage = new AppShell();

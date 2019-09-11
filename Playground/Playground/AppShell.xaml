@@ -38,6 +38,6 @@
         </Tab>
     </FlyoutItem>
 
-    <ShellContent Route="gallery" Title="Gallery" ContentTemplate="{DataTemplate local:GalleryListPage}" />
+    <ShellContent Title="Gallery" ContentTemplate="{DataTemplate local:GalleryListPage}" />
 
 </Shell>
