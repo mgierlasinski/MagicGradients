@@ -25,16 +25,21 @@ namespace MagicGradients.Parser
             }
         }
 
-        public void Parse(in string token, LinearGradientBuilder gradientBuilder)
+        public void Parse(string token, LinearGradientBuilder gradientBuilder)
         {
-            var tokenIndex = token.StartsWith("(") ? 1 : 0;
-            if (char.IsDigit(token[tokenIndex]))
+            token = token.TrimStart('(').TrimEnd(')', ',');
+            if (!token.EndsWith(")"))
             {
-                var angleString = token.Substring(tokenIndex, token.IndexOf(',', tokenIndex) - 1);
+                token = token + ')';
+            }
+
+            if (char.IsDigit(token[0]))
+            {
+                var angleString = string.Concat(token.TakeWhile(x => x != ','));
                 if (TryConvertDirectionToAngle(angleString, out var angle))
                 {
                     gradientBuilder.AddGradient(angle);
-                    tokenIndex += angleString.Length + 1;
+                    token = token.Remove(0, angleString.Length + 1);
                 }
                 else
                 {
@@ -42,14 +47,15 @@ namespace MagicGradients.Parser
                 }
             }
 
-            for (var closeIndex = token.IndexOf(')', tokenIndex) + 1 - tokenIndex; closeIndex > -1;)
+            for (var closeIndex = token.IndexOf(')') + 1; closeIndex > 0; closeIndex = token.IndexOf(')') + 1)
             {
-                var colorString = token.Substring(tokenIndex, closeIndex);
-                tokenIndex += closeIndex;
+                var colorString = string.Concat(token.Take(closeIndex));
+                token = token.Remove(0, closeIndex);
                 try
                 {
                     var color = (Color)_colorConverter.ConvertFromInvariantString(colorString);
-                    if (token.Substring(tokenIndex, token.IndexOfAny(new[] { ',', ')' }, tokenIndex) - tokenIndex)
+                    if (string.Concat(token.TakeWhile(x => x != ',' || x != ')'))
+                        .TrimEnd(',', ')')
                         .TryConvertPercentToOffset(out var offset))
                     {
                         gradientBuilder.AddStop(color, offset);
@@ -61,22 +67,16 @@ namespace MagicGradients.Parser
                 }
                 catch (Exception e)
                 {
+                    //todo add logger!
                     Debug.WriteLine(e);
                 }
 
-                var commaIndex = token.IndexOf(',', tokenIndex);
-
-                if (commaIndex > -1)
-                {
-                    tokenIndex = commaIndex;
-                    closeIndex = token.IndexOf(')', tokenIndex) + 1 - tokenIndex;
-                }
-                else
-                {
-                    closeIndex = -1;
-                }
+                token = token.IndexOf(',') > -1
+                    ? token.Remove(0, token.IndexOf(',') + 1)
+                    : string.Empty;
             }
         }
+
 
         private bool TryConvertDirectionToAngle(string token, out int result)
         {
