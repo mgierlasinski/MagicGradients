@@ -25,20 +25,16 @@ namespace MagicGradients.Parser
             }
         }
 
-        public void Parse(string token, LinearGradientBuilder gradientBuilder)
+        public void Parse(in string token, LinearGradientBuilder gradientBuilder)
         {
-            //todo try to replace trim with indexed removing on string builder it will improve performance!!!!
-            token = token.TrimStart('(').TrimEnd(')', ',');
-            if (!token.EndsWith(")"))
-                token = token + ')';
-            if (char.IsDigit(token[0]))
+            var tokenIndex = token.StartsWith("(") ? 1 : 0;
+            if (char.IsDigit(token[tokenIndex]))
             {
-                var angleString = string.Concat(token.TakeWhile(x => x != ','));
+                var angleString = token.Substring(tokenIndex, token.IndexOf(',', tokenIndex) - 1);
                 if (TryConvertDirectionToAngle(angleString, out var angle))
                 {
                     gradientBuilder.AddGradient(angle);
-                    //todo check if we remove it correctly
-                    token = token.Remove(0, angleString.Length + 1);
+                    tokenIndex += angleString.Length + 1;
                 }
                 else
                 {
@@ -46,23 +42,14 @@ namespace MagicGradients.Parser
                 }
             }
 
-            for (var closeIndex = token.IndexOf(')') + 1; closeIndex > 0;
-                closeIndex = token.IndexOf(')') + 1)
+            for (var closeIndex = token.IndexOf(')', tokenIndex) + 1 - tokenIndex; closeIndex > -1;)
             {
-                /*
-                for (var i = 0; i < closeIndex; i++)
-                {
-                  //todo test this way in Benchmark.Net
-                  https://www.stevejgordon.co.uk/introduction-to-benchmarking-csharp-code-with-benchmark-dot-net
-                }
-                */
-                var colorString = string.Concat(token.Take(closeIndex));
-                token = token.Remove(0, closeIndex);
+                var colorString = token.Substring(tokenIndex, closeIndex);
+                tokenIndex += closeIndex;
                 try
                 {
                     var color = (Color)_colorConverter.ConvertFromInvariantString(colorString);
-                    if (string.Concat(token.TakeWhile(x => x != ',' || x != ')'))
-                        .TrimEnd(',', ')')
+                    if (token.Substring(tokenIndex, token.IndexOfAny(new[] { ',', ')' }, tokenIndex) - tokenIndex)
                         .TryConvertPercentToOffset(out var offset))
                     {
                         gradientBuilder.AddStop(color, offset);
@@ -77,9 +64,17 @@ namespace MagicGradients.Parser
                     Debug.WriteLine(e);
                 }
 
-                token = token.IndexOf(',') > -1
-                    ? token.Remove(0, token.IndexOf(',') + 1)
-                    : string.Empty;
+                var commaIndex = token.IndexOf(',', tokenIndex);
+
+                if (commaIndex > -1)
+                {
+                    tokenIndex = commaIndex;
+                    closeIndex = token.IndexOf(')', tokenIndex) + 1 - tokenIndex;
+                }
+                else
+                {
+                    closeIndex = -1;
+                }
             }
         }
 
