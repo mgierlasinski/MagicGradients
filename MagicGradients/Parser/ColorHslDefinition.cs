@@ -8,7 +8,7 @@ namespace MagicGradients.Parser
             token == CssToken.Hsl ||
             token == CssToken.Hsla;
 
-        public void Parse(CssReader reader, LinearGradientBuilder builder)
+        public void Parse(CssReader reader, LinearGradientBuilder gradientBuilder)
         {
             var token = reader.Read();
 
@@ -21,11 +21,11 @@ namespace MagicGradients.Parser
 
             if (reader.ReadNext().TryConvertPercentToOffset(out var offset))
             {
-                builder.AddStop(color, offset);
+                gradientBuilder.AddStop(color, offset);
             }
             else
             {
-                builder.AddStop(color);
+                gradientBuilder.AddStop(color);
                 reader.Rollback();
             }
         }

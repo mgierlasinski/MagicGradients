@@ -4,6 +4,6 @@
     {
         bool IsMatch(string token);
 
-        void Parse(CssReader reader, LinearGradientBuilder builder);
+        void Parse(CssReader reader, LinearGradientBuilder gradientBuilder);
     }
 }

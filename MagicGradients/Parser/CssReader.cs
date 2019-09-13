@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace MagicGradients.Parser
 {
@@ -14,7 +14,7 @@ namespace MagicGradients.Parser
             _tokens = css
                 .Replace(" ", "")
                 .Replace("\r\n", "")
-                .Split(new[] {'(', ')', ','}, StringSplitOptions.RemoveEmptyEntries);
+                .Split(new[] { CssToken.LinearGradient }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         public string Read()

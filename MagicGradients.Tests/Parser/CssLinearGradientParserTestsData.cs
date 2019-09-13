@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace MagicGradients.Tests.Parser
@@ -35,7 +35,7 @@ namespace MagicGradients.Tests.Parser
                     {
                         new LinearGradientStop
                         {
-                            Color = Color.FromRgba(155, 155, 155, 26),
+                            Color = Color.FromRgba(0.607843160629272, 0.607843160629272, 0.607843160629272, 0.100000001490116),
                             Offset = 0.5f
                         }
                     }
@@ -47,7 +47,7 @@ namespace MagicGradients.Tests.Parser
                 {
                     Angle = 270, Stops = new List<LinearGradientStop>
                     {
-                        new LinearGradientStop { Color = Color.FromHsla(237, 0, 13, 1) }
+                        new LinearGradientStop { Color = Color.FromHsla(0.65833333333333333, 0, 0.13, 1) }
                     }
                 }
             };
@@ -59,7 +59,7 @@ namespace MagicGradients.Tests.Parser
                     {
                         new LinearGradientStop
                         {
-                            Color = Color.FromRgba(172, 172, 172, 3),
+                            Color = Color.FromRgba(0.674509823322296, 0.674509823322296, 0.674509823322296, 0.00999999977648258),
                             Offset = 1
                         }
                     }

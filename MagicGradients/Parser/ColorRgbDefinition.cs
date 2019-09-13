@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Xamarin.Forms;
 
 namespace MagicGradients.Parser
@@ -9,7 +9,7 @@ namespace MagicGradients.Parser
             token == CssToken.Rgb ||
             token == CssToken.Rgba;
 
-        public void Parse(CssReader reader, LinearGradientBuilder builder)
+        public void Parse(CssReader reader, LinearGradientBuilder gradientBuilder)
         {
             var token = reader.Read();
 
@@ -22,11 +22,11 @@ namespace MagicGradients.Parser
 
             if (reader.ReadNext().TryConvertPercentToOffset(out var offset))
             {
-                builder.AddStop(color, offset);
+                gradientBuilder.AddStop(color, offset);
             }
             else
             {
-                builder.AddStop(color);
+                gradientBuilder.AddStop(color);
                 reader.Rollback();
             }
         }
