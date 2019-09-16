@@ -1,18 +1,19 @@
 using System.Linq;
+using MagicGradients.Parser.Readers;
+using MagicGradients.Parser.TokenDefinitions;
 
 namespace MagicGradients.Parser
 {
-    public class CssLinearGradientParser
+    public class CssNativeLinearGradientParser
     {
         private readonly ITokenDefinition[] _definitions;
-        private readonly LinearGradientDefinition _linearDefinition = new LinearGradientDefinition();
-        private CssReader _reader;
+        private CssNativeReader _reader;
 
-        public CssLinearGradientParser()
+        public CssNativeLinearGradientParser()
         {
             _definitions = new ITokenDefinition[]
             {
-                new LinearGradientDefinition(),
+                new LinearNativeGradientDefinition(),
                 new ColorRgbDefinition(),
                 new ColorHslDefinition()
             };
@@ -27,15 +28,14 @@ namespace MagicGradients.Parser
                 return builder.Build();
             }
 
-            _reader = new CssReader(css);
+            _reader = new CssNativeReader(css);
 
             while (_reader.CanRead)
             {
-                _linearDefinition.Parse(_reader.Read(), builder);
-                //var token = _reader.Read();
+                var token = _reader.Read();
 
-                //var definition = _definitions.FirstOrDefault(x => x.IsMatch(token));
-                //definition?.Parse(_reader, builder);
+                var definition = _definitions.FirstOrDefault(x => x.IsMatch(token));
+                definition?.Parse(_reader, builder);
 
                 _reader.MoveNext();
             }

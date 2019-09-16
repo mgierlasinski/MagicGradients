@@ -10,7 +10,8 @@ namespace MagicGradients.Benchmark
 {
     public class LinearGradientBenchmark
     {
-        private readonly CssLinearGradientParser _parser = new CssLinearGradientParser();
+        private readonly CssNativeLinearGradientParser _nativeParser = new CssNativeLinearGradientParser();
+        private readonly CssFormsLinearGradientParser _formsParser = new CssFormsLinearGradientParser();
 
         private readonly List<string> _simpleCss = new List<string>(new[]
         {
@@ -32,11 +33,16 @@ namespace MagicGradients.Benchmark
     });
 
         [Benchmark]
-        public void SimpleCss() => _simpleCss.ForEach(s => _parser.ParseCss(s));
+        public void SimpleCssNative() => _simpleCss.ForEach(s => _nativeParser.ParseCss(s));
 
         [Benchmark]
-        public void ComplexCss() => _complexCss.ForEach(s => _parser.ParseCss(s));
+        public void ComplexCssNative() => _complexCss.ForEach(s => _nativeParser.ParseCss(s));
 
+        [Benchmark]
+        public void SimpleCssForms() => _simpleCss.ForEach(s => _formsParser.ParseCss(s));
+
+        [Benchmark]
+        public void ComplexCssForms() => _complexCss.ForEach(s => _formsParser.ParseCss(s));
     }
 
     public class Program

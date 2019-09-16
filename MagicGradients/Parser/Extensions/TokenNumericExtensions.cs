@@ -1,6 +1,6 @@
-﻿using System.Globalization;
+using System.Globalization;
 
-namespace MagicGradients.Parser
+namespace MagicGradients.Parser.Extensions
 {
     public static class TokenNumericExtensions
     {

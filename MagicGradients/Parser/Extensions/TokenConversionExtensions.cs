@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Globalization;
 
-namespace MagicGradients.Parser
+namespace MagicGradients.Parser.Extensions
 {
     public static class TokenConversionExtensions
     {
@@ -14,6 +14,23 @@ namespace MagicGradients.Parser
                 if (float.TryParse(percent, NumberStyles.Any, CultureInfo.InvariantCulture, out var value))
                 {
                     result = Math.Min(value / 100, 1f); // Make sure no bigger than 1
+                    return true;
+                }
+            }
+
+            result = 0;
+            return false;
+        }
+
+        public static bool TryConvertDirectionToAngle(this string token, out int result)
+        {
+            if (token.Contains("deg"))
+            {
+                var degree = token.Replace("deg", "");
+
+                if (int.TryParse(degree, out var angle))
+                {
+                    result = (180 + angle) % 360;
                     return true;
                 }
             }

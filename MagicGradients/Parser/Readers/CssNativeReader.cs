@@ -1,25 +1,27 @@
 using System;
 
-namespace MagicGradients.Parser
+namespace MagicGradients.Parser.Readers
 {
-    public class CssReader
+    public class CssNativeReader
     {
-        private readonly string[] _tokens;
+        protected string[] Tokens;
         private int _cursor;
 
-        public bool CanRead => _cursor < _tokens.Length;
+        public bool CanRead => _cursor < Tokens.Length;
 
-        public CssReader(string css)
+        protected CssNativeReader() { }
+
+        public CssNativeReader(string css)
         {
-            _tokens = css
+            Tokens = css
                 .Replace(" ", "")
                 .Replace("\r\n", "")
-                .Split(new[] { CssToken.LinearGradient }, StringSplitOptions.RemoveEmptyEntries);
+                .Split(new[] { '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         public string Read()
         {
-            return _tokens[_cursor];
+            return Tokens[_cursor];
         }
 
         public void MoveNext()

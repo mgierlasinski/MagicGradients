@@ -1,7 +1,9 @@
 using System;
+using MagicGradients.Parser.Extensions;
+using MagicGradients.Parser.Readers;
 using Xamarin.Forms;
 
-namespace MagicGradients.Parser
+namespace MagicGradients.Parser.TokenDefinitions
 {
     public class ColorRgbDefinition : ITokenDefinition
     {
@@ -9,7 +11,7 @@ namespace MagicGradients.Parser
             token == CssToken.Rgb ||
             token == CssToken.Rgba;
 
-        public void Parse(CssReader reader, LinearGradientBuilder gradientBuilder)
+        public void Parse(CssNativeReader reader, LinearGradientBuilder gradientBuilder)
         {
             var token = reader.Read();
 
