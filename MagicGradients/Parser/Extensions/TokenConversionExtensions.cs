@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using Xamarin.Forms.Internals;
 
 namespace MagicGradients.Parser.Extensions
 {
@@ -37,6 +38,17 @@ namespace MagicGradients.Parser.Extensions
 
             result = 0;
             return false;
+        }
+
+        public static double ParseColorValue(this string elem, int maxValue, bool acceptPercent)
+        {
+            elem = elem.Trim();
+            if (elem.EndsWith("%", StringComparison.Ordinal) && acceptPercent)
+            {
+                maxValue = 100;
+                elem = elem.Substring(0, elem.Length - 1);
+            }
+            return (double)(int.Parse(elem, NumberStyles.Number, CultureInfo.InvariantCulture).Clamp(0, maxValue)) / maxValue;
         }
     }
 }

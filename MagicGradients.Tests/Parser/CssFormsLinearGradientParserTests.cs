@@ -20,17 +20,6 @@ namespace MagicGradients.Tests.Parser
             gradient.Should().BeEquivalentTo(expected);
         }
 
-        static double ParseColorValue(string elem, int maxValue, bool acceptPercent)
-        {
-            elem = elem.Trim();
-            if (elem.EndsWith("%", StringComparison.Ordinal) && acceptPercent)
-            {
-                maxValue = 100;
-                elem = elem.Substring(0, elem.Length - 1);
-            }
-            return (double)(int.Parse(elem, NumberStyles.Number, CultureInfo.InvariantCulture).Clamp(0, maxValue)) / maxValue;
-        }
-
         [Fact]
         public void FormsParseCss_ComplexGradientCss_EachGradientHaveCorrectAngleAndStopsCount()
         {

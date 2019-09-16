@@ -15,10 +15,10 @@ namespace MagicGradients.Parser.TokenDefinitions
         {
             var token = reader.Read();
 
-            var r = reader.ReadNext().ToByte();
-            var g = reader.ReadNext().ToByte();
-            var b = reader.ReadNext().ToByte();
-            var a = token == CssToken.Rgba ? ConvertToAlpha(reader.ReadNext()) : byte.MaxValue;
+            var r = reader.ReadNext().ParseColorValue(255, true);
+            var g = reader.ReadNext().ParseColorValue(255, true);
+            var b = reader.ReadNext().ParseColorValue(255, true);
+            var a = token == CssToken.Rgba ? reader.ReadNext().ToDouble() : 1;
 
             var color = Color.FromRgba(r, g, b, a);
 

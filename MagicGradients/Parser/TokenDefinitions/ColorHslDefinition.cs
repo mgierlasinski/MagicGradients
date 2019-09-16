@@ -14,9 +14,9 @@ namespace MagicGradients.Parser.TokenDefinitions
         {
             var token = reader.Read();
 
-            var h = reader.ReadNext().ToDouble();
-            var s = ParsePercent(reader.ReadNext());
-            var l = ParsePercent(reader.ReadNext());
+            var h = reader.ReadNext().ParseColorValue(360, false);
+            var s = reader.ReadNext().ParseColorValue(100, true);
+            var l = reader.ReadNext().ParseColorValue(100, true);
             var a = token == CssToken.Hsla ? reader.ReadNext().ToDouble() : 1d;
 
             var color = Color.FromHsla(h, s, l, a);
@@ -31,7 +31,5 @@ namespace MagicGradients.Parser.TokenDefinitions
                 reader.Rollback();
             }
         }
-
-        private double ParsePercent(string token) => token.Replace("%", "").ToDouble();
     }
 }
