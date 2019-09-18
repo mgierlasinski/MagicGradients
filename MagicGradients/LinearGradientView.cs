@@ -1,19 +1,49 @@
-﻿using SkiaSharp;
+using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Xamarin.Forms;
+using Xamarin.Forms.StyleSheets;
 
 namespace MagicGradients
 {
     public class LinearGradientView : SKCanvasView
     {
-        public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
-            nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView));
 
-        public ILinearGradientSource GradientSource
+        static LinearGradientView()
         {
-            get => (ILinearGradientSource)GetValue(GradientSourceProperty);
+            var stylePropertyInfo = typeof(Xamarin.Forms.Internals.Registrar).GetProperty("StyleProperties",
+                BindingFlags.Static | BindingFlags.NonPublic);
+            if (stylePropertyInfo == null)
+                return;
+
+            var styleProperties = stylePropertyInfo.GetValue(null);
+
+            var styleAttributeType = typeof(StyleSheet).Assembly.GetType("Xamarin.Forms.StyleSheets.StylePropertyAttribute");
+            var styleAttributeInstance = Activator.CreateInstance(styleAttributeType, "gradient",
+                typeof(LinearGradientView), nameof(GradientSourceProperty));
+
+            var dictionaryAdd = styleProperties.GetType().GetMethod("Add");
+            if (dictionaryAdd == null)
+                return;
+
+            var styleListType = typeof(List<>).MakeGenericType(styleAttributeType);
+            var styleList = (IList)Activator.CreateInstance(styleListType);
+
+            styleList.Add(styleAttributeInstance);
+            dictionaryAdd.Invoke(styleProperties, new object[] { "gradient", styleList });
+        }
+
+
+        public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
+            nameof(GradientSource), typeof(CssFormsGradientSource), typeof(LinearGradientView));
+
+        public CssFormsGradientSource GradientSource
+        {
+            get => (CssFormsGradientSource)GetValue(GradientSourceProperty);
             set => SetValue(GradientSourceProperty, value);
         }
 
@@ -43,8 +73,8 @@ namespace MagicGradients
                     paint.Shader = SKShader.CreateLinearGradient(
                         startPoint,
                         endPoint,
-                        colors, 
-                        colorPos, 
+                        colors,
+                        colorPos,
                         SKShaderTileMode.Clamp);
 
                     canvas.DrawRect(info.Rect, paint);

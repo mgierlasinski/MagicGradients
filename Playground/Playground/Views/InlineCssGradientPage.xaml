@@ -14,15 +14,15 @@
     </ContentPage.Resources>
     <ScrollView>
         <StackLayout>
-            <magic:LinearGradientView HeightRequest="500">
+            <!--<magic:LinearGradientView HeightRequest="500">
                 <magic:LinearGradientView.GradientSource>
                     <magic:CssNativeGradientSource Stylesheet="{StaticResource css}"/>
                 </magic:LinearGradientView.GradientSource>
-            </magic:LinearGradientView>
+            </magic:LinearGradientView>-->
             <magic:LinearGradientView  HeightRequest="500">
-                <magic:LinearGradientView.GradientSource>
+                <!--<magic:LinearGradientView.GradientSource>
                     <magic:CssFormsGradientSource />
-                </magic:LinearGradientView.GradientSource>
+                </magic:LinearGradientView.GradientSource>-->
             </magic:LinearGradientView>
         </StackLayout>
     </ScrollView>
