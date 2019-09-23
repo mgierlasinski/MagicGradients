@@ -1,13 +1,22 @@
-﻿using SkiaSharp;
+using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Xamarin.Forms;
+using Xamarin.Forms.StyleSheets;
 
 namespace MagicGradients
 {
     public class LinearGradientView : SKCanvasView
     {
+        static LinearGradientView()
+        {
+            StyleSheets.RegisterStyle("gradient", typeof(LinearGradientView), nameof(GradientSourceProperty));
+        }
+
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
             nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView));
 
@@ -43,8 +52,8 @@ namespace MagicGradients
                     paint.Shader = SKShader.CreateLinearGradient(
                         startPoint,
                         endPoint,
-                        colors, 
-                        colorPos, 
+                        colors,
+                        colorPos,
                         SKShaderTileMode.Clamp);
 
                     canvas.DrawRect(info.Rect, paint);

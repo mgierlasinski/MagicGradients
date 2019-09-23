@@ -1,4 +1,5 @@
-﻿using System.Linq;
+using System.Linq;
+using MagicGradients.Parser.TokenDefinitions;
 
 namespace MagicGradients.Parser
 {
@@ -11,9 +12,8 @@ namespace MagicGradients.Parser
         {
             _definitions = new ITokenDefinition[]
             {
-                new LinearGradientDefinition(), 
-                new ColorRgbDefinition(), 
-                new ColorHslDefinition()
+                new LinearGradientDefinition(),
+                new ColorDefinition()
             };
         }
 

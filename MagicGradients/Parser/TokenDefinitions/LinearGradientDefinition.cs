@@ -1,23 +1,23 @@
-﻿namespace MagicGradients.Parser
+namespace MagicGradients.Parser.TokenDefinitions
 {
     public class LinearGradientDefinition : ITokenDefinition
     {
         public bool IsMatch(string token) => token == CssToken.LinearGradient;
 
-        public void Parse(CssReader reader, LinearGradientBuilder builder)
+        public void Parse(CssReader reader, LinearGradientBuilder gradientBuilder)
         {
             if (TryConvertDirectionToAngle(reader.ReadNext(), out var angle))
             {
-                builder.AddGradient(angle);
+                gradientBuilder.AddGradient(angle);
             }
             else
             {
-                builder.AddGradient(0);
+                gradientBuilder.AddGradient(0);
                 reader.Rollback();
             }
         }
 
-        private bool TryConvertDirectionToAngle(string token, out int result)
+        internal bool TryConvertDirectionToAngle(string token, out int result)
         {
             if (token.Contains("deg"))
             {

@@ -1,4 +1,4 @@
-﻿using MagicGradients;
+using MagicGradients;
 using Playground.Models;
 using System.Collections.Generic;
 using System.Linq;
