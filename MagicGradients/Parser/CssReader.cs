@@ -4,16 +4,16 @@ namespace MagicGradients.Parser
 {
     public class CssReader
     {
-        protected string[] Tokens;
+        private string[] _tokens;
         private int _cursor;
 
-        public bool CanRead => _cursor < Tokens.Length;
+        public bool CanRead => _cursor < _tokens.Length;
 
         protected CssReader() { }
 
         public CssReader(string css)
         {
-            Tokens = css
+            _tokens = css
                 .Replace(" ", "")
                 .Replace("\r\n", "")
                 .Split(new[] { '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -21,7 +21,7 @@ namespace MagicGradients.Parser
 
         public string Read()
         {
-            return Tokens[_cursor];
+            return _tokens[_cursor];
         }
 
         public void MoveNext()
