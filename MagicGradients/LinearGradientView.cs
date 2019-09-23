@@ -39,11 +39,11 @@ namespace MagicGradients
 
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
-            nameof(GradientSource), typeof(CssFormsGradientSource), typeof(LinearGradientView));
+            nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView));
 
-        public CssFormsGradientSource GradientSource
+        public ILinearGradientSource GradientSource
         {
-            get => (CssFormsGradientSource)GetValue(GradientSourceProperty);
+            get => (ILinearGradientSource)GetValue(GradientSourceProperty);
             set => SetValue(GradientSourceProperty, value);
         }
 

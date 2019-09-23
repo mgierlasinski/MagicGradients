@@ -1,13 +1,10 @@
-using MagicGradients.Parser.Extensions;
-using MagicGradients.Parser.Readers;
-
 namespace MagicGradients.Parser.TokenDefinitions
 {
-    public class LinearNativeGradientDefinition : ITokenDefinition
+    public class LinearGradientDefinition : ITokenDefinition
     {
         public bool IsMatch(string token) => token == CssToken.LinearGradient;
 
-        public void Parse(CssNativeReader reader, LinearGradientBuilder gradientBuilder)
+        public void Parse(CssReader reader, LinearGradientBuilder gradientBuilder)
         {
             if (reader.ReadNext().TryConvertDirectionToAngle(out var angle))
             {

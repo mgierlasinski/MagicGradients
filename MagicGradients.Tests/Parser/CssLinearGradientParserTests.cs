@@ -3,30 +3,31 @@ using System.Globalization;
 using FluentAssertions;
 using MagicGradients.Parser;
 using System.Linq;
+using MagicGradients.Parser.TokenDefinitions;
 using Xamarin.Forms.Internals;
 using Xunit;
 
 namespace MagicGradients.Tests.Parser
 {
-    public class CssFormsLinearGradientParserTests
+    public class CssLinearGradientParserTests
     {
         [Theory]
         [MemberData(nameof(CssLinearGradientParserTestData.SimpleGradientData), MemberType = typeof(CssLinearGradientParserTestData))]
-        public void FormsParseCss_SimpleGradientData_CorrectlyParsed(string css, LinearGradient expected)
+        public void ParseCss_SimpleGradientData_CorrectlyParsed(string css, LinearGradient expected)
         {
-            var parser = new CssFormsLinearGradientParser();
+            var parser = new CssLinearGradientParser();
             var gradient = parser.ParseCss(css).First();
 
             gradient.Should().BeEquivalentTo(expected);
         }
 
         [Fact]
-        public void FormsParseCss_ComplexGradientCss_EachGradientHaveCorrectAngleAndStopsCount()
+        public void ParseCss_ComplexGradientCss_EachGradientHaveCorrectAngleAndStopsCount()
         {
             var css = CssLinearGradientParserTestData.ComplexGradientCss;
             var expectedGradients = CssLinearGradientParserTestData.ComplexLinearGradients;
 
-            var parser = new CssFormsLinearGradientParser();
+            var parser = new CssLinearGradientParser();
             var gradients = parser.ParseCss(css);
             gradients.Should().HaveCount(expectedGradients.Length);
             for (var i = 0; i < gradients.Length; i++)

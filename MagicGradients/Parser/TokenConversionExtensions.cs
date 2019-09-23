@@ -1,8 +1,7 @@
 using System;
 using System.Globalization;
-using Xamarin.Forms.Internals;
 
-namespace MagicGradients.Parser.Extensions
+namespace MagicGradients.Parser
 {
     public static class TokenConversionExtensions
     {
@@ -40,15 +39,14 @@ namespace MagicGradients.Parser.Extensions
             return false;
         }
 
-        public static double ParseColorValue(this string elem, int maxValue, bool acceptPercent)
+        public static double ToDouble(this string token, double @default = default)
         {
-            elem = elem.Trim();
-            if (elem.EndsWith("%", StringComparison.Ordinal) && acceptPercent)
+            if (double.TryParse(token, NumberStyles.Any, CultureInfo.InvariantCulture, out var result))
             {
-                maxValue = 100;
-                elem = elem.Substring(0, elem.Length - 1);
+                return result;
             }
-            return (double)(int.Parse(elem, NumberStyles.Number, CultureInfo.InvariantCulture).Clamp(0, maxValue)) / maxValue;
+
+            return @default;
         }
     }
 }

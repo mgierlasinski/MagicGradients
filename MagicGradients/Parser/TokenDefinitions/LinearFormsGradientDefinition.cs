@@ -1,7 +1,6 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
-using MagicGradients.Parser.Extensions;
 using Xamarin.Forms;
 
 namespace MagicGradients.Parser.TokenDefinitions

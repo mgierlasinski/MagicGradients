@@ -1,4 +1,4 @@
-﻿namespace MagicGradients.Parser
+namespace MagicGradients.Parser
 {
     public class CssToken
     {

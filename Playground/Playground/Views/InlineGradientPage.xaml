@@ -6,14 +6,14 @@
              Title="Inline Gradient">
     <Grid>
         <magic:LinearGradientView>
-            <!--<magic:LinearGradientView.GradientSource>
+            <magic:LinearGradientView.GradientSource>
                 <magic:LinearGradientSource>
                     <magic:LinearGradient Angle="45">
                         <magic:LinearGradientStop Color="Red" Offset="0" />
                         <magic:LinearGradientStop Color="Yellow" Offset="1" />
                     </magic:LinearGradient>
                 </magic:LinearGradientSource>
-            </magic:LinearGradientView.GradientSource>-->
+            </magic:LinearGradientView.GradientSource>
         </magic:LinearGradientView>
     </Grid>
 </ContentPage>

@@ -1,17 +1,17 @@
 using System;
 
-namespace MagicGradients.Parser.Readers
+namespace MagicGradients.Parser
 {
-    public class CssNativeReader
+    public class CssReader
     {
         protected string[] Tokens;
         private int _cursor;
 
         public bool CanRead => _cursor < Tokens.Length;
 
-        protected CssNativeReader() { }
+        protected CssReader() { }
 
-        public CssNativeReader(string css)
+        public CssReader(string css)
         {
             Tokens = css
                 .Replace(" ", "")
