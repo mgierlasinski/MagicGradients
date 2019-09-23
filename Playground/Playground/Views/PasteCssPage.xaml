@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="Playground.Views.PasteCssPage"
+             Title="Paste CSS"
+             BindingContext="{Binding PasteCssViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*" />
+            <RowDefinition Height="66*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" />
+        <magic:LinearGradientView GradientSource="{Binding GradientSource}" Grid.Row="1" Margin="10" />
+        <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center">
+            <BoxView BackgroundColor="Black" Opacity="0.5" />
+            <Label Text="{Binding Message}" TextColor="WhiteSmoke" Margin="10" />
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -37,15 +37,11 @@ namespace MagicGradients
 
             canvas.Clear();
 
+            if (GradientSource == null)
+                return;
+
             using (var paint = new SKPaint())
             {
-                if (GradientSource == null)
-                {
-                    paint.Color = SKColors.Black;
-                    canvas.DrawRect(info.Rect, paint);
-                    return;
-                }
-
                 foreach (var gradient in GradientSource.GetGradients())
                 {
                     var (startPoint, endPoint) = GetGradientPoints(info, gradient.Angle);

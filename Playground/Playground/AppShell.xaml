@@ -38,6 +38,7 @@
         </Tab>
     </FlyoutItem>
 
+    <ShellContent Title="Paste CSS" ContentTemplate="{DataTemplate local:PasteCssPage}" />
     <ShellContent Title="Gallery" ContentTemplate="{DataTemplate local:GalleryListPage}" />
 
 </Shell>
