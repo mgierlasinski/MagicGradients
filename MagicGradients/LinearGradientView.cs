@@ -1,12 +1,8 @@
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Xamarin.Forms;
-using Xamarin.Forms.StyleSheets;
 
 namespace MagicGradients
 {
@@ -14,7 +10,7 @@ namespace MagicGradients
     {
         static LinearGradientView()
         {
-            StyleSheets.RegisterStyle("gradient", typeof(LinearGradientView), nameof(GradientSourceProperty));
+            StyleSheets.RegisterStyle("background", typeof(LinearGradientView), nameof(GradientSourceProperty));
         }
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(

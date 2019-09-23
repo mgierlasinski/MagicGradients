@@ -33,28 +33,21 @@ namespace MagicGradients.Parser.TokenDefinitions
         internal string GetColorString(CssReader reader)
         {
             var token = reader.Read();
-            var colorStringBuilder = new StringBuilder();
+            var builder = new StringBuilder();
 
-            colorStringBuilder.Append(token);
-            colorStringBuilder.Append('(');
-            colorStringBuilder.Append(reader.ReadNext());
-            colorStringBuilder.Append(',');
-            colorStringBuilder.Append(reader.ReadNext());
-            colorStringBuilder.Append(',');
-            colorStringBuilder.Append(reader.ReadNext());
-
+            builder.AppendFormat("{0}({1},{2},{3}", token, 
+                reader.ReadNext(), 
+                reader.ReadNext(), 
+                reader.ReadNext());
+            
             if (token == CssToken.Rgba || token == CssToken.Hsla)
             {
-                colorStringBuilder.Append(',');
-                colorStringBuilder.Append(ToDouble(reader.ReadNext()));
-                colorStringBuilder.Append(')');
+                builder.AppendFormat(",{0}", reader.ReadNext());
             }
-            else
-            {
-                colorStringBuilder.Append(')');
-            }
+            
+            builder.Append(')');
 
-            return colorStringBuilder.ToString();
+            return builder.ToString();
         }
 
         internal bool TryConvertPercentToOffset(string token, out float result)
