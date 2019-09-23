@@ -4,12 +4,10 @@ namespace MagicGradients.Parser
 {
     public class CssReader
     {
-        private string[] _tokens;
+        private readonly string[] _tokens;
         private int _cursor;
 
         public bool CanRead => _cursor < _tokens.Length;
-
-        protected CssReader() { }
 
         public CssReader(string css)
         {

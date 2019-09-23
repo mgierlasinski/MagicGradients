@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Text;
 using Xamarin.Forms;
 
@@ -18,7 +19,7 @@ namespace MagicGradients.Parser.TokenDefinitions
         {
             var color = (Color)_colorConverter.ConvertFromInvariantString(GetColorString(reader));
 
-            if (reader.ReadNext().TryConvertPercentToOffset(out var offset))
+            if (TryConvertPercentToOffset(reader.ReadNext(), out var offset))
             {
                 gradientBuilder.AddStop(color, offset);
             }
@@ -45,7 +46,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             if (token == CssToken.Rgba || token == CssToken.Hsla)
             {
                 colorStringBuilder.Append(',');
-                colorStringBuilder.Append(reader.ReadNext().ToDouble());
+                colorStringBuilder.Append(ToDouble(reader.ReadNext()));
                 colorStringBuilder.Append(')');
             }
             else
@@ -54,6 +55,32 @@ namespace MagicGradients.Parser.TokenDefinitions
             }
 
             return colorStringBuilder.ToString();
+        }
+
+        internal bool TryConvertPercentToOffset(string token, out float result)
+        {
+            if (token != null && token.Contains("%"))
+            {
+                var percent = token.Replace("%", "");
+
+                if (float.TryParse(percent, NumberStyles.Any, CultureInfo.InvariantCulture, out var value))
+                {
+                    result = Math.Min(value / 100, 1f); // Make sure no bigger than 1
+                    return true;
+                }
+            }
+
+            result = 0;
+            return false;
+        }
+
+        internal double ToDouble(string token, double @default = default)
+        {
+            if (double.TryParse(token, NumberStyles.Any, CultureInfo.InvariantCulture, out var result))
+            {
+                return result;
+            }
+            return @default;
         }
     }
 }

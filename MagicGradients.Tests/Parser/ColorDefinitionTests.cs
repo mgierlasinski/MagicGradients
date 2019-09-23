@@ -28,5 +28,53 @@ namespace MagicGradients.Tests.Parser
 
             colorInString.Should().Be(expectedColorInString);
         }
+
+        [Theory]
+        [InlineData("%", 0, false)]
+        [InlineData("", 0, false)]
+        [InlineData(null, 0, false)]
+        [InlineData("10", 0, false)]
+        [InlineData("0%", 0, true)]
+        [InlineData("23%", 0.23, true)]
+        [InlineData("101%", 1, true)]
+        [InlineData("100%", 1, true)]
+        public void TryConvertPercentToOffset_ConvertingToken_SuccessAndResultConvertedCorrectly(string token, float expectedResult, bool expectedSuccess)
+        {
+            var definition = new ColorDefinition();
+
+            var success = definition.TryConvertPercentToOffset(token, out var result);
+
+            success.Should().Be(expectedSuccess);
+            result.Should().Be(expectedResult);
+        }
+
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData("s", 0)]
+        [InlineData(null, 0)]
+        [InlineData("0", 0)]
+        [InlineData("0.12", 0.12)]
+        [InlineData("1.2", 1.2)]
+        public void ToDouble_ConvertingToken_ExpectedResultReturned(string token, float expectedResult)
+        {
+            var definition = new ColorDefinition();
+
+            var result = definition.ToDouble(token);
+
+            Math.Abs(result - expectedResult).Should().BeLessOrEqualTo(0.001);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(0.12)]
+        [InlineData(1.2)]
+        public void ToDouble_ConvertingEmptyTokenWithCustomDefault_DefaultValueReturned(float @default)
+        {
+            var definition = new ColorDefinition();
+
+            var result = definition.ToDouble(null, @default);
+
+            Math.Abs(result - @default).Should().BeLessOrEqualTo(0.001);
+        }
     }
 }
