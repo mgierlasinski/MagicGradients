@@ -16,7 +16,9 @@ namespace MagicGradients
                 Angle = angle,
                 Stops = new List<LinearGradientStop>()
             };
+
             _gradients.Add(_lastGradient);
+
             return this;
         }
 
@@ -27,27 +29,42 @@ namespace MagicGradients
                 AddGradient(0);
             }
 
-            var stop = new LinearGradientStop { Color = color };
-
-            if (offset == null)
+            var stop = new LinearGradientStop
             {
-                stop.Offset = _lastGradient.Stops.Any() ? 1 : 0;
-            }
-            else
-            {
-                stop.Offset = offset.Value;
-            }
+                Color = color,
+                Offset = offset ?? -1
+            };
 
             _lastGradient.Stops.Add(stop);
 
             return this;
         }
 
-        public LinearGradient[] Build() => _gradients.ToArray();
-
-        public ILinearGradientSource ToGradientSource() => new LinearGradientSource
+        public LinearGradient[] Build()
         {
-            Gradients = _gradients.ToList()
-        };
+            foreach (var gradient in _gradients)
+            {
+                SetupUndefinedOffsets(gradient);
+            }
+            return _gradients.ToArray();
+        }
+
+        private void SetupUndefinedOffsets(LinearGradient gradient)
+        {
+            var undefinedStops = gradient.Stops.Where(x => x.Offset < 0).ToArray();
+
+            // At least two stops
+            if (undefinedStops.Length < 2)
+                return;
+
+            var step = 1f / (undefinedStops.Length - 1);
+            var currentOffset = 0f;
+
+            foreach (var stop in undefinedStops)
+            {
+                stop.Offset = currentOffset;
+                currentOffset += step;
+            }
+        }
     }
 }

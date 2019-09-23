@@ -1,3 +1,4 @@
 ﻿linear-gradient(135deg, rgb(195, 39, 2) 0%,rgb(224, 164, 60) 100%)
 linear-gradient(135deg, rgb(68, 202, 201) 0%,rgb(252, 255, 114) 100%)
 linear-gradient(90deg, rgb(247, 14, 199),rgb(24, 34, 250))
+linear-gradient(45deg, rgb(46, 94, 149),rgb(59, 131, 209),rgb(67, 91, 142))
