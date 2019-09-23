@@ -18,7 +18,8 @@ namespace MagicGradients
         }
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
-            nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView));
+            nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView), propertyChanged:
+            (bindable, oldValue, newValue) => (bindable as LinearGradientView)?.InvalidateSurface());
 
         public ILinearGradientSource GradientSource
         {
@@ -36,11 +37,15 @@ namespace MagicGradients
 
             canvas.Clear();
 
-            if (GradientSource == null)
-                return;
-
             using (var paint = new SKPaint())
             {
+                if (GradientSource == null)
+                {
+                    paint.Color = SKColors.Black;
+                    canvas.DrawRect(info.Rect, paint);
+                    return;
+                }
+
                 foreach (var gradient in GradientSource.GetGradients())
                 {
                     var (startPoint, endPoint) = GetGradientPoints(info, gradient.Angle);

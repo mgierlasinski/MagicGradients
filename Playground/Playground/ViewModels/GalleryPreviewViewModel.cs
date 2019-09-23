@@ -4,6 +4,7 @@ using Xamarin.Forms;
 
 namespace Playground.ViewModels
 {
+    [QueryProperty("Category", "category")]
     [QueryProperty("Id", "id")]
     public class GalleryPreviewViewModel : BaseViewModel
     {
@@ -16,6 +17,8 @@ namespace Playground.ViewModels
             set => SetProperty(ref _gradient, value);
         }
 
+        public string Category { get; set; }
+
         private string _id;
         public string Id
         {
@@ -23,13 +26,13 @@ namespace Playground.ViewModels
             set
             {
                 _id = value;
-                Gradient = _galleryService.GetGradientById(int.Parse(_id)).Source;
+                Gradient = _galleryService.GetGradientById(Category,int.Parse(_id)).Source;
             }
         }
 
-        public GalleryPreviewViewModel()
+        public GalleryPreviewViewModel(IGalleryService galleryService)
         {
-            _galleryService = DependencyService.Get<IGalleryService>();
+            _galleryService = galleryService;
         }
     }
 }
