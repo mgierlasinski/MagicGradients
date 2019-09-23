@@ -12,31 +12,10 @@ namespace MagicGradients
 {
     public class LinearGradientView : SKCanvasView
     {
-
         static LinearGradientView()
         {
-            var stylePropertyInfo = typeof(Xamarin.Forms.Internals.Registrar).GetProperty("StyleProperties",
-                BindingFlags.Static | BindingFlags.NonPublic);
-            if (stylePropertyInfo == null)
-                return;
-
-            var styleProperties = stylePropertyInfo.GetValue(null);
-
-            var styleAttributeType = typeof(StyleSheet).Assembly.GetType("Xamarin.Forms.StyleSheets.StylePropertyAttribute");
-            var styleAttributeInstance = Activator.CreateInstance(styleAttributeType, "gradient",
-                typeof(LinearGradientView), nameof(GradientSourceProperty));
-
-            var dictionaryAdd = styleProperties.GetType().GetMethod("Add");
-            if (dictionaryAdd == null)
-                return;
-
-            var styleListType = typeof(List<>).MakeGenericType(styleAttributeType);
-            var styleList = (IList)Activator.CreateInstance(styleListType);
-
-            styleList.Add(styleAttributeInstance);
-            dictionaryAdd.Invoke(styleProperties, new object[] { "gradient", styleList });
+            StyleSheets.RegisterStyle("gradient", typeof(LinearGradientView), nameof(GradientSourceProperty));
         }
-
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
             nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView));
