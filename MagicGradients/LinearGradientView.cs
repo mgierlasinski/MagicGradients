@@ -63,7 +63,7 @@ namespace MagicGradients
             }
         }
 
-        private (SKPoint, SKPoint) GetGradientPoints(SKImageInfo info, int rotation)
+        private (SKPoint, SKPoint) GetGradientPoints(SKImageInfo info, double rotation)
         {
             var angle = rotation / 360.0;
 

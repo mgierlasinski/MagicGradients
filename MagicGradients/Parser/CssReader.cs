@@ -12,7 +12,6 @@ namespace MagicGradients.Parser
         public CssReader(string css)
         {
             _tokens = css
-                .Replace(" ", "")
                 .Replace("\r\n", "")
                 .Split(new[] { '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
         }

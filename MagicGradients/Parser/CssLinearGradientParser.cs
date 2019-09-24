@@ -1,5 +1,5 @@
-using System.Linq;
 using MagicGradients.Parser.TokenDefinitions;
+using System.Linq;
 
 namespace MagicGradients.Parser
 {
@@ -29,7 +29,7 @@ namespace MagicGradients.Parser
 
             while (reader.CanRead)
             {
-                var token = reader.Read();
+                var token = reader.Read().Trim();
 
                 var definition = _definitions.FirstOrDefault(x => x.IsMatch(token));
                 definition?.Parse(reader, builder);

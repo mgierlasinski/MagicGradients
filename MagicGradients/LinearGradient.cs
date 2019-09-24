@@ -15,7 +15,7 @@ namespace MagicGradients
             set => SetValue(StopsProperty, value);
         }
 
-        public int Angle { get; set; }
+        public double Angle { get; set; }
 
         public override string ToString()
         {

@@ -9,7 +9,7 @@ namespace MagicGradients
         private readonly List<LinearGradient> _gradients = new List<LinearGradient>();
         private LinearGradient _lastGradient;
 
-        public LinearGradientBuilder AddGradient(int angle)
+        public LinearGradientBuilder AddGradient(double angle)
         {
             _lastGradient = new LinearGradient
             {
