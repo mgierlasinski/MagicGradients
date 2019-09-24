@@ -15,12 +15,17 @@ namespace MagicGradients
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
             nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView), propertyChanged:
-            (bindable, oldValue, newValue) => (bindable as LinearGradientView)?.InvalidateSurface());
+            (bindable, oldValue, newValue) => (bindable as LinearGradientView)?.OnGradientSourceChanged());
 
         public ILinearGradientSource GradientSource
         {
             get => (ILinearGradientSource)GetValue(GradientSourceProperty);
             set => SetValue(GradientSourceProperty, value);
+        }
+
+        private void OnGradientSourceChanged()
+        {
+            InvalidateSurface();
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)

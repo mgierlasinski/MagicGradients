@@ -6,7 +6,6 @@ namespace MagicGradients.Parser
     public class CssLinearGradientParser
     {
         private readonly ITokenDefinition[] _definitions;
-        private CssReader _reader;
 
         public CssLinearGradientParser()
         {
@@ -26,16 +25,16 @@ namespace MagicGradients.Parser
                 return builder.Build();
             }
 
-            _reader = new CssReader(css);
+            var reader = new CssReader(css);
 
-            while (_reader.CanRead)
+            while (reader.CanRead)
             {
-                var token = _reader.Read();
+                var token = reader.Read();
 
                 var definition = _definitions.FirstOrDefault(x => x.IsMatch(token));
-                definition?.Parse(_reader, builder);
+                definition?.Parse(reader, builder);
 
-                _reader.MoveNext();
+                reader.MoveNext();
             }
 
             return builder.Build().Reverse().ToArray();

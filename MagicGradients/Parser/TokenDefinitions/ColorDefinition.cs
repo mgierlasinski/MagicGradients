@@ -15,17 +15,17 @@ namespace MagicGradients.Parser.TokenDefinitions
             token == CssToken.Hsl ||
             token == CssToken.Hsla;
 
-        public void Parse(CssReader reader, LinearGradientBuilder gradientBuilder)
+        public void Parse(CssReader reader, LinearGradientBuilder builder)
         {
             var color = (Color)_colorConverter.ConvertFromInvariantString(GetColorString(reader));
 
             if (TryConvertPercentToOffset(reader.ReadNext(), out var offset))
             {
-                gradientBuilder.AddStop(color, offset);
+                builder.AddStop(color, offset);
             }
             else
             {
-                gradientBuilder.AddStop(color);
+                builder.AddStop(color);
                 reader.Rollback();
             }
         }
@@ -33,16 +33,19 @@ namespace MagicGradients.Parser.TokenDefinitions
         internal string GetColorString(CssReader reader)
         {
             var token = reader.Read();
-            var builder = new StringBuilder();
+            var builder = new StringBuilder(token);
 
-            builder.AppendFormat("{0}({1},{2},{3}", token, 
-                reader.ReadNext(), 
-                reader.ReadNext(), 
-                reader.ReadNext());
-            
+            builder.Append('(');
+            builder.Append(reader.ReadNext());
+            builder.Append(',');
+            builder.Append(reader.ReadNext());
+            builder.Append(',');
+            builder.Append(reader.ReadNext());
+
             if (token == CssToken.Rgba || token == CssToken.Hsla)
             {
-                builder.AppendFormat(",{0}", reader.ReadNext());
+                builder.Append(',');
+                builder.Append(reader.ReadNext());
             }
             
             builder.Append(')');
@@ -65,15 +68,6 @@ namespace MagicGradients.Parser.TokenDefinitions
 
             result = 0;
             return false;
-        }
-
-        internal double ToDouble(string token, double @default = default)
-        {
-            if (double.TryParse(token, NumberStyles.Any, CultureInfo.InvariantCulture, out var result))
-            {
-                return result;
-            }
-            return @default;
         }
     }
 }

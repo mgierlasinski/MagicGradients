@@ -53,17 +53,20 @@ namespace MagicGradients
         {
             var undefinedStops = gradient.Stops.Where(x => x.Offset < 0).ToArray();
 
-            // At least two stops
-            if (undefinedStops.Length < 2)
-                return;
-
-            var step = 1f / (undefinedStops.Length - 1);
-            var currentOffset = 0f;
-
-            foreach (var stop in undefinedStops)
+            if (undefinedStops.Length == 1)
             {
-                stop.Offset = currentOffset;
-                currentOffset += step;
+                undefinedStops[0].Offset = 0;
+            }
+            else if (undefinedStops.Length > 1)
+            {
+                var step = 1f / (undefinedStops.Length - 1);
+                var currentOffset = 0f;
+
+                foreach (var stop in undefinedStops)
+                {
+                    stop.Offset = currentOffset;
+                    currentOffset += step;
+                }
             }
         }
     }
