@@ -4,33 +4,33 @@ namespace MagicGradients.Parser.TokenDefinitions
     {
         public bool IsMatch(string token) => token == CssToken.LinearGradient;
 
-        public void Parse(CssReader reader, LinearGradientBuilder gradientBuilder)
+        public void Parse(CssReader reader, LinearGradientBuilder builder)
         {
-            if (TryConvertDirectionToAngle(reader.ReadNext(), out var angle))
+            if (TryConvertDegreeToAngle(reader.ReadNext(), out var angle))
             {
-                gradientBuilder.AddGradient(angle);
+                builder.AddGradient(angle);
             }
             else
             {
-                gradientBuilder.AddGradient(0);
+                builder.AddGradient(0);
                 reader.Rollback();
             }
         }
 
-        internal bool TryConvertDirectionToAngle(string token, out int result)
+        internal bool TryConvertDegreeToAngle(string token, out int angle)
         {
             if (token.Contains("deg"))
             {
-                var degree = token.Replace("deg", "");
+                var degreeStr = token.Replace("deg", "");
 
-                if (int.TryParse(degree, out var angle))
+                if (int.TryParse(degreeStr, out var degree))
                 {
-                    result = (180 + angle) % 360;
+                    angle = (180 + degree) % 360;
                     return true;
                 }
             }
 
-            result = 0;
+            angle = 0;
             return false;
         }
     }

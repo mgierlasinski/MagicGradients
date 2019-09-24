@@ -3,14 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              mc:Ignorable="d"
              x:Class="Playground.Views.GalleryPreviewPage"
-             Title="Gradient Preview">
-    <ContentPage.BindingContext>
-        <vm:GalleryPreviewViewModel />
-    </ContentPage.BindingContext>
+             Title="Gradient Preview"
+             BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+    
     <Grid>
         <magic:LinearGradientView GradientSource="{Binding Gradient}" />
     </Grid>

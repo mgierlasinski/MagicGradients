@@ -4,6 +4,6 @@ namespace MagicGradients.Parser.TokenDefinitions
     {
         bool IsMatch(string token);
 
-        void Parse(CssReader reader, LinearGradientBuilder gradientBuilder);
+        void Parse(CssReader reader, LinearGradientBuilder builder);
     }
 }

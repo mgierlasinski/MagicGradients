@@ -15,17 +15,17 @@ namespace MagicGradients.Parser.TokenDefinitions
             token == CssToken.Hsl ||
             token == CssToken.Hsla;
 
-        public void Parse(CssReader reader, LinearGradientBuilder gradientBuilder)
+        public void Parse(CssReader reader, LinearGradientBuilder builder)
         {
             var color = (Color)_colorConverter.ConvertFromInvariantString(GetColorString(reader));
 
             if (TryConvertPercentToOffset(reader.ReadNext(), out var offset))
             {
-                gradientBuilder.AddStop(color, offset);
+                builder.AddStop(color, offset);
             }
             else
             {
-                gradientBuilder.AddStop(color);
+                builder.AddStop(color);
                 reader.Rollback();
             }
         }
@@ -33,28 +33,24 @@ namespace MagicGradients.Parser.TokenDefinitions
         internal string GetColorString(CssReader reader)
         {
             var token = reader.Read();
-            var colorStringBuilder = new StringBuilder();
+            var builder = new StringBuilder(token);
 
-            colorStringBuilder.Append(token);
-            colorStringBuilder.Append('(');
-            colorStringBuilder.Append(reader.ReadNext());
-            colorStringBuilder.Append(',');
-            colorStringBuilder.Append(reader.ReadNext());
-            colorStringBuilder.Append(',');
-            colorStringBuilder.Append(reader.ReadNext());
+            builder.Append('(');
+            builder.Append(reader.ReadNext());
+            builder.Append(',');
+            builder.Append(reader.ReadNext());
+            builder.Append(',');
+            builder.Append(reader.ReadNext());
 
             if (token == CssToken.Rgba || token == CssToken.Hsla)
             {
-                colorStringBuilder.Append(',');
-                colorStringBuilder.Append(ToDouble(reader.ReadNext()));
-                colorStringBuilder.Append(')');
+                builder.Append(',');
+                builder.Append(reader.ReadNext());
             }
-            else
-            {
-                colorStringBuilder.Append(')');
-            }
+            
+            builder.Append(')');
 
-            return colorStringBuilder.ToString();
+            return builder.ToString();
         }
 
         internal bool TryConvertPercentToOffset(string token, out float result)
@@ -72,15 +68,6 @@ namespace MagicGradients.Parser.TokenDefinitions
 
             result = 0;
             return false;
-        }
-
-        internal double ToDouble(string token, double @default = default)
-        {
-            if (double.TryParse(token, NumberStyles.Any, CultureInfo.InvariantCulture, out var result))
-            {
-                return result;
-            }
-            return @default;
         }
     }
 }
