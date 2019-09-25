@@ -32,7 +32,7 @@ namespace MagicGradients.Parser.TokenDefinitions
 
         internal string GetColorString(CssReader reader)
         {
-            var token = reader.Read();
+            var token = reader.Read().Trim();
             var builder = new StringBuilder(token);
 
             builder.Append('(');
