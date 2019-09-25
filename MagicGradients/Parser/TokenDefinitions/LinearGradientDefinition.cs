@@ -28,9 +28,10 @@ namespace MagicGradients.Parser.TokenDefinitions
 
         internal bool TryConvertDegreeToAngle(string token, out double angle)
         {
-            if (token.Contains("deg"))
+            if (token.EndsWith("deg", StringComparison.OrdinalIgnoreCase))
             {
-                var degreesStr = token.Replace("deg", "");
+                var index = token.LastIndexOf("deg", StringComparison.OrdinalIgnoreCase);
+                var degreesStr = token.Substring(0, index);
 
                 if(double.TryParse(degreesStr, NumberStyles.Any, CultureInfo.InvariantCulture, out var degrees))
                 {
