@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
@@ -25,15 +26,15 @@ namespace MagicGradients.Parser.TokenDefinitions
             }
         }
 
-        internal bool TryConvertDegreeToAngle(string token, out int angle)
+        internal bool TryConvertDegreeToAngle(string token, out double angle)
         {
             if (token.Contains("deg"))
             {
-                var degreeStr = token.Replace("deg", "");
+                var degreesStr = token.Replace("deg", "");
 
-                if (int.TryParse(degreeStr, out var degree))
+                if(double.TryParse(degreesStr, NumberStyles.Any, CultureInfo.InvariantCulture, out var degrees))
                 {
-                    angle = (180 + degree) % 360;
+                    angle = CssHelpers.FromDegrees(degrees);
                     return true;
                 }
             }
