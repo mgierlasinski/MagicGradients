@@ -1,9 +1,9 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 using MagicGradients.Parser.TokenDefinitions;
-using System;
 using Xunit;
 
-namespace MagicGradients.Tests.Parser
+namespace MagicGradients.Tests.Parser.TokenDefinitions
 {
     public class LinearGradientDefinitionTests
     {
