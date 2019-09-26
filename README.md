@@ -2,6 +2,13 @@
 
 Xamarin.Forms control to display complex gradients, insipired by [PancakeView](https://github.com/sthewissen/Xamarin.Forms.PancakeView) and [Magic Gradients](https://www.gradientmagic.com/). You can add unlimited amount of linear gradients with different angles to create uniqe effects. Powered by [SkiaSharp](https://github.com/mono/SkiaSharp).
 
+## Depencendies
+
+Xamarin.Forms | Xamarin.Essentials | SkiaSharp
+---|---|---|
+![NuGet](https://img.shields.io/badge/Xamarin.Forms-v4.2.709249-green) | ![NuGet](https://img.shields.io/badge/Xamarin.Essentials-v1.1.0-red) | ![NuGet](https://img.shields.io/badge/SkiaSharp-v1.68.0-blue)
+
+
 ## Setting gradient source
 
 You can build gradients manually in Xaml:
