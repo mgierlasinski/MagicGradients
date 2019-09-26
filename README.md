@@ -8,6 +8,14 @@ Xamarin.Forms | Xamarin.Essentials | SkiaSharp
 ---|---|---|
 ![NuGet](https://img.shields.io/badge/Xamarin.Forms-v4.2.709249-green) | ![NuGet](https://img.shields.io/badge/Xamarin.Essentials-v1.1.0-red) | ![NuGet](https://img.shields.io/badge/SkiaSharp-v1.68.0-blue)
 
+## Gallery
+
+You can preview some of the gradients from [Gradient Magic](https://www.gradientmagic.com/) in Playground app. Css code is directly copied, without any modifications.
+
+| | | |
+|-|-|-|
+|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-1.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-2.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-3.png)|
+|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-4.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-5.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-6.png)|
 
 ## Setting gradient source
 
@@ -76,6 +84,12 @@ Styling with CSS styleshet is also supported:
 }
 ```
 
+### CSS parser
+
+You can test CSS gradient code live within Playground application.
+
+![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/paste-css.gif)
+
 ### linear-gradient function syntax
 
 ``` css
@@ -109,21 +123,3 @@ linear-gradient(to left top, blue, red);
    and finishing red */
 linear-gradient(0deg, blue, green 40%, red);
 ```
-
-# Playground
-
-You can test all of the features in Playground app witten in Shell.
-
-## CSS parser
-You can test CSS gradient code live within running application.
-
-![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/paste-css.gif)
-
-## Gallery
-
-Shows some gradients from [Gradient Magic](https://www.gradientmagic.com/) gallery page, directly copied, without any modification to make it work in Xamarin.
-
-| | | |
-|-|-|-|
-|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-1.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-2.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-3.png)|
-|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-4.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-5.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-6.png)|
