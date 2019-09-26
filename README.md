@@ -14,8 +14,8 @@ You can preview some of the gradients from [Gradient Magic](https://www.gradient
 
 | | | |
 |-|-|-|
-|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-1.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-2.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-3.png)|
-|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-4.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-5.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/Gallery/Gallery-6.png)|
+|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-1.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-2.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-3.png)|
+|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-4.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-5.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-6.png)|
 
 ## Setting gradient source
 
