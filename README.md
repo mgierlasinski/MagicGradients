@@ -88,7 +88,7 @@ Styling with CSS styleshet is also supported:
 
 You can test CSS gradient code live within Playground application.
 
-![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/update-readme/Assets/paste-css.gif)
+![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/paste-css.gif)
 
 ### linear-gradient function syntax
 
