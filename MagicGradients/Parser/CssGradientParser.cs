@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace MagicGradients.Parser
 {
-    public class CssLinearGradientParser
+    public class CssGradientParser
     {
         private readonly ITokenDefinition[] _definitions;
 
-        public CssLinearGradientParser()
+        public CssGradientParser()
         {
             _definitions = new ITokenDefinition[]
             {
@@ -18,9 +18,9 @@ namespace MagicGradients.Parser
             };
         }
 
-        public LinearGradient[] ParseCss(string css)
+        public IGradient[] ParseCss(string css)
         {
-            var builder = new LinearGradientBuilder();
+            var builder = new GradientBuilder();
 
             if (string.IsNullOrWhiteSpace(css))
             {

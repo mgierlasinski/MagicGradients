@@ -5,26 +5,26 @@
              x:Class="Playground.Views.InlineGradientPage" 
              Title="Inline Gradient">
     <StackLayout Spacing="0">
-        <magic:LinearGradientView VerticalOptions="FillAndExpand">
-            <magic:LinearGradientView.GradientSource>
-                <magic:LinearGradientSource>
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientView.GradientSource>
+                <magic:GradientSource>
                     <magic:LinearGradient Angle="45">
                         <magic:ColorStop Color="Red" Offset="0" />
                         <magic:ColorStop Color="Yellow" Offset="1" />
                     </magic:LinearGradient>
-                </magic:LinearGradientSource>
-            </magic:LinearGradientView.GradientSource>
-        </magic:LinearGradientView>
-        <magic:LinearGradientView VerticalOptions="FillAndExpand">
-            <magic:LinearGradientView.GradientSource>
-                <magic:LinearGradientSource>
+                </magic:GradientSource>
+            </magic:GradientView.GradientSource>
+        </magic:GradientView>
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientView.GradientSource>
+                <magic:GradientSource>
                     <magic:LinearGradient Angle="45" IsRepeating="True">
                         <magic:ColorStop Color="Orange" Offset="0" />
                         <magic:ColorStop Color="LightGreen" Offset="0.1" />
                         <magic:ColorStop Color="Blue" Offset="0.2" />
                     </magic:LinearGradient>
-                </magic:LinearGradientSource>
-            </magic:LinearGradientView.GradientSource>
-        </magic:LinearGradientView>
+                </magic:GradientSource>
+            </magic:GradientView.GradientSource>
+        </magic:GradientView>
     </StackLayout>
 </ContentPage>

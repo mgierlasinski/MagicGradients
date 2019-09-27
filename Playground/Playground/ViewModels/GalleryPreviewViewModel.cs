@@ -10,8 +10,8 @@ namespace Playground.ViewModels
     {
         private readonly IGalleryService _galleryService;
 
-        private ILinearGradientSource _gradient;
-        public ILinearGradientSource Gradient
+        private IGradientSource _gradient;
+        public IGradientSource Gradient
         {
             get => _gradient;
             set => SetProperty(ref _gradient, value);

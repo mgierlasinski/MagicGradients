@@ -4,8 +4,8 @@ using Xamarin.Forms;
 namespace MagicGradients
 {
     [TypeConverter(typeof(CssGradientSourceTypeConverter))]
-    public interface ILinearGradientSource
+    public interface IGradientSource
     {
-        IEnumerable<LinearGradient> GetGradients();
+        IEnumerable<IGradient> GetGradients();
     }
 }

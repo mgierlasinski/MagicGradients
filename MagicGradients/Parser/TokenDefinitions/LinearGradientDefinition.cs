@@ -7,7 +7,7 @@ namespace MagicGradients.Parser.TokenDefinitions
     {
         public bool IsMatch(string token) => token == CssToken.LinearGradient;
 
-        public void Parse(CssReader reader, LinearGradientBuilder builder)
+        public void Parse(CssReader reader, GradientBuilder builder)
         {
             var direction = reader.ReadNext().Trim();
 

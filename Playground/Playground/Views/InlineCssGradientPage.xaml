@@ -8,8 +8,8 @@
         <StyleSheet Source="../Styles/InlineCssGradient.css" />
     </ContentPage.Resources>
     <StackLayout Spacing="0">
-        <magic:LinearGradientView VerticalOptions="FillAndExpand">
-            <magic:LinearGradientView.GradientSource>
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientView.GradientSource>
                 <magic:CssGradientSource>
                     <x:String>
                         <![CDATA[
@@ -17,8 +17,8 @@
                         ]]>
                     </x:String>
                 </magic:CssGradientSource>
-            </magic:LinearGradientView.GradientSource>
-        </magic:LinearGradientView>
-        <magic:LinearGradientView VerticalOptions="FillAndExpand" StyleClass="gradientStyledWithCss" />
+            </magic:GradientView.GradientSource>
+        </magic:GradientView>
+        <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="gradientStyledWithCss" />
     </StackLayout>
 </ContentPage>

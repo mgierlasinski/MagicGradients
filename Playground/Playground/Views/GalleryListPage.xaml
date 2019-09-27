@@ -20,7 +20,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid Margin="10,0,10,10">
-                            <magic:LinearGradientView GradientSource="{Binding Source}" HeightRequest="150" />
+                            <magic:GradientView GradientSource="{Binding Source}" HeightRequest="150" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -24,8 +24,8 @@ namespace Playground.ViewModels
             });
         }
 
-        private ILinearGradientSource _gradientSource;
-        public ILinearGradientSource GradientSource
+        private IGradientSource _gradientSource;
+        public IGradientSource GradientSource
         {
             get => _gradientSource;
             set => SetProperty(ref _gradientSource, value, onChanged: ValidateEmptyData);
@@ -60,10 +60,10 @@ namespace Playground.ViewModels
 
             try
             {
-                var parser = new CssLinearGradientParser();
+                var parser = new CssGradientParser();
                 var gradients = parser.ParseCss(CssCode);
 
-                GradientSource = new LinearGradientSource
+                GradientSource = new GradientSource
                 {
                     Gradients = gradients.ToList()
                 };

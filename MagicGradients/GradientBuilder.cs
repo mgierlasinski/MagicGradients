@@ -4,12 +4,12 @@ using Xamarin.Forms;
 
 namespace MagicGradients
 {
-    public class LinearGradientBuilder
+    public class GradientBuilder
     {
-        private readonly List<LinearGradient> _gradients = new List<LinearGradient>();
-        private LinearGradient _lastGradient;
+        private readonly List<IGradient> _gradients = new List<IGradient>();
+        private IGradient _lastGradient;
 
-        public LinearGradientBuilder AddGradient(double angle)
+        public GradientBuilder AddGradient(double angle)
         {
             _lastGradient = new LinearGradient
             {
@@ -22,7 +22,7 @@ namespace MagicGradients
             return this;
         }
 
-        public LinearGradientBuilder AddStop(Color color, float? offset = null)
+        public GradientBuilder AddStop(Color color, float? offset = null)
         {
             if (_lastGradient == null)
             {
@@ -40,7 +40,7 @@ namespace MagicGradients
             return this;
         }
 
-        public LinearGradient[] Build()
+        public IGradient[] Build()
         {
             foreach (var gradient in _gradients)
             {
@@ -49,7 +49,7 @@ namespace MagicGradients
             return _gradients.ToArray();
         }
 
-        private void SetupUndefinedOffsets(LinearGradient gradient)
+        private void SetupUndefinedOffsets(IGradient gradient)
         {
             var undefinedStops = gradient.Stops.Where(x => x.Offset < 0).ToArray();
 
