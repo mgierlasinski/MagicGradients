@@ -6,16 +6,11 @@ namespace MagicGradients
     [ContentProperty(nameof(Stops))]
     public class LinearGradient : BindableObject
     {
-        public static readonly BindableProperty StopsProperty = BindableProperty.Create(
-            nameof(Stops), typeof(List<LinearGradientStop>), typeof(LinearGradient), new List<LinearGradientStop>());
-
-        public List<LinearGradientStop> Stops
-        {
-            get => (List<LinearGradientStop>)GetValue(StopsProperty);
-            set => SetValue(StopsProperty, value);
-        }
+        public IList<ColorStop> Stops { get; set; } = new List<ColorStop>();
 
         public double Angle { get; set; }
+
+        public bool IsRepeating { get; set; }
 
         public override string ToString()
         {

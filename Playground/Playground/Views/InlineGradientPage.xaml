@@ -4,16 +4,27 @@
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              x:Class="Playground.Views.InlineGradientPage" 
              Title="Inline Gradient">
-    <Grid>
-        <magic:LinearGradientView>
+    <StackLayout Spacing="0">
+        <magic:LinearGradientView VerticalOptions="FillAndExpand">
             <magic:LinearGradientView.GradientSource>
                 <magic:LinearGradientSource>
                     <magic:LinearGradient Angle="45">
-                        <magic:LinearGradientStop Color="Red" Offset="0" />
-                        <magic:LinearGradientStop Color="Yellow" Offset="1" />
+                        <magic:ColorStop Color="Red" Offset="0" />
+                        <magic:ColorStop Color="Yellow" Offset="1" />
                     </magic:LinearGradient>
                 </magic:LinearGradientSource>
             </magic:LinearGradientView.GradientSource>
         </magic:LinearGradientView>
-    </Grid>
+        <magic:LinearGradientView VerticalOptions="FillAndExpand">
+            <magic:LinearGradientView.GradientSource>
+                <magic:LinearGradientSource>
+                    <magic:LinearGradient Angle="45" IsRepeating="True">
+                        <magic:ColorStop Color="Orange" Offset="0" />
+                        <magic:ColorStop Color="LightGreen" Offset="0.1" />
+                        <magic:ColorStop Color="Blue" Offset="0.2" />
+                    </magic:LinearGradient>
+                </magic:LinearGradientSource>
+            </magic:LinearGradientView.GradientSource>
+        </magic:LinearGradientView>
+    </StackLayout>
 </ContentPage>

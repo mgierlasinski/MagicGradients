@@ -14,7 +14,7 @@ namespace MagicGradients
             _lastGradient = new LinearGradient
             {
                 Angle = angle,
-                Stops = new List<LinearGradientStop>()
+                Stops = new List<ColorStop>()
             };
 
             _gradients.Add(_lastGradient);
@@ -29,7 +29,7 @@ namespace MagicGradients
                 AddGradient(0);
             }
 
-            var stop = new LinearGradientStop
+            var stop = new ColorStop
             {
                 Color = color,
                 Offset = offset ?? -1

@@ -7,7 +7,7 @@
     <ContentPage.Resources>
         <StyleSheet Source="../Styles/InlineCssGradient.css" />
     </ContentPage.Resources>
-    <StackLayout Padding="10" Spacing="10">
+    <StackLayout Spacing="0">
         <magic:LinearGradientView VerticalOptions="FillAndExpand">
             <magic:LinearGradientView.GradientSource>
                 <magic:CssGradientSource>

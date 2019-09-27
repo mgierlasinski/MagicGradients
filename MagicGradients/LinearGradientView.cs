@@ -13,19 +13,19 @@ namespace MagicGradients
             StyleSheets.RegisterStyle("background", typeof(LinearGradientView), nameof(GradientSourceProperty));
         }
 
-        public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
-            nameof(GradientSource), typeof(ILinearGradientSource), typeof(LinearGradientView), propertyChanged:
-            (bindable, oldValue, newValue) => (bindable as LinearGradientView)?.OnGradientSourceChanged());
+        public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(nameof(GradientSource), 
+            typeof(ILinearGradientSource), typeof(LinearGradientView), propertyChanged: OnGradientSourceChanged);
 
         public ILinearGradientSource GradientSource
         {
             get => (ILinearGradientSource)GetValue(GradientSourceProperty);
-            set => SetValue(GradientSourceProperty, value);
+            set => this.SetValue(GradientSourceProperty, value);
         }
 
-        private void OnGradientSourceChanged()
+        static void OnGradientSourceChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            InvalidateSurface();
+            var gradientView = (LinearGradientView)bindable;
+            gradientView.InvalidateSurface();
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
@@ -45,35 +45,36 @@ namespace MagicGradients
             {
                 foreach (var gradient in GradientSource.GetGradients())
                 {
-                    var (startPoint, endPoint) = GetGradientPoints(info, gradient.Angle);
+                    var (startPoint, endPoint) = GetGradientPoints(info.Width, info.Height, gradient.Angle);
 
                     var orderedStops = gradient.Stops.OrderBy(x => x.Offset).ToArray();
                     var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
                     var colorPos = orderedStops.Select(x => x.Offset).ToArray();
+                    var tileMode = gradient.IsRepeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp;
 
                     paint.Shader = SKShader.CreateLinearGradient(
                         startPoint,
                         endPoint,
                         colors,
                         colorPos,
-                        SKShaderTileMode.Clamp);
+                        tileMode);
 
                     canvas.DrawRect(info.Rect, paint);
                 }
             }
         }
 
-        private (SKPoint, SKPoint) GetGradientPoints(SKImageInfo info, double rotation)
+        private (SKPoint, SKPoint) GetGradientPoints(int width, int height, double rotation)
         {
             var angle = rotation / 360.0;
 
-            var a = info.Width * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.75) / 2)), 2);
-            var b = info.Height * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.0) / 2)), 2);
-            var c = info.Width * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.25) / 2)), 2);
-            var d = info.Height * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.5) / 2)), 2);
+            var a = width * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.75) / 2)), 2);
+            var b = height * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.0) / 2)), 2);
+            var c = width * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.25) / 2)), 2);
+            var d = height * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.5) / 2)), 2);
 
-            var start = new SKPoint(info.Width - (float)a, (float)b);
-            var end = new SKPoint(info.Width - (float)c, (float)d);
+            var start = new SKPoint(width - (float)a, (float)b);
+            var end = new SKPoint(width - (float)c, (float)d);
 
             return (start, end);
         }

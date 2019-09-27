@@ -11,13 +11,13 @@ namespace MagicGradients.Tests.Parser
 
         public static LinearGradient[] ComplexGradientsExpected = new[]
         {
-            new LinearGradient{ Angle = FromDegrees(242), Stops = new List<LinearGradientStop>(new LinearGradientStop[12])},
-            new LinearGradient{ Angle = FromDegrees(152), Stops = new List<LinearGradientStop>(new LinearGradientStop[12])},
-            new LinearGradient{ Angle = FromDegrees(11),  Stops = new List<LinearGradientStop>(new LinearGradientStop[12])},
-            new LinearGradient{ Angle = FromDegrees(27),  Stops = new List<LinearGradientStop>(new LinearGradientStop[14])},
-            new LinearGradient{ Angle = FromDegrees(317), Stops = new List<LinearGradientStop>(new LinearGradientStop[12])},
-            new LinearGradient{ Angle = FromDegrees(128), Stops = new List<LinearGradientStop>(new LinearGradientStop[16])},
-            new LinearGradient{ Angle = FromDegrees(90),  Stops = new List<LinearGradientStop>(new LinearGradientStop[2])}
+            new LinearGradient{ Angle = FromDegrees(242), Stops = new List<ColorStop>(new ColorStop[12])},
+            new LinearGradient{ Angle = FromDegrees(152), Stops = new List<ColorStop>(new ColorStop[12])},
+            new LinearGradient{ Angle = FromDegrees(11),  Stops = new List<ColorStop>(new ColorStop[12])},
+            new LinearGradient{ Angle = FromDegrees(27),  Stops = new List<ColorStop>(new ColorStop[14])},
+            new LinearGradient{ Angle = FromDegrees(317), Stops = new List<ColorStop>(new ColorStop[12])},
+            new LinearGradient{ Angle = FromDegrees(128), Stops = new List<ColorStop>(new ColorStop[16])},
+            new LinearGradient{ Angle = FromDegrees(90),  Stops = new List<ColorStop>(new ColorStop[2])}
         }.Reverse().ToArray();
 
         public static IEnumerable<object[]> SimpleGradients()
@@ -26,9 +26,9 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(rgb(4, 164, 188))", new LinearGradient
                 {
-                    Angle = 0, Stops = new List<LinearGradientStop>
+                    Angle = 0, Stops = new List<ColorStop>
                     {
-                        new LinearGradientStop { Color = Color.FromRgb(4, 164, 188) }
+                        new ColorStop { Color = Color.FromRgb(4, 164, 188) }
                     }
                 }
             };
@@ -36,9 +36,9 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(90deg, rgb(4, 164, 188))", new LinearGradient
                 {
-                    Angle = FromDegrees(90), Stops = new List<LinearGradientStop>
+                    Angle = FromDegrees(90), Stops = new List<ColorStop>
                     {
-                        new LinearGradientStop { Color = Color.FromRgb(4, 164, 188) }
+                        new ColorStop { Color = Color.FromRgb(4, 164, 188) }
                     }
                 }
             };
@@ -46,9 +46,9 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(224deg, rgba(155, 155, 155, 0.1) 50%)", new LinearGradient
                 {
-                    Angle = FromDegrees(224), Stops = new List<LinearGradientStop>
+                    Angle = FromDegrees(224), Stops = new List<ColorStop>
                     {
-                        new LinearGradientStop
+                        new ColorStop
                         {
                             Color = Color.FromRgba(0.607843160629272, 0.607843160629272, 0.607843160629272, 0.100000001490116),
                             Offset = 0.5f
@@ -60,9 +60,9 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(90deg, hsl(237, 0%, 13%))", new LinearGradient
                 {
-                    Angle = FromDegrees(90), Stops = new List<LinearGradientStop>
+                    Angle = FromDegrees(90), Stops = new List<ColorStop>
                     {
-                        new LinearGradientStop { Color = Color.FromHsla(0.65833333333333333, 0, 0.13, 1) }
+                        new ColorStop { Color = Color.FromHsla(0.65833333333333333, 0, 0.13, 1) }
                     }
                 }
             };
@@ -70,9 +70,9 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(90deg, rgba(172, 172, 172, 0.01) 100.002%)", new LinearGradient
                 {
-                    Angle = FromDegrees(90), Stops = new List<LinearGradientStop>
+                    Angle = FromDegrees(90), Stops = new List<ColorStop>
                     {
-                        new LinearGradientStop
+                        new ColorStop
                         {
                             Color = Color.FromRgba(0.674509823322296, 0.674509823322296, 0.674509823322296, 0.00999999977648258),
                             Offset = 1
@@ -88,9 +88,9 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(224deg, rgb(0, 0, 0))", new LinearGradient
                 {
-                    Angle = FromDegrees(224), Stops = new List<LinearGradientStop>
+                    Angle = FromDegrees(224), Stops = new List<ColorStop>
                     {
-                        new LinearGradientStop { Color = Color.Black, Offset = 0f },
+                        new ColorStop { Color = Color.Black, Offset = 0f },
                     }
                 }
             };
@@ -98,10 +98,10 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(224deg, rgb(0, 0, 0), rgb(0, 0, 0))", new LinearGradient
                 {
-                    Angle = FromDegrees(224), Stops = new List<LinearGradientStop>
+                    Angle = FromDegrees(224), Stops = new List<ColorStop>
                     {
-                        new LinearGradientStop { Color = Color.Black, Offset = 0f },
-                        new LinearGradientStop { Color = Color.Black, Offset = 1f }
+                        new ColorStop { Color = Color.Black, Offset = 0f },
+                        new ColorStop { Color = Color.Black, Offset = 1f }
                     }
                 }
             };
@@ -109,11 +109,11 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(224deg, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0))", new LinearGradient
                 {
-                    Angle = FromDegrees(224), Stops = new List<LinearGradientStop>
+                    Angle = FromDegrees(224), Stops = new List<ColorStop>
                     {
-                        new LinearGradientStop { Color = Color.Black, Offset = 0f },
-                        new LinearGradientStop { Color = Color.Black, Offset = 0.5f },
-                        new LinearGradientStop { Color = Color.Black, Offset = 1f }
+                        new ColorStop { Color = Color.Black, Offset = 0f },
+                        new ColorStop { Color = Color.Black, Offset = 0.5f },
+                        new ColorStop { Color = Color.Black, Offset = 1f }
                     }
                 }
             };
