@@ -17,6 +17,12 @@ You can preview some of the gradients from [Gradient Magic](https://www.gradient
 |![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-1.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-2.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-3.png)|
 |![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-4.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-5.png)|![Screenshot](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/Gallery/Gallery-6.png)|
 
+## Getting Started
+
+Currently this project is not in NuGet, so you will need to include the Magic Gradients project in your solution and add local references in your shared project.
+
+As it requires SkiaSharp, you will also need to ensure you add SkiaSharp.Views.Forms to your shared Xamarin.Forms project. 
+
 ## Setting gradient source
 
 You can build gradients manually in Xaml:
