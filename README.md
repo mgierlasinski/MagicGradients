@@ -4,9 +4,9 @@ Xamarin.Forms control to display complex gradients, insipired by [PancakeView](h
 
 ## Depencendies
 
-Xamarin.Forms | Xamarin.Essentials | SkiaSharp
----|---|---|
-![NuGet](https://img.shields.io/badge/Xamarin.Forms-v4.2.709249-green) | ![NuGet](https://img.shields.io/badge/Xamarin.Essentials-v1.1.0-red) | ![NuGet](https://img.shields.io/badge/SkiaSharp-v1.68.0-blue)
+Xamarin.Forms | SkiaSharp
+---|---|
+![NuGet](https://img.shields.io/badge/Xamarin.Forms-v4.2.709249-green) | ![NuGet](https://img.shields.io/badge/SkiaSharp-v1.68.0-blue)
 
 ## Gallery
 
