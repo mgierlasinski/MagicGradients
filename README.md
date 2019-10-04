@@ -2,11 +2,19 @@
 
 Xamarin.Forms control to display complex gradients, insipired by [PancakeView](https://github.com/sthewissen/Xamarin.Forms.PancakeView) and [Magic Gradients](https://www.gradientmagic.com/). You can add unlimited amount of linear gradients with different angles to create uniqe effects. Powered by [SkiaSharp](https://github.com/mono/SkiaSharp).
 
+## Packages
+
+Initial release is available via NuGet as a prerelease version (make sure you have checked `Include prerelase` in NuGet browser).
+
+| Package | Version |
+|---|---|
+| MagicGradients |![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)|
+
 ## Depencendies
 
 Xamarin.Forms | SkiaSharp
 ---|---|
-![NuGet](https://img.shields.io/badge/Xamarin.Forms-v4.2.709249-green) | ![NuGet](https://img.shields.io/badge/SkiaSharp-v1.68.0-blue)
+![NuGet](https://img.shields.io/badge/Xamarin.Forms-v4.2.848062-green) | ![NuGet](https://img.shields.io/badge/SkiaSharp-v1.68.0-blue)
 
 ## Gallery
 
@@ -19,7 +27,7 @@ You can preview some of the gradients from [Gradient Magic](https://www.gradient
 
 ## Getting Started
 
-Currently this project is not in NuGet, so you will need to include the Magic Gradients project in your solution and add local references in your shared project.
+Install via NuGet (make sure you have checked `Include prerelase` in NuGet browser) or include the Magic Gradients project in your solution and add local references in your shared project.
 
 As it requires SkiaSharp, you will also need to ensure you add SkiaSharp.Views.Forms to your shared Xamarin.Forms project. 
 
