@@ -4,14 +4,14 @@ using Xunit;
 
 namespace MagicGradients.Tests.Parser
 {
-    public class CssLinearGradientParserTests
+    public class CssGradientParserTests
     {
         [Theory]
-        [MemberData(nameof(CssLinearGradientParserTestData.SimpleGradients), MemberType = typeof(CssLinearGradientParserTestData))]
+        [MemberData(nameof(CssGradientParserTestData.SimpleGradients), MemberType = typeof(CssGradientParserTestData))]
         public void ParseCss_SimpleGradients_CorrectlyParsed(string css, LinearGradient expected)
         {
             // Arrange
-            var parser = new CssLinearGradientParser();
+            var parser = new CssGradientParser();
 
             // Act
             var gradients = parser.ParseCss(css);
@@ -22,11 +22,11 @@ namespace MagicGradients.Tests.Parser
         }
 
         [Theory]
-        [MemberData(nameof(CssLinearGradientParserTestData.GradientsWithoutOffsets), MemberType = typeof(CssLinearGradientParserTestData))]
+        [MemberData(nameof(CssGradientParserTestData.GradientsWithoutOffsets), MemberType = typeof(CssGradientParserTestData))]
         public void ParseCss_GradientsWithoutOffsets_AutomaticallyAssignedOffsets(string css, LinearGradient expected)
         {
             // Arrange
-            var parser = new CssLinearGradientParser();
+            var parser = new CssGradientParser();
 
             // Act
             var gradients = parser.ParseCss(css);
@@ -40,9 +40,9 @@ namespace MagicGradients.Tests.Parser
         public void ParseCss_ComplexGradientsCss_EachGradientHaveCorrectAngleAndStopsCount()
         {
             // Arrange
-            var css = CssLinearGradientParserTestData.ComplexGradientsCss;
-            var expectedGradients = CssLinearGradientParserTestData.ComplexGradientsExpected;
-            var parser = new CssLinearGradientParser();
+            var css = CssGradientParserTestData.ComplexGradientsCss;
+            var expectedGradients = CssGradientParserTestData.ComplexGradientsExpected;
+            var parser = new CssGradientParser();
 
             // Act
             var gradients = parser.ParseCss(css);
@@ -52,7 +52,6 @@ namespace MagicGradients.Tests.Parser
 
             for (var i = 0; i < gradients.Length; i++)
             {
-                gradients[i].Angle.Should().Be(expectedGradients[i].Angle);
                 gradients[i].Stops.Should().HaveCount(expectedGradients[i].Stops.Count);
             }
         }

@@ -3,6 +3,7 @@ using Playground.Models;
 using Playground.StaticData;
 using System.Collections.Generic;
 using System.Linq;
+using Gradient = Playground.Models.Gradient;
 
 namespace Playground.Services
 {

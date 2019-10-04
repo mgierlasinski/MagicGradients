@@ -10,7 +10,7 @@ namespace MagicGradients.Benchmark
 {
     public class LinearGradientBenchmark
     {
-        private readonly CssLinearGradientParser _parser = new CssLinearGradientParser();
+        private readonly CssGradientParser _parser = new CssGradientParser();
 
         private readonly List<string> _simpleCss = new List<string>(new[]
         {

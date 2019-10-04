@@ -12,7 +12,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             token.Equals(CssToken.Hsl, StringComparison.OrdinalIgnoreCase) ||
             token.Equals(CssToken.Hsla, StringComparison.OrdinalIgnoreCase);
 
-        public void Parse(CssReader reader, LinearGradientBuilder builder)
+        public void Parse(CssReader reader, GradientBuilder builder)
         {
             var color = (Color)ColorConverter.ConvertFromInvariantString(GetColorString(reader));
 

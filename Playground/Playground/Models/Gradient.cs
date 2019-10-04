@@ -6,6 +6,6 @@ namespace Playground.Models
     {
         public int Id { get; set; }
 
-        public ILinearGradientSource Source { get; set; }
+        public IGradientSource Source { get; set; }
     }
 }

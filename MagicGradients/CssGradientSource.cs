@@ -7,7 +7,7 @@ using Xamarin.Forms.Xaml;
 namespace MagicGradients
 {
     [ContentProperty(nameof(Stylesheet))]
-    public class CssGradientSource : BindableObject, ILinearGradientSource
+    public class CssGradientSource : BindableObject, IGradientSource
     {
         public static readonly BindableProperty StylesheetProperty = BindableProperty.Create(
             nameof(Stylesheet), typeof(string), typeof(CssGradientSource));
@@ -18,13 +18,13 @@ namespace MagicGradients
             set => SetValue(StylesheetProperty, value);
         }
 
-        public IEnumerable<LinearGradient> GetGradients()
+        public IEnumerable<Gradient> GetGradients()
         {
-            return new CssLinearGradientParser().ParseCss(Stylesheet);
+            return new CssGradientParser().ParseCss(Stylesheet);
         }
     }
 
-    [TypeConversion(typeof(ILinearGradientSource))]
+    [TypeConversion(typeof(IGradientSource))]
     public class CssGradientSourceTypeConverter : TypeConverter
     {
         public override object ConvertFromInvariantString(string value)

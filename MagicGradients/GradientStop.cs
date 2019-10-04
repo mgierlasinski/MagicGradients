@@ -2,7 +2,7 @@
 
 namespace MagicGradients
 {
-    public class LinearGradientStop
+    public class GradientStop
     {
         public float Offset { get; set; }
 

@@ -7,21 +7,21 @@ namespace MagicGradients.Parser.TokenDefinitions
     {
         public bool IsMatch(string token) => token == CssToken.LinearGradient;
 
-        public void Parse(CssReader reader, LinearGradientBuilder builder)
+        public void Parse(CssReader reader, GradientBuilder builder)
         {
             var direction = reader.ReadNext().Trim();
 
             if (TryConvertDegreeToAngle(direction, out var degreeToAngle))
             {
-                builder.AddGradient(degreeToAngle);
+                builder.AddLinearGradient(degreeToAngle);
             }
             else if (TryConvertNamedDirectionToAngle(direction, out var directionToAngle))
             {
-                builder.AddGradient(directionToAngle);
+                builder.AddLinearGradient(directionToAngle);
             }
             else
             {
-                builder.AddGradient(0);
+                builder.AddLinearGradient(0);
                 reader.Rollback();
             }
         }

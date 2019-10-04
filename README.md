@@ -28,32 +28,32 @@ As it requires SkiaSharp, you will also need to ensure you add SkiaSharp.Views.F
 You can build gradients manually in Xaml:
 
 ``` xml
-<magic:LinearGradientView>
-    <magic:LinearGradientView.GradientSource>
-        <magic:LinearGradientSource>
+<magic:GradientView VerticalOptions="FillAndExpand">
+    <magic:GradientView.GradientSource>
+        <magic:GradientSource>
             <magic:LinearGradient Angle="45">
-                <magic:LinearGradientStop Color="Red" Offset="0" />
-                <magic:LinearGradientStop Color="Yellow" Offset="1" />
+                <magic:GradientStop Color="Red" Offset="0" />
+                <magic:GradientStop Color="Yellow" Offset="1" />
             </magic:LinearGradient>
-        </magic:LinearGradientSource>
-    </magic:LinearGradientView.GradientSource>
-</magic:LinearGradientView>
+        </magic:GradientSource>
+    </magic:GradientView.GradientSource>
+</magic:GradientView>
 ```
 
-You can also build gradient in C# using `LinearGradientBuilder` with Fluent API:
+You can also build gradient in C# using `GradientBuilder` with Fluent API:
 
 ``` c#
- var gradients = new LinearGradientBuilder()
-    .AddGradient(45)
+ var gradients = new GradientBuilder()
+    .AddLinearGradient(45)
         .AddStop(Color.Green, 0.2f)
         .AddStop(Color.Aqua, 0.9f)
-    .AddGradient(90)
+    .AddLinearGradient(90)
         .AddStop(Color.Blue)
         .AddStop(Color.DeepPink)
     .Build();
 ```
 
-By using `LinearGradientBuilder`, some of the construction process is automated, there is also validation performed that looks after undefined stop offsets and set them automatically. `LinearGradientBuilder` is used under the hood when CSS code is parsed.
+By using `GradientBuilder`, some of the construction process is automated, there is also validation performed that looks after undefined stop offsets and set them automatically. `GradientBuilder` is used under the hood when CSS code is parsed.
 
 ## Styling with CSS
 
@@ -65,8 +65,8 @@ Magic Gradients supports parsing CSS function `linear-gradient`, you can find fu
 You can embed inline CSS directly in xaml:
 
 ``` xml
-<magic:LinearGradientView>
-    <magic:LinearGradientView.GradientSource>
+<magic:GradientView>
+    <magic:GradientView.GradientSource>
         <magic:CssGradientSource>
             <x:String>
                 <![CDATA[
@@ -74,14 +74,14 @@ You can embed inline CSS directly in xaml:
                 ]]>
             </x:String>
         </magic:CssGradientSource>
-    </magic:LinearGradientView.GradientSource>
-</magic:LinearGradientView>
+    </magic:GradientView.GradientSource>
+</magic:GradientView>
 ```
 
 Styling with CSS styleshet is also supported:
 
 ``` xml
-<magic:LinearGradientView StyleClass="gradientStyledWithCss" />
+<magic:GradientView StyleClass="gradientStyledWithCss" />
 ```
 
 ``` css

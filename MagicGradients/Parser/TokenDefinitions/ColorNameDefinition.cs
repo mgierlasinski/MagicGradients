@@ -11,7 +11,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             return parts.Length == 1 || parts.Length == 2 && parts[0] == "Color";
         }
 
-        public void Parse(CssReader reader, LinearGradientBuilder builder)
+        public void Parse(CssReader reader, GradientBuilder builder)
         {
             var parts = reader.Read().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 

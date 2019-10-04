@@ -10,6 +10,6 @@
              BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     
     <Grid>
-        <magic:LinearGradientView GradientSource="{Binding Gradient}" />
+        <magic:GradientView GradientSource="{Binding Gradient}" />
     </Grid>
 </ContentPage>

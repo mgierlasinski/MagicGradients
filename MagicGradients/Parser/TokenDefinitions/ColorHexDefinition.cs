@@ -7,7 +7,7 @@ namespace MagicGradients.Parser.TokenDefinitions
     {
         public bool IsMatch(string token) => token.StartsWith("#", StringComparison.Ordinal);
 
-        public void Parse(CssReader reader, LinearGradientBuilder builder)
+        public void Parse(CssReader reader, GradientBuilder builder)
         {
             var parts = reader.Read().Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
 

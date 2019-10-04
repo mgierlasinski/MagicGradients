@@ -33,7 +33,7 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
         {
             // Arrange
             var reader = new CssReader(color);
-            var builder = new LinearGradientBuilder();
+            var builder = new GradientBuilder();
             var definition = new ColorHexDefinition();
 
             // Act
