@@ -6,6 +6,6 @@ namespace MagicGradients
     [TypeConverter(typeof(CssGradientSourceTypeConverter))]
     public interface IGradientSource
     {
-        IEnumerable<IGradient> GetGradients();
+        IEnumerable<Gradient> GetGradients();
     }
 }

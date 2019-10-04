@@ -13,15 +13,15 @@ namespace MagicGradients.Parser.TokenDefinitions
 
             if (TryConvertDegreeToAngle(direction, out var degreeToAngle))
             {
-                builder.AddGradient(degreeToAngle);
+                builder.AddLinearGradient(degreeToAngle);
             }
             else if (TryConvertNamedDirectionToAngle(direction, out var directionToAngle))
             {
-                builder.AddGradient(directionToAngle);
+                builder.AddLinearGradient(directionToAngle);
             }
             else
             {
-                builder.AddGradient(0);
+                builder.AddLinearGradient(0);
                 reader.Rollback();
             }
         }

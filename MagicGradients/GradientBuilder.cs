@@ -6,15 +6,27 @@ namespace MagicGradients
 {
     public class GradientBuilder
     {
-        private readonly List<IGradient> _gradients = new List<IGradient>();
-        private IGradient _lastGradient;
+        private readonly List<Gradient> _gradients = new List<Gradient>();
+        private Gradient _lastGradient;
 
-        public GradientBuilder AddGradient(double angle)
+        public GradientBuilder AddLinearGradient(double angle)
         {
             _lastGradient = new LinearGradient
             {
                 Angle = angle,
-                Stops = new List<ColorStop>()
+                Stops = new List<GradientStop>()
+            };
+
+            _gradients.Add(_lastGradient);
+
+            return this;
+        }
+
+        public GradientBuilder AddRadialGradient()
+        {
+            _lastGradient = new RadialGradient
+            {
+                Stops = new List<GradientStop>()
             };
 
             _gradients.Add(_lastGradient);
@@ -26,10 +38,10 @@ namespace MagicGradients
         {
             if (_lastGradient == null)
             {
-                AddGradient(0);
+                AddLinearGradient(0);
             }
 
-            var stop = new ColorStop
+            var stop = new GradientStop
             {
                 Color = color,
                 Offset = offset ?? -1
@@ -40,7 +52,7 @@ namespace MagicGradients
             return this;
         }
 
-        public IGradient[] Build()
+        public Gradient[] Build()
         {
             foreach (var gradient in _gradients)
             {
@@ -49,7 +61,7 @@ namespace MagicGradients
             return _gradients.ToArray();
         }
 
-        private void SetupUndefinedOffsets(IGradient gradient)
+        private void SetupUndefinedOffsets(Gradient gradient)
         {
             var undefinedStops = gradient.Stops.Where(x => x.Offset < 0).ToArray();
 

@@ -6,8 +6,8 @@ namespace MagicGradients
     [ContentProperty(nameof(Gradients))]
     public class GradientSource : BindableObject, IGradientSource
     {
-        public IList<IGradient> Gradients { get; set; } = new List<IGradient>();
+        public IList<Gradient> Gradients { get; set; } = new List<Gradient>();
 
-        public IEnumerable<IGradient> GetGradients() => Gradients;
+        public IEnumerable<Gradient> GetGradients() => Gradients;
     }
 }

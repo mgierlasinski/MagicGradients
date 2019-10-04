@@ -18,7 +18,7 @@ namespace MagicGradients.Parser
             };
         }
 
-        public IGradient[] ParseCss(string css)
+        public Gradient[] ParseCss(string css)
         {
             var builder = new GradientBuilder();
 

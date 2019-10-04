@@ -18,7 +18,7 @@ namespace MagicGradients
             set => SetValue(StylesheetProperty, value);
         }
 
-        public IEnumerable<IGradient> GetGradients()
+        public IEnumerable<Gradient> GetGradients()
         {
             return new CssGradientParser().ParseCss(Stylesheet);
         }

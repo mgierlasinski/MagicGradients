@@ -9,8 +9,8 @@
             <magic:GradientView.GradientSource>
                 <magic:GradientSource>
                     <magic:LinearGradient Angle="45">
-                        <magic:ColorStop Color="Red" Offset="0" />
-                        <magic:ColorStop Color="Yellow" Offset="1" />
+                        <magic:GradientStop Color="Red" Offset="0" />
+                        <magic:GradientStop Color="Yellow" Offset="1" />
                     </magic:LinearGradient>
                 </magic:GradientSource>
             </magic:GradientView.GradientSource>
@@ -18,10 +18,10 @@
         <magic:GradientView VerticalOptions="FillAndExpand">
             <magic:GradientView.GradientSource>
                 <magic:GradientSource>
-                    <magic:LinearGradient Angle="45" IsRepeating="True">
-                        <magic:ColorStop Color="Orange" Offset="0" />
-                        <magic:ColorStop Color="LightGreen" Offset="0.1" />
-                        <magic:ColorStop Color="Blue" Offset="0.2" />
+                    <magic:LinearGradient Angle="45">
+                        <magic:GradientStop Color="Orange" Offset="0" />
+                        <magic:GradientStop Color="LightGreen" Offset="0.1" />
+                        <magic:GradientStop Color="Blue" Offset="1" />
                     </magic:LinearGradient>
                 </magic:GradientSource>
             </magic:GradientView.GradientSource>

@@ -1,29 +1,22 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Xamarin.Forms;
 
 namespace MagicGradients
 {
-    [ContentProperty(nameof(Stops))]
-    public class LinearGradient : BindableObject, IGradient
+    public class LinearGradient : Gradient
     {
-        public IList<ColorStop> Stops { get; set; } = new List<ColorStop>();
-
         public double Angle { get; set; }
 
-        public bool IsRepeating { get; set; }
-
-        public SKShader CreateShader(SKPaint paint, SKImageInfo info)
+        public override SKShader CreateShader(SKPaint paint, SKImageInfo info)
         {
             var (startPoint, endPoint) = GetGradientPoints(info.Width, info.Height, Angle);
 
             var orderedStops = Stops.OrderBy(x => x.Offset).ToArray();
             var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = orderedStops.Select(x => x.Offset).ToArray();
-            var tileMode = IsRepeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp;
+            var tileMode = SKShaderTileMode.Clamp;
 
             return SKShader.CreateLinearGradient(startPoint, endPoint, colors, colorPos, tileMode);
         }
