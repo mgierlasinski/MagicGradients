@@ -8,7 +8,7 @@ Initial release is available via NuGet as a prerelease version (make sure you ha
 
 | Package | Version |
 |---|---|
-| MagicGradients |![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)|
+| MagicGradients |[![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients)|
 
 ## Depencendies
 
