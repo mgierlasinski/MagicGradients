@@ -63,7 +63,7 @@ namespace Playground.ViewModels
                 var parser = new CssGradientParser();
                 var gradients = parser.ParseCss(CssCode);
 
-                GradientSource = new GradientSource
+                GradientSource = new GradientCollection
                 {
                     Gradients = gradients.ToList()
                 };
