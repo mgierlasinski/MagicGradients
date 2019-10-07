@@ -35,23 +35,30 @@ namespace MagicGradients
             set => SetValue(RadiusYProperty, value);
         }
 
-        public static readonly BindableProperty MetricsProperty = BindableProperty.Create(
-            nameof(Metrics), typeof(MetricsType), typeof(RadialGradient), default(MetricsType));
+        public static readonly BindableProperty FlagsProperty = BindableProperty.Create(
+            nameof(Flags), typeof(RadialGradientFlags), typeof(RadialGradient), RadialGradientFlags.PositionProportional);
 
-        public MetricsType Metrics
+        public RadialGradientFlags Flags
         {
-            get => (MetricsType)GetValue(MetricsProperty);
-            set => SetValue(MetricsProperty, value);
+            get => (RadialGradientFlags)GetValue(FlagsProperty);
+            set => SetValue(FlagsProperty, value);
         }
 
         public override SKShader CreateShader(SKPaint paint, SKImageInfo info)
         {
-            var center = Metrics == MetricsType.Relative ?
-                new SKPoint(info.Width * (float)Center.X, info.Height * (float)Center.Y) :
-                Center.ToSKPoint();
+            var widthIsProportional = (Flags & RadialGradientFlags.WidthProportional) != 0;
+            var heightIsProportional = (Flags & RadialGradientFlags.HeightProportional) != 0;
+            var xIsProportional = (Flags & RadialGradientFlags.XProportional) != 0;
+            var yIsProportional = (Flags & RadialGradientFlags.YProportional) != 0;
 
-            var radiusX = Metrics == MetricsType.Relative ? info.Width * RadiusX : RadiusX;
-            var radiusY = Metrics == MetricsType.Relative ? info.Height * RadiusY : RadiusY;
+            var point = Center.ToSKPoint();
+
+            var center = new SKPoint(
+                xIsProportional ? info.Width * point.X : point.X,
+                yIsProportional ? info.Height * point.Y : point.Y);
+
+            var radiusX = widthIsProportional ? info.Width * RadiusX : RadiusX;
+            var radiusY = heightIsProportional ? info.Height * RadiusY : RadiusY;
             var radius = Math.Min(radiusX, radiusY);
 
             var orderedStops = Stops.OrderBy(x => x.Offset).ToArray();
