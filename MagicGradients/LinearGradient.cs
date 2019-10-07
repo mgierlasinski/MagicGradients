@@ -2,12 +2,20 @@
 using SkiaSharp.Views.Forms;
 using System;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace MagicGradients
 {
     public class LinearGradient : Gradient
     {
-        public double Angle { get; set; }
+        public static readonly BindableProperty AngleProperty = BindableProperty.Create(
+            nameof(Angle), typeof(double), typeof(LinearGradient), 0d);
+
+        public double Angle
+        {
+            get => (double)GetValue(AngleProperty);
+            set => SetValue(AngleProperty, value);
+        }
 
         public override SKShader CreateShader(SKPaint paint, SKImageInfo info)
         {

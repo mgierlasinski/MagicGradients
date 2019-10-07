@@ -2,9 +2,9 @@
 
 namespace Playground.Views
 {
-    public partial class InlineGradientPage : ContentPage
+    public partial class LinearGradientsPageCss : ContentPage
     {
-        public InlineGradientPage()
+        public LinearGradientsPageCss()
         {
             InitializeComponent();
         }

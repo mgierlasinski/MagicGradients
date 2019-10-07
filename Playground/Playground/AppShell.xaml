@@ -31,10 +31,16 @@
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
-    <FlyoutItem Title="Inline">
+    <FlyoutItem Title="Linear Gradients">
         <Tab>
-            <ShellContent Title="Inline Gradient" ContentTemplate="{DataTemplate local:InlineGradientPage}" />
-            <ShellContent Title="Inline CSS Gradient" ContentTemplate="{DataTemplate local:InlineCssGradientPage}" />
+            <ShellContent Title="Linear Gradients" ContentTemplate="{DataTemplate local:LinearGradientsPage}" />
+            <ShellContent Title="Linear Gradients in CSS" ContentTemplate="{DataTemplate local:LinearGradientsPageCss}" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Radial Gradients">
+        <Tab>
+            <ShellContent Title="Radial Gradients" ContentTemplate="{DataTemplate local:RadialGradientsPage}" />
         </Tab>
     </FlyoutItem>
 
