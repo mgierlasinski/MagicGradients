@@ -27,6 +27,28 @@ namespace MagicGradients
         {
             _lastGradient = new RadialGradient
             {
+                Center = new Point(0.5, 0.5),
+                RadiusX = 1, 
+                RadiusY = 1,
+                Flags = RadialGradientFlags.All,
+                Stops = new List<GradientStop>()
+            };
+
+            _gradients.Add(_lastGradient);
+
+            return this;
+        }
+
+        public GradientBuilder AddRadialGradient(Point center, RadialGradientShape shape, RadialGradientShapeSize size)
+        {
+            _lastGradient = new RadialGradient
+            {
+                Center = center,
+                Shape = shape,
+                ShapeSize = size,
+                RadiusX = 1,
+                RadiusY = 1,
+                Flags = RadialGradientFlags.All,
                 Stops = new List<GradientStop>()
             };
 

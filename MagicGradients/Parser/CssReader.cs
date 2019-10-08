@@ -9,11 +9,20 @@ namespace MagicGradients.Parser
 
         public bool CanRead => _cursor < _tokens.Length;
 
+        public bool HasMoreElements => _cursor + 1 < _tokens.Length;
+
         public CssReader(string css)
         {
             _tokens = css
                 .Replace("\r\n", "")
                 .Split(new[] { '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
+        }
+
+        public CssReader(string css, char[] separator)
+        {
+            _tokens = css
+                .Replace("\r\n", "")
+                .Split(separator, StringSplitOptions.RemoveEmptyEntries);
         }
 
         public string Read()
@@ -33,14 +42,13 @@ namespace MagicGradients.Parser
 
         public string ReadNext()
         {
-            MoveNext();
-
-            if (!CanRead)
+            if (HasMoreElements)
             {
-                return string.Empty;
+                MoveNext();
+                return Read();
             }
 
-            return Read();
+            return string.Empty;
         }
     }
 }

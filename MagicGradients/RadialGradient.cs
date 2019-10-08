@@ -43,6 +43,24 @@ namespace MagicGradients
             set => SetValue(FlagsProperty, value);
         }
 
+        public static readonly BindableProperty ShapeProperty = BindableProperty.Create(
+            nameof(Shape), typeof(RadialGradientShape), typeof(RadialGradient), RadialGradientShape.Custom);
+
+        public RadialGradientShape Shape
+        {
+            get => (RadialGradientShape)GetValue(ShapeProperty);
+            set => SetValue(ShapeProperty, value);
+        }
+
+        public static readonly BindableProperty ShapeSizeProperty = BindableProperty.Create(
+            nameof(ShapeSize), typeof(RadialGradientShapeSize), typeof(RadialGradient), RadialGradientShapeSize.FarthestCorner);
+
+        public RadialGradientShapeSize ShapeSize
+        {
+            get => (RadialGradientShapeSize)GetValue(ShapeSizeProperty);
+            set => SetValue(ShapeSizeProperty, value);
+        }
+
         public RadialGradient()
         {
             _renderer = new RadialGradientRenderer(this);
