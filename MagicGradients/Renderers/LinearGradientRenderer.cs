@@ -42,9 +42,8 @@ namespace MagicGradients.Renderers
         private void ReCalculatePoints(ref SKPoint startPoint, ref SKPoint endPoint, float offset)
         {
             var anglePercent = _gradient.Angle / 360 % 1;
-            if (anglePercent >= -0.99 && anglePercent <= -0.751 ||
-                anglePercent >= -0.5 && anglePercent <= -0.251 ||
-                anglePercent >= 0 && anglePercent <= 0.249 ||
+            if (anglePercent >= -0.749 && anglePercent <= -0.5 ||
+                anglePercent >= -0.249 && anglePercent <= 0.25 ||
                 anglePercent >= 0.5 && anglePercent <= 0.749)
             {
                 endPoint.Y = endPoint.Y * offset;
