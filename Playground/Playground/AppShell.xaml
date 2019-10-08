@@ -34,7 +34,9 @@
     <FlyoutItem Title="Linear Gradients">
         <Tab>
             <ShellContent Title="Linear Gradients" ContentTemplate="{DataTemplate local:LinearGradientsPage}" />
+            <ShellContent Title="Repeating Gradients" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPage}" />
             <ShellContent Title="Linear Gradients in CSS" ContentTemplate="{DataTemplate local:LinearGradientsPageCss}" />
+            <ShellContent Title="Repeating Gradients in CSS" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPageCss}" />
         </Tab>
     </FlyoutItem>
 

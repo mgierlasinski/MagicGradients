@@ -43,7 +43,7 @@ namespace MagicGradients.Renderers
         {
             var anglePercent = _gradient.Angle / 360 % 1;
             if (anglePercent >= -0.749 && anglePercent <= -0.5 ||
-                anglePercent >= -0.249 && anglePercent <= 0.25 ||
+                anglePercent >= -0.249 && anglePercent <= 0.249 ||
                 anglePercent >= 0.5 && anglePercent <= 0.749)
             {
                 endPoint.Y = endPoint.Y * offset;
