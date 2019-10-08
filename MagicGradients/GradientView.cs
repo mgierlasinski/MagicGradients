@@ -1,3 +1,4 @@
+using MagicGradients.Renderers;
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
@@ -30,10 +31,7 @@ namespace MagicGradients
         {
             base.OnPaintSurface(e);
 
-            var info = e.Info;
-            var surface = e.Surface;
-            var canvas = surface.Canvas;
-
+            var canvas = e.Surface.Canvas;
             canvas.Clear();
 
             if (GradientSource == null)
@@ -41,10 +39,11 @@ namespace MagicGradients
 
             using (var paint = new SKPaint())
             {
+                var context = new RenderContext(canvas, paint, e.Info);
+
                 foreach (var gradient in GradientSource.GetGradients())
                 {
-                    paint.Shader = gradient.CreateShader(paint, info);
-                    canvas.DrawRect(info.Rect, paint);
+                    gradient.Render(context);
                 }
             }
         }

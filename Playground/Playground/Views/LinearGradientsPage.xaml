@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             x:Class="Playground.Views.InlineGradientPage" 
-             Title="Inline Gradient">
+             x:Class="Playground.Views.LinearGradientsPage" 
+             Title="Linear Gradients">
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">
             <magic:GradientView.GradientSource>
-                <magic:LinearGradient Angle="45">
+                <magic:LinearGradient Angle="90">
                     <magic:GradientStop Color="Red" Offset="0" />
                     <magic:GradientStop Color="Yellow" Offset="1" />
                 </magic:LinearGradient>

@@ -1,4 +1,4 @@
-﻿using SkiaSharp;
+﻿using MagicGradients.Renderers;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -9,7 +9,7 @@ namespace MagicGradients
     {
         public IList<GradientStop> Stops { get; set; } = new List<GradientStop>();
 
-        public abstract SKShader CreateShader(SKPaint paint, SKImageInfo info);
+        public abstract void Render(RenderContext context);
 
         public IEnumerable<Gradient> GetGradients()
         {
