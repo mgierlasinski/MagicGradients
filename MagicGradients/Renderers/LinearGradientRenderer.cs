@@ -1,6 +1,7 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MagicGradients.Renderers
@@ -25,7 +26,7 @@ namespace MagicGradients.Renderers
             if (_gradient.Repeating && orderedStops.Length != 0)
             {
                 ReCalculatePoints(ref startPoint, ref endPoint, orderedStops.Last().Offset);
-                colorPos[colorPos.Length - 1] = 1;
+                colorPos = ReCalculatePositions(colorPos);
             }
 
             var shader = SKShader.CreateLinearGradient(
@@ -37,6 +38,12 @@ namespace MagicGradients.Renderers
 
             context.Paint.Shader = shader;
             context.Canvas.DrawRect(context.Info.Rect, context.Paint);
+        }
+
+        private float[] ReCalculatePositions(float[] colorPos)
+        {
+            var lastPosition = colorPos[colorPos.Length - 1];
+            return colorPos.Select(pos => pos / lastPosition).ToArray();
         }
 
         private void ReCalculatePoints(ref SKPoint startPoint, ref SKPoint endPoint, float offset)
