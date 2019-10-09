@@ -11,26 +11,18 @@ namespace MagicGradients.Parser.TokenDefinitions
         {
             var parts = reader.Read().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            var color = parts.Length > 0
-                ? (Color)ColorConverter.ConvertFromInvariantString(parts[0])
-                : Color.Black;
+            var color = (Color)ColorConverter.ConvertFromInvariantString(parts[0]);
 
-            if (parts.Length == 1)
+            if (parts.TryConvertOffsets(out var offsets))
             {
-                builder.AddStop(color);
-                return;
-            }
-
-            for (var i = 1; i < parts.Length; i++)
-            {
-                if (TryConvertPercentToOffset(parts[i], out var offset))
+                foreach (var offset in offsets)
                 {
                     builder.AddStop(color, offset);
                 }
-                else
-                {
-                    builder.AddStop(color);
-                }
+            }
+            else
+            {
+                builder.AddStop(color);
             }
         }
     }

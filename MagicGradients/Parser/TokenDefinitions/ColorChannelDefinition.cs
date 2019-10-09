@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -18,25 +19,17 @@ namespace MagicGradients.Parser.TokenDefinitions
 
             var parts = reader.ReadNext().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (parts.Length == 0)
+            if (parts.TryConvertOffsets(out var offsets))
             {
-                builder.AddStop(color);
-            }
-
-            for (var i = 0; i < parts.Length; i++)
-            {
-                if (TryConvertPercentToOffset(parts[i], out var offset))
+                foreach (var offset in offsets)
                 {
                     builder.AddStop(color, offset);
                 }
-                else
-                {
-                    builder.AddStop(color);
-                    if (parts.Length == 1)
-                    {
-                        reader.Rollback();
-                    }
-                }
+            }
+            else
+            {
+                builder.AddStop(color);
+                reader.Rollback();
             }
         }
 
