@@ -85,11 +85,8 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
         [InlineData("100%", 1, true)]
         public void TryConvertPercentToOffset_ConvertingToken_SuccessAndResultConvertedCorrectly(string token, float expectedResult, bool expectedSuccess)
         {
-            // Arrange
-            var definition = new ColorChannelDefinition();
-
-            // Act
-            var success = definition.TryConvertPercentToOffset(token, out var result);
+            // Arrange & Act
+            var success = token.TryConvertOffset(out var result);
 
             // Assert
             success.Should().Be(expectedSuccess);
