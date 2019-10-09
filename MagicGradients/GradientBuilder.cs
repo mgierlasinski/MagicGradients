@@ -9,11 +9,12 @@ namespace MagicGradients
         private readonly List<Gradient> _gradients = new List<Gradient>();
         private Gradient _lastGradient;
 
-        public GradientBuilder AddLinearGradient(double angle)
+        public GradientBuilder AddLinearGradient(double angle, bool repeating)
         {
             _lastGradient = new LinearGradient
             {
                 Angle = angle,
+                Repeating = repeating,
                 Stops = new List<GradientStop>()
             };
 
@@ -38,7 +39,7 @@ namespace MagicGradients
         {
             if (_lastGradient == null)
             {
-                AddLinearGradient(0);
+                AddLinearGradient(0, false);
             }
 
             var stop = new GradientStop

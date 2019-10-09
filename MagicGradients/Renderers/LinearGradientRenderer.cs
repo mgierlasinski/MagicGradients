@@ -22,7 +22,7 @@ namespace MagicGradients.Renderers
             var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = orderedStops.Select(x => x.Offset).ToArray();
 
-            if (_gradient.Repeating)
+            if (_gradient.Repeating && orderedStops.Length != 0)
             {
                 ReCalculatePoints(ref startPoint, ref endPoint, orderedStops.Last().Offset);
                 colorPos[colorPos.Length - 1] = 1;

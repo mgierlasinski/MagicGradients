@@ -5,23 +5,26 @@ namespace MagicGradients.Parser.TokenDefinitions
 {
     public class LinearGradientDefinition : ITokenDefinition
     {
-        public bool IsMatch(string token) => token == CssToken.LinearGradient;
+        public bool IsMatch(string token) =>
+            token == CssToken.LinearGradient ||
+            token == CssToken.RepeatingLinearGradient;
 
         public void Parse(CssReader reader, GradientBuilder builder)
         {
+            var repeating = reader.Read() == CssToken.RepeatingLinearGradient;
             var direction = reader.ReadNext().Trim();
 
             if (TryConvertDegreeToAngle(direction, out var degreeToAngle))
             {
-                builder.AddLinearGradient(degreeToAngle);
+                builder.AddLinearGradient(degreeToAngle, repeating);
             }
             else if (TryConvertNamedDirectionToAngle(direction, out var directionToAngle))
             {
-                builder.AddLinearGradient(directionToAngle);
+                builder.AddLinearGradient(directionToAngle, repeating);
             }
             else
             {
-                builder.AddLinearGradient(0);
+                builder.AddLinearGradient(0, repeating);
                 reader.Rollback();
             }
         }
@@ -33,7 +36,7 @@ namespace MagicGradients.Parser.TokenDefinitions
                 var index = token.LastIndexOf("deg", StringComparison.OrdinalIgnoreCase);
                 var degreesStr = token.Substring(0, index);
 
-                if(double.TryParse(degreesStr, NumberStyles.Any, CultureInfo.InvariantCulture, out var degrees))
+                if (double.TryParse(degreesStr, NumberStyles.Any, CultureInfo.InvariantCulture, out var degrees))
                 {
                     angle = CssHelpers.FromDegrees(degrees);
                     return true;
@@ -46,7 +49,7 @@ namespace MagicGradients.Parser.TokenDefinitions
 
         internal bool TryConvertNamedDirectionToAngle(string token, out double angle)
         {
-            var parts = token.Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries);
+            var parts = token.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (parts.Length > 1 && parts[0] == "to")
             {
@@ -68,7 +71,7 @@ namespace MagicGradients.Parser.TokenDefinitions
                 {
                     angle = 360 - angle;
                 }
-                
+
                 return true;
             }
 
