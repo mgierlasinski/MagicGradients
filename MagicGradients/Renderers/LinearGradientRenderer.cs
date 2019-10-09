@@ -23,7 +23,7 @@ namespace MagicGradients.Renderers
             var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = orderedStops.Select(x => x.Offset).ToArray();
 
-            if (_gradient.Repeating && orderedStops.Length != 0)
+            if (_gradient.IsRepeating && orderedStops.Length != 0)
             {
                 ReCalculatePoints(ref startPoint, ref endPoint, orderedStops.Last().Offset);
                 colorPos = ReCalculatePositions(colorPos);
@@ -34,7 +34,7 @@ namespace MagicGradients.Renderers
                 endPoint,
                 colors,
                 colorPos,
-                _gradient.Repeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp);
+                _gradient.IsRepeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp);
 
             context.Paint.Shader = shader;
             context.Canvas.DrawRect(context.Info.Rect, context.Paint);

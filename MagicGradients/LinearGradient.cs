@@ -16,13 +16,13 @@ namespace MagicGradients
             set => SetValue(AngleProperty, value);
         }
 
-        public static readonly BindableProperty RepeatingProperty = BindableProperty.Create(
-            nameof(Repeating), typeof(bool), typeof(LinearGradient), false);
+        public static readonly BindableProperty IsRepeatingProperty = BindableProperty.Create(
+            nameof(IsRepeating), typeof(bool), typeof(LinearGradient), false);
 
-        public bool Repeating
+        public bool IsRepeating
         {
-            get => (bool)GetValue(RepeatingProperty);
-            set => SetValue(RepeatingProperty, value);
+            get => (bool)GetValue(IsRepeatingProperty);
+            set => SetValue(IsRepeatingProperty, value);
         }
 
         public LinearGradient()
