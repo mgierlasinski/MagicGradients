@@ -11,7 +11,7 @@ namespace MagicGradients.Parser.TokenDefinitions
 
         public void Parse(CssReader reader, GradientBuilder builder)
         {
-            var repeating = reader.Read() == CssToken.RepeatingLinearGradient;
+            var repeating = reader.Read().Trim() == CssToken.RepeatingLinearGradient;
             var direction = reader.ReadNext().Trim();
 
             if (TryConvertDegreeToAngle(direction, out var degreeToAngle))

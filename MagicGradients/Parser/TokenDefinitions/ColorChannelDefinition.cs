@@ -16,14 +16,37 @@ namespace MagicGradients.Parser.TokenDefinitions
         {
             var color = (Color)ColorConverter.ConvertFromInvariantString(GetColorString(reader));
 
-            if (TryConvertPercentToOffset(reader.ReadNext(), out var offset))
-            {
-                builder.AddStop(color, offset);
-            }
-            else
+            //if (TryConvertPercentToOffset(reader.ReadNext(), out var offset))
+            //{
+            //    builder.AddStop(color, offset);
+            //}
+            //else
+            //{
+            //    builder.AddStop(color);
+            //    reader.Rollback();
+            //}
+
+            var parts = reader.ReadNext().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length == 0)
             {
                 builder.AddStop(color);
-                reader.Rollback();
+            }
+
+            for (var i = 0; i < parts.Length; i++)
+            {
+                if (TryConvertPercentToOffset(parts[i], out var offset))
+                {
+                    builder.AddStop(color, offset);
+                }
+                else
+                {
+                    builder.AddStop(color);
+                    if (parts.Length == 1)
+                    {
+                        reader.Rollback();
+                    }
+                }
             }
         }
 
