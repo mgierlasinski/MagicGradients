@@ -17,7 +17,7 @@ namespace MagicGradients
         }
 
         public static readonly BindableProperty RadiusXProperty = BindableProperty.Create(
-            nameof(RadiusXProperty), typeof(float), typeof(RadialGradient), 0f);
+            nameof(RadiusXProperty), typeof(float), typeof(RadialGradient), -1f);
 
         public float RadiusX
         {
@@ -26,7 +26,7 @@ namespace MagicGradients
         }
 
         public static readonly BindableProperty RadiusYProperty = BindableProperty.Create(
-            nameof(RadiusYProperty), typeof(float), typeof(RadialGradient), 0f);
+            nameof(RadiusYProperty), typeof(float), typeof(RadialGradient), -1f);
 
         public float RadiusY
         {
@@ -44,7 +44,7 @@ namespace MagicGradients
         }
 
         public static readonly BindableProperty ShapeProperty = BindableProperty.Create(
-            nameof(Shape), typeof(RadialGradientShape), typeof(RadialGradient), RadialGradientShape.Custom);
+            nameof(Shape), typeof(RadialGradientShape), typeof(RadialGradient), RadialGradientShape.Ellipse);
 
         public RadialGradientShape Shape
         {

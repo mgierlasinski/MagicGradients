@@ -15,8 +15,9 @@ namespace MagicGradients.Parser.TokenDefinitions
             var shape = GetShape(internalReader);
             var shapeSize = GetShapeSize(internalReader);
             var position = GetPosition(internalReader);
+            var flags = GetFlags(position);
 
-            builder.AddRadialGradient(position, shape, shapeSize);
+            builder.AddRadialGradient(position, flags, shape, shapeSize);
         }
 
         private RadialGradientShape GetShape(CssReader reader)
@@ -62,8 +63,8 @@ namespace MagicGradients.Parser.TokenDefinitions
                     var tokenX = reader.ReadNext();
                     var tokenY = reader.ReadNext();
 
-                    var isPosX = tokenX.TryConvertPercentToProportion(out var posX);
-                    var isPosY = tokenY.TryConvertPercentToProportion(out var posY);
+                    var isPosX = tokenX.TryConvertOffset(out var posX);
+                    var isPosY = tokenY.TryConvertOffset(out var posY);
 
                     var direction = Vector2.Zero;
 
@@ -84,6 +85,23 @@ namespace MagicGradients.Parser.TokenDefinitions
             }
 
             return new Point(0.5, 0.5);
+        }
+
+        private RadialGradientFlags GetFlags(Point position)
+        {
+            var flags = RadialGradientFlags.None;
+
+            if (position.X <= 1)
+            {
+                flags |= RadialGradientFlags.XProportional;
+            }
+
+            if (position.Y <= 1)
+            {
+                flags |= RadialGradientFlags.YProportional;
+            }
+
+            return flags;
         }
     }
 }

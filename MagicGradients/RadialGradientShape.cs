@@ -3,15 +3,14 @@
     public enum RadialGradientShape
     {
         Ellipse, 
-        Circle, 
-        Custom
+        Circle
     }
 
     public enum RadialGradientShapeSize
     {
-        ClosestCorner,
-        FarthestCorner,
-        ClosestSide,
-        FarthestSide
+        ClosestSide = 1,
+        ClosestCorner = 2,
+        FarthestSide = 3,
+        FarthestCorner = 4
     }
 }
