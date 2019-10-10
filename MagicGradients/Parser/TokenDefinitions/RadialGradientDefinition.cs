@@ -36,20 +36,20 @@ namespace MagicGradients.Parser.TokenDefinitions
             return RadialGradientShape.Ellipse;
         }
 
-        private RadialGradientShapeSize GetShapeSize(CssReader reader)
+        private RadialGradientSize GetShapeSize(CssReader reader)
         {
             if (reader.CanRead)
             {
                 var token = reader.Read().Replace("-", "").Trim();
 
-                if (Enum.TryParse<RadialGradientShapeSize>(token, true, out var shapeSize))
+                if (Enum.TryParse<RadialGradientSize>(token, true, out var shapeSize))
                 {
                     reader.MoveNext();
                     return shapeSize;
                 }
             }
 
-            return RadialGradientShapeSize.FarthestCorner;
+            return RadialGradientSize.FarthestCorner;
         }
 
         private Point GetPosition(CssReader reader)

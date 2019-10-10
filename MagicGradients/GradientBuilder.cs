@@ -23,14 +23,14 @@ namespace MagicGradients
             return this;
         }
 
-        public GradientBuilder AddRadialGradient(Point center, RadialGradientFlags flags, RadialGradientShape shape, RadialGradientShapeSize size)
+        public GradientBuilder AddRadialGradient(Point center, RadialGradientFlags flags, RadialGradientShape shape, RadialGradientSize size)
         {
             _lastGradient = new RadialGradient
             {
                 Center = center,
                 Flags = flags,
                 Shape = shape,
-                ShapeSize = size,
+                Size = size,
                 Stops = new List<GradientStop>()
             };
 
@@ -53,6 +53,16 @@ namespace MagicGradients
             };
 
             _lastGradient.Stops.Add(stop);
+
+            return this;
+        }
+
+        public GradientBuilder AddStops(Color color, IEnumerable<float> offsets)
+        {
+            foreach (var offset in offsets)
+            {
+                AddStop(color, offset);
+            }
 
             return this;
         }

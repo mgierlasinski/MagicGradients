@@ -52,13 +52,13 @@ namespace MagicGradients
             set => SetValue(ShapeProperty, value);
         }
 
-        public static readonly BindableProperty ShapeSizeProperty = BindableProperty.Create(
-            nameof(ShapeSize), typeof(RadialGradientShapeSize), typeof(RadialGradient), RadialGradientShapeSize.FarthestCorner);
+        public static readonly BindableProperty SizeProperty = BindableProperty.Create(
+            nameof(Size), typeof(RadialGradientSize), typeof(RadialGradient), RadialGradientSize.FarthestCorner);
 
-        public RadialGradientShapeSize ShapeSize
+        public RadialGradientSize Size
         {
-            get => (RadialGradientShapeSize)GetValue(ShapeSizeProperty);
-            set => SetValue(ShapeSizeProperty, value);
+            get => (RadialGradientSize)GetValue(SizeProperty);
+            set => SetValue(SizeProperty, value);
         }
 
         public RadialGradient()

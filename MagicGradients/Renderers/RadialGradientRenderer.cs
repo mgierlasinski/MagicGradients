@@ -58,30 +58,22 @@ namespace MagicGradients.Renderers
             if (_gradient.Shape == RadialGradientShape.Ellipse)
             {
                 var distances = GetDistanceInPoints(center, info);
+                var distanceX = distances.Select(p => Math.Abs(p.X)).Where(x => x > 0);
+                var distanceY = distances.Select(p => Math.Abs(p.Y)).Where(y => y > 0);
 
-                // Closest
-                if ((int)_gradient.ShapeSize < 3)
-                {
-                    radiusX = distances.Where(x => IsNotEmpty(x.X)).OrderBy(x => x.Length).Select(x => Math.Abs(x.X)).First();
-                    radiusY = distances.Where(x => IsNotEmpty(x.Y)).OrderBy(x => x.Length).Select(x => Math.Abs(x.Y)).First();
-                }
-                // Farthest
-                else
-                {
-                    radiusX = distances.Where(x => IsNotEmpty(x.X)).OrderByDescending(x => x.Length).Select(x => Math.Abs(x.X)).First();
-                    radiusY = distances.Where(x => IsNotEmpty(x.Y)).OrderByDescending(x => x.Length).Select(x => Math.Abs(x.Y)).First();
-                }
+                // https://github.com/mgierlasinski/MagicGradients/issues/25
 
-                bool IsNotEmpty(float value) => Math.Abs(value) > 0.0001;
+                radiusX = _gradient.Size.IsClosest() ? distanceX.Min() : distanceX.Max();
+                radiusY = _gradient.Size.IsClosest() ? distanceY.Min() : distanceY.Max();
             }
 
             if (_gradient.Shape == RadialGradientShape.Circle)
             {
                 var distances = GetEuclideanDistance(center, info);
-                var distance = (int)_gradient.ShapeSize < 3 ? distances.Min() : distances.Max();
+                var distanceXY = _gradient.Size.IsClosest() ? distances.Min() : distances.Max();
 
-                radiusX = distance;
-                radiusY = distance;
+                radiusX = distanceXY;
+                radiusY = distanceXY;
             }
 
             if (_gradient.RadiusX > -1)
@@ -127,7 +119,7 @@ namespace MagicGradients.Renderers
 
         private SKPoint[] GetDistanceInPoints(SKPoint center, SKImageInfo info)
         {
-            var points = (int)_gradient.ShapeSize % 2 == 0 ?
+            var points = _gradient.Size.IsCorner() ?
                 GetCornerPoints(info) :
                 GetSidePoints(center, info);
 
@@ -143,7 +135,7 @@ namespace MagicGradients.Renderers
 
         private float[] GetEuclideanDistance(SKPoint center, SKImageInfo info)
         {
-            var points = (int)_gradient.ShapeSize % 2 == 0 ?
+            var points = _gradient.Size.IsCorner() ?
                 GetCornerPoints(info) :
                 GetSidePoints(center, info);
 

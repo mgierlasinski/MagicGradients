@@ -42,13 +42,14 @@ namespace MagicGradients.Parser
 
         public string ReadNext()
         {
-            if (HasMoreElements)
+            MoveNext();
+
+            if (!CanRead)
             {
-                MoveNext();
-                return Read();
+                return string.Empty;
             }
 
-            return string.Empty;
+            return Read();
         }
     }
 }
