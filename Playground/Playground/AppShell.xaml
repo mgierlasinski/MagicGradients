@@ -34,15 +34,16 @@
     <FlyoutItem Title="Linear Gradients">
         <Tab>
             <ShellContent Title="Linear" ContentTemplate="{DataTemplate local:LinearGradientsPage}" />
-            <ShellContent Title="Linear Repeating" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPage}" />
+            <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPage}" />
             <ShellContent Title="Linear in CSS" ContentTemplate="{DataTemplate local:LinearGradientsPageCss}" />
-            <ShellContent Title="Linear Repeating in CSS" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPageCss}" />
+            <ShellContent Title="Repeating in CSS" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPageCss}" />
         </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="Radial Gradients">
         <Tab>
-            <ShellContent Title="Radial Gradients" ContentTemplate="{DataTemplate local:RadialGradientsPage}" />
+            <ShellContent Title="Radial" ContentTemplate="{DataTemplate local:RadialGradientsPage}" />
+            <ShellContent Title="Radial in CSS" ContentTemplate="{DataTemplate local:RadialGradientsPageCss}" />
         </Tab>
     </FlyoutItem>
 

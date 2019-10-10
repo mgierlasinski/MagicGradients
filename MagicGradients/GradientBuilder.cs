@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Xamarin.Forms;
 
 namespace MagicGradients
@@ -78,22 +77,17 @@ namespace MagicGradients
 
         private void SetupUndefinedOffsets(Gradient gradient)
         {
-            var undefinedStops = gradient.Stops.Where(x => x.Offset < 0).ToArray();
+            var step = 1f / (gradient.Stops.Count - 1);
+            var currentOffset = 0f;
 
-            if (undefinedStops.Length == 1)
+            foreach (var stop in gradient.Stops)
             {
-                undefinedStops[0].Offset = 0;
-            }
-            else if (undefinedStops.Length > 1)
-            {
-                var step = 1f / (undefinedStops.Length - 1);
-                var currentOffset = 0f;
-
-                foreach (var stop in undefinedStops)
+                if (stop.Offset < 0)
                 {
                     stop.Offset = currentOffset;
-                    currentOffset += step;
                 }
+                
+                currentOffset += step;
             }
         }
     }

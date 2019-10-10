@@ -1,0 +1,3 @@
+﻿.gradientStyledWithCss {
+    background: radial-gradient(circle farthest-side at 50% 50%, #FF0000 20%, #7F0000 60%, black 70%, gray);
+}

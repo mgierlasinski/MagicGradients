@@ -32,6 +32,9 @@
     <Compile Update="Views\GalleryPreviewPage.xaml.cs">
       <DependentUpon>GalleryPreviewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\RadialGradientsPageCss.xaml.cs">
+      <DependentUpon>RadialGradientsPageCss.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\RepeatingLinearGradientsPageCss.xaml.cs">
       <DependentUpon>RepeatingLinearGradientsPageCss.xaml</DependentUpon>
     </Compile>
