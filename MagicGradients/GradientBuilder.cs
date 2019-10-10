@@ -23,7 +23,7 @@ namespace MagicGradients
         }
 
         public GradientBuilder AddRadialGradient(Point center, RadialGradientShape shape, RadialGradientSize size, 
-            RadialGradientFlags flags = RadialGradientFlags.PositionProportional)
+            RadialGradientFlags flags = RadialGradientFlags.PositionProportional, bool isRepeating = false)
         {
             _lastGradient = new RadialGradient
             {
@@ -31,6 +31,7 @@ namespace MagicGradients
                 Shape = shape,
                 Size = size,
                 Flags = flags,
+                IsRepeating = isRepeating,
                 Stops = new List<GradientStop>()
             };
 

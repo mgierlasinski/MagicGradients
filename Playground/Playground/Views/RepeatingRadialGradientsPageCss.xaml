@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             x:Class="Playground.Views.RadialGradientsPageCss"
+             x:Class="Playground.Views.RepeatingRadialGradientsPageCss"
              Title="Radial Gradients">
     <ContentPage.Resources>
         <StyleSheet Source="../Styles/RadialGradientsPage.css" />
@@ -13,12 +13,12 @@
                 <magic:CssGradientSource>
                     <x:String>
                         <![CDATA[
-                            radial-gradient(ellipse at 50% top, red, green, blue)
+                            repeating-radial-gradient(ellipse closest-side, red 10%, green 20%, blue 30%, red 35%)
                         ]]>
                     </x:String>
                 </magic:CssGradientSource>
             </magic:GradientView.GradientSource>
         </magic:GradientView>
-        <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="terminatorEye" />
+        <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="repeatingCircles" />
     </StackLayout>
 </ContentPage>

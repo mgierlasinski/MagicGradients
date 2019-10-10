@@ -18,20 +18,21 @@ namespace MagicGradients.Renderers
         {
             var info = context.Info;
 
-            var center = GetCenter(info.Width, info.Height);
-            var (radiusX, radiusY) = GetRadius(center, info);
-            var radius = Math.Min(radiusX, radiusY);
-
             var orderedStops = _gradient.Stops.OrderBy(x => x.Offset).ToArray();
+            var lastOffset = _gradient.IsRepeating ? orderedStops.LastOrDefault()?.Offset ?? 1 : 1;
+
             var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
-            var colorPos = orderedStops.Select(x => x.Offset).ToArray();
+            var colorPos = orderedStops.Select(x => x.Offset / lastOffset).ToArray();
+
+            var center = GetCenter(info.Width, info.Height);
+            var (radiusX, radiusY) = GetRadius(center, info, lastOffset);
 
             var shader = SKShader.CreateRadialGradient(
                 center,
-                radius, 
+                Math.Min(radiusX, radiusY), 
                 colors, 
                 colorPos,
-                SKShaderTileMode.Clamp,
+                _gradient.IsRepeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp,
                 GetScaleMatrix(center, radiusX, radiusY));
 
             context.Paint.Shader = shader;
@@ -50,7 +51,7 @@ namespace MagicGradients.Renderers
                 yIsProportional ? height * point.Y : point.Y);
         }
 
-        private (float, float) GetRadius(SKPoint center, SKImageInfo info)
+        private (float, float) GetRadius(SKPoint center, SKImageInfo info, float offset)
         {
             var radiusX = 0f;
             var radiusY = 0f;
@@ -88,7 +89,7 @@ namespace MagicGradients.Renderers
                 radiusY = heightIsProportional ? info.Height * _gradient.RadiusY : _gradient.RadiusY;
             }
             
-            return (radiusX, radiusY);
+            return (radiusX * offset, radiusY * offset);
         }
 
         private SKPoint[] GetCornerPoints(SKImageInfo info)

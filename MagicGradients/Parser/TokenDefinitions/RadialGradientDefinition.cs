@@ -5,10 +5,14 @@ namespace MagicGradients.Parser.TokenDefinitions
 {
     public class RadialGradientDefinition : ITokenDefinition
     {
-        public bool IsMatch(string token) => token == CssToken.RadialGradient;
+        public bool IsMatch(string token) => 
+            token == CssToken.RadialGradient || 
+            token == CssToken.RepeatingRadialGradient;
 
         public void Parse(CssReader reader, GradientBuilder builder)
         {
+            var isRepeating = reader.Read().Trim() == CssToken.RepeatingRadialGradient;
+
             var token = reader.ReadNext().Trim();
             var internalReader = new CssReader(token, new[] { ' ' });
             
@@ -17,7 +21,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             var position = GetPosition(internalReader);
             var flags = GetFlags(position);
 
-            builder.AddRadialGradient(position, shape, shapeSize, flags);
+            builder.AddRadialGradient(position, shape, shapeSize, flags, isRepeating);
         }
 
         private RadialGradientShape GetShape(CssReader reader)
