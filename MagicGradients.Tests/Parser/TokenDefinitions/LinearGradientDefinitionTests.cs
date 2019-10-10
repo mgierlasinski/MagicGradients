@@ -1,5 +1,7 @@
 ﻿using System;
 using FluentAssertions;
+using FluentAssertions.Execution;
+using MagicGradients.Parser;
 using MagicGradients.Parser.TokenDefinitions;
 using Xunit;
 
@@ -7,6 +9,23 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
 {
     public class LinearGradientDefinitionTests
     {
+        [Theory]
+        [InlineData(CssToken.LinearGradient, true)]
+        [InlineData(CssToken.RepeatingLinearGradient, true)]
+        [InlineData(CssToken.Hsla, false)]
+        [InlineData(CssToken.Rgba, false)]
+        public void IsMatch_ProvidedToken_CorrectMatchResult(string token, bool expectedMatch)
+        {
+            // Arrange
+            var definition = new LinearGradientDefinition();
+
+            // Act
+            var isMatch = definition.IsMatch(token);
+
+            // Assert
+            isMatch.Should().Be(expectedMatch);
+        }
+
         [Theory]
         [InlineData("90deg", 270, true)]
         [InlineData("224deg", 44, true)]
@@ -80,6 +99,30 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
 
             // Assert
             action.Should().Throw<ArgumentOutOfRangeException>();
+        }
+
+        [Theory]
+        [MemberData(nameof(LinearGradientDefinitionTestsData.GradientParseData), MemberType = typeof(LinearGradientDefinitionTestsData))]
+        public void Parse_ValidGradientCss_ExpectedGradientReturned(string css, LinearGradient expectedGradient)
+        {
+            // Arrange
+            var reader = new CssReader(css);
+            var builder = new GradientBuilder();
+            var definition = new LinearGradientDefinition();
+
+            // Act
+            definition.Parse(reader, builder);
+
+            // Assert
+            var result = builder.Build();
+
+            using (new AssertionScope())
+            {
+                result.Should().HaveCount(1);
+                var linearGradient = result[0] as LinearGradient;
+                linearGradient.Should().NotBeNull();
+                linearGradient.Should().BeEquivalentTo(expectedGradient);
+            }
         }
     }
 }

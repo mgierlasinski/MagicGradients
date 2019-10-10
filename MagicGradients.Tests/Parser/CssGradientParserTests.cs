@@ -7,6 +7,23 @@ namespace MagicGradients.Tests.Parser
     public class CssGradientParserTests
     {
         [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        [InlineData(" ")]
+        public void ParseCss_EmptyCss_EmptyGradientArrayReturned(string css)
+        {
+            // Arrange
+            var parser = new CssGradientParser();
+
+            // Act
+            var gradients = parser.ParseCss(css);
+
+            // Assert
+            gradients.Should().NotBeNull();
+            gradients.Should().HaveCount(0);
+        }
+
+        [Theory]
         [MemberData(nameof(CssGradientParserTestData.SimpleGradients), MemberType = typeof(CssGradientParserTestData))]
         public void ParseCss_SimpleGradients_CorrectlyParsed(string css, LinearGradient expected)
         {
