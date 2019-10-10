@@ -22,14 +22,15 @@ namespace MagicGradients
             return this;
         }
 
-        public GradientBuilder AddRadialGradient(Point center, RadialGradientFlags flags, RadialGradientShape shape, RadialGradientSize size)
+        public GradientBuilder AddRadialGradient(Point center, RadialGradientShape shape, RadialGradientSize size, 
+            RadialGradientFlags flags = RadialGradientFlags.PositionProportional)
         {
             _lastGradient = new RadialGradient
             {
                 Center = center,
-                Flags = flags,
                 Shape = shape,
                 Size = size,
+                Flags = flags,
                 Stops = new List<GradientStop>()
             };
 

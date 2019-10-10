@@ -17,7 +17,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             var position = GetPosition(internalReader);
             var flags = GetFlags(position);
 
-            builder.AddRadialGradient(position, flags, shape, shapeSize);
+            builder.AddRadialGradient(position, shape, shapeSize, flags);
         }
 
         private RadialGradientShape GetShape(CssReader reader)

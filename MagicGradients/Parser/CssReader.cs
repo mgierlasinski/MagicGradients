@@ -9,8 +9,6 @@ namespace MagicGradients.Parser
 
         public bool CanRead => _cursor < _tokens.Length;
 
-        public bool HasMoreElements => _cursor + 1 < _tokens.Length;
-
         public CssReader(string css)
         {
             _tokens = css
