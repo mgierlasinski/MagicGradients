@@ -17,19 +17,9 @@ namespace MagicGradients.Renderers
         public void Render(RenderContext context)
         {
             var info = context.Info;
-            var point = _gradient.Center.ToSKPoint();
 
-            var widthIsProportional = IsProportional(RadialGradientFlags.WidthProportional);
-            var heightIsProportional = IsProportional(RadialGradientFlags.HeightProportional);
-            var xIsProportional = IsProportional(RadialGradientFlags.XProportional);
-            var yIsProportional = IsProportional(RadialGradientFlags.YProportional);
-
-            var center = new SKPoint(
-                xIsProportional ? info.Width * point.X : point.X,
-                yIsProportional ? info.Height * point.Y : point.Y);
-
-            var radiusX = widthIsProportional ? info.Width * _gradient.RadiusX : _gradient.RadiusX;
-            var radiusY = heightIsProportional ? info.Height * _gradient.RadiusY : _gradient.RadiusY;
+            var center = GetCenter(info.Width, info.Height);
+            var (radiusX, radiusY) = GetRadius(center, info);
             var radius = Math.Min(radiusX, radiusY);
 
             var orderedStops = _gradient.Stops.OrderBy(x => x.Offset).ToArray();
@@ -37,7 +27,7 @@ namespace MagicGradients.Renderers
             var colorPos = orderedStops.Select(x => x.Offset).ToArray();
 
             var shader = SKShader.CreateRadialGradient(
-                center, 
+                center,
                 radius, 
                 colors, 
                 colorPos,
@@ -46,6 +36,117 @@ namespace MagicGradients.Renderers
 
             context.Paint.Shader = shader;
             context.Canvas.DrawRect(info.Rect, context.Paint);
+        }
+
+        private SKPoint GetCenter(int width, int height)
+        {
+            var point = _gradient.Center.ToSKPoint();
+
+            var xIsProportional = IsProportional(RadialGradientFlags.XProportional);
+            var yIsProportional = IsProportional(RadialGradientFlags.YProportional);
+
+            return new SKPoint(
+                xIsProportional ? width * point.X : point.X,
+                yIsProportional ? height * point.Y : point.Y);
+        }
+
+        private (float, float) GetRadius(SKPoint center, SKImageInfo info)
+        {
+            var radiusX = 0f;
+            var radiusY = 0f;
+
+            if (_gradient.Shape == RadialGradientShape.Ellipse)
+            {
+                var distances = GetDistanceInPoints(center, info);
+                var distanceX = distances.Select(p => Math.Abs(p.X)).Where(x => x > 0);
+                var distanceY = distances.Select(p => Math.Abs(p.Y)).Where(y => y > 0);
+
+                // https://github.com/mgierlasinski/MagicGradients/issues/25
+
+                radiusX = _gradient.Size.IsClosest() ? distanceX.Min() : distanceX.Max();
+                radiusY = _gradient.Size.IsClosest() ? distanceY.Min() : distanceY.Max();
+            }
+
+            if (_gradient.Shape == RadialGradientShape.Circle)
+            {
+                var distances = GetEuclideanDistance(center, info);
+                var distanceXY = _gradient.Size.IsClosest() ? distances.Min() : distances.Max();
+
+                radiusX = distanceXY;
+                radiusY = distanceXY;
+            }
+
+            if (_gradient.RadiusX > -1)
+            {
+                var widthIsProportional = IsProportional(RadialGradientFlags.WidthProportional);
+                radiusX = widthIsProportional ? info.Width * _gradient.RadiusX : _gradient.RadiusX;
+            }
+
+            if (_gradient.RadiusY > -1)
+            {
+                var heightIsProportional = IsProportional(RadialGradientFlags.HeightProportional);
+                radiusY = heightIsProportional ? info.Height * _gradient.RadiusY : _gradient.RadiusY;
+            }
+            
+            return (radiusX, radiusY);
+        }
+
+        private SKPoint[] GetCornerPoints(SKImageInfo info)
+        {
+            var points = new[]
+            {
+                new SKPoint(info.Rect.Left, info.Rect.Top),     // leftTop
+                new SKPoint(info.Rect.Right, info.Rect.Top),    // rightTop
+                new SKPoint(info.Rect.Right, info.Rect.Bottom), // rightBottom
+                new SKPoint(info.Rect.Left, info.Rect.Bottom)   // leftBottom
+            };
+
+            return points;
+        }
+
+        private SKPoint[] GetSidePoints(SKPoint center, SKImageInfo info)
+        {
+            var points = new[]
+            {
+                new SKPoint(info.Rect.Left, center.Y),      // left
+                new SKPoint(center.X, info.Rect.Top),       // top
+                new SKPoint(info.Rect.Right, center.Y),     // right
+                new SKPoint(center.X, info.Rect.Bottom)     // bottom
+            };
+
+            return points;
+        }
+
+        private SKPoint[] GetDistanceInPoints(SKPoint center, SKImageInfo info)
+        {
+            var points = _gradient.Size.IsCorner() ?
+                GetCornerPoints(info) :
+                GetSidePoints(center, info);
+
+            var distances = new SKPoint[points.Length];
+
+            for (var i = 0; i < distances.Length; i++)
+            {
+                distances[i] = center - points[i];
+            }
+
+            return distances;
+        }
+
+        private float[] GetEuclideanDistance(SKPoint center, SKImageInfo info)
+        {
+            var points = _gradient.Size.IsCorner() ?
+                GetCornerPoints(info) :
+                GetSidePoints(center, info);
+
+            var distances = new float[points.Length];
+
+            for (var i = 0; i < distances.Length; i++)
+            {
+                distances[i] = SKPoint.Distance(center, points[i]);
+            }
+
+            return distances;
         }
 
         private SKMatrix GetScaleMatrix(SKPoint center, float radiusX, float radiusY)

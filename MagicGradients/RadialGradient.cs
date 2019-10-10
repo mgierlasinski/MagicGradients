@@ -17,7 +17,7 @@ namespace MagicGradients
         }
 
         public static readonly BindableProperty RadiusXProperty = BindableProperty.Create(
-            nameof(RadiusXProperty), typeof(float), typeof(RadialGradient), 0f);
+            nameof(RadiusXProperty), typeof(float), typeof(RadialGradient), -1f);
 
         public float RadiusX
         {
@@ -26,7 +26,7 @@ namespace MagicGradients
         }
 
         public static readonly BindableProperty RadiusYProperty = BindableProperty.Create(
-            nameof(RadiusYProperty), typeof(float), typeof(RadialGradient), 0f);
+            nameof(RadiusYProperty), typeof(float), typeof(RadialGradient), -1f);
 
         public float RadiusY
         {
@@ -41,6 +41,24 @@ namespace MagicGradients
         {
             get => (RadialGradientFlags)GetValue(FlagsProperty);
             set => SetValue(FlagsProperty, value);
+        }
+
+        public static readonly BindableProperty ShapeProperty = BindableProperty.Create(
+            nameof(Shape), typeof(RadialGradientShape), typeof(RadialGradient), RadialGradientShape.Ellipse);
+
+        public RadialGradientShape Shape
+        {
+            get => (RadialGradientShape)GetValue(ShapeProperty);
+            set => SetValue(ShapeProperty, value);
+        }
+
+        public static readonly BindableProperty SizeProperty = BindableProperty.Create(
+            nameof(Size), typeof(RadialGradientSize), typeof(RadialGradient), RadialGradientSize.FarthestCorner);
+
+        public RadialGradientSize Size
+        {
+            get => (RadialGradientSize)GetValue(SizeProperty);
+            set => SetValue(SizeProperty, value);
         }
 
         public RadialGradient()

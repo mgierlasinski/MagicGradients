@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
-    public class ColorChannelDefinition : ColorDefinition, ITokenDefinition
+    public class ColorChannelDefinition : ITokenDefinition
     {
+        protected ColorTypeConverter ColorConverter { get; } = new ColorTypeConverter();
+
         public bool IsMatch(string token) =>
             token.Equals(CssToken.Rgb, StringComparison.OrdinalIgnoreCase) ||
             token.Equals(CssToken.Rgba, StringComparison.OrdinalIgnoreCase) ||
@@ -16,15 +17,11 @@ namespace MagicGradients.Parser.TokenDefinitions
         public void Parse(CssReader reader, GradientBuilder builder)
         {
             var color = (Color)ColorConverter.ConvertFromInvariantString(GetColorString(reader));
-
             var parts = reader.ReadNext().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (parts.TryConvertOffsets(out var offsets))
             {
-                foreach (var offset in offsets)
-                {
-                    builder.AddStop(color, offset);
-                }
+                builder.AddStops(color, offsets);
             }
             else
             {
