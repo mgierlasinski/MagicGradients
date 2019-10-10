@@ -16,15 +16,6 @@ namespace MagicGradients
             set => SetValue(AngleProperty, value);
         }
 
-        public static readonly BindableProperty IsRepeatingProperty = BindableProperty.Create(
-            nameof(IsRepeating), typeof(bool), typeof(LinearGradient), false);
-
-        public bool IsRepeating
-        {
-            get => (bool)GetValue(IsRepeatingProperty);
-            set => SetValue(IsRepeatingProperty, value);
-        }
-
         public LinearGradient()
         {
             _renderer = new LinearGradientRenderer(this);

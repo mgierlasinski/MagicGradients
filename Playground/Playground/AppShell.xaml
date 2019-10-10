@@ -43,7 +43,9 @@
     <FlyoutItem Title="Radial Gradients">
         <Tab>
             <ShellContent Title="Radial" ContentTemplate="{DataTemplate local:RadialGradientsPage}" />
+            <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPage}" />
             <ShellContent Title="Radial in CSS" ContentTemplate="{DataTemplate local:RadialGradientsPageCss}" />
+            <ShellContent Title="Repeating in CSS" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPageCss}" />
         </Tab>
     </FlyoutItem>
 

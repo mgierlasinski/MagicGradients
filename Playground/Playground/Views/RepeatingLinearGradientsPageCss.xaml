@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              x:Class="Playground.Views.RepeatingLinearGradientsPageCss" 
-             Title="Linear Gradients in CSS">
+             Title="Linear Gradients">
     <ContentPage.Resources>
-        <StyleSheet Source="../Styles/RepeatingLinearGradientsPage.css" />
+        <StyleSheet Source="../Styles/LinearGradientsPage.css" />
     </ContentPage.Resources>
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">
@@ -19,6 +19,6 @@
                 </magic:CssGradientSource>
             </magic:GradientView.GradientSource>
         </magic:GradientView>
-        <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="gradientStyledWithCss" />
+        <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="repeatingGradient" />
     </StackLayout>
 </ContentPage>
