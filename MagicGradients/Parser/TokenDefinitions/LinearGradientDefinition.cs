@@ -1,43 +1,50 @@
-using System;
-using System.Globalization;
-
 namespace MagicGradients.Parser.TokenDefinitions
 {
     public class LinearGradientDefinition : ITokenDefinition
     {
-        public bool IsMatch(string token) => token == CssToken.LinearGradient;
+        public bool IsMatch(string token) =>
+            token == CssToken.LinearGradient ||
+            token == CssToken.RepeatingLinearGradient;
 
         public void Parse(CssReader reader, GradientBuilder builder)
         {
+            var repeating = reader.Read().Trim() == CssToken.RepeatingLinearGradient;
             var direction = reader.ReadNext().Trim();
+            var angle = 0d;
 
-            if (TryConvertDegreeToAngle(direction, out var degreeToAngle))
+            var hasAngle = TryConvertDegreeToAngle(direction, out angle) ||
+                           TryConvertTurnToAngle(direction, out angle) ||
+                           TryConvertNamedDirectionToAngle(direction, out angle);
+
+            if (hasAngle)
             {
-                builder.AddLinearGradient(degreeToAngle);
-            }
-            else if (TryConvertNamedDirectionToAngle(direction, out var directionToAngle))
-            {
-                builder.AddLinearGradient(directionToAngle);
+                builder.AddLinearGradient(angle, repeating);
             }
             else
             {
-                builder.AddLinearGradient(0);
+                builder.AddLinearGradient(0, repeating);
                 reader.Rollback();
             }
         }
 
         internal bool TryConvertDegreeToAngle(string token, out double angle)
         {
-            if (token.EndsWith("deg", StringComparison.OrdinalIgnoreCase))
+            if (token.TryExtractNumber("deg", out var degrees))
             {
-                var index = token.LastIndexOf("deg", StringComparison.OrdinalIgnoreCase);
-                var degreesStr = token.Substring(0, index);
+                angle = CssHelpers.FromDegrees(degrees);
+                return true;
+            }
+            
+            angle = 0;
+            return false;
+        }
 
-                if(double.TryParse(degreesStr, NumberStyles.Any, CultureInfo.InvariantCulture, out var degrees))
-                {
-                    angle = CssHelpers.FromDegrees(degrees);
-                    return true;
-                }
+        internal bool TryConvertTurnToAngle(string token, out double angle)
+        {
+            if (token.TryExtractNumber("turn", out var turn))
+            {
+                angle = CssHelpers.FromDegrees(360 * turn);
+                return true;
             }
 
             angle = 0;
@@ -46,16 +53,19 @@ namespace MagicGradients.Parser.TokenDefinitions
 
         internal bool TryConvertNamedDirectionToAngle(string token, out double angle)
         {
-            var parts = token.Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries);
+            var reader = new CssReader(token, ' ');
 
-            if (parts.Length > 1 && parts[0] == "to")
+            if (reader.CanRead && reader.Read() == "to")
             {
                 var defaultVector = Vector2.Down;   // By default gradient is drawn top-down
                 var directionVector = Vector2.Zero;
 
-                for (var i = 1; i < parts.Length; i++)
+                reader.MoveNext();
+
+                while (reader.CanRead)
                 {
-                    directionVector.SetNamedDirection(parts[i]);
+                    directionVector.SetNamedDirection(reader.Read());
+                    reader.MoveNext();
                 }
 
                 angle = Vector2.Angle(ref defaultVector, ref directionVector);
@@ -68,7 +78,7 @@ namespace MagicGradients.Parser.TokenDefinitions
                 {
                     angle = 360 - angle;
                 }
-                
+
                 return true;
             }
 

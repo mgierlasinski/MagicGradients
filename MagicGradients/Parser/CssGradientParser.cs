@@ -12,6 +12,7 @@ namespace MagicGradients.Parser
             _definitions = new ITokenDefinition[]
             {
                 new LinearGradientDefinition(),
+                new RadialGradientDefinition(), 
                 new ColorHexDefinition(),
                 new ColorChannelDefinition(),
                 new ColorNameDefinition()

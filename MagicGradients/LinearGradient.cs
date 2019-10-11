@@ -1,39 +1,29 @@
-﻿using SkiaSharp;
-using SkiaSharp.Views.Forms;
-using System;
-using System.Linq;
+﻿using MagicGradients.Renderers;
+using Xamarin.Forms;
 
 namespace MagicGradients
 {
     public class LinearGradient : Gradient
     {
-        public double Angle { get; set; }
+        private readonly LinearGradientRenderer _renderer;
 
-        public override SKShader CreateShader(SKPaint paint, SKImageInfo info)
+        public static readonly BindableProperty AngleProperty = BindableProperty.Create(
+            nameof(Angle), typeof(double), typeof(LinearGradient), 0d);
+
+        public double Angle
         {
-            var (startPoint, endPoint) = GetGradientPoints(info.Width, info.Height, Angle);
-
-            var orderedStops = Stops.OrderBy(x => x.Offset).ToArray();
-            var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
-            var colorPos = orderedStops.Select(x => x.Offset).ToArray();
-            var tileMode = SKShaderTileMode.Clamp;
-
-            return SKShader.CreateLinearGradient(startPoint, endPoint, colors, colorPos, tileMode);
+            get => (double)GetValue(AngleProperty);
+            set => SetValue(AngleProperty, value);
         }
 
-        private (SKPoint, SKPoint) GetGradientPoints(int width, int height, double rotation)
+        public LinearGradient()
         {
-            var angle = rotation / 360.0;
+            _renderer = new LinearGradientRenderer(this);
+        }
 
-            var a = width * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.75) / 2)), 2);
-            var b = height * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.0) / 2)), 2);
-            var c = width * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.25) / 2)), 2);
-            var d = height * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.5) / 2)), 2);
-
-            var start = new SKPoint(width - (float)a, (float)b);
-            var end = new SKPoint(width - (float)c, (float)d);
-
-            return (start, end);
+        public override void Render(RenderContext context)
+        {
+            _renderer.Render(context);
         }
 
         public override string ToString()

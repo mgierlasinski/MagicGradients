@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             x:Class="Playground.Views.InlineCssGradientPage" 
-             Title="Inline CSS Gradient">
+             x:Class="Playground.Views.LinearGradientsPageCss" 
+             Title="Linear Gradients in CSS">
     <ContentPage.Resources>
-        <StyleSheet Source="../Styles/InlineCssGradient.css" />
+        <StyleSheet Source="../Styles/LinearGradientsPage.css" />
     </ContentPage.Resources>
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">

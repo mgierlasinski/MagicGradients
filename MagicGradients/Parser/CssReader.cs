@@ -16,6 +16,11 @@ namespace MagicGradients.Parser
                 .Split(new[] { '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
         }
 
+        public CssReader(string css, params char[] separator)
+        {
+            _tokens = css.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+        }
+
         public string Read()
         {
             return _tokens[_cursor];
