@@ -1,20 +1,14 @@
+<img width="80" height="80" src="https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/icon.png" />
+
 # Magic Gradients
 
-Xamarin.Forms control to display complex gradients, inspired by [PancakeView](https://github.com/sthewissen/Xamarin.Forms.PancakeView) and [Magic Gradients](https://www.gradientmagic.com/). You can add unlimited amount of linear gradients with different angles to create uniqe effects. Powered by [SkiaSharp](https://github.com/mono/SkiaSharp).
+Draw breathtaking backgrounds in your Xamarin.Forms application. You can add unlimited number of complex linear and radial gradients to create uniqe effects. It's a kind of magic. Control inspired by [PancakeView](https://github.com/sthewissen/Xamarin.Forms.PancakeView) and [Gradient Magic](https://www.gradientmagic.com/). Powered by [SkiaSharp](https://github.com/mono/SkiaSharp).
 
 ## Packages
 
-Initial release is available via NuGet as a prerelease version (make sure you have checked `Include prerelase` in NuGet browser).
-
-| Package | Version |
-|---|---|
-| MagicGradients |[![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients)|
-
-## Depencendies
-
-Xamarin.Forms | SkiaSharp
----|---|
-![NuGet](https://img.shields.io/badge/Xamarin.Forms-v4.2.848062-green) | ![NuGet](https://img.shields.io/badge/SkiaSharp-v1.68.0-blue)
+| Package | Version | Dependencies |
+|---|---|---|
+| MagicGradients | [![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients) | [![Nuget](https://img.shields.io/badge/Xamarin.Forms-v4.2-green)](https://www.nuget.org/packages/Xamarin.Forms/) [![Nuget](https://img.shields.io/badge/SkiaSharp-v1.68-blue)](https://www.nuget.org/packages/SkiaSharp/) [![Nuget](https://img.shields.io/badge/SkiaSharp.Views.Forms-v1.68-blue)](https://www.nuget.org/packages/SkiaSharp.Views.Forms/)
 
 ## Gallery
 
@@ -27,23 +21,40 @@ You can preview some of the gradients from [Gradient Magic](https://www.gradient
 
 ## Getting Started
 
-Install via NuGet (make sure you have checked `Include prerelase` in NuGet browser) or include the Magic Gradients project in your solution and add local references in your shared project.
+Install via [NuGet](https://www.nuget.org/packages/MagicGradients) or include the Magic Gradients project in your solution and add local references in your shared project.
 
 As it requires SkiaSharp, you will also need to ensure you add SkiaSharp.Views.Forms to your shared Xamarin.Forms project. 
 
 ## Setting gradient source
 
-You can build gradients manually in Xaml:
+You can build gradients manually in Xaml. To draw single gradient just create `LinearGradient` or `RadialGradient` as the child of `GradientSource` property.
 
 ``` xml
 <magic:GradientView VerticalOptions="FillAndExpand">
     <magic:GradientView.GradientSource>
-        <magic:GradientSource>
+        <magic:LinearGradient Angle="45">
+            <magic:GradientStop Color="Red" Offset="0" />
+            <magic:GradientStop Color="Yellow" Offset="1" />
+        </magic:LinearGradient>
+    </magic:GradientView.GradientSource>
+</magic:GradientView>
+```
+
+There is also possibility to add collection of gradients. You can mix linear and radial gradients, use transparency in color definitions to get blend effect. 
+
+``` xml
+<magic:GradientView>
+    <magic:GradientView.GradientSource>
+        <magic:GradientCollection>
             <magic:LinearGradient Angle="45">
-                <magic:GradientStop Color="Red" Offset="0" />
-                <magic:GradientStop Color="Yellow" Offset="1" />
+                <magic:GradientStop Color="Orange" Offset="0" />
+                <magic:GradientStop Color="#ff0000" Offset="0.6" />
             </magic:LinearGradient>
-        </magic:GradientSource>
+            <magic:LinearGradient Angle="90">
+                <magic:GradientStop Color="#33ff0000" Offset="0.4" />
+                <magic:GradientStop Color="#ff00ff00" Offset="1" />
+            </magic:LinearGradient>
+        </magic:GradientCollection>
     </magic:GradientView.GradientSource>
 </magic:GradientView>
 ```
@@ -65,10 +76,13 @@ By using `GradientBuilder`, some of the construction process is automated, there
 
 ## Styling with CSS
 
-Magic Gradients supports parsing CSS function `linear-gradient`, you can find full specification in several sources:
+Magic Gradients supports parsing CSS functions `linear-gradient`, `repeating-linear-gradient`, `radial-gradient`, `repeating-radial-gradient`, you can find full specification in several sources:
 
 - https://www.w3schools.com/css/css3_gradients.asp
 - https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
+- https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient
+- https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient
+- https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient
 
 You can embed inline CSS directly in xaml:
 
@@ -104,25 +118,52 @@ You can test CSS gradient code live within Playground application.
 
 ![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/paste-css.gif)
 
-### linear-gradient function syntax
+### Linear gradient function syntax
 
+Single linear gradient
 ``` css
 linear-gradient(direction, color-stop1, color-stop2, ...);
 ```
 
+Repeating linear gradient
+``` css
+releating-linear-gradient(direction, color-stop1, color-stop2, ...);
+```
+
 Supported directions:
-- named directions: to left, to right, to top, to bottom, to left top, to right bottom etc.
-- angles in degrees: 135deg
+- named directions: `to left`, `to right`, `to top`, `to bottom`, `to left top`, `to right bottom` etc.
+- angles in degrees: `135deg`
+- angle proportional: `0.45turn` (range should be between 0-1)
 
 Each color stop should contain color information and optionally it's position along the gradient line, described in percents.
 
 Suppored color formats:
-- colors described by channels in RGB or HSL format: rgb(red, green, blue), rgba(red, green, blue, alpha), hsl(hue, saturation, lightness), hsla(hue, saturation, lightness, alpha)
-- colors in hex: #ff0000
-- named colors: red, green, blue, orange, pink
+- colors described by channels in RGB or HSL format: `rgb(red, green, blue)`, `rgba(red, green, blue, alpha)`, `hsl(hue, saturation, lightness)`, `hsla(hue, saturation, lightness, alpha)`
+- colors in hex: `#ff0000`
+- named colors: `red`, `green`, `blue`, `orange`, `pink`
+
+### Radial gradient function syntax
+
+Single radial gradient
+``` css
+radial-gradient(shape size at position, start-color, ..., last-color);
+```
+
+Repeating radial gradient
+``` css
+repeating-radial-gradient(shape size at position, start-color, ..., last-color);
+```
+
+- supported shapes: `circle`, `ellipse`
+- suppored sizes: `closest-side`, `closest-corner`\*, `farthest-side`, `farthest-corner`\* 
+- supported sizes: in pixels (`px`), propoertional (`%`) and named directions (`left`, `right`, `top`, `bottom`, `center`)
+- suppored color formats: (see linear gradient)
+
+\* _currently ellipse shape supports only side points, you can use corner variants but there is no difference in rendering_
 
 ### Examples
 
+Linear gradient 
 ``` css
 /* A gradient tilted 45 degrees,
    starting blue and finishing red */
@@ -137,6 +178,18 @@ linear-gradient(to left top, blue, red);
    and finishing red */
 linear-gradient(0deg, blue, green 40%, red);
 ```
+
+Radial gradient
+``` css
+/* Simple gradient */
+radial-gradient(cyan 0%, transparent 20%, salmon 40%);
+
+/* Non-centered gradient */
+radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
+```
+
+# Tutorials
+- https://medium.com/@benetskyybogdan/gradient-background-for-your-xamarin-forms-app-6d7e46fba558 - Bohdan's blog post with introduction to the library
 
 ---
 <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
