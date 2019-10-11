@@ -14,7 +14,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             var isRepeating = reader.Read().Trim() == CssToken.RepeatingRadialGradient;
 
             var token = reader.ReadNext().Trim();
-            var internalReader = new CssReader(token, new[] { ' ' });
+            var internalReader = new CssReader(token, ' ');
             
             var shape = GetShape(internalReader);
             var shapeSize = GetShapeSize(internalReader);
