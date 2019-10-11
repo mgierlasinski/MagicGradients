@@ -2,13 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0-pre1</Version>
+    <Version>1.0.0</Version>
     <Authors>Marcin Gierlasiński, Bohdan Benetskyi and Contributors</Authors>
     <Product>Magic Gradients</Product>
-    <Description>Draw breathtaking backgrounds in you Xamarin.Forms application. It's a kind of magic. Powered by SkiaSharp.</Description>
+    <Description>Draw breathtaking backgrounds in your Xamarin.Forms application. It's a kind of magic. Powered by SkiaSharp.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/mgierlasinski/MagicGradients/</PackageProjectUrl>
-    <PackageTags>gradients;linear;radial;skiasharp;xamarin;forms;android;ios;uwp</PackageTags>
+    <PackageTags>magic;gradients;linear;radial;skiasharp;xamarin;forms;android;ios;uwp</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/icon.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
