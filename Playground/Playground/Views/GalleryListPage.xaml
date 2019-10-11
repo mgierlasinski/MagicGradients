@@ -1,30 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             mc:Ignorable="d"
              x:Class="Playground.Views.GalleryListPage"
              Title="Gallery"
              BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     
     <StackLayout>
         <Picker ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" />
-        <ListView x:Name="GalleryList" HasUnevenRows="True"
-                  CachingStrategy="RecycleElement"
-                  ItemsSource="{Binding Gradients}" 
-                  SelectedItem="{Binding SelectedItem}" 
-                  ItemSelected="GalleryList_OnItemSelected">
-            <ListView.ItemTemplate>
+        <CollectionView x:Name="GalleryList" 
+                        ItemsSource="{Binding Gradients}" 
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedItem}" 
+                        SelectionChanged="GalleryList_OnSelectionChanged">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <Grid Margin="10,0,10,10">
-                            <magic:GradientView GradientSource="{Binding Source}" HeightRequest="150" />
-                        </Grid>
-                    </ViewCell>
+                    <Grid>
+                        <magic:GradientView GradientSource="{Binding Source}" HeightRequest="150" />
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 </ContentPage>

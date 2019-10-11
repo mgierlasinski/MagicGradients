@@ -9,7 +9,7 @@ namespace Playground.Views
             InitializeComponent();
         }
 
-        private void GalleryList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void GalleryList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (GalleryList.SelectedItem != null)
             {
