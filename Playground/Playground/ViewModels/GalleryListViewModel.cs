@@ -13,7 +13,7 @@ namespace Playground.ViewModels
         public string[] Categories { get; } =
         {
             Category.Standard, Category.Angular,
-            Category.Stripes
+            Category.Stripes, Category.Retro
         };
 
         private string _selectedCategory;
