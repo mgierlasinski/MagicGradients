@@ -59,6 +59,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Styles\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\GalleryPreviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
