@@ -12,11 +12,13 @@
   <ItemGroup>
     <None Remove="StaticData\Gradients\Angular.txt" />
     <None Remove="StaticData\Gradients\Standard.txt" />
+    <None Remove="StaticData\Gradients\Stripes.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="StaticData\Gradients\Angular.txt" />
     <EmbeddedResource Include="StaticData\Gradients\Standard.txt" />
+    <EmbeddedResource Include="StaticData\Gradients\Stripes.txt" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,5 +4,6 @@
     {
         public const string Standard = "Standard";
         public const string Angular = "Angular";
+        public const string Stripes = "Stripes";
     }
 }
