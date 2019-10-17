@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <None Remove="StaticData\Gradients\Angular.txt" />
+    <None Remove="StaticData\Gradients\Checkered.txt" />
     <None Remove="StaticData\Gradients\Retro.txt" />
     <None Remove="StaticData\Gradients\Standard.txt" />
     <None Remove="StaticData\Gradients\Stripes.txt" />
@@ -30,6 +31,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="StaticData\Gradients\Checkered.txt" />
   </ItemGroup>
 
   <ItemGroup>
