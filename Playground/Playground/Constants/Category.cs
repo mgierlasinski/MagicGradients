@@ -9,5 +9,6 @@ namespace Playground.Constants
         public const string Stripes = "Stripes";
         public const string Retro = "Retro";
         public const string Checkered = "Checkered";
+        public const string Burst = "Burst";
     }
 }

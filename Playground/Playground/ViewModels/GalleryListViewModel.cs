@@ -14,7 +14,7 @@ namespace Playground.ViewModels
         {
             Category.Standard, Category.Angular,
             Category.Stripes, Category.Retro,
-            Category.Checkered
+            Category.Checkered, Category.Burst
         };
 
         private string _selectedCategory;
