@@ -10,7 +10,12 @@ namespace Playground.ViewModels
     {
         private readonly IGalleryService _galleryService;
 
-        public string[] Categories { get; } = { Category.Standard, Category.Angular };
+        public string[] Categories { get; } =
+        {
+            Category.Standard, Category.Angular,
+            Category.Stripes, Category.Retro,
+            Category.Checkered, Category.Burst
+        };
 
         private string _selectedCategory;
         public string SelectedCategory

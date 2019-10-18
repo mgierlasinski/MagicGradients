@@ -11,12 +11,19 @@
 
   <ItemGroup>
     <None Remove="StaticData\Gradients\Angular.txt" />
+    <None Remove="StaticData\Gradients\Burst.txt" />
+    <None Remove="StaticData\Gradients\Checkered.txt" />
+    <None Remove="StaticData\Gradients\Retro.txt" />
     <None Remove="StaticData\Gradients\Standard.txt" />
+    <None Remove="StaticData\Gradients\Stripes.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="StaticData\Gradients\Angular.txt" />
+    <EmbeddedResource Include="StaticData\Gradients\Burst.txt" />
+    <EmbeddedResource Include="StaticData\Gradients\Retro.txt" />
     <EmbeddedResource Include="StaticData\Gradients\Standard.txt" />
+    <EmbeddedResource Include="StaticData\Gradients\Stripes.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +33,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="StaticData\Gradients\Checkered.txt" />
   </ItemGroup>
 
   <ItemGroup>
