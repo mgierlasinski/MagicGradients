@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj" />
+    <ProjectReference Include="..\Playground.Data\Playground.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

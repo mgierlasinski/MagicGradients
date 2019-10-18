@@ -1,0 +1,12 @@
+[
+  {
+    "id": "e267f42a-83a0-43e8-9f7c-b88a49efdd8c",
+    "stylesheet": "linear-gradient(135deg, rgb(195, 39, 2) 0%,rgb(224, 164, 60) 100%)",
+    "tags": [ "standard" ]
+  },
+  {
+    "id": "d43ea6eb-c8eb-4b79-9fc4-8c87190f7e1c",
+    "stylesheet": "linear-gradient(135deg, rgb(68, 202, 201) 0%,rgb(252, 255, 114) 100%)",
+    "tags": [ "standard" ]
+  }
+]
