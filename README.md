@@ -14,7 +14,12 @@ Draw breathtaking backgrounds in your Xamarin.Forms application. You can add unl
 
 You can preview some of the gradients from [Gradient Magic](https://www.gradientmagic.com/) in Playground app. To use the examples from the gallery, you need just copy Gradient CSS and paste into your project.
 
-![GIF](./Assets/Gallery/MagicGradientsGallery.gif)
+(Video on YouTube ⬇️)
+
+[![Gallery](https://img.youtube.com/vi/PFSlubz6_ps/0.jpg)](https://www.youtube.com/watch?v=PFSlubz6_ps)
+
+
+![GIF](./Assets/MagicGradientsGallery.gif)
 
 ## Getting Started
 
