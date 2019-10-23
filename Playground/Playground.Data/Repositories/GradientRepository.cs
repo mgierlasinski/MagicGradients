@@ -10,7 +10,15 @@ namespace Playground.Data.Repositories
 {
     public class GradientRepository : IGradientRepository
     {
-        private readonly string[] _files = { "Standard.json" };
+        private readonly string[] _files =
+        {
+            "Angular.json",
+            "Burst.json",
+            "Checkered.json",
+            "Retro.json",
+            "Standard.json",
+            "Stripes.json"
+        };
 
         public void Initialize()
         {
