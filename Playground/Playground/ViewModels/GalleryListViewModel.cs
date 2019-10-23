@@ -1,4 +1,5 @@
-﻿using Playground.Constants;
+﻿using System;
+using Playground.Constants;
 using Playground.Models;
 using Playground.Services;
 using System.Collections.Generic;
@@ -43,8 +44,8 @@ namespace Playground.ViewModels
                 if (_selectedItem == null)
                     return;
 
-                var id = SelectedItem?.Id ?? 0;
-                await Shell.Current.GoToAsync($"GalleryPreview?category={SelectedCategory}&id={id}");
+                var id = SelectedItem?.Id ?? Guid.Empty;
+                await Shell.Current.GoToAsync($"GalleryPreview?id={id}");
             });
         }
 

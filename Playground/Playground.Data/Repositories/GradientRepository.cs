@@ -36,7 +36,25 @@ namespace Playground.Data.Repositories
             using (var db = new LiteDatabase(GetDbPath()))
             {
                 var collection = db.GetCollection<Gradient>("gradients");
-                return collection.FindAll();
+                return collection.FindAll().ToList();
+            }
+        }
+
+        public Gradient GetById(Guid id)
+        {
+            using (var db = new LiteDatabase(GetDbPath()))
+            {
+                var collection = db.GetCollection<Gradient>("gradients");
+                return collection.FindById(new BsonValue(id));
+            }
+        }
+
+        public IEnumerable<Gradient> GetByTag(string tag)
+        {
+            using (var db = new LiteDatabase(GetDbPath()))
+            {
+                var collection = db.GetCollection<Gradient>("gradients");
+                return collection.Find(x => x.Tags.Contains(tag)).ToList();
             }
         }
 

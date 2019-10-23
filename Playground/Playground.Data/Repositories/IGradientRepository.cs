@@ -1,4 +1,5 @@
 ﻿using Playground.Data.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Playground.Data.Repositories
@@ -8,5 +9,9 @@ namespace Playground.Data.Repositories
         void Initialize();
 
         IEnumerable<Gradient> GetAll();
+
+        Gradient GetById(Guid id);
+
+        IEnumerable<Gradient> GetByTag(string tag);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MagicGradients;
 using Playground.Services;
+using System;
 using Xamarin.Forms;
 
 namespace Playground.ViewModels
@@ -17,8 +18,6 @@ namespace Playground.ViewModels
             set => SetProperty(ref _gradient, value);
         }
 
-        public string Category { get; set; }
-
         private string _id;
         public string Id
         {
@@ -26,7 +25,7 @@ namespace Playground.ViewModels
             set
             {
                 _id = value;
-                Gradient = _galleryService.GetGradientById(Category,int.Parse(_id)).Source;
+                Gradient = _galleryService.GetGradientById(new Guid(_id)).Source;
             }
         }
 
