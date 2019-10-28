@@ -40,6 +40,22 @@
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
+    <ShellContent Title="Gallery" ContentTemplate="{DataTemplate local:GalleryListPage}">
+        <ShellContent.Icon>
+            <FontImageSource Glyph="{x:Static ic:IconCodes.Gallery}" 
+                             FontFamily="{StaticResource IconFont}" 
+                             Color="{StaticResource ForegroundColor}" />
+        </ShellContent.Icon>
+    </ShellContent>
+
+    <ShellContent Title="Paste CSS" ContentTemplate="{DataTemplate local:PasteCssPage}">
+        <ShellContent.Icon>
+            <FontImageSource Glyph="{x:Static ic:IconCodes.Play}" 
+                             FontFamily="{StaticResource IconFont}"
+                             Color="{StaticResource ForegroundColor}" />
+        </ShellContent.Icon>
+    </ShellContent>
+
     <FlyoutItem Title="Linear Gradients">
         <FlyoutItem.FlyoutIcon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Gradient}" 
@@ -67,20 +83,4 @@
             <ShellContent Title="Repeating in CSS" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPageCss}" />
         </Tab>
     </FlyoutItem>
-
-    <ShellContent Title="Paste CSS" ContentTemplate="{DataTemplate local:PasteCssPage}">
-        <ShellContent.Icon>
-            <FontImageSource Glyph="{x:Static ic:IconCodes.Play}" 
-                             FontFamily="{StaticResource IconFont}"
-                             Color="{StaticResource ForegroundColor}" />
-        </ShellContent.Icon>
-    </ShellContent>
-
-    <ShellContent Title="Gallery" ContentTemplate="{DataTemplate local:GalleryListPage}">
-        <ShellContent.Icon>
-            <FontImageSource Glyph="{x:Static ic:IconCodes.Gallery}" 
-                             FontFamily="{StaticResource IconFont}" 
-                             Color="{StaticResource ForegroundColor}" />
-        </ShellContent.Icon>
-    </ShellContent>
 </Shell>

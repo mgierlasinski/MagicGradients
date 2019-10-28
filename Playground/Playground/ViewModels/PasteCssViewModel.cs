@@ -1,5 +1,6 @@
 ﻿using MagicGradients;
 using MagicGradients.Parser;
+using Playground.Data.Repositories;
 using System;
 using System.Linq;
 using System.Windows.Input;
@@ -7,8 +8,11 @@ using Xamarin.Forms;
 
 namespace Playground.ViewModels
 {
+    [QueryProperty("Id", "id")]
     public class PasteCssViewModel : BaseViewModel
     {
+        private readonly IGradientRepository _gradientRepository;
+
         public ICommand RefreshCommand { get; set; }
 
         private string _cssCode;
@@ -22,6 +26,17 @@ namespace Playground.ViewModels
                     UpdateGradientSource();
                 }
             });
+        }
+
+        private string _id;
+        public string Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                LoadCssCodeById();
+            }
         }
 
         private IGradientSource _gradientSource;
@@ -48,9 +63,12 @@ namespace Playground.ViewModels
             set => SetProperty(ref _isLiveRefresh, value);
         }
 
-        public PasteCssViewModel()
+        public PasteCssViewModel(IGradientRepository gradientRepository)
         {
+            _gradientRepository = gradientRepository;
+
             RefreshCommand = new Command(UpdateGradientSource);
+
             UpdateGradientSource();
         }
 
@@ -72,6 +90,18 @@ namespace Playground.ViewModels
             {
                 Message = $"Invalid CSS: {e.Message}";
             }
+        }
+
+        private void LoadCssCodeById()
+        {
+            var gradient = _gradientRepository.GetById(new Guid(_id));
+
+            if (gradient == null)
+                return;
+
+            _cssCode = gradient.Stylesheet;
+            OnPropertyChanged(nameof(CssCode));
+            UpdateGradientSource();
         }
 
         private void ValidateEmptyData()
