@@ -2,25 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
              x:Class="Playground.Views.PasteCssPage"
              Title="Paste CSS"
              BindingContext="{Binding PasteCssViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="33*" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="66*" />
         </Grid.RowDefinitions>
         <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" />
-        <StackLayout Grid.Row="1" Orientation="Horizontal" Margin="10,0">
-            <Button Text="Refresh" Command="{Binding RefreshCommand}" HorizontalOptions="FillAndExpand" />
-            <CheckBox IsChecked="{Binding IsLiveRefresh}" />
-            <Label Text="Auto" VerticalOptions="Center" />
-        </StackLayout>
-        <magic:GradientView GradientSource="{Binding GradientSource}" Grid.Row="2" Margin="0,10,0,0" />
-        <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="2" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
+        <magic:GradientView GradientSource="{Binding GradientSource}" Grid.Row="1" />
+        <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="1" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
             <BoxView BackgroundColor="Black" Opacity="0.5" />
-            <Label Text="{Binding Message}" TextColor="WhiteSmoke" Margin="10" />
+            <Label Text="{Binding Message}" TextColor="{StaticResource LightForegroundColor}" Margin="10" />
+        </Grid>
+        <Grid Grid.Row="1" VerticalOptions="End">
+            <BoxView BackgroundColor="Black" Opacity="0.5" />
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <ImageButton Command="{Binding RefreshCommand}" BackgroundColor="Transparent" Padding="10,5">
+                    <ImageButton.Source>
+                        <FontImageSource Glyph="{x:Static ic:IconCodes.Refresh}" FontFamily="{StaticResource IconFont}" />
+                    </ImageButton.Source>
+                </ImageButton>
+                <CheckBox IsChecked="{Binding IsHotReload}" HorizontalOptions="EndAndExpand" Color="{StaticResource LightForegroundColor}"  />
+                <Label Text="Hot reload" VerticalOptions="Center" HorizontalOptions="End" TextColor="{StaticResource LightForegroundColor}" Margin="0,0,10,0" />
+            </StackLayout>
         </Grid>
     </Grid>
 </ContentPage>

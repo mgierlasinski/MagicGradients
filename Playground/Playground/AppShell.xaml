@@ -50,7 +50,7 @@
 
     <ShellContent Title="Paste CSS" ContentTemplate="{DataTemplate local:PasteCssPage}">
         <ShellContent.Icon>
-            <FontImageSource Glyph="{x:Static ic:IconCodes.Play}" 
+            <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
                              FontFamily="{StaticResource IconFont}"
                              Color="{StaticResource ForegroundColor}" />
         </ShellContent.Icon>

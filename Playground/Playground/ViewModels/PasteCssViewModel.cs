@@ -21,7 +21,7 @@ namespace Playground.ViewModels
             get => _cssCode;
             set => SetProperty(ref _cssCode, value, onChanged: () =>
             {
-                if (IsLiveRefresh)
+                if (IsHotReload)
                 {
                     UpdateGradientSource();
                 }
@@ -56,11 +56,11 @@ namespace Playground.ViewModels
                 onChanged: () => OnPropertyChanged(nameof(IsMessageVisible)));
         }
 
-        private bool _isLiveRefresh = true;
-        public bool IsLiveRefresh
+        private bool _isHotReload = true;
+        public bool IsHotReload
         {
-            get => _isLiveRefresh;
-            set => SetProperty(ref _isLiveRefresh, value);
+            get => _isHotReload;
+            set => SetProperty(ref _isHotReload, value);
         }
 
         public PasteCssViewModel(IGradientRepository gradientRepository)

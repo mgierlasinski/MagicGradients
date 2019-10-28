@@ -9,7 +9,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding PreviewCssCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Play}" 
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
                                  FontFamily="{StaticResource IconFont}"
                                  Color="{StaticResource ForegroundColor}" />
             </ToolbarItem.IconImageSource>
