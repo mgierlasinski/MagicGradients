@@ -23,7 +23,7 @@ namespace Playground.Data.Repositories
         {
             using (var db = _databaseProvider.CreateDatabase())
             {
-                var collection = db.GetCollection<Gradient>("gradients");
+                var collection = db.GetCollection<Gradient>(nameof(Gradient));
 
                 if (collection.Count() > 0)
                     return;
@@ -40,7 +40,7 @@ namespace Playground.Data.Repositories
         {
             using (var db = _databaseProvider.CreateDatabase())
             {
-                var collection = db.GetCollection<Gradient>("gradients");
+                var collection = db.GetCollection<Gradient>(nameof(Gradient));
                 return collection.FindAll().ToList();
             }
         }
@@ -49,7 +49,7 @@ namespace Playground.Data.Repositories
         {
             using (var db = _databaseProvider.CreateDatabase())
             {
-                var collection = db.GetCollection<Gradient>("gradients");
+                var collection = db.GetCollection<Gradient>(nameof(Gradient));
                 return collection.FindById(new BsonValue(id));
             }
         }
@@ -58,7 +58,7 @@ namespace Playground.Data.Repositories
         {
             using (var db = _databaseProvider.CreateDatabase())
             {
-                var collection = db.GetCollection<Gradient>("gradients");
+                var collection = db.GetCollection<Gradient>(nameof(Gradient));
                 return collection.Find(x => x.Tags.Contains(tag)).ToList();
             }
         }
