@@ -1,14 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             mc:Ignorable="d"
+             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
              x:Class="Playground.Views.GalleryPreviewPage"
              Title="Gradient Preview"
              BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
-    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding PreviewCssCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
+                                 FontFamily="{StaticResource IconFont}"
+                                 Color="{StaticResource ForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <Grid>
         <magic:GradientView GradientSource="{Binding Gradient}" />
     </Grid>

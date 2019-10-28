@@ -10,6 +10,7 @@ namespace Playground
             InitializeComponent();
 
             Routing.RegisterRoute("GalleryPreview", typeof(GalleryPreviewPage));
+            Routing.RegisterRoute("PasteCss", typeof(PasteCssPage));
         }
     }
 }

@@ -1,15 +1,17 @@
 ﻿using MagicGradients;
 using Playground.Services;
 using System;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Playground.ViewModels
 {
-    [QueryProperty("Category", "category")]
     [QueryProperty("Id", "id")]
     public class GalleryPreviewViewModel : BaseViewModel
     {
         private readonly IGalleryService _galleryService;
+
+        public ICommand PreviewCssCommand { get; set; }
 
         private IGradientSource _gradient;
         public IGradientSource Gradient
@@ -32,6 +34,11 @@ namespace Playground.ViewModels
         public GalleryPreviewViewModel(IGalleryService galleryService)
         {
             _galleryService = galleryService;
+
+            PreviewCssCommand = new Command(async () =>
+            {
+                await Shell.Current.GoToAsync($"PasteCss?id={Id}");
+            });
         }
     }
 }
