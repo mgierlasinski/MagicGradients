@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Angular.json" />
+    <None Remove="Resources\Burst.json" />
+    <None Remove="Resources\Checkered.json" />
+    <None Remove="Resources\Retro.json" />
+    <None Remove="Resources\Standard.json" />
+    <None Remove="Resources\Stripes.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Angular.json" />
+    <EmbeddedResource Include="Resources\Burst.json" />
+    <EmbeddedResource Include="Resources\Checkered.json" />
+    <EmbeddedResource Include="Resources\Retro.json" />
+    <EmbeddedResource Include="Resources\Standard.json" />
+    <EmbeddedResource Include="Resources\Stripes.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="4.1.4" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />
+  </ItemGroup>
+
+</Project>

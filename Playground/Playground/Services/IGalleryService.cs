@@ -1,4 +1,5 @@
 ﻿using Playground.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Playground.Services
@@ -7,6 +8,6 @@ namespace Playground.Services
     {
         List<Gradient> GetGradients(string category);
 
-        Gradient GetGradientById(string category, int id);
+        Gradient GetGradientById(Guid id);
     }
 }

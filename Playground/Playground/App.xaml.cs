@@ -1,5 +1,4 @@
-﻿using Playground.Services;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Playground
 {
@@ -9,7 +8,7 @@ namespace Playground
         {
             InitializeComponent();
 
-            DependencyService.Register<GalleryService>();
+            IoC.Initialize();
 
             MainPage = new AppShell();
         }

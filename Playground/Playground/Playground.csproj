@@ -10,33 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="StaticData\Gradients\Angular.txt" />
-    <None Remove="StaticData\Gradients\Burst.txt" />
-    <None Remove="StaticData\Gradients\Checkered.txt" />
-    <None Remove="StaticData\Gradients\Retro.txt" />
-    <None Remove="StaticData\Gradients\Standard.txt" />
-    <None Remove="StaticData\Gradients\Stripes.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="StaticData\Gradients\Angular.txt" />
-    <EmbeddedResource Include="StaticData\Gradients\Burst.txt" />
-    <EmbeddedResource Include="StaticData\Gradients\Retro.txt" />
-    <EmbeddedResource Include="StaticData\Gradients\Standard.txt" />
-    <EmbeddedResource Include="StaticData\Gradients\Stripes.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="StaticData\Gradients\Checkered.txt" />
+    <ProjectReference Include="..\Playground.Data\Playground.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
