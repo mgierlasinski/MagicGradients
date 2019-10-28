@@ -1,37 +1,34 @@
 ﻿using LiteDB;
+using Playground.Data.Infrastructure;
 using Playground.Data.Models;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
+using Xamarin.Forms;
 
 namespace Playground.Data.Repositories
 {
     public class GradientRepository : IGradientRepository
     {
-        private readonly string[] _files =
+        private readonly IDatabaseProvider _databaseProvider;
+        private readonly IDocumentRepository _documentRepository;
+        
+        public GradientRepository()
         {
-            "Angular.json",
-            "Burst.json",
-            "Checkered.json",
-            "Retro.json",
-            "Standard.json",
-            "Stripes.json"
-        };
+            _databaseProvider = DependencyService.Get<IDatabaseProvider>();
+            _documentRepository = DependencyService.Get<IDocumentRepository>();
+        }
 
         public void Initialize()
         {
-            using (var db = new LiteDatabase(GetDbPath()))
+            using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Gradient>("gradients");
 
                 if (collection.Count() > 0)
-                {
-                    collection.Delete(Query.All());
-                }
+                    return;
 
-                var documents = GetDocuments("Playground.Data.Resources", _files);
+                var documents = _documentRepository.GetInitialValues();
                 var mapper = BsonMapper.Global;
 
                 collection.InsertBulk(documents.Select(x => mapper.ToObject<Gradient>(x.AsDocument)));
@@ -41,7 +38,7 @@ namespace Playground.Data.Repositories
 
         public IEnumerable<Gradient> GetAll()
         {
-            using (var db = new LiteDatabase(GetDbPath()))
+            using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Gradient>("gradients");
                 return collection.FindAll().ToList();
@@ -50,7 +47,7 @@ namespace Playground.Data.Repositories
 
         public Gradient GetById(Guid id)
         {
-            using (var db = new LiteDatabase(GetDbPath()))
+            using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Gradient>("gradients");
                 return collection.FindById(new BsonValue(id));
@@ -59,34 +56,11 @@ namespace Playground.Data.Repositories
 
         public IEnumerable<Gradient> GetByTag(string tag)
         {
-            using (var db = new LiteDatabase(GetDbPath()))
+            using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Gradient>("gradients");
                 return collection.Find(x => x.Tags.Contains(tag)).ToList();
             }
-        }
-
-        private List<BsonValue> GetDocuments(string nameSpace, string[] files)
-        {
-            var documents = new List<BsonValue>();
-            var assembly = typeof(GradientRepository).GetTypeInfo().Assembly;
-
-            foreach (var file in files)
-            {
-                using (var stream = assembly.GetManifestResourceStream($"{nameSpace}.{file}"))
-                using (var reader = new StreamReader(stream))
-                {
-                    documents.AddRange(JsonSerializer.DeserializeArray(reader));
-                }
-            }
-
-            return documents;
-        }
-
-        private string GetDbPath()
-        {
-            var dir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            return Path.Combine(dir, "Gradients.db");
         }
     }
 }
