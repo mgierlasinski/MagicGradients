@@ -2,6 +2,7 @@
   {
     "id": "edcdf3f1-8ea9-43d3-a437-784e56df07fa",
     "stylesheet": "linear-gradient(135deg, rgb(195, 39, 2) 0%,rgb(224, 164, 60) 100%)",
+    "preview": true, 
     "tags": [
       "standard"
     ]

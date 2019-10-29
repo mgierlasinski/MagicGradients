@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:models="clr-namespace:Playground.Models"
+             x:Class="Playground.Views.GalleryCategoriesPage"
+             Title="Gradient Gallery"
+             BindingContext="{Binding GalleryCategoriesViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+    <Grid Padding="5">
+        <CollectionView x:Name="CategoriesList" 
+                        ItemsSource="{Binding Categories}" 
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedItem}" 
+                        SelectionChanged="GalleryList_OnSelectionChanged">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:GradientCategory">
+                    <Grid Padding="5">
+                        <Frame HasShadow="True" Visual="Material" />
+                        <magic:GradientView HeightRequest="150" GradientSource="{Binding GradientSource}" />
+                        <Grid VerticalOptions="End">
+                            <BoxView Style="{StaticResource SemiTransparent}" />
+                            <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource LightForegroundColor}" />
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

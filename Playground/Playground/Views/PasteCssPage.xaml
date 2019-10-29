@@ -14,11 +14,11 @@
         <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" />
         <magic:GradientView GradientSource="{Binding GradientSource}" Grid.Row="1" />
         <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="1" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
-            <BoxView BackgroundColor="Black" Opacity="0.5" />
+            <BoxView Style="{StaticResource SemiTransparent}" />
             <Label Text="{Binding Message}" TextColor="{StaticResource LightForegroundColor}" Margin="10" />
         </Grid>
         <Grid Grid.Row="1" VerticalOptions="End">
-            <BoxView BackgroundColor="Black" Opacity="0.5" />
+            <BoxView Style="{StaticResource SemiTransparent}" />
             <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <ImageButton Command="{Binding RefreshCommand}" BackgroundColor="Transparent" Padding="10,5">
                     <ImageButton.Source>

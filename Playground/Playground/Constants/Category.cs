@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace Playground.Constants
+﻿namespace Playground.Constants
 {
     public static class Category
     {

@@ -40,7 +40,7 @@
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
-    <ShellContent Title="Gallery" ContentTemplate="{DataTemplate local:GalleryListPage}">
+    <ShellContent Title="Gradient Gallery" ContentTemplate="{DataTemplate local:GalleryCategoriesPage}">
         <ShellContent.Icon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Gallery}" 
                              FontFamily="{StaticResource IconFont}" 

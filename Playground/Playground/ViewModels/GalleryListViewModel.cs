@@ -1,8 +1,9 @@
-﻿using System;
-using Playground.Constants;
+﻿using Playground.Constants;
 using Playground.Models;
 using Playground.Services;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace Playground.ViewModels
@@ -24,7 +25,7 @@ namespace Playground.ViewModels
             get => _selectedCategory;
             set => SetProperty(ref _selectedCategory, value, onChanged: () =>
             {
-                Gradients = _galleryService.GetGradients(SelectedCategory);
+                Gradients = _galleryService.GetGradients(SelectedCategory).ToList();
             });
         }
 

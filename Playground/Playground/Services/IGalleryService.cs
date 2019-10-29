@@ -6,8 +6,10 @@ namespace Playground.Services
 {
     public interface IGalleryService
     {
-        List<Gradient> GetGradients(string category);
+        IEnumerable<Gradient> GetGradients(string category);
 
         Gradient GetGradientById(Guid id);
+
+        IEnumerable<GradientCategory> GetCategories();
     }
 }
