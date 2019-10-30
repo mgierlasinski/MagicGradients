@@ -1,5 +1,4 @@
-﻿using Playground.Constants;
-using Playground.Models;
+﻿using Playground.Models;
 using Playground.Services;
 using System;
 using System.Collections.Generic;
@@ -8,25 +7,27 @@ using Xamarin.Forms;
 
 namespace Playground.ViewModels
 {
+    [QueryProperty("SelectedTag", "tag")]
     public class GalleryListViewModel : BaseViewModel
     {
         private readonly IGalleryService _galleryService;
 
-        public string[] Categories { get; } =
+        private string _selectedTag;
+        public string SelectedTag
         {
-            Category.Standard, Category.Angular,
-            Category.Stripes, Category.Retro,
-            Category.Checkered, Category.Burst
-        };
-
-        private string _selectedCategory;
-        public string SelectedCategory
-        {
-            get => _selectedCategory;
-            set => SetProperty(ref _selectedCategory, value, onChanged: () =>
+            get => _selectedTag;
+            set => SetProperty(ref _selectedTag, value, onChanged: () =>
             {
-                Gradients = _galleryService.GetGradients(SelectedCategory).ToList();
+                Gradients = _galleryService.GetGradients(_selectedTag).ToList();
+                Title = _galleryService.GetCategories().FirstOrDefault(x => x.Tag == _selectedTag)?.Name;
             });
+        }
+
+        private string _title;
+        public string Title
+        {
+            get => _title;
+            set => SetProperty(ref _title, value);
         }
 
         private List<Gradient> _gradients;
@@ -53,7 +54,6 @@ namespace Playground.ViewModels
         public GalleryListViewModel(IGalleryService galleryService)
         {
             _galleryService = galleryService;
-            SelectedCategory = Category.Standard;
         }
     }
 }

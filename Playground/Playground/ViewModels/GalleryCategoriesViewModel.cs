@@ -1,6 +1,7 @@
 ﻿using Playground.Models;
 using Playground.Services;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace Playground.ViewModels
 {
@@ -19,11 +20,11 @@ namespace Playground.ViewModels
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value, onChanged: async () =>
             {
-                //if (_selectedItem == null)
-                //    return;
+                if (_selectedItem == null)
+                    return;
 
-                //var id = SelectedItem?.Id ?? Guid.Empty;
-                //await Shell.Current.GoToAsync($"GalleryPreview?id={id}");
+                var tag = SelectedItem?.Tag ?? string.Empty;
+                await Shell.Current.GoToAsync($"GalleryList?tag={tag}");
             });
         }
 
