@@ -108,4 +108,11 @@ repeating-linear-gradient(0deg,
 )
 ```
 
+## HSL and HSLA colors with double values
+
+In a moment Xamarin.Forms can't convert HSL and HSLA color with double values. [Fix to that](https://github.com/xamarin/Xamarin.Forms/pull/8114) already merged to Xamarin.Forms `master` branch but NuGet package is not updated in a moment.
+
+This part will be updated right after that fix will be applied to **Magic Gradients**, but right now if you don't want to catch runtime parse exception from Xamarin.Forms please search in your gradients with next Regex "`\w*\(\d+\.\d+`". At all places where you find that, please just remove decimal places and that should work.
+
+
 
