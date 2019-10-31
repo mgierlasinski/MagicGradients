@@ -6,13 +6,14 @@ namespace Playground.Models
     {
         public string Name { get; set; }
 
-        public string Tag => Name.ToLowerInvariant();
+        public string Tag { get; set; }
 
         public IGradientSource GradientSource { get; set; }
 
-        public GradientCategory(string name)
+        public GradientCategory(string name, string tag)
         {
             Name = name;
+            Tag = tag;
         }
     }
 }

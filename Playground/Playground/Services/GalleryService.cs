@@ -1,7 +1,5 @@
 using MagicGradients;
-using Playground.Constants;
 using Playground.Data.Repositories;
-using Playground.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,35 +23,15 @@ namespace Playground.Services
             return _gradientRepository.GetByTag(tag).Select(MapGradient);
         }
 
+        public IEnumerable<Gradient> FilterGradients(string category, params string[] tags)
+        {
+            return _gradientRepository.FilterByTags(category, tags).Select(MapGradient);
+        }
+
         public Gradient GetGradientById(Guid id)
         {
             var result = _gradientRepository.GetById(id);
             return MapGradient(result);
-        }
-
-        public IEnumerable<GradientCategory> GetCategories()
-        {
-            var categories = new[]
-            {
-                new GradientCategory(Category.Standard),
-                new GradientCategory(Category.Angular),
-                new GradientCategory(Category.Stripes),
-                new GradientCategory(Category.Retro),
-                new GradientCategory(Category.Checkered),
-                new GradientCategory(Category.Burst)
-            };
-
-            foreach (var cat in categories)
-            {
-                var previews = _gradientRepository.GetPreviewsForTags(categories.Select(x => x.Tag).ToArray());
-
-                cat.GradientSource = new CssGradientSource
-                {
-                    Stylesheet = previews.FirstOrDefault(x => x.Tags.Contains(cat.Tag))?.Stylesheet ?? string.Empty
-                };
-            }
-
-            return categories;
         }
 
         private Gradient MapGradient(GradientDto source) => new Gradient

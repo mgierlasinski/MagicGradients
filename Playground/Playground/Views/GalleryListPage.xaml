@@ -6,7 +6,23 @@
              x:Class="Playground.Views.GalleryListPage"
              Title="{Binding Title}"
              BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
-    <Grid>
+    <StackLayout Spacing="0">
+        <CollectionView x:Name="ThemeList"
+                        ItemsSource="{Binding Themes}" 
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedTheme}"
+                        HeightRequest="80">
+            <CollectionView.ItemsLayout>
+                <ListItemsLayout Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:GradientTheme">
+                    <Grid>
+                        <BoxView Color="{Binding Color}" WidthRequest="100" Margin="5" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         <CollectionView x:Name="GalleryList" 
                         ItemsSource="{Binding Gradients}" 
                         SelectionMode="Single"
@@ -23,5 +39,5 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </Grid>
+    </StackLayout>
 </ContentPage>

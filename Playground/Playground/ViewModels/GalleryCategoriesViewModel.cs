@@ -28,9 +28,9 @@ namespace Playground.ViewModels
             });
         }
 
-        public GalleryCategoriesViewModel(IGalleryService galleryService)
+        public GalleryCategoriesViewModel(ICategoryService categoryService)
         {
-            Categories = galleryService.GetCategories();
+            Categories = categoryService.GetCategories();
         }
     }
 }

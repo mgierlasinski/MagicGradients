@@ -14,6 +14,8 @@ namespace Playground.Data.Repositories
 
         IEnumerable<Gradient> GetByTag(string tag);
 
-        IEnumerable<Gradient> GetPreviewsForTags(params string[] tags);
+        IEnumerable<Gradient> FilterByTags(string category, params string[] tags);
+
+        IEnumerable<Gradient> GetPreviewsForTags(string[] tags);
     }
 }

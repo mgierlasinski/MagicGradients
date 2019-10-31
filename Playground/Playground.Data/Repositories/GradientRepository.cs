@@ -65,7 +65,19 @@ namespace Playground.Data.Repositories
             }
         }
 
-        public IEnumerable<Gradient> GetPreviewsForTags(params string[] tags)
+        public IEnumerable<Gradient> FilterByTags(string category, params string[] tags)
+        {
+            using (var db = _databaseProvider.CreateDatabase())
+            {
+                var collection = db.GetCollection<Gradient>(nameof(Gradient));
+                return collection
+                    .Find(x => x.Tags.Contains(category))
+                    .Where(x => x.Tags.Intersect(tags).Count() == tags.Length)
+                    .ToList();
+            }
+        }
+
+        public IEnumerable<Gradient> GetPreviewsForTags(string[] tags)
         {
             using (var db = _databaseProvider.CreateDatabase())
             {

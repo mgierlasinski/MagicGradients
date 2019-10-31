@@ -8,8 +8,8 @@ namespace Playground.Services
     {
         IEnumerable<Gradient> GetGradients(string tag);
 
-        Gradient GetGradientById(Guid id);
+        IEnumerable<Gradient> FilterGradients(string category, params string[] tags);
 
-        IEnumerable<GradientCategory> GetCategories();
+        Gradient GetGradientById(Guid id);
     }
 }
