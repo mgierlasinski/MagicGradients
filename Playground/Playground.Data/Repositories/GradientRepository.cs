@@ -11,24 +11,22 @@ namespace Playground.Data.Repositories
     public class GradientRepository : IGradientRepository
     {
         private readonly IDatabaseProvider _databaseProvider;
-        private readonly IDocumentRepository _documentRepository;
         
         public GradientRepository()
         {
             _databaseProvider = DependencyService.Get<IDatabaseProvider>();
-            _documentRepository = DependencyService.Get<IDocumentRepository>();
         }
         
-        public void UpdateDatabase(LiteDatabase database, Metadata metadata)
+        public void UpdateDatabase(LiteDatabase db, Metadata metadata, IDocumentRepository documentRepository)
         {
-            var collection = database.GetCollection<Gradient>(nameof(Gradient));
+            var collection = db.GetCollection<Gradient>(nameof(Gradient));
 
             if (collection.Count() > 0)
             {
                 collection.Delete(Query.All());
             }
 
-            var documents = _documentRepository.GetDocumentCollection<Gradient>(metadata.NameSpace, metadata.GradientFiles);
+            var documents = documentRepository.GetDocumentCollection<Gradient>(metadata.NameSpace, metadata.Gradients);
 
             collection.InsertBulk(documents);
             collection.EnsureIndex(x => x.Tags);

@@ -7,38 +7,27 @@ namespace Playground.Data.Infrastructure
     public class DatabaseUpdater : IDatabaseUpdater
     {
         private readonly IDatabaseProvider _databaseProvider;
-        private readonly IGradientRepository _gradientRepository;
+        private readonly IDocumentRepository _documentRepository;
 
         public DatabaseUpdater()
         {
             _databaseProvider = DependencyService.Get<IDatabaseProvider>();
-            _gradientRepository = DependencyService.Get<IGradientRepository>();
+            _documentRepository = DependencyService.Get<IDocumentRepository>();
         }
 
-        public void RunUpdate()
+        public void RunUpdate(params ICanUpdateMyself[] repositories)
         {
-            // TODO: get from json
-            var metadata = new Metadata
-            {
-                Version = 1,
-                NameSpace = "Playground.Data.Resources",
-                GradientFiles = new []  
-                {
-                    "Angular.json",
-                    "Burst.json",
-                    "Checkered.json",
-                    "Retro.json",
-                    "Standard.json",
-                    "Stripes.json"
-                }
-            }; 
+            var metadata = _documentRepository.GetDocument<Metadata>("Playground.Data.Resources.Metadata.json");
 
             using (var db = _databaseProvider.CreateDatabase())
             {
                 if (db.Engine.UserVersion >= metadata.Version)
                     return;
 
-                _gradientRepository.UpdateDatabase(db, metadata);
+                foreach (var repository in repositories)
+                {
+                    repository.UpdateDatabase(db, metadata, _documentRepository);
+                }
 
                 db.Engine.UserVersion = metadata.Version;
             }

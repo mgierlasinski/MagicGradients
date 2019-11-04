@@ -1,7 +1,9 @@
-﻿namespace Playground.Data.Infrastructure
+﻿using Playground.Data.Repositories;
+
+namespace Playground.Data.Infrastructure
 {
     public interface IDatabaseUpdater
     {
-        void RunUpdate();
+        void RunUpdate(params ICanUpdateMyself[] repositories);
     }
 }

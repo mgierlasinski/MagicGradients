@@ -11,12 +11,17 @@ namespace Playground
         {
             DependencyService.Register<DatabaseProvider>();
             DependencyService.Register<DatabaseUpdater>();
+
             DependencyService.Register<DocumentRepository>();
             DependencyService.Register<GradientRepository>();
+            DependencyService.Register<CategoryRepository>();
+
             DependencyService.Register<GalleryService>();
             DependencyService.Register<CategoryService>();
 
-            DependencyService.Resolve<IDatabaseUpdater>().RunUpdate();
+            DependencyService.Resolve<IDatabaseUpdater>().RunUpdate(
+                DependencyService.Resolve<IGradientRepository>(), 
+                DependencyService.Resolve<ICategoryRepository>());
         }
     }
 }
