@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\GalleryCategoriesPage.xaml.cs">
+      <DependentUpon>GalleryCategoriesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\GalleryPreviewPage.xaml.cs">
       <DependentUpon>GalleryPreviewPage.xaml</DependentUpon>
     </Compile>

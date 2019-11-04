@@ -13,6 +13,7 @@ namespace Playground
             DependencyService.Register<DocumentRepository>();
             DependencyService.Register<GradientRepository>();
             DependencyService.Register<GalleryService>();
+            DependencyService.Register<CategoryService>();
 
             DependencyService.Resolve<IGradientRepository>().Initialize();
         }

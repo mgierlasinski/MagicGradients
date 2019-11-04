@@ -5,7 +5,6 @@ namespace Playground.Data.Models
 {
     public class Gradient
     {
-        [BsonField("id")]
         public Guid Id { get; set; }
 
         [BsonField("stylesheet")]
@@ -13,5 +12,8 @@ namespace Playground.Data.Models
 
         [BsonField("tags")]
         public string[] Tags { get; set; }
+
+        [BsonField("preview")]
+        public bool IsPreview { get; set; }
     }
 }

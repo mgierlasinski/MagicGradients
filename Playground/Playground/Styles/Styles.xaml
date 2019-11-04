@@ -27,4 +27,8 @@
         <Setter Property="VerticalTextAlignment" Value="Center" />
         <Setter Property="FontFamily" Value="{StaticResource IconFont}" />
     </Style>
+    <Style x:Key="SemiTransparent" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="Opacity" Value="0.5" />
+    </Style>
 </ResourceDictionary>

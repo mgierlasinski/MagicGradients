@@ -18,10 +18,14 @@ namespace Playground.Services
             _gradientRepository = DependencyService.Get<IGradientRepository>();
         }
 
-        public List<Gradient> GetGradients(string category)
+        public IEnumerable<Gradient> GetGradients(string tag)
         {
-            var tag = category.ToLowerInvariant();
-            return _gradientRepository.GetByTag(tag).Select(MapGradient).ToList();
+            return _gradientRepository.GetByTag(tag).Select(MapGradient);
+        }
+
+        public IEnumerable<Gradient> FilterGradients(string category, params string[] tags)
+        {
+            return _gradientRepository.FilterByTags(category, tags).Select(MapGradient);
         }
 
         public Gradient GetGradientById(Guid id)

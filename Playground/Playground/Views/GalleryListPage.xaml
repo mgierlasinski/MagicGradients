@@ -2,12 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:models="clr-namespace:Playground.Models"
              x:Class="Playground.Views.GalleryListPage"
-             Title="Gallery"
+             Title="{Binding Title}"
              BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
-    
-    <StackLayout>
-        <Picker ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" />
+    <StackLayout Spacing="0">
+        <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
+            <CollectionView x:Name="ThemeList"
+                            ItemsSource="{Binding Themes}" 
+                            SelectionMode="Multiple"
+                            SelectedItems="{Binding SelectedThemes}"
+                            HeightRequest="60">
+                <CollectionView.ItemsLayout>
+                    <ListItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:GradientTheme">
+                        <Grid>
+                            <BoxView Color="{Binding Color}" WidthRequest="100" Margin="5" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
         <CollectionView x:Name="GalleryList" 
                         ItemsSource="{Binding Gradients}" 
                         SelectionMode="Single"
@@ -17,7 +34,7 @@
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="models:Gradient">
                     <Grid>
                         <magic:GradientView GradientSource="{Binding Source}" HeightRequest="150" />
                     </Grid>

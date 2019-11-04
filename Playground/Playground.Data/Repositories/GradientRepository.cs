@@ -26,7 +26,9 @@ namespace Playground.Data.Repositories
                 var collection = db.GetCollection<Gradient>(nameof(Gradient));
 
                 if (collection.Count() > 0)
-                    return;
+                {
+                    collection.Delete(Query.All());
+                }
 
                 var documents = _documentRepository.GetInitialValues();
                 var mapper = BsonMapper.Global;
@@ -60,6 +62,34 @@ namespace Playground.Data.Repositories
             {
                 var collection = db.GetCollection<Gradient>(nameof(Gradient));
                 return collection.Find(x => x.Tags.Contains(tag)).ToList();
+            }
+        }
+
+        public IEnumerable<Gradient> FilterByTags(string category, params string[] tags)
+        {
+            using (var db = _databaseProvider.CreateDatabase())
+            {
+                var collection = db.GetCollection<Gradient>(nameof(Gradient));
+                return collection
+                    .Find(x => x.Tags.Contains(category))
+                    .Where(x => x.Tags.Intersect(tags).Any())
+                    .ToList();
+            }
+        }
+
+        public IEnumerable<Gradient> GetPreviewsForTags(string[] tags)
+        {
+            using (var db = _databaseProvider.CreateDatabase())
+            {
+                var collection = db.GetCollection<Gradient>(nameof(Gradient));
+                var result = new List<Gradient>();
+
+                foreach (var tag in tags)
+                {
+                    result.Add(collection.FindOne(x => x.Tags.Contains(tag) && x.IsPreview));
+                }
+
+                return result;
             }
         }
     }

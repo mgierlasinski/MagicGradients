@@ -2,15 +2,16 @@
   {
     "id": "edcdf3f1-8ea9-43d3-a437-784e56df07fa",
     "stylesheet": "linear-gradient(135deg, rgb(195, 39, 2) 0%,rgb(224, 164, 60) 100%)",
+    "preview": true, 
     "tags": [
-      "standard"
+      "standard", "red", "orange"
     ]
   },
   {
     "id": "4f832b09-e385-4a65-ae07-0f886a1068d7",
     "stylesheet": "linear-gradient(135deg, rgb(68, 202, 201) 0%,rgb(252, 255, 114) 100%)",
     "tags": [
-      "standard"
+      "standard", "yellow", "green"
     ]
   },
   {
