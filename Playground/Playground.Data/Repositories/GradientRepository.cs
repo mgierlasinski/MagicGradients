@@ -18,33 +18,20 @@ namespace Playground.Data.Repositories
             _databaseProvider = DependencyService.Get<IDatabaseProvider>();
             _documentRepository = DependencyService.Get<IDocumentRepository>();
         }
-
-        public void Initialize()
+        
+        public void UpdateDatabase(LiteDatabase database, Metadata metadata)
         {
-            using (var db = _databaseProvider.CreateDatabase())
+            var collection = database.GetCollection<Gradient>(nameof(Gradient));
+
+            if (collection.Count() > 0)
             {
-                var collection = db.GetCollection<Gradient>(nameof(Gradient));
-
-                if (collection.Count() > 0)
-                {
-                    collection.Delete(Query.All());
-                }
-
-                var documents = _documentRepository.GetInitialValues();
-                var mapper = BsonMapper.Global;
-
-                collection.InsertBulk(documents.Select(x => mapper.ToObject<Gradient>(x.AsDocument)));
-                collection.EnsureIndex(x => x.Tags);
+                collection.Delete(Query.All());
             }
-        }
 
-        public IEnumerable<Gradient> GetAll()
-        {
-            using (var db = _databaseProvider.CreateDatabase())
-            {
-                var collection = db.GetCollection<Gradient>(nameof(Gradient));
-                return collection.FindAll().ToList();
-            }
+            var documents = _documentRepository.GetDocumentCollection<Gradient>(metadata.NameSpace, metadata.GradientFiles);
+
+            collection.InsertBulk(documents);
+            collection.EnsureIndex(x => x.Tags);
         }
 
         public Gradient GetById(Guid id)
