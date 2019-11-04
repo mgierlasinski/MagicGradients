@@ -72,7 +72,7 @@ namespace Playground.Data.Repositories
                 var collection = db.GetCollection<Gradient>(nameof(Gradient));
                 return collection
                     .Find(x => x.Tags.Contains(category))
-                    .Where(x => x.Tags.Intersect(tags).Count() == tags.Length)
+                    .Where(x => x.Tags.Intersect(tags).Any())
                     .ToList();
             }
         }

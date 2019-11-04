@@ -2,6 +2,8 @@
 using Playground.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -27,7 +29,7 @@ namespace Playground.ViewModels
             set => SetProperty(ref _categoryTag, value, onChanged: () =>
             {
                 Title = _categoryService.GetCategories().FirstOrDefault(x => x.Tag == _categoryTag)?.Name;
-                LoadGradients();
+                LoadGradientsMultiple();
             });
         }
 
@@ -38,18 +40,18 @@ namespace Playground.ViewModels
             set => SetProperty(ref _themes, value);
         }
 
+        private ObservableCollection<object> _selectedThemes = new ObservableCollection<object>();
+        public ObservableCollection<object> SelectedThemes
+        {
+            get => _selectedThemes;
+            set => SetProperty(ref _selectedThemes, value);
+        }
+
         private List<Gradient> _gradients;
         public List<Gradient> Gradients
         {
             get => _gradients;
             set => SetProperty(ref _gradients, value);
-        }
-
-        private GradientTheme _selectedTheme;
-        public GradientTheme SelectedTheme
-        {
-            get => _selectedTheme;
-            set => SetProperty(ref _selectedTheme, value, onChanged: LoadGradients);
         }
 
         private Gradient _selectedItem;
@@ -74,13 +76,23 @@ namespace Playground.ViewModels
             _categoryService = categoryService;
 
             Themes = categoryService.GetThemes().ToList();
+            SelectedThemes.CollectionChanged += SelectedThemesOnCollectionChanged;
         }
 
-        private void LoadGradients()
+        private void SelectedThemesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if (SelectedTheme != null)
+            LoadGradientsMultiple();
+        }
+
+        private void LoadGradientsMultiple()
+        {
+            if (SelectedThemes.Any())
             {
-                Gradients = _galleryService.FilterGradients(_categoryTag, SelectedTheme.Tag).ToList();
+                Gradients = _galleryService
+                    .FilterGradients(_categoryTag, SelectedThemes
+                        .Cast<GradientTheme>()
+                        .Select(x => x.Tag).ToArray())
+                    .ToList();
             }
             else
             {

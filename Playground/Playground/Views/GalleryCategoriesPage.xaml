@@ -18,12 +18,13 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:GradientCategory">
                     <Grid Padding="5">
-                        <Frame HasShadow="True" Visual="Material" />
-                        <magic:GradientView HeightRequest="150" GradientSource="{Binding GradientSource}" />
-                        <Grid VerticalOptions="End">
-                            <BoxView Style="{StaticResource SemiTransparent}" />
-                            <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource LightForegroundColor}" />
-                        </Grid>
+                        <Frame HasShadow="True" Visual="Material" Padding="0" CornerRadius="5" IsClippedToBounds="True">
+                            <StackLayout Spacing="0">
+                                <magic:GradientView HeightRequest="150" GradientSource="{Binding GradientSource}" />
+                                <Label Text="{Binding Name}" HorizontalOptions="Center" Margin="0,5" 
+                                       TextColor="{StaticResource ForegroundColor}" FontAttributes="Bold" />
+                            </StackLayout>
+                        </Frame>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

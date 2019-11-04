@@ -7,22 +7,24 @@
              Title="{Binding Title}"
              BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <StackLayout Spacing="0">
-        <CollectionView x:Name="ThemeList"
-                        ItemsSource="{Binding Themes}" 
-                        SelectionMode="Single"
-                        SelectedItem="{Binding SelectedTheme}"
-                        HeightRequest="80">
-            <CollectionView.ItemsLayout>
-                <ListItemsLayout Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:GradientTheme">
-                    <Grid>
-                        <BoxView Color="{Binding Color}" WidthRequest="100" Margin="5" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
+            <CollectionView x:Name="ThemeList"
+                            ItemsSource="{Binding Themes}" 
+                            SelectionMode="Multiple"
+                            SelectedItems="{Binding SelectedThemes}"
+                            HeightRequest="60">
+                <CollectionView.ItemsLayout>
+                    <ListItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:GradientTheme">
+                        <Grid>
+                            <BoxView Color="{Binding Color}" WidthRequest="100" Margin="5" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
         <CollectionView x:Name="GalleryList" 
                         ItemsSource="{Binding Gradients}" 
                         SelectionMode="Single"
