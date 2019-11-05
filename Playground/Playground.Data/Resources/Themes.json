@@ -1,0 +1,37 @@
+[
+  {
+    "color": "#eb4141",
+    "tag": "red",
+    "order": 1
+  },
+  {
+    "color": "#eb9641",
+    "tag": "orange",
+    "order": 2
+  },
+  {
+    "color": "#e8eb41",
+    "tag": "yellow",
+    "order": 3
+  },
+  {
+    "color": "#4deb41",
+    "tag": "green",
+    "order": 4
+  },
+  {
+    "color": "#41bbeb",
+    "tag": "blue",
+    "order": 5
+  },
+  {
+    "color": "#6641eb",
+    "tag": "violet",
+    "order": 6
+  },
+  {
+    "color": "#e241eb",
+    "tag": "pink",
+    "order": 7
+  }
+]

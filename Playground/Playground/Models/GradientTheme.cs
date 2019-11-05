@@ -7,11 +7,5 @@ namespace Playground.Models
         public Color Color { get; set; }
 
         public string Tag { get; set; }
-
-        public GradientTheme(Color color, string tag)
-        {
-            Color = color;
-            Tag = tag;
-        }
     }
 }

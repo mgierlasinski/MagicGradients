@@ -2,6 +2,7 @@
 using Playground.Data.Infrastructure;
 using Playground.Data.Models;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace Playground.Data.Repositories
@@ -20,21 +21,34 @@ namespace Playground.Data.Repositories
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Category>(nameof(Category));
-                return collection.FindAll();
+                return collection.FindAll().OrderBy(x => x.Order);
+            }
+        }
+
+        public IEnumerable<Theme> GetThemes()
+        {
+            using (var db = _databaseProvider.CreateDatabase())
+            {
+                var collection = db.GetCollection<Theme>(nameof(Theme));
+                return collection.FindAll().OrderBy(x => x.Order);
             }
         }
 
         public void UpdateDatabase(LiteDatabase db, Metadata metadata, IDocumentRepository documentRepository)
         {
-            var collection = db.GetCollection<Category>(nameof(Category));
+            InsertData<Category>(db, documentRepository, metadata.NameSpace, metadata.Categories);
+            InsertData<Theme>(db, documentRepository, metadata.NameSpace, metadata.Themes);
+        }
 
+        private void InsertData<T>(LiteDatabase db, IDocumentRepository documentRepository, string nameSpace, string fileName)
+        {
+            var collection = db.GetCollection<T>(typeof(T).Name);
             if (collection.Count() > 0)
             {
                 collection.Delete(Query.All());
             }
 
-            var documents = documentRepository.GetDocumentCollection<Category>(metadata.NameSpace, new [] { metadata.Categories } );
-
+            var documents = documentRepository.GetDocumentCollection<T>(nameSpace, new[] { fileName });
             collection.InsertBulk(documents);
         }
     }

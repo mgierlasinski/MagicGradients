@@ -22,7 +22,7 @@ namespace Playground.Services
 
         public IEnumerable<GradientCategory> GetCategories()
         {
-            var categories = _categoryRepository.GetCategories().OrderBy(x => x.Order).ToArray();
+            var categories = _categoryRepository.GetCategories().ToArray();
             var previews = _gradientRepository.GetBySlugs(categories.Select(x => x.Slug).ToArray());
 
             return categories.Select(x => MapCategory(x, previews));
@@ -30,16 +30,7 @@ namespace Playground.Services
 
         public IEnumerable<GradientTheme> GetThemes()
         {
-            return new[]
-            {
-                new GradientTheme(Color.FromRgb(235, 65, 65), "red"),
-                new GradientTheme(Color.FromRgb(235, 150, 65), "orange"),
-                new GradientTheme(Color.FromRgb(232, 235, 65), "yellow"),
-                new GradientTheme(Color.FromRgb(77, 235, 65), "green"),
-                new GradientTheme(Color.FromRgb(65, 187, 235), "blue"),
-                new GradientTheme(Color.FromRgb(102, 65, 235), "violet"),
-                new GradientTheme(Color.FromRgb(226, 65, 235), "pink")
-            };
+            return _categoryRepository.GetThemes().Select(MapTheme);
         }
 
         private GradientCategory MapCategory(Category source, IEnumerable<Gradient> previews) => new GradientCategory
@@ -50,6 +41,12 @@ namespace Playground.Services
             {
                 Stylesheet = previews.FirstOrDefault(x => x.Slug == source.Slug)?.Stylesheet ?? string.Empty
             }
+        };
+
+        private GradientTheme MapTheme(Theme source) => new GradientTheme
+        {
+            Color = Color.FromHex(source.Color),
+            Tag = source.Tag
         };
     }
 }

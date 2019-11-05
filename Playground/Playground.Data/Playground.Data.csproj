@@ -13,6 +13,7 @@
     <None Remove="Resources\Retro.json" />
     <None Remove="Resources\Standard.json" />
     <None Remove="Resources\Stripes.json" />
+    <None Remove="Resources\Themes.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,7 @@
     <EmbeddedResource Include="Resources\Retro.json" />
     <EmbeddedResource Include="Resources\Standard.json" />
     <EmbeddedResource Include="Resources\Stripes.json" />
+	<EmbeddedResource Include="Resources\Themes.json" />
   </ItemGroup>
 
   <ItemGroup>
