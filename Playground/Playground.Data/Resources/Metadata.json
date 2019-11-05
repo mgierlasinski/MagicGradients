@@ -1,6 +1,7 @@
 {
-  "version": 2,
+  "version": 6,
   "namespace": "Playground.Data.Resources",
+  "categories": "Categories.json",
   "gradients": [
     "Angular.json",
     "Burst.json",

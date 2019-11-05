@@ -13,6 +13,9 @@ namespace Playground.Data.Models
         [BsonField("tags")]
         public string[] Tags { get; set; }
 
+        [BsonField("slug")]
+        public string Slug { get; set; }
+
         [BsonField("preview")]
         public bool IsPreview { get; set; }
     }

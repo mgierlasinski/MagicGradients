@@ -17,21 +17,6 @@ namespace Playground.Data.Repositories
             _databaseProvider = DependencyService.Get<IDatabaseProvider>();
         }
         
-        public void UpdateDatabase(LiteDatabase db, Metadata metadata, IDocumentRepository documentRepository)
-        {
-            var collection = db.GetCollection<Gradient>(nameof(Gradient));
-
-            if (collection.Count() > 0)
-            {
-                collection.Delete(Query.All());
-            }
-
-            var documents = documentRepository.GetDocumentCollection<Gradient>(metadata.NameSpace, metadata.Gradients);
-
-            collection.InsertBulk(documents);
-            collection.EnsureIndex(x => x.Tags);
-        }
-
         public Gradient GetById(Guid id)
         {
             using (var db = _databaseProvider.CreateDatabase())
@@ -62,20 +47,29 @@ namespace Playground.Data.Repositories
             }
         }
 
-        public IEnumerable<Gradient> GetPreviewsForTags(string[] tags)
+        public IEnumerable<Gradient> GetBySlugs(string[] slugs)
         {
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Gradient>(nameof(Gradient));
-                var result = new List<Gradient>();
-
-                foreach (var tag in tags)
-                {
-                    result.Add(collection.FindOne(x => x.Tags.Contains(tag) && x.IsPreview));
-                }
-
-                return result;
+                return collection.Find(x => slugs.Contains(x.Slug)).ToList();
             }
+        }
+
+        public void UpdateDatabase(LiteDatabase db, Metadata metadata, IDocumentRepository documentRepository)
+        {
+            var collection = db.GetCollection<Gradient>(nameof(Gradient));
+
+            if (collection.Count() > 0)
+            {
+                collection.Delete(Query.All());
+            }
+
+            var documents = documentRepository.GetDocumentCollection<Gradient>(metadata.NameSpace, metadata.Gradients);
+
+            collection.InsertBulk(documents);
+            collection.EnsureIndex(x => x.Slug);
+            collection.EnsureIndex(x => x.Tags);
         }
     }
 }

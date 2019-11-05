@@ -10,6 +10,9 @@ namespace Playground.Data.Models
         [BsonField("namespace")]
         public string NameSpace { get; set; }
 
+        [BsonField("categories")]
+        public string Categories { get; set; }
+
         [BsonField("gradients")]
         public string[] Gradients { get; set; }
     }

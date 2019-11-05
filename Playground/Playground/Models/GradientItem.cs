@@ -3,7 +3,7 @@ using System;
 
 namespace Playground.Models
 {
-    public class Gradient
+    public class GradientItem
     {
         public Guid Id { get; set; }
 

@@ -34,7 +34,7 @@
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Gradient">
+                <DataTemplate x:DataType="models:GradientItem">
                     <Grid>
                         <magic:GradientView GradientSource="{Binding Source}" HeightRequest="150" />
                     </Grid>

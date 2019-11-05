@@ -47,15 +47,15 @@ namespace Playground.ViewModels
             set => SetProperty(ref _selectedThemes, value);
         }
 
-        private List<Gradient> _gradients;
-        public List<Gradient> Gradients
+        private List<GradientItem> _gradients;
+        public List<GradientItem> Gradients
         {
             get => _gradients;
             set => SetProperty(ref _gradients, value);
         }
 
-        private Gradient _selectedItem;
-        public Gradient SelectedItem
+        private GradientItem _selectedItem;
+        public GradientItem SelectedItem
         {
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value, onChanged: async () =>
