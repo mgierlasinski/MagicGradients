@@ -21,7 +21,7 @@ namespace Playground.Data.Repositories
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Category>(nameof(Category));
-                return collection.FindAll().OrderBy(x => x.Order);
+                return collection.FindAll().OrderBy(x => x.Id);
             }
         }
 
@@ -30,7 +30,7 @@ namespace Playground.Data.Repositories
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Theme>(nameof(Theme));
-                return collection.FindAll().OrderBy(x => x.Order);
+                return collection.FindAll().OrderBy(x => x.Id);
             }
         }
 

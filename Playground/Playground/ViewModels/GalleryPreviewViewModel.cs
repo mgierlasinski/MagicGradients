@@ -27,7 +27,7 @@ namespace Playground.ViewModels
             set
             {
                 _id = value;
-                Gradient = _galleryService.GetGradientById(new Guid(_id)).Source;
+                Gradient = _galleryService.GetGradientById(int.Parse(_id)).Source;
             }
         }
 

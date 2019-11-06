@@ -1,12 +1,11 @@
 ﻿using Playground.Data.Models;
-using System;
 using System.Collections.Generic;
 
 namespace Playground.Data.Repositories
 {
     public interface IGradientRepository : ICanUpdateMyself
     {
-        Gradient GetById(Guid id);
+        Gradient GetById(int id);
 
         IEnumerable<Gradient> GetByTag(string tag);
 

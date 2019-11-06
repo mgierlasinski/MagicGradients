@@ -1,7 +1,6 @@
 using MagicGradients;
 using Playground.Data.Repositories;
 using Playground.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
@@ -28,7 +27,7 @@ namespace Playground.Services
             return _gradientRepository.FilterByTags(category, tags).Select(MapGradient);
         }
 
-        public GradientItem GetGradientById(Guid id)
+        public GradientItem GetGradientById(int id)
         {
             var result = _gradientRepository.GetById(id);
             return MapGradient(result);

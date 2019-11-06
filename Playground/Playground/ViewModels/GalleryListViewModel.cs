@@ -29,7 +29,8 @@ namespace Playground.ViewModels
             set => SetProperty(ref _categoryTag, value, onChanged: () =>
             {
                 Title = _categoryService.GetCategories().FirstOrDefault(x => x.Tag == _categoryTag)?.Name;
-                LoadGradientsMultiple();
+                _allGradients = _galleryService.GetGradients(_categoryTag).ToList();
+                RefreshGradients();
             });
         }
 
@@ -47,6 +48,8 @@ namespace Playground.ViewModels
             set => SetProperty(ref _selectedThemes, value);
         }
 
+        private List<GradientItem> _allGradients;
+
         private List<GradientItem> _gradients;
         public List<GradientItem> Gradients
         {
@@ -63,7 +66,7 @@ namespace Playground.ViewModels
                 if (_selectedItem == null)
                     return;
 
-                var id = SelectedItem?.Id ?? Guid.Empty;
+                var id = SelectedItem?.Id ?? 0;
                 await Shell.Current.GoToAsync($"GalleryPreview?id={id}");
             });
         }
@@ -81,22 +84,19 @@ namespace Playground.ViewModels
 
         private void SelectedThemesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            LoadGradientsMultiple();
+            RefreshGradients();
         }
 
-        private void LoadGradientsMultiple()
+        private void RefreshGradients()
         {
             if (SelectedThemes.Any())
             {
-                Gradients = _galleryService
-                    .FilterGradients(_categoryTag, SelectedThemes
-                        .Cast<GradientTheme>()
-                        .Select(x => x.Tag).ToArray())
-                    .ToList();
+                var colors = SelectedThemes.Cast<GradientTheme>().Select(x => x.Color).ToArray();
+                Gradients = _allGradients.Where(x => x.HasColors(colors)).ToList();
             }
             else
             {
-                Gradients = _galleryService.GetGradients(_categoryTag).ToList();
+                Gradients = _allGradients;
             }
         }
     }

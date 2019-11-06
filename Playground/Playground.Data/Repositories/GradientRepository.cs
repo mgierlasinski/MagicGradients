@@ -17,7 +17,7 @@ namespace Playground.Data.Repositories
             _databaseProvider = DependencyService.Get<IDatabaseProvider>();
         }
         
-        public Gradient GetById(Guid id)
+        public Gradient GetById(int id)
         {
             using (var db = _databaseProvider.CreateDatabase())
             {
@@ -31,7 +31,7 @@ namespace Playground.Data.Repositories
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Gradient>(nameof(Gradient));
-                return collection.Find(x => x.Tags.Contains(tag)).ToList();
+                return collection.Find(x => x.Tags.Contains(tag)).OrderBy(x => x.Id);
             }
         }
 
@@ -42,8 +42,7 @@ namespace Playground.Data.Repositories
                 var collection = db.GetCollection<Gradient>(nameof(Gradient));
                 return collection
                     .Find(x => x.Tags.Contains(category))
-                    .Where(x => x.Tags.Intersect(tags).Any())
-                    .ToList();
+                    .Where(x => x.Tags.Intersect(tags).Any());
             }
         }
 
@@ -52,7 +51,7 @@ namespace Playground.Data.Repositories
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Gradient>(nameof(Gradient));
-                return collection.Find(x => slugs.Contains(x.Slug)).ToList();
+                return collection.Find(x => slugs.Contains(x.Slug));
             }
         }
 

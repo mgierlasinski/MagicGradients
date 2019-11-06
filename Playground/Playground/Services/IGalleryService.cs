@@ -1,5 +1,4 @@
 ﻿using Playground.Models;
-using System;
 using System.Collections.Generic;
 
 namespace Playground.Services
@@ -10,6 +9,6 @@ namespace Playground.Services
 
         IEnumerable<GradientItem> FilterGradients(string category, params string[] tags);
 
-        GradientItem GetGradientById(Guid id);
+        GradientItem GetGradientById(int id);
     }
 }
