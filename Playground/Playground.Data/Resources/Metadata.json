@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "namespace": "Playground.Data.Resources",
+  "categories": "Categories.json",
+  "themes": "Themes.json",
+  "gradients": [
+    "Angular.json",
+    "Burst.json",
+    "Checkered.json",
+    "Retro.json",
+    "Standard.json",
+    "Stripes.json"
+  ]
+}

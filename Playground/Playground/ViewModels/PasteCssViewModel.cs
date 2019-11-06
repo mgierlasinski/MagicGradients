@@ -94,7 +94,7 @@ namespace Playground.ViewModels
 
         private void LoadCssCodeById()
         {
-            var gradient = _gradientRepository.GetById(new Guid(_id));
+            var gradient = _gradientRepository.GetById(int.Parse(_id));
 
             if (gradient == null)
                 return;

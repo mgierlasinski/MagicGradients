@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Standard",
+    "tag": "standard",
+    "slug": "edcdf3f1-8ea9-43d3-a437-784e56df07fa"
+  },
+  {
+    "name": "Angular",
+    "tag": "angular",
+    "slug": "364c802b-a5ec-47c0-a00e-b98b7ce73d3b"
+  },
+  {
+    "name": "Stripes",
+    "tag": "stripes",
+    "slug": "59a81bc3-a5b1-4270-a89b-5e0b093eeee2"
+  },
+  {
+    "name": "Retro",
+    "tag": "retro",
+    "slug": "ea10a553-a4a8-4858-844c-fab0415ba336"
+  },
+  {
+    "name": "Checkered",
+    "tag": "checkered",
+    "slug": "cb30d0ed-eb2f-420b-a7fc-e2a19a786aa3"
+  },
+  {
+    "name": "Burst",
+    "tag": "burst",
+    "slug": "4bc9458d-a821-4db8-b8c7-9bde539ce3ad"
+  }
+]

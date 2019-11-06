@@ -1,35 +1,39 @@
 ﻿using LiteDB;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace Playground.Data.Repositories
 {
     public class DocumentRepository : IDocumentRepository
     {
-        private const string NameSpace = "Playground.Data.Resources";
-
-        private readonly string[] _files =
+        public T GetDocument<T>(string fullPath)
         {
-            "Angular.json",
-            "Burst.json",
-            "Checkered.json",
-            "Retro.json",
-            "Standard.json",
-            "Stripes.json"
-        };
+            var assembly = typeof(DocumentRepository).GetTypeInfo().Assembly;
+            var mapper = BsonMapper.Global;
 
-        public IEnumerable<BsonValue> GetInitialValues()
-        {
-            var documents = new List<BsonValue>();
-            var assembly = typeof(GradientRepository).GetTypeInfo().Assembly;
-
-            foreach (var file in _files)
+            using (var stream = assembly.GetManifestResourceStream(fullPath))
+            using (var reader = new StreamReader(stream))
             {
-                using (var stream = assembly.GetManifestResourceStream($"{NameSpace}.{file}"))
+                var value = JsonSerializer.Deserialize(reader);
+                return mapper.ToObject<T>(value.AsDocument);
+            }
+        }
+
+        public IEnumerable<T> GetDocumentCollection<T>(string nameSpace, string[] files)
+        {
+            var documents = new List<T>();
+            var assembly = typeof(DocumentRepository).GetTypeInfo().Assembly;
+            var mapper = BsonMapper.Global;
+
+            foreach (var file in files)
+            {
+                using (var stream = assembly.GetManifestResourceStream($"{nameSpace}.{file}"))
                 using (var reader = new StreamReader(stream))
                 {
-                    documents.AddRange(JsonSerializer.DeserializeArray(reader));
+                    var array = JsonSerializer.DeserializeArray(reader).Select(x => mapper.ToObject<T>(x.AsDocument));
+                    documents.AddRange(array);
                 }
             }
 

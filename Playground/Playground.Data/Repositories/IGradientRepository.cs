@@ -1,21 +1,16 @@
 ﻿using Playground.Data.Models;
-using System;
 using System.Collections.Generic;
 
 namespace Playground.Data.Repositories
 {
-    public interface IGradientRepository
+    public interface IGradientRepository : ICanUpdateMyself
     {
-        void Initialize();
-
-        IEnumerable<Gradient> GetAll();
-
-        Gradient GetById(Guid id);
+        Gradient GetById(int id);
 
         IEnumerable<Gradient> GetByTag(string tag);
 
         IEnumerable<Gradient> FilterByTags(string category, params string[] tags);
 
-        IEnumerable<Gradient> GetPreviewsForTags(string[] tags);
+        IEnumerable<Gradient> GetBySlugs(string[] slugs);
     }
 }

@@ -1,11 +1,10 @@
 ﻿using LiteDB;
-using System;
 
 namespace Playground.Data.Models
 {
     public class Gradient
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [BsonField("stylesheet")]
         public string Stylesheet { get; set; }
@@ -13,7 +12,7 @@ namespace Playground.Data.Models
         [BsonField("tags")]
         public string[] Tags { get; set; }
 
-        [BsonField("preview")]
-        public bool IsPreview { get; set; }
+        [BsonField("slug")]
+        public string Slug { get; set; }
     }
 }

@@ -1,11 +1,10 @@
 using MagicGradients;
 using Playground.Data.Repositories;
-using System;
+using Playground.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
-using Gradient = Playground.Models.Gradient;
-using GradientDto = Playground.Data.Models.Gradient;
+using Gradient = Playground.Data.Models.Gradient;
 
 namespace Playground.Services
 {
@@ -18,23 +17,23 @@ namespace Playground.Services
             _gradientRepository = DependencyService.Get<IGradientRepository>();
         }
 
-        public IEnumerable<Gradient> GetGradients(string tag)
+        public IEnumerable<GradientItem> GetGradients(string tag)
         {
             return _gradientRepository.GetByTag(tag).Select(MapGradient);
         }
 
-        public IEnumerable<Gradient> FilterGradients(string category, params string[] tags)
+        public IEnumerable<GradientItem> FilterGradients(string category, params string[] tags)
         {
             return _gradientRepository.FilterByTags(category, tags).Select(MapGradient);
         }
 
-        public Gradient GetGradientById(Guid id)
+        public GradientItem GetGradientById(int id)
         {
             var result = _gradientRepository.GetById(id);
             return MapGradient(result);
         }
 
-        private Gradient MapGradient(GradientDto source) => new Gradient
+        private GradientItem MapGradient(Gradient source) => new GradientItem
         {
             Id = source.Id,
             Source = new CssGradientSource {Stylesheet = source.Stylesheet}

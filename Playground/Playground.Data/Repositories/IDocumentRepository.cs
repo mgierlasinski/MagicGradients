@@ -1,10 +1,11 @@
-﻿using LiteDB;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Playground.Data.Repositories
 {
     public interface IDocumentRepository
     {
-        IEnumerable<BsonValue> GetInitialValues();
+        T GetDocument<T>(string fullPath);
+
+        IEnumerable<T> GetDocumentCollection<T>(string nameSpace, string[] files);
     }
 }
