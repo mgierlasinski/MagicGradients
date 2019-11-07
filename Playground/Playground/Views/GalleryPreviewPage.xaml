@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+             xmlns:models="clr-namespace:Playground.Models"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              x:Class="Playground.Views.GalleryPreviewPage"
              Title="Gradient Preview"
              BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Command="{Binding EditCommand}" />
         <ToolbarItem Command="{Binding PreviewCssCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
@@ -16,6 +19,38 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <Grid>
-        <magic:GradientView GradientSource="{Binding Gradient}" />
+        <magic:GradientView GradientSource="{Binding GradientSource}" />
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsEditMode}">
+            <BoxView BackgroundColor="White" Opacity="0.5" HorizontalOptions="Fill" VerticalOptions="Fill" />
+            <StackLayout Padding="10" Spacing="10">
+                <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5">
+                    <CollectionView ItemsSource="{Binding EditorItems}" 
+                                    SelectionMode="Single"
+                                    SelectedItem="{Binding SelectedItem}" HeightRequest="50">
+                        <CollectionView.ItemsLayout>
+                            <ListItemsLayout ItemSpacing="0" Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:GradientEditorItem">
+                                <Grid WidthRequest="50">
+                                    <Image Margin="5">
+                                        <Image.Source>
+                                            <FontImageSource Glyph="{x:Static ic:IconCodes.Gradient}" 
+                                                             FontFamily="{StaticResource IconFont}" Color="Black" />
+                                        </Image.Source>
+                                    </Image>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+                <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5">
+                    <Grid HeightRequest="50">
+                        <controls:CheckeredView />
+                        <magic:GradientView GradientSource="{Binding SelectedItem.StopsSource}" />
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </Grid>
     </Grid>
 </ContentPage>
