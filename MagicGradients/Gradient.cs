@@ -24,5 +24,20 @@ namespace MagicGradients
         {
             return new List<Gradient> { this };
         }
+
+        public void SetupUndefinedOffsets()
+        {
+            var step = 1f / (Stops.Count - 1);
+            var currentOffset = 0f;
+
+            foreach (var stop in Stops)
+            {
+                if (stop.Offset < 0)
+                {
+                    stop.Offset = currentOffset;
+                }
+                currentOffset += step;
+            }
+        }
     }
 }
