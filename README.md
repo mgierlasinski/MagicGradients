@@ -191,7 +191,8 @@ radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
 ```
 
 # Tutorials
-- https://medium.com/@benetskyybogdan/gradient-background-for-your-xamarin-forms-app-6d7e46fba558 - Bohdan's blog post with introduction to the library
+- [Gradient Background for your Xamarin.Forms App - blog post by Bohdan](https://medium.com/@benetskyybogdan/gradient-background-for-your-xamarin-forms-app-6d7e46fba558)
+- [XF Shell Gradient Flyout with Magic Gradients - blog post by Bohdan](https://medium.com/@benetskyybogdan/xf-shell-gradient-flyout-with-magic-gradients-e9f0eb46bae0)
 
 ---
 <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
