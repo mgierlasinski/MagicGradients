@@ -17,6 +17,8 @@ namespace Playground.ViewModels
 
         public ICommand PreviewCssCommand { get; set; }
 
+        public ICommand SelectCommand { get; set; }
+
         private IGradientSource _gradientSource;
         public IGradientSource GradientSource
         {
@@ -39,11 +41,8 @@ namespace Playground.ViewModels
             {
                 _id = value;
                 GradientSource = _galleryService.GetGradientById(int.Parse(_id)).Source;
-                EditorItems = GradientSource.GetGradients().Select(x => new GradientEditorItem
-                {
-                    StopsSource = new LinearGradient { Angle = 270, Stops = x.Stops },
-                    Type = x.GetType().Name
-                }).ToList();
+                EditorItems = GradientSource.GetGradients().Select(GradientEditorItem.FromGradient).ToList();
+                SelectedItem = EditorItems.FirstOrDefault();
             }
         }
 
@@ -70,6 +69,14 @@ namespace Playground.ViewModels
             PreviewCssCommand = new Command(async () =>
             {
                 await Shell.Current.GoToAsync($"PasteCss?id={Id}");
+            });
+
+            SelectCommand = new Command<GradientEditorStop>((stop) =>
+            {
+                if (SelectedItem == null)
+                    return;
+
+                SelectedItem.SelectedStop = stop;
             });
         }
     }
