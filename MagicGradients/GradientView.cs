@@ -5,6 +5,7 @@ using Xamarin.Forms;
 
 namespace MagicGradients
 {
+    [ContentProperty(nameof(GradientSource))]
     public class GradientView : SKCanvasView
     {
         static GradientView()
@@ -43,6 +44,7 @@ namespace MagicGradients
 
                 foreach (var gradient in GradientSource.GetGradients())
                 {
+                    gradient.Measure();
                     gradient.Render(context);
                 }
             }

@@ -70,27 +70,7 @@ namespace MagicGradients
 
         public Gradient[] Build()
         {
-            foreach (var gradient in _gradients)
-            {
-                SetupUndefinedOffsets(gradient);
-            }
             return _gradients.ToArray();
-        }
-
-        private void SetupUndefinedOffsets(Gradient gradient)
-        {
-            var step = 1f / (gradient.Stops.Count - 1);
-            var currentOffset = 0f;
-
-            foreach (var stop in gradient.Stops)
-            {
-                if (stop.Offset < 0)
-                {
-                    stop.Offset = currentOffset;
-                }
-                
-                currentOffset += step;
-            }
         }
     }
 }

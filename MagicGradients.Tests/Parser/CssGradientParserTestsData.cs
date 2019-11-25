@@ -62,7 +62,10 @@ namespace MagicGradients.Tests.Parser
                 {
                     Angle = FromDegrees(90), Stops = new List<GradientStop>
                     {
-                        new GradientStop { Color = Color.FromHsla(0.65833333333333333, 0, 0.13, 1) }
+                        new GradientStop
+                        {
+                            Color = Color.FromHsla(0.65833333333333333, 0, 0.13, 1)
+                        }
                     }
                 }
             };

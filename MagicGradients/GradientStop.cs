@@ -14,7 +14,7 @@ namespace MagicGradients
         }
 
         public static readonly BindableProperty OffsetProperty = BindableProperty.Create(
-            nameof(Offset), typeof(float), typeof(GradientStop), 0f);
+            nameof(Offset), typeof(float), typeof(GradientStop), -1f);
 
         public float Offset
         {
