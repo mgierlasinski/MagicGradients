@@ -44,7 +44,7 @@ namespace MagicGradients
 
                 foreach (var gradient in GradientSource.GetGradients())
                 {
-                    gradient.SetupUndefinedOffsets();
+                    gradient.Measure();
                     gradient.Render(context);
                 }
             }

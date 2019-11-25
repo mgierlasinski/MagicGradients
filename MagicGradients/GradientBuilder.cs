@@ -70,10 +70,6 @@ namespace MagicGradients
 
         public Gradient[] Build()
         {
-            foreach (var gradient in _gradients)
-            {
-                gradient.SetupUndefinedOffsets();
-            }
             return _gradients.ToArray();
         }
     }

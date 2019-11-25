@@ -1,4 +1,5 @@
 ﻿using MagicGradients.Renderers;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -25,13 +26,31 @@ namespace MagicGradients
             return new List<Gradient> { this };
         }
 
-        public void SetupUndefinedOffsets()
+        public virtual void Measure()
         {
-            var step = 1f / (Stops.Count - 1);
-            var currentOffset = 0f;
+            var fromIndex = 0;
 
-            foreach (var stop in Stops)
+            for (var i = 0; i < Stops.Count; i++)
             {
+                if (Stops[i].Offset >= 0 || i == Stops.Count - 1)
+                {
+                    SetupUndefinedOffsets(fromIndex, i);
+                    fromIndex = i;
+                }
+            }
+        }
+
+        private void SetupUndefinedOffsets(int fromIndex, int toIndex)
+        {
+            var currentOffset = Math.Max(Stops[fromIndex].Offset, 0);
+            var endOffset = Math.Abs(Stops[toIndex].Offset);
+
+            var step = (endOffset - currentOffset) / (toIndex - fromIndex);
+
+            for (var i = fromIndex; i <= toIndex; i++)
+            {
+                var stop = Stops[i];
+
                 if (stop.Offset < 0)
                 {
                     stop.Offset = currentOffset;

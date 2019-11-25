@@ -1,5 +1,6 @@
 using FluentAssertions;
 using MagicGradients.Parser;
+using Xamarin.Forms.Internals;
 using Xunit;
 
 namespace MagicGradients.Tests.Parser
@@ -47,6 +48,7 @@ namespace MagicGradients.Tests.Parser
 
             // Act
             var gradients = parser.ParseCss(css);
+            gradients.ForEach(x => x.Measure());
 
             // Assert
             gradients.Should().HaveCount(1);
