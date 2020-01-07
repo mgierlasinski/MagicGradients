@@ -32,6 +32,8 @@ namespace Playground.Models
 
         public static GradientEditorItem FromGradient(Gradient gradient)
         {
+            gradient.Measure();
+
             var item = new GradientEditorItem
             {
                 GradientSource = new LinearGradient {Angle = 270, Stops = gradient.Stops},
