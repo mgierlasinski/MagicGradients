@@ -30,7 +30,7 @@
                             SelectionMode="Single" 
                             SelectedItem="{Binding SelectedItem}">
                 <CollectionView.ItemsLayout>
-                    <ListItemsLayout ItemSpacing="0" Orientation="Horizontal" />
+                    <LinearItemsLayout ItemSpacing="0" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:GradientEditorItem">
