@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Marcin Gierlasiński, Bohdan Benetskyi and Contributors</Authors>
     <Product>Magic Gradients</Product>
     <Description>Draw breathtaking backgrounds in your Xamarin.Forms application. It's a kind of magic. Powered by SkiaSharp.</Description>
@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,3 +1,4 @@
+using System;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using MagicGradients.Parser;
@@ -91,6 +92,23 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
             // Assert
             success.Should().Be(expectedSuccess);
             result.Should().Be(expectedResult);
+        }
+
+        [Theory]
+        [InlineData("hsl(4.5, 10%, 35%)")]
+        [InlineData("hsla(4.5, 10%, 35%,0.35)")]
+        public void Parse_HslAndHsla_WithDoubleValues_NoExceptionsThrown(string color)
+        {
+            // Arrange
+            var reader = new CssReader(color);
+            var builder = new GradientBuilder();
+            var definition = new ColorChannelDefinition();
+
+            // Act
+            Action action = () => definition.Parse(reader, builder);
+
+            // Assert
+            action.Should().NotThrow<Exception>();
         }
     }
 }
