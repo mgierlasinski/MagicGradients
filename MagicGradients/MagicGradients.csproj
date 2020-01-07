@@ -5,10 +5,7 @@
     <Version>1.0.1</Version>
     <Authors>Marcin Gierlasiński, Bohdan Benetskyi and Contributors</Authors>
     <Product>Magic Gradients</Product>
-    <Description>Draw breathtaking backgrounds in your Xamarin.Forms application. It's a kind of magic. Powered by SkiaSharp.
-
-===================
-* Fixed bug with converting double values for HSL and HSLA Colors</Description>
+    <Description>Draw breathtaking backgrounds in your Xamarin.Forms application. It's a kind of magic. Powered by SkiaSharp.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/mgierlasinski/MagicGradients/</PackageProjectUrl>
     <PackageTags>magic;gradients;linear;radial;skiasharp;xamarin;forms;android;ios;uwp</PackageTags>
