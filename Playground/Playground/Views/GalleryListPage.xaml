@@ -9,12 +9,12 @@
     <StackLayout Spacing="0">
         <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
             <CollectionView x:Name="ThemeList"
-                            ItemsSource="{Binding Themes}" 
+                            ItemsSource="{Binding Themes}"
                             SelectionMode="Multiple"
                             SelectedItems="{Binding SelectedThemes}"
                             HeightRequest="60">
                 <CollectionView.ItemsLayout>
-                    <ListItemsLayout Orientation="Horizontal" />
+                    <LinearItemsLayout Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:GradientTheme">
@@ -25,10 +25,10 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Frame>
-        <CollectionView x:Name="GalleryList" 
-                        ItemsSource="{Binding Gradients}" 
+        <CollectionView x:Name="GalleryList"
+                        ItemsSource="{Binding Gradients}"
                         SelectionMode="Single"
-                        SelectedItem="{Binding SelectedItem}" 
+                        SelectedItem="{Binding SelectedItem}"
                         SelectionChanged="GalleryList_OnSelectionChanged">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
