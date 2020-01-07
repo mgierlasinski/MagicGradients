@@ -1,5 +1,6 @@
 using FluentAssertions;
 using MagicGradients.Parser;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xunit;
 
@@ -7,6 +8,11 @@ namespace MagicGradients.Tests.Parser
 {
     public class CssGradientParserTests
     {
+        public CssGradientParserTests()
+        {
+            Device.PlatformServices = new MockPlatformServices();
+        }
+
         [Theory]
         [InlineData("")]
         [InlineData(null)]

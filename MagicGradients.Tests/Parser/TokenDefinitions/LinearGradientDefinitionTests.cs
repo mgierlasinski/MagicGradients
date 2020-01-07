@@ -3,12 +3,18 @@ using FluentAssertions;
 using FluentAssertions.Execution;
 using MagicGradients.Parser;
 using MagicGradients.Parser.TokenDefinitions;
+using Xamarin.Forms;
 using Xunit;
 
 namespace MagicGradients.Tests.Parser.TokenDefinitions
 {
     public class LinearGradientDefinitionTests
     {
+        public LinearGradientDefinitionTests()
+        {
+            Device.PlatformServices = new MockPlatformServices();
+        }
+
         [Theory]
         [InlineData(CssToken.LinearGradient, true)]
         [InlineData(CssToken.RepeatingLinearGradient, true)]
