@@ -1,6 +1,7 @@
 using MagicGradients.Renderers;
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace MagicGradients
@@ -19,13 +20,23 @@ namespace MagicGradients
         public IGradientSource GradientSource
         {
             get => (IGradientSource)GetValue(GradientSourceProperty);
-            set => this.SetValue(GradientSourceProperty, value);
+            set
+            {                
+                ((IGradientSource)value).PropertyChanged -= GradientView_PropertyChanged;
+                ((IGradientSource)value).PropertyChanged += GradientView_PropertyChanged;
+                SetValue(GradientSourceProperty, value);
+            }
+        }
+
+        private void GradientView_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            InvalidateSurface();
         }
 
         static void OnGradientSourceChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var gradientView = (GradientView)bindable;
-            gradientView.InvalidateSurface();
+            gradientView.GradientSource = (IGradientSource)newValue;
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
