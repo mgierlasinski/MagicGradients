@@ -21,8 +21,9 @@ namespace MagicGradients
         {
             get => (IGradientSource)GetValue(GradientSourceProperty);
             set
-            {                
-                ((IGradientSource)value).PropertyChanged -= GradientView_PropertyChanged;
+            {
+                if (GradientSource != null)
+                    GradientSource.PropertyChanged -= GradientView_PropertyChanged;
                 ((IGradientSource)value).PropertyChanged += GradientView_PropertyChanged;
                 SetValue(GradientSourceProperty, value);
             }

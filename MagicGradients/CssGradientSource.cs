@@ -10,9 +10,9 @@ namespace MagicGradients
     public class CssGradientSource : BindableObject, IGradientSource
     {
         public static readonly BindableProperty StylesheetProperty = BindableProperty.Create(
-            nameof(Stylesheet), typeof(string), typeof(CssGradientSource), defaultBindingMode: BindingMode.TwoWay, propertyChanged: OnStylesheetChanged);
+            nameof(Stylesheet), typeof(string), typeof(CssGradientSource));
 
-         public string Stylesheet
+        public string Stylesheet
         {
             get => (string)GetValue(StylesheetProperty);
             set => SetValue(StylesheetProperty, value);
@@ -21,12 +21,6 @@ namespace MagicGradients
         public IEnumerable<Gradient> GetGradients()
         {
             return new CssGradientParser().ParseCss(Stylesheet);
-        }
-
-        static void OnStylesheetChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            CssGradientSource gradientSource = (CssGradientSource)bindable;
-            gradientSource.Stylesheet = (string)newValue;
         }
     }
 
