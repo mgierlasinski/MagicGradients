@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="Playground.Views.LinearGradientsAnimationPage"
+             Title="Linear Gradients">
+    <StackLayout Spacing="0">
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientCollection>
+                <magic:LinearGradient >
+                    <magic:GradientStop Color="Yellow" />
+                </magic:LinearGradient>
+                <magic:LinearGradient Angle="90" x:Name="Gradient">
+                    <magic:GradientStop Color="#14000000" Offset="0" />
+                    <magic:GradientStop Color="Red" Offset="0" x:Name="AnimatedStop" />
+                    <magic:GradientStop Color="#14000000" Offset="1" />
+                </magic:LinearGradient>
+            </magic:GradientCollection>
+        </magic:GradientView>
+    </StackLayout>
+</ContentPage>

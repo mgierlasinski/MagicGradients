@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Xamarin.Forms;
 using static MagicGradients.Parser.CssHelpers;
@@ -11,13 +12,13 @@ namespace MagicGradients.Tests.Parser
 
         public static LinearGradient[] ComplexGradientsExpected = new[]
         {
-            new LinearGradient{ Angle = FromDegrees(242), Stops = new List<GradientStop>(new GradientStop[12])},
-            new LinearGradient{ Angle = FromDegrees(152), Stops = new List<GradientStop>(new GradientStop[12])},
-            new LinearGradient{ Angle = FromDegrees(11),  Stops = new List<GradientStop>(new GradientStop[12])},
-            new LinearGradient{ Angle = FromDegrees(27),  Stops = new List<GradientStop>(new GradientStop[14])},
-            new LinearGradient{ Angle = FromDegrees(317), Stops = new List<GradientStop>(new GradientStop[12])},
-            new LinearGradient{ Angle = FromDegrees(128), Stops = new List<GradientStop>(new GradientStop[16])},
-            new LinearGradient{ Angle = FromDegrees(90),  Stops = new List<GradientStop>(new GradientStop[2])}
+            new LinearGradient{ Angle = FromDegrees(242), Stops = new ObservableCollection<GradientStop>(new GradientStop[12])},
+            new LinearGradient{ Angle = FromDegrees(152), Stops = new ObservableCollection<GradientStop>(new GradientStop[12])},
+            new LinearGradient{ Angle = FromDegrees(11),  Stops = new ObservableCollection<GradientStop>(new GradientStop[12])},
+            new LinearGradient{ Angle = FromDegrees(27),  Stops = new ObservableCollection<GradientStop>(new GradientStop[14])},
+            new LinearGradient{ Angle = FromDegrees(317), Stops = new ObservableCollection<GradientStop>(new GradientStop[12])},
+            new LinearGradient{ Angle = FromDegrees(128), Stops = new ObservableCollection<GradientStop>(new GradientStop[16])},
+            new LinearGradient{ Angle = FromDegrees(90),  Stops = new ObservableCollection<GradientStop>(new GradientStop[2])}
         }.Reverse().ToArray();
 
         public static IEnumerable<object[]> SimpleGradients()
@@ -26,7 +27,7 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(rgb(4, 164, 188))", new LinearGradient
                 {
-                    Angle = 0, Stops = new List<GradientStop>
+                    Angle = 0, Stops = new ObservableCollection<GradientStop>
                     {
                         new GradientStop { Color = Color.FromRgb(4, 164, 188) }
                     }
@@ -36,7 +37,7 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(90deg, rgb(4, 164, 188))", new LinearGradient
                 {
-                    Angle = FromDegrees(90), Stops = new List<GradientStop>
+                    Angle = FromDegrees(90), Stops = new ObservableCollection<GradientStop>
                     {
                         new GradientStop { Color = Color.FromRgb(4, 164, 188) }
                     }
@@ -46,7 +47,7 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(224deg, rgba(155, 155, 155, 0.1) 50%)", new LinearGradient
                 {
-                    Angle = FromDegrees(224), Stops = new List<GradientStop>
+                    Angle = FromDegrees(224), Stops = new ObservableCollection<GradientStop>
                     {
                         new GradientStop
                         {
@@ -60,7 +61,7 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(90deg, hsl(237, 0%, 13%))", new LinearGradient
                 {
-                    Angle = FromDegrees(90), Stops = new List<GradientStop>
+                    Angle = FromDegrees(90), Stops = new ObservableCollection<GradientStop>
                     {
                         new GradientStop
                         {
@@ -73,7 +74,7 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(90deg, rgba(172, 172, 172, 0.01) 100.002%)", new LinearGradient
                 {
-                    Angle = FromDegrees(90), Stops = new List<GradientStop>
+                    Angle = FromDegrees(90), Stops = new ObservableCollection<GradientStop>
                     {
                         new GradientStop
                         {
@@ -91,7 +92,7 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(224deg, rgb(0, 0, 0))", new LinearGradient
                 {
-                    Angle = FromDegrees(224), Stops = new List<GradientStop>
+                    Angle = FromDegrees(224), Stops = new ObservableCollection<GradientStop>
                     {
                         new GradientStop { Color = Color.Black, Offset = 0f },
                     }
@@ -101,7 +102,7 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(224deg, rgb(0, 0, 0), rgb(0, 0, 0))", new LinearGradient
                 {
-                    Angle = FromDegrees(224), Stops = new List<GradientStop>
+                    Angle = FromDegrees(224), Stops = new ObservableCollection<GradientStop>
                     {
                         new GradientStop { Color = Color.Black, Offset = 0f },
                         new GradientStop { Color = Color.Black, Offset = 1f }
@@ -112,7 +113,7 @@ namespace MagicGradients.Tests.Parser
             {
                 "linear-gradient(224deg, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0))", new LinearGradient
                 {
-                    Angle = FromDegrees(224), Stops = new List<GradientStop>
+                    Angle = FromDegrees(224), Stops = new ObservableCollection<GradientStop>
                     {
                         new GradientStop { Color = Color.Black, Offset = 0f },
                         new GradientStop { Color = Color.Black, Offset = 0.5f },

@@ -18,5 +18,7 @@ namespace Playground.ViewModels
 
         public PasteCssViewModel PasteCssViewModel => new PasteCssViewModel(
             DependencyService.Get<IGradientRepository>());
+
+        public LinearGradientsViewModel LinearGradientsViewModel => new LinearGradientsViewModel();
     }
 }

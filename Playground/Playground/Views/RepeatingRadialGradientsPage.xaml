@@ -6,13 +6,11 @@
              Title="Radial Gradients">
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">
-            <magic:GradientView.GradientSource>
-                <magic:RadialGradient Shape="Circle" Size="ClosestCorner" Center="0.5,0" IsRepeating="True">
-                    <magic:GradientStop Color="Red" Offset="0" />
-                    <magic:GradientStop Color="Green" Offset="0.5" />
-                    <magic:GradientStop Color="Blue" Offset="1" />
-                </magic:RadialGradient>
-            </magic:GradientView.GradientSource>
+            <magic:RadialGradient Shape="Circle" Size="ClosestCorner" Center="0.5,0" IsRepeating="True">
+                <magic:GradientStop Color="Red" Offset="0" />
+                <magic:GradientStop Color="Green" Offset="0.5" />
+                <magic:GradientStop Color="Blue" Offset="1" />
+            </magic:RadialGradient>
         </magic:GradientView>
     </StackLayout>
 </ContentPage>

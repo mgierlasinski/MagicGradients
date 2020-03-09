@@ -9,15 +9,13 @@
     </ContentPage.Resources>
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">
-            <magic:GradientView.GradientSource>
-                <magic:CssGradientSource>
-                    <x:String>
-                        <![CDATA[
+            <magic:CssGradientSource>
+                <x:String>
+                    <![CDATA[
                             repeating-radial-gradient(ellipse closest-side, red 10%, green 20%, blue 30%, red 35%)
                         ]]>
-                    </x:String>
-                </magic:CssGradientSource>
-            </magic:GradientView.GradientSource>
+                </x:String>
+            </magic:CssGradientSource>
         </magic:GradientView>
         <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="repeatingCircles" />
     </StackLayout>

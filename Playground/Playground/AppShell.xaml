@@ -15,21 +15,19 @@
                     <RowDefinition Height="60" />
                 </Grid.RowDefinitions>
                 <magic:GradientView VerticalOptions="FillAndExpand" Grid.RowSpan="2">
-                    <magic:GradientView.GradientSource>
-                        <magic:GradientCollection>
-                            <magic:RadialGradient Center="0.5,0.5" Shape="Circle" Size="ClosestSide">
-                                <magic:GradientStop Color="#EEB9D3" Offset="0" />
-                                <magic:GradientStop Color="#C48AE6" Offset="0.5" />
-                                <magic:GradientStop Color="#A163F5" Offset="1" />
-                            </magic:RadialGradient>
-                            <magic:LinearGradient Angle="45">
-                                <magic:GradientStop Color="#14DEDEDE" Offset="0" />
-                                <magic:GradientStop Color="#14DEDEDE" Offset="0.5" />
-                                <magic:GradientStop Color="#14000000" Offset="0.5" />
-                                <magic:GradientStop Color="#14000000" Offset="1" />
-                            </magic:LinearGradient>
-                        </magic:GradientCollection>
-                    </magic:GradientView.GradientSource>
+                    <magic:GradientCollection>
+                        <magic:RadialGradient Center="0.5,0.5" Shape="Circle" Size="ClosestSide">
+                            <magic:GradientStop Color="#EEB9D3" Offset="0" />
+                            <magic:GradientStop Color="#C48AE6" Offset="0.5" />
+                            <magic:GradientStop Color="#A163F5" Offset="1" />
+                        </magic:RadialGradient>
+                        <magic:LinearGradient Angle="45">
+                            <magic:GradientStop Color="#14DEDEDE" Offset="0" />
+                            <magic:GradientStop Color="#14DEDEDE" Offset="0.5" />
+                            <magic:GradientStop Color="#14000000" Offset="0.5" />
+                            <magic:GradientStop Color="#14000000" Offset="1" />
+                        </magic:LinearGradient>
+                    </magic:GradientCollection>
                 </magic:GradientView>
                 <Label Text="{x:Static ic:IconCodes.MagicWand}" Style="{StaticResource FontLabel}" 
                        WidthRequest="70" HeightRequest="70" FontSize="70" TextColor="{StaticResource LightForegroundColor}" 
@@ -62,11 +60,25 @@
                              FontFamily="{StaticResource IconFont}"
                              Color="{StaticResource ForegroundColor}" />
         </FlyoutItem.FlyoutIcon>
-        <Tab>
-            <ShellContent Title="Linear" ContentTemplate="{DataTemplate local:LinearGradientsPage}" />
+        <Tab Title="XAML">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Code}" FontFamily="{StaticResource IconFont}" />
+            </Tab.Icon>
+            <ShellContent Title="Single" ContentTemplate="{DataTemplate local:LinearGradientsPage}" />
             <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPage}" />
-            <ShellContent Title="Linear in CSS" ContentTemplate="{DataTemplate local:LinearGradientsPageCss}" />
-            <ShellContent Title="Repeating in CSS" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPageCss}" />
+        </Tab>
+        <Tab Title="CSS">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" FontFamily="{StaticResource IconFont}" />
+            </Tab.Icon>
+            <ShellContent Title="Single" ContentTemplate="{DataTemplate local:LinearGradientsPageCss}" />
+            <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPageCss}" />
+        </Tab>
+        <Tab Title="Animation">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Bolt}" FontFamily="{StaticResource IconFont}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:LinearGradientsAnimationPage}" />
         </Tab>
     </FlyoutItem>
 
@@ -76,11 +88,25 @@
                              FontFamily="{StaticResource IconFont}"
                              Color="{StaticResource ForegroundColor}" />
         </FlyoutItem.FlyoutIcon>
-        <Tab>
-            <ShellContent Title="Radial" ContentTemplate="{DataTemplate local:RadialGradientsPage}" />
+        <Tab Title="XAML">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Code}" FontFamily="{StaticResource IconFont}" />
+            </Tab.Icon>
+            <ShellContent Title="Single" ContentTemplate="{DataTemplate local:RadialGradientsPage}" />
             <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPage}" />
-            <ShellContent Title="Radial in CSS" ContentTemplate="{DataTemplate local:RadialGradientsPageCss}" />
-            <ShellContent Title="Repeating in CSS" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPageCss}" />
+        </Tab>
+        <Tab Title="CSS">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" FontFamily="{StaticResource IconFont}" />
+            </Tab.Icon>
+            <ShellContent Title="Single" ContentTemplate="{DataTemplate local:RadialGradientsPageCss}" />
+            <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPageCss}" />
+        </Tab>
+        <Tab Title="Animation">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Bolt}" FontFamily="{StaticResource IconFont}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:RadialGradientsAnimationPage}" />
         </Tab>
     </FlyoutItem>
 </Shell>

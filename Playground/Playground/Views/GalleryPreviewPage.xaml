@@ -9,7 +9,13 @@
              Title="Gradient Preview"
              BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Edit" Command="{Binding EditCommand}" />
+        <ToolbarItem Command="{Binding EditCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Layers}" 
+                                 FontFamily="{StaticResource IconFont}"
+                                 Color="{StaticResource ForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
         <ToolbarItem Command="{Binding PreviewCssCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
