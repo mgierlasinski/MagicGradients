@@ -2,7 +2,7 @@
 
 namespace MagicGradients
 {
-    public class GradientStop : BindableObject
+    public class GradientStop : GradientElement
     {
         public static readonly BindableProperty ColorProperty = BindableProperty.Create(
             nameof(Color), typeof(Color), typeof(GradientStop), Color.White);

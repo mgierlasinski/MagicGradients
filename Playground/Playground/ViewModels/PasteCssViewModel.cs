@@ -2,6 +2,7 @@
 using MagicGradients.Parser;
 using Playground.Data.Repositories;
 using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -83,7 +84,7 @@ namespace Playground.ViewModels
 
                 GradientSource = new GradientCollection
                 {
-                    Gradients = gradients.ToList()
+                    Gradients = new ObservableCollection<Gradient>(gradients)
                 };
             }
             catch (Exception e)

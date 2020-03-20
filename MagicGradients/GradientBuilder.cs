@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace MagicGradients
@@ -14,7 +15,7 @@ namespace MagicGradients
             {
                 Angle = angle,
                 IsRepeating = isRepeating,
-                Stops = new List<GradientStop>()
+                Stops = new ObservableCollection<GradientStop>()
             };
 
             _gradients.Add(_lastGradient);
@@ -32,7 +33,7 @@ namespace MagicGradients
                 Size = size,
                 Flags = flags,
                 IsRepeating = isRepeating,
-                Stops = new List<GradientStop>()
+                Stops = new ObservableCollection<GradientStop>()
             };
 
             _gradients.Add(_lastGradient);

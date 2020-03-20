@@ -6,35 +6,29 @@
              Title="Linear Gradients">
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">
-            <magic:GradientView.GradientSource>
-                <magic:LinearGradient Angle="90" IsRepeating="True">
-                    <magic:GradientStop Color="Red" Offset="0" />
-                    <magic:GradientStop Color="Yellow" Offset="0.25" />
-                </magic:LinearGradient>
-            </magic:GradientView.GradientSource>
+            <magic:LinearGradient Angle="90" IsRepeating="True">
+                <magic:GradientStop Color="Red" Offset="0" />
+                <magic:GradientStop Color="Yellow" Offset="0.25" />
+            </magic:LinearGradient>
         </magic:GradientView>
         <magic:GradientView VerticalOptions="FillAndExpand">
-            <magic:GradientView.GradientSource>
+            <magic:LinearGradient Angle="45" IsRepeating="True">
+                <magic:GradientStop Color="Orange" Offset="0" />
+                <magic:GradientStop Color="LightGreen" Offset="0.45" />
+                <magic:GradientStop Color="Blue" Offset="0.85" />
+            </magic:LinearGradient>
+        </magic:GradientView>
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientCollection>
                 <magic:LinearGradient Angle="45" IsRepeating="True">
                     <magic:GradientStop Color="Orange" Offset="0" />
-                    <magic:GradientStop Color="LightGreen" Offset="0.45" />
-                    <magic:GradientStop Color="Blue" Offset="0.85" />
+                    <magic:GradientStop Color="#ff0000" Offset="0.6" />
                 </magic:LinearGradient>
-            </magic:GradientView.GradientSource>
-        </magic:GradientView>
-        <magic:GradientView VerticalOptions="FillAndExpand">
-            <magic:GradientView.GradientSource>
-                <magic:GradientCollection>
-                    <magic:LinearGradient Angle="45" IsRepeating="True">
-                        <magic:GradientStop Color="Orange" Offset="0" />
-                        <magic:GradientStop Color="#ff0000" Offset="0.6" />
-                    </magic:LinearGradient>
-                    <magic:LinearGradient Angle="90">
-                        <magic:GradientStop Color="#33ff0000" Offset="0.4" />
-                        <magic:GradientStop Color="#ff00ff00" Offset="1" />
-                    </magic:LinearGradient>
-                </magic:GradientCollection>
-            </magic:GradientView.GradientSource>
+                <magic:LinearGradient Angle="90">
+                    <magic:GradientStop Color="#33ff0000" Offset="0.4" />
+                    <magic:GradientStop Color="#ff00ff00" Offset="1" />
+                </magic:LinearGradient>
+            </magic:GradientCollection>
         </magic:GradientView>
     </StackLayout>
 </ContentPage>

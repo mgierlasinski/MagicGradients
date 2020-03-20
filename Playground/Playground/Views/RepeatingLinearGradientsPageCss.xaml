@@ -9,15 +9,13 @@
     </ContentPage.Resources>
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">
-            <magic:GradientView.GradientSource>
-                <magic:CssGradientSource>
-                    <x:String>
-                        <![CDATA[
+            <magic:CssGradientSource>
+                <x:String>
+                    <![CDATA[
                             repeating-linear-gradient(90deg, hsla(101,66%,42%, 0.35), hsla(101,66%,42%, 0.35) 8%,hsla(161,66%,42%, 0.35) 8%, hsla(161,66%,42%, 0.35) 16%,hsla(221,66%,42%, 0.35) 16%, hsla(221,66%,42%, 0.35) 25%,hsla(281,66%,42%, 0.35) 25%, hsla(281,66%,42%, 0.35) 33%,hsla(341,66%,42%, 0.35) 33%, hsla(341,66%,42%, 0.35) 42%,hsla(41,66%,42%, 0.35) 42%, hsla(41,66%,42%, 0.35) 50%),repeating-linear-gradient(135deg, hsla(257,84%,66%, 0.55) 0%, hsla(257,84%,66%, 0.55) 14%,hsla(317,84%,66%, 0.55) 14%, hsla(317,84%,66%, 0.55) 28%,hsla(17,84%,66%, 0.55) 28%, hsla(17,84%,66%, 0.55) 42%,hsla(77,84%,66%, 0.55) 42%, hsla(77,84%,66%, 0.55) 56%,hsla(137,84%,66%, 0.55) 56%, hsla(137,84%,66%, 0.55) 71%,hsla(197,84%,66%, 0.55) 71%, hsla(197,84%,66%, 0.55) 85%),repeating-linear-gradient(90deg, #4d750f,#037ab2,#d34262,#87ec5e,#9dd314 8%)
                         ]]>
-                    </x:String>
-                </magic:CssGradientSource>
-            </magic:GradientView.GradientSource>
+                </x:String>
+            </magic:CssGradientSource>
         </magic:GradientView>
         <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="repeatingGradient" />
     </StackLayout>
