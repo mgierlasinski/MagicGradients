@@ -20,7 +20,8 @@ namespace Playground.ViewModels
             DependencyService.Get<IGradientRepository>());
 
         public BattleTestViewModel BattleTestViewModel => new BattleTestViewModel(
-            DependencyService.Get<IGradientRepository>());
+            DependencyService.Get<IGradientRepository>(),
+            DependencyService.Get<IPickerColorsDataProvider>());
 
         public LinearGradientsViewModel LinearGradientsViewModel => new LinearGradientsViewModel();
     }

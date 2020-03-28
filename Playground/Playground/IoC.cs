@@ -19,6 +19,8 @@ namespace Playground
             DependencyService.Register<GalleryService>();
             DependencyService.Register<CategoryService>();
 
+            DependencyService.Register<IPickerColorsDataProvider, PickerColorsDataProvider>();
+
             DependencyService.Resolve<IDatabaseUpdater>().RunUpdate(
                 DependencyService.Resolve<IGradientRepository>(), 
                 DependencyService.Resolve<ICategoryRepository>());

@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using Playground.Constants;
 
 using static Playground.Constants.IconCodes;
+using Playground.Services;
+using Playground.Models;
 
 namespace Playground.ViewModels
 {
@@ -16,14 +18,23 @@ namespace Playground.ViewModels
     public class BattleTestViewModel : BaseViewModel
     {
         private readonly IGradientRepository _gradientRepository;
-        
-        private string _cssCode;
+        private readonly IPickerColorsDataProvider _pickerColorsDataProvider;
 
-        public List<string> IconsCollection { get; } = new List<string>()
+        private string _cssCode;
+        
+        private List<BattleItem> _iconsCollection;
+        public List<BattleItem> IconsCollection
         {
-            Bolt, Code, MagicWand, Refresh,
-            Layers, Bolt, Paint
-        };
+            get => _iconsCollection;
+            set => SetProperty(ref _iconsCollection, value);
+        }
+
+        private List<BattleItem> _itemsCollection;
+        public List<BattleItem> ItemsCollection
+        {
+            get => _itemsCollection;
+            set => SetProperty(ref _itemsCollection, value);
+        }
 
         private string _id;
         public string Id
@@ -36,6 +47,20 @@ namespace Playground.ViewModels
             }
         }
 
+        private Color _textColor;
+        public Color TextColor
+        {
+            get => _textColor;
+            set
+            {
+                if (SetProperty(ref _textColor, value))
+                {
+                    IconsCollection = GenerateIconsCollection();
+                    ItemsCollection = GenerateItemsCollection();
+                }
+            }
+        }
+
         private IGradientSource _gradientSource;
         public IGradientSource GradientSource
         {
@@ -43,9 +68,28 @@ namespace Playground.ViewModels
             set => SetProperty(ref _gradientSource, value);
         }
 
-        public BattleTestViewModel(IGradientRepository gradientRepository)
+        private int _selectedColorIndex;
+        public int SelectedColorIndex
+        {
+            get => _selectedColorIndex;
+            set 
+            {
+                if(SetProperty(ref _selectedColorIndex, value))
+                {
+                    TextColor = _pickerColorsDataProvider.GetColorByName(ColorNames[SelectedColorIndex]);
+                }
+            }
+        }
+
+        public List<string> ColorNames { get; } 
+
+        public BattleTestViewModel(IGradientRepository gradientRepository, IPickerColorsDataProvider pickerColorsDataProvider)
         {
             _gradientRepository = gradientRepository;
+            _pickerColorsDataProvider = pickerColorsDataProvider;
+            
+            ColorNames = _pickerColorsDataProvider.GetColorNames();
+            TextColor = Color.Black;
         }
 
         private void LoadCssCodeById()
@@ -70,6 +114,7 @@ namespace Playground.ViewModels
                 {
                     Gradients = new ObservableCollection<Gradient>(gradients)
                 };
+                IconsCollection = GenerateIconsCollection();
             }
             catch (Exception e)
             {
@@ -78,6 +123,27 @@ namespace Playground.ViewModels
                 Debug.WriteLine(e.StackTrace);
                 Debugger.Break();
             }
+        }
+
+        private List<BattleItem> GenerateIconsCollection() => new List<BattleItem>
+        {
+            new BattleItem {GradientSource = GradientSource, Text = Bolt, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Radial, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Code, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = MagicWand, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Refresh, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Layers, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Paint, TextColor = TextColor},
+        };
+
+        private List<BattleItem> GenerateItemsCollection()
+        {
+            var battleList = new List<BattleItem>(90);
+            for (var i = 0; i < 90; i++)
+            {
+                battleList.Add(new BattleItem { Text = $"Item {i}", TextColor = TextColor });
+            }
+            return battleList;
         }
     }
 }
