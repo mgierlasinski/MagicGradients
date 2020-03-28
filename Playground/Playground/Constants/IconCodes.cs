@@ -11,5 +11,6 @@
         public const string Gallery = "\ue906";
         public const string Code = "\ue907";
         public const string Bolt = "\ue908";
+        public const string Paint = "\ue909";
     }
 }
