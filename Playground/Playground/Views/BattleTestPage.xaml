@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Playground.Views.BattleTestPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+    xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+    x:Name="battlePage"
+    BindingContext="{Binding BattleTestViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+    <ContentPage.Content>
+        <StackLayout Margin="15" Spacing="15">
+            <!--  Buttons With Gradient Background  -->
+            <Frame Padding="0" CornerRadius="10">
+                <Grid>
+                    <magic:GradientView GradientSource="{Binding GradientSource}" />
+                    <Button
+                        Margin="0,0,0,0"
+                        BackgroundColor="Transparent"
+                        FontSize="16"
+                        HeightRequest="100"
+                        Text="MagicGradients Large Button"
+                        TextColor="White" />
+                </Grid>
+            </Frame>
+            <Frame Padding="0" CornerRadius="10">
+                <Grid>
+                    <magic:GradientView GradientSource="{Binding GradientSource}" />
+                    <Button
+                        Margin="0,0,0,0"
+                        BackgroundColor="Transparent"
+                        FontSize="16"
+                        HeightRequest="50"
+                        Text="MagicGradients Small Button"
+                        TextColor="White" />
+                </Grid>
+            </Frame>
+            <!--  Circle With Icon And With Gradient Background  -->
+            <StackLayout BindableLayout.ItemsSource="{Binding IconsCollection}" Orientation="Horizontal">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="0" CornerRadius="25">
+                            <Grid>
+                                <magic:GradientView BindingContext="{Binding BindingContext, Source={x:Reference battlePage}}" GradientSource="{Binding GradientSource}" />
+                                <Button
+                                    Margin="0,0,0,0"
+                                    BackgroundColor="Transparent"
+                                    FontFamily="{StaticResource IconFont}"
+                                    FontSize="16"
+                                    HeightRequest="50"
+                                    Text="{Binding .}"
+                                    TextColor="White"
+                                    WidthRequest="50" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

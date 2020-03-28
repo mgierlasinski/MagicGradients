@@ -19,6 +19,8 @@ namespace Playground.ViewModels
 
         public ICommand SelectCommand { get; set; }
 
+        public ICommand BattleTestCommand { get; set; }
+
         private IGradientSource _gradientSource;
         public IGradientSource GradientSource
         {
@@ -77,6 +79,11 @@ namespace Playground.ViewModels
                     return;
 
                 SelectedItem.SelectedStop = stop;
+            });
+
+            BattleTestCommand = new Command(async () =>
+            {
+                await Shell.Current.GoToAsync($"BattleTest?id={Id}");
             });
         }
     }
