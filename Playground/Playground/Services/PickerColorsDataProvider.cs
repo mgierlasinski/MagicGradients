@@ -10,8 +10,8 @@ namespace Playground.Services
     {
         private Dictionary<string, Color> _namesToColors { get; } = new Dictionary<string, Color>
         {
-            {"Black", Color.Black },
-            {"White", Color.White}
+            {"White", Color.White},
+            {"Black", Color.Black}
         };
 
         public Color GetColorByName(string colorName) => _namesToColors[colorName];

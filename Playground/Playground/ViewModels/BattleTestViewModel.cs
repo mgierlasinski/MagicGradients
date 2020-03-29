@@ -89,7 +89,7 @@ namespace Playground.ViewModels
             _pickerColorsDataProvider = pickerColorsDataProvider;
             
             ColorNames = _pickerColorsDataProvider.GetColorNames();
-            TextColor = Color.Black;
+            TextColor = Color.White;
         }
 
         private void LoadCssCodeById()
@@ -127,13 +127,16 @@ namespace Playground.ViewModels
 
         private List<BattleItem> GenerateIconsCollection() => new List<BattleItem>
         {
-            new BattleItem {GradientSource = GradientSource, Text = Bolt, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Radial, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Code, TextColor = TextColor},
             new BattleItem {GradientSource = GradientSource, Text = MagicWand, TextColor = TextColor},
             new BattleItem {GradientSource = GradientSource, Text = Refresh, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = IconCodes.Gradient, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Radial, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Palette, TextColor = TextColor},
             new BattleItem {GradientSource = GradientSource, Text = Layers, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Paint, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Gallery, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Code, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Bolt, TextColor = TextColor},
+            new BattleItem {GradientSource = GradientSource, Text = Paint, TextColor = TextColor}
         };
 
         private List<BattleItem> GenerateItemsCollection()

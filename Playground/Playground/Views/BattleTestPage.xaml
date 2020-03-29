@@ -29,7 +29,11 @@
                             TextColor="{Binding TextColor}" />
                     </Grid>
                 </Frame>
-                <Frame Padding="0" CornerRadius="10">
+                <Frame
+                    Padding="0"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    WidthRequest="150">
                     <Grid>
                         <magic:GradientView GradientSource="{Binding GradientSource}" />
                         <Button
@@ -37,15 +41,21 @@
                             BackgroundColor="Transparent"
                             FontSize="16"
                             HeightRequest="50"
-                            Text="MagicGradients Small Button"
+                            Text="Small Button"
                             TextColor="{Binding TextColor}" />
                     </Grid>
                 </Frame>
                 <!--  Circle With Icon And With Gradient Background  -->
-                <StackLayout BindableLayout.ItemsSource="{Binding IconsCollection}" Orientation="Horizontal">
-                    <BindableLayout.ItemTemplate>
+                <CollectionView HeightRequest="50" ItemsSource="{Binding IconsCollection}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="0" CornerRadius="25">
+                            <Frame
+                                Padding="0"
+                                CornerRadius="25"
+                                WidthRequest="50">
                                 <Grid>
                                     <magic:GradientView GradientSource="{Binding GradientSource}" />
                                     <Button
@@ -53,15 +63,13 @@
                                         BackgroundColor="Transparent"
                                         FontFamily="{StaticResource IconFont}"
                                         FontSize="16"
-                                        HeightRequest="50"
                                         Text="{Binding Text}"
-                                        TextColor="{Binding TextColor}"
-                                        WidthRequest="50" />
+                                        TextColor="{Binding TextColor}" />
                                 </Grid>
                             </Frame>
                         </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
                 <!--  Background for Collection View  -->
                 <Grid HeightRequest="250">
                     <magic:GradientView GradientSource="{Binding GradientSource}" />
