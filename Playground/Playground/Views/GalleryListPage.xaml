@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:models="clr-namespace:Playground.Models"
+             xmlns:controls="clr-namespace:Playground.Controls"
              x:Class="Playground.Views.GalleryListPage"
              Title="{Binding Title}"
              BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+    <Grid>
     <StackLayout Spacing="0">
         <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
             <CollectionView x:Name="ThemeList"
@@ -42,4 +44,6 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
     </StackLayout>
+    <controls:RadialMenu HorizontalOptions="Fill" VerticalOptions="Fill" />
+    </Grid>
 </ContentPage>
