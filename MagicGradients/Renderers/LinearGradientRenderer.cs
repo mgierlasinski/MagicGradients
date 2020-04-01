@@ -27,6 +27,9 @@ namespace MagicGradients.Renderers
                 
             } else
             {
+                // Here the Pythagorean Theorem + Trigonometry is applied
+                // to figure out the length of the gradient, which is needed to accurately calculate the endPoint for the gradient.
+                // https://en.wikibooks.org/wiki/Trigonometry/The_Pythagorean_Theorem
                 var angleRad = ToRad(_gradient.Angle);
                 var computedLength = Math.Sqrt(Math.Pow(info.Width * Math.Cos(angleRad), 2) + Math.Pow(info.Height * Math.Sin(angleRad), 2));
                 computedOffset = (float)(orderedStops.LastOrDefault().Offset / computedLength);
