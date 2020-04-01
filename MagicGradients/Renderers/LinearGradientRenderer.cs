@@ -19,12 +19,28 @@ namespace MagicGradients.Renderers
             var info = context.Info;
 
             var orderedStops = _gradient.Stops.OrderBy(x => x.Offset).ToArray();
-            var lastOffset = _gradient.IsRepeating ? orderedStops.LastOrDefault()?.Offset ?? 1 : 1;
+
+            float computedOffset;
+            if (!_gradient.IsRepeating || orderedStops.LastOrDefault()?.Offset == null)
+            {
+                computedOffset = 1;
+                
+            } else
+            {
+                // Here the Pythagorean Theorem + Trigonometry is applied
+                // to figure out the length of the gradient, which is needed to accurately calculate the endPoint for the gradient.
+                // https://en.wikibooks.org/wiki/Trigonometry/The_Pythagorean_Theorem
+                var angleRad = ToRad(_gradient.Angle);
+                var computedLength = Math.Sqrt(Math.Pow(info.Width * Math.Cos(angleRad), 2) + Math.Pow(info.Height * Math.Sin(angleRad), 2));
+                computedOffset = (float)(orderedStops.LastOrDefault().Offset / computedLength);
+            }
+
+            var lastOffset = orderedStops.LastOrDefault()?.Offset ?? 1;
 
             var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = orderedStops.Select(x => x.Offset / lastOffset).ToArray();
 
-            var (startPoint, endPoint) = GetGradientPoints(info.Width, info.Height, _gradient.Angle, lastOffset);
+            var (startPoint, endPoint) = GetGradientPoints(info.Width, info.Height, _gradient.Angle, computedOffset);
 
             var shader = SKShader.CreateLinearGradient(
                 startPoint,
@@ -55,6 +71,11 @@ namespace MagicGradients.Renderers
                 (float)d * offset);
 
             return (start, end);
+        }
+
+        private double ToRad(double angle)
+        {
+            return (Math.PI / 180) * angle;
         }
     }
 }
