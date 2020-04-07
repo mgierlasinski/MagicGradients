@@ -4,9 +4,9 @@
       xmlns:controls="clr-namespace:Playground.Controls"
       xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
       x:Class="Playground.Controls.RadialMenu">
-    
+
     <BoxView BackgroundColor="White" Opacity="0.6" />
-    <controls:RadialMenuCircle EnableTouchEvents="True" Margin="40" />
+    <controls:RadialMenuCircle x:Name="Circle" EnableTouchEvents="True" Margin="40" />
     <!--<BoxView WidthRequest="60" HeightRequest="60" 
              CornerRadius="30" BackgroundColor="White" 
              HorizontalOptions="Center" VerticalOptions="Center" />

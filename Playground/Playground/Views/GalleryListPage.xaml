@@ -4,9 +4,19 @@
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:models="clr-namespace:Playground.Models"
              xmlns:controls="clr-namespace:Playground.Controls"
+             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
              x:Class="Playground.Views.GalleryListPage"
              Title="{Binding Title}"
              BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding TogglePickerCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
+                                 FontFamily="{StaticResource IconFont}"
+                                 Color="{StaticResource ForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <Grid>
     <StackLayout Spacing="0">
         <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
@@ -44,6 +54,10 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
     </StackLayout>
-    <controls:RadialMenu HorizontalOptions="Fill" VerticalOptions="Fill" />
+        <controls:RadialMenu HorizontalOptions="Fill" 
+                             VerticalOptions="Fill" 
+                             ItemsSource="{Binding Themes}" 
+                             SelectedItem="{Binding SelectedTheme}"
+                             IsOpen="{Binding IsPickerVisible}" />
     </Grid>
 </ContentPage>

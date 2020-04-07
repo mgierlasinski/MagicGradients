@@ -5,7 +5,5 @@ namespace Playground.Controls
     public class RadialMenuItem
     {
         public Color Background { get; set; }
-
-        public bool IsSelected { get; set; }
     }
 }

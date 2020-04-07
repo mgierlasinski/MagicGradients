@@ -9,17 +9,17 @@ namespace Playground.Controls
     {
         public RadialMenu RadialMenu => Parent as RadialMenu;
 
-        private List<SKPath> _touchPaths = new List<SKPath>();
+        private readonly List<SKPath> _touchPaths = new List<SKPath>();
 
         protected override void OnTouch(SKTouchEventArgs e)
         {
-            RadialMenu.UnselectCurrentItem();
+            RadialMenu.SelectedIndex = -1;
 
             for (var i = 0; i < _touchPaths.Count; i++)
             {
                 if(_touchPaths[i].Contains(e.Location.X, e.Location.Y))
                 {
-                    RadialMenu.Items[i].IsSelected = true;
+                    RadialMenu.SelectedIndex = i;
                     InvalidateSurface();
                     return;
                 }
@@ -46,7 +46,6 @@ namespace Playground.Controls
             
             float startAngle = 0;
             float sweepAngle = 360f / RadialMenu.Items.Count;
-            int selectedIndex = -1;
 
             using (SKPaint fillPaint = CreateFillPaint())
             using (SKPaint outlinePaint = CreateOutlinePaint())
@@ -58,7 +57,7 @@ namespace Playground.Controls
                     path.ArcTo(rect, startAngle, sweepAngle, false);
                     path.Close();
 
-                    fillPaint.Color = item.Background.ToSKColor();
+                    fillPaint.Color = SKColor.Parse(item);
 
                     canvas.DrawPath(path, fillPaint);
                     canvas.DrawPath(path, outlinePaint);
@@ -67,16 +66,16 @@ namespace Playground.Controls
 
                     _touchPaths.Add(path);
 
-                    if (item.IsSelected)
-                    {
-                        selectedIndex = _touchPaths.Count - 1;
-                    }
+                    //if (item.IsSelected)
+                    //{
+                    //    selectedIndex = _touchPaths.Count - 1;
+                    //}
                 }
 
-                if(selectedIndex > -1)
+                if(RadialMenu.SelectedIndex > -1)
                 {
                     outlinePaint.Color = SKColors.Yellow;
-                    canvas.DrawPath(_touchPaths[selectedIndex], outlinePaint);
+                    canvas.DrawPath(_touchPaths[RadialMenu.SelectedIndex], outlinePaint);
                 }
             }
 
