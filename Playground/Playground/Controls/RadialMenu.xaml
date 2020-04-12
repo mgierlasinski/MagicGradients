@@ -5,19 +5,18 @@
       xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
       x:Class="Playground.Controls.RadialMenu">
 
-    <BoxView BackgroundColor="White" Opacity="0.6" />
+    <BoxView BackgroundColor="White" Opacity="0.6" x:Name="Overlay" />
     <controls:RadialMenuCircle x:Name="Circle" EnableTouchEvents="True" Margin="40" />
-    <!--<BoxView WidthRequest="60" HeightRequest="60" 
-             CornerRadius="30" BackgroundColor="White" 
-             HorizontalOptions="Center" VerticalOptions="Center" />
-    <BoxView WidthRequest="56" HeightRequest="56" 
-             CornerRadius="28" BackgroundColor="Black" 
-             HorizontalOptions="Center" VerticalOptions="Center" />-->
-    <Image HorizontalOptions="Center" VerticalOptions="Center">
-        <Image.Source>
-            <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                             FontFamily="{StaticResource IconFont}"
-                             Color="{StaticResource LightForegroundColor}" />
-        </Image.Source>
-    </Image>
+
+    <Grid HorizontalOptions="Center" VerticalOptions="Center" x:Name="Center">
+        <BoxView WidthRequest="60" HeightRequest="60" CornerRadius="30" BackgroundColor="White" />
+        <BoxView WidthRequest="56" HeightRequest="56" CornerRadius="28" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Image HorizontalOptions="Center" VerticalOptions="Center">
+            <Image.Source>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
+                                 FontFamily="{StaticResource IconFont}"
+                                 Color="{StaticResource LightForegroundColor}" />
+            </Image.Source>
+        </Image>
+    </Grid>
 </Grid>

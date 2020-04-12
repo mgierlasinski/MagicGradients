@@ -79,7 +79,7 @@ namespace Playground.Controls
                 }
             }
 
-            DrawInnerCircle(canvas, ref center);
+            //DrawInnerCircle(canvas, ref center);
         }
 
         private SKPaint CreateFillPaint()

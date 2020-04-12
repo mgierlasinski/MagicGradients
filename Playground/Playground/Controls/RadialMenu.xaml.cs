@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Playground.Controls
@@ -54,8 +55,7 @@ namespace Playground.Controls
         public RadialMenu()
         {
             InitializeComponent();
-
-            IsVisible = false;
+            InitializeHidden();
 
             _internalPicker.PropertyChanged += InternalPickerOnPropertyChanged;
         }
@@ -102,12 +102,46 @@ namespace Playground.Controls
         {
             if (isOpen)
             {
-                IsVisible = true;
+                OpenMenu();
             }
             else
             {
-                IsVisible = false;
+                HideMenu();
             }
+        }
+
+        private async Task OpenMenu()
+        {
+            IsVisible = true;
+
+            Overlay.FadeTo(0.6, 300);
+
+            await Center.ScaleTo(1, 300);
+
+            await Task.WhenAll(
+                Circle.ScaleTo(1, 300, Easing.CubicOut), 
+                Circle.RotateTo(360, 300));
+        }
+
+        private async Task HideMenu()
+        {
+            Overlay.FadeTo(0, 300);
+
+            await Task.WhenAll(
+                Circle.ScaleTo(0, 300),
+                Circle.RelRotateTo(-360, 300));
+
+            await Center.ScaleTo(0, 300);
+
+            IsVisible = false;
+        }
+
+        private void InitializeHidden()
+        {
+            IsVisible = false;
+            Overlay.Opacity = 0;
+            Circle.Scale = 0;
+            Center.Scale = 0;
         }
     }
 }
