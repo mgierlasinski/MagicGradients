@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace MagicGradients
@@ -16,20 +17,29 @@ namespace MagicGradients
 
         protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
         {
+            base.OnCollectionChanged(e);
+
             if (Parent == null)
                 return;
+
+            var isChanged = false;
 
             if (e.OldItems != null)
             {
                 SetupItems(e.OldItems, null);
+                isChanged = true;
             }
 
             if (e.NewItems != null)
             {
                 SetupItems(e.NewItems, Parent);
+                isChanged = true;
             }
 
-            Parent.InvalidateCanvas();
+            if (isChanged)
+            {
+                Parent.InvalidateCanvas();
+            }
         }
 
         private void SetupItems(IList items, GradientElement parent)
@@ -52,7 +62,10 @@ namespace MagicGradients
                 item.Parent = parent;
             }
 
-            Parent?.InvalidateCanvas();
+            if (Items.Any())
+            {
+                Parent?.InvalidateCanvas();
+            }
         }
 
         internal void Release()

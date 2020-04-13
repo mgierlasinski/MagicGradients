@@ -50,7 +50,7 @@ namespace MagicGradients
 
             for (var i = 0; i < Stops.Count; i++)
             {
-                if (Stops[i].Offset >= 0 || i == Stops.Count - 1)
+                if (Stops[i].RenderOffset >= 0 || i == Stops.Count - 1)
                 {
                     SetupUndefinedOffsets(fromIndex, i);
                     fromIndex = i;
@@ -60,8 +60,8 @@ namespace MagicGradients
 
         private void SetupUndefinedOffsets(int fromIndex, int toIndex)
         {
-            var currentOffset = Math.Max(Stops[fromIndex].Offset, 0);
-            var endOffset = Math.Abs(Stops[toIndex].Offset);
+            var currentOffset = Math.Max(Stops[fromIndex].RenderOffset, 0);
+            var endOffset = Math.Abs(Stops[toIndex].RenderOffset);
 
             var step = (endOffset - currentOffset) / (toIndex - fromIndex);
 
@@ -69,9 +69,9 @@ namespace MagicGradients
             {
                 var stop = Stops[i];
 
-                if (stop.Offset < 0)
+                if (stop.RenderOffset < 0)
                 {
-                    stop.Offset = currentOffset;
+                    stop.RenderOffset = currentOffset;
                 }
                 currentOffset += step;
             }
