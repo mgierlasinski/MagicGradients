@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="PlaygroundLite.MainPage">
+
+    <Grid>
+        <magic:GradientView HorizontalOptions="Fill" VerticalOptions="Fill">
+            <magic:LinearGradient>
+                <magic:GradientStop Color="Red" />
+                <magic:GradientStop Color="Green" />
+                <magic:GradientStop Color="Blue" />
+            </magic:LinearGradient>
+        </magic:GradientView>
+    </Grid>
+
+</ContentPage>
