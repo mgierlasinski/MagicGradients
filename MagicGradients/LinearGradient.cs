@@ -25,10 +25,5 @@ namespace MagicGradients
         {
             _renderer.Render(context);
         }
-
-        public override string ToString()
-        {
-            return $"Angle={Angle}, Stops=LinearGradientStop[{Stops.Count}]";
-        }
     }
 }

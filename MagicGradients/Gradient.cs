@@ -1,8 +1,6 @@
 ﻿using MagicGradients.Renderers;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using Xamarin.Forms;
 
 namespace MagicGradients
@@ -10,7 +8,17 @@ namespace MagicGradients
     [ContentProperty(nameof(Stops))]
     public abstract class Gradient : GradientElement, IGradientSource
     {
-        public ObservableCollection<GradientStop> Stops { get; set; }
+        private GradientElements<GradientStop> _stops;
+        public GradientElements<GradientStop> Stops
+        {
+            get => _stops;
+            set
+            {
+                _stops?.Release();
+                _stops = value;
+                _stops.AttachTo(this);
+            }
+        }
 
         public static readonly BindableProperty IsRepeatingProperty = BindableProperty.Create(
             nameof(IsRepeating), typeof(bool), typeof(LinearGradient), false);
@@ -23,8 +31,7 @@ namespace MagicGradients
 
         protected Gradient()
         {
-            Stops = new ObservableCollection<GradientStop>();
-            Stops.CollectionChanged += OnCollectionChanged;
+            Stops = new GradientElements<GradientStop>();
         }
 
         public IEnumerable<Gradient> GetGradients() => new[] { this };
@@ -32,24 +39,7 @@ namespace MagicGradients
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-
-            foreach (var gradientStop in Stops)
-            {
-                SetInheritedBindingContext(gradientStop, BindingContext);
-            }
-        }
-
-        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.OldItems != null)
-            {
-                SetParent(e.OldItems, null);
-            }
-
-            if (e.NewItems != null)
-            {
-                SetParent(e.NewItems, this);
-            }
+            Stops.SetInheritedBindingContext(BindingContext);
         }
 
         public abstract void Render(RenderContext context);

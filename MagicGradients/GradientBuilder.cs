@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace MagicGradients
@@ -14,8 +13,7 @@ namespace MagicGradients
             _lastGradient = new LinearGradient
             {
                 Angle = angle,
-                IsRepeating = isRepeating,
-                Stops = new ObservableCollection<GradientStop>()
+                IsRepeating = isRepeating
             };
 
             _gradients.Add(_lastGradient);
@@ -23,8 +21,12 @@ namespace MagicGradients
             return this;
         }
 
-        public GradientBuilder AddRadialGradient(Point center, RadialGradientShape shape, RadialGradientSize size, 
-            RadialGradientFlags flags = RadialGradientFlags.PositionProportional, bool isRepeating = false)
+        public GradientBuilder AddRadialGradient(
+            Point center, 
+            RadialGradientShape shape, 
+            RadialGradientSize size, 
+            RadialGradientFlags flags = RadialGradientFlags.PositionProportional, 
+            bool isRepeating = false)
         {
             _lastGradient = new RadialGradient
             {
@@ -32,8 +34,7 @@ namespace MagicGradients
                 Shape = shape,
                 Size = size,
                 Flags = flags,
-                IsRepeating = isRepeating,
-                Stops = new ObservableCollection<GradientStop>()
+                IsRepeating = isRepeating
             };
 
             _gradients.Add(_lastGradient);
