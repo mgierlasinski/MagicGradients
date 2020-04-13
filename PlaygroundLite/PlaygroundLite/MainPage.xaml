@@ -5,13 +5,19 @@
              x:Class="PlaygroundLite.MainPage">
 
     <Grid>
-        <magic:GradientView HorizontalOptions="Fill" VerticalOptions="Fill">
+        <magic:GradientView x:Name="GradientView" HorizontalOptions="Fill" VerticalOptions="Fill">
             <magic:LinearGradient>
                 <magic:GradientStop Color="Red" />
                 <magic:GradientStop Color="Green" />
                 <magic:GradientStop Color="Blue" />
             </magic:LinearGradient>
         </magic:GradientView>
+        <StackLayout VerticalOptions="End" HorizontalOptions="Center" Orientation="Horizontal">
+            <Button Text="Rotate [-]" Clicked="RotateLeft_Clicked" />
+            <Button Text="Add" Clicked="AddStop_Clicked" />
+            <Button Text="Remove" Clicked="RemoveStop_Clicked" />
+            <Button Text="Rotate [+]" Clicked="RotateRight_Clicked" />
+        </StackLayout>
     </Grid>
 
 </ContentPage>
