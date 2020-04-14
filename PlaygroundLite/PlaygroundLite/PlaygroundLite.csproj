@@ -11,11 +11,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FreshMvvm" Version="3.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\LinearPage.xaml.cs">
+      <DependentUpon>LinearPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\LinearPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\RadialPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
