@@ -80,13 +80,13 @@ namespace MagicGradients.Renderers
             if (_gradient.RadiusX > -1)
             {
                 var widthIsProportional = IsProportional(RadialGradientFlags.WidthProportional);
-                radiusX = widthIsProportional ? info.Width * _gradient.RadiusX : _gradient.RadiusX;
+                radiusX = widthIsProportional ? info.Width * (float)_gradient.RadiusX : (float)_gradient.RadiusX;
             }
 
             if (_gradient.RadiusY > -1)
             {
                 var heightIsProportional = IsProportional(RadialGradientFlags.HeightProportional);
-                radiusY = heightIsProportional ? info.Height * _gradient.RadiusY : _gradient.RadiusY;
+                radiusY = heightIsProportional ? info.Height * (float)_gradient.RadiusY : (float)_gradient.RadiusY;
             }
             
             return (radiusX * offset, radiusY * offset);
