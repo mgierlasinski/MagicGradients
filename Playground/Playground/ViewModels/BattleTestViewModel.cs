@@ -1,16 +1,19 @@
-﻿using Playground.Data.Repositories;
-using Xamarin.Forms;
-using System.Diagnostics;
-using MagicGradients.Parser;
+﻿using Bogus;
 using MagicGradients;
-using System.Collections.ObjectModel;
+using MagicGradients.Parser;
+using Playground.Constants;
+using Playground.Data.Repositories;
+using Playground.Models;
+using Playground.Services;
 using System;
 using System.Collections.Generic;
-using Playground.Constants;
-
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using Xamarin.Forms;
 using static Playground.Constants.IconCodes;
-using Playground.Services;
-using Playground.Models;
+using Color = System.Drawing.Color;
 
 namespace Playground.ViewModels
 {
@@ -142,10 +145,15 @@ namespace Playground.ViewModels
         private List<BattleItem> GenerateItemsCollection()
         {
             var battleList = new List<BattleItem>(90);
-            for (var i = 0; i < 90; i++)
-            {
-                battleList.Add(new BattleItem { Text = $"Item {i}", TextColor = TextColor });
-            }
+            var fackedBattleItem = new Faker<BattleItem>()
+                .RuleFor(item => item.Text, (facker, item) => facker.Name.LastName())
+                .RuleFor(item => item.TextColor, (facker) => TextColor);
+
+            battleList.AddRange(
+                Enumerable.Range(0, 90)
+                          .Select(_ => fackedBattleItem.Generate())
+                );
+
             return battleList;
         }
     }
