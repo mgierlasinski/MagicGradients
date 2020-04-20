@@ -48,7 +48,7 @@
                 <!--  Circle With Icon And With Gradient Background  -->
                 <CollectionView HeightRequest="50" ItemsSource="{Binding IconsCollection}">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Horizontal" />
+                        <GridItemsLayout HorizontalItemSpacing="5" Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>

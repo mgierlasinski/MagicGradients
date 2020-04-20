@@ -18,6 +18,7 @@ namespace Playground
 
             DependencyService.Register<GalleryService>();
             DependencyService.Register<CategoryService>();
+            DependencyService.Register<BattleItemService>();
 
             DependencyService.Register<IPickerColorsDataProvider, PickerColorsDataProvider>();
 

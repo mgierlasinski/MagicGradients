@@ -21,7 +21,8 @@ namespace Playground.ViewModels
 
         public BattleTestViewModel BattleTestViewModel => new BattleTestViewModel(
             DependencyService.Get<IGradientRepository>(),
-            DependencyService.Get<IPickerColorsDataProvider>());
+            DependencyService.Get<IPickerColorsDataProvider>(),
+            DependencyService.Get<IBattleItemService>());
 
         public LinearGradientsViewModel LinearGradientsViewModel => new LinearGradientsViewModel();
     }

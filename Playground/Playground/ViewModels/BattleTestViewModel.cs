@@ -1,16 +1,10 @@
 ﻿using Bogus;
 using MagicGradients;
-using MagicGradients.Parser;
 using Playground.Constants;
 using Playground.Data.Repositories;
 using Playground.Models;
 using Playground.Services;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using Xamarin.Forms;
 using static Playground.Constants.IconCodes;
 using Color = System.Drawing.Color;
@@ -22,9 +16,7 @@ namespace Playground.ViewModels
     {
         private readonly IGradientRepository _gradientRepository;
         private readonly IPickerColorsDataProvider _pickerColorsDataProvider;
-
-        private string _cssCode;
-        
+        private readonly IBattleItemService _battleItemService;
         private List<BattleItem> _iconsCollection;
         public List<BattleItem> IconsCollection
         {
@@ -40,7 +32,7 @@ namespace Playground.ViewModels
         }
 
         private string _id;
-        public string Id
+        public string Id //Don't remove it we set it from query
         {
             get => _id;
             set
@@ -75,86 +67,58 @@ namespace Playground.ViewModels
         public int SelectedColorIndex
         {
             get => _selectedColorIndex;
-            set 
+            set
             {
-                if(SetProperty(ref _selectedColorIndex, value))
+                if (SetProperty(ref _selectedColorIndex, value))
                 {
                     TextColor = _pickerColorsDataProvider.GetColorByName(ColorNames[SelectedColorIndex]);
                 }
             }
         }
 
-        public List<string> ColorNames { get; } 
+        public List<string> ColorNames { get; }
 
-        public BattleTestViewModel(IGradientRepository gradientRepository, IPickerColorsDataProvider pickerColorsDataProvider)
+        public BattleTestViewModel(
+            IGradientRepository gradientRepository, 
+            IPickerColorsDataProvider pickerColorsDataProvider,
+            IBattleItemService battleItemService)
         {
             _gradientRepository = gradientRepository;
             _pickerColorsDataProvider = pickerColorsDataProvider;
-            
+            _battleItemService = battleItemService;
+
             ColorNames = _pickerColorsDataProvider.GetColorNames();
             TextColor = Color.White;
         }
 
         private void LoadCssCodeById()
         {
-            var gradient = _gradientRepository.GetById(int.Parse(_id));
-
-            if (gradient == null)
-                return;
-
-            _cssCode = gradient.Stylesheet;
-            UpdateGradientSource();
+            var gradient = _gradientRepository.GetById(int.Parse(Id));
+            GradientSource = new CssGradientSource { Stylesheet = gradient.Stylesheet };
+            IconsCollection = GenerateIconsCollection();
         }
 
-        private void UpdateGradientSource()
+        private List<BattleItem> GenerateIconsCollection()
         {
-            try
-            {
-                var parser = new CssGradientParser();
-                var gradients = parser.ParseCss(_cssCode);
+            var iconsCodeList = new List<string>{
+               MagicWand, Refresh, IconCodes.Gradient, Radial,
+               Palette, Layers, Gallery, Code, Bolt, Paint
+           };
+            var fackedBattleItem = new Faker<BattleItem>()
+                .RuleFor(item => item.Text, (facker) => facker.PickRandom(iconsCodeList))
+                .RuleFor(item => item.TextColor, (facker) => TextColor)
+                .RuleFor(item => item.GradientSource, (facker) => GradientSource);
 
-                GradientSource = new GradientCollection
-                {
-                    Gradients = new ObservableCollection<Gradient>(gradients)
-                };
-                IconsCollection = GenerateIconsCollection();
-            }
-            catch (Exception e)
-            {
-                //todo maybe later we should add some dialog or toast service?
-                Debug.WriteLine(e.Message);
-                Debug.WriteLine(e.StackTrace);
-                Debugger.Break();
-            }
+            return _battleItemService.GenerateItems(fackedBattleItem, 15);
         }
-
-        private List<BattleItem> GenerateIconsCollection() => new List<BattleItem>
-        {
-            new BattleItem {GradientSource = GradientSource, Text = MagicWand, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Refresh, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = IconCodes.Gradient, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Radial, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Palette, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Layers, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Gallery, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Code, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Bolt, TextColor = TextColor},
-            new BattleItem {GradientSource = GradientSource, Text = Paint, TextColor = TextColor}
-        };
 
         private List<BattleItem> GenerateItemsCollection()
         {
-            var battleList = new List<BattleItem>(90);
             var fackedBattleItem = new Faker<BattleItem>()
-                .RuleFor(item => item.Text, (facker, item) => facker.Name.LastName())
+                .RuleFor(item => item.Text, (facker) => facker.Name.LastName())
                 .RuleFor(item => item.TextColor, (facker) => TextColor);
 
-            battleList.AddRange(
-                Enumerable.Range(0, 90)
-                          .Select(_ => fackedBattleItem.Generate())
-                );
-
-            return battleList;
+            return _battleItemService.GenerateItems(fackedBattleItem, 90);
         }
     }
 }
