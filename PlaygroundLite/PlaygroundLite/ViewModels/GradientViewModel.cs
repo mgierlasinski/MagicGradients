@@ -13,6 +13,14 @@ namespace PlaygroundLite.ViewModels
 
         public int StopsCount => Gradient.Stops.Count;
 
+        private bool _isRepeating;
+        public bool IsRepeating
+        {
+            get => _isRepeating;
+            set => SetProperty(ref _isRepeating, value, 
+                onChanged: () => Gradient.IsRepeating = _isRepeating);
+        }
+
         public ICommand AddStopCommand { get; }
         public ICommand RemoveStopCommand { get; set; }
 
