@@ -9,17 +9,17 @@ namespace Playground.Services
 {
     public interface IBattleItemService
     {
-        List<BattleItem> GenerateItems(Faker<BattleItem> facker, int count);
+        List<BattleItem> GenerateItems(Faker<BattleItem> faker, int count);
     }
     public class BattleItemService : IBattleItemService
     {
-        public List<BattleItem> GenerateItems(Faker<BattleItem> facker, int count)
+        public List<BattleItem> GenerateItems(Faker<BattleItem> faker, int count)
         {
             var battleList = new List<BattleItem>(count);
 
             battleList.AddRange(
                 Enumerable.Range(0, count)
-                          .Select(_ => facker.Generate())
+                          .Select(_ => faker.Generate())
                 );
 
             return battleList;

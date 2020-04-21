@@ -9,7 +9,6 @@ using Xamarin.Forms.Xaml;
 
 namespace Playground.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BattleTestPage : ContentPage
     {
         public BattleTestPage()

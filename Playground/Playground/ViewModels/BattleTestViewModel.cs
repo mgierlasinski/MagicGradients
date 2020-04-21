@@ -105,9 +105,9 @@ namespace Playground.ViewModels
                Palette, Layers, Gallery, Code, Bolt, Paint
            };
             var fackedBattleItem = new Faker<BattleItem>()
-                .RuleFor(item => item.Text, (facker) => facker.PickRandom(iconsCodeList))
-                .RuleFor(item => item.TextColor, (facker) => TextColor)
-                .RuleFor(item => item.GradientSource, (facker) => GradientSource);
+                .RuleFor(item => item.Text, (faker) => faker.PickRandom(iconsCodeList))
+                .RuleFor(item => item.TextColor, (faker) => TextColor)
+                .RuleFor(item => item.GradientSource, (faker) => GradientSource);
 
             return _battleItemService.GenerateItems(fackedBattleItem, 15);
         }
@@ -115,8 +115,8 @@ namespace Playground.ViewModels
         private List<BattleItem> GenerateItemsCollection()
         {
             var fackedBattleItem = new Faker<BattleItem>()
-                .RuleFor(item => item.Text, (facker) => facker.Name.LastName())
-                .RuleFor(item => item.TextColor, (facker) => TextColor);
+                .RuleFor(item => item.Text, (faker) => faker.Name.LastName())
+                .RuleFor(item => item.TextColor, (faker) => TextColor);
 
             return _battleItemService.GenerateItems(fackedBattleItem, 90);
         }
