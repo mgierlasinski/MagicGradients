@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="29.0.2" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.396" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
@@ -56,6 +57,9 @@
   <ItemGroup>
     <EmbeddedResource Update="Styles\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BattleTestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\GalleryPreviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

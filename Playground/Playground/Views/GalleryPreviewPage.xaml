@@ -23,6 +23,13 @@
                                  Color="{StaticResource ForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
+        <ToolbarItem Command="{Binding BattleTestCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Paint}"
+                                 FontFamily="{StaticResource IconFont}"
+                                 Color="{StaticResource ForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
     <Grid x:Name="RootContainer">
         <magic:GradientView GradientSource="{Binding GradientSource}" />

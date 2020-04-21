@@ -9,6 +9,7 @@ using Xamarin.Forms;
 
 namespace Playground.ViewModels
 {
+
     [QueryProperty("Id", "id")]
     public class PasteCssViewModel : BaseViewModel
     {

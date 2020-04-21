@@ -19,6 +19,11 @@ namespace Playground.ViewModels
         public PasteCssViewModel PasteCssViewModel => new PasteCssViewModel(
             DependencyService.Get<IGradientRepository>());
 
+        public BattleTestViewModel BattleTestViewModel => new BattleTestViewModel(
+            DependencyService.Get<IGradientRepository>(),
+            DependencyService.Get<IPickerColorsDataProvider>(),
+            DependencyService.Get<IBattleItemService>());
+
         public LinearGradientsViewModel LinearGradientsViewModel => new LinearGradientsViewModel();
     }
 }

@@ -12,6 +12,7 @@ namespace Playground
             Routing.RegisterRoute("GalleryList", typeof(GalleryListPage));
             Routing.RegisterRoute("GalleryPreview", typeof(GalleryPreviewPage));
             Routing.RegisterRoute("PasteCss", typeof(PasteCssPage));
+            Routing.RegisterRoute("BattleTest", typeof(BattleTestPage));
         }
     }
 }
