@@ -21,6 +21,13 @@ namespace PlaygroundLite.ViewModels
                 onChanged: () => Gradient.IsRepeating = _isRepeating);
         }
 
+        private double _length = 1;
+        public double Length
+        {
+            get => _length;
+            set => SetProperty(ref _length, value, onChanged: UpdateLength);
+        }
+
         public ICommand AddStopCommand { get; }
         public ICommand RemoveStopCommand { get; set; }
 
@@ -36,6 +43,7 @@ namespace PlaygroundLite.ViewModels
             {
                 Color = GetRandomColor()
             });
+            UpdateLength();
             RaisePropertyChanged(nameof(StopsCount));
         }
 
@@ -44,8 +52,20 @@ namespace PlaygroundLite.ViewModels
             if (Gradient.Stops.Any())
             {
                 Gradient.Stops.RemoveAt(Gradient.Stops.Count - 1);
+                UpdateLength();
                 RaisePropertyChanged(nameof(StopsCount));
             }
+        }
+
+        private void UpdateLength()
+        {
+            foreach (var stop in Gradient.Stops)
+                stop.Offset = -1;
+
+            Gradient.Measure();
+
+            foreach (var stop in Gradient.Stops)
+                stop.Offset = stop.RenderOffset * (float)Length;
         }
 
         protected Color GetRandomColor()
