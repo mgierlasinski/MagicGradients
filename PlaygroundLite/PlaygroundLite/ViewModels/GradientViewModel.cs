@@ -62,7 +62,7 @@ namespace PlaygroundLite.ViewModels
             foreach (var stop in Gradient.Stops)
                 stop.Offset = -1;
 
-            Gradient.Measure();
+            Gradient.Measure(0, 0);
 
             foreach (var stop in Gradient.Stops)
                 stop.Offset = stop.RenderOffset * (float)Length;

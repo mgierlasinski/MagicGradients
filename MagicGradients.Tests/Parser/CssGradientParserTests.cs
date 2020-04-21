@@ -54,7 +54,7 @@ namespace MagicGradients.Tests.Parser
 
             // Act
             var gradients = parser.ParseCss(css);
-            gradients.ForEach(x => x.Measure());
+            gradients.ForEach(x => x.Measure(0, 0));
 
             // Assert
             gradients.Should().HaveCount(1);

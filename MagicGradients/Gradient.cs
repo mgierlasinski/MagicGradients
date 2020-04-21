@@ -44,7 +44,7 @@ namespace MagicGradients
 
         public abstract void Render(RenderContext context);
 
-        public virtual void Measure()
+        public virtual void Measure(int width, int height)
         {
             var fromIndex = 0;
 

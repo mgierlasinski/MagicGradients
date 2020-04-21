@@ -8,11 +8,13 @@ namespace PlaygroundLite.ViewModels
     {
         public ICommand LinearCommand { get; }
         public ICommand RadialCommand { get; }
+        public ICommand CssCommand { get; }
 
         public MainViewModel()
         {
             LinearCommand = new Command(() => CoreMethods.PushPageModel<LinearViewModel>());
             RadialCommand = new Command(() => CoreMethods.PushPageModel<RadialViewModel>());
+            CssCommand = new Command(() => CoreMethods.PushPageModel<CssViewModel>());
         }
     }
 }

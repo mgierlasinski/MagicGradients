@@ -20,7 +20,7 @@ namespace MagicGradients.Tests
             };
 
             // Act
-            gradient.Measure();
+            gradient.Measure(0, 0);
 
             // Assert
             using (new AssertionScope())
@@ -45,7 +45,7 @@ namespace MagicGradients.Tests
             };
             
             // Act
-            gradient.Measure();
+            gradient.Measure(0, 0);
 
             // Assert
             using (new AssertionScope())
@@ -76,7 +76,7 @@ namespace MagicGradients.Tests
             };
 
             // Act
-            gradient.Measure();
+            gradient.Measure(0, 0);
 
             // Assert
             using (new AssertionScope())

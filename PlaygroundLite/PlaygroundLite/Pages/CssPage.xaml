@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             mc:Ignorable="d"
+             x:Class="PlaygroundLite.Pages.CssPage">
+    <Grid>
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:CssGradientSource>
+                <x:String>
+                    <![CDATA[
+                            repeating-linear-gradient(45deg, hsla(54,0%,88%,0.05) 0px, hsla(54,0%,88%,0.05) 45px,hsl(224,72%,31%) 45px, hsl(224,72%,31%) 50px)
+                        ]]>
+                </x:String>
+            </magic:CssGradientSource>
+        </magic:GradientView>
+    </Grid>
+</ContentPage>

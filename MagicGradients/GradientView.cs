@@ -68,7 +68,7 @@ namespace MagicGradients
 #if DEBUG_RENDER
                     System.Diagnostics.Debug.WriteLine($"Rendering Gradient with {gradient.Stops.Count} stops");
 #endif
-                    gradient.Measure();
+                    gradient.Measure(e.Info.Width, e.Info.Height);
                     gradient.Render(context);
                 }
             }
