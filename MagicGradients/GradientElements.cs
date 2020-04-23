@@ -62,10 +62,7 @@ namespace MagicGradients
                 item.Parent = parent;
             }
 
-            if (Items.Any())
-            {
-                Parent?.InvalidateCanvas();
-            }
+            Parent?.InvalidateCanvas();
         }
 
         internal void Release()

@@ -1,6 +1,6 @@
 ﻿using MagicGradients;
 using Playground.ViewModels;
-using System;
+using PlaygroundLite.Services;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -41,7 +41,7 @@ namespace PlaygroundLite.ViewModels
         {
             Gradient.Stops.Add(new GradientStop
             {
-                Color = GetRandomColor()
+                Color = ColorUtils.GetRandom()
             });
             UpdateLength();
             RaisePropertyChanged(nameof(StopsCount));
@@ -66,15 +66,6 @@ namespace PlaygroundLite.ViewModels
 
             foreach (var stop in Gradient.Stops)
                 stop.Offset = stop.RenderOffset * (float)Length;
-        }
-
-        protected Color GetRandomColor()
-        {
-            var random = new Random();
-            return new Color(
-                random.NextDouble(),
-                random.NextDouble(),
-                random.NextDouble());
         }
     }
 }

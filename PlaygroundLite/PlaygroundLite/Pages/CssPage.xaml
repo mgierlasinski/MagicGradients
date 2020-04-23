@@ -1,20 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             mc:Ignorable="d"
-             x:Class="PlaygroundLite.Pages.CssPage">
-    <Grid>
-        <magic:GradientView VerticalOptions="FillAndExpand">
-            <magic:CssGradientSource>
-                <x:String>
-                    <![CDATA[
-                            repeating-linear-gradient(45deg, hsla(54,0%,88%,0.05) 0px, hsla(54,0%,88%,0.05) 45px,hsl(224,72%,31%) 45px, hsl(224,72%,31%) 50px)
-                        ]]>
-                </x:String>
-            </magic:CssGradientSource>
-        </magic:GradientView>
+             x:Class="PlaygroundLite.Pages.CssPage"
+             Title="CSS gradient">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="33*" />
+            <RowDefinition Height="66*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="WhiteSmoke">
+            <Button Text="Add" Command="{Binding ShowSnippetsCommand}" />
+            <Button Text="Clear" Command="{Binding ClearCommand}" />
+        </StackLayout>
+        <Editor Text="{Binding CssCode}" Grid.Row="1" Placeholder="Paste CSS with gradient" />
+        <magic:GradientView GradientSource="{Binding GradientSource}" Grid.Row="2" />
+        <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="2" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
+            <BoxView Style="{StaticResource SemiTransparent}" />
+            <Label Text="{Binding Message}" Margin="10" TextColor="White" />
+        </Grid>
+        <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="WhiteSmoke">
+            <Button Text="Refresh" Command="{Binding RefreshCommand}" Margin="10" />
+            <CheckBox IsChecked="{Binding IsHotReload}" HorizontalOptions="EndAndExpand"  />
+            <Label Text="Hot reload" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,10,0" />
+        </StackLayout>
     </Grid>
 </ContentPage>

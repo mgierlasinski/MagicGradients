@@ -26,6 +26,10 @@
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="VerticalOptions" Value="Center" />
         </Style>
+        <Style x:Key="SemiTransparent" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="Black" />
+            <Setter Property="Opacity" Value="0.5" />
+        </Style>
         <converters:NegativeBoolConverter x:Key="NegativeBoolConverter" />
     </Application.Resources>
 </Application>

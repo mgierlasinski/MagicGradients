@@ -1,4 +1,5 @@
 ﻿using MagicGradients;
+using PlaygroundLite.Services;
 using Xamarin.Forms;
 
 namespace PlaygroundLite.ViewModels
@@ -74,9 +75,9 @@ namespace PlaygroundLite.ViewModels
                 Flags = RadialGradientFlags.PositionProportional
             };
 
-            Gradient.Stops.Add(new GradientStop { Color = GetRandomColor() });
-            Gradient.Stops.Add(new GradientStop { Color = GetRandomColor() });
-            Gradient.Stops.Add(new GradientStop { Color = GetRandomColor() });
+            Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
+            Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
+            Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
 
             UpdateCenter();
             UpdateShape();

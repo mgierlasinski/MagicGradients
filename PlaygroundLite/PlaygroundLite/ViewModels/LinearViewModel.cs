@@ -1,4 +1,5 @@
 ﻿using MagicGradients;
+using PlaygroundLite.Services;
 
 namespace PlaygroundLite.ViewModels
 {
@@ -14,9 +15,9 @@ namespace PlaygroundLite.ViewModels
         public LinearViewModel()
         {
             Gradient = new LinearGradient();
-            Gradient.Stops.Add(new GradientStop { Color = GetRandomColor() });
-            Gradient.Stops.Add(new GradientStop { Color = GetRandomColor() });
-            Gradient.Stops.Add(new GradientStop { Color = GetRandomColor() });
+            Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
+            Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
+            Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
         }
     }
 }
