@@ -1,6 +1,4 @@
-﻿using System;
-using FreshMvvm;
-using PlaygroundLite.Pages;
+﻿using FreshMvvm;
 using PlaygroundLite.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,8 +15,6 @@ namespace PlaygroundLite
             var page = FreshPageModelResolver.ResolvePageModel<MainViewModel>();
             var basicNavContainer = new FreshNavigationContainer(page);
             MainPage = basicNavContainer;
-
-            //MainPage = new MainView();
         }
 
         protected override void OnStart()
