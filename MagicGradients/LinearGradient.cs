@@ -44,7 +44,7 @@ namespace MagicGradients
             var angleRad = GradientMath.ToRadians(Angle);
             var computedLength = Math.Sqrt(Math.Pow(width * Math.Cos(angleRad), 2) + Math.Pow(height * Math.Sin(angleRad), 2));
 
-            return (float)(offset / computedLength);
+            return computedLength == 0 ? 1 : (float)(offset / computedLength);
         }
 
         public override void Render(RenderContext context)
