@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="PlaygroundLite.Pages.RadialPage"
+             Title="Radial gradient">
+    <StackLayout>
+        <magic:GradientView x:Name="GradientView" GradientSource="{Binding Gradient}" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" />
+        <StackLayout Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Add color" Command="{Binding AddStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+                <Button Text="Remove color" Command="{Binding RemoveStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+                <Grid HorizontalOptions="End" Margin="10,0,0,0">
+                    <BoxView Style="{StaticResource ChipBackground}" />
+                    <Label Text="{Binding StopsCount}" Style="{StaticResource ChipValue}" />
+                </Grid>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Text="Length" HorizontalOptions="StartAndExpand" Margin="0,3,0,0" />
+                <CheckBox IsChecked="{Binding IsRepeating}" HorizontalOptions="End" />
+                <Label Text="Repeating" HorizontalOptions="End" Margin="0,3,0,0" />
+            </StackLayout>
+            <Slider Value="{Binding Length}" Maximum="1" Minimum="0.1" HorizontalOptions="FillAndExpand" />
+            <Label Text="Center" Margin="0,10,0,0" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="X" />
+                <Slider Value="{Binding CenterX}" Maximum="1" Minimum="0" 
+                        HorizontalOptions="FillAndExpand" />
+                <Label Text="Y" FontSize="Medium" Margin="10,0,0,0" />
+                <Slider Value="{Binding CenterY}" Maximum="1" Minimum="0" 
+                        HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Text="Shape and Size" HorizontalOptions="StartAndExpand" Margin="0,3,0,0" />
+                <CheckBox IsChecked="{Binding IsCustomSize}" HorizontalOptions="End" />
+                <Label Text="Custom size" HorizontalOptions="End" Margin="0,3,0,0" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HeightRequest="40" 
+                         IsVisible="{Binding IsCustomSize, Converter={StaticResource NegativeBoolConverter}}">
+                <Picker ItemsSource="{Binding Shapes}" 
+                        SelectedItem="{Binding SelectedShape}" 
+                        HorizontalOptions="FillAndExpand" />
+                <Picker ItemsSource="{Binding Sizes}" 
+                        SelectedItem="{Binding SelectedSize}"
+                        HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HeightRequest="40" 
+                         IsVisible="{Binding IsCustomSize}">
+                <Label Text="W" VerticalOptions="Center" />
+                <Slider Value="{Binding RadiusX}" Maximum="300" Minimum="50" 
+                        HorizontalOptions="FillAndExpand" />
+                <Label Text="H" Margin="10,0,0,0" VerticalOptions="Center" />
+                <Slider Value="{Binding RadiusY}" Maximum="300" Minimum="50" 
+                        HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -41,8 +41,8 @@ namespace Playground.ViewModels
             }
         }
 
-        private IGradientSource _gradientSource;
-        public IGradientSource GradientSource
+        private GradientCollection _gradientSource;
+        public GradientCollection GradientSource
         {
             get => _gradientSource;
             set => SetProperty(ref _gradientSource, value, onChanged: ValidateEmptyData);
@@ -69,6 +69,7 @@ namespace Playground.ViewModels
         {
             _gradientRepository = gradientRepository;
 
+            GradientSource = new GradientCollection();
             RefreshCommand = new Command(UpdateGradientSource);
 
             UpdateGradientSource();
@@ -83,10 +84,7 @@ namespace Playground.ViewModels
                 var parser = new CssGradientParser();
                 var gradients = parser.ParseCss(CssCode);
 
-                GradientSource = new GradientCollection
-                {
-                    Gradients = new ObservableCollection<Gradient>(gradients)
-                };
+                GradientSource.Gradients = new GradientElements<Gradient>(gradients);
             }
             catch (Exception e)
             {

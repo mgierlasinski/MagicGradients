@@ -1,7 +1,5 @@
 ﻿using FluentAssertions;
 using FluentAssertions.Execution;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Xunit;
 
 namespace MagicGradients.Tests
@@ -14,7 +12,7 @@ namespace MagicGradients.Tests
             // Arrange
             var gradient = new LinearGradient
             {
-                Stops = new ObservableCollection<GradientStop>
+                Stops = new GradientElements<GradientStop>
                 {
                     new GradientStop { Offset = 0.1f },
                     new GradientStop { Offset = 0.2f }
@@ -22,7 +20,7 @@ namespace MagicGradients.Tests
             };
 
             // Act
-            gradient.Measure();
+            gradient.Measure(0, 0);
 
             // Assert
             using (new AssertionScope())
@@ -38,7 +36,7 @@ namespace MagicGradients.Tests
             // Arrange
             var gradient = new LinearGradient
             {
-                Stops = new ObservableCollection<GradientStop>
+                Stops = new GradientElements<GradientStop>
                 {
                     new GradientStop(),
                     new GradientStop(),
@@ -47,7 +45,7 @@ namespace MagicGradients.Tests
             };
             
             // Act
-            gradient.Measure();
+            gradient.Measure(0, 0);
 
             // Assert
             using (new AssertionScope())
@@ -64,7 +62,7 @@ namespace MagicGradients.Tests
             // Arrange
             var gradient = new LinearGradient
             {
-                Stops = new ObservableCollection<GradientStop>
+                Stops = new GradientElements<GradientStop>
                 {
                     new GradientStop(),
                     new GradientStop(),
@@ -78,7 +76,7 @@ namespace MagicGradients.Tests
             };
 
             // Act
-            gradient.Measure();
+            gradient.Measure(0, 0);
 
             // Assert
             using (new AssertionScope())

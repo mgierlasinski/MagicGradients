@@ -18,11 +18,11 @@ namespace MagicGradients.Renderers
         {
             var info = context.Info;
 
-            var orderedStops = _gradient.Stops.OrderBy(x => x.Offset).ToArray();
-            var lastOffset = _gradient.IsRepeating ? orderedStops.LastOrDefault()?.Offset ?? 1 : 1;
+            var orderedStops = _gradient.Stops.OrderBy(x => x.RenderOffset).ToArray();
+            var lastOffset = _gradient.IsRepeating ? orderedStops.LastOrDefault()?.RenderOffset ?? 1 : 1;
 
             var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
-            var colorPos = orderedStops.Select(x => x.Offset / lastOffset).ToArray();
+            var colorPos = orderedStops.Select(x => x.RenderOffset / lastOffset).ToArray();
 
             var center = GetCenter(info.Width, info.Height);
             var (radiusX, radiusY) = GetRadius(center, info, lastOffset);
@@ -80,13 +80,13 @@ namespace MagicGradients.Renderers
             if (_gradient.RadiusX > -1)
             {
                 var widthIsProportional = IsProportional(RadialGradientFlags.WidthProportional);
-                radiusX = widthIsProportional ? info.Width * _gradient.RadiusX : _gradient.RadiusX;
+                radiusX = widthIsProportional ? info.Width * (float)_gradient.RadiusX : (float)_gradient.RadiusX;
             }
 
             if (_gradient.RadiusY > -1)
             {
                 var heightIsProportional = IsProportional(RadialGradientFlags.HeightProportional);
-                radiusY = heightIsProportional ? info.Height * _gradient.RadiusY : _gradient.RadiusY;
+                radiusY = heightIsProportional ? info.Height * (float)_gradient.RadiusY : (float)_gradient.RadiusY;
             }
             
             return (radiusX * offset, radiusY * offset);

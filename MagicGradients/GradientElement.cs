@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace MagicGradients
 {
@@ -15,15 +14,6 @@ namespace MagicGradients
         protected override void OnPropertyChanged(string propertyName = null)
         {
             InvalidateCanvas();
-        }
-
-        protected void SetParent(IList collection, IGradientVisualElement parent)
-        {
-            for (var i = 0; i < collection.Count; i++)
-            {
-                var item = (GradientElement)collection[i];
-                item.Parent = parent;
-            }
         }
     }
 }

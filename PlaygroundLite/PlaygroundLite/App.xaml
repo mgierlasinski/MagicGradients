@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:PlaygroundLite.Converters;assembly=PlaygroundLite"
+             mc:Ignorable="d"
+             x:Class="PlaygroundLite.App">
+    <Application.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Medium" />
+        </Style>
+        <Style TargetType="Slider">
+            <Setter Property="MinimumTrackColor" Value="Blue" />
+            <Setter Property="MaximumTrackColor" Value="Blue" />
+        </Style>
+        <Style TargetType="BoxView" x:Key="ChipBackground">
+            <Setter Property="Color" Value="Red" />
+            <Setter Property="WidthRequest" Value="40" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="CornerRadius" Value="20" />
+        </Style>
+        <Style TargetType="Label" x:Key="ChipValue">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="SemiTransparent" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="Black" />
+            <Setter Property="Opacity" Value="0.5" />
+        </Style>
+        <converters:NegativeBoolConverter x:Key="NegativeBoolConverter" />
+    </Application.Resources>
+</Application>

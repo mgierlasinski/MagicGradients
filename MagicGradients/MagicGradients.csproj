@@ -12,6 +12,10 @@
     <PackageIconUrl>https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/icon.png</PackageIconUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;DEBUG_RENDER</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.991250" />
