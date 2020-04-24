@@ -1,14 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlaygroundLite.Pages.MainPage"
-             Title="Test your might">
+<ContentPage
+    x:Class="PlaygroundLite.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+    Title="Test your might">
 
     <ScrollView>
         <StackLayout Margin="10">
-            <Button Text="Linear gradient" Command="{Binding LinearCommand}" />
-            <Button Text="Radial gradient" Command="{Binding RadialCommand}" />
-            <Button Text="CSS gradient" Command="{Binding CssCommand}" />
+            <Grid>
+                <magic:GradientView VerticalOptions="FillAndExpand">
+                    <magic:LinearGradient Angle="90">
+                        <magic:GradientStop Color="#D40C18" />
+                        <magic:GradientStop Color="#323232" />
+                        <magic:GradientStop Color="#2C5D6B" />
+                        <magic:GradientStop Color="#D4CD50" />
+                    </magic:LinearGradient>
+                </magic:GradientView>
+                <Button
+                    Command="{Binding LinearCommand}"
+                    Style="{StaticResource MainMenuButton}"
+                    Text="Linear gradient" />
+            </Grid>
+            <Grid>
+                <magic:GradientView VerticalOptions="FillAndExpand">
+                    <magic:RadialGradient
+                        Center="0.5,0.5"
+                        RadiusX="200"
+                        RadiusY="200">
+                        <magic:GradientStop Color="#D40C18" />
+                        <magic:GradientStop Color="#323232" />
+                        <magic:GradientStop Color="#2C5D6B" />
+                        <magic:GradientStop Color="#D4CD50" />
+                    </magic:RadialGradient>
+                </magic:GradientView>
+                <Button
+                    Command="{Binding RadialCommand}"
+                    Style="{StaticResource MainMenuButton}"
+                    Text="Radial gradient" />
+            </Grid>
+            <Grid>
+                <magic:GradientView VerticalOptions="FillAndExpand">
+                    <magic:CssGradientSource Stylesheet="linear-gradient(90deg, rgb(212, 205, 80) 0%, rgb(44, 93, 107) 12.5%, rgb(50, 50, 50) 25%, rgb(212, 12, 24) 37.5%, rgb(212, 12, 24) 100%)" />
+                </magic:GradientView>
+                <Button
+                    Command="{Binding CssCommand}"
+                    Style="{StaticResource MainMenuButton}"
+                    Text="CSS gradient" />
+            </Grid>
         </StackLayout>
     </ScrollView>
 
