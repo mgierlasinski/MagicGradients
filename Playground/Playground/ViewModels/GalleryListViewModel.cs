@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -46,7 +47,12 @@ namespace Playground.ViewModels
         public GradientTheme SelectedTheme
         {
             get => _selectedTheme;
-            set => SetProperty(ref _selectedTheme, value, onChanged: RefreshGradients);
+            set => SetProperty(ref _selectedTheme, value, onChanged: async () =>
+            {
+                RefreshGradients();
+                await Task.Delay(300);
+                IsPickerVisible = false;
+            });
         }
 
         private ObservableCollection<object> _selectedThemes = new ObservableCollection<object>();

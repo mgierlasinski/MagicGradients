@@ -18,8 +18,7 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <Grid>
-    <StackLayout Spacing="0">
-        <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
+        <!--<Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
             <CollectionView x:Name="ThemeList"
                             ItemsSource="{Binding Themes}"
                             SelectionMode="Multiple"
@@ -36,7 +35,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </Frame>
+        </Frame>-->
         <CollectionView x:Name="GalleryList"
                         ItemsSource="{Binding Gradients}"
                         SelectionMode="Single"
@@ -53,7 +52,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </StackLayout>
         <controls:RadialMenu HorizontalOptions="Fill" 
                              VerticalOptions="Fill" 
                              ItemsSource="{Binding Themes}" 

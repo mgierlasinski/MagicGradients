@@ -39,7 +39,7 @@ namespace Playground.Controls
             _touchPaths.Clear();
 
             SKPoint center = new SKPoint(info.Width / 2, info.Height / 2);
-            float explodeOffset = 1;
+            float explodeOffset = 30;
             float radius = Math.Min(info.Width / 2, info.Height / 2) - 2 * explodeOffset;
             SKRect rect = new SKRect(center.X - radius, center.Y - radius,
                                      center.X + radius, center.Y + radius);
@@ -58,28 +58,34 @@ namespace Playground.Controls
                     path.Close();
 
                     fillPaint.Color = SKColor.Parse(item);
+                    
+                    // Calculate "explode" transform
+                    float angle = startAngle + 0.5f * sweepAngle;
+                    float x = explodeOffset * (float)Math.Cos(Math.PI * angle / 180);
+                    float y = explodeOffset * (float)Math.Sin(Math.PI * angle / 180);
+
+                    canvas.Save();
+
+                    if (RadialMenu.SelectedIndex == _touchPaths.Count)
+                        canvas.Translate(x, y);
 
                     canvas.DrawPath(path, fillPaint);
                     canvas.DrawPath(path, outlinePaint);
+                    canvas.Restore();
 
                     startAngle += sweepAngle;
 
                     _touchPaths.Add(path);
-
-                    //if (item.IsSelected)
-                    //{
-                    //    selectedIndex = _touchPaths.Count - 1;
-                    //}
                 }
 
-                if(RadialMenu.SelectedIndex > -1)
-                {
-                    outlinePaint.Color = SKColors.Yellow;
-                    canvas.DrawPath(_touchPaths[RadialMenu.SelectedIndex], outlinePaint);
-                }
+                //if(RadialMenu.SelectedIndex > -1)
+                //{
+                //    outlinePaint.Color = SKColors.Yellow;
+                //    canvas.DrawPath(_touchPaths[RadialMenu.SelectedIndex], outlinePaint);
+                //}
             }
 
-            //DrawInnerCircle(canvas, ref center);
+            DrawInnerCircle(canvas, ref center);
         }
 
         private SKPaint CreateFillPaint()
@@ -107,10 +113,11 @@ namespace Playground.Controls
             using (SKPaint fillPaint = CreateFillPaint())
             using (SKPaint outlinePaint = CreateOutlinePaint())
             {
-                fillPaint.Color = SKColors.Black;
+                fillPaint.BlendMode = SKBlendMode.Clear;
+                outlinePaint.BlendMode = SKBlendMode.SrcATop;
 
-                canvas.DrawCircle(center.X, center.Y, 60, fillPaint);
-                canvas.DrawCircle(center.X, center.Y, 60, outlinePaint);
+                canvas.DrawCircle(center.X, center.Y, 100, fillPaint);
+                canvas.DrawCircle(center.X, center.Y, 102, outlinePaint);
             }
         }
     }

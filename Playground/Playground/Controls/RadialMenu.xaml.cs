@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace Playground.Controls
         public IList<string> Items => _internalPicker.Items;
 
         public static readonly BindableProperty IsOpenProperty =
-            BindableProperty.Create(nameof(IsOpen), typeof(bool), typeof(RadialMenu), false,
+            BindableProperty.Create(nameof(IsOpen), typeof(bool), typeof(RadialMenu), false, BindingMode.TwoWay,
                 propertyChanged: OnIsOpenChanged);
 
         public static readonly BindableProperty ItemsSourceProperty =
@@ -116,11 +117,13 @@ namespace Playground.Controls
 
             Overlay.FadeTo(0.6, 300);
 
-            await Center.ScaleTo(1, 300);
+            await CenterButton.ScaleTo(1, 300);
 
             await Task.WhenAll(
-                Circle.ScaleTo(1, 300, Easing.CubicOut), 
-                Circle.RotateTo(360, 300));
+                CircleMenu.ScaleTo(1, 300, Easing.CubicOut),
+                CircleMenu.RotateTo(360, 300));
+
+            await ClearButton.ScaleTo(1, 300, Easing.CubicOut);
         }
 
         private async Task HideMenu()
@@ -128,10 +131,11 @@ namespace Playground.Controls
             Overlay.FadeTo(0, 300);
 
             await Task.WhenAll(
-                Circle.ScaleTo(0, 300),
-                Circle.RelRotateTo(-360, 300));
-
-            await Center.ScaleTo(0, 300);
+                CircleMenu.ScaleTo(0, 300),
+                CircleMenu.RelRotateTo(-360, 300),
+                ClearButton.ScaleTo(0, 300)); 
+            
+            await CenterButton.ScaleTo(0, 300);
 
             IsVisible = false;
         }
@@ -140,8 +144,21 @@ namespace Playground.Controls
         {
             IsVisible = false;
             Overlay.Opacity = 0;
-            Circle.Scale = 0;
-            Center.Scale = 0;
+            CircleMenu.Scale = 0;
+            CenterButton.Scale = 0;
+            ClearButton.Scale = 0;
+        }
+
+        private void CenterButton_Tapped(object sender, EventArgs e)
+        {
+            IsOpen = false;
+        }
+
+        private void ClearButton_Tapped(object sender, EventArgs e)
+        {
+            SelectedItem = null;
+            SelectedIndex = -1;
+            IsOpen = false;
         }
     }
 }
