@@ -28,7 +28,7 @@ namespace MagicGradients
 
             foreach (var stop in Stops)
             {
-                if (stop.RenderOffset > 1)
+                if (stop.RenderOffset > 1.001)
                 {
                     // Convert pixels to proportion
                     stop.RenderOffset = GetOffsetFromPixels(stop.RenderOffset, width, height);
