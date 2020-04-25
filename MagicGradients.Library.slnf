@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "path": "MagicGradients.sln",
+    "projects": [
+      "MagicGradients.Benchmark\\MagicGradients.Benchmark.csproj",
+      "MagicGradients.Tests\\MagicGradients.Tests.csproj",
+      "MagicGradients\\MagicGradients.csproj"
+    ]
+  }
+}
