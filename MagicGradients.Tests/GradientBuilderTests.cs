@@ -31,7 +31,7 @@ namespace MagicGradients.Tests
 
         [Theory]
         [ClassData(typeof(GradientBuilderTestCases))]
-        public void AddStops_AndGradient_AndStops_SingleGradientWithStops(GradientBuilderTestCase testCase)
+        public void AddStops_AndGradient_AndStops_TwoGradientsWithStops(GradientBuilderTestCase testCase)
         {
             // Arrange
             var builder = new GradientBuilder();
