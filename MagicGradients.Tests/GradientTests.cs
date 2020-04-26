@@ -25,8 +25,8 @@ namespace MagicGradients.Tests
             // Assert
             using (new AssertionScope())
             {
-                gradient.Stops[0].Offset.Should().Be(0.1f);
-                gradient.Stops[1].Offset.Should().Be(0.2f);
+                gradient.Stops[0].RenderOffset.Should().Be(0.1f);
+                gradient.Stops[1].RenderOffset.Should().Be(0.2f);
             }
         }
 
@@ -50,9 +50,9 @@ namespace MagicGradients.Tests
             // Assert
             using (new AssertionScope())
             {
-                gradient.Stops[0].Offset.Should().Be(0f);
-                gradient.Stops[1].Offset.Should().Be(0.5f);
-                gradient.Stops[2].Offset.Should().Be(1f);
+                gradient.Stops[0].RenderOffset.Should().Be(0f);
+                gradient.Stops[1].RenderOffset.Should().Be(0.5f);
+                gradient.Stops[2].RenderOffset.Should().Be(1f);
             }
         }
 
@@ -81,14 +81,14 @@ namespace MagicGradients.Tests
             // Assert
             using (new AssertionScope())
             {
-                gradient.Stops[0].Offset.Should().Be(0f);
-                gradient.Stops[1].Offset.Should().BeInRange(0.19f, 0.21f);
-                gradient.Stops[2].Offset.Should().BeInRange(0.39f, 0.41f);
-                gradient.Stops[3].Offset.Should().Be(0.6f);
-                gradient.Stops[4].Offset.Should().BeInRange(0.69f, 0.71f);
-                gradient.Stops[5].Offset.Should().BeInRange(0.79f, 0.81f);
-                gradient.Stops[6].Offset.Should().Be(0.9f);
-                gradient.Stops[7].Offset.Should().Be(1f);
+                gradient.Stops[0].RenderOffset.Should().Be(0f);
+                gradient.Stops[1].RenderOffset.Should().BeInRange(0.19f, 0.21f);
+                gradient.Stops[2].RenderOffset.Should().BeInRange(0.39f, 0.41f);
+                gradient.Stops[3].RenderOffset.Should().Be(0.6f);
+                gradient.Stops[4].RenderOffset.Should().BeInRange(0.69f, 0.71f);
+                gradient.Stops[5].RenderOffset.Should().BeInRange(0.79f, 0.81f);
+                gradient.Stops[6].RenderOffset.Should().Be(0.9f);
+                gradient.Stops[7].RenderOffset.Should().Be(1f);
             }
         }
     }

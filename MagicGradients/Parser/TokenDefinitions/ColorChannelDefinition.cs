@@ -16,7 +16,8 @@ namespace MagicGradients.Parser.TokenDefinitions
 
         public void Parse(CssReader reader, GradientBuilder builder)
         {
-            var color = (Color)ColorConverter.ConvertFromInvariantString(GetColorString(reader));
+            var colorString = GetColorString(reader);
+            var color = (Color)ColorConverter.ConvertFromInvariantString(colorString);
             var parts = reader.ReadNext().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (parts.TryConvertOffsets(out var offsets))
