@@ -3,11 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:models="clr-namespace:Playground.Models"
+             xmlns:controls="clr-namespace:Playground.Controls"
+             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
              x:Class="Playground.Views.GalleryListPage"
              Title="{Binding Title}"
              BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
-    <StackLayout Spacing="0">
-        <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding TogglePickerCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
+                                 FontFamily="{StaticResource IconFont}"
+                                 Color="{StaticResource ForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <!--<Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
             <CollectionView x:Name="ThemeList"
                             ItemsSource="{Binding Themes}"
                             SelectionMode="Multiple"
@@ -24,7 +35,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </Frame>
+        </Frame>-->
         <CollectionView x:Name="GalleryList"
                         ItemsSource="{Binding Gradients}"
                         SelectionMode="Single"
@@ -41,5 +52,10 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </StackLayout>
+        <controls:RadialMenu HorizontalOptions="Fill" 
+                             VerticalOptions="Fill" 
+                             ItemsSource="{Binding Themes}" 
+                             SelectedItem="{Binding SelectedTheme}"
+                             IsOpen="{Binding IsPickerVisible}" />
+    </Grid>
 </ContentPage>

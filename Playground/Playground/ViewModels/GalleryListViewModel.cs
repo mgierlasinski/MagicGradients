@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Playground.ViewModels
@@ -41,6 +43,18 @@ namespace Playground.ViewModels
             set => SetProperty(ref _themes, value);
         }
 
+        private GradientTheme _selectedTheme;
+        public GradientTheme SelectedTheme
+        {
+            get => _selectedTheme;
+            set => SetProperty(ref _selectedTheme, value, onChanged: async () =>
+            {
+                RefreshGradients();
+                await Task.Delay(300);
+                IsPickerVisible = false;
+            });
+        }
+
         private ObservableCollection<object> _selectedThemes = new ObservableCollection<object>();
         public ObservableCollection<object> SelectedThemes
         {
@@ -71,6 +85,15 @@ namespace Playground.ViewModels
             });
         }
 
+        private bool _isPickerVisible;
+        public bool IsPickerVisible
+        {
+            get => _isPickerVisible;
+            set => SetProperty(ref _isPickerVisible, value);
+        }
+
+        public ICommand TogglePickerCommand { get; }
+
         public GalleryListViewModel(
             IGalleryService galleryService, 
             ICategoryService categoryService)
@@ -80,6 +103,8 @@ namespace Playground.ViewModels
 
             Themes = categoryService.GetThemes().ToList();
             SelectedThemes.CollectionChanged += SelectedThemesOnCollectionChanged;
+
+            TogglePickerCommand = new Command(() => IsPickerVisible = !IsPickerVisible);
         }
 
         private void SelectedThemesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -92,6 +117,11 @@ namespace Playground.ViewModels
             if (SelectedThemes.Any())
             {
                 var colors = SelectedThemes.Cast<GradientTheme>().Select(x => x.Color).ToArray();
+                Gradients = _allGradients.Where(x => x.HasColors(colors)).ToList();
+            }
+            else if(SelectedTheme != null)
+            {
+                var colors = new[] { SelectedTheme.Color };
                 Gradients = _allGradients.Where(x => x.HasColors(colors)).ToList();
             }
             else

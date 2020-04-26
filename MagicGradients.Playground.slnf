@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "MagicGradients.sln",
+    "projects": [
+      "MagicGradients\\MagicGradients.csproj",
+      "Playground\\Playground.Android\\Playground.Android.csproj",
+      "Playground\\Playground.Data\\Playground.Data.csproj",
+      "Playground\\Playground.iOS\\Playground.iOS.csproj",
+      "Playground\\Playground\\Playground.csproj"
+    ]
+  }
+}

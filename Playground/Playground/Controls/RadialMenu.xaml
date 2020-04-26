@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:controls="clr-namespace:Playground.Controls"
+      xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+      x:Class="Playground.Controls.RadialMenu">
+
+    <BoxView BackgroundColor="White" Opacity="0.6" x:Name="Overlay" />
+    <controls:RadialMenuCircle x:Name="CircleMenu" EnableTouchEvents="True" Margin="40" />
+
+    <Grid HorizontalOptions="Center" VerticalOptions="Center" x:Name="CenterButton">
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="CenterButton_Tapped" />
+        </Grid.GestureRecognizers>
+        <BoxView WidthRequest="60" HeightRequest="60" CornerRadius="30" BackgroundColor="White" />
+        <BoxView WidthRequest="56" HeightRequest="56" CornerRadius="28" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Image HorizontalOptions="Center" VerticalOptions="Center">
+            <Image.Source>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
+                                 FontFamily="{StaticResource IconFont}"
+                                 Color="{StaticResource LightForegroundColor}" />
+            </Image.Source>
+        </Image>
+    </Grid>
+
+    <Grid x:Name="ClearButton" VerticalOptions="End" HorizontalOptions="Center" Margin="0,0,0,60">
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="ClearButton_Tapped" />
+        </Grid.GestureRecognizers>
+        <BoxView BackgroundColor="White" HeightRequest="44" CornerRadius="22" />
+        <BoxView BackgroundColor="Black" HeightRequest="40" CornerRadius="20" Margin="2" />
+        <Label Text="Clear filter" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" Margin="20,0" />
+    </Grid>
+</Grid>

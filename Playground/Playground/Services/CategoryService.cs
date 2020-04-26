@@ -45,7 +45,8 @@ namespace Playground.Services
 
         private GradientTheme MapTheme(Theme source) => new GradientTheme
         {
-            Color = Color.FromHex(source.Color),
+            ColorRaw = source.Color,
+            Color = Color.FromHex(source.Color)
         };
     }
 }
