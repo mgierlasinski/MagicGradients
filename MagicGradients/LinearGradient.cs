@@ -49,6 +49,9 @@ namespace MagicGradients
 
         public override void Render(RenderContext context)
         {
+#if DEBUG_RENDER
+            System.Diagnostics.Debug.WriteLine($"Rendering Linear Gradient with {Stops.Count} stops");
+#endif
             _renderer.Render(context);
         }
     }

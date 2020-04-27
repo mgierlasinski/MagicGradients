@@ -42,7 +42,7 @@ namespace MagicGradients.Tests.Parser
 
             // Assert
             gradients.Should().HaveCount(1);
-            gradients[0].Should().BeEquivalentTo(expected);
+            gradients[0].Should().BeEquivalentTo(expected, options => options.IgnoringCyclicReferences());
         }
 
         [Theory]
@@ -58,7 +58,7 @@ namespace MagicGradients.Tests.Parser
 
             // Assert
             gradients.Should().HaveCount(1);
-            gradients[0].Should().BeEquivalentTo(expected);
+            gradients[0].Should().BeEquivalentTo(expected, options => options.IgnoringCyclicReferences());
         }
 
         [Fact]
