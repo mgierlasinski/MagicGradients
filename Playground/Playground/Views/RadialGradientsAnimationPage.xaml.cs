@@ -8,10 +8,15 @@ namespace Playground.Views
         {
             InitializeComponent();
 
-            var animationXGrow = new Animation(v => AnimatedGradient.RadiusX = (float)v, 10, 300);
-            var animationYGrow = new Animation(v => AnimatedGradient.RadiusY = (float)v, 10, 300);
-            var animationXShrink = new Animation(v => AnimatedGradient.RadiusX = (float)v, 300, 10);
-            var animationYShrink = new Animation(v => AnimatedGradient.RadiusY = (float)v, 300, 10);
+            AnimatePulse();
+        }
+
+        private void AnimatePulse()
+        {
+            var animationXGrow = new Animation(v => PulseTarget.RadiusX = (float)v, 10, 300);
+            var animationYGrow = new Animation(v => PulseTarget.RadiusY = (float)v, 10, 300);
+            var animationXShrink = new Animation(v => PulseTarget.RadiusX = (float)v, 300, 10);
+            var animationYShrink = new Animation(v => PulseTarget.RadiusY = (float)v, 300, 10);
 
             var parentAnimation = new Animation
             {
@@ -21,7 +26,7 @@ namespace Playground.Views
                 {0.5, 1, animationYShrink}
             };
 
-            parentAnimation.Commit(this, "Animation", 30, 2000, repeat: () => true);
+            parentAnimation.Commit(this, "PulseAnimation", 30, 2000, repeat: () => true);
         }
     }
 }
