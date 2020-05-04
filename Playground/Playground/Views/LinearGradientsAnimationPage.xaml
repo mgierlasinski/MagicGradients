@@ -6,13 +6,22 @@
              Title="Linear Gradients">
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:LinearGradient x:Name="RotateTarget">
+                <magic:GradientStop Color="Yellow" />
+                <magic:GradientStop Color="Orange" />
+                <magic:GradientStop Color="Red" />
+                <magic:GradientStop Color="Orange" />
+                <magic:GradientStop Color="Yellow" />
+            </magic:LinearGradient>
+        </magic:GradientView>
+        <magic:GradientView VerticalOptions="FillAndExpand">
             <magic:GradientCollection>
                 <magic:LinearGradient >
-                    <magic:GradientStop Color="Yellow" />
+                    <magic:GradientStop Color="Black" />
                 </magic:LinearGradient>
-                <magic:LinearGradient Angle="90" x:Name="Gradient">
+                <magic:LinearGradient Angle="90">
                     <magic:GradientStop Color="#14000000" Offset="0" />
-                    <magic:GradientStop Color="Red" Offset="0" x:Name="AnimatedStop" />
+                    <magic:GradientStop Color="#00FF21" Offset="0" x:Name="ScannerTarget" />
                     <magic:GradientStop Color="#14000000" Offset="1" />
                 </magic:LinearGradient>
             </magic:GradientCollection>

@@ -8,8 +8,20 @@ namespace Playground.Views
         {
             InitializeComponent();
 
-            var animationOffset = new Animation(v => AnimatedStop.Offset = (float)v, 0, 1);
-            var animationOffsetBack = new Animation(v => AnimatedStop.Offset = (float)v, 1, 0);
+            AnimateRotate();
+            AnimateScanner();
+        }
+
+        private void AnimateRotate()
+        {
+            var rotateAnimation = new Animation(v => RotateTarget.Angle = (float)v, 0, 360);
+            rotateAnimation.Commit(this, "RotateAnimation", 16, 3000, repeat: () => true);
+        }
+
+        private void AnimateScanner()
+        {
+            var animationOffset = new Animation(v => ScannerTarget.Offset = (float)v, 0, 1);
+            var animationOffsetBack = new Animation(v => ScannerTarget.Offset = (float)v, 1, 0);
 
             var parentAnimation = new Animation
             {
@@ -17,7 +29,7 @@ namespace Playground.Views
                 {0.5, 1, animationOffsetBack}
             };
 
-            parentAnimation.Commit(this, "Animation", 16, 3000, repeat: () => true);
+            parentAnimation.Commit(this, "ScannerAnimation", 16, 3000, repeat: () => true);
         }
     }
 }

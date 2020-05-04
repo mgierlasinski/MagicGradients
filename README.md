@@ -8,7 +8,7 @@ Draw breathtaking backgrounds in your Xamarin.Forms application. You can add unl
 
 | Package | Version | Dependencies |
 |---|---|---|
-| MagicGradients | [![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients) | [![Nuget](https://img.shields.io/badge/Xamarin.Forms-v4.2-green)](https://www.nuget.org/packages/Xamarin.Forms/) [![Nuget](https://img.shields.io/badge/SkiaSharp-v1.68-blue)](https://www.nuget.org/packages/SkiaSharp/) [![Nuget](https://img.shields.io/badge/SkiaSharp.Views.Forms-v1.68-blue)](https://www.nuget.org/packages/SkiaSharp.Views.Forms/)
+| MagicGradients | [![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients) | [![Nuget](https://img.shields.io/badge/Xamarin.Forms-v4.4-green)](https://www.nuget.org/packages/Xamarin.Forms/) [![Nuget](https://img.shields.io/badge/SkiaSharp-v1.68.1-blue)](https://www.nuget.org/packages/SkiaSharp/) [![Nuget](https://img.shields.io/badge/SkiaSharp.Views.Forms-v1.68.1-blue)](https://www.nuget.org/packages/SkiaSharp.Views.Forms/)
 
 ## Gallery
 
@@ -29,16 +29,14 @@ As it requires SkiaSharp, you will also need to ensure you add SkiaSharp.Views.F
 
 ## Setting gradient source
 
-You can build gradients manually in Xaml. To draw single gradient just create `LinearGradient` or `RadialGradient` as the child of `GradientSource` property.
+You can build gradients manually in Xaml. To draw single gradient just create `LinearGradient` or `RadialGradient` as the child of `GradientView` control.
 
 ``` xml
-<magic:GradientView VerticalOptions="FillAndExpand">
-    <magic:GradientView.GradientSource>
-        <magic:LinearGradient Angle="45">
-            <magic:GradientStop Color="Red" Offset="0" />
-            <magic:GradientStop Color="Yellow" Offset="1" />
-        </magic:LinearGradient>
-    </magic:GradientView.GradientSource>
+<magic:GradientView>
+    <magic:LinearGradient Angle="45">
+        <magic:GradientStop Color="Red" />
+        <magic:GradientStop Color="Yellow" />
+    </magic:LinearGradient>
 </magic:GradientView>
 ```
 
@@ -46,18 +44,16 @@ There is also possibility to add collection of gradients. You can mix linear and
 
 ``` xml
 <magic:GradientView>
-    <magic:GradientView.GradientSource>
-        <magic:GradientCollection>
-            <magic:LinearGradient Angle="45">
-                <magic:GradientStop Color="Orange" Offset="0" />
-                <magic:GradientStop Color="#ff0000" Offset="0.6" />
-            </magic:LinearGradient>
-            <magic:LinearGradient Angle="90">
-                <magic:GradientStop Color="#33ff0000" Offset="0.4" />
-                <magic:GradientStop Color="#ff00ff00" Offset="1" />
-            </magic:LinearGradient>
-        </magic:GradientCollection>
-    </magic:GradientView.GradientSource>
+    <magic:GradientCollection>
+        <magic:LinearGradient Angle="45">
+            <magic:GradientStop Color="Orange" Offset="0" />
+            <magic:GradientStop Color="#ff0000" Offset="0.6" />
+        </magic:LinearGradient>
+        <magic:LinearGradient Angle="90">
+            <magic:GradientStop Color="#33ff0000" Offset="0.4" />
+            <magic:GradientStop Color="#ff00ff00" Offset="1" />
+        </magic:LinearGradient>
+    </magic:GradientCollection>
 </magic:GradientView>
 ```
 
@@ -90,15 +86,13 @@ You can embed inline CSS directly in xaml:
 
 ``` xml
 <magic:GradientView>
-    <magic:GradientView.GradientSource>
-        <magic:CssGradientSource>
-            <x:String>
-                <![CDATA[
-                    linear-gradient(242deg, red, green, orange)
-                ]]>
-            </x:String>
-        </magic:CssGradientSource>
-    </magic:GradientView.GradientSource>
+    <magic:CssGradientSource>
+        <x:String>
+            <![CDATA[
+                linear-gradient(242deg, red, green, orange)
+            ]]>
+        </x:String>
+    </magic:CssGradientSource>
 </magic:GradientView>
 ```
 
@@ -194,7 +188,7 @@ radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
 - [Gradient Background for your Xamarin.Forms App - blog post](https://medium.com/@benetskyybogdan/gradient-background-for-your-xamarin-forms-app-6d7e46fba558)
 - [XF Shell Gradient Flyout with Magic Gradients - blog post](https://medium.com/@benetskyybogdan/xf-shell-gradient-flyout-with-magic-gradients-e9f0eb46bae0)
 - [How we extended Xamarin.Forms CSS to style GradientView - blog post](https://medium.com/@benetskyybogdan/xamarin-forms-custom-css-properties-d75872bea20e)
-
+- [Xamarin.Forms Gradient Background For All Pages in 1 minute - blog post](https://medium.com/@benetskyybogdan/xamarin-forms-gradient-background-for-all-pages-in-1-minute-9e172d986618)
 
 ---
 <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

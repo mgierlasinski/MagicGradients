@@ -1,15 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <Authors>Marcin Gierlasiński, Bohdan Benetskyi and Contributors</Authors>
     <Product>Magic Gradients</Product>
     <Description>Draw breathtaking backgrounds in your Xamarin.Forms application. It's a kind of magic. Powered by SkiaSharp.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/mgierlasinski/MagicGradients/</PackageProjectUrl>
     <PackageTags>magic;gradients;linear;radial;skiasharp;xamarin;forms;android;ios;uwp</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/icon.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,10 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <None Include="..\LICENSE" Pack="True" PackagePath="\" />
+    <None Include="..\Assets\icon.png" Pack="True" PackagePath="\" />
   </ItemGroup>
 
 </Project>
