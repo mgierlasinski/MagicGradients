@@ -24,7 +24,6 @@ namespace GradientParser.Services
 
         private async void webView_NavigationCompletedAsync(WebView sender, WebViewNavigationCompletedEventArgs args)
         {
-            System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(2)).Wait();
             _siteHtML = await _webView.InvokeScriptAsync("eval", new string[] { "document.documentElement.outerHTML;" });
             OnHtmlLoaded();
         }

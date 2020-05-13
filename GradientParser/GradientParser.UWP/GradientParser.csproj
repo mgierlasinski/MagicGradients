@@ -130,7 +130,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Dialog.cs" />
     <Compile Include="Services\HtmlLoader.cs" />
-    <Compile Include="Services\HtmlParser.cs" />
     <Compile Include="ViewModels\BindableBase.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
@@ -168,6 +167,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GradientParser.Core\GradientParser.Core.csproj">
+      <Project>{293ba1ba-4ca1-4529-b231-9325810c8706}</Project>
+      <Name>GradientParser.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

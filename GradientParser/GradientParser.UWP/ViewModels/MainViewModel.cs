@@ -89,9 +89,6 @@ namespace GradientParser.ViewModels
             Gradients = Empty;
             Status = Loading;
             _htmlLoader.StartLoading(Url);
-            //todo Load Web Page
-            //todo Parse Content
-            //todo Add each Gradient into Gradients Property
         }
     }
 }

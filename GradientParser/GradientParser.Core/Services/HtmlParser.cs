@@ -11,14 +11,17 @@ namespace GradientParser.Services
         {
             var regex = new Regex("<div class=\"body\" style=\"background-image: *(.+?);\">");
             
-            System.Threading.Tasks.Task.Delay(System.TimeSpan.FromSeconds(2)).Wait();
             var matches = regex.Matches(html);
             var gradients = new StringBuilder();
 
+            gradients.AppendLine("[");
+
             foreach (Match match in matches)
             {
-                gradients.AppendLine(FormatGradientLine(match.Groups[1].Value, tag));
+                gradients.AppendLine(FormatGradientLine(match.Groups[1].Value, tag)+",");
             }
+
+            gradients.AppendLine("]");
 
             return gradients.ToString();
         }
