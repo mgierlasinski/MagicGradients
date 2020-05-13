@@ -21,9 +21,9 @@ namespace GradientParser.Services
                 gradients.AppendLine(FormatGradientLine(match.Groups[1].Value, tag)+",");
             }
 
-            gradients.AppendLine("]");
+            var gradientsString = gradients.ToString();
 
-            return gradients.ToString();
+            return gradientsString.Remove(gradientsString.Length - 3) + Environment.NewLine + "]";
         }
 
         private string FormatGradientLine(string gradient, string tag) => Newtonsoft.Json.JsonConvert.SerializeObject(new
