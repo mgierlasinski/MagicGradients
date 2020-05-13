@@ -1,14 +1,17 @@
 ﻿using GradientParser.Commands;
+using GradientParser.Models;
 using GradientParser.Services;
 using System.Windows.Input;
 using Windows.ApplicationModel.DataTransfer;
 using static System.String;
+using static GradientParser.Models.Status;
 
 namespace GradientParser.ViewModels
 {
     public class MainViewModel: BindableBase
     {
         private readonly HtmlLoader _htmlLoader;
+        private readonly HtmlParser _htmlParser;
         private readonly Dialog _dialog;
 
         private string _gradients;
@@ -20,6 +23,20 @@ namespace GradientParser.ViewModels
                 if (SetProperty(ref _gradients, value))
                     RaisePropertyChanged(nameof(IsGradientsExist));
             }
+        }
+
+        private string _tag;
+        public string Tag
+        {
+            get => _tag;
+            set =>SetProperty(ref _tag , value);
+        }
+
+        private Status  _status;
+        public Status Status
+        {
+            get => _status;
+            set =>SetProperty(ref _status , value);
         }
 
         private string _url;
@@ -37,17 +54,21 @@ namespace GradientParser.ViewModels
         public MainViewModel()
         {
             _htmlLoader = new HtmlLoader();
+            _htmlParser = new HtmlParser();
             _dialog = new Dialog();
 
             ParseGradientsCommand = new RunActionCommand(ParseGradients);
             CopyToClipboardCommand = new RunActionCommand(CopyToClipboard);
 
             _htmlLoader.HtmlLoaded += HtmlLoaded;
+            Status = Waiting;
         }
 
-        private void HtmlLoaded(object sender, string e)
+        private void HtmlLoaded(object sender, string html)
         {
-            Gradients = e;
+            Status = Parsing;
+            Gradients = _htmlParser.Parse(html,Tag);
+            Status = Waiting;
         }
 
         private void CopyToClipboard()
@@ -65,7 +86,8 @@ namespace GradientParser.ViewModels
                 return;
             }
 
-
+            Gradients = Empty;
+            Status = Loading;
             _htmlLoader.StartLoading(Url);
             //todo Load Web Page
             //todo Parse Content

@@ -6,5 +6,6 @@
     <Application.Resources>
         <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
         <converters:InvertedBooleanToVisibilityConverter x:Key="InvertedBooleanToVisibility" />
+        <converters:StatusToBooleanConverter x:Key="StatusToBoolean" />
     </Application.Resources>
 </Application>
