@@ -1,0 +1,182 @@
+﻿[
+  {
+    "slug": "47af626c-d4ce-48cf-89dc-3c4cafa34602",
+    "stylesheet": "linear-gradient(90deg, hsl(226, 81%, 64%), hsl(271, 81%, 64%), hsl(316, 81%, 64%), hsl(1, 81%, 64%), hsl(46, 81%, 64%), hsl(91, 81%, 64%), hsl(136, 81%, 64%), hsl(181, 81%, 64%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "53958b05-a2b9-4553-aab2-03aa39bacd8f",
+    "stylesheet": "linear-gradient(0, hsl(297, 86%, 59%), hsl(342, 86%, 59%), hsl(27, 86%, 59%), hsl(72, 86%, 59%), hsl(117, 86%, 59%), hsl(162, 86%, 59%), hsl(207, 86%, 59%), hsl(252, 86%, 59%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "0c8fc9fa-b5de-4e79-84fa-ad09f5de7846",
+    "stylesheet": "linear-gradient(90deg, hsl(188, 93%, 68%), hsl(233, 93%, 68%), hsl(278, 93%, 68%), hsl(323, 93%, 68%), hsl(8, 93%, 68%), hsl(53, 93%, 68%), hsl(98, 93%, 68%), hsl(143, 93%, 68%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "a852b05f-69de-4b56-b640-a5329a2b681b",
+    "stylesheet": "linear-gradient(90deg, hsl(141, 80%, 76%), hsl(186, 80%, 76%), hsl(231, 80%, 76%), hsl(276, 80%, 76%), hsl(321, 80%, 76%), hsl(6, 80%, 76%), hsl(51, 80%, 76%), hsl(96, 80%, 76%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "881abd1f-74bb-4b2a-94d2-896a10e0d77d",
+    "stylesheet": "linear-gradient(45deg, hsl(19, 67%, 54%), hsl(64, 67%, 54%), hsl(109, 67%, 54%), hsl(154, 67%, 54%), hsl(199, 67%, 54%), hsl(244, 67%, 54%), hsl(289, 67%, 54%), hsl(334, 67%, 54%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "734d899b-2f27-4a65-88c0-78f56cd839f8",
+    "stylesheet": "linear-gradient(45deg, hsl(151, 61%, 51%), hsl(196, 61%, 51%), hsl(241, 61%, 51%), hsl(286, 61%, 51%), hsl(331, 61%, 51%), hsl(16, 61%, 51%), hsl(61, 61%, 51%), hsl(106, 61%, 51%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "b869786f-a8cf-4129-8464-1681113b26c3",
+    "stylesheet": "linear-gradient(90deg, hsl(260, 59%, 55%), hsl(311, 59%, 55%), hsl(2, 59%, 55%), hsl(54, 59%, 55%), hsl(105, 59%, 55%), hsl(157, 59%, 55%), hsl(208, 59%, 55%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "7a5dd6de-90cb-491d-9241-dd37f98d5dad",
+    "stylesheet": "linear-gradient(135deg, hsl(329, 78%, 51%), hsl(20, 78%, 51%), hsl(71, 78%, 51%), hsl(123, 78%, 51%), hsl(174, 78%, 51%), hsl(226, 78%, 51%), hsl(277, 78%, 51%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "4bf5f894-7047-4622-b65e-3a0c37818780",
+    "stylesheet": "linear-gradient(0, hsl(47, 79%, 62%), hsl(92, 79%, 62%), hsl(137, 79%, 62%), hsl(182, 79%, 62%), hsl(227, 79%, 62%), hsl(272, 79%, 62%), hsl(317, 79%, 62%), hsl(2, 79%, 62%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "d0330a90-d935-429c-99ec-f6ecd61dd6ec",
+    "stylesheet": "linear-gradient(45deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "f24474ef-1356-45b2-a73b-1def59c6ae56",
+    "stylesheet": "linear-gradient(90deg, hsl(141, 73%, 60%), hsl(186, 73%, 60%), hsl(231, 73%, 60%), hsl(276, 73%, 60%), hsl(321, 73%, 60%), hsl(6, 73%, 60%), hsl(51, 73%, 60%), hsl(96, 73%, 60%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "a8b631ed-a4c3-41ab-8407-482c0759042c",
+    "stylesheet": "linear-gradient(135deg, hsl(327, 90%, 59%), hsl(12, 90%, 59%), hsl(57, 90%, 59%), hsl(102, 90%, 59%), hsl(147, 90%, 59%), hsl(192, 90%, 59%), hsl(237, 90%, 59%), hsl(282, 90%, 59%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "6b4b0391-004a-4406-8e68-c3ce2eae30ca",
+    "stylesheet": "linear-gradient(135deg, hsl(292, 89%, 69%), hsl(337, 89%, 69%), hsl(22, 89%, 69%), hsl(67, 89%, 69%), hsl(112, 89%, 69%), hsl(157, 89%, 69%), hsl(202, 89%, 69%), hsl(247, 89%, 69%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "9e197e83-2e7b-42b1-ab27-37858ec7bff0",
+    "stylesheet": "linear-gradient(0, hsl(290, 60%, 68%), hsl(335, 60%, 68%), hsl(20, 60%, 68%), hsl(65, 60%, 68%), hsl(110, 60%, 68%), hsl(155, 60%, 68%), hsl(200, 60%, 68%), hsl(245, 60%, 68%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "1a5b02e2-564e-428d-8969-d34978e8f22a",
+    "stylesheet": "linear-gradient(0, hsl(249, 75%, 73%), hsl(294, 75%, 73%), hsl(339, 75%, 73%), hsl(24, 75%, 73%), hsl(69, 75%, 73%), hsl(114, 75%, 73%), hsl(159, 75%, 73%), hsl(204, 75%, 73%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "4ab00757-65fc-406a-8867-bce7dcc4c0a8",
+    "stylesheet": "linear-gradient(90deg, hsl(330, 81%, 44%), hsl(15, 81%, 44%), hsl(60, 81%, 44%), hsl(105, 81%, 44%), hsl(150, 81%, 44%), hsl(195, 81%, 44%), hsl(240, 81%, 44%), hsl(285, 81%, 44%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "9b411ba9-8ea6-4b50-980b-2331aab85530",
+    "stylesheet": "linear-gradient(90deg, hsl(205, 77%, 76%), hsl(250, 77%, 76%), hsl(296, 77%, 76%), hsl(340, 77%, 76%), hsl(25, 77%, 76%), hsl(69, 77%, 76%), hsl(115, 77%, 76%), hsl(160, 77%, 76%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "c953e6a0-ec2c-43c6-b597-aa1670e0814b",
+    "stylesheet": "linear-gradient(270deg, hsl(341, 64%, 71%), hsl(26, 64%, 71%), hsl(71, 64%, 71%), hsl(116, 64%, 71%), hsl(161, 64%, 71%), hsl(206, 64%, 71%), hsl(251, 64%, 71%), hsl(296, 64%, 71%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "da3f7c58-647f-4c3b-855e-cc930ef5b252",
+    "stylesheet": "linear-gradient(246deg, hsl(325, 59%, 55%), hsl(10, 59%, 55%), hsl(55, 59%, 55%), hsl(100, 59%, 55%), hsl(145, 59%, 55%), hsl(190, 59%, 55%), hsl(235, 59%, 55%), hsl(280, 59%, 55%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "f536f8d5-38ec-47c3-b382-c73452368c43",
+    "stylesheet": "linear-gradient(139deg, hsl(338, 61%, 62%), hsl(29, 61%, 62%), hsl(80, 61%, 62%), hsl(132, 61%, 62%), hsl(183, 61%, 62%), hsl(235, 61%, 62%), hsl(286, 61%, 62%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "8d1ff7d6-6744-48ee-8c53-d320fd7abd9a",
+    "stylesheet": "linear-gradient(162deg, hsl(227, 82%, 51%), hsl(278, 82%, 51%), hsl(329, 82%, 51%), hsl(21, 82%, 51%), hsl(72, 82%, 51%), hsl(124, 82%, 51%), hsl(175, 82%, 51%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "42d31227-2b95-4251-b310-34e610568446",
+    "stylesheet": "linear-gradient(113deg, hsl(266, 77%, 63%), hsl(317, 77%, 63%), hsl(8, 77%, 63%), hsl(60, 77%, 63%), hsl(111, 77%, 63%), hsl(163, 77%, 63%), hsl(214, 77%, 63%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "479e73c9-393b-4c43-8eac-b3f4ce441eba",
+    "stylesheet": "linear-gradient(34deg, hsl(113, 83%, 65%), hsl(164, 83%, 65%), hsl(215, 83%, 65%), hsl(267, 83%, 65%), hsl(318, 83%, 65%), hsl(10, 83%, 65%), hsl(61, 83%, 65%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "63574b48-0e28-4457-9752-29d23c3cc3de",
+    "stylesheet": "linear-gradient(267deg, hsl(234, 67%, 68%), hsl(285, 67%, 68%), hsl(336, 67%, 68%), hsl(28, 67%, 68%), hsl(79, 67%, 68%), hsl(131, 67%, 68%), hsl(182, 67%, 68%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "0d5bb4e9-3889-41aa-ba22-a6d3f4bba6e7",
+    "stylesheet": "linear-gradient(290deg, hsl(357, 72%, 52%), hsl(48, 72%, 52%), hsl(99, 72%, 52%), hsl(151, 72%, 52%), hsl(202, 72%, 52%), hsl(254, 72%, 52%), hsl(305, 72%, 52%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "6c8647e1-b84c-4e70-b196-88a050c612c2",
+    "stylesheet": "linear-gradient(305deg, hsl(151, 59%, 76%), hsl(202, 59%, 76%), hsl(253, 59%, 76%), hsl(305, 59%, 76%), hsl(357, 59%, 76%), hsl(48, 59%, 76%), hsl(99, 59%, 76%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "bd042dae-c454-4eab-a861-a35df56cd30f",
+    "stylesheet": "linear-gradient(231deg, hsl(356, 66%, 68%), hsl(47, 66%, 68%), hsl(98, 66%, 68%), hsl(150, 66%, 68%), hsl(201, 66%, 68%), hsl(253, 66%, 68%), hsl(304, 66%, 68%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "b988be7b-7964-4521-879f-9d38a260ac3d",
+    "stylesheet": "linear-gradient(0, hsl(34, 82%, 58%), hsl(85, 82%, 58%), hsl(136, 82%, 58%), hsl(188, 82%, 58%), hsl(239, 82%, 58%), hsl(291, 82%, 58%), hsl(342, 82%, 58%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "e55839b3-0e4e-41b5-b4f8-a69f24a9c662",
+    "stylesheet": "linear-gradient(243deg, hsl(284, 86%, 77%), hsl(335, 86%, 77%), hsl(26, 86%, 77%), hsl(78, 86%, 77%), hsl(129, 86%, 77%), hsl(181, 86%, 77%), hsl(232, 86%, 77%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "5f37c34b-8b86-4c9c-9b71-c601f17f9de8",
+    "stylesheet": "linear-gradient(221deg, hsl(289, 84%, 71%), hsl(340, 84%, 71%), hsl(31, 84%, 71%), hsl(83, 84%, 71%), hsl(134, 84%, 71%), hsl(186, 84%, 71%), hsl(237, 84%, 71%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "cd0f7eb6-b5c5-4005-b044-2e4f73d943ec",
+    "stylesheet": "linear-gradient(45deg, hsl(124, 79%, 62%) 0%, hsl(169, 79%, 62%) 12%, hsl(214, 79%, 62%) 39%, hsl(259, 79%, 62%) 49%, hsl(304, 79%, 62%) 73%, hsl(349, 79%, 62%) 81%, hsl(34, 79%, 62%) 90%, hsl(79, 79%, 62%) 100%)",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "97d51d7c-18c4-47b4-9ba7-91963b46d24b",
+    "stylesheet": "linear-gradient(90deg, hsl(333, 85%, 72%) 0%, hsl(33, 85%, 72%) 29%, hsl(93, 85%, 72%) 55%, hsl(153, 85%, 72%) 62%, hsl(213, 85%, 72%) 67%, hsl(273, 85%, 72%) 100%)",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "05a64273-33fa-4ee9-a2af-1d1a2c367190",
+    "stylesheet": "linear-gradient(135deg, hsl(242, 72%, 68%), hsl(293, 72%, 68%), hsl(344, 72%, 68%), hsl(36, 72%, 68%), hsl(87, 72%, 68%), hsl(139, 72%, 68%), hsl(190, 72%, 68%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "dc62cb1a-de9a-4853-a337-366709e1439b",
+    "stylesheet": "linear-gradient(90deg, hsl(259, 61%, 55%), hsl(331, 61%, 55%), hsl(43, 61%, 55%), hsl(115, 61%, 55%), hsl(187, 61%, 55%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "c24c0ab2-59a1-4dc3-819a-b80b0f928545",
+    "stylesheet": "linear-gradient(45deg, hsl(165, 64%, 69%), hsl(255, 64%, 69%), hsl(345, 64%, 69%), hsl(75, 64%, 69%))",
+    "tags": [ "rainbowstandard" ]
+  },
+  {
+    "slug": "504ff75c-d51d-47f8-9260-c03ea073efcf",
+    "stylesheet": "linear-gradient(328deg, hsl(157, 75%, 62%), hsl(217, 75%, 62%), hsl(277, 75%, 62%), hsl(337, 75%, 62%), hsl(37, 75%, 62%), hsl(97, 75%, 62%))",
+    "tags": [ "rainbowstandard" ]
+  }
+]

@@ -1,0 +1,372 @@
+﻿[
+  {
+    "slug": "001b855a-95c3-445b-ab7e-d1f901dfd5ec",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 66%, 0.05) 0px, hsla(0, 0%, 66%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 66%, 0.05) 0px, hsla(0, 0%, 66%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 66%, 0.07) 0px, hsla(0, 0%, 66%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 66%, 0.07) 0px, hsla(0, 0%, 66%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(135deg, hsl(134, 34%, 33%), hsl(134, 34%, 33%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "abd4f87e-f8af-473d-aac7-8f2601ae24ca",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 96%, 0.05) 0px, hsla(0, 0%, 96%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 96%, 0.05) 0px, hsla(0, 0%, 96%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 96%, 0.07) 0px, hsla(0, 0%, 96%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 96%, 0.07) 0px, hsla(0, 0%, 96%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(45deg, hsl(213, 62%, 51%), hsl(213, 62%, 51%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "e3815aa1-5b19-4570-b717-e90db34ed66b",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 73%, 0.05) 0px, hsla(0, 0%, 73%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 73%, 0.05) 0px, hsla(0, 0%, 73%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 73%, 0.07) 0px, hsla(0, 0%, 73%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 73%, 0.07) 0px, hsla(0, 0%, 73%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(135deg, hsl(235, 45%, 34%), hsl(235, 45%, 34%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "1d30d22a-ae36-4722-a877-0f67b78149f8",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 66%, 0.05) 0px, hsla(0, 0%, 66%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 66%, 0.05) 0px, hsla(0, 0%, 66%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 66%, 0.07) 0px, hsla(0, 0%, 66%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 66%, 0.07) 0px, hsla(0, 0%, 66%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(0, rgb(20, 20, 20), rgb(20, 20, 20))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "3167befe-0eb9-4474-b245-e279061703fb",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 62%, 0.05) 0px, hsla(0, 0%, 62%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 62%, 0.05) 0px, hsla(0, 0%, 62%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 62%, 0.07) 0px, hsla(0, 0%, 62%, 0.07) 1px, transparent 1px, transparent 52px), repeating-linear-gradient(90deg, hsla(0, 0%, 62%, 0.07) 0px, hsla(0, 0%, 62%, 0.07) 1px, transparent 1px, transparent 52px), linear-gradient(0, rgb(20, 20, 20), rgb(20, 20, 20))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "09469f96-67e1-4148-9559-5597f8bcc923",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 65%, 0.05) 0px, hsla(0, 0%, 65%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 65%, 0.05) 0px, hsla(0, 0%, 65%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 65%, 0.07) 0px, hsla(0, 0%, 65%, 0.07) 1px, transparent 1px, transparent 52px), repeating-linear-gradient(90deg, hsla(0, 0%, 65%, 0.07) 0px, hsla(0, 0%, 65%, 0.07) 1px, transparent 1px, transparent 52px), linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "6c223d6c-ae7d-46ba-805d-02293904bf12",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.08) 0px, hsla(0, 0%, 63%, 0.08) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.08) 0px, hsla(0, 0%, 63%, 0.08) 1px, transparent 1px, transparent 26px), linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "041d9545-bb34-4b1d-9546-8defb55ddac4",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 54%, 0.06) 0px, hsla(0, 0%, 54%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 54%, 0.06) 0px, hsla(0, 0%, 54%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 54%, 0.09) 0px, hsla(0, 0%, 54%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 54%, 0.09) 0px, hsla(0, 0%, 54%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, hsl(249, 32%, 44%), hsl(249, 32%, 44%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "24874665-519a-4c51-8a2a-c2946d39c7c2",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 67%, 0.06) 0px, hsla(0, 0%, 67%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 67%, 0.06) 0px, hsla(0, 0%, 67%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 67%, 0.09) 0px, hsla(0, 0%, 67%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 67%, 0.09) 0px, hsla(0, 0%, 67%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, hsl(225, 47%, 26%), hsl(225, 47%, 26%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "4b5947c6-2a04-446d-babc-b155cb63ec33",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 79%, 0.06) 0px, hsla(0, 0%, 79%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 79%, 0.06) 0px, hsla(0, 0%, 79%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 79%, 0.09) 0px, hsla(0, 0%, 79%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 79%, 0.09) 0px, hsla(0, 0%, 79%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "e5eb4f12-94d5-47bf-966d-0cb4bd453295",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 68%, 0.09) 0px, hsla(0, 0%, 68%, 0.09) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 68%, 0.09) 0px, hsla(0, 0%, 68%, 0.09) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 68%, 0.09) 0px, hsla(0, 0%, 68%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 68%, 0.09) 0px, hsla(0, 0%, 68%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "f3bd0ceb-05d2-447f-9fb8-fe5072a9d7c3",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.09) 0px, hsla(0, 0%, 63%, 0.09) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.09) 0px, hsla(0, 0%, 63%, 0.09) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.09) 0px, hsla(0, 0%, 63%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.09) 0px, hsla(0, 0%, 63%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "264b19c8-aac8-40be-b7ef-706dae02163e",
+    "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 42%, 0.09) 0px, hsla(0, 0%, 42%, 0.09) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, hsla(0, 0%, 42%, 0.09) 0px, hsla(0, 0%, 42%, 0.09) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, hsla(0, 0%, 42%, 0.09) 0px, hsla(0, 0%, 42%, 0.09) 1px, transparent 1px, transparent 10px), repeating-linear-gradient(90deg, hsla(0, 0%, 42%, 0.09) 0px, hsla(0, 0%, 42%, 0.09) 1px, transparent 1px, transparent 10px), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "592cb28f-66c7-4da0-aaa1-847b8ad9661b",
+    "stylesheet": "repeating-linear-gradient(0, hsla(346, 18%, 76%, 0.09) 0px, hsla(346, 18%, 76%, 0.09) 1px, transparent 1px, transparent 9px), repeating-linear-gradient(90deg, hsla(346, 18%, 76%, 0.09) 0px, hsla(346, 18%, 76%, 0.09) 1px, transparent 1px, transparent 9px), linear-gradient(90deg, hsl(253, 39%, 53%), hsl(253, 39%, 53%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "f5e9e366-b21b-4bdc-8f52-950580a8f017",
+    "stylesheet": "repeating-linear-gradient(0, hsla(209, 43%, 84%, 0.09) 0px, hsla(209, 43%, 84%, 0.09) 1px, transparent 1px, transparent 9px), repeating-linear-gradient(90deg, hsla(209, 43%, 84%, 0.09) 0px, hsla(209, 43%, 84%, 0.09) 1px, transparent 1px, transparent 9px), linear-gradient(90deg, hsl(203, 93%, 43%), hsl(203, 93%, 43%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "49872141-df84-4124-b007-b6e5375ccbcd",
+    "stylesheet": "repeating-linear-gradient(0, rgba(251, 211, 29, 0.28) 0px, rgba(251, 211, 29, 0.28) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgba(251, 211, 29, 0.28) 0px, rgba(251, 211, 29, 0.28) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(120, 24%, 53%), hsl(120, 24%, 53%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "8b406fe5-cb7e-4dae-88d4-538e370325e0",
+    "stylesheet": "repeating-linear-gradient(0, rgba(173, 69, 226, 0.23) 0px, rgba(173, 69, 226, 0.23) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgba(173, 69, 226, 0.23) 0px, rgba(173, 69, 226, 0.23) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(246, 31%, 20%), hsl(246, 31%, 20%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "7ed66691-103e-420e-9421-522b48e3fd28",
+    "stylesheet": "repeating-linear-gradient(0, hsla(255, 76%, 92%, 0.08) 0px, hsla(255, 76%, 92%, 0.08) 1px, transparent 1px, transparent 7px), repeating-linear-gradient(90deg, hsla(255, 76%, 92%, 0.08) 0px, hsla(255, 76%, 92%, 0.08) 1px, transparent 1px, transparent 7px), linear-gradient(90deg, hsl(97, 38%, 43%), hsl(97, 38%, 43%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "5a30d05e-a913-44d4-b94a-ad8f44f9b664",
+    "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(138, 138, 138, 0.05) 1px, rgba(138, 138, 138, 0.05) 5px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(138, 138, 138, 0.05) 1px, rgba(138, 138, 138, 0.05) 5px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(138, 138, 138, 0.06) 1px, rgba(138, 138, 138, 0.06) 15px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(138, 138, 138, 0.06) 1px, rgba(138, 138, 138, 0.06) 15px), linear-gradient(90deg, hsl(253, 44%, 41%), hsl(253, 44%, 41%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "4746487f-b1b1-4360-ad7a-027c12d64c38",
+    "stylesheet": "repeating-linear-gradient(0, rgba(21, 120, 239, 0.12) 0px, rgba(21, 120, 239, 0.12) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgba(21, 120, 239, 0.12) 0px, rgba(21, 120, 239, 0.12) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "ef18aadd-6345-40e5-8265-4cb12d954eb5",
+    "stylesheet": "repeating-linear-gradient(0, rgba(10, 111, 202, 0.05) 0px, rgba(10, 111, 202, 0.05) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(10, 111, 202, 0.05) 0px, rgba(10, 111, 202, 0.05) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "1682acc1-43cb-4f67-8fb6-e2ca847999a5",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(11, 123, 222, 0.05) 0px, rgba(11, 123, 222, 0.05) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(11, 123, 222, 0.05) 0px, rgba(11, 123, 222, 0.05) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(11, 123, 222, 0.05) 0px, rgba(11, 123, 222, 0.05) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(11, 123, 222, 0.05) 0px, rgba(11, 123, 222, 0.05) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "2882ea56-d591-41bd-940e-36e336a4378f",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(140, 140, 140, 0.1) 0px, rgba(140, 140, 140, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(140, 140, 140, 0.1) 0px, rgba(140, 140, 140, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(140, 140, 140, 0.1) 0px, rgba(140, 140, 140, 0.1) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(140, 140, 140, 0.1) 0px, rgba(140, 140, 140, 0.1) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, hsl(208, 100%, 22%), hsl(208, 100%, 22%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "7ed3d6f7-3910-48bb-ac76-de731ba59a93",
+    "stylesheet": "repeating-linear-gradient(0, hsla(284, 14%, 85%, 0.06) 0px, hsla(284, 14%, 85%, 0.06) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, hsla(284, 14%, 85%, 0.06) 0px, hsla(284, 14%, 85%, 0.06) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, hsla(284, 14%, 85%, 0.06) 0px, hsla(284, 14%, 85%, 0.06) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(0, hsla(284, 14%, 85%, 0.06) 0px, hsla(284, 14%, 85%, 0.06) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, hsl(202, 54%, 52%), hsl(202, 54%, 52%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "e67bf9a9-9ac9-4b96-8724-bfbdb24ebc40",
+    "stylesheet": "repeating-linear-gradient(0, hsla(120, 20%, 97%, 0.09) 0px, hsla(120, 20%, 97%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(120, 20%, 97%, 0.09) 0px, hsla(120, 20%, 97%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(202, 76%, 66%), hsl(202, 76%, 66%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "852c29ba-a8e9-4e20-b029-e68484aec37a",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 16px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 16px), linear-gradient(90deg, hsl(13, 52%, 51%), hsl(13, 52%, 51%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "62efe3b9-911d-4916-87ad-7ee9de49703d",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(213, 95%, 63%), hsl(213, 95%, 63%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "b00e7acf-42a4-42da-8841-5acbe27eed65",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(219, 98%, 17%), hsl(219, 98%, 17%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "6248d8af-94e9-4fbb-815a-aefba6c1f6c1",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(0, 95%, 32%), hsl(0, 95%, 32%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "01eab566-5830-4fae-951c-18e37117c05a",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(333, 90%, 88%), hsl(333, 90%, 88%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "0d81f9fc-64ad-465d-822f-c7b0748c4284",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(220, 55%, 49%), hsl(220, 55%, 49%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "5f1c8066-3f03-489b-9475-05a4eca0cd92",
+    "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.06) 0px, rgba(0, 0, 0, 0.06) 1px, transparent 1px, transparent 16px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0px, rgba(0, 0, 0, 0.06) 1px, transparent 1px, transparent 16px), linear-gradient(90deg, rgb(247, 255, 204), rgb(247, 255, 204))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "65efe015-7ee8-4504-bffc-88f87f4d0c07",
+    "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, rgb(237, 154, 38), rgb(237, 154, 38))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "424240c2-1524-4e74-ab7e-a4ca20ed8e32",
+    "stylesheet": "repeating-linear-gradient(0, rgba(105, 169, 113, 0.5) 0px, rgba(105, 169, 113, 0.5) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(105, 169, 113, 0.5) 0px, rgba(105, 169, 113, 0.5) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, rgb(66, 144, 67), rgb(66, 144, 67))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "6484b61a-d1f6-47bb-85aa-e460446442f0",
+    "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, hsl(273, 26%, 49%), hsl(273, 26%, 49%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "28fce2e3-c1ce-46a1-b23c-3a7c9751549f",
+    "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, rgb(251, 250, 136), rgb(251, 250, 136))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "25eb4efa-832c-4249-be1c-93234fc13a3f",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, hsl(210, 93%, 63%), hsl(210, 93%, 63%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "9a61dbfc-a1f0-4f09-afff-f7ae0585faaf",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, hsl(128, 38%, 47%), hsl(128, 38%, 47%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "0efb5d5e-7dfa-4124-b706-936f8ac22fec",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, hsl(6, 43%, 42%), hsl(6, 43%, 42%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "cf576072-b9c0-40fb-a5a7-7c0cbadf0d7c",
+    "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.11) 0px, rgba(255, 255, 255, 0.11) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, hsl(211, 68%, 35%), hsl(211, 68%, 35%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "5dfd4af7-116c-4f4d-baa8-524a440e7466",
+    "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 65%, 0.08) 0px, hsla(0, 0%, 65%, 0.08) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(0, 0%, 65%, 0.08) 0px, hsla(0, 0%, 65%, 0.08) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "490fcff8-e30d-43ab-b421-f63b17ddbf6e",
+    "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 67%, 0.08) 0px, hsla(0, 0%, 67%, 0.08) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(0, 0%, 67%, 0.08) 0px, hsla(0, 0%, 67%, 0.08) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "17e60936-1f07-466e-9c83-5946c40041ec",
+    "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.08) 0px, hsla(0, 0%, 63%, 0.08) 1px, transparent 1px, transparent 9px), repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.08) 0px, hsla(0, 0%, 63%, 0.08) 1px, transparent 1px, transparent 9px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "8af5925f-2234-4bfd-94a9-fb18d1c9d519",
+    "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 45%, 0.08) 0px, hsla(0, 0%, 45%, 0.08) 1px, transparent 1px, transparent 6px), repeating-linear-gradient(90deg, hsla(0, 0%, 45%, 0.08) 0px, hsla(0, 0%, 45%, 0.08) 1px, transparent 1px, transparent 6px), linear-gradient(90deg, hsl(0, 0%, 11%), hsl(0, 0%, 11%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "ec3f0101-6c49-494e-8211-4a67ffcec429",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(66, 66, 66, 0.05) 0px, rgba(66, 66, 66, 0.05) 1px, transparent 1px, transparent 8px), repeating-linear-gradient(0, rgba(66, 66, 66, 0.05) 0px, rgba(66, 66, 66, 0.05) 1px, transparent 1px, transparent 8px), repeating-linear-gradient(0, rgba(66, 66, 66, 0.06) 0px, rgba(66, 66, 66, 0.06) 1px, transparent 1px, transparent 24px), repeating-linear-gradient(90deg, rgba(66, 66, 66, 0.06) 0px, rgba(66, 66, 66, 0.06) 1px, transparent 1px, transparent 24px), linear-gradient(90deg, hsl(0, 0%, 9%), hsl(0, 0%, 9%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "8e3f4af8-8f42-42c3-86ba-fc237c42b096",
+    "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(135, 135, 135, 0.06) 1px, rgba(135, 135, 135, 0.06) 6px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(135, 135, 135, 0.06) 1px, rgba(135, 135, 135, 0.06) 6px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(135, 135, 135, 0.06) 1px, rgba(135, 135, 135, 0.06) 18px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(135, 135, 135, 0.06) 1px, rgba(135, 135, 135, 0.06) 18px), linear-gradient(90deg, hsl(0, 0%, 5%), hsl(0, 0%, 5%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "d7feae10-0a63-494b-8e04-47119e7f5026",
+    "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(36, 36, 36, 0.06) 1px, rgba(36, 36, 36, 0.06) 6px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(36, 36, 36, 0.06) 1px, rgba(36, 36, 36, 0.06) 6px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(36, 36, 36, 0.06) 1px, rgba(36, 36, 36, 0.06) 18px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(36, 36, 36, 0.06) 1px, rgba(36, 36, 36, 0.06) 18px), linear-gradient(90deg, rgb(99, 99, 99), rgb(99, 99, 99))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "c063aeb0-12a8-4d20-9208-4ac6fd584306",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(198, 198, 198, 0.05) 0px, rgba(198, 198, 198, 0.05) 1px, transparent 1px, transparent 5px), repeating-linear-gradient(0, rgba(198, 198, 198, 0.05) 0px, rgba(198, 198, 198, 0.05) 1px, transparent 1px, transparent 5px), repeating-linear-gradient(0, rgba(198, 198, 198, 0.06) 0px, rgba(198, 198, 198, 0.06) 1px, transparent 1px, transparent 15px), repeating-linear-gradient(90deg, rgba(198, 198, 198, 0.06) 0px, rgba(198, 198, 198, 0.06) 1px, transparent 1px, transparent 15px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "90690c64-732a-4d70-a7f3-b72b08a7d220",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(203, 203, 203, 0.1) 0px, rgba(203, 203, 203, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(203, 203, 203, 0.1) 0px, rgba(203, 203, 203, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(203, 203, 203, 0.1) 0px, rgba(203, 203, 203, 0.1) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(203, 203, 203, 0.1) 0px, rgba(203, 203, 203, 0.1) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "c1462550-39aa-4387-9b0a-023b2488f68f",
+    "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(13, 13, 13, 0.2) 1px, rgba(13, 13, 13, 0.2) 60px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(13, 13, 13, 0.2) 1px, rgba(13, 13, 13, 0.2) 60px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(13, 13, 13, 0.2) 1px, rgba(13, 13, 13, 0.2) 15px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(13, 13, 13, 0.2) 1px, rgba(13, 13, 13, 0.2) 15px), linear-gradient(90deg, hsl(0, 0%, 30%), hsl(0, 0%, 30%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "b9c32509-61ce-4c4a-9184-ff63cc671478",
+    "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(57, 57, 57, 0.15) 1px, rgba(57, 57, 57, 0.15) 40px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(57, 57, 57, 0.15) 1px, rgba(57, 57, 57, 0.15) 40px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(57, 57, 57, 0.15) 1px, rgba(57, 57, 57, 0.15) 10px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(57, 57, 57, 0.15) 1px, rgba(57, 57, 57, 0.15) 10px), linear-gradient(90deg, hsl(0, 0%, 51%), hsl(0, 0%, 51%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "086a57aa-9113-4245-992a-1b8677919089",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(0, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(0, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 10px), repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 10px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "5ea399df-8cef-4930-9081-c7ec50d6a879",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 15px), repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 15px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "253bda9c-9f93-4adf-903a-0188f270ec0f",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(218, 218, 218, 0.15) 0px, rgba(218, 218, 218, 0.15) 1px, transparent 1px, transparent 30px), repeating-linear-gradient(0, rgba(218, 218, 218, 0.15) 0px, rgba(218, 218, 218, 0.15) 1px, transparent 1px, transparent 30px), repeating-linear-gradient(0, rgba(218, 218, 218, 0.15) 0px, rgba(218, 218, 218, 0.15) 1px, transparent 1px, transparent 15px), repeating-linear-gradient(90deg, rgba(218, 218, 218, 0.15) 0px, rgba(218, 218, 218, 0.15) 1px, transparent 1px, transparent 15px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "56368385-189e-4966-be9c-8b5ac58f229f",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(220, 220, 220, 0.15) 0px, rgba(220, 220, 220, 0.15) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(220, 220, 220, 0.15) 0px, rgba(220, 220, 220, 0.15) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(220, 220, 220, 0.15) 0px, rgba(220, 220, 220, 0.15) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(220, 220, 220, 0.15) 0px, rgba(220, 220, 220, 0.15) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "7ca6aaff-742f-4d14-9939-00d5ba1b7446",
+    "stylesheet": "repeating-linear-gradient(0, transparent 0px, transparent 20px, rgba(98, 98, 98, 0.26) 20px, rgba(98, 98, 98, 0.26) 21px), repeating-linear-gradient(90deg, transparent 0px, transparent 20px, rgba(98, 98, 98, 0.26) 20px, rgba(98, 98, 98, 0.26) 21px), linear-gradient(90deg, rgb(56, 56, 56), rgb(56, 56, 56))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "7af6f56a-48b1-4bef-bc59-7b6d47bfb17b",
+    "stylesheet": "repeating-linear-gradient(0, rgba(219, 219, 219, 0.2) 0px, rgba(219, 219, 219, 0.2) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgba(219, 219, 219, 0.2) 0px, rgba(219, 219, 219, 0.2) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "042b72c6-55f6-4c9f-ac90-1cebba25ebb1",
+    "stylesheet": "repeating-linear-gradient(0, rgba(221, 219, 219, 0.2) 0px, rgba(221, 219, 219, 0.2) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, rgba(221, 219, 219, 0.2) 0px, rgba(221, 219, 219, 0.2) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "1e0a2ad4-f732-419f-b45f-1373e1ddbb7c",
+    "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 16px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 16px), linear-gradient(90deg, rgb(241, 241, 241), rgb(241, 241, 241))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "30ea8253-4d5e-4c01-928b-89f2b7b107d0",
+    "stylesheet": "repeating-linear-gradient(0, hsla(103, 11%, 32%, 0.09) 0px, hsla(103, 11%, 32%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(103, 11%, 32%, 0.09) 0px, hsla(103, 11%, 32%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(315, 13%, 6%), hsl(315, 13%, 6%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "7864b225-9c78-4f61-8c19-ea345d2f56eb",
+    "stylesheet": "repeating-linear-gradient(0, hsla(66, 43%, 35%, 0.09) 0px, hsla(66, 43%, 35%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(66, 43%, 35%, 0.09) 0px, hsla(66, 43%, 35%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(120, 2%, 92%), hsl(120, 2%, 92%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "81608162-e026-42a7-9bce-c10890ef8d71",
+    "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 86%, 0.45) 0px, hsla(0, 0%, 86%, 0.45) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, hsla(0, 0%, 86%, 0.45) 0px, hsla(0, 0%, 86%, 0.45) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "94974b22-c2bc-45b2-81da-159c797a3f0a",
+    "stylesheet": "repeating-linear-gradient(0, hsl(300, 47%, 97%) 0px, hsl(300, 47%, 97%) 1px, transparent 1px, transparent 31px), repeating-linear-gradient(90deg, hsl(300, 47%, 97%) 0px, hsl(300, 47%, 97%) 1px, transparent 1px, transparent 31px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "e11f6d9f-a980-4c96-976c-2c5037ac3e84",
+    "stylesheet": "repeating-linear-gradient(0, rgb(250, 250, 250) 0px, rgb(250, 250, 250) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(250, 250, 250) 0px, rgb(250, 250, 250) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "9c04c7e5-1c09-4b89-8a8c-c7444bb9c8e9",
+    "stylesheet": "repeating-linear-gradient(0, rgb(163, 163, 163) 0px, rgb(163, 163, 163) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(163, 163, 163) 0px, rgb(163, 163, 163) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 62%), hsl(0, 0%, 62%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "9727c077-5c2c-4ea7-95f5-57edadecd920",
+    "stylesheet": "repeating-linear-gradient(0, rgb(245, 245, 245) 0px, rgb(245, 245, 245) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(245, 245, 245) 0px, rgb(245, 245, 245) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 98%), hsl(0, 0%, 98%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "1ad74979-7bf9-4566-999c-854230075a3d",
+    "stylesheet": "repeating-linear-gradient(0, rgb(6, 6, 6) 0px, rgb(6, 6, 6) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(6, 6, 6) 0px, rgb(6, 6, 6) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 9%), hsl(0, 0%, 9%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "e25ae2f4-5c55-4442-ae93-79f7a9d01c38",
+    "stylesheet": "repeating-linear-gradient(0, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 9%), hsl(0, 0%, 9%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "1d86ca78-80a4-4a3a-91c1-2e1fa0c748cc",
+    "stylesheet": "repeating-linear-gradient(0, rgb(49, 49, 49) 0px, rgb(49, 49, 49) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(49, 49, 49) 0px, rgb(49, 49, 49) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 9%), hsl(0, 0%, 9%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "f203be12-c152-4cc9-b9ef-cda78fa2d02e",
+    "stylesheet": "repeating-linear-gradient(0, rgb(237, 237, 237) 0px, rgb(237, 237, 237) 1px, transparent 1px, transparent 71px), repeating-linear-gradient(90deg, rgb(237, 237, 237) 0px, rgb(237, 237, 237) 1px, transparent 1px, transparent 71px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "d1f97a6f-2658-4a31-a314-3c1a63eca1e0",
+    "stylesheet": "repeating-linear-gradient(0, rgb(38, 38, 38) 0px, rgb(38, 38, 38) 1px, transparent 1px, transparent 71px), repeating-linear-gradient(90deg, rgb(38, 38, 38) 0px, rgb(38, 38, 38) 1px, transparent 1px, transparent 71px), linear-gradient(90deg, hsl(0, 0%, 8%), hsl(0, 0%, 8%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "a5352eb7-1d20-43cd-b829-b05e51b9348e",
+    "stylesheet": "repeating-linear-gradient(0, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(0, 0%, 7%), hsl(0, 0%, 7%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "58fbfffb-dc34-4af5-a38b-564084d6b9b6",
+    "stylesheet": "repeating-linear-gradient(0, rgb(17, 17, 17) 0px, rgb(17, 17, 17) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgb(17, 17, 17) 0px, rgb(17, 17, 17) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(0, 0%, 3%), hsl(0, 0%, 3%))",
+    "tags": [ "complexshapes" ]
+  },
+  {
+    "slug": "dd30b2b0-1c84-4268-8c4e-5cbfb7710618",
+    "stylesheet": "repeating-linear-gradient(0, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(0, 0%, 16%), hsl(0, 0%, 16%))",
+    "tags": [ "complexshapes" ]
+  }
+]
