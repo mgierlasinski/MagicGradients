@@ -1,317 +1,317 @@
 [
   {
     "slug": "b6942d4b-739d-4f24-824b-75486eee5706",
-    "stylesheet": "radial-gradient(circle at center, rgb(146, 17, 182) 85%, rgb(179, 129, 221) 86%); background-size: 40px 40px",
+    "stylesheet": "radial-gradient(circle at center, rgb(146, 17, 182) 85%, rgb(179, 129, 221) 86%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "68f39d90-2dc0-4392-b600-cffa5a39f22c",
-    "stylesheet": "radial-gradient(circle at center, rgba(56, 69, 253, 0.15) 0%, rgba(56, 69, 253, 0.15) 84%, transparent 84%, transparent 100%), linear-gradient(90deg, hsl(195, 97%, 72%), hsl(195, 97%, 72%)); background-size: 26px 26px",
+    "stylesheet": "radial-gradient(circle at center, rgba(56, 69, 253, 0.15) 0%, rgba(56, 69, 253, 0.15) 84%, transparent 84%, transparent 100%), linear-gradient(90deg, hsl(195, 97%, 72%), hsl(195, 97%, 72%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "70737b68-73c0-4003-991c-b11cf21eaff4",
-    "stylesheet": "radial-gradient(circle at center, rgb(60, 9, 9) 0%, rgb(60, 9, 9) 47%, rgb(88, 12, 47) 47%, rgb(88, 12, 47) 65%, rgb(116, 14, 85) 65%, rgb(116, 14, 85) 100%); background-size: 47px 47px",
+    "stylesheet": "radial-gradient(circle at center, rgb(60, 9, 9) 0%, rgb(60, 9, 9) 47%, rgb(88, 12, 47) 47%, rgb(88, 12, 47) 65%, rgb(116, 14, 85) 65%, rgb(116, 14, 85) 100%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "3b87477e-ef16-4acd-80a1-a83b24d24353",
-    "stylesheet": "radial-gradient(circle at center, rgb(237, 135, 59) 0%, rgb(237, 135, 59) 33%, rgb(210, 87, 74) 33%, rgb(210, 87, 74) 47%, rgb(183, 38, 88) 47%, rgb(183, 38, 88) 100%); background-size: 131px 131px",
+    "stylesheet": "radial-gradient(circle at center, rgb(237, 135, 59) 0%, rgb(237, 135, 59) 33%, rgb(210, 87, 74) 33%, rgb(210, 87, 74) 47%, rgb(183, 38, 88) 47%, rgb(183, 38, 88) 100%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "9108569d-89f7-4010-b41e-97c4ace6026a",
-    "stylesheet": "radial-gradient(circle at center, rgb(60, 184, 5) 0%, rgb(60, 184, 5) 33%, rgb(78, 202, 45) 33%, rgb(78, 202, 45) 66%, rgb(96, 219, 85) 66%, rgb(96, 219, 85) 100%); background-size: 56px 56px",
+    "stylesheet": "radial-gradient(circle at center, rgb(60, 184, 5) 0%, rgb(60, 184, 5) 33%, rgb(78, 202, 45) 33%, rgb(78, 202, 45) 66%, rgb(96, 219, 85) 66%, rgb(96, 219, 85) 100%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "fa860d69-1fdb-4b45-9203-3b8c03893ce4",
-    "stylesheet": "radial-gradient(circle at center, rgba(113, 232, 206, 0.1) 0%, rgba(113, 232, 206, 0.1) 30%, rgba(164, 158, 146, 0.1) 30%, rgba(164, 158, 146, 0.1) 64%, transparent 64%, transparent 100%), linear-gradient(90deg, hsl(195, 92%, 51%), hsl(195, 92%, 51%)); background-size: 32px 32px",
+    "stylesheet": "radial-gradient(circle at center, rgba(113, 232, 206, 0.1) 0%, rgba(113, 232, 206, 0.1) 30%, rgba(164, 158, 146, 0.1) 30%, rgba(164, 158, 146, 0.1) 64%, transparent 64%, transparent 100%), linear-gradient(90deg, hsl(195, 92%, 51%), hsl(195, 92%, 51%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "dbdc4593-d29a-4d04-8b66-263b5dc9ad41",
-    "stylesheet": "radial-gradient(circle at center, rgba(9, 48, 140, 0.1) 0%, rgba(9, 48, 140, 0.1) 48%, transparent 48%, transparent 56%, rgba(24, 28, 72, 0.1) 56%, rgba(24, 28, 72, 0.1) 100%), linear-gradient(90deg, hsl(300, 93%, 79%), hsl(300, 93%, 79%)); background-size: 64px 64px",
+    "stylesheet": "radial-gradient(circle at center, rgba(9, 48, 140, 0.1) 0%, rgba(9, 48, 140, 0.1) 48%, transparent 48%, transparent 56%, rgba(24, 28, 72, 0.1) 56%, rgba(24, 28, 72, 0.1) 100%), linear-gradient(90deg, hsl(300, 93%, 79%), hsl(300, 93%, 79%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "190daf5c-273d-470a-8afa-9a451972b30c",
-    "stylesheet": "radial-gradient(circle at center, rgba(129, 164, 209, 0.15) 0%, rgba(129, 164, 209, 0.15) 42%, transparent 42%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255)); background-size: 7px 7px",
+    "stylesheet": "radial-gradient(circle at center, rgba(129, 164, 209, 0.15) 0%, rgba(129, 164, 209, 0.15) 42%, transparent 42%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "23d3d242-fc28-4e60-a2fe-263120a1e165",
-    "stylesheet": "radial-gradient(circle at center, rgba(250, 106, 46, 0.4) 0%, rgba(250, 106, 46, 0.4) 7%, transparent 7%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255)); background-size: 16px 16px",
+    "stylesheet": "radial-gradient(circle at center, rgba(250, 106, 46, 0.4) 0%, rgba(250, 106, 46, 0.4) 7%, transparent 7%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "867c0484-389b-480c-b885-573559bafcd5",
-    "stylesheet": "radial-gradient(circle at center, rgba(8, 102, 163, 0.15) 0%, rgba(8, 102, 163, 0.15) 77%, transparent 77%, transparent 100%), linear-gradient(90deg, hsl(97, 84%, 65%), hsl(97, 84%, 65%)); background-size: 32px 32px",
+    "stylesheet": "radial-gradient(circle at center, rgba(8, 102, 163, 0.15) 0%, rgba(8, 102, 163, 0.15) 77%, transparent 77%, transparent 100%), linear-gradient(90deg, hsl(97, 84%, 65%), hsl(97, 84%, 65%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "b4dfb04b-51b3-4856-bf13-42be44955940",
-    "stylesheet": "radial-gradient(circle at center, rgb(15, 177, 180) 0%, rgb(15, 177, 180) 3%, rgb(12, 106, 121) 3%, rgb(12, 106, 121) 11%, rgb(9, 34, 61) 11%, rgb(9, 34, 61) 100%); background-size: 73px 73px",
+    "stylesheet": "radial-gradient(circle at center, rgb(15, 177, 180) 0%, rgb(15, 177, 180) 3%, rgb(12, 106, 121) 3%, rgb(12, 106, 121) 11%, rgb(9, 34, 61) 11%, rgb(9, 34, 61) 100%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "687bb97a-9a09-4274-945a-89c4547e5c67",
-    "stylesheet": "radial-gradient(circle at center, rgba(161, 112, 130, 0.22) 0%, rgba(161, 112, 130, 0.22) 22%, transparent 22%, transparent 100%), linear-gradient(90deg, hsl(271, 95%, 25%), hsl(271, 95%, 25%)); background-size: 15px 15px",
+    "stylesheet": "radial-gradient(circle at center, rgba(161, 112, 130, 0.22) 0%, rgba(161, 112, 130, 0.22) 22%, transparent 22%, transparent 100%), linear-gradient(90deg, hsl(271, 95%, 25%), hsl(271, 95%, 25%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "083c4a64-11b3-4de4-848c-7279e218f0af",
-    "stylesheet": "radial-gradient(circle at center, rgba(133, 44, 130, 0.22) 0%, rgba(133, 44, 130, 0.22) 65%, transparent 65%, transparent 100%), linear-gradient(90deg, hsl(209, 74%, 54%), hsl(209, 74%, 54%)); background-size: 23px 23px",
+    "stylesheet": "radial-gradient(circle at center, rgba(133, 44, 130, 0.22) 0%, rgba(133, 44, 130, 0.22) 65%, transparent 65%, transparent 100%), linear-gradient(90deg, hsl(209, 74%, 54%), hsl(209, 74%, 54%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "7a02a24d-0439-47a0-bc3d-87f3f6bd9675",
-    "stylesheet": "radial-gradient(circle at center, rgba(160, 99, 225, 0.22) 0%, rgba(160, 99, 225, 0.22) 92%, transparent 92%, transparent 100%), linear-gradient(90deg, hsl(338, 75%, 86%), hsl(338, 75%, 86%)); background-size: 45px 45px",
+    "stylesheet": "radial-gradient(circle at center, rgba(160, 99, 225, 0.22) 0%, rgba(160, 99, 225, 0.22) 92%, transparent 92%, transparent 100%), linear-gradient(90deg, hsl(338, 75%, 86%), hsl(338, 75%, 86%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "29dbd68c-e6cc-4cd9-aea4-26ce08b2e7cb",
-    "stylesheet": "radial-gradient(circle at center, rgb(84, 176, 218) 0%, rgb(84, 176, 218) 12%, transparent 12%, transparent 100%), linear-gradient(90deg, hsl(200, 60%, 99%), hsl(200, 60%, 99%)); background-size: 37px 37px",
+    "stylesheet": "radial-gradient(circle at center, rgb(84, 176, 218) 0%, rgb(84, 176, 218) 12%, transparent 12%, transparent 100%), linear-gradient(90deg, hsl(200, 60%, 99%), hsl(200, 60%, 99%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "efe1ec70-2b9e-4027-ad7f-27f5e12a522d",
-    "stylesheet": "radial-gradient(circle at center, rgb(173, 64, 69) 0%, rgb(173, 64, 69) 90%, transparent 90%, transparent 100%), linear-gradient(90deg, hsl(48, 6%, 85%), hsl(48, 6%, 85%)); background-size: 22px 22px",
+    "stylesheet": "radial-gradient(circle at center, rgb(173, 64, 69) 0%, rgb(173, 64, 69) 90%, transparent 90%, transparent 100%), linear-gradient(90deg, hsl(48, 6%, 85%), hsl(48, 6%, 85%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "142f21b9-8bab-4410-80a7-f2038de88738",
-    "stylesheet": "radial-gradient(circle at center, rgb(121, 240, 111) 3%, rgb(9, 14, 23) 4%); background-size: 40px 40px",
+    "stylesheet": "radial-gradient(circle at center, rgb(121, 240, 111) 3%, rgb(9, 14, 23) 4%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "7bea1c24-f44c-40d8-bf82-4b94631e4242",
-    "stylesheet": "radial-gradient(circle at center, rgb(165, 37, 24) 67%, rgb(152, 34, 18) 68%); background-size: 35px 35px",
+    "stylesheet": "radial-gradient(circle at center, rgb(165, 37, 24) 67%, rgb(152, 34, 18) 68%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "721b7ae9-e6b2-4c40-a4c4-ceb38e8a916a",
-    "stylesheet": "radial-gradient(circle at center, rgb(41, 125, 58) 0%, rgb(41, 125, 58) 11%, transparent 11%, transparent 100%), linear-gradient(90deg, hsl(40, 13%, 9%), hsl(40, 13%, 9%)); background-size: 11px 11px",
+    "stylesheet": "radial-gradient(circle at center, rgb(41, 125, 58) 0%, rgb(41, 125, 58) 11%, transparent 11%, transparent 100%), linear-gradient(90deg, hsl(40, 13%, 9%), hsl(40, 13%, 9%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "bc58dad1-82bc-4425-bf00-f7e4ed69ae66",
-    "stylesheet": "radial-gradient(circle at center, rgb(160, 70, 152) 0%, rgb(160, 70, 152) 15%, transparent 15%, transparent 100%), linear-gradient(90deg, hsl(154, 7%, 19%), hsl(154, 7%, 19%)); background-size: 54px 54px",
+    "stylesheet": "radial-gradient(circle at center, rgb(160, 70, 152) 0%, rgb(160, 70, 152) 15%, transparent 15%, transparent 100%), linear-gradient(90deg, hsl(154, 7%, 19%), hsl(154, 7%, 19%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "cc339dbf-c1fb-4fad-9b01-59b384db9a33",
-    "stylesheet": "radial-gradient(circle at center, rgba(44, 243, 90, 0.3) 0%, rgba(44, 243, 90, 0.3) 13%, transparent 13%, transparent 100%), radial-gradient(circle at center, rgba(20, 40, 0, 0.3) 0%, rgba(20, 40, 0, 0.3) 53%, transparent 53%, transparent 100%), radial-gradient(circle at center, rgba(48, 83, 228, 0.3) 0%, rgba(48, 83, 228, 0.3) 78%, transparent 78%, transparent 100%), radial-gradient(circle at center, rgba(3, 189, 249, 0.3) 0%, rgba(3, 189, 249, 0.3) 87%, transparent 87%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0)); background-size: 10px 10px",
+    "stylesheet": "radial-gradient(circle at center, rgba(44, 243, 90, 0.3) 0%, rgba(44, 243, 90, 0.3) 13%, transparent 13%, transparent 100%), radial-gradient(circle at center, rgba(20, 40, 0, 0.3) 0%, rgba(20, 40, 0, 0.3) 53%, transparent 53%, transparent 100%), radial-gradient(circle at center, rgba(48, 83, 228, 0.3) 0%, rgba(48, 83, 228, 0.3) 78%, transparent 78%, transparent 100%), radial-gradient(circle at center, rgba(3, 189, 249, 0.3) 0%, rgba(3, 189, 249, 0.3) 87%, transparent 87%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "d0e6d883-f900-4ed2-a9be-df7b2da27915",
-    "stylesheet": "radial-gradient(circle at center, rgba(7, 58, 199, 0.34) 0%, rgba(7, 58, 199, 0.34) 99%, transparent 99%, transparent 100%), radial-gradient(circle at center, rgba(152, 90, 129, 0.34) 0%, rgba(152, 90, 129, 0.34) 19%, transparent 19%, transparent 100%), radial-gradient(circle at center, rgba(148, 18, 17, 0.34) 0%, rgba(148, 18, 17, 0.34) 44%, transparent 44%, transparent 100%), radial-gradient(circle at center, rgba(142, 174, 251, 0.34) 0%, rgba(142, 174, 251, 0.34) 11%, transparent 11%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0)); background-size: 10px 10px",
+    "stylesheet": "radial-gradient(circle at center, rgba(7, 58, 199, 0.34) 0%, rgba(7, 58, 199, 0.34) 99%, transparent 99%, transparent 100%), radial-gradient(circle at center, rgba(152, 90, 129, 0.34) 0%, rgba(152, 90, 129, 0.34) 19%, transparent 19%, transparent 100%), radial-gradient(circle at center, rgba(148, 18, 17, 0.34) 0%, rgba(148, 18, 17, 0.34) 44%, transparent 44%, transparent 100%), radial-gradient(circle at center, rgba(142, 174, 251, 0.34) 0%, rgba(142, 174, 251, 0.34) 11%, transparent 11%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "328d1070-e5e0-4321-aa3a-71f68c09c465",
-    "stylesheet": "linear-gradient(45deg, rgba(106, 106, 106, 0.06) 0%, rgba(106, 106, 106, 0.06) 50%, rgba(174, 174, 174, 0.06) 50%, rgba(174, 174, 174, 0.06) 100%), linear-gradient(135deg, rgba(252, 252, 252, 0.06) 0%, rgba(252, 252, 252, 0.06) 50%, rgba(117, 117, 117, 0.06) 50%, rgba(117, 117, 117, 0.06) 100%), linear-gradient(90deg, hsl(207, 91%, 51%), hsl(207, 91%, 51%)); background-size: 58px 58px",
+    "stylesheet": "linear-gradient(45deg, rgba(106, 106, 106, 0.06) 0%, rgba(106, 106, 106, 0.06) 50%, rgba(174, 174, 174, 0.06) 50%, rgba(174, 174, 174, 0.06) 100%), linear-gradient(135deg, rgba(252, 252, 252, 0.06) 0%, rgba(252, 252, 252, 0.06) 50%, rgba(117, 117, 117, 0.06) 50%, rgba(117, 117, 117, 0.06) 100%), linear-gradient(90deg, hsl(207, 91%, 51%), hsl(207, 91%, 51%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "896a92ca-d00c-4a50-bcde-69c3457e7f00",
-    "stylesheet": "linear-gradient(128deg, rgba(10, 10, 10, 0.06) 0%, rgba(10, 10, 10, 0.06) 50%, rgba(193, 193, 193, 0.06) 50%, rgba(193, 193, 193, 0.06) 100%), linear-gradient(51deg, rgba(231, 231, 231, 0.06) 0%, rgba(231, 231, 231, 0.06) 50%, rgba(39, 39, 39, 0.06) 50%, rgba(39, 39, 39, 0.06) 100%), linear-gradient(90deg, hsl(216, 75%, 70%), hsl(216, 75%, 70%)); background-size: 56px 56px",
+    "stylesheet": "linear-gradient(128deg, rgba(10, 10, 10, 0.06) 0%, rgba(10, 10, 10, 0.06) 50%, rgba(193, 193, 193, 0.06) 50%, rgba(193, 193, 193, 0.06) 100%), linear-gradient(51deg, rgba(231, 231, 231, 0.06) 0%, rgba(231, 231, 231, 0.06) 50%, rgba(39, 39, 39, 0.06) 50%, rgba(39, 39, 39, 0.06) 100%), linear-gradient(90deg, hsl(216, 75%, 70%), hsl(216, 75%, 70%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "d387e69e-1f4a-4850-9e49-61918fd18437",
-    "stylesheet": "linear-gradient(135deg, rgba(103, 103, 103, 0.06) 0%, rgba(103, 103, 103, 0.06) 50%, rgba(117, 117, 117, 0.06) 50%, rgba(117, 117, 117, 0.06) 100%), linear-gradient(135deg, rgba(49, 49, 49, 0.06) 0%, rgba(49, 49, 49, 0.06) 50%, rgba(228, 228, 228, 0.06) 50%, rgba(228, 228, 228, 0.06) 100%), linear-gradient(90deg, hsl(201, 91%, 51%), hsl(201, 91%, 51%)); background-size: 17px 17px",
+    "stylesheet": "linear-gradient(135deg, rgba(103, 103, 103, 0.06) 0%, rgba(103, 103, 103, 0.06) 50%, rgba(117, 117, 117, 0.06) 50%, rgba(117, 117, 117, 0.06) 100%), linear-gradient(135deg, rgba(49, 49, 49, 0.06) 0%, rgba(49, 49, 49, 0.06) 50%, rgba(228, 228, 228, 0.06) 50%, rgba(228, 228, 228, 0.06) 100%), linear-gradient(90deg, hsl(201, 91%, 51%), hsl(201, 91%, 51%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "20791194-90a1-404b-8300-3870d33755c9",
-    "stylesheet": "linear-gradient(135deg, rgba(0, 115, 126, 0.06) 0%, rgba(0, 115, 126, 0.06) 50%, rgba(244, 185, 144, 0.06) 50%, rgba(244, 185, 144, 0.06) 100%), linear-gradient(90deg, hsl(197, 100%, 53%), hsl(197, 100%, 53%)); background-size: 26px 26px",
+    "stylesheet": "linear-gradient(135deg, rgba(0, 115, 126, 0.06) 0%, rgba(0, 115, 126, 0.06) 50%, rgba(244, 185, 144, 0.06) 50%, rgba(244, 185, 144, 0.06) 100%), linear-gradient(90deg, hsl(197, 100%, 53%), hsl(197, 100%, 53%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "d10daaed-c4c9-4747-8393-2af72cb346f9",
-    "stylesheet": "linear-gradient(135deg, rgba(72, 72, 72, 0.15) 0%, rgba(72, 72, 72, 0.15) 50%, rgba(21, 21, 21, 0.15) 50%, rgba(21, 21, 21, 0.15) 100%), linear-gradient(135deg, hsl(99, 84%, 60%) 0%, hsl(99, 84%, 60%) 50%, hsl(99, 84%, 60%) 50%, hsl(99, 84%, 60%) 100%); background-size: 13px 13px",
+    "stylesheet": "linear-gradient(135deg, rgba(72, 72, 72, 0.15) 0%, rgba(72, 72, 72, 0.15) 50%, rgba(21, 21, 21, 0.15) 50%, rgba(21, 21, 21, 0.15) 100%), linear-gradient(135deg, hsl(99, 84%, 60%) 0%, hsl(99, 84%, 60%) 50%, hsl(99, 84%, 60%) 50%, hsl(99, 84%, 60%) 100%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "40ea6142-d942-4e05-b8be-43b22c8955f7",
-    "stylesheet": "radial-gradient(circle at left bottom, rgba(182, 166, 203, 0.3) 0%, rgba(182, 166, 203, 0.3) 5%, transparent 5%, transparent 47%, transparent 47%, transparent 100%), radial-gradient(circle at center, rgba(182, 166, 203, 0.3) 0%, rgba(182, 166, 203, 0.3) 14%, transparent 14%, transparent 76%, transparent 76%, transparent 100%), linear-gradient(90deg, hsl(60, 1%, 14%), hsl(60, 1%, 14%)); background-size: 21px 21px",
+    "stylesheet": "radial-gradient(circle at left bottom, rgba(182, 166, 203, 0.3) 0%, rgba(182, 166, 203, 0.3) 5%, transparent 5%, transparent 47%, transparent 47%, transparent 100%), radial-gradient(circle at center, rgba(182, 166, 203, 0.3) 0%, rgba(182, 166, 203, 0.3) 14%, transparent 14%, transparent 76%, transparent 76%, transparent 100%), linear-gradient(90deg, hsl(60, 1%, 14%), hsl(60, 1%, 14%))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "e2ad13be-4873-42e3-86b5-7623a91ec7a1",
-    "stylesheet": "radial-gradient(circle at center, rgba(49, 52, 53, 0.1) 0%, rgba(49, 52, 53, 0.1) 3%, transparent 3%, transparent 28%, rgba(228, 25, 216, 0.1) 28%, rgba(228, 25, 216, 0.1) 100%), linear-gradient(22.5deg, hsl(31, 88%, 54%) 0%, hsl(31, 88%, 54%) 31%); background-size: 27px 27px",
+    "stylesheet": "radial-gradient(circle at center, rgba(49, 52, 53, 0.1) 0%, rgba(49, 52, 53, 0.1) 3%, transparent 3%, transparent 28%, rgba(228, 25, 216, 0.1) 28%, rgba(228, 25, 216, 0.1) 100%), linear-gradient(22.5deg, hsl(31, 88%, 54%) 0%, hsl(31, 88%, 54%) 31%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "cfad0c87-da79-49b2-904d-a863fa88a346",
-    "stylesheet": "radial-gradient(circle at center, rgba(100, 117, 201, 0.1) 0%, rgba(100, 117, 201, 0.1) 33%, transparent 33%, transparent 83%, rgba(228, 162, 127, 0.1) 83%, rgba(228, 162, 127, 0.1) 100%), linear-gradient(157.5deg, hsl(247, 40%, 22%) 0%, hsl(247, 40%, 22%) 25%); background-size: 13px 13px",
+    "stylesheet": "radial-gradient(circle at center, rgba(100, 117, 201, 0.1) 0%, rgba(100, 117, 201, 0.1) 33%, transparent 33%, transparent 83%, rgba(228, 162, 127, 0.1) 83%, rgba(228, 162, 127, 0.1) 100%), linear-gradient(157.5deg, hsl(247, 40%, 22%) 0%, hsl(247, 40%, 22%) 25%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "2a0d160c-c953-49a2-9a3c-51c8d65fb722",
-    "stylesheet": "radial-gradient(circle at center, rgba(153, 234, 33, 0.25) 0%, rgba(153, 234, 33, 0.25) 12%, transparent 12%, transparent 83%, rgba(126, 80, 137, 0.25) 83%, rgba(126, 80, 137, 0.25) 100%), linear-gradient(67.5deg, hsl(189, 81%, 38%) 0%, hsl(189, 81%, 38%) 78%); background-size: 20px 20px",
+    "stylesheet": "radial-gradient(circle at center, rgba(153, 234, 33, 0.25) 0%, rgba(153, 234, 33, 0.25) 12%, transparent 12%, transparent 83%, rgba(126, 80, 137, 0.25) 83%, rgba(126, 80, 137, 0.25) 100%), linear-gradient(67.5deg, hsl(189, 81%, 38%) 0%, hsl(189, 81%, 38%) 78%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "eb7aa10e-3fc1-48de-9597-e92cca8bb128",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgba(8, 72, 245, 0.3) 0px, rgba(8, 72, 245, 0.3) 4px, transparent 4px, transparent 8px), linear-gradient(22.5deg, hsl(206, 64%, 98%) 0%, hsl(206, 64%, 98%) 2%); background-size: 10px 10px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgba(8, 72, 245, 0.3) 0px, rgba(8, 72, 245, 0.3) 4px, transparent 4px, transparent 8px), linear-gradient(22.5deg, hsl(206, 64%, 98%) 0%, hsl(206, 64%, 98%) 2%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "06a1f11d-27e9-4188-b07f-488bfe21196c",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgba(212, 86, 198, 0.3) 0px, rgba(212, 86, 198, 0.3) 5px, transparent 5px, transparent 18px), linear-gradient(45deg, hsl(93, 43%, 96%) 0%, hsl(93, 43%, 96%) 93%); background-size: 10px 10px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgba(212, 86, 198, 0.3) 0px, rgba(212, 86, 198, 0.3) 5px, transparent 5px, transparent 18px), linear-gradient(45deg, hsl(93, 43%, 96%) 0%, hsl(93, 43%, 96%) 93%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "ecfa268d-26c2-4018-bf06-8720aca825ad",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgba(30, 106, 120, 0.3) 0px, rgba(30, 106, 120, 0.3) 2px, transparent 2px, transparent 4px), linear-gradient(67.5deg, hsl(76, 48%, 55%) 0%, hsl(76, 48%, 55%) 5%); background-size: 10px 10px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgba(30, 106, 120, 0.3) 0px, rgba(30, 106, 120, 0.3) 2px, transparent 2px, transparent 4px), linear-gradient(67.5deg, hsl(76, 48%, 55%) 0%, hsl(76, 48%, 55%) 5%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "c943ee56-effe-4742-986c-81296034d1e0",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgba(49, 184, 171, 0.3) 0px, rgba(49, 184, 171, 0.3) 6px, transparent 6px, transparent 14px, rgba(146, 153, 133, 0.3) 14px, rgba(146, 153, 133, 0.3) 25px, transparent 25px, transparent 37px), linear-gradient(112.5deg, hsl(240, 20%, 99%) 0%, hsl(240, 20%, 99%) 69%); background-size: 11px 11px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgba(49, 184, 171, 0.3) 0px, rgba(49, 184, 171, 0.3) 6px, transparent 6px, transparent 14px, rgba(146, 153, 133, 0.3) 14px, rgba(146, 153, 133, 0.3) 25px, transparent 25px, transparent 37px), linear-gradient(112.5deg, hsl(240, 20%, 99%) 0%, hsl(240, 20%, 99%) 69%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "636a4c00-29f0-413f-9c81-1b48e5c7a6f1",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgba(67, 115, 52, 0.3) 0px, rgba(67, 115, 52, 0.3) 2px, transparent 2px, transparent 12px, rgba(158, 78, 122, 0.3) 12px, rgba(158, 78, 122, 0.3) 17px, transparent 17px, transparent 22px), linear-gradient(90deg, hsl(248, 40%, 96%) 0%, hsl(248, 40%, 96%) 36%); background-size: 22px 22px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgba(67, 115, 52, 0.3) 0px, rgba(67, 115, 52, 0.3) 2px, transparent 2px, transparent 12px, rgba(158, 78, 122, 0.3) 12px, rgba(158, 78, 122, 0.3) 17px, transparent 17px, transparent 22px), linear-gradient(90deg, hsl(248, 40%, 96%) 0%, hsl(248, 40%, 96%) 36%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "9479abdd-fcd7-4a19-a1d2-0d40195aa428",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgba(245, 222, 42, 0.3) 0px, rgba(245, 222, 42, 0.3) 22px, transparent 22px, transparent 39px, rgba(184, 121, 77, 0.3) 39px, rgba(184, 121, 77, 0.3) 84px, transparent 84px, transparent 97px, rgba(122, 19, 111, 0.3) 97px, rgba(122, 19, 111, 0.3) 114px), linear-gradient(67.5deg, hsl(37, 96%, 60%) 0%, hsl(37, 96%, 60%) 4%); background-size: 124px 124px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgba(245, 222, 42, 0.3) 0px, rgba(245, 222, 42, 0.3) 22px, transparent 22px, transparent 39px, rgba(184, 121, 77, 0.3) 39px, rgba(184, 121, 77, 0.3) 84px, transparent 84px, transparent 97px, rgba(122, 19, 111, 0.3) 97px, rgba(122, 19, 111, 0.3) 114px), linear-gradient(67.5deg, hsl(37, 96%, 60%) 0%, hsl(37, 96%, 60%) 4%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "c34bbac8-66c6-459e-87a1-b45db2755112",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgba(144, 96, 244, 0.4) 0px, rgba(144, 96, 244, 0.4) 45px, rgba(219, 173, 251, 0.4) 45px, rgba(219, 173, 251, 0.4) 50px, rgba(181, 134, 248, 0.4) 50px, rgba(181, 134, 248, 0.4) 99px, rgba(106, 57, 241, 0.4) 99px, rgba(106, 57, 241, 0.4) 133px), repeating-radial-gradient(circle at center, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px, rgb(0, 0, 0) 2px, rgb(0, 0, 0) 8px, rgb(0, 0, 0) 8px, rgb(0, 0, 0) 22px); background-size: 77px 77px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgba(144, 96, 244, 0.4) 0px, rgba(144, 96, 244, 0.4) 45px, rgba(219, 173, 251, 0.4) 45px, rgba(219, 173, 251, 0.4) 50px, rgba(181, 134, 248, 0.4) 50px, rgba(181, 134, 248, 0.4) 99px, rgba(106, 57, 241, 0.4) 99px, rgba(106, 57, 241, 0.4) 133px), repeating-radial-gradient(circle at center, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px, rgb(0, 0, 0) 2px, rgb(0, 0, 0) 8px, rgb(0, 0, 0) 8px, rgb(0, 0, 0) 22px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "540feba9-c7b1-4444-9c37-04203a06921b",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgb(47, 176, 202) 0px, rgb(47, 176, 202) 32px, rgb(99, 204, 105) 32px, rgb(99, 204, 105) 64px, rgb(151, 231, 7) 64px, rgb(151, 231, 7) 96px); background-size: 51px 51px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgb(47, 176, 202) 0px, rgb(47, 176, 202) 32px, rgb(99, 204, 105) 32px, rgb(99, 204, 105) 64px, rgb(151, 231, 7) 64px, rgb(151, 231, 7) 96px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "e42eba57-64cf-4598-9d8c-2784cd4f90f8",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgb(240, 162, 140) 0px, rgb(240, 162, 140) 12px, rgb(246, 140, 83) 12px, rgb(246, 140, 83) 24px, rgb(252, 117, 25) 24px, rgb(252, 117, 25) 36px); background-size: 53px 53px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgb(240, 162, 140) 0px, rgb(240, 162, 140) 12px, rgb(246, 140, 83) 12px, rgb(246, 140, 83) 24px, rgb(252, 117, 25) 24px, rgb(252, 117, 25) 36px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "a3d5e5ef-a25d-438c-a54f-6344b0a6da4d",
-    "stylesheet": "radial-gradient(circle at center, rgba(33, 33, 33, 0.04) 0%, rgba(33, 33, 33, 0.04) 8%, transparent 8%, transparent 100%), radial-gradient(circle at center, rgba(38, 38, 38, 0.04) 0%, rgba(38, 38, 38, 0.04) 90%, transparent 90%, transparent 100%), radial-gradient(circle at center, rgba(107, 107, 107, 0.04) 0%, rgba(107, 107, 107, 0.04) 7%, transparent 7%, transparent 100%), radial-gradient(circle at center, rgba(9, 9, 9, 0.04) 0%, rgba(9, 9, 9, 0.04) 74%, transparent 74%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255)); background-size: 18px 18px",
+    "stylesheet": "radial-gradient(circle at center, rgba(33, 33, 33, 0.04) 0%, rgba(33, 33, 33, 0.04) 8%, transparent 8%, transparent 100%), radial-gradient(circle at center, rgba(38, 38, 38, 0.04) 0%, rgba(38, 38, 38, 0.04) 90%, transparent 90%, transparent 100%), radial-gradient(circle at center, rgba(107, 107, 107, 0.04) 0%, rgba(107, 107, 107, 0.04) 7%, transparent 7%, transparent 100%), radial-gradient(circle at center, rgba(9, 9, 9, 0.04) 0%, rgba(9, 9, 9, 0.04) 74%, transparent 74%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "f6480d0b-0087-4206-881a-6130259c3b00",
-    "stylesheet": "radial-gradient(circle at center, rgba(118, 118, 118, 0.04) 0%, rgba(118, 118, 118, 0.04) 84%, transparent 84%, transparent 100%), radial-gradient(circle at center, rgba(156, 156, 156, 0.04) 0%, rgba(156, 156, 156, 0.04) 1%, transparent 1%, transparent 100%), radial-gradient(circle at center, rgba(65, 65, 65, 0.04) 0%, rgba(65, 65, 65, 0.04) 75%, transparent 75%, transparent 100%), radial-gradient(circle at center, rgba(116, 116, 116, 0.04) 0%, rgba(116, 116, 116, 0.04) 64%, transparent 64%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255)); background-size: 21px 21px",
+    "stylesheet": "radial-gradient(circle at center, rgba(118, 118, 118, 0.04) 0%, rgba(118, 118, 118, 0.04) 84%, transparent 84%, transparent 100%), radial-gradient(circle at center, rgba(156, 156, 156, 0.04) 0%, rgba(156, 156, 156, 0.04) 1%, transparent 1%, transparent 100%), radial-gradient(circle at center, rgba(65, 65, 65, 0.04) 0%, rgba(65, 65, 65, 0.04) 75%, transparent 75%, transparent 100%), radial-gradient(circle at center, rgba(116, 116, 116, 0.04) 0%, rgba(116, 116, 116, 0.04) 64%, transparent 64%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "5330500e-0e63-4bde-8bfb-a4c3b2a04dfc",
-    "stylesheet": "radial-gradient(circle at center, rgba(215, 215, 215, 0.04) 0%, rgba(215, 215, 215, 0.04) 10%, transparent 10%, transparent 100%), radial-gradient(circle at center, rgba(232, 232, 232, 0.04) 0%, rgba(232, 232, 232, 0.04) 15%, transparent 15%, transparent 100%), radial-gradient(circle at center, rgba(16, 16, 16, 0.04) 0%, rgba(16, 16, 16, 0.04) 9%, transparent 9%, transparent 100%), radial-gradient(circle at center, rgba(232, 232, 232, 0.04) 0%, rgba(232, 232, 232, 0.04) 23%, transparent 23%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255)); background-size: 59px 59px",
+    "stylesheet": "radial-gradient(circle at center, rgba(215, 215, 215, 0.04) 0%, rgba(215, 215, 215, 0.04) 10%, transparent 10%, transparent 100%), radial-gradient(circle at center, rgba(232, 232, 232, 0.04) 0%, rgba(232, 232, 232, 0.04) 15%, transparent 15%, transparent 100%), radial-gradient(circle at center, rgba(16, 16, 16, 0.04) 0%, rgba(16, 16, 16, 0.04) 9%, transparent 9%, transparent 100%), radial-gradient(circle at center, rgba(232, 232, 232, 0.04) 0%, rgba(232, 232, 232, 0.04) 23%, transparent 23%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "057dc981-34f2-4b34-9f30-0c01280166d8",
-    "stylesheet": "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(80, 80, 80, 0.05) 50%, rgba(80, 80, 80, 0.05) 100%), linear-gradient(45deg, rgba(240, 240, 240, 0.05) 0%, rgba(240, 240, 240, 0.05) 50%, rgba(133, 133, 133, 0.05) 50%, rgba(133, 133, 133, 0.05) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255)); background-size: 139px 139px",
+    "stylesheet": "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(80, 80, 80, 0.05) 50%, rgba(80, 80, 80, 0.05) 100%), linear-gradient(45deg, rgba(240, 240, 240, 0.05) 0%, rgba(240, 240, 240, 0.05) 50%, rgba(133, 133, 133, 0.05) 50%, rgba(133, 133, 133, 0.05) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "3f2f15a4-aeda-4faa-88e9-b5fb81fac7bc",
-    "stylesheet": "linear-gradient(45deg, rgba(187, 187, 187, 0.04) 0%, rgba(187, 187, 187, 0.04) 50%, rgba(86, 86, 86, 0.04) 50%, rgba(86, 86, 86, 0.04) 100%), linear-gradient(135deg, rgba(166, 166, 166, 0.04) 0%, rgba(166, 166, 166, 0.04) 50%, rgba(92, 92, 92, 0.04) 50%, rgba(92, 92, 92, 0.04) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20)); background-size: 142px 142px",
+    "stylesheet": "linear-gradient(45deg, rgba(187, 187, 187, 0.04) 0%, rgba(187, 187, 187, 0.04) 50%, rgba(86, 86, 86, 0.04) 50%, rgba(86, 86, 86, 0.04) 100%), linear-gradient(135deg, rgba(166, 166, 166, 0.04) 0%, rgba(166, 166, 166, 0.04) 50%, rgba(92, 92, 92, 0.04) 50%, rgba(92, 92, 92, 0.04) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "a17b90c6-805f-4d48-a159-269efea95321",
-    "stylesheet": "linear-gradient(45deg, rgba(220, 220, 220, 0.04) 0%, rgba(220, 220, 220, 0.04) 50%, rgba(0, 0, 0, 0.04) 50%, rgba(0, 0, 0, 0.04) 100%), linear-gradient(135deg, rgba(124, 124, 124, 0.04) 0%, rgba(124, 124, 124, 0.04) 50%, rgba(24, 24, 24, 0.04) 50%, rgba(24, 24, 24, 0.04) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20)); background-size: 156px 156px",
+    "stylesheet": "linear-gradient(45deg, rgba(220, 220, 220, 0.04) 0%, rgba(220, 220, 220, 0.04) 50%, rgba(0, 0, 0, 0.04) 50%, rgba(0, 0, 0, 0.04) 100%), linear-gradient(135deg, rgba(124, 124, 124, 0.04) 0%, rgba(124, 124, 124, 0.04) 50%, rgba(24, 24, 24, 0.04) 50%, rgba(24, 24, 24, 0.04) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "27ec8705-1f1c-4d47-b1b8-44ed0c371de8",
-    "stylesheet": "linear-gradient(135deg, rgba(145, 145, 145, 0.06) 0%, rgba(145, 145, 145, 0.06) 50%, rgba(253, 253, 253, 0.06) 50%, rgba(253, 253, 253, 0.06) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20)); background-size: 15px 15px",
+    "stylesheet": "linear-gradient(135deg, rgba(145, 145, 145, 0.06) 0%, rgba(145, 145, 145, 0.06) 50%, rgba(253, 253, 253, 0.06) 50%, rgba(253, 253, 253, 0.06) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "f7725054-85db-4be9-8bca-0af949e96d8f",
-    "stylesheet": "linear-gradient(135deg, rgba(107, 107, 107, 0.06) 0%, rgba(107, 107, 107, 0.06) 50%, rgba(202, 202, 202, 0.06) 50%, rgba(202, 202, 202, 0.06) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20)); background-size: 30px 30px",
+    "stylesheet": "linear-gradient(135deg, rgba(107, 107, 107, 0.06) 0%, rgba(107, 107, 107, 0.06) 50%, rgba(202, 202, 202, 0.06) 50%, rgba(202, 202, 202, 0.06) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "a2c50d7e-9b45-42b5-8917-4273a51abfef",
-    "stylesheet": "linear-gradient(135deg, rgba(234, 234, 234, 0.06) 0%, rgba(234, 234, 234, 0.06) 50%, rgba(169, 169, 169, 0.06) 50%, rgba(169, 169, 169, 0.06) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20)); background-size: 72px 72px",
+    "stylesheet": "linear-gradient(135deg, rgba(234, 234, 234, 0.06) 0%, rgba(234, 234, 234, 0.06) 50%, rgba(169, 169, 169, 0.06) 50%, rgba(169, 169, 169, 0.06) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "e9c71fdd-bec0-49a6-823c-32ad65d5a3ce",
-    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 13px, rgba(0, 0, 0, 0.03) 13px, rgba(0, 0, 0, 0.03) 19px, transparent 19px, transparent 33px, rgba(0, 0, 0, 0.03) 33px, rgba(0, 0, 0, 0.03) 38px, transparent 38px, transparent 47px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 8px, rgb(255, 255, 255) 8px, rgb(255, 255, 255) 17px, rgb(255, 255, 255) 17px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 35px); background-size: 22px 22px",
+    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 13px, rgba(0, 0, 0, 0.03) 13px, rgba(0, 0, 0, 0.03) 19px, transparent 19px, transparent 33px, rgba(0, 0, 0, 0.03) 33px, rgba(0, 0, 0, 0.03) 38px, transparent 38px, transparent 47px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 8px, rgb(255, 255, 255) 8px, rgb(255, 255, 255) 17px, rgb(255, 255, 255) 17px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 35px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "9d535cc1-bacd-4292-86ed-a1263d95def2",
-    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 5px, rgba(0, 0, 0, 0.03) 5px, rgba(0, 0, 0, 0.03) 7px, transparent 7px, transparent 10px, rgba(0, 0, 0, 0.03) 10px, rgba(0, 0, 0, 0.03) 14px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(255, 255, 255) 1px, rgb(255, 255, 255) 8px, rgb(255, 255, 255) 8px, rgb(255, 255, 255) 19px, rgb(255, 255, 255) 19px, rgb(255, 255, 255) 28px); background-size: 12px 12px",
+    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 5px, rgba(0, 0, 0, 0.03) 5px, rgba(0, 0, 0, 0.03) 7px, transparent 7px, transparent 10px, rgba(0, 0, 0, 0.03) 10px, rgba(0, 0, 0, 0.03) 14px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(255, 255, 255) 1px, rgb(255, 255, 255) 8px, rgb(255, 255, 255) 8px, rgb(255, 255, 255) 19px, rgb(255, 255, 255) 19px, rgb(255, 255, 255) 28px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "77856bb6-f129-4347-a661-7e00cafe7c40",
-    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 12px, rgba(0, 0, 0, 0.03) 12px, rgba(0, 0, 0, 0.03) 15px, transparent 15px, transparent 21px, rgba(0, 0, 0, 0.03) 21px, rgba(0, 0, 0, 0.03) 22px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 11px, rgb(255, 255, 255) 11px, rgb(255, 255, 255) 25px, rgb(255, 255, 255) 25px, rgb(255, 255, 255) 26px, rgb(255, 255, 255) 26px, rgb(255, 255, 255) 33px); background-size: 25px 25px",
+    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 12px, rgba(0, 0, 0, 0.03) 12px, rgba(0, 0, 0, 0.03) 15px, transparent 15px, transparent 21px, rgba(0, 0, 0, 0.03) 21px, rgba(0, 0, 0, 0.03) 22px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 11px, rgb(255, 255, 255) 11px, rgb(255, 255, 255) 25px, rgb(255, 255, 255) 25px, rgb(255, 255, 255) 26px, rgb(255, 255, 255) 26px, rgb(255, 255, 255) 33px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "0b4c29ce-a41e-4fca-9379-5b6ed02f757f",
-    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 3px, rgba(0, 0, 0, 0.03) 3px, rgba(0, 0, 0, 0.03) 5px, transparent 5px, transparent 19px, rgba(0, 0, 0, 0.03) 19px, rgba(0, 0, 0, 0.03) 27px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 6px, rgb(255, 255, 255) 6px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 25px, rgb(255, 255, 255) 25px, rgb(255, 255, 255) 28px); background-size: 10px 10px",
+    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 3px, rgba(0, 0, 0, 0.03) 3px, rgba(0, 0, 0, 0.03) 5px, transparent 5px, transparent 19px, rgba(0, 0, 0, 0.03) 19px, rgba(0, 0, 0, 0.03) 27px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 6px, rgb(255, 255, 255) 6px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 25px, rgb(255, 255, 255) 25px, rgb(255, 255, 255) 28px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "86024bd3-5629-455f-852c-47a7ab322850",
-    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 13px, rgba(0, 0, 0, 0.03) 13px, rgba(0, 0, 0, 0.03) 24px, transparent 24px, transparent 62px, rgba(0, 0, 0, 0.03) 62px, rgba(0, 0, 0, 0.03) 96px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 18px, rgb(255, 255, 255) 18px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 32px); background-size: 21px 21px",
+    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 13px, rgba(0, 0, 0, 0.03) 13px, rgba(0, 0, 0, 0.03) 24px, transparent 24px, transparent 62px, rgba(0, 0, 0, 0.03) 62px, rgba(0, 0, 0, 0.03) 96px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 18px, rgb(255, 255, 255) 18px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 32px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "c00708cd-b6d5-44eb-8d5c-6dd08741c763",
-    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 28px, rgba(0, 0, 0, 0.03) 28px, rgba(0, 0, 0, 0.03) 72px, transparent 72px, transparent 88px, rgba(0, 0, 0, 0.03) 88px, rgba(0, 0, 0, 0.03) 101px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 12px, rgb(255, 255, 255) 12px, rgb(255, 255, 255) 13px, rgb(255, 255, 255) 13px, rgb(255, 255, 255) 22px, rgb(255, 255, 255) 22px, rgb(255, 255, 255) 31px); background-size: 46px 46px",
+    "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 28px, rgba(0, 0, 0, 0.03) 28px, rgba(0, 0, 0, 0.03) 72px, transparent 72px, transparent 88px, rgba(0, 0, 0, 0.03) 88px, rgba(0, 0, 0, 0.03) 101px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 12px, rgb(255, 255, 255) 12px, rgb(255, 255, 255) 13px, rgb(255, 255, 255) 13px, rgb(255, 255, 255) 22px, rgb(255, 255, 255) 22px, rgb(255, 255, 255) 31px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "27ac4af0-983c-4fb9-b628-52c667bd0a16",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgb(14, 14, 14) 0px, rgb(14, 14, 14) 30px, rgb(25, 25, 25) 30px, rgb(25, 25, 25) 70px, rgb(2, 2, 2) 70px, rgb(2, 2, 2) 77px); background-size: 53px 53px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgb(14, 14, 14) 0px, rgb(14, 14, 14) 30px, rgb(25, 25, 25) 30px, rgb(25, 25, 25) 70px, rgb(2, 2, 2) 70px, rgb(2, 2, 2) 77px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "599b965d-6c5e-4611-93fc-250fb2b92ab3",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgb(31, 31, 31) 0px, rgb(31, 31, 31) 33px, rgb(26, 26, 26) 33px, rgb(26, 26, 26) 79px, rgb(20, 20, 20) 79px, rgb(20, 20, 20) 88px); background-size: 56px 56px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgb(31, 31, 31) 0px, rgb(31, 31, 31) 33px, rgb(26, 26, 26) 33px, rgb(26, 26, 26) 79px, rgb(20, 20, 20) 79px, rgb(20, 20, 20) 88px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "2694eeee-b029-4555-8be3-20d8ad599245",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgb(27, 27, 27) 0px, rgb(27, 27, 27) 36px, rgb(84, 84, 84) 36px, rgb(84, 84, 84) 64px, rgb(141, 141, 141) 64px, rgb(141, 141, 141) 87px); background-size: 54px 54px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgb(27, 27, 27) 0px, rgb(27, 27, 27) 36px, rgb(84, 84, 84) 36px, rgb(84, 84, 84) 64px, rgb(141, 141, 141) 64px, rgb(141, 141, 141) 87px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "2f3c7ec0-ac4c-497b-9ce0-776d9b883fbf",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgb(253, 253, 253) 0px, rgb(253, 253, 253) 40px, rgb(249, 249, 249) 40px, rgb(249, 249, 249) 60px, rgb(244, 244, 244) 60px, rgb(244, 244, 244) 85px); background-size: 80px 80px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgb(253, 253, 253) 0px, rgb(253, 253, 253) 40px, rgb(249, 249, 249) 40px, rgb(249, 249, 249) 60px, rgb(244, 244, 244) 60px, rgb(244, 244, 244) 85px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "bac90973-b35a-4aac-9eb4-d3e9031df980",
-    "stylesheet": "repeating-radial-gradient(circle at center, rgb(249, 249, 249) 0px, rgb(249, 249, 249) 40px, rgb(196, 196, 196) 40px, rgb(196, 196, 196) 48px, rgb(142, 142, 142) 48px, rgb(142, 142, 142) 57px); background-size: 58px 58px",
+    "stylesheet": "repeating-radial-gradient(circle at center, rgb(249, 249, 249) 0px, rgb(249, 249, 249) 40px, rgb(196, 196, 196) 40px, rgb(196, 196, 196) 48px, rgb(142, 142, 142) 48px, rgb(142, 142, 142) 57px)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "683ee25b-7e7e-467b-8ae3-42367b9c28dc",
-    "stylesheet": "radial-gradient(circle at center, rgb(181, 181, 181) 3%, rgb(253, 255, 254) 4%); background-size: 40px 40px",
+    "stylesheet": "radial-gradient(circle at center, rgb(181, 181, 181) 3%, rgb(253, 255, 254) 4%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "5b5a4548-893e-4009-b6fd-c82840a4b822",
-    "stylesheet": "radial-gradient(circle at center, rgb(255, 252, 254) 91%, rgb(212, 217, 218) 92%); background-size: 50px 50px",
+    "stylesheet": "radial-gradient(circle at center, rgb(255, 252, 254) 91%, rgb(212, 217, 218) 92%)",
     "tags": [ "simplepatterns" ]
   },
   {
     "slug": "42df7c5c-dc9d-483a-8361-521f915187fd",
-    "stylesheet": "radial-gradient(circle at center, rgb(255, 255, 255) 91%, rgb(204, 209, 213) 91%); background-size: 15px 15px",
+    "stylesheet": "radial-gradient(circle at center, rgb(255, 255, 255) 91%, rgb(204, 209, 213) 91%)",
     "tags": [ "simplepatterns" ]
   }
 ]
