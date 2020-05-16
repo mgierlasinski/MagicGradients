@@ -8,14 +8,14 @@
 
   <Identity
     Name="acede8df-0a03-4643-8b9e-0e06354e133f"
-    Publisher="CN=bbene"
-    Version="1.0.0.0" />
+    Publisher="CN=MagicGradients"
+    Version="1.0.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="acede8df-0a03-4643-8b9e-0e06354e133f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>GradientParser</DisplayName>
-    <PublisherDisplayName>bbene</PublisherDisplayName>
+    <PublisherDisplayName>Magic Gradients</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
