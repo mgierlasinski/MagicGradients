@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppInstaller
+	Uri="file:///C:/MagicGradients/Tools/GradientParser.appinstaller"
+	Version="1.0.2.0" xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
+	<MainBundle
+		Name="acede8df-0a03-4643-8b9e-0e06354e133f"
+		Version="1.0.2.0"
+		Publisher="CN=MagicGradients"
+		Uri="file:///C:/MagicGradients/Tools/GradientParser_1.0.2.0_Debug_Test/GradientParser_1.0.2.0_x86_x64_Debug.appxbundle" />
+	<Dependencies>
+		<Package
+			Name="Microsoft.NET.CoreRuntime.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="2.2.27902.3"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/MagicGradients/Tools/GradientParser_1.0.2.0_Debug_Test/Dependencies/x86/Microsoft.NET.CoreRuntime.2.2.appx" />
+		<Package
+			Name="Microsoft.NET.CoreRuntime.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="2.2.27902.3"
+			ProcessorArchitecture="x64"
+			Uri="file:///C:/MagicGradients/Tools/GradientParser_1.0.2.0_Debug_Test/Dependencies/x64/Microsoft.NET.CoreRuntime.2.2.appx" />
+		<Package
+			Name="Microsoft.NET.CoreFramework.Debug.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="2.2.27909.0"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/MagicGradients/Tools/GradientParser_1.0.2.0_Debug_Test/Dependencies/x86/Microsoft.NET.CoreFramework.Debug.2.2.appx" />
+		<Package
+			Name="Microsoft.NET.CoreFramework.Debug.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="2.2.27909.0"
+			ProcessorArchitecture="x64"
+			Uri="file:///C:/MagicGradients/Tools/GradientParser_1.0.2.0_Debug_Test/Dependencies/x64/Microsoft.NET.CoreFramework.Debug.2.2.appx" />
+		<Package
+			Name="Microsoft.VCLibs.140.00.Debug"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="14.0.27810.0"
+			ProcessorArchitecture="x64"
+			Uri="file:///C:/MagicGradients/Tools/GradientParser_1.0.2.0_Debug_Test/Dependencies/x64/Microsoft.VCLibs.x64.Debug.14.00.appx" />
+		<Package
+			Name="Microsoft.VCLibs.140.00.Debug"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="14.0.27810.0"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/MagicGradients/Tools/GradientParser_1.0.2.0_Debug_Test/Dependencies/x86/Microsoft.VCLibs.x86.Debug.14.00.appx" />
+	</Dependencies>
+	<UpdateSettings>
+		<OnLaunch
+			HoursBetweenUpdateChecks="0" />
+	</UpdateSettings>
+</AppInstaller>

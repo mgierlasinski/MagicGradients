@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="GradientParser.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="840"
+    Height="450"
+    MinWidth="840"
+    MinHeight="450"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="0"
+            Height="50"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center"
+            FontSize="24"
+            PlaceholderText="Enter URL with Magic Gradients"
+            Text="{x:Bind ViewModel.Url, Mode=TwoWay}"
+            TextAlignment="Start" />
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Height="50"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center"
+            FontSize="24"
+            PlaceholderText="Enter Tag"
+            Text="{x:Bind ViewModel.Tag, Mode=TwoWay}"
+            TextAlignment="Start" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            Width="130"
+            Height="50"
+            Margin="15"
+            Background="#318ADC"
+            Command="{x:Bind ViewModel.ParseGradientsCommand}"
+            Content="Parse Gradients"
+            CornerRadius="15"
+            Foreground="White" />
+        <ScrollViewer
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="0,15">
+            <TextBlock Foreground="#00E0B4" Text="{x:Bind ViewModel.Gradients, Mode=OneWay}" />
+        </ScrollViewer>
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Width="130"
+            Height="50"
+            Margin="15"
+            VerticalAlignment="Top"
+            Background="#B82D85"
+            Command="{x:Bind ViewModel.CopyToClipboardCommand}"
+            Content="Copy"
+            CornerRadius="15"
+            Foreground="White"
+            Visibility="{x:Bind ViewModel.IsGradientsExist, Mode=OneWay, Converter={StaticResource BooleanToVisibility}}" />
+        <ProgressRing
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Width="50"
+            Height="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="#AB45A1"
+            IsActive="{x:Bind ViewModel.Status, Mode=OneWay, Converter={StaticResource StatusToBoolean}}" />
+    </Grid>
+</Page>
