@@ -1,28 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             xmlns:models="clr-namespace:Playground.Models"
-             x:Class="Playground.Views.GalleryCategoriesPage"
-             Title="Gradient Gallery"
-             BindingContext="{Binding GalleryCategoriesViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+<ContentPage
+    x:Class="Playground.Views.GalleryCategoriesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+    xmlns:models="clr-namespace:Playground.Models"
+    Title="Gradient Gallery"
+    BindingContext="{Binding GalleryCategoriesViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <Grid Padding="5">
-        <CollectionView x:Name="CategoriesList" 
-                        ItemsSource="{Binding Categories}" 
-                        SelectionMode="Single"
-                        SelectedItem="{Binding SelectedItem}" 
-                        SelectionChanged="GalleryList_OnSelectionChanged">
+        <CollectionView
+            x:Name="CategoriesList"
+            ItemsSource="{Binding Categories}"
+            SelectedItem="{Binding SelectedItem}"
+            SelectionChanged="GalleryList_OnSelectionChanged"
+            SelectionMode="Single">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:GradientCategory">
                     <Grid Padding="5">
-                        <Frame HasShadow="True" Visual="Material" Padding="0" CornerRadius="5" IsClippedToBounds="True">
+                        <Frame
+                            Padding="0"
+                            CornerRadius="5"
+                            HasShadow="True"
+                            IsClippedToBounds="True"
+                            Visual="Material">
                             <StackLayout Spacing="0">
-                                <magic:GradientView HeightRequest="150" GradientSource="{Binding GradientSource}" />
-                                <Label Text="{Binding Name}" HorizontalOptions="Center" Margin="0,5" 
-                                       TextColor="{StaticResource ForegroundColor}" FontAttributes="Bold" />
+                                <magic:GradientView GradientSource="{Binding GradientSource}" HeightRequest="150" />
+                                <Label
+                                    Margin="0,5"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Name}"
+                                    TextColor="{StaticResource ForegroundColor}" />
                             </StackLayout>
                         </Frame>
                     </Grid>

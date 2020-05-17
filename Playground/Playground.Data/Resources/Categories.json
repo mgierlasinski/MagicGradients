@@ -46,28 +46,23 @@
   },
   {
     "name": "Complex Grid",
-    "tag": "complexgrid",
-    "slug": "eebbe492-6be5-4bc7-90e1-3a2b3b9b1601"
+    "tag": "complexgrid"
   },
   {
     "name": "Gingham Colored",
-    "tag": "ginghamcolored",
-    "slug": "d24451fa-3117-45fd-8178-72099d35b0d7"
+    "tag": "ginghamcolored"
   },
   {
     "name": "Gingham",
-    "tag": "gingham",
-    "slug": "2a549631-4147-4f45-be95-addf71ced64c"
+    "tag": "gingham"
   },
   {
     "name": "Basic Grid",
-    "tag": "basicgrid",
-    "slug": "8db77070-d8ba-4690-8fa4-6fbf5794111c"
+    "tag": "basicgrid"
   },
   {
     "name": "Complex Shapes",
-    "tag": "complexshapes",
-    "slug": "001b855a-95c3-445b-ab7e-d1f901dfd5ec"
+    "tag": "complexshapes"
   },
   {
     "name": "Complex Repeating Stripes",
@@ -81,8 +76,7 @@
   },
   {
     "name": "Simple Angular",
-    "tag": "simpleangular",
-    "slug": "e8fd2744-b9e4-4884-a1cf-4b2ae13d08ee"
+    "tag": "simpleangular"
   },
   {
     "name": "Standard - Asymetrical",
@@ -136,8 +130,7 @@
   },
   {
     "name": "Squares",
-    "tag": "checkered",
-    "slug": "904a52c1-c0ab-46eb-92ee-f09449fc788f"
+    "tag": "checkered"
   },
   {
     "name": "Even Stripes",
