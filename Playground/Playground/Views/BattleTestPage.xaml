@@ -8,7 +8,9 @@
     Title="Gradient Battle Test"
     BindingContext="{Binding BattleTestViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ScrollView>
-        <StackLayout Margin="15" Spacing="15">
+        <StackLayout
+            Margin="15"
+            Spacing="15">
             <!--  Control To Select Text Color  -->
             <Picker
                 x:Name="ColumnPicker"
@@ -16,9 +18,13 @@
                 ItemsSource="{Binding ColorNames}"
                 SelectedIndex="{Binding SelectedColorIndex}" />
             <!--  Buttons With Gradient Background  -->
-            <Frame Padding="0" CornerRadius="10">
+            <Frame
+                Padding="0"
+                CornerRadius="10"
+                HasShadow="False">
                 <Grid>
-                    <magic:GradientView GradientSource="{Binding GradientSource}" />
+                    <magic:GradientView
+                        GradientSource="{Binding GradientSource}" />
                     <Button
                         BackgroundColor="Transparent"
                         FontSize="16"
@@ -30,10 +36,12 @@
             <Frame
                 Padding="0"
                 CornerRadius="10"
+                HasShadow="False"
                 HorizontalOptions="Center"
                 WidthRequest="150">
                 <Grid>
-                    <magic:GradientView GradientSource="{Binding GradientSource}" />
+                    <magic:GradientView
+                        GradientSource="{Binding GradientSource}" />
                     <Button
                         BackgroundColor="Transparent"
                         FontSize="16"
@@ -43,21 +51,27 @@
                 </Grid>
             </Frame>
             <!--  Circle With Icon And With Gradient Background  -->
-            <CollectionView HeightRequest="50" ItemsSource="{Binding IconsCollection}">
+            <CollectionView
+                HeightRequest="50"
+                ItemsSource="{Binding IconsCollection}">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout HorizontalItemSpacing="5" Orientation="Horizontal" />
+                    <GridItemsLayout
+                        HorizontalItemSpacing="5"
+                        Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame
                             Padding="0"
                             CornerRadius="25"
+                            HasShadow="False"
                             WidthRequest="50">
                             <Grid>
-                                <magic:GradientView GradientSource="{Binding GradientSource}" />
+                                <magic:GradientView
+                                    GradientSource="{Binding GradientSource}" />
                                 <Button
                                     BackgroundColor="Transparent"
-                                    FontFamily="{StaticResource IconFont}"
+                                    FontFamily="IconFont"
                                     FontSize="16"
                                     Text="{Binding Text}"
                                     TextColor="{Binding TextColor}" />
@@ -67,15 +81,23 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <!--  Background for Collection View  -->
-            <Grid HeightRequest="250">
-                <magic:GradientView GradientSource="{Binding GradientSource}" />
-                <CollectionView Margin="5" ItemsSource="{Binding ItemsCollection}">
+            <Grid
+                HeightRequest="250">
+                <magic:GradientView
+                    GradientSource="{Binding GradientSource}" />
+                <CollectionView
+                    Margin="5"
+                    ItemsSource="{Binding ItemsCollection}">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical" Span="3" />
+                        <GridItemsLayout
+                            Orientation="Vertical"
+                            Span="3" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Label Text="{Binding Text}" TextColor="{Binding TextColor}" />
+                            <Label
+                                Text="{Binding Text}"
+                                TextColor="{Binding TextColor}" />
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

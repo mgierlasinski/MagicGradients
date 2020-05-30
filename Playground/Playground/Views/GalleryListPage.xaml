@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             xmlns:models="clr-namespace:Playground.Models"
-             xmlns:controls="clr-namespace:Playground.Controls"
-             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
-             x:Class="Playground.Views.GalleryListPage"
-             Title="{Binding Title}"
-             BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+<ContentPage
+    x:Class="Playground.Views.GalleryListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Playground.Controls"
+    xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+    xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+    xmlns:models="clr-namespace:Playground.Models"
+    Title="{Binding Title}"
+    BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding TogglePickerCommand}">
+        <ToolbarItem
+            Command="{Binding TogglePickerCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                                 FontFamily="{StaticResource IconFont}"
-                                 Color="{StaticResource ForegroundColor}" />
+                <FontImageSource
+                    FontFamily="IconFont"
+                    Glyph="{x:Static ic:IconCodes.Palette}"
+                    Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
@@ -36,26 +39,33 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Frame>-->
-        <CollectionView x:Name="GalleryList"
-                        ItemsSource="{Binding Gradients}"
-                        SelectionMode="Single"
-                        SelectedItem="{Binding SelectedItem}"
-                        SelectionChanged="GalleryList_OnSelectionChanged">
+        <CollectionView
+            x:Name="GalleryList"
+            ItemsSource="{Binding Gradients}"
+            SelectedItem="{Binding SelectedItem}"
+            SelectionChanged="GalleryList_OnSelectionChanged"
+            SelectionMode="Single">
             <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical" Span="2" />
+                <GridItemsLayout
+                    Orientation="Vertical"
+                    Span="2" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:GradientItem">
+                <DataTemplate
+                    x:DataType="models:GradientItem">
                     <Grid>
-                        <magic:GradientView GradientSource="{Binding Source}" HeightRequest="150" />
+                        <magic:GradientView
+                            GradientSource="{Binding Source}"
+                            HeightRequest="150" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <controls:RadialMenu HorizontalOptions="Fill" 
-                             VerticalOptions="Fill" 
-                             ItemsSource="{Binding Themes}" 
-                             SelectedItem="{Binding SelectedTheme}"
-                             IsOpen="{Binding IsPickerVisible}" />
+        <controls:RadialMenu
+            HorizontalOptions="Fill"
+            IsOpen="{Binding IsPickerVisible}"
+            ItemsSource="{Binding Themes}"
+            SelectedItem="{Binding SelectedTheme}"
+            VerticalOptions="Fill" />
     </Grid>
 </ContentPage>
