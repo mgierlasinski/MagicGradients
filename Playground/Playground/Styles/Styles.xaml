@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <?xaml-comp compile="true" ?>
-<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Color x:Key="NavigationPrimary">#2196F3</Color>
     <Color x:Key="ForegroundColor">#2D2D2D</Color>
     <Color x:Key="LightForegroundColor">#FFFFFF</Color>
@@ -12,11 +13,11 @@
         <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
         <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
         <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-        <Setter Property="Shell.TabBarForegroundColor" Value="White" />
-        <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
-        <Setter Property="Shell.TabBarTitleColor" Value="White" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+        <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+        <Setter Property="Shell.TabBarTitleColor" Value="White"/>
     </Style>
-    <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" />
+    <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />   
     <Style x:Key="FontLabel" TargetType="Label">
         <Setter Property="HorizontalTextAlignment" Value="Center" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
