@@ -10,8 +10,7 @@
     Title="{Binding Title}"
     BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem
-            Command="{Binding TogglePickerCommand}">
+        <ToolbarItem Command="{Binding TogglePickerCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource
                     FontFamily="IconFont"
@@ -46,17 +45,12 @@
             SelectionChanged="GalleryList_OnSelectionChanged"
             SelectionMode="Single">
             <CollectionView.ItemsLayout>
-                <GridItemsLayout
-                    Orientation="Vertical"
-                    Span="2" />
+                <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
-                <DataTemplate
-                    x:DataType="models:GradientItem">
+                <DataTemplate x:DataType="models:GradientItem">
                     <Grid>
-                        <magic:GradientView
-                            GradientSource="{Binding Source}"
-                            HeightRequest="150" />
+                        <magic:GradientView GradientSource="{Binding Source}" HeightRequest="150" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

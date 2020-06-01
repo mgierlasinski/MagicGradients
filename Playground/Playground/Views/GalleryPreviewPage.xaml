@@ -10,8 +10,7 @@
     Title="Gradient Preview"
     BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem
-            Command="{Binding EditCommand}">
+        <ToolbarItem Command="{Binding EditCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource
                     FontFamily="IconFont"
@@ -19,8 +18,7 @@
                     Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <ToolbarItem
-            Command="{Binding PreviewCssCommand}">
+        <ToolbarItem Command="{Binding PreviewCssCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource
                     FontFamily="IconFont"
@@ -28,8 +26,7 @@
                     Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <ToolbarItem
-            Command="{Binding BattleTestCommand}">
+        <ToolbarItem Command="{Binding BattleTestCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource
                     FontFamily="IconFont"
@@ -38,19 +35,15 @@
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <Grid
-        x:Name="RootContainer">
-        <magic:GradientView
-            GradientSource="{Binding GradientSource}" />
+    <Grid x:Name="RootContainer">
+        <magic:GradientView GradientSource="{Binding GradientSource}" />
         <Grid
             HorizontalOptions="Fill"
             IsVisible="{Binding IsEditMode}"
             VerticalOptions="Fill">
             <Grid.RowDefinitions>
-                <RowDefinition
-                    Height="60" />
-                <RowDefinition
-                    Height="*" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <BoxView
                 Grid.RowSpan="2"
@@ -63,15 +56,11 @@
                 SelectedItem="{Binding SelectedItem}"
                 SelectionMode="Single">
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout
-                        ItemSpacing="0"
-                        Orientation="Horizontal" />
+                    <LinearItemsLayout ItemSpacing="0" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate
-                        x:DataType="models:GradientEditorItem">
-                        <Grid
-                            HeightRequest="50">
+                    <DataTemplate x:DataType="models:GradientEditorItem">
+                        <Grid HeightRequest="50">
                             <Frame
                                 Margin="5"
                                 Padding="2"
@@ -104,18 +93,13 @@
                 Visual="Material">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-                            Height="70" />
-                        <RowDefinition
-                            Height="50" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-                            Width="33*" />
-                        <ColumnDefinition
-                            Width="33*" />
-                        <ColumnDefinition
-                            Width="33*" />
+                        <ColumnDefinition Width="33*" />
+                        <ColumnDefinition Width="33*" />
+                        <ColumnDefinition Width="33*" />
                     </Grid.ColumnDefinitions>
                     <controls:CheckeredView />
                     <magic:GradientView
@@ -135,12 +119,9 @@
                                     HasShadow="True"
                                     Visual="Material">
                                     <Frame.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                            Command="{Binding BindingContext.SelectCommand, Source={x:Reference RootContainer}}"
-                                            CommandParameter="{Binding}" />
+                                        <TapGestureRecognizer Command="{Binding BindingContext.SelectCommand, Source={x:Reference RootContainer}}" CommandParameter="{Binding}" />
                                     </Frame.GestureRecognizers>
-                                    <BoxView
-                                        Color="{Binding Color}" />
+                                    <BoxView Color="{Binding Color}" />
                                 </Frame>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
@@ -162,13 +143,9 @@
                         VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span
-                                    FontAttributes="Bold"
-                                    Text="Color" />
-                                <Span
-                                    Text="&#13;&#10;" />
-                                <Span
-                                    Text="{Binding SelectedItem.SelectedStop.ColorName}" />
+                                <Span FontAttributes="Bold" Text="Color" />
+                                <Span Text="&#13;&#10;" />
+                                <Span Text="{Binding SelectedItem.SelectedStop.ColorName}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -178,13 +155,9 @@
                         VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span
-                                    FontAttributes="Bold"
-                                    Text="Position" />
-                                <Span
-                                    Text="&#13;&#10;" />
-                                <Span
-                                    Text="{Binding SelectedItem.SelectedStop.OffsetName}" />
+                                <Span FontAttributes="Bold" Text="Position" />
+                                <Span Text="&#13;&#10;" />
+                                <Span Text="{Binding SelectedItem.SelectedStop.OffsetName}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
