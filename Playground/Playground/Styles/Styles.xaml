@@ -17,15 +17,11 @@
         <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
         <Setter Property="Shell.TabBarTitleColor" Value="White"/>
     </Style>
-    <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
-    <OnPlatform x:Key="IconFont" x:TypeArguments="x:String">
-        <On Platform="iOS" Value="icomoon" />
-        <On Platform="Android" Value="icomoon.ttf#icomoon" />
-    </OnPlatform>
+    <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />   
     <Style x:Key="FontLabel" TargetType="Label">
         <Setter Property="HorizontalTextAlignment" Value="Center" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
-        <Setter Property="FontFamily" Value="{StaticResource IconFont}" />
+        <Setter Property="FontFamily" Value="IconFont" />
     </Style>
     <Style x:Key="SemiTransparent" TargetType="BoxView">
         <Setter Property="BackgroundColor" Value="Black" />

@@ -12,22 +12,22 @@
         <ToolbarItem Command="{Binding EditCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Glyph="{x:Static ic:IconCodes.Layers}" 
-                                 FontFamily="{StaticResource IconFont}"
-                                 Color="{StaticResource ForegroundColor}" />
+                                 FontFamily="IconFont"
+                                 Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
         <ToolbarItem Command="{Binding PreviewCssCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                                 FontFamily="{StaticResource IconFont}"
-                                 Color="{StaticResource ForegroundColor}" />
+                                 FontFamily="IconFont"
+                                 Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
         <ToolbarItem Command="{Binding BattleTestCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Glyph="{x:Static ic:IconCodes.Paint}"
-                                 FontFamily="{StaticResource IconFont}"
-                                 Color="{StaticResource ForegroundColor}" />
+                                 FontFamily="IconFont"
+                                 Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>

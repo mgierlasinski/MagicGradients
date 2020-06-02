@@ -16,7 +16,10 @@
                 ItemsSource="{Binding ColorNames}"
                 SelectedIndex="{Binding SelectedColorIndex}" />
             <!--  Buttons With Gradient Background  -->
-            <Frame Padding="0" CornerRadius="10">
+            <Frame
+                Padding="0"
+                CornerRadius="10"
+                HasShadow="False">
                 <Grid>
                     <magic:GradientView GradientSource="{Binding GradientSource}" />
                     <Button
@@ -30,6 +33,7 @@
             <Frame
                 Padding="0"
                 CornerRadius="10"
+                HasShadow="False"
                 HorizontalOptions="Center"
                 WidthRequest="150">
                 <Grid>
@@ -52,12 +56,13 @@
                         <Frame
                             Padding="0"
                             CornerRadius="25"
+                            HasShadow="False"
                             WidthRequest="50">
                             <Grid>
                                 <magic:GradientView GradientSource="{Binding GradientSource}" />
                                 <Button
                                     BackgroundColor="Transparent"
-                                    FontFamily="{StaticResource IconFont}"
+                                    FontFamily="IconFont"
                                     FontSize="16"
                                     Text="{Binding Text}"
                                     TextColor="{Binding TextColor}" />

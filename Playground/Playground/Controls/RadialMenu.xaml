@@ -17,7 +17,7 @@
         <Image HorizontalOptions="Center" VerticalOptions="Center">
             <Image.Source>
                 <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                                 FontFamily="{StaticResource IconFont}"
+                                 FontFamily="IconFont"
                                  Color="{StaticResource LightForegroundColor}" />
             </Image.Source>
         </Image>

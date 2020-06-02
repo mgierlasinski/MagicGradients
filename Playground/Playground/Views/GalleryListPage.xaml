@@ -12,8 +12,8 @@
         <ToolbarItem Command="{Binding TogglePickerCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                                 FontFamily="{StaticResource IconFont}"
-                                 Color="{StaticResource ForegroundColor}" />
+                                 FontFamily="IconFont"
+                                 Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>

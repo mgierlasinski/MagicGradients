@@ -22,7 +22,7 @@
             <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <ImageButton Command="{Binding RefreshCommand}" BackgroundColor="Transparent" Padding="10,5">
                     <ImageButton.Source>
-                        <FontImageSource Glyph="{x:Static ic:IconCodes.Refresh}" FontFamily="{StaticResource IconFont}" />
+                        <FontImageSource Glyph="{x:Static ic:IconCodes.Refresh}" FontFamily="IconFont" />
                     </ImageButton.Source>
                 </ImageButton>
                 <CheckBox IsChecked="{Binding IsHotReload}" HorizontalOptions="EndAndExpand" Color="{StaticResource LightForegroundColor}"  />

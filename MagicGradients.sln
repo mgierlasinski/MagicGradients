@@ -1,4 +1,4 @@
-﻿﻿
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
@@ -89,6 +89,7 @@ Global
 		{067E1502-3887-46BF-8253-84D4AB45E1B6}.Release|iPhone.Build.0 = Release|iPhone
 		{067E1502-3887-46BF-8253-84D4AB45E1B6}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{067E1502-3887-46BF-8253-84D4AB45E1B6}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{067E1502-3887-46BF-8253-84D4AB45E1B6}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{05EBBB6C-3B45-498C-B95E-0755F9FCA6A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{05EBBB6C-3B45-498C-B95E-0755F9FCA6A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05EBBB6C-3B45-498C-B95E-0755F9FCA6A0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -165,6 +166,7 @@ Global
 		{86EEF0B4-5497-4DEA-AFBA-08702F4C9CC3}.Release|iPhone.Build.0 = Release|iPhone
 		{86EEF0B4-5497-4DEA-AFBA-08702F4C9CC3}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{86EEF0B4-5497-4DEA-AFBA-08702F4C9CC3}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{86EEF0B4-5497-4DEA-AFBA-08702F4C9CC3}.Debug|Any CPU.Build.0 = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

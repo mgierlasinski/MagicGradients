@@ -41,7 +41,7 @@
     <ShellContent Title="Gradient Gallery" ContentTemplate="{DataTemplate local:GalleryCategoriesPage}">
         <ShellContent.Icon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Gallery}" 
-                             FontFamily="{StaticResource IconFont}" 
+                             FontFamily="IconFont" 
                              Color="{StaticResource ForegroundColor}" />
         </ShellContent.Icon>
     </ShellContent>
@@ -49,7 +49,7 @@
     <ShellContent Title="Paste CSS" ContentTemplate="{DataTemplate local:PasteCssPage}">
         <ShellContent.Icon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                             FontFamily="{StaticResource IconFont}"
+                             FontFamily="IconFont"
                              Color="{StaticResource ForegroundColor}" />
         </ShellContent.Icon>
     </ShellContent>
@@ -57,26 +57,26 @@
     <FlyoutItem Title="Linear Gradients">
         <FlyoutItem.FlyoutIcon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Gradient}" 
-                             FontFamily="{StaticResource IconFont}"
+                             FontFamily="IconFont"
                              Color="{StaticResource ForegroundColor}" />
         </FlyoutItem.FlyoutIcon>
         <Tab Title="XAML">
             <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Code}" FontFamily="{StaticResource IconFont}" />
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Code}" FontFamily="IconFont" />
             </Tab.Icon>
             <ShellContent Title="Single" ContentTemplate="{DataTemplate local:LinearGradientsPage}" />
             <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPage}" />
         </Tab>
         <Tab Title="CSS">
             <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" FontFamily="{StaticResource IconFont}" />
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" FontFamily="IconFont" />
             </Tab.Icon>
             <ShellContent Title="Single" ContentTemplate="{DataTemplate local:LinearGradientsPageCss}" />
             <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPageCss}" />
         </Tab>
         <Tab Title="Animation">
             <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Bolt}" FontFamily="{StaticResource IconFont}" />
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Bolt}" FontFamily="IconFont" />
             </Tab.Icon>
             <ShellContent ContentTemplate="{DataTemplate local:LinearGradientsAnimationPage}" />
         </Tab>
@@ -85,26 +85,26 @@
     <FlyoutItem Title="Radial Gradients">
         <FlyoutItem.FlyoutIcon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Radial}" 
-                             FontFamily="{StaticResource IconFont}"
+                             FontFamily="IconFont"
                              Color="{StaticResource ForegroundColor}" />
         </FlyoutItem.FlyoutIcon>
         <Tab Title="XAML">
             <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Code}" FontFamily="{StaticResource IconFont}" />
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Code}" FontFamily="IconFont" />
             </Tab.Icon>
             <ShellContent Title="Single" ContentTemplate="{DataTemplate local:RadialGradientsPage}" />
             <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPage}" />
         </Tab>
         <Tab Title="CSS">
             <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" FontFamily="{StaticResource IconFont}" />
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" FontFamily="IconFont" />
             </Tab.Icon>
             <ShellContent Title="Single" ContentTemplate="{DataTemplate local:RadialGradientsPageCss}" />
             <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPageCss}" />
         </Tab>
         <Tab Title="Animation">
             <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Bolt}" FontFamily="{StaticResource IconFont}" />
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Bolt}" FontFamily="IconFont" />
             </Tab.Icon>
             <ShellContent ContentTemplate="{DataTemplate local:RadialGradientsAnimationPage}" />
         </Tab>
