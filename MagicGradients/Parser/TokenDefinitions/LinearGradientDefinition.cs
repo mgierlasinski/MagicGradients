@@ -1,3 +1,5 @@
+using System;
+
 namespace MagicGradients.Parser.TokenDefinitions
 {
     public class LinearGradientDefinition : ITokenDefinition
@@ -34,7 +36,14 @@ namespace MagicGradients.Parser.TokenDefinitions
                 angle = CssHelpers.FromDegrees(degrees);
                 return true;
             }
-            
+
+            // For "0" deg is optional
+            if (token.Equals("0", StringComparison.OrdinalIgnoreCase))
+            {
+                angle = CssHelpers.FromDegrees(0);
+                return true;
+            }
+
             angle = 0;
             return false;
         }

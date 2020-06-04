@@ -1,8 +1,8 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
 using FluentAssertions.Execution;
 using MagicGradients.Parser;
 using MagicGradients.Parser.TokenDefinitions;
+using System;
 using Xamarin.Forms;
 using Xunit;
 
@@ -35,6 +35,8 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
         [Theory]
         [InlineData("90deg", 270, true)]
         [InlineData("224deg", 44, true)]
+        [InlineData("0deg", 180, true)]
+        [InlineData("0", 180, true)]
         [InlineData("90", 0, false)]
         [InlineData("", 0, false)]
         public void TryConvertDegreeToAngle_CssToken_ConvertedCorrectly(string token, double expectedResult, bool expectedSuccess)
@@ -46,8 +48,11 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
             var success = definition.TryConvertDegreeToAngle(token, out var result);
 
             // Assert
-            success.Should().Be(expectedSuccess);
-            result.Should().BeApproximately(expectedResult, 0.00001d);
+            using (new AssertionScope())
+            {
+                success.Should().Be(expectedSuccess);
+                result.Should().BeApproximately(expectedResult, 0.00001d);
+            }
         }
 
         [Theory]
@@ -68,8 +73,11 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
             var success = definition.TryConvertNamedDirectionToAngle(token, out var result);
 
             // Assert
-            success.Should().Be(true);
-            result.Should().BeApproximately(expectedAngle, 0.00001d);
+            using (new AssertionScope())
+            {
+                success.Should().Be(true);
+                result.Should().BeApproximately(expectedAngle, 0.00001d);
+            }
         }
 
         [Theory]
@@ -90,8 +98,11 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
             var success = definition.TryConvertNamedDirectionToAngle(token, out var result);
 
             // Assert
-            success.Should().Be(false);
-            result.Should().BeApproximately(0, 0.00001d);
+            using (new AssertionScope())
+            {
+                success.Should().Be(false);
+                result.Should().BeApproximately(0, 0.00001d);
+            }
         }
 
         [Fact]
