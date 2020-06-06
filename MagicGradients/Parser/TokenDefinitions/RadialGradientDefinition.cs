@@ -5,6 +5,8 @@ namespace MagicGradients.Parser.TokenDefinitions
 {
     public class RadialGradientDefinition : ITokenDefinition
     {
+        protected OffsetTypeConverter OffsetConverter { get; } = new OffsetTypeConverter();
+
         public bool IsMatch(string token) => 
             token == CssToken.RadialGradient || 
             token == CssToken.RepeatingRadialGradient;
@@ -67,8 +69,8 @@ namespace MagicGradients.Parser.TokenDefinitions
                     var tokenX = reader.ReadNext();
                     var tokenY = reader.ReadNext();
 
-                    var isPosX = tokenX.TryConvertOffset(out var posX);
-                    var isPosY = tokenY.TryConvertOffset(out var posY);
+                    var isPosX = OffsetConverter.TryExtractOffset(tokenX, out var posX);
+                    var isPosY = OffsetConverter.TryExtractOffset(tokenY, out var posY);
 
                     var direction = Vector2.Zero;
 
@@ -83,8 +85,8 @@ namespace MagicGradients.Parser.TokenDefinitions
                     }
 
                     return new Point(
-                        isPosX ? posX : (direction.X + 1) / 2, 
-                        isPosY ? posY : (direction.Y + 1) / 2);
+                        isPosX ? posX.Value : (direction.X + 1) / 2, 
+                        isPosY ? posY.Value : (direction.Y + 1) / 2);
                 }
             }
 

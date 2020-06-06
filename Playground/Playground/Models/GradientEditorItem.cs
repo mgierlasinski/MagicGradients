@@ -41,7 +41,7 @@ namespace Playground.Models
                 Stops = gradient.Stops.Select(s => new GradientEditorStop
                 {
                     Color = s.Color,
-                    Offset = s.Offset
+                    Offset = s.Offset.Value
                 }).ToList(),
             };
 
@@ -62,7 +62,7 @@ namespace Playground.Models
     {
         public Color Color { get; set; }
 
-        public float Offset { get; set; }
+        public double Offset { get; set; }
 
         public string ColorName => Color.ToHex();
 

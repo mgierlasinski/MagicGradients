@@ -43,25 +43,41 @@ namespace MagicGradients
         }
 
         public abstract void Render(RenderContext context);
+        protected abstract double CalculateRenderOffset(double offset, int width, int height);
 
         public virtual void Measure(int width, int height)
+        {
+            foreach (var stop in Stops)
+            {
+                if (stop.Offset.IsEmpty)
+                    continue;
+
+                stop.RenderOffset = stop.Offset.Type == OffsetType.Proportional
+                    ? (float)stop.Offset.Value
+                    : (float)CalculateRenderOffset(stop.Offset.Value, width, height);
+            }
+
+            CalculateUndefinedOffsets();
+        }
+
+        private void CalculateUndefinedOffsets()
         {
             var fromIndex = 0;
 
             for (var i = 0; i < Stops.Count; i++)
             {
-                if (Stops[i].Offset >= 0 || i == Stops.Count - 1)
+                if (Stops[i].Offset.Value >= 0 || i == Stops.Count - 1)
                 {
-                    SetupUndefinedOffsets(fromIndex, i);
+                    CalculateUndefinedRange(fromIndex, i);
                     fromIndex = i;
                 }
             }
         }
 
-        private void SetupUndefinedOffsets(int fromIndex, int toIndex)
+        private void CalculateUndefinedRange(int fromIndex, int toIndex)
         {
-            var currentOffset = Math.Max(Stops[fromIndex].Offset, 0);
-            var endOffset = Math.Abs(Stops[toIndex].Offset);
+            var currentOffset = Math.Max(Stops[fromIndex].Offset.Value, 0);
+            var endOffset = Math.Abs(Stops[toIndex].Offset.Value);
 
             var step = (endOffset - currentOffset) / (toIndex - fromIndex);
 
@@ -69,9 +85,9 @@ namespace MagicGradients
             {
                 var stop = Stops[i];
 
-                if (stop.Offset < 0)
+                if (stop.Offset.Value < 0)
                 {
-                    stop.RenderOffset = currentOffset;
+                    stop.RenderOffset = (float)currentOffset;
                 }
                 currentOffset += step;
             }

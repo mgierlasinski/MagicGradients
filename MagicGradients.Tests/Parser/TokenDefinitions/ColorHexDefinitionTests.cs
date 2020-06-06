@@ -28,8 +28,8 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
         }
 
         [Theory]
-        [MemberData(nameof(ColorHexDefinitionTestsData.ColorParseData), MemberType = typeof(ColorHexDefinitionTestsData))]
-        public void Parse_ValidColor_SingleStopWithColorAndOffset(string color, Color expectedColor, float expectedOffset)
+        [ClassData(typeof(ColorHexDefinitionData))]
+        public void Parse_ValidColor_SingleStopWithColorAndOffset(string color, Color expectedColor, double expectedOffset)
         {
             // Arrange
             var reader = new CssReader(color);
@@ -48,7 +48,7 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
                 stops.Should().HaveCount(1);
                 
                 stops[0].Color.Should().Be(expectedColor);
-                stops[0].Offset.Should().Be(expectedOffset);
+                stops[0].Offset.Value.Should().Be(expectedOffset);
             }
         }
     }

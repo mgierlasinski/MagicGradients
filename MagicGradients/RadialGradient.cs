@@ -8,7 +8,7 @@ namespace MagicGradients
         private readonly RadialGradientRenderer _renderer;
 
         public static readonly BindableProperty CenterProperty = BindableProperty.Create(
-            nameof(Center), typeof(Point), typeof(RadialGradient), default(Point));
+            nameof(Center), typeof(Point), typeof(RadialGradient), new Point(0.5, 0.5));
 
         public Point Center
         {
@@ -72,6 +72,12 @@ namespace MagicGradients
             System.Diagnostics.Debug.WriteLine($"Rendering Radial Gradient with {Stops.Count} stops");
 #endif
             _renderer.Render(context);
+        }
+
+        protected override double CalculateRenderOffset(double offset, int width, int height)
+        {
+            // TODO: calculate
+            return offset;
         }
     }
 }

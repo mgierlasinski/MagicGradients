@@ -14,21 +14,15 @@ namespace MagicGradients
         }
 
         public static readonly BindableProperty OffsetProperty = BindableProperty.Create(
-            nameof(Offset), typeof(float), typeof(GradientStop), -1f, 
-            propertyChanged: OnOffsetChanged);
+            nameof(Offset), typeof(Offset), typeof(GradientStop), Offset.Empty);
 
-        public float Offset
+        public Offset Offset
         {
-            get => (float)GetValue(OffsetProperty);
+            get => (Offset)GetValue(OffsetProperty);
             set => SetValue(OffsetProperty, value);
         }
 
         public float RenderOffset { get; set; } = -1f;
-
-        private static void OnOffsetChanged(BindableObject bindable, object oldvalue, object newvalue)
-        {
-            ((GradientStop)bindable).RenderOffset = (float)newvalue;
-        }
 
         public override string ToString()
         {

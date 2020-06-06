@@ -22,21 +22,15 @@ namespace MagicGradients
             _renderer = new LinearGradientRenderer(this);
         }
 
-        public override void Measure(int width, int height)
+        public override void Render(RenderContext context)
         {
-            base.Measure(width, height);
-
-            foreach (var stop in Stops)
-            {
-                if (stop.RenderOffset > 1.001)
-                {
-                    // Convert pixels to proportion
-                    stop.RenderOffset = GetOffsetFromPixels(stop.RenderOffset, width, height);
-                }
-            }
+#if DEBUG_RENDER
+            System.Diagnostics.Debug.WriteLine($"Rendering Linear Gradient with {Stops.Count} stops");
+#endif
+            _renderer.Render(context);
         }
 
-        private float GetOffsetFromPixels(float offset, int width, int height)
+        protected override double CalculateRenderOffset(double offset, int width, int height)
         {
             // Here the Pythagorean Theorem + Trigonometry is applied
             // to figure out the length of the gradient, which is needed to accurately calculate offset.
@@ -44,15 +38,7 @@ namespace MagicGradients
             var angleRad = GradientMath.ToRadians(Angle);
             var computedLength = Math.Sqrt(Math.Pow(width * Math.Cos(angleRad), 2) + Math.Pow(height * Math.Sin(angleRad), 2));
 
-            return computedLength != 0 ? (float)(offset / computedLength) : 1;
-        }
-
-        public override void Render(RenderContext context)
-        {
-#if DEBUG_RENDER
-            System.Diagnostics.Debug.WriteLine($"Rendering Linear Gradient with {Stops.Count} stops");
-#endif
-            _renderer.Render(context);
+            return computedLength != 0 ? offset / computedLength : 1;
         }
     }
 }
