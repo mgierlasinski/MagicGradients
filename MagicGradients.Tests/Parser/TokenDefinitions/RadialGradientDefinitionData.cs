@@ -1,5 +1,8 @@
 ﻿using Xamarin.Forms;
 using Xunit;
+using static MagicGradients.RadialGradientShape;
+using static MagicGradients.RadialGradientSize;
+using static MagicGradients.RadialGradientFlags;
 
 namespace MagicGradients.Tests.Parser.TokenDefinitions
 {
@@ -23,22 +26,24 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
 
         private void AddShapes()
         {
-            Add("radial-gradient(circle", new RadialGradient { Shape = RadialGradientShape.Circle });
-            Add("radial-gradient(ellipse", new RadialGradient { Shape = RadialGradientShape.Ellipse });
+            Add("radial-gradient(circle", new RadialGradient { Shape = Circle });
+            Add("radial-gradient(ellipse", new RadialGradient { Shape = Ellipse });
         }
 
         private void AddSizes()
         {
-            Add("radial-gradient(closest-side", new RadialGradient { Size = RadialGradientSize.ClosestSide });
-            Add("radial-gradient(closest-corner", new RadialGradient { Size = RadialGradientSize.ClosestCorner });
-            Add("radial-gradient(farthest-side", new RadialGradient { Size = RadialGradientSize.FarthestSide });
-            Add("radial-gradient(farthest-corner", new RadialGradient { Size = RadialGradientSize.FarthestCorner });
+            Add("radial-gradient(closest-side", new RadialGradient { Size = ClosestSide });
+            Add("radial-gradient(closest-corner", new RadialGradient { Size = ClosestCorner });
+            Add("radial-gradient(farthest-side", new RadialGradient { Size = FarthestSide });
+            Add("radial-gradient(farthest-corner", new RadialGradient { Size = FarthestCorner });
         }
 
         private void AddPositions()
         {
+            Add("radial-gradient(at 150px 150px", RadialAt(150, 150, None));
+            Add("radial-gradient(at 1px 1px", RadialAt(1, 1, None));
+            Add("radial-gradient(at 1% 1%", RadialAt(0.01, 0.01));
             Add("radial-gradient(at 50% 50%", RadialAt(0.5, 0.5));
-            Add("radial-gradient(at 150px 150px", RadialAt(150, 150, RadialGradientFlags.None));
             Add("radial-gradient(at top left", RadialAt(0, 0));
             Add("radial-gradient(at top right", RadialAt(1, 0));
             Add("radial-gradient(at bottom left", RadialAt(0, 1));
