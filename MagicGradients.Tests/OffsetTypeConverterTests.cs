@@ -1,11 +1,49 @@
 ﻿using FluentAssertions;
 using FluentAssertions.Execution;
+using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace MagicGradients.Tests
 {
     public class OffsetTypeConverterTests
     {
+        public static IEnumerable<object[]> ValidOffsets => new List<object[]>
+        {
+            new object[] { "0.5", Offset.Prop(0.5) },
+            new object[] { " 80%", Offset.Prop(0.8) },
+            new object[] { "40px ", Offset.Abs(40) }
+        };
+
+        [Theory]
+        [MemberData(nameof(ValidOffsets))]
+        public void ConvertFromInvariantString_ValidValue_ValueConverted(string value, Offset expected)
+        {
+            // Arrange
+            var converter = new OffsetTypeConverter();
+
+            // Act
+            var converted = converter.ConvertFromInvariantString(value);
+
+            // Assert
+            converted.Should().BeOfType<Offset>().And.BeEquivalentTo(expected);
+        }
+
+        [Theory]
+        [InlineData("30sp")]
+        [InlineData("15%%")]
+        public void ConvertFromInvariantString_InvalidValue_ValueConverted(string value)
+        {
+            // Arrange
+            var converter = new OffsetTypeConverter();
+
+            // Act
+            Action act = () => converter.ConvertFromInvariantString(value);
+
+            // Assert
+            act.Should().Throw<InvalidOperationException>();
+        }
+
         [Theory]
         [InlineData("70%", true, 0.7)]
         [InlineData("20px", true, 20)]

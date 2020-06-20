@@ -18,6 +18,9 @@ namespace MagicGradients
             Value = value;
             Type = type;
         }
+
+        public static Offset Prop(double value) => new Offset(value, OffsetType.Proportional);
+        public static Offset Abs(double value) => new Offset(value, OffsetType.Absolute);
     }
 
     public enum OffsetType

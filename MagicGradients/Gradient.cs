@@ -49,12 +49,9 @@ namespace MagicGradients
         {
             foreach (var stop in Stops)
             {
-                if (stop.Offset.IsEmpty)
-                    continue;
-
-                stop.RenderOffset = stop.Offset.Type == OffsetType.Proportional
-                    ? (float)stop.Offset.Value
-                    : (float)CalculateRenderOffset(stop.Offset.Value, width, height);
+                stop.RenderOffset = !stop.Offset.IsEmpty && stop.Offset.Type == OffsetType.Absolute 
+                    ? (float)CalculateRenderOffset(stop.Offset.Value, width, height) 
+                    : (float)stop.Offset.Value;
             }
 
             CalculateUndefinedOffsets();
@@ -66,7 +63,7 @@ namespace MagicGradients
 
             for (var i = 0; i < Stops.Count; i++)
             {
-                if (Stops[i].Offset.Value >= 0 || i == Stops.Count - 1)
+                if (Stops[i].RenderOffset >= 0 || i == Stops.Count - 1)
                 {
                     CalculateUndefinedRange(fromIndex, i);
                     fromIndex = i;
@@ -76,8 +73,8 @@ namespace MagicGradients
 
         private void CalculateUndefinedRange(int fromIndex, int toIndex)
         {
-            var currentOffset = Math.Max(Stops[fromIndex].Offset.Value, 0);
-            var endOffset = Math.Abs(Stops[toIndex].Offset.Value);
+            var currentOffset = Math.Max(Stops[fromIndex].RenderOffset, 0);
+            var endOffset = Math.Abs(Stops[toIndex].RenderOffset);
 
             var step = (endOffset - currentOffset) / (toIndex - fromIndex);
 
@@ -85,9 +82,9 @@ namespace MagicGradients
             {
                 var stop = Stops[i];
 
-                if (stop.Offset.Value < 0)
+                if (stop.RenderOffset < 0)
                 {
-                    stop.RenderOffset = (float)currentOffset;
+                    stop.RenderOffset = currentOffset;
                 }
                 currentOffset += step;
             }

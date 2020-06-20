@@ -2,12 +2,19 @@
 using FluentAssertions.Execution;
 using MagicGradients.Parser;
 using MagicGradients.Parser.TokenDefinitions;
+using MagicGradients.Tests.Mock;
+using Xamarin.Forms;
 using Xunit;
 
 namespace MagicGradients.Tests.Parser.TokenDefinitions
 {
     public class RadialGradientDefinitionTests
     {
+        public RadialGradientDefinitionTests()
+        {
+            Device.PlatformServices = new MockPlatformServices();
+        }
+
         [Theory]
         [ClassData(typeof(RadialGradientDefinitionData))]
         public void Parse_ValidGradientCss_ExpectedGradientReturned(string css, RadialGradient expectedGradient)

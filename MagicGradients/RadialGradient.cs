@@ -76,7 +76,6 @@ namespace MagicGradients
 
         protected override double CalculateRenderOffset(double offset, int width, int height)
         {
-            // TODO: calculate
             return offset;
         }
     }
