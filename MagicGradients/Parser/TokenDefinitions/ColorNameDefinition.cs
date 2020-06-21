@@ -1,12 +1,11 @@
 ﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
-    public class ColorNameDefinition : ITokenDefinition
+    public class ColorNameDefinition : ColorDefinition, ITokenDefinition
     {
-        protected ColorTypeConverter ColorConverter { get; } = new ColorTypeConverter();
-
         public bool IsMatch(string token)
         {
             var parts = token.Split('.');
@@ -17,8 +16,9 @@ namespace MagicGradients.Parser.TokenDefinitions
         {
             var parts = reader.Read().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             var color = (Color)ColorConverter.ConvertFromInvariantString(parts[0]);
+            var offsets = GetOffsets(parts);
 
-            if (parts.TryConvertOffsets(out var offsets))
+            if (offsets.Any())
             {
                 builder.AddStops(color, offsets);
             }

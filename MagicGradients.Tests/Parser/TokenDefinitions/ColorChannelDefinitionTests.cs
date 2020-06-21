@@ -1,8 +1,8 @@
-using System;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using MagicGradients.Parser;
 using MagicGradients.Parser.TokenDefinitions;
+using System;
 using System.Linq;
 using Xamarin.Forms;
 using Xunit;
@@ -31,8 +31,8 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
         }
 
         [Theory]
-        [MemberData(nameof(ColorChannelDefinitionTestsData.ColorParseData), MemberType = typeof(ColorChannelDefinitionTestsData))]
-        public void Parse_ValidColor_SingleStopWithColorAndOffset(string color, Color expectedColor, float expectedOffset)
+        [ClassData(typeof(ColorChannelDefinitionData))]
+        public void Parse_ValidColor_SingleStopWithColorAndOffset(string color, Color expectedColor, double expectedOffset)
         {
             // Arrange
             var reader = new CssReader(color);
@@ -51,7 +51,7 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
                 stops.Should().HaveCount(1);
 
                 stops[0].Color.Should().Be(expectedColor);
-                stops[0].Offset.Should().Be(expectedOffset);
+                stops[0].Offset.Value.Should().Be(expectedOffset);
             }
         }
 
@@ -73,25 +73,6 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
 
             // Assert
             colorInString.Should().Be(colorInCss);
-        }
-
-        [Theory]
-        [InlineData("%", 0, false)]
-        [InlineData("", 0, false)]
-        [InlineData(null, 0, false)]
-        [InlineData("10", 0, false)]
-        [InlineData("0%", 0, true)]
-        [InlineData("23%", 0.23, true)]
-        [InlineData("101%", 1, true)]
-        [InlineData("100%", 1, true)]
-        public void TryConvertPercentToOffset_ConvertingToken_SuccessAndResultConvertedCorrectly(string token, float expectedResult, bool expectedSuccess)
-        {
-            // Arrange & Act
-            var success = token.TryConvertOffset(out var result);
-
-            // Assert
-            success.Should().Be(expectedSuccess);
-            result.Should().Be(expectedResult);
         }
 
         [Theory]

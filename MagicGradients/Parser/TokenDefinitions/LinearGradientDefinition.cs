@@ -33,14 +33,14 @@ namespace MagicGradients.Parser.TokenDefinitions
         {
             if (token.TryExtractNumber("deg", out var degrees))
             {
-                angle = CssHelpers.FromDegrees(degrees);
+                angle = GradientMath.FromDegrees(degrees);
                 return true;
             }
 
             // For "0" deg is optional
             if (token.Equals("0", StringComparison.OrdinalIgnoreCase))
             {
-                angle = CssHelpers.FromDegrees(0);
+                angle = GradientMath.FromDegrees(0);
                 return true;
             }
 
@@ -52,7 +52,7 @@ namespace MagicGradients.Parser.TokenDefinitions
         {
             if (token.TryExtractNumber("turn", out var turn))
             {
-                angle = CssHelpers.FromDegrees(360 * turn);
+                angle = GradientMath.FromDegrees(360 * turn);
                 return true;
             }
 

@@ -47,12 +47,12 @@ namespace MagicGradients
             return this;
         }
 
-        public GradientBuilder AddStop(Color color, float? offset = null)
+        public GradientBuilder AddStop(Color color, Offset? offset = null)
         {
             var stop = new GradientStop
             {
                 Color = color,
-                Offset = offset ?? -1
+                Offset = offset ?? Offset.Empty
             };
 
             _stops.Add(stop);
@@ -60,7 +60,22 @@ namespace MagicGradients
             return this;
         }
 
-        public GradientBuilder AddStops(Color color, IEnumerable<float> offsets)
+        public GradientBuilder AddStop(Color color, double offset)
+        {
+            return AddStop(color, Offset.Prop(offset));
+        }
+
+        public GradientBuilder AddStops(Color color, IEnumerable<Offset> offsets)
+        {
+            foreach (var offset in offsets)
+            {
+                AddStop(color, offset);
+            }
+
+            return this;
+        }
+
+        public GradientBuilder AddStops(Color color, IEnumerable<double> offsets)
         {
             foreach (var offset in offsets)
             {

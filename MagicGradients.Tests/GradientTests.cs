@@ -14,8 +14,8 @@ namespace MagicGradients.Tests
             {
                 Stops = new GradientElements<GradientStop>
                 {
-                    new GradientStop { Offset = 0.1f },
-                    new GradientStop { Offset = 0.2f }
+                    new GradientStop { Offset = new Offset(0.1f, OffsetType.Proportional) },
+                    new GradientStop { Offset = new Offset(0.2f, OffsetType.Proportional) }
                 }
             };
 
@@ -67,10 +67,10 @@ namespace MagicGradients.Tests
                     new GradientStop(),
                     new GradientStop(),
                     new GradientStop(),
-                    new GradientStop { Offset = 0.6f },
+                    new GradientStop { Offset = new Offset(0.6f, OffsetType.Proportional) },
                     new GradientStop(),
                     new GradientStop(),
-                    new GradientStop { Offset = 0.9f },
+                    new GradientStop { Offset = new Offset(0.9f, OffsetType.Proportional) },
                     new GradientStop()
                 }
             };

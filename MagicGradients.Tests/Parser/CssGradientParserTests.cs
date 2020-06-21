@@ -1,5 +1,7 @@
 using FluentAssertions;
+using FluentAssertions.Execution;
 using MagicGradients.Parser;
+using MagicGradients.Tests.Mock;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xunit;
@@ -26,12 +28,15 @@ namespace MagicGradients.Tests.Parser
             var gradients = parser.ParseCss(css);
 
             // Assert
-            gradients.Should().NotBeNull();
-            gradients.Should().HaveCount(0);
+            using (new AssertionScope())
+            {
+                gradients.Should().NotBeNull();
+                gradients.Should().HaveCount(0);
+            }
         }
 
         [Theory]
-        [MemberData(nameof(CssGradientParserTestData.SimpleGradients), MemberType = typeof(CssGradientParserTestData))]
+        [ClassData(typeof(GradientsSimple))]
         public void ParseCss_SimpleGradients_CorrectlyParsed(string css, LinearGradient expected)
         {
             // Arrange
@@ -41,12 +46,15 @@ namespace MagicGradients.Tests.Parser
             var gradients = parser.ParseCss(css);
 
             // Assert
-            gradients.Should().HaveCount(1);
-            gradients[0].Should().BeEquivalentTo(expected, options => options.IgnoringCyclicReferences());
+            using (new AssertionScope())
+            {
+                gradients.Should().HaveCount(1);
+                gradients[0].Should().BeEquivalentTo(expected, options => options.IgnoringCyclicReferences());
+            }
         }
 
         [Theory]
-        [MemberData(nameof(CssGradientParserTestData.GradientsWithoutOffsets), MemberType = typeof(CssGradientParserTestData))]
+        [ClassData(typeof(GradientsWithoutOffsets))]
         public void ParseCss_GradientsWithoutOffsets_AutomaticallyAssignedOffsets(string css, LinearGradient expected)
         {
             // Arrange
@@ -57,27 +65,32 @@ namespace MagicGradients.Tests.Parser
             gradients.ForEach(x => x.Measure(0, 0));
 
             // Assert
-            gradients.Should().HaveCount(1);
-            gradients[0].Should().BeEquivalentTo(expected, options => options.IgnoringCyclicReferences());
+            using (new AssertionScope())
+            {
+                gradients.Should().HaveCount(1);
+                gradients[0].Should().BeEquivalentTo(expected, options => options.IgnoringCyclicReferences());
+            }
         }
 
-        [Fact]
-        public void ParseCss_ComplexGradientsCss_EachGradientHaveCorrectAngleAndStopsCount()
+        [Theory]
+        [ClassData(typeof(GradientsComplex))]
+        public void ParseCss_ComplexGradientsCss_EachGradientHaveCorrectAngleAndStopsCount(string css, Gradient[] expectedGradients)
         {
             // Arrange
-            var css = CssGradientParserTestData.ComplexGradientsCss;
-            var expectedGradients = CssGradientParserTestData.ComplexGradientsExpected;
             var parser = new CssGradientParser();
 
             // Act
             var gradients = parser.ParseCss(css);
 
             // Assert
-            gradients.Should().HaveCount(expectedGradients.Length);
-
-            for (var i = 0; i < gradients.Length; i++)
+            using (new AssertionScope())
             {
-                gradients[i].Stops.Should().HaveCount(expectedGradients[i].Stops.Count);
+                gradients.Should().HaveCount(expectedGradients.Length);
+
+                for (var i = 0; i < gradients.Length; i++)
+                {
+                    gradients[i].Stops.Should().HaveCount(expectedGradients[i].Stops.Count);
+                }
             }
         }
     }

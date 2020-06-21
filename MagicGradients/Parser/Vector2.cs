@@ -36,8 +36,9 @@ namespace MagicGradients.Parser
                     Y = 1;
                     break;
                 case "center":
-                    X = 0;
-                    Y = 0;
+                    // center should be default:
+                    // X = 0;
+                    // Y = 0;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException($"Unrecognized direction: '{direction}'");

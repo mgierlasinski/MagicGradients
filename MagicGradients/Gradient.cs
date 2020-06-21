@@ -43,25 +43,38 @@ namespace MagicGradients
         }
 
         public abstract void Render(RenderContext context);
+        protected abstract double CalculateRenderOffset(double offset, int width, int height);
 
         public virtual void Measure(int width, int height)
+        {
+            foreach (var stop in Stops)
+            {
+                stop.RenderOffset = !stop.Offset.IsEmpty && stop.Offset.Type == OffsetType.Absolute 
+                    ? (float)CalculateRenderOffset(stop.Offset.Value, width, height) 
+                    : (float)stop.Offset.Value;
+            }
+
+            CalculateUndefinedOffsets();
+        }
+
+        private void CalculateUndefinedOffsets()
         {
             var fromIndex = 0;
 
             for (var i = 0; i < Stops.Count; i++)
             {
-                if (Stops[i].Offset >= 0 || i == Stops.Count - 1)
+                if (Stops[i].RenderOffset >= 0 || i == Stops.Count - 1)
                 {
-                    SetupUndefinedOffsets(fromIndex, i);
+                    CalculateUndefinedRange(fromIndex, i);
                     fromIndex = i;
                 }
             }
         }
 
-        private void SetupUndefinedOffsets(int fromIndex, int toIndex)
+        private void CalculateUndefinedRange(int fromIndex, int toIndex)
         {
-            var currentOffset = Math.Max(Stops[fromIndex].Offset, 0);
-            var endOffset = Math.Abs(Stops[toIndex].Offset);
+            var currentOffset = Math.Max(Stops[fromIndex].RenderOffset, 0);
+            var endOffset = Math.Abs(Stops[toIndex].RenderOffset);
 
             var step = (endOffset - currentOffset) / (toIndex - fromIndex);
 
@@ -69,7 +82,7 @@ namespace MagicGradients
             {
                 var stop = Stops[i];
 
-                if (stop.Offset < 0)
+                if (stop.RenderOffset < 0)
                 {
                     stop.RenderOffset = currentOffset;
                 }

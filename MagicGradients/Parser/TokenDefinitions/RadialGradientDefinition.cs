@@ -1,10 +1,13 @@
 ﻿using System;
 using Xamarin.Forms;
+using static MagicGradients.RadialGradientFlags;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
     public class RadialGradientDefinition : ITokenDefinition
     {
+        protected OffsetTypeConverter OffsetConverter { get; } = new OffsetTypeConverter();
+
         public bool IsMatch(string token) => 
             token == CssToken.RadialGradient || 
             token == CssToken.RepeatingRadialGradient;
@@ -18,8 +21,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             
             var shape = GetShape(internalReader);
             var shapeSize = GetShapeSize(internalReader);
-            var position = GetPosition(internalReader);
-            var flags = GetFlags(position);
+            var (position, flags) = GetPositionWithFlags(internalReader);
 
             builder.AddRadialGradient(position, shape, shapeSize, flags, isRepeating);
         }
@@ -56,7 +58,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             return RadialGradientSize.FarthestCorner;
         }
 
-        private Point GetPosition(CssReader reader)
+        private (Point, RadialGradientFlags) GetPositionWithFlags(CssReader reader)
         {
             if (reader.CanRead)
             {
@@ -67,8 +69,8 @@ namespace MagicGradients.Parser.TokenDefinitions
                     var tokenX = reader.ReadNext();
                     var tokenY = reader.ReadNext();
 
-                    var isPosX = tokenX.TryConvertOffset(out var posX);
-                    var isPosY = tokenY.TryConvertOffset(out var posY);
+                    var isPosX = OffsetConverter.TryExtractOffset(tokenX, out var posX);
+                    var isPosY = OffsetConverter.TryExtractOffset(tokenY, out var posY);
 
                     var direction = Vector2.Zero;
 
@@ -82,30 +84,23 @@ namespace MagicGradients.Parser.TokenDefinitions
                         direction.SetNamedDirection(tokenY);
                     }
 
-                    return new Point(
-                        isPosX ? posX : (direction.X + 1) / 2, 
-                        isPosY ? posY : (direction.Y + 1) / 2);
+                    var flags = None;
+
+                    if(!isPosX || posX.Type == OffsetType.Proportional)
+                        flags |= XProportional;
+
+                    if (!isPosY || posY.Type == OffsetType.Proportional)
+                        flags |= YProportional;
+
+                    var center = new Point(
+                        isPosX ? posX.Value : (direction.X + 1) / 2,
+                        isPosY ? posY.Value : (direction.Y + 1) / 2);
+
+                    return (center, flags);
                 }
             }
 
-            return new Point(0.5, 0.5);
-        }
-
-        private RadialGradientFlags GetFlags(Point position)
-        {
-            var flags = RadialGradientFlags.None;
-
-            if (position.X <= 1)
-            {
-                flags |= RadialGradientFlags.XProportional;
-            }
-
-            if (position.Y <= 1)
-            {
-                flags |= RadialGradientFlags.YProportional;
-            }
-
-            return flags;
+            return (new Point(0.5, 0.5), PositionProportional);
         }
     }
 }

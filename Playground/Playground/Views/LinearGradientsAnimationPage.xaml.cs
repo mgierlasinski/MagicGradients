@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MagicGradients;
+using Xamarin.Forms;
 
 namespace Playground.Views
 {
@@ -20,8 +21,8 @@ namespace Playground.Views
 
         private void AnimateScanner()
         {
-            var animationOffset = new Animation(v => ScannerTarget.Offset = (float)v, 0, 1);
-            var animationOffsetBack = new Animation(v => ScannerTarget.Offset = (float)v, 1, 0);
+            var animationOffset = new Animation(v => ScannerTarget.Offset = new Offset(v, OffsetType.Proportional), 0, 1);
+            var animationOffsetBack = new Animation(v => ScannerTarget.Offset = new Offset(v, OffsetType.Proportional), 1, 0);
 
             var parentAnimation = new Animation
             {

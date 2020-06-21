@@ -3,6 +3,7 @@ using FluentAssertions.Execution;
 using MagicGradients.Parser;
 using MagicGradients.Parser.TokenDefinitions;
 using System;
+using MagicGradients.Tests.Mock;
 using Xamarin.Forms;
 using Xunit;
 
@@ -119,7 +120,7 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
         }
 
         [Theory]
-        [MemberData(nameof(LinearGradientDefinitionTestsData.GradientParseData), MemberType = typeof(LinearGradientDefinitionTestsData))]
+        [ClassData(typeof(LinearGradientDefinitionData))]
         public void Parse_ValidGradientCss_ExpectedGradientReturned(string css, LinearGradient expectedGradient)
         {
             // Arrange
@@ -136,9 +137,9 @@ namespace MagicGradients.Tests.Parser.TokenDefinitions
             using (new AssertionScope())
             {
                 result.Should().HaveCount(1);
-                var linearGradient = result[0] as LinearGradient;
-                linearGradient.Should().NotBeNull();
-                linearGradient.Should().BeEquivalentTo(expectedGradient);
+                var gradient = result[0] as LinearGradient;
+                gradient.Should().NotBeNull();
+                gradient.Should().BeEquivalentTo(expectedGradient);
             }
         }
     }
