@@ -19,7 +19,9 @@ namespace Playground.Services
 
         public IEnumerable<GradientItem> GetGradients(string tag)
         {
-            return _gradientRepository.GetByTag(tag).Select(MapGradient);
+            var x = _gradientRepository.GetByTag(tag);
+            var y = x.Select(MapGradient);
+             return y;
         }
 
         public IEnumerable<GradientItem> FilterGradients(string category, params string[] tags)

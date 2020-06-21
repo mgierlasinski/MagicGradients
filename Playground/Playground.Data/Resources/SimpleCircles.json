@@ -2,12 +2,12 @@
   {
     "slug": "ebffbf99-9116-4e01-a323-47803bedba22",
     "stylesheet": "radial-gradient(circle at 85% 1%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 96%, transparent 96%, transparent 100%), radial-gradient(circle at 14% 15%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 1%, transparent 1%, transparent 100%), radial-gradient(circle at 60% 90%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 20%, transparent 20%, transparent 100%), radial-gradient(circle at 79% 7%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 78%, transparent 78%, transparent 100%), radial-gradient(circle at 55% 65%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 52%, transparent 52%, transparent 100%), linear-gradient(135deg, rgb(37, 56, 222), rgb(96, 189, 244))",
-    "tags": [ "simplecircles" ]
+    "tags": [ "simplecircles", "popular" ]
   },
   {
     "slug": "54c401f5-4fe4-416a-a2aa-98d9258e6b47",
     "stylesheet": "radial-gradient(circle at 40% 91%, rgba(251, 251, 251, 0.04) 0%, rgba(251, 251, 251, 0.04) 50%, rgba(229, 229, 229, 0.04) 50%, rgba(229, 229, 229, 0.04) 100%), radial-gradient(circle at 66% 97%, rgba(36, 36, 36, 0.04) 0%, rgba(36, 36, 36, 0.04) 50%, rgba(46, 46, 46, 0.04) 50%, rgba(46, 46, 46, 0.04) 100%), radial-gradient(circle at 86% 7%, rgba(40, 40, 40, 0.04) 0%, rgba(40, 40, 40, 0.04) 50%, rgba(200, 200, 200, 0.04) 50%, rgba(200, 200, 200, 0.04) 100%), radial-gradient(circle at 15% 16%, rgba(99, 99, 99, 0.04) 0%, rgba(99, 99, 99, 0.04) 50%, rgba(45, 45, 45, 0.04) 50%, rgba(45, 45, 45, 0.04) 100%), radial-gradient(circle at 75% 99%, rgba(243, 243, 243, 0.04) 0%, rgba(243, 243, 243, 0.04) 50%, rgba(37, 37, 37, 0.04) 50%, rgba(37, 37, 37, 0.04) 100%), linear-gradient(90deg, rgb(34, 222, 237), rgb(135, 89, 215))",
-    "tags": [ "simplecircles" ]
+    "tags": [ "simplecircles", "popular" ]
   },
   {
     "slug": "c860c3da-62df-401e-88a7-ae0cc0989a33",
@@ -72,7 +72,7 @@
   {
     "slug": "cf72b247-1ee0-45e8-baf8-cfb231c09294",
     "stylesheet": "radial-gradient(circle at 99% 0%, rgba(235, 235, 235, 0.03) 0%, rgba(235, 235, 235, 0.03) 50%, rgba(142, 142, 142, 0.03) 50%, rgba(142, 142, 142, 0.03) 100%), radial-gradient(circle at 84% 89%, rgba(229, 229, 229, 0.03) 0%, rgba(229, 229, 229, 0.03) 50%, rgba(1, 1, 1, 0.03) 50%, rgba(1, 1, 1, 0.03) 100%), radial-gradient(circle at 89% 20%, rgba(219, 219, 219, 0.03) 0%, rgba(219, 219, 219, 0.03) 50%, rgba(38, 38, 38, 0.03) 50%, rgba(38, 38, 38, 0.03) 100%), radial-gradient(circle at 90% 0%, rgba(48, 48, 48, 0.03) 0%, rgba(48, 48, 48, 0.03) 50%, rgba(109, 109, 109, 0.03) 50%, rgba(109, 109, 109, 0.03) 100%), linear-gradient(45deg, rgb(26, 53, 180), rgb(164, 129, 216))",
-    "tags": [ "simplecircles" ]
+    "tags": [ "simplecircles", "popular" ]
   },
   {
     "slug": "524d0814-4789-4d68-bb03-7060de942290",
