@@ -45,24 +45,39 @@
     "slug": "c860c3da-62df-401e-88a7-ae0cc0989a33"
   },
   {
-    "name": "Complex Grid",
-    "tag": "complexgrid"
+    "name": "Gingham Colored",
+    "tag": "ginghamcolored",
+    "slug": "d24451fa-3117-45fd-8178-72099d35b0d7"
   },
   {
-    "name": "Gingham Colored",
-    "tag": "ginghamcolored"
+    "name": "Complex Grid",
+    "tag": "complexgrid",
+    "slug": "8e7d92e0-2f45-400f-a628-dea37d3674a3"
   },
   {
     "name": "Gingham",
-    "tag": "gingham"
+    "tag": "gingham",
+    "slug": "2a549631-4147-4f45-be95-addf71ced64c"
   },
   {
     "name": "Basic Grid",
-    "tag": "basicgrid"
+    "tag": "basicgrid",
+    "slug": "8db77070-d8ba-4690-8fa4-6fbf5794111c"
   },
   {
     "name": "Complex Shapes",
-    "tag": "complexshapes"
+    "tag": "complexshapes",
+    "slug": "001b855a-95c3-445b-ab7e-d1f901dfd5ec"
+  },
+  {
+    "name": "Simple Angular",
+    "tag": "simpleangular",
+    "slug": "e8fd2744-b9e4-4884-a1cf-4b2ae13d08ee"
+  },
+  {
+    "name": "Squares",
+    "tag": "checkered",
+    "slug": "904a52c1-c0ab-46eb-92ee-f09449fc788f"
   },
   {
     "name": "Complex Repeating Stripes",
@@ -73,10 +88,6 @@
     "name": "Uneven Diamonds",
     "tag": "backgammon",
     "slug": "cf1dc365-7ff2-49b5-9148-6278431ae7c7"
-  },
-  {
-    "name": "Simple Angular",
-    "tag": "simpleangular"
   },
   {
     "name": "Standard - Asymetrical",
@@ -127,10 +138,6 @@
     "name": "Complex Angular",
     "tag": "angular",
     "slug": "f3c67c61-71e8-4924-bd75-f16ccc270cb1"
-  },
-  {
-    "name": "Squares",
-    "tag": "checkered"
   },
   {
     "name": "Even Stripes",

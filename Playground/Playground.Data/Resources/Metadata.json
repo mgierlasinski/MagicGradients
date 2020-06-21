@@ -1,5 +1,5 @@
 {
-  "version": 30,
+  "version": 33,
   "namespace": "Playground.Data.Resources",
   "categories": "Categories.json",
   "themes": "Themes.json",
@@ -31,6 +31,7 @@
     "Diamond.json",
     "Angular.json",
     "Checkered.json",
-    "Stripes.json"
+    "Stripes.json",
+    "StandardAsymmetrical.json"
   ]
 }
