@@ -73,5 +73,30 @@ namespace MagicGradients.Tests
                 gradients[0].Stops.Should().HaveCount(2);
             }
         }
+
+        [Fact]
+        public void FluentApi_Build_CreateGradients()
+        {
+            // Act
+            var gradients = new GradientBuilder()
+                .AddLinearGradient(g => g
+                    .Rotate(30)
+                    .Repeat())
+                .AddLinearGradient(g => g
+                    .Rotate(20)
+                    .Repeat()
+                    .AddStop(Color.Red, Offset.Prop(0.2))
+                    .AddStop(Color.Blue, Offset.Prop(0.4)))
+                .AddRadialGradient(g => g
+                    .Circle().At(30, 30)
+                    .Radius(200, 200)
+                    .StretchTo(RadialGradientSize.FarthestSide)
+                    .Repeat()
+                    .AddStops(Color.Red, Color.Green, Color.Blue))
+                .Build();
+
+            // Assert
+            gradients.Should().HaveCount(3);
+        }
     }
 }
