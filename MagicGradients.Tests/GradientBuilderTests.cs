@@ -98,5 +98,23 @@ namespace MagicGradients.Tests
             // Assert
             gradients.Should().HaveCount(3);
         }
+
+        [Fact]
+        public void FluentApi_ToSource_GradientCollectionWithGradients()
+        {
+            // Act
+            var source = new GradientBuilder()
+                .AddLinearGradient(g => g
+                    .Rotate(20)
+                    .AddStops(Color.Red, Color.Green, Color.Blue))
+                .ToSource();
+
+            // Assert
+            using (new AssertionScope())
+            {
+                source.Should().BeOfType<GradientCollection>();
+                source.GetGradients().Should().HaveCount(1);
+            }
+        }
     }
 }
