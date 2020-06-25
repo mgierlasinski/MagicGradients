@@ -27,7 +27,7 @@
   {
     "slug": "7726351b-9961-4560-8a9c-0b825d19b6c4",
     "stylesheet": "radial-gradient(circle at right, rgb(202, 57, 146), rgb(11, 5, 110))",
-    "tags": [ "standardcircle" ]
+    "tags": [ "standardcircle", "popular" ]
   },
   {
     "slug": "d8f02f0c-d3c9-4049-a1f8-71bda6c650a5",
@@ -142,7 +142,7 @@
   {
     "slug": "9718b5d3-277e-4496-94a2-18bcc0ee16ae",
     "stylesheet": "radial-gradient(circle at center, rgb(69, 48, 242), rgb(63, 48, 184), rgb(56, 48, 125), rgb(50, 47, 67), rgb(43, 47, 8))",
-    "tags": [ "standardcircle" ]
+    "tags": [ "standardcircle", "popular" ]
   },
   {
     "slug": "ac8277f4-58d4-47f3-861b-3bb35ebe5cdb",
@@ -152,7 +152,7 @@
   {
     "slug": "f8fdd0c9-46c4-4099-b0ab-456b1d2b636c",
     "stylesheet": "radial-gradient(circle at center, rgb(241, 195, 19), rgb(244, 150, 32), rgb(246, 105, 45), rgb(249, 59, 57), rgb(251, 14, 70))",
-    "tags": [ "standardcircle" ]
+    "tags": [ "standardcircle", "popular" ]
   },
   {
     "slug": "9fc22279-ea14-444b-bab4-c424f4f3a131",
@@ -197,7 +197,7 @@
   {
     "slug": "6f4dee3a-479e-4ba1-94d5-0de367d99438",
     "stylesheet": "radial-gradient(circle at top, rgb(255, 13, 187), rgb(115, 55, 110))",
-    "tags": [ "standardcircle" ]
+    "tags": [ "standardcircle", "popular" ]
   },
   {
     "slug": "ba3b721c-2b08-4527-930c-5df87f903d27",

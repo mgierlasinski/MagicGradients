@@ -37,12 +37,12 @@
   {
     "slug": "cf70b8ff-d7e6-4c29-96f2-473bb812ab02",
     "stylesheet": "linear-gradient(353deg, rgb(242, 82, 69), rgb(131, 28, 80))",
-    "tags": [ "standard" ]
+    "tags": [ "standard", "popular" ]
   },
   {
     "slug": "d13ef18e-13b8-48ce-a092-ba2f0fd2613f",
     "stylesheet": "linear-gradient(3deg, rgb(249, 144, 110), rgb(225, 14, 225))",
-    "tags": [ "standard" ]
+    "tags": [ "standard", "popular" ]
   },
   {
     "slug": "12f04648-58f4-4eb4-b763-6a92a7c65e34",
@@ -52,7 +52,7 @@
   {
     "slug": "baeea6ca-16b9-4965-afad-8220a11f97a6",
     "stylesheet": "linear-gradient(90deg, rgb(243, 114, 209) 0%, rgb(44, 19, 241) 100%)",
-    "tags": [ "standard" ]
+    "tags": [ "standard", "popular" ]
   },
   {
     "slug": "f1103fd3-e80c-45eb-a66a-029155748c1d",

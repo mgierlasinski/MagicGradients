@@ -7,7 +7,7 @@
   {
     "slug": "257e6aaa-447d-449a-aea0-b61028012d54",
     "stylesheet": "repeating-linear-gradient(135deg, rgba(6, 6, 6, 0.08) 0px, rgba(6, 6, 6, 0.08) 36px, rgba(0, 0, 0, 0.08) 36px, rgba(0, 0, 0, 0.08) 83px, rgba(70, 70, 70, 0.08) 83px, rgba(70, 70, 70, 0.08) 115px, rgba(147, 147, 147, 0.08) 115px, rgba(147, 147, 147, 0.08) 150px, rgba(142, 142, 142, 0.08) 150px, rgba(142, 142, 142, 0.08) 182px), repeating-linear-gradient(135deg, rgba(71, 71, 71, 0.08) 0px, rgba(71, 71, 71, 0.08) 32px, rgba(184, 184, 184, 0.08) 32px, rgba(184, 184, 184, 0.08) 78px, rgba(122, 122, 122, 0.08) 78px, rgba(122, 122, 122, 0.08) 99px, rgba(245, 245, 245, 0.08) 99px, rgba(245, 245, 245, 0.08) 117px, rgba(23, 23, 23, 0.08) 117px, rgba(23, 23, 23, 0.08) 127px), repeating-linear-gradient(135deg, rgba(79, 79, 79, 0.08) 0px, rgba(79, 79, 79, 0.08) 129px, rgba(249, 249, 249, 0.08) 129px, rgba(249, 249, 249, 0.08) 220px, rgba(120, 120, 120, 0.08) 220px, rgba(120, 120, 120, 0.08) 327px, rgba(52, 52, 52, 0.08) 327px, rgba(52, 52, 52, 0.08) 445px, rgba(230, 230, 230, 0.08) 445px, rgba(230, 230, 230, 0.08) 520px), repeating-linear-gradient(135deg, rgba(72, 72, 72, 0.08) 0px, rgba(72, 72, 72, 0.08) 50px, rgba(86, 86, 86, 0.08) 50px, rgba(86, 86, 86, 0.08) 171px, rgba(231, 231, 231, 0.08) 171px, rgba(231, 231, 231, 0.08) 270px, rgba(245, 245, 245, 0.08) 270px, rgba(245, 245, 245, 0.08) 326px, rgba(123, 123, 123, 0.08) 326px, rgba(123, 123, 123, 0.08) 458px), linear-gradient(90deg, rgb(155, 34, 101), rgb(255, 18, 198))",
-    "tags": [ "complexrepstripes" ]
+    "tags": [ "complexrepstripes", "popular" ]
   },
   {
     "slug": "7d9e1188-25e8-490a-8e55-a0d6818ba3b8",
@@ -17,7 +17,7 @@
   {
     "slug": "fd020a08-8b05-43b5-8ec4-a762d29c95c5",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(147, 147, 147, 0.08) 0px, rgba(147, 147, 147, 0.08) 44px, rgba(223, 223, 223, 0.08) 44px, rgba(223, 223, 223, 0.08) 64px, rgba(0, 0, 0, 0.08) 64px, rgba(0, 0, 0, 0.08) 100px, rgba(227, 227, 227, 0.08) 100px, rgba(227, 227, 227, 0.08) 123px, rgba(145, 145, 145, 0.08) 123px, rgba(145, 145, 145, 0.08) 151px), repeating-linear-gradient(90deg, rgba(49, 49, 49, 0.08) 0px, rgba(49, 49, 49, 0.08) 10px, rgba(121, 121, 121, 0.08) 10px, rgba(121, 121, 121, 0.08) 26px, rgba(212, 212, 212, 0.08) 26px, rgba(212, 212, 212, 0.08) 73px, rgba(45, 45, 45, 0.08) 73px, rgba(45, 45, 45, 0.08) 104px, rgba(249, 249, 249, 0.08) 104px, rgba(249, 249, 249, 0.08) 136px), repeating-linear-gradient(90deg, rgba(190, 190, 190, 0.08) 0px, rgba(190, 190, 190, 0.08) 123px, rgba(77, 77, 77, 0.08) 123px, rgba(77, 77, 77, 0.08) 227px, rgba(143, 143, 143, 0.08) 227px, rgba(143, 143, 143, 0.08) 329px, rgba(175, 175, 175, 0.08) 329px, rgba(175, 175, 175, 0.08) 457px, rgba(41, 41, 41, 0.08) 457px, rgba(41, 41, 41, 0.08) 587px), repeating-linear-gradient(90deg, rgba(246, 246, 246, 0.08) 0px, rgba(246, 246, 246, 0.08) 79px, rgba(222, 222, 222, 0.08) 79px, rgba(222, 222, 222, 0.08) 210px, rgba(72, 72, 72, 0.08) 210px, rgba(72, 72, 72, 0.08) 296px, rgba(191, 191, 191, 0.08) 296px, rgba(191, 191, 191, 0.08) 443px, rgba(156, 156, 156, 0.08) 443px, rgba(156, 156, 156, 0.08) 516px), linear-gradient(90deg, rgb(16, 62, 199), rgb(4, 80, 214))",
-    "tags": [ "complexrepstripes" ]
+    "tags": [ "complexrepstripes", "popular" ]
   },
   {
     "slug": "a062ea92-e388-47fb-81f4-253e83013adb",
@@ -37,7 +37,7 @@
   {
     "slug": "4539b8af-575a-4195-834e-580abc3370db",
     "stylesheet": "repeating-linear-gradient(135deg, rgba(101, 101, 101, 0.1) 0px, rgba(101, 101, 101, 0.1) 15px, rgba(229, 229, 229, 0.1) 15px, rgba(229, 229, 229, 0.1) 37px, rgba(218, 218, 218, 0.1) 37px, rgba(218, 218, 218, 0.1) 79px, rgba(94, 94, 94, 0.1) 79px, rgba(94, 94, 94, 0.1) 100px, rgba(100, 100, 100, 0.1) 100px, rgba(100, 100, 100, 0.1) 148px, rgba(182, 182, 182, 0.1) 148px, rgba(182, 182, 182, 0.1) 175px), repeating-linear-gradient(135deg, rgba(21, 21, 21, 0.1) 0px, rgba(21, 21, 21, 0.1) 36px, rgba(13, 13, 13, 0.1) 36px, rgba(13, 13, 13, 0.1) 53px, rgba(229, 229, 229, 0.1) 53px, rgba(229, 229, 229, 0.1) 100px, rgba(96, 96, 96, 0.1) 100px, rgba(96, 96, 96, 0.1) 144px, rgba(109, 109, 109, 0.1) 144px, rgba(109, 109, 109, 0.1) 170px, rgba(89, 89, 89, 0.1) 170px, rgba(89, 89, 89, 0.1) 200px), repeating-linear-gradient(135deg, rgba(185, 185, 185, 0.1) 0px, rgba(185, 185, 185, 0.1) 117px, rgba(12, 12, 12, 0.1) 117px, rgba(12, 12, 12, 0.1) 170px, rgba(216, 216, 216, 0.1) 170px, rgba(216, 216, 216, 0.1) 264px, rgba(137, 137, 137, 0.1) 264px, rgba(137, 137, 137, 0.1) 329px, rgba(74, 74, 74, 0.1) 329px, rgba(74, 74, 74, 0.1) 413px, rgba(233, 233, 233, 0.1) 413px, rgba(233, 233, 233, 0.1) 535px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 56px, rgba(91, 91, 91, 0.1) 56px, rgba(91, 91, 91, 0.1) 106px, rgba(214, 214, 214, 0.1) 106px, rgba(214, 214, 214, 0.1) 162px, rgba(100, 100, 100, 0.1) 162px, rgba(100, 100, 100, 0.1) 253px, rgba(232, 232, 232, 0.1) 253px, rgba(232, 232, 232, 0.1) 402px, rgba(208, 208, 208, 0.1) 402px, rgba(208, 208, 208, 0.1) 461px), linear-gradient(90deg, rgb(94, 129, 235), rgb(58, 136, 236))",
-    "tags": [ "complexrepstripes" ]
+    "tags": [ "complexrepstripes", "popular" ]
   },
   {
     "slug": "0c54cd85-3dd7-478c-9c2c-78b696f080f3",
@@ -77,7 +77,7 @@
   {
     "slug": "abe30e54-eff5-4a19-8a50-ae3b36385e6f",
     "stylesheet": "repeating-linear-gradient(45deg, rgba(136, 136, 136, 0.13) 0px, rgba(136, 136, 136, 0.13) 27px, rgba(192, 192, 192, 0.13) 27px, rgba(192, 192, 192, 0.13) 37px, rgba(34, 34, 34, 0.13) 37px, rgba(34, 34, 34, 0.13) 50px, rgba(169, 169, 169, 0.13) 50px, rgba(169, 169, 169, 0.13) 84px, rgba(118, 118, 118, 0.13) 84px, rgba(118, 118, 118, 0.13) 110px, rgba(133, 133, 133, 0.13) 110px, rgba(133, 133, 133, 0.13) 140px, rgba(12, 12, 12, 0.13) 140px, rgba(12, 12, 12, 0.13) 159px), repeating-linear-gradient(45deg, rgba(134, 134, 134, 0.13) 0px, rgba(134, 134, 134, 0.13) 17px, rgba(172, 172, 172, 0.13) 17px, rgba(172, 172, 172, 0.13) 29px, rgba(108, 108, 108, 0.13) 29px, rgba(108, 108, 108, 0.13) 67px, rgba(170, 170, 170, 0.13) 67px, rgba(170, 170, 170, 0.13) 85px, rgba(135, 135, 135, 0.13) 85px, rgba(135, 135, 135, 0.13) 122px, rgba(80, 80, 80, 0.13) 122px, rgba(80, 80, 80, 0.13) 168px, rgba(24, 24, 24, 0.13) 168px, rgba(24, 24, 24, 0.13) 203px), repeating-linear-gradient(45deg, rgba(251, 251, 251, 0.1) 0px, rgba(251, 251, 251, 0.1) 99px, rgba(17, 17, 17, 0.1) 99px, rgba(17, 17, 17, 0.1) 158px, rgba(39, 39, 39, 0.1) 158px, rgba(39, 39, 39, 0.1) 259px, rgba(4, 4, 4, 0.1) 259px, rgba(4, 4, 4, 0.1) 394px, rgba(36, 36, 36, 0.1) 394px, rgba(36, 36, 36, 0.1) 514px, rgba(251, 251, 251, 0.1) 514px, rgba(251, 251, 251, 0.1) 622px, rgba(76, 76, 76, 0.1) 622px, rgba(76, 76, 76, 0.1) 737px), linear-gradient(90deg, rgb(59, 49, 48), rgb(21, 44, 43))",
-    "tags": [ "complexrepstripes" ]
+    "tags": [ "complexrepstripes", "popular" ]
   },
   {
     "slug": "2e99ac32-f339-4523-99fb-52957c434228",

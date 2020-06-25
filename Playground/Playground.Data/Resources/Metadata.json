@@ -1,14 +1,12 @@
 {
-  "version": 33,
+  "version": 2,
   "namespace": "Playground.Data.Resources",
   "categories": "Categories.json",
   "themes": "Themes.json",
   "gradients": [
-    "Popular.json",
     "Retro.json",
     "Standard.json",
     "RadialStripes.json",
-    "ComplexPatterns.json",
     "SimplePatterns.json",
     "ComplexCircles.json",
     "StandardCircle.json",

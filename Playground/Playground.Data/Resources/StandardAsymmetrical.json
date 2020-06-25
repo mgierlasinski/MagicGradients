@@ -22,7 +22,7 @@
   {
     "slug": "3b4a89fd-7283-4bc0-94f0-1ea8640952cb",
     "stylesheet": "linear-gradient(23deg, rgba(40, 86, 2, 0.2), rgba(77, 29, 2, 0.2)), linear-gradient(45deg, rgb(127, 14, 82) 0%, rgb(146, 13, 79) 29%, rgb(205, 12, 69) 65%, rgb(107, 14, 85) 69%, rgb(185, 12, 72) 83%, rgb(166, 13, 76) 87%, rgb(224, 11, 66) 100%)",
-    "tags": [ "standardasymmetrical" ]
+    "tags": [ "standardasymmetrical", "popular" ]
   },
   {
     "slug": "9882fa56-0047-42d4-af50-3e4320779eaf",
@@ -32,7 +32,7 @@
   {
     "slug": "ca974c73-14ab-4fb7-853f-d43eb9c1d1b0",
     "stylesheet": "linear-gradient(135deg, rgba(56, 63, 167, 0.2), rgba(118, 185, 22, 0.2)), linear-gradient(90deg, rgb(73, 85, 214) 0%, rgb(56, 182, 165) 30%, rgb(50, 214, 149) 31%, rgb(62, 150, 182) 32%, rgb(85, 21, 247) 63%, rgb(79, 53, 231) 65%, rgb(68, 118, 198) 100%)",
-    "tags": [ "standardasymmetrical" ]
+    "tags": [ "standardasymmetrical", "popular" ]
   },
   {
     "slug": "192484c5-cf1b-44df-ae93-1d1d8fdec7bf",
@@ -42,7 +42,7 @@
   {
     "slug": "9c52dcfa-05b5-4bc9-86b1-ed3af0a62ad6",
     "stylesheet": "linear-gradient(12deg, rgba(37, 150, 56, 0.2), rgba(160, 137, 193, 0.2)), linear-gradient(135deg, rgb(57, 8, 110) 0%, rgb(73, 6, 117) 20%, rgb(24, 13, 97) 25%, rgb(106, 1, 130) 26%, rgb(90, 3, 123) 29%, rgb(40, 10, 103) 64%, rgb(7, 15, 90) 100%)",
-    "tags": [ "standardasymmetrical" ]
+    "tags": [ "standardasymmetrical", "popular" ]
   },
   {
     "slug": "b399f481-f63b-468a-b130-e9ae56816513",
@@ -187,7 +187,7 @@
   {
     "slug": "14882aca-35b0-4326-b343-54264cd97df8",
     "stylesheet": "linear-gradient(0, rgb(105, 246, 112), rgb(245, 241, 39), rgb(175, 244, 75), rgb(35, 249, 148))",
-    "tags": [ "standardasymmetrical" ]
+    "tags": [ "standardasymmetrical", "popular" ]
   },
   {
     "slug": "9ec1e7ec-e75f-41fc-bbd8-46b9246b3d2f",
