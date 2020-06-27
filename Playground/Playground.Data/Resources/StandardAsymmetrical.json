@@ -1,0 +1,202 @@
+﻿[
+  {
+    "slug": "513ad644-bbf2-4af8-91af-be63052a06ce",
+    "stylesheet": "linear-gradient(73deg, rgba(251, 251, 251, 0.2), rgba(84, 84, 84, 0.2)), linear-gradient(135deg, rgb(32, 32, 32) 0%, rgb(7, 7, 7) 19%, rgb(37, 37, 37) 20%, rgb(17, 17, 17) 31%, rgb(12, 12, 12) 39%, rgb(22, 22, 22) 58%, rgb(27, 27, 27) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "5700322e-9289-41b7-ab78-816248e17e2a",
+    "stylesheet": "linear-gradient(75deg, rgba(101, 101, 101, 0.2), rgba(132, 132, 132, 0.2)), linear-gradient(135deg, rgb(197, 197, 197) 0%, rgb(251, 251, 251) 39%, rgb(219, 219, 219) 48%, rgb(229, 229, 229) 60%, rgb(186, 186, 186) 91%, rgb(208, 208, 208) 98%, rgb(240, 240, 240) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "096aa47b-bf14-42e0-ae16-e0c80f2e9233",
+    "stylesheet": "linear-gradient(302deg, rgba(42, 42, 42, 0.2), rgba(243, 243, 243, 0.2)), linear-gradient(0, rgb(244, 244, 244) 0%, rgb(239, 239, 239) 26%, rgb(246, 246, 246) 56%, rgb(235, 235, 235) 65%, rgb(237, 237, 237) 72%, rgb(248, 248, 248) 99%, rgb(242, 242, 242) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "21c4dcda-0e5b-4664-bd86-b61332a98097",
+    "stylesheet": "linear-gradient(209deg, rgba(104, 104, 104, 0.2), rgba(98, 98, 98, 0.2)), linear-gradient(45deg, rgb(72, 72, 72) 0%, rgb(0, 0, 0) 11%, rgb(144, 144, 144) 16%, rgb(24, 24, 24) 17%, rgb(120, 120, 120) 71%, rgb(48, 48, 48) 94%, rgb(96, 96, 96) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "3b4a89fd-7283-4bc0-94f0-1ea8640952cb",
+    "stylesheet": "linear-gradient(23deg, rgba(40, 86, 2, 0.2), rgba(77, 29, 2, 0.2)), linear-gradient(45deg, rgb(127, 14, 82) 0%, rgb(146, 13, 79) 29%, rgb(205, 12, 69) 65%, rgb(107, 14, 85) 69%, rgb(185, 12, 72) 83%, rgb(166, 13, 76) 87%, rgb(224, 11, 66) 100%)",
+    "tags": [ "standardasymmetrical", "popular" ]
+  },
+  {
+    "slug": "9882fa56-0047-42d4-af50-3e4320779eaf",
+    "stylesheet": "linear-gradient(320deg, rgba(2, 189, 159, 0.2), rgba(170, 127, 198, 0.2)), linear-gradient(45deg, rgb(144, 129, 231) 0%, rgb(87, 116, 218) 29%, rgb(30, 102, 205) 46%, rgb(172, 136, 238) 48%, rgb(115, 122, 225) 49%, rgb(59, 109, 211) 70%, rgb(2, 95, 198) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "ca974c73-14ab-4fb7-853f-d43eb9c1d1b0",
+    "stylesheet": "linear-gradient(135deg, rgba(56, 63, 167, 0.2), rgba(118, 185, 22, 0.2)), linear-gradient(90deg, rgb(73, 85, 214) 0%, rgb(56, 182, 165) 30%, rgb(50, 214, 149) 31%, rgb(62, 150, 182) 32%, rgb(85, 21, 247) 63%, rgb(79, 53, 231) 65%, rgb(68, 118, 198) 100%)",
+    "tags": [ "standardasymmetrical", "popular" ]
+  },
+  {
+    "slug": "192484c5-cf1b-44df-ae93-1d1d8fdec7bf",
+    "stylesheet": "linear-gradient(287deg, rgba(97, 160, 36, 0.2), rgba(11, 15, 238, 0.2)), linear-gradient(0, rgb(79, 37, 147) 0%, rgb(78, 98, 160) 23%, rgb(77, 128, 166) 38%, rgb(78, 67, 154) 40%, rgb(76, 188, 179) 43%, rgb(79, 7, 141) 52%, rgb(77, 158, 173) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "9c52dcfa-05b5-4bc9-86b1-ed3af0a62ad6",
+    "stylesheet": "linear-gradient(12deg, rgba(37, 150, 56, 0.2), rgba(160, 137, 193, 0.2)), linear-gradient(135deg, rgb(57, 8, 110) 0%, rgb(73, 6, 117) 20%, rgb(24, 13, 97) 25%, rgb(106, 1, 130) 26%, rgb(90, 3, 123) 29%, rgb(40, 10, 103) 64%, rgb(7, 15, 90) 100%)",
+    "tags": [ "standardasymmetrical", "popular" ]
+  },
+  {
+    "slug": "b399f481-f63b-468a-b130-e9ae56816513",
+    "stylesheet": "linear-gradient(15deg, rgba(32, 2, 133, 0.2), rgba(241, 62, 151, 0.2)), linear-gradient(90deg, rgb(246, 112, 73) 0%, rgb(230, 71, 141) 11%, rgb(206, 9, 242) 48%, rgb(254, 132, 39) 50%, rgb(238, 91, 107) 61%, rgb(214, 30, 208) 88%, rgb(222, 50, 174) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "463596e5-58a9-4ab2-a58a-ee61bba0ba8d",
+    "stylesheet": "linear-gradient(99deg, rgba(157, 13, 251, 0.2), rgba(106, 108, 100, 0.2)), linear-gradient(45deg, rgb(81, 61, 163) 0%, rgb(55, 51, 140) 4%, rgb(184, 103, 254) 56%, rgb(4, 30, 94) 63%, rgb(133, 82, 208) 64%, rgb(107, 72, 185) 91%, rgb(158, 93, 231) 93%, rgb(30, 40, 117) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "72622513-8696-4792-97b9-b078c1ec5b3c",
+    "stylesheet": "linear-gradient(138deg, rgba(117, 94, 3, 0.2), rgba(148, 29, 174, 0.2)), linear-gradient(45deg, rgb(80, 131, 3) 0%, rgb(90, 149, 3) 1%, rgb(111, 187, 2) 39%, rgb(100, 168, 2) 57%, rgb(121, 206, 1) 60%, rgb(49, 74, 5) 61%, rgb(70, 112, 4) 94%, rgb(59, 93, 4) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "e31bf695-a81b-48fe-af87-b521a24f8d50",
+    "stylesheet": "linear-gradient(291deg, rgba(41, 57, 35, 0.2), rgba(102, 185, 33, 0.2)), linear-gradient(45deg, rgb(172, 40, 203) 0%, rgb(102, 37, 142) 14%, rgb(55, 35, 101) 38%, rgb(32, 34, 80) 58%, rgb(125, 38, 162) 63%, rgb(195, 41, 224) 65%, rgb(79, 36, 121) 87%, rgb(148, 39, 183) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "345823af-6e5d-4cd1-8954-b304ea8e9f27",
+    "stylesheet": "linear-gradient(196deg, rgba(88, 7, 152, 0.2), rgba(64, 188, 165, 0.2)), linear-gradient(135deg, rgb(101, 60, 220) 0%, rgb(63, 47, 113) 18%, rgb(89, 56, 184) 25%, rgb(50, 42, 78) 49%, rgb(25, 33, 7) 55%, rgb(114, 65, 255) 57%, rgb(76, 51, 149) 68%, rgb(38, 38, 42) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "0f7eeb87-ec5e-4773-b45e-3283eded8185",
+    "stylesheet": "linear-gradient(175deg, rgba(211, 138, 70, 0.2), rgba(242, 49, 139, 0.2)), linear-gradient(45deg, rgb(121, 206, 117) 0%, rgb(158, 242, 138) 37%, rgb(85, 171, 95) 38%, rgb(30, 117, 63) 47%, rgb(67, 153, 84) 59%, rgb(140, 224, 127) 61%, rgb(103, 188, 106) 86%, rgb(48, 135, 74) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "da372a3b-cc15-4e49-973b-8523fe14788c",
+    "stylesheet": "linear-gradient(83deg, rgba(206, 31, 32, 0.2), rgba(11, 56, 108, 0.2)), linear-gradient(0, rgb(30, 42, 36) 0%, rgb(118, 94, 139) 4%, rgb(59, 60, 70) 7%, rgb(177, 129, 207) 15%, rgb(0, 25, 2) 51%, rgb(148, 111, 173) 84%, rgb(89, 77, 104) 88%, rgb(207, 146, 241) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "bab8a673-7910-4fa0-a205-08ed29a840dd",
+    "stylesheet": "linear-gradient(148deg, rgba(169, 215, 99, 0.2), rgba(115, 90, 186, 0.2)), linear-gradient(45deg, rgb(203, 43, 74) 0%, rgb(197, 12, 59) 3%, rgb(226, 165, 132) 26%, rgb(208, 73, 88) 27%, rgb(220, 134, 117) 38%, rgb(237, 226, 161) 46%, rgb(214, 104, 103) 84%, rgb(231, 195, 146) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "08912ce2-25d9-423f-8633-c8da84ab5029",
+    "stylesheet": "linear-gradient(137deg, rgba(243, 171, 183, 0.2), rgba(117, 186, 195, 0.2)), linear-gradient(90deg, rgb(11, 87, 215) 0%, rgb(5, 54, 126) 29%, rgb(8, 74, 179) 30%, rgb(10, 80, 197) 31%, rgb(3, 48, 108) 46%, rgb(7, 67, 161) 53%, rgb(6, 61, 144) 96%, rgb(2, 41, 90) 100%)",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "f8886dae-9a1e-445f-bfbb-5b90dee31707",
+    "stylesheet": "linear-gradient(97deg, rgba(12, 223, 92, 0.2), rgba(91, 32, 246, 0.2)), linear-gradient(45deg, rgb(129, 201, 171), rgb(174, 228, 191), rgb(151, 214, 181), rgb(196, 241, 201), rgb(106, 188, 161), rgb(84, 175, 151), rgb(61, 161, 141), rgb(39, 148, 131))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "98362280-0f6d-4831-827b-308fefce5864",
+    "stylesheet": "linear-gradient(219deg, rgba(123, 227, 76, 0.2), rgba(189, 212, 22, 0.2)), linear-gradient(90deg, rgb(71, 152, 249), rgb(96, 204, 183), rgb(82, 174, 221), rgb(75, 159, 240), rgb(85, 182, 211), rgb(89, 189, 202), rgb(78, 167, 230), rgb(92, 197, 192))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "9eab1816-b38b-47bb-9577-d78ea17fbca0",
+    "stylesheet": "linear-gradient(332deg, rgba(29, 244, 219, 0.2), rgba(153, 135, 219, 0.2)), linear-gradient(45deg, rgb(45, 45, 104), rgb(47, 124, 191), rgb(48, 164, 234), rgb(47, 105, 169), rgb(46, 85, 147), rgb(46, 65, 126), rgb(48, 144, 212))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "6101bca9-8027-4adc-a047-758c087ba92f",
+    "stylesheet": "linear-gradient(111deg, rgba(185, 130, 59, 0.2), rgba(101, 230, 188, 0.2)), linear-gradient(45deg, rgb(141, 46, 163), rgb(206, 67, 232), rgb(43, 14, 59), rgb(10, 3, 24), rgb(75, 24, 93), rgb(173, 56, 197), rgb(108, 35, 128))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "ce7121aa-bce1-47fb-b007-6f26b136e05e",
+    "stylesheet": "linear-gradient(298deg, rgba(178, 133, 55, 0.2), rgba(244, 96, 92, 0.2)), linear-gradient(45deg, rgb(237, 190, 121), rgb(242, 149, 130), rgb(234, 211, 116), rgb(239, 170, 125), rgb(238, 180, 123), rgb(235, 201, 118), rgb(241, 159, 128))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "5fc0e298-59a4-44a3-846b-58980c38c5bf",
+    "stylesheet": "linear-gradient(242deg, rgba(27, 172, 182, 0.2), rgba(211, 71, 66, 0.2)), linear-gradient(45deg, rgb(93, 60, 183), rgb(91, 48, 174), rgb(99, 95, 211), rgb(95, 72, 193), rgb(101, 107, 221), rgb(97, 84, 202), rgb(103, 119, 230))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "6ba37226-35a9-4145-a166-6bc2c214c264",
+    "stylesheet": "linear-gradient(194deg, rgba(199, 159, 90, 0.2), rgba(145, 186, 3, 0.2)), linear-gradient(135deg, rgb(106, 193, 102), rgb(134, 217, 113), rgb(77, 170, 90), rgb(120, 205, 107), rgb(63, 158, 85), rgb(49, 146, 79), rgb(92, 182, 96))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "18da4cb9-7194-4878-853d-7d2e51225943",
+    "stylesheet": "linear-gradient(9deg, rgba(78, 85, 237, 0.2), rgba(157, 64, 143, 0.2)), linear-gradient(135deg, rgb(6, 101, 247), rgb(27, 124, 232), rgb(110, 214, 172), rgb(131, 236, 157), rgb(69, 169, 202), rgb(48, 146, 217), rgb(89, 191, 187))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "9259bffd-ce2e-45b0-82cb-a1ecfa111f46",
+    "stylesheet": "linear-gradient(0, rgba(244, 242, 39, 0.18), rgba(36, 196, 212, 0.18)), linear-gradient(135deg, rgb(38, 157, 54), rgb(63, 173, 71), rgb(114, 206, 106), rgb(89, 190, 89), rgb(13, 140, 37), rgb(139, 223, 123), rgb(164, 239, 140))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "cedd24fb-f310-4573-a09a-c2f222380987",
+    "stylesheet": "linear-gradient(115deg, rgba(172, 29, 19, 0.2), rgba(137, 140, 77, 0.2)), linear-gradient(45deg, rgb(57, 18, 174), rgb(54, 125, 232), rgb(53, 146, 243), rgb(55, 82, 209), rgb(54, 103, 220), rgb(56, 39, 186), rgb(56, 61, 197))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "5e742dd3-28fd-494f-948c-a0e7f8f85359",
+    "stylesheet": "linear-gradient(115deg, rgba(66, 120, 235, 0.2), rgba(76, 2, 221, 0.2)), linear-gradient(135deg, rgb(114, 126, 243), rgb(73, 193, 252), rgb(154, 58, 233))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "cbf78107-7f84-494f-8ca5-e7152595cac1",
+    "stylesheet": "linear-gradient(72deg, rgba(199, 255, 31, 0.2), rgba(13, 28, 123, 0.2)), linear-gradient(45deg, rgb(115, 12, 23), rgb(242, 122, 111), rgb(200, 85, 82), rgb(157, 49, 52))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "a1cf0520-7377-409f-a26c-1bd7330c49f4",
+    "stylesheet": "linear-gradient(311deg, rgba(173, 49, 185, 0.2), rgba(91, 30, 124, 0.2)), linear-gradient(135deg, rgb(160, 69, 181), rgb(191, 104, 130), rgb(221, 138, 78), rgb(130, 35, 233))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "318367be-aa9a-4f95-b775-84ebab350537",
+    "stylesheet": "linear-gradient(90deg, rgb(214, 83, 21), rgb(241, 159, 1), rgb(228, 121, 11))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "c7c3b287-982b-45f3-896e-4367a5850f3e",
+    "stylesheet": "linear-gradient(0, rgb(82, 183, 43), rgb(211, 234, 153), rgb(147, 209, 98))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "3848b789-9be4-464a-a114-d6fa8aa224ff",
+    "stylesheet": "linear-gradient(90deg, rgb(35, 134, 69), rgb(221, 206, 7), rgb(128, 170, 38))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "b15d8e76-4652-4b82-8082-8a17aff3c7c0",
+    "stylesheet": "linear-gradient(45deg, rgb(254, 236, 230), rgb(33, 185, 232), rgb(180, 219, 231), rgb(107, 202, 231))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "7e50ac40-b919-4823-8847-05997822e986",
+    "stylesheet": "linear-gradient(0, rgb(152, 119, 251), rgb(217, 139, 216), rgb(195, 132, 228), rgb(174, 126, 239))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "02e1c135-26d2-43f7-b6ce-1729cf2966c4",
+    "stylesheet": "linear-gradient(0, rgb(47, 76, 234), rgb(39, 101, 247), rgb(56, 50, 221), rgb(64, 25, 208))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "14882aca-35b0-4326-b343-54264cd97df8",
+    "stylesheet": "linear-gradient(0, rgb(105, 246, 112), rgb(245, 241, 39), rgb(175, 244, 75), rgb(35, 249, 148))",
+    "tags": [ "standardasymmetrical", "popular" ]
+  },
+  {
+    "slug": "9ec1e7ec-e75f-41fc-bbd8-46b9246b3d2f",
+    "stylesheet": "linear-gradient(45deg, rgb(46, 94, 149), rgb(59, 131, 209), rgb(67, 91, 142))",
+    "tags": [ "standardasymmetrical" ]
+  },
+  {
+    "slug": "883c21fb-61b3-4b05-bb13-854d87f30125",
+    "stylesheet": "linear-gradient(90deg, rgb(102, 17, 117), rgb(106, 20, 213), rgb(104, 19, 165))",
+    "tags": [ "standardasymmetrical" ]
+  }
+]

@@ -1,0 +1,152 @@
+﻿[
+  {
+    "slug": "a3c9894f-69c1-4a4a-a7df-ecdd9914f877",
+    "stylesheet": "repeating-linear-gradient(0, hsla(206, 64%, 98%, 0.12) 0px, hsla(206, 64%, 98%, 0.12) 55px, transparent 55px, transparent 110px), repeating-linear-gradient(90deg, hsla(206, 64%, 98%, 0.12) 0px, hsla(206, 64%, 98%, 0.12) 55px, transparent 55px, transparent 110px), linear-gradient(90deg, hsl(199, 95%, 71%), hsl(199, 95%, 71%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "d24451fa-3117-45fd-8178-72099d35b0d7",
+    "stylesheet": "repeating-linear-gradient(0, hsla(301, 54%, 70%, 0.12) 0px, hsla(301, 54%, 70%, 0.12) 55px, transparent 55px, transparent 110px), repeating-linear-gradient(90deg, hsla(301, 54%, 70%, 0.12) 0px, hsla(301, 54%, 70%, 0.12) 55px, transparent 55px, transparent 110px), linear-gradient(90deg, hsl(216, 65%, 9%), hsl(216, 65%, 9%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "ab24281d-ad47-4def-8150-a90fc2a65356",
+    "stylesheet": "repeating-linear-gradient(0, hsla(26, 32%, 14%, 0.12) 0px, hsla(26, 32%, 14%, 0.12) 55px, transparent 55px, transparent 110px), repeating-linear-gradient(90deg, hsla(26, 32%, 14%, 0.12) 0px, hsla(26, 32%, 14%, 0.12) 55px, transparent 55px, transparent 110px), linear-gradient(90deg, hsl(25, 58%, 59%), hsl(25, 58%, 59%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "897a85b2-6cf7-4c8d-8c81-ad7661dbfead",
+    "stylesheet": "repeating-linear-gradient(0, hsla(144, 100%, 1%, 0.1) 0px, hsla(144, 100%, 1%, 0.1) 50px, transparent 50px, transparent 100px), repeating-linear-gradient(90deg, hsla(144, 100%, 1%, 0.1) 0px, hsla(144, 100%, 1%, 0.1) 50px, transparent 50px, transparent 100px), linear-gradient(90deg, hsl(322, 82%, 41%), hsl(322, 82%, 41%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "68966c8c-002d-42d9-8a99-11c12123a852",
+    "stylesheet": "repeating-linear-gradient(0, hsla(55, 51%, 85%, 0.05) 0px, hsla(55, 51%, 85%, 0.05) 50px, transparent 50px, transparent 100px), repeating-linear-gradient(90deg, hsla(55, 51%, 85%, 0.05) 0px, hsla(55, 51%, 85%, 0.05) 50px, transparent 50px, transparent 100px), linear-gradient(90deg, hsl(91, 61%, 29%), hsl(91, 61%, 29%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "bd512fc4-d33a-4976-8fbe-32c0f9fbee30",
+    "stylesheet": "repeating-linear-gradient(0, hsla(239, 39%, 56%, 0.1) 0px, hsla(239, 39%, 56%, 0.1) 50px, transparent 50px, transparent 100px), repeating-linear-gradient(90deg, hsla(239, 39%, 56%, 0.1) 0px, hsla(239, 39%, 56%, 0.1) 50px, transparent 50px, transparent 100px), linear-gradient(90deg, hsl(197, 79%, 46%), hsl(197, 79%, 46%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "f7e1469c-88b0-43ab-bf63-c3d392b1fca3",
+    "stylesheet": "repeating-linear-gradient(0, hsla(53, 81%, 96%, 0.1) 0px, hsla(53, 81%, 96%, 0.1) 50px, transparent 50px, transparent 100px), repeating-linear-gradient(90deg, hsla(53, 81%, 96%, 0.1) 0px, hsla(53, 81%, 96%, 0.1) 50px, transparent 50px, transparent 100px), linear-gradient(90deg, hsl(350, 89%, 85%), hsl(350, 89%, 85%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "ed0c85bd-680f-4fb4-9796-31e8285bd532",
+    "stylesheet": "repeating-linear-gradient(0, hsla(83, 52%, 5%, 0.1) 0px, hsla(83, 52%, 5%, 0.1) 50px, transparent 50px, transparent 100px), repeating-linear-gradient(90deg, hsla(83, 52%, 5%, 0.1) 0px, hsla(83, 52%, 5%, 0.1) 50px, transparent 50px, transparent 100px), linear-gradient(90deg, hsl(89, 81%, 42%), hsl(89, 81%, 42%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "35fbd80a-e7f4-4a02-9e31-ea56f20cf203",
+    "stylesheet": "repeating-linear-gradient(0, hsla(330, 85%, 41%, 0.1) 0px, hsla(330, 85%, 41%, 0.1) 40px, transparent 40px, transparent 80px), repeating-linear-gradient(90deg, hsla(330, 85%, 41%, 0.1) 0px, hsla(330, 85%, 41%, 0.1) 40px, transparent 40px, transparent 80px), linear-gradient(90deg, hsl(54, 59%, 78%), hsl(54, 59%, 78%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "421e9cbb-1bcf-4ce3-8f4e-ca30a6061fb9",
+    "stylesheet": "repeating-linear-gradient(0, hsla(292, 70%, 30%, 0.1) 0px, hsla(292, 70%, 30%, 0.1) 40px, transparent 40px, transparent 80px), repeating-linear-gradient(90deg, hsla(292, 70%, 30%, 0.1) 0px, hsla(292, 70%, 30%, 0.1) 40px, transparent 40px, transparent 80px), linear-gradient(90deg, hsl(33, 81%, 50%), hsl(33, 81%, 50%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "4fdc73d5-adc3-4099-9023-f0ebd7d37662",
+    "stylesheet": "repeating-linear-gradient(0, hsla(310, 83%, 82%, 0.1) 0px, hsla(310, 83%, 82%, 0.1) 35px, transparent 35px, transparent 70px), repeating-linear-gradient(90deg, hsla(310, 83%, 82%, 0.1) 0px, hsla(310, 83%, 82%, 0.1) 35px, transparent 35px, transparent 70px), linear-gradient(90deg, hsl(328, 48%, 57%), hsl(328, 48%, 57%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "cff9d1ab-ca84-492c-bce1-de68e80e37a6",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(212, 98, 138, 0.5) 0px, rgba(212, 98, 138, 0.5) 40px, transparent 40px, transparent 80px), repeating-linear-gradient(0, rgba(212, 98, 138, 0.5) 0px, rgba(212, 98, 138, 0.5) 40px, transparent 40px, transparent 80px), linear-gradient(90deg, hsl(354, 79%, 22%), hsl(354, 79%, 22%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "18942abd-f790-48c8-9806-3c225f36d2fc",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(34, 126, 177, 0.5) 0px, rgba(34, 126, 177, 0.5) 40px, transparent 40px, transparent 80px), repeating-linear-gradient(0, rgba(34, 126, 177, 0.5) 0px, rgba(34, 126, 177, 0.5) 40px, transparent 40px, transparent 80px), linear-gradient(90deg, hsl(196, 85%, 71%), hsl(196, 85%, 71%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "1c6842a5-1101-4b15-991b-fad3e028f1b8",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(127, 91, 213, 0.5) 0px, rgba(127, 91, 213, 0.5) 40px, transparent 40px, transparent 80px), repeating-linear-gradient(0, rgba(127, 91, 213, 0.5) 0px, rgba(127, 91, 213, 0.5) 40px, transparent 40px, transparent 80px), linear-gradient(90deg, hsl(289, 93%, 77%), hsl(289, 93%, 77%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "2432f9b5-ced3-4ae8-b0bb-8f79d8fc79bd",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(224, 82, 67, 0.5) 0px, rgba(224, 82, 67, 0.5) 40px, transparent 40px, transparent 80px), repeating-linear-gradient(0, rgba(224, 82, 67, 0.5) 0px, rgba(224, 82, 67, 0.5) 40px, transparent 40px, transparent 80px), linear-gradient(90deg, hsl(240, 67%, 1%), hsl(240, 67%, 1%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "de431832-5fcf-4ad2-b391-3d0d09ac2395",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(227, 137, 41, 0.5) 0px, rgba(227, 137, 41, 0.5) 30px, transparent 30px, transparent 60px), repeating-linear-gradient(0, rgba(227, 137, 41, 0.5) 0px, rgba(227, 137, 41, 0.5) 30px, transparent 30px, transparent 60px), linear-gradient(90deg, hsl(353, 58%, 37%), hsl(353, 58%, 37%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "f01e8404-b28f-49a9-bb5e-1f280943e9cf",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(236, 13, 35, 0.5) 0px, rgba(236, 13, 35, 0.5) 30px, transparent 30px, transparent 60px), repeating-linear-gradient(0, rgba(236, 13, 35, 0.5) 0px, rgba(236, 13, 35, 0.5) 30px, transparent 30px, transparent 60px), linear-gradient(90deg, hsl(95, 65%, 92%), hsl(95, 65%, 92%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "e57dc7a4-ea25-49c5-a6f4-36004f638031",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(195, 246, 54, 0.5) 0px, rgba(195, 246, 54, 0.5) 30px, transparent 30px, transparent 60px), repeating-linear-gradient(0, rgba(195, 246, 54, 0.5) 0px, rgba(195, 246, 54, 0.5) 30px, transparent 30px, transparent 60px), linear-gradient(90deg, hsl(122, 48%, 42%), hsl(122, 48%, 42%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "e60207bc-0c32-4484-bfec-750b73a1aa56",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(118, 8, 183, 0.5) 0px, rgba(118, 8, 183, 0.5) 30px, transparent 30px, transparent 60px), repeating-linear-gradient(0, rgba(118, 8, 183, 0.5) 0px, rgba(118, 8, 183, 0.5) 30px, transparent 30px, transparent 60px), linear-gradient(90deg, hsl(302, 72%, 64%), hsl(302, 72%, 64%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "9b0f464f-3b7b-4824-b9bf-5649c410a1a2",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(115, 161, 66, 0.5) 0px, rgba(115, 161, 66, 0.5) 30px, transparent 30px, transparent 60px), repeating-linear-gradient(0, rgba(115, 161, 66, 0.5) 0px, rgba(115, 161, 66, 0.5) 30px, transparent 30px, transparent 60px), linear-gradient(90deg, hsl(141, 97%, 72%), hsl(141, 97%, 72%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "b4126f29-40c9-4bd5-bc88-693bdc145a60",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(68, 33, 126, 0.5) 0px, rgba(68, 33, 126, 0.5) 20px, transparent 20px, transparent 40px), repeating-linear-gradient(0, rgba(68, 33, 126, 0.5) 0px, rgba(68, 33, 126, 0.5) 20px, transparent 20px, transparent 40px), linear-gradient(90deg, hsl(81, 92%, 5%), hsl(81, 92%, 5%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "688a54b7-70a1-4c8d-b43b-2c43feb51388",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(253, 246, 249, 0.5) 0px, rgba(253, 246, 249, 0.5) 20px, transparent 20px, transparent 40px), repeating-linear-gradient(0, rgba(253, 246, 249, 0.5) 0px, rgba(253, 246, 249, 0.5) 20px, transparent 20px, transparent 40px), linear-gradient(90deg, hsl(208, 41%, 76%), hsl(208, 41%, 76%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "5496eeac-6296-4011-90c1-e311ac3a1eb3",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(236, 145, 254, 0.5) 0px, rgba(236, 145, 254, 0.5) 20px, transparent 20px, transparent 40px), repeating-linear-gradient(0, rgba(236, 145, 254, 0.5) 0px, rgba(236, 145, 254, 0.5) 20px, transparent 20px, transparent 40px), linear-gradient(90deg, hsl(257, 58%, 27%), hsl(257, 58%, 27%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "7fdc253e-cfa9-46b8-8f2a-c2e990c24cf3",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(37, 77, 159, 0.5) 0px, rgba(37, 77, 159, 0.5) 20px, transparent 20px, transparent 40px), repeating-linear-gradient(0, rgba(37, 77, 159, 0.5) 0px, rgba(37, 77, 159, 0.5) 20px, transparent 20px, transparent 40px), linear-gradient(90deg, hsl(20, 27%, 2%), hsl(20, 27%, 2%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "e690e9a9-968a-4e32-bcf2-80739b85aabe",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(167, 72, 214, 0.5) 0px, rgba(167, 72, 214, 0.5) 20px, transparent 20px, transparent 40px), repeating-linear-gradient(0, rgba(167, 72, 214, 0.5) 0px, rgba(167, 72, 214, 0.5) 20px, transparent 20px, transparent 40px), linear-gradient(90deg, hsl(356, 59%, 78%), hsl(356, 59%, 78%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "d7fbd921-d54d-42ac-aa90-074ddc9700df",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(246, 137, 52, 0.5) 0px, rgba(246, 137, 52, 0.5) 20px, transparent 20px, transparent 40px), repeating-linear-gradient(0, rgba(246, 137, 52, 0.5) 0px, rgba(246, 137, 52, 0.5) 20px, transparent 20px, transparent 40px), linear-gradient(90deg, hsl(328, 36%, 32%), hsl(328, 36%, 32%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "4a9c5968-46a7-45c3-a9a5-55c3e7a058e3",
+    "stylesheet": "repeating-linear-gradient(90deg, rgba(172, 49, 125, 0.5) 0px, rgba(172, 49, 125, 0.5) 20px, transparent 20px, transparent 40px), repeating-linear-gradient(0, rgba(172, 49, 125, 0.5) 0px, rgba(172, 49, 125, 0.5) 20px, transparent 20px, transparent 40px), linear-gradient(90deg, hsl(63, 79%, 89%), hsl(63, 79%, 89%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "3b1b3978-7373-4ede-a4df-108148e03852",
+    "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 33%, 0.05) 0px, hsla(0, 0%, 33%, 0.05) 50px, transparent 50px, transparent 100px), repeating-linear-gradient(90deg, hsla(0, 0%, 33%, 0.05) 0px, hsla(0, 0%, 33%, 0.05) 50px, transparent 50px, transparent 100px), linear-gradient(90deg, hsl(0, 0%, 18%), hsl(0, 0%, 18%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "9713f102-4ea5-402e-bf78-f0f22135cc7c",
+    "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 50px, transparent 50px, transparent 100px), repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 50px, transparent 50px, transparent 100px), linear-gradient(90deg, hsl(0, 0%, 20%), hsl(0, 0%, 20%))",
+    "tags": [ "ginghamcolored" ]
+  },
+  {
+    "slug": "2df60081-d02e-49fc-a0bc-76ba0fab41eb",
+    "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 11%, 0.07) 0px, hsla(0, 0%, 11%, 0.07) 50px, transparent 50px, transparent 100px), repeating-linear-gradient(90deg, hsla(0, 0%, 11%, 0.07) 0px, hsla(0, 0%, 11%, 0.07) 50px, transparent 50px, transparent 100px), linear-gradient(90deg, hsl(0, 0%, 28%), hsl(0, 0%, 28%))",
+    "tags": [ "ginghamcolored" ]
+  }
+]

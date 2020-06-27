@@ -6,26 +6,70 @@
 
   <ItemGroup>
     <None Remove="Resources\Angular.json" />
+    <None Remove="Resources\BackGammon.json" />
+    <None Remove="Resources\BasicGrid.json" />
     <None Remove="Resources\Burst.json" />
     <None Remove="Resources\Categories.json" />
     <None Remove="Resources\Checkered.json" />
+    <None Remove="Resources\ComplexCircles.json" />
+    <None Remove="Resources\ComplexGrid.json" />
+    <None Remove="Resources\ComplexPatterns.json" />
+    <None Remove="Resources\ComplexRepStripes.json" />
+    <None Remove="Resources\ComplexShapes.json" />
+    <None Remove="Resources\DarkBg.json" />
+    <None Remove="Resources\Diamond.json" />
+    <None Remove="Resources\Fracture.json" />
+    <None Remove="Resources\FutureStripes.json" />
+    <None Remove="Resources\Gingham.json" />
+    <None Remove="Resources\GinghamColored.json" />
+    <None Remove="Resources\LightBg.json" />
     <None Remove="Resources\Metadata.json" />
+    <None Remove="Resources\RadialStripes.json" />
+    <None Remove="Resources\RainbowStandard.json" />
+    <None Remove="Resources\RepStripes.json" />
     <None Remove="Resources\Retro.json" />
+    <None Remove="Resources\SimpleAngular.json" />
+    <None Remove="Resources\SimpleCircles.json" />
+    <None Remove="Resources\SimplePatterns.json" />
     <None Remove="Resources\Standard.json" />
+    <None Remove="Resources\StandardAsymmetrical.json" />
+    <None Remove="Resources\StandardCircle.json" />
     <None Remove="Resources\Stripes.json" />
     <None Remove="Resources\Themes.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Angular.json" />
+    <EmbeddedResource Include="Resources\BackGammon.json" />
+    <EmbeddedResource Include="Resources\BasicGrid.json" />
     <EmbeddedResource Include="Resources\Burst.json" />
     <EmbeddedResource Include="Resources\Categories.json" />
     <EmbeddedResource Include="Resources\Checkered.json" />
+    <EmbeddedResource Include="Resources\ComplexCircles.json" />
+    <EmbeddedResource Include="Resources\ComplexGrid.json" />
+    <EmbeddedResource Include="Resources\ComplexPatterns.json" />
+    <EmbeddedResource Include="Resources\ComplexRepStripes.json" />
+    <EmbeddedResource Include="Resources\ComplexShapes.json" />
+    <EmbeddedResource Include="Resources\DarkBg.json" />
+    <EmbeddedResource Include="Resources\Diamond.json" />
+    <EmbeddedResource Include="Resources\Fracture.json" />
+    <EmbeddedResource Include="Resources\FutureStripes.json" />
+    <EmbeddedResource Include="Resources\Gingham.json" />
+    <EmbeddedResource Include="Resources\GinghamColored.json" />
+    <EmbeddedResource Include="Resources\LightBg.json" />
     <EmbeddedResource Include="Resources\Metadata.json" />
+    <EmbeddedResource Include="Resources\RadialStripes.json" />
+    <EmbeddedResource Include="Resources\RainbowStandard.json" />
+    <EmbeddedResource Include="Resources\RepStripes.json" />
     <EmbeddedResource Include="Resources\Retro.json" />
+    <EmbeddedResource Include="Resources\SimpleAngular.json" />
+    <EmbeddedResource Include="Resources\SimpleCircles.json" />
     <EmbeddedResource Include="Resources\Standard.json" />
+    <EmbeddedResource Include="Resources\StandardAsymmetrical.json" />
+    <EmbeddedResource Include="Resources\StandardCircle.json" />
     <EmbeddedResource Include="Resources\Stripes.json" />
-	<EmbeddedResource Include="Resources\Themes.json" />
+	  <EmbeddedResource Include="Resources\Themes.json" />
+    <EmbeddedResource Include="Resources\SimplePatterns.json" />
   </ItemGroup>
 
   <ItemGroup>
