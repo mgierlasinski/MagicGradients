@@ -88,8 +88,8 @@ namespace MagicGradients.Tests
                     .AddStop(Color.Red, Offset.Prop(0.2))
                     .AddStop(Color.Blue, Offset.Prop(0.4)))
                 .AddRadialGradient(g => g
-                    .Circle().At(30, 30)
-                    .Radius(200, 200)
+                    .Circle().At(0.5, 0.5, o => o.Proportional())
+                    .Radius(200, 200, o => o.Absolute())
                     .StretchTo(RadialGradientSize.FarthestSide)
                     .Repeat()
                     .AddStops(Color.Red, Color.Green, Color.Blue))

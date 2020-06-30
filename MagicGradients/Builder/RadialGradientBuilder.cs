@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
+using static MagicGradients.FlagsHelper;
 
 namespace MagicGradients
 {
@@ -6,12 +8,18 @@ namespace MagicGradients
     {
         protected override RadialGradientBuilder Instance => this;
 
+        private RadialGradientFlags _flags;
+        internal RadialGradientFlags Flags
+        {
+            get => _flags;
+            set => _flags = value;
+        }
+
         internal Point Center { get; set; }
         internal double RadiusX { get; set; }
         internal double RadiusY { get; set; }
         internal RadialGradientShape Shape { get; set; }
         internal RadialGradientSize Size { get; set; }
-        internal RadialGradientFlags Flags { get; set; } = RadialGradientFlags.PositionProportional;
         internal bool IsRepeating { get; set; }
 
         public RadialGradientBuilder Circle()
@@ -26,22 +34,36 @@ namespace MagicGradients
             return this;
         }
 
-        public RadialGradientBuilder At(Point position)
+        public RadialGradientBuilder At(Point position, Action<DimenOptions> setup = null)
         {
+            var options = new DimenOptions();
+            setup?.Invoke(options);
+
             Center = position;
+            SetValue(ref _flags, RadialGradientFlags.PositionProportional, options.IsProportional);
+
             return this;
         }
 
-        public RadialGradientBuilder At(double x, double y)
+        public RadialGradientBuilder At(double x, double y, Action<DimenOptions> setup = null)
         {
-            Center = new Point(x, y);
-            return this;
+            return At(new Point(x, y), setup);
         }
 
-        public RadialGradientBuilder Radius(double radiusX, double radiusY)
+        public RadialGradientBuilder Radius(Size radius, Action<DimenOptions> setup = null)
         {
+            return Radius(radius.Width, radius.Height, setup);
+        }
+
+        public RadialGradientBuilder Radius(double radiusX, double radiusY, Action<DimenOptions> setup = null)
+        {
+            var options = new DimenOptions();
+            setup?.Invoke(options);
+
             RadiusX = radiusX;
             RadiusY = radiusY;
+            SetValue(ref _flags, RadialGradientFlags.SizeProportional, options.IsProportional);
+
             return this;
         }
 
@@ -66,7 +88,7 @@ namespace MagicGradients
                 Size = Size,
                 RadiusX = RadiusX,
                 RadiusY = RadiusY,
-                Flags = Flags,
+                Flags = _flags,
                 IsRepeating = IsRepeating,
                 Stops = new GradientElements<GradientStop>(StopsFactory.Stops)
             };
