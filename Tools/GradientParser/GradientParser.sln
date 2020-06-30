@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientParser", "GradientParser.UWP\GradientParser.csproj", "{E0667F3A-A8AC-46A1-B4DF-E53463CEFBA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientParser.ConsoleApp", "GradientParser.ConsoleApp\GradientParser.ConsoleApp.csproj", "{4F2922B2-413C-4A96-91CB-FD6B744E3D2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientParser.ConsoleApp", "GradientParser.ConsoleApp\GradientParser.ConsoleApp.csproj", "{4F2922B2-413C-4A96-91CB-FD6B744E3D2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientParser.Core", "GradientParser.Core\GradientParser.Core.csproj", "{293BA1BA-4CA1-4529-B231-9325810C8706}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientParser.Core", "GradientParser.Core\GradientParser.Core.csproj", "{293BA1BA-4CA1-4529-B231-9325810C8706}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
