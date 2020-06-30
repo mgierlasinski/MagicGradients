@@ -1,0 +1,16 @@
+{
+  "input": "https://www.gradientmagic.com/collection/",
+  "output": "Generated",
+  "endpoints": [
+    {
+      "url": "standard",
+      "title": "Standard",
+      "file": "Standard.json"
+    },
+    {
+      "url": "complexpatterns",
+      "title": "Complex Patterns",
+      "file": "ComplexPatterns.json"
+    }
+  ]
+}
