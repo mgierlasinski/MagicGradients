@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Newtonsoft.Json.Serialization;
 
 namespace MagicCrawler.ViewModels
 {
@@ -106,12 +107,11 @@ namespace MagicCrawler.ViewModels
         {
             var metadata = new Metadata
             {
-                Version = 1,
                 Date = DateTime.Now,
                 NameSpace = "Playground.Data.Resources",
                 Categories = "Categories.json",
                 Themes = "Themes.json",
-                Gradients = _configuration.Endpoints.Select(x => x.File).ToArray()
+                Gradients = _configuration.Endpoints.Where(x => !x.IsVirtual).Select(x => x.GetFile()).ToArray()
             };
 
             WriteObject("Metadata.json", metadata);
@@ -121,7 +121,9 @@ namespace MagicCrawler.ViewModels
         {
             var json = JsonConvert.SerializeObject(content, Formatting.Indented, new JsonSerializerSettings
             {
-                NullValueHandling = NullValueHandling.Ignore
+                DateFormatString = "yyyy-MM-ddTHH:mm:ss",
+                NullValueHandling = NullValueHandling.Ignore,
+                ContractResolver =  new CamelCasePropertyNamesContractResolver()
             });
             WriteFile(fileName, json);
         }

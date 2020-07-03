@@ -1,11 +1,11 @@
 {
   "input": "https://www.gradientmagic.com/collection/",
-  "output": "Generated",
+  "output": "..\\..\\..\\..\\..\\..\\Playground\\Playground.Data\\Resources",
   "endpoints": [
     {
       "id": "Popular",
       "title": "Popular",
-      "isVirtual":  true 
+      "isVirtual": true
     },
     {
       "id": "Burst",

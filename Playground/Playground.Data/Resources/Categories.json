@@ -1,142 +1,22 @@
 [
   {
-    "name": "Popular Gradients",
+    "name": "Popular",
     "tag": "popular",
-    "slug": "52c8b45f-6260-4159-81c9-5ac5c0f190b1"
-  },
-  {
-    "name": "Retro",
-    "tag": "retro",
-    "slug": "f7e948dd-3f5c-4376-bc77-f71efc9242c8"
-  },
-  {
-    "name": "Standard",
-    "tag": "standard",
-    "slug": "21a21ca7-8a27-4258-9df4-5dafa579214b"
-  },
-  {
-    "name": "Radial Stripes",
-    "tag": "radialstripes",
-    "slug": "4d843a09-6f54-425d-90f6-3271283d4d4c"
-  },
-  {
-    "name": "Simple Patterns",
-    "tag": "simplepatterns",
-    "slug": "b6942d4b-739d-4f24-824b-75486eee5706"
-  },
-  {
-    "name": "Comlpex Circles",
-    "tag": "complexcircles",
-    "slug": "df1009e8-12df-46fa-a322-c0a3100602f0"
-  },
-  {
-    "name": "Standard Circle",
-    "tag": "standardcircle",
-    "slug": "7726351b-9961-4560-8a9c-0b825d19b6c4"
-  },
-  {
-    "name": "Simple Circles",
-    "tag": "simplecircles",
-    "slug": "c860c3da-62df-401e-88a7-ae0cc0989a33"
-  },
-  {
-    "name": "Gingham Colored",
-    "tag": "ginghamcolored",
-    "slug": "d24451fa-3117-45fd-8178-72099d35b0d7"
-  },
-  {
-    "name": "Complex Grid",
-    "tag": "complexgrid",
-    "slug": "8e7d92e0-2f45-400f-a628-dea37d3674a3"
-  },
-  {
-    "name": "Gingham",
-    "tag": "gingham",
-    "slug": "2a549631-4147-4f45-be95-addf71ced64c"
-  },
-  {
-    "name": "Basic Grid",
-    "tag": "basicgrid",
-    "slug": "8db77070-d8ba-4690-8fa4-6fbf5794111c"
-  },
-  {
-    "name": "Complex Shapes",
-    "tag": "complexshapes",
-    "slug": "4488a631-ebf9-4add-a438-1fd56ab6d10d"
-  },
-  {
-    "name": "Simple Angular",
-    "tag": "simpleangular",
-    "slug": "e8fd2744-b9e4-4884-a1cf-4b2ae13d08ee"
-  },
-  {
-    "name": "Squares",
-    "tag": "checkered",
-    "slug": "904a52c1-c0ab-46eb-92ee-f09449fc788f"
-  },
-  {
-    "name": "Complex Repeating Stripes",
-    "tag": "complexrepstripes",
-    "slug": "257e6aaa-447d-449a-aea0-b61028012d54"
-  },
-  {
-    "name": "Uneven Diamonds",
-    "tag": "backgammon",
-    "slug": "cf1dc365-7ff2-49b5-9148-6278431ae7c7"
-  },
-  {
-    "name": "Standard - Asymetrical",
-    "tag": "standardasymmetrical",
-    "slug": "3b4a89fd-7283-4bc0-94f0-1ea8640952cb"
-  },
-  {
-    "name": "Standard - Rainbow",
-    "tag": "rainbowstandard",
-    "slug": "47af626c-d4ce-48cf-89dc-3c4cafa34602"
-  },
-  {
-    "name": "Futuristic Stripes",
-    "tag": "futurestripes",
-    "slug": "678bf13c-a0ce-4d4e-8619-d87ac4b95d8d"
-  },
-  {
-    "name": "Repeating Stripes",
-    "tag": "repstripes",
-    "slug": "b3485cef-cde3-4130-9206-f002942f4153"
-  },
-  {
-    "name": "Light Backgrounds",
-    "tag": "lightbg",
-    "slug": "4ad6718b-08ca-41f4-969e-55ad315ffbfe"
-  },
-  {
-    "name": "Fracture",
-    "tag": "fracture",
-    "slug": "bff7e92d-bd12-42f5-88a3-709892e61513"
-  },
-  {
-    "name": "Dark Backgrounds",
-    "tag": "darkbg",
-    "slug": "fccb8f69-0d88-45dc-b933-e3134f8db25a"
+    "slug": "813b0588-9aca-472e-8dc2-472607117b08"
   },
   {
     "name": "Burst",
     "tag": "burst",
-    "slug": "558f4145-6424-492c-9209-a9566c58d4f2"
+    "slug": "d48475c0-c3d8-4556-a54e-9ea5ce7c29f9"
   },
   {
-    "name": "Diamonds",
-    "tag": "diamond",
-    "slug": "1c1bbf4b-370c-46c0-87d0-5a2448655180"
+    "name": "Standard",
+    "tag": "standard",
+    "slug": "b5b3dde3-ec7b-4c53-9172-5f582efd50dd"
   },
   {
-    "name": "Complex Angular",
-    "tag": "angular",
-    "slug": "f3c67c61-71e8-4924-bd75-f16ccc270cb1"
-  },
-  {
-    "name": "Even Stripes",
-    "tag": "stripes",
-    "slug": "57d59b55-53de-4d35-abb1-f10fb4dfa493"
+    "name": "Complex Patterns",
+    "tag": "complexpatterns",
+    "slug": "6fe96bea-631f-47d7-b063-cbf0ebdf8712"
   }
 ]

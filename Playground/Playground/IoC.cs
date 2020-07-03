@@ -7,7 +7,7 @@ namespace Playground
 {
     public static class IoC
     {
-        public static void Initialize()
+        public static void RegisterTypes()
         {
             DependencyService.Register<DatabaseProvider>();
             DependencyService.Register<DatabaseUpdater>();
@@ -21,9 +21,14 @@ namespace Playground
             DependencyService.Register<BattleItemService>();
 
             DependencyService.Register<IPickerColorsDataProvider, PickerColorsDataProvider>();
+        }
+
+        public static void Initialize()
+        {
+            DependencyService.Resolve<IDocumentRepository>().SetupMapper();
 
             DependencyService.Resolve<IDatabaseUpdater>().RunUpdate(
-                DependencyService.Resolve<IGradientRepository>(), 
+                DependencyService.Resolve<IGradientRepository>(),
                 DependencyService.Resolve<ICategoryRepository>());
         }
     }

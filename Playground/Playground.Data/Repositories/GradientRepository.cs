@@ -1,7 +1,6 @@
 ﻿using LiteDB;
 using Playground.Data.Infrastructure;
 using Playground.Data.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
@@ -58,12 +57,8 @@ namespace Playground.Data.Repositories
         public void UpdateDatabase(LiteDatabase db, Metadata metadata, IDocumentRepository documentRepository)
         {
             var collection = db.GetCollection<Gradient>(nameof(Gradient));
-
-            if (collection.Count() > 0)
-            {
-                collection.Delete(Query.All());
-            }
-
+            collection.Delete(Query.All());
+            
             var documents = documentRepository.GetDocumentCollection<Gradient>(metadata.NameSpace, metadata.Gradients);
 
             collection.InsertBulk(documents);
