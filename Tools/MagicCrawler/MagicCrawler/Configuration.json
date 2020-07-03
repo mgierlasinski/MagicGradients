@@ -3,14 +3,21 @@
   "output": "Generated",
   "endpoints": [
     {
-      "url": "standard",
-      "title": "Standard",
-      "file": "Standard.json"
+      "id": "Popular",
+      "title": "Popular",
+      "isVirtual":  true 
     },
     {
-      "url": "complexpatterns",
-      "title": "Complex Patterns",
-      "file": "ComplexPatterns.json"
+      "id": "Burst",
+      "title": "Burst"
+    },
+    {
+      "id": "Standard",
+      "title": "Standard"
+    },
+    {
+      "id": "ComplexPatterns",
+      "title": "Complex Patterns"
     }
   ]
 }

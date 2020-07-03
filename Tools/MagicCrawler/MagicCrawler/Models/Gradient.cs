@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace MagicCrawler.Models
@@ -15,6 +16,6 @@ namespace MagicCrawler.Models
         public string Size { get; set; }
 
         [JsonProperty("tags")]
-        public string[] Tags { get; set; }
+        public List<string> Tags { get; set; }
     }
 }

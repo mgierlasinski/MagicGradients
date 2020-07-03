@@ -34,10 +34,11 @@ namespace MagicCrawler.ViewModels
                 Directory.CreateDirectory(_configuration.Output);
 
             var categories = new List<Category>();
+            var vGradients = new List<Gradient>();
 
             foreach (var endpoint in _configuration.Endpoints)
             {
-                await WriteEndpoint(endpoint, categories);
+                await WriteEndpoint(endpoint, categories, vGradients);
             }
 
             WriteMetadata();
@@ -50,9 +51,9 @@ namespace MagicCrawler.ViewModels
             _configuration = JsonConvert.DeserializeObject<Configuration>(file);
         }
 
-        private async Task WriteEndpoint(Endpoint endpoint, List<Category> categories)
+        private async Task WriteEndpoint(Endpoint endpoint, List<Category> categories, List<Gradient> vGradients)
         {
-            var input = $"{_configuration.Input}{endpoint.Url}";
+            var input = $"{_configuration.Input}{endpoint.GetUrl()}";
             var html = await HtmlLoader.LoadAsync(input);
             var gradients = _parser.Parse(html, endpoint.GetTag());
 
@@ -60,12 +61,45 @@ namespace MagicCrawler.ViewModels
             {
                 Name = endpoint.Title,
                 Tag = endpoint.GetTag(),
-                Slug = gradients.FirstOrDefault()?.Slug
             };
 
+            if (endpoint.IsVirtual)
+            {
+                categories.Add(category);
+                vGradients.AddRange(gradients);
+                return;
+            }
+
+            category.Slug = gradients.FirstOrDefault()?.Slug;
             categories.Add(category);
 
-            WriteObject(endpoint.File, gradients);
+            AddVirtualTags(gradients, categories, vGradients);
+            WriteObject(endpoint.GetFile(), gradients);
+        }
+
+        private void AddVirtualTags(Gradient[] gradients, List<Category> categories, List<Gradient> vGradients)
+        {
+            foreach (var gradient in gradients)
+            {
+                // Match gradient with virtual list and assign additional tags like "popular"
+                var vTags = vGradients
+                    .Where(x => x.Stylesheet == gradient.Stylesheet)
+                    .SelectMany(x => x.Tags)
+                    .Distinct()
+                    .ToArray();
+
+                gradient.Tags.AddRange(vTags);
+
+                // Match this gradient to virtual category and update it's preview
+                foreach (var vTag in vTags)
+                {
+                    var vCategory = categories.FirstOrDefault(x => x.Tag == vTag);
+                    if (vCategory != null)
+                    {
+                        vCategory.Slug = gradient.Slug;
+                    }
+                }
+            }
         }
 
         private void WriteMetadata()

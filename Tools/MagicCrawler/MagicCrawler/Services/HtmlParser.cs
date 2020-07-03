@@ -1,5 +1,6 @@
 ﻿using MagicCrawler.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -25,7 +26,7 @@ namespace MagicCrawler.Services
                 Slug = Guid.NewGuid().ToString(),
                 Stylesheet = stylesheet,
                 Size = !string.IsNullOrWhiteSpace(size) ? size : null,
-                Tags = new[] { tag }
+                Tags = new List<string> { tag }
             };
 
             return gradient;
