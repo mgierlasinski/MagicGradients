@@ -1,58 +1,34 @@
 ﻿using GradientParser.Services;
 using System;
 using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
-using GradientParser.Core.Models;
-using Newtonsoft.Json;
 using static System.String;
 
 namespace GradientParser.ConsoleApp
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World! I'm Gradient Parser.");
-            //Console.WriteLine();
-            //Console.WriteLine("Please give me link to html file with gradients.");
+            Console.WriteLine("Hello World! I'm Gradient Parser.");
+            Console.WriteLine();
+            Console.WriteLine("Please give me link to html file with gradients.");
 
-            //var filePath = GetFilePath();
+            var filePath = GetFilePath();
 
-            //var html = LoadHtml(filePath);
+            var html = LoadHtml(filePath);
 
-            //Console.WriteLine("Now I need a Tag name, it is the same as an output file name. Without file extension, it's just a name");
+            Console.WriteLine("Now I need a Tag name, it is the same as an output file name. Without file extension, it's just a name");
 
-            //var tag = GetTag();
+            var tag = GetTag();
 
-            //var gradients = new HtmlParser().Parse(html, tag);
+            var gradients = new HtmlParser().Parse(html, tag);
 
-            //File.WriteAllText($".\\{tag}.json", gradients);
-
-            await Run();
+            File.WriteAllText($".\\{tag}.json", gradients);
 
             Console.WriteLine("Ok, I'm done!");
             Console.ReadLine();
         }
 
-        private static async Task Run()
-        {
-            var input = File.ReadAllText("Categories.json");
-            var categories = JsonConvert.DeserializeObject<Category[]>(input);
-
-            var client = new HttpClient();
-            var parser = new HtmlParser();
-
-            foreach (var category in categories)
-            {
-                var html = await client.GetStringAsync(category.Url);
-                var parsed = parser.Parse(html, category.Tag);
-
-                Console.WriteLine($"Saving to {Path.GetFullPath(category.Output)}...");
-                File.WriteAllText(category.Output, parsed);
-            }
-        }
-        
         private static string GetTag()
         {
             string tag;

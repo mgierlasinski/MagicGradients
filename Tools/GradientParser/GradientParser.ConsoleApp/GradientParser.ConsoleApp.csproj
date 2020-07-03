@@ -9,10 +9,4 @@
     <ProjectReference Include="..\GradientParser.Core\GradientParser.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Categories.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
