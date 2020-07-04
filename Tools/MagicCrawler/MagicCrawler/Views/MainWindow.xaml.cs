@@ -16,6 +16,7 @@ namespace MagicCrawler.Views
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
+            ((MainViewModel)DataContext).Initialize();
             ((MainViewModel)DataContext).HtmlLoader.Initialize(WebView);
         }
     }
