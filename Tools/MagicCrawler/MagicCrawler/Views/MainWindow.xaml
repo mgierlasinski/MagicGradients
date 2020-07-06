@@ -17,6 +17,14 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Text="{Binding ConfigurationPath}" IsReadOnly="True" />
+            <Button Content="Browse" Command="{Binding BrowseCommand}" Grid.Column="1" Padding="10,0" Margin="5,0,0,0" />
+        </Grid>
         <controls:WebView x:Name="WebView" Grid.Row="1" Visibility="Collapsed" />
         <ListView Grid.Row="1" ItemsSource="{Binding Jobs}" HorizontalContentAlignment="Stretch">
             <ListView.ItemTemplate>
