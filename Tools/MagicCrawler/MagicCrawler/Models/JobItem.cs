@@ -6,6 +6,10 @@ namespace MagicCrawler.Models
     {
         public Collection Data { get; }
 
+        public string Title => Data.Title;
+        public string Input => Data.GetFullUrl();
+        public string Output => Data.GetFile();
+
         private string _status;
         public string Status
         {

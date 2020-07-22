@@ -8,14 +8,16 @@ namespace MagicCrawler.Models
         public string Title { get; set; }
         public string Stylesheet { get; set; }
         public int DisplayOrder { get; set; }
+        public string BaseUrl { get; set; }
         public string Url { get; set; }
         public string Tag { get; set; }
         public string File { get; set; }
         public List<Gradient> Gradients { get; set; }
 
-        public string GetUrl()
+        public string GetFullUrl()
         {
-            return !string.IsNullOrWhiteSpace(Url) ? Url : Id.ToLower();
+            var url = !string.IsNullOrWhiteSpace(Url) ? Url : Id.ToLower();
+            return $"{BaseUrl}{url}";
         }
 
         public string GetTag()

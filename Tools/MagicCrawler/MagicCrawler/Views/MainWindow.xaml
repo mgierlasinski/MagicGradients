@@ -26,7 +26,15 @@
             <Button Content="Browse" Command="{Binding BrowseCommand}" Grid.Column="1" Padding="10,0" Margin="5,0,0,0" />
         </Grid>
         <controls:WebView x:Name="WebView" Grid.Row="1" Visibility="Collapsed" />
-        <ListView Grid.Row="1" ItemsSource="{Binding Jobs}" HorizontalContentAlignment="Stretch">
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Jobs}"  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" IsReadOnly="True"/>
+                <DataGridHyperlinkColumn Header="Input" Binding="{Binding Input}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Output" Binding="{Binding Output}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" IsReadOnly="True" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--<ListView Grid.Row="1" ItemsSource="{Binding Jobs}" HorizontalContentAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -36,8 +44,7 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
-        <Button Content="Generate" Command="{Binding GenerateCommand}" 
-                Grid.Row="2" Margin="10" FontSize="18" />
+        </ListView>-->
+        <Button Content="Generate" Command="{Binding GenerateCommand}" Grid.Row="2" Margin="10" FontSize="18" />
     </Grid>
 </Window>

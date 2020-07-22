@@ -54,10 +54,9 @@ namespace MagicCrawler.Services
         {
             categories.Add(collection.ToCategory());
 
-            var input = $"{_storage.Configuration.Input}{collection.GetUrl()}";
-            var html = await _loader.LoadAsync(input);
-
+            var html = await _loader.LoadAsync(collection.GetFullUrl());
             var collectionGradients = _parser.Parse(html, collection.GetTag());
+
             RemoveDuplicates(collectionGradients, gradients);
             
             gradients.AddRange(collectionGradients);
@@ -89,10 +88,6 @@ namespace MagicCrawler.Services
                 NameSpace = "Playground.Data.Resources",
                 Categories = "Categories.json",
                 Themes = "Themes.json"
-                //Gradients = _storage.Configuration.Collections
-                //    .OrderBy(x => x.DisplayOrder)
-                //    .Select(x => x.GetFile())
-                //    .ToArray()
             };
 
             _storage.WriteObject("Metadata.json", metadata);
