@@ -4,6 +4,6 @@
     {
         public string Input { get; set; }
         public string Output { get; set; }
-        public Endpoint[] Endpoints { get; set; }
+        public Collection[] Collections { get; set; }
     }
 }

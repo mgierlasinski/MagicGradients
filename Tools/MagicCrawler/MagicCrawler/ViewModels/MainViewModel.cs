@@ -66,7 +66,7 @@ namespace MagicCrawler.ViewModels
             {
                 var config = _storage.LoadConfiguration(path);
                 
-                Jobs = new List<JobItem>(config.Endpoints.Select(x => new JobItem(x))).ToList();
+                Jobs = new List<JobItem>(config.Collections.Select(x => new JobItem(x))).ToList();
                 ConfigurationPath = Path.GetFullPath(path);
             }
             catch (Exception e)

@@ -1,23 +1,28 @@
 {
   "input": "https://www.gradientmagic.com/collection/",
   "output": "..\\..\\..\\..\\..\\..\\Playground\\Playground.Data\\Resources",
-  "endpoints": [
-    {
-      "id": "Popular",
-      "title": "Popular",
-      "isVirtual": true
-    },
+  "collections": [
+
     {
       "id": "Burst",
-      "title": "Burst"
+      "title": "Burst",
+      "stylesheet": "linear-gradient(201deg, rgba(148, 148, 148, 0.07) 0%, rgba(148, 148, 148, 0.07) 50%, rgba(83, 83, 83, 0.07) 50%, rgba(83, 83, 83, 0.07) 100%), linear-gradient(192deg, rgba(176, 176, 176, 0.08) 0%, rgba(176, 176, 176, 0.08) 50%, rgba(180, 180, 180, 0.08) 50%, rgba(180, 180, 180, 0.08) 100%), linear-gradient(48deg, rgba(185, 185, 185, 0.1) 0%, rgba(185, 185, 185, 0.1) 50%, rgba(243, 243, 243, 0.1) 50%, rgba(243, 243, 243, 0.1) 100%), linear-gradient(65deg, rgba(172, 172, 172, 0.09) 0%, rgba(172, 172, 172, 0.09) 50%, rgba(209, 209, 209, 0.09) 50%, rgba(209, 209, 209, 0.09) 100%), linear-gradient(4deg, rgba(224, 224, 224, 0.03) 0%, rgba(224, 224, 224, 0.03) 50%, rgba(49, 49, 49, 0.03) 50%, rgba(49, 49, 49, 0.03) 100%), linear-gradient(228deg, rgba(152, 152, 152, 0.03) 0%, rgba(152, 152, 152, 0.03) 50%, rgba(130, 130, 130, 0.03) 50%, rgba(130, 130, 130, 0.03) 100%), linear-gradient(163deg, rgba(170, 170, 170, 0.08) 0%, rgba(170, 170, 170, 0.08) 50%, rgba(232, 232, 232, 0.08) 50%, rgba(232, 232, 232, 0.08) 100%), linear-gradient(152deg, rgba(12, 12, 12, 0.05) 0%, rgba(12, 12, 12, 0.05) 50%, rgba(161, 161, 161, 0.05) 50%, rgba(161, 161, 161, 0.05) 100%), linear-gradient(302deg, rgba(48, 48, 48, 0.1) 0%, rgba(48, 48, 48, 0.1) 50%, rgba(195, 195, 195, 0.1) 50%, rgba(195, 195, 195, 0.1) 100%), linear-gradient(90deg, rgb(144, 14, 253), rgb(74, 115, 255))"
     },
     {
       "id": "Standard",
-      "title": "Standard"
+      "title": "Standard",
+      "stylesheet": "linear-gradient(0deg, rgb(113, 136, 223), rgb(17, 213, 207))"
     },
     {
       "id": "ComplexPatterns",
-      "title": "Complex Patterns"
+      "title": "Complex Patterns",
+      "stylesheet": "radial-gradient(circle, rgb(59, 135, 192) 0%, rgb(59, 135, 192) 15%, rgb(61, 152, 201) 15%, rgb(61, 152, 201) 70%, rgb(63, 169, 209) 70%, rgb(63, 169, 209) 84%, rgb(65, 186, 218) 84%, rgb(65, 186, 218) 100%)"
+    },
+    {
+      "id": "Popular",
+      "title": "Popular",
+      "stylesheet": "repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.11) 0px, rgba(0, 0, 0, 0.11) 12px, rgba(1, 1, 1, 0.16) 12px, rgba(1, 1, 1, 0.16) 24px, rgba(0, 0, 0, 0.14) 24px, rgba(0, 0, 0, 0.14) 36px, rgba(0, 0, 0, 0.23) 36px, rgba(0, 0, 0, 0.23) 48px, rgba(0, 0, 0, 0.12) 48px, rgba(0, 0, 0, 0.12) 60px, rgba(1, 1, 1, 0.07) 60px, rgba(1, 1, 1, 0.07) 72px, rgba(0, 0, 0, 0.21) 72px, rgba(0, 0, 0, 0.21) 84px, rgba(0, 0, 0, 0.24) 84px, rgba(0, 0, 0, 0.24) 96px, rgba(1, 1, 1, 0.23) 96px, rgba(1, 1, 1, 0.23) 108px, rgba(1, 1, 1, 0.07) 108px, rgba(1, 1, 1, 0.07) 120px, rgba(0, 0, 0, 0.01) 120px, rgba(0, 0, 0, 0.01) 132px, rgba(1, 1, 1, 0.22) 132px, rgba(1, 1, 1, 0.22) 144px, rgba(1, 1, 1, 0.24) 144px, rgba(1, 1, 1, 0.24) 156px, rgba(0, 0, 0, 0) 156px, rgba(0, 0, 0, 0) 168px, rgba(0, 0, 0, 0.12) 168px, rgba(0, 0, 0, 0.12) 180px), repeating-linear-gradient(90deg, rgba(1, 1, 1, 0.01) 0px, rgba(1, 1, 1, 0.01) 12px, rgba(1, 1, 1, 0.15) 12px, rgba(1, 1, 1, 0.15) 24px, rgba(0, 0, 0, 0.09) 24px, rgba(0, 0, 0, 0.09) 36px, rgba(0, 0, 0, 0.02) 36px, rgba(0, 0, 0, 0.02) 48px, rgba(0, 0, 0, 0.1) 48px, rgba(0, 0, 0, 0.1) 60px, rgba(1, 1, 1, 0.07) 60px, rgba(1, 1, 1, 0.07) 72px, rgba(1, 1, 1, 0.15) 72px, rgba(1, 1, 1, 0.15) 84px, rgba(0, 0, 0, 0.18) 84px, rgba(0, 0, 0, 0.18) 96px, rgba(1, 1, 1, 0.15) 96px, rgba(1, 1, 1, 0.15) 108px, rgba(1, 1, 1, 0.09) 108px, rgba(1, 1, 1, 0.09) 120px, rgba(1, 1, 1, 0.07) 120px, rgba(1, 1, 1, 0.07) 132px, rgba(1, 1, 1, 0.05) 132px, rgba(1, 1, 1, 0.05) 144px, rgba(0, 0, 0, 0.1) 144px, rgba(0, 0, 0, 0.1) 156px, rgba(1, 1, 1, 0.18) 156px, rgba(1, 1, 1, 0.18) 168px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.24) 0px, rgba(0, 0, 0, 0.24) 16px, rgba(1, 1, 1, 0.06) 16px, rgba(1, 1, 1, 0.06) 32px, rgba(0, 0, 0, 0.16) 32px, rgba(0, 0, 0, 0.16) 48px, rgba(1, 1, 1, 0) 48px, rgba(1, 1, 1, 0) 64px, rgba(1, 1, 1, 0.12) 64px, rgba(1, 1, 1, 0.12) 80px, rgba(1, 1, 1, 0.22) 80px, rgba(1, 1, 1, 0.22) 96px, rgba(0, 0, 0, 0.24) 96px, rgba(0, 0, 0, 0.24) 112px, rgba(0, 0, 0, 0.25) 112px, rgba(0, 0, 0, 0.25) 128px, rgba(1, 1, 1, 0.12) 128px, rgba(1, 1, 1, 0.12) 144px, rgba(0, 0, 0, 0.18) 144px, rgba(0, 0, 0, 0.18) 160px, rgba(1, 1, 1, 0.03) 160px, rgba(1, 1, 1, 0.03) 176px, rgba(1, 1, 1, 0.1) 176px, rgba(1, 1, 1, 0.1) 192px), repeating-linear-gradient(135deg, rgba(1, 1, 1, 0.18) 0px, rgba(1, 1, 1, 0.18) 3px, rgba(0, 0, 0, 0.09) 3px, rgba(0, 0, 0, 0.09) 6px, rgba(0, 0, 0, 0.08) 6px, rgba(0, 0, 0, 0.08) 9px, rgba(1, 1, 1, 0.05) 9px, rgba(1, 1, 1, 0.05) 12px, rgba(0, 0, 0, 0.01) 12px, rgba(0, 0, 0, 0.01) 15px, rgba(1, 1, 1, 0.12) 15px, rgba(1, 1, 1, 0.12) 18px, rgba(0, 0, 0, 0.05) 18px, rgba(0, 0, 0, 0.05) 21px, rgba(1, 1, 1, 0.16) 21px, rgba(1, 1, 1, 0.16) 24px, rgba(1, 1, 1, 0.07) 24px, rgba(1, 1, 1, 0.07) 27px, rgba(1, 1, 1, 0.23) 27px, rgba(1, 1, 1, 0.23) 30px, rgba(0, 0, 0, 0.2) 30px, rgba(0, 0, 0, 0.2) 33px, rgba(0, 0, 0, 0.18) 33px, rgba(0, 0, 0, 0.18) 36px, rgba(1, 1, 1, 0.12) 36px, rgba(1, 1, 1, 0.12) 39px, rgba(1, 1, 1, 0.13) 39px, rgba(1, 1, 1, 0.13) 42px, rgba(1, 1, 1, 0.2) 42px, rgba(1, 1, 1, 0.2) 45px, rgba(1, 1, 1, 0.18) 45px, rgba(1, 1, 1, 0.18) 48px, rgba(0, 0, 0, 0.2) 48px, rgba(0, 0, 0, 0.2) 51px, rgba(1, 1, 1, 0) 51px, rgba(1, 1, 1, 0) 54px, rgba(0, 0, 0, 0.03) 54px, rgba(0, 0, 0, 0.03) 57px, rgba(1, 1, 1, 0.06) 57px, rgba(1, 1, 1, 0.06) 60px, rgba(1, 1, 1, 0) 60px, rgba(1, 1, 1, 0) 63px, rgba(0, 0, 0, 0.1) 63px, rgba(0, 0, 0, 0.1) 66px, rgba(1, 1, 1, 0.19) 66px, rgba(1, 1, 1, 0.19) 69px), linear-gradient(90deg, rgb(239, 53, 115), rgb(79, 2, 93))",
+      "displayOrder": -1
     }
   ]
 }

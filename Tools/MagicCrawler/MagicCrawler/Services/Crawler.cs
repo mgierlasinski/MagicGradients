@@ -19,28 +19,29 @@ namespace MagicCrawler.Services
             _parser = new HtmlParser();
         }
 
-        public async Task ExecuteJobs(IEnumerable<JobItem> jobs)
+        public async Task ExecuteJobs(List<JobItem> jobs)
         {
             _storage.CreateOutput();
 
             var categories = new List<Category>();
-            var vGradients = new List<Gradient>();
+            var gradients = new List<Gradient>();
 
             foreach (var job in jobs)
             {
-                await ExecuteJob(job, categories, vGradients);
+                await ExecuteJob(job, categories, gradients);
             }
 
             WriteMetadata();
-            _storage.WriteObject("Categories.json", categories);
+            WriteCategories(categories);
+            WriteCollections(jobs.Select(x => x.Data));
         }
 
-        private async Task ExecuteJob(JobItem job, List<Category> categories, List<Gradient> vGradients)
+        private async Task ExecuteJob(JobItem job, List<Category> categories, List<Gradient> gradients)
         {
             try
             {
                 job.Status = "Parsing...";
-                var result = await WriteEndpoint(job.Data, categories, vGradients);
+                var result = await ParseCollection(job.Data, categories, gradients);
                 job.Status = result == null ? "Done" : $"Parsed {result}";
             }
             catch (Exception e)
@@ -49,55 +50,33 @@ namespace MagicCrawler.Services
             }
         }
 
-        private async Task<int?> WriteEndpoint(Endpoint endpoint, List<Category> categories, List<Gradient> vGradients)
+        private async Task<int?> ParseCollection(Collection collection, List<Category> categories, List<Gradient> gradients)
         {
-            var input = $"{_storage.Configuration.Input}{endpoint.GetUrl()}";
+            categories.Add(collection.ToCategory());
+
+            var input = $"{_storage.Configuration.Input}{collection.GetUrl()}";
             var html = await _loader.LoadAsync(input);
-            var gradients = _parser.Parse(html, endpoint.GetTag());
 
-            var category = new Category
-            {
-                Name = endpoint.Title,
-                Tag = endpoint.GetTag(),
-            };
+            var collectionGradients = _parser.Parse(html, collection.GetTag());
+            RemoveDuplicates(collectionGradients, gradients);
+            
+            gradients.AddRange(collectionGradients);
+            collection.Gradients = collectionGradients;
 
-            if (endpoint.IsVirtual)
-            {
-                categories.Add(category);
-                vGradients.AddRange(gradients);
-                return null;
-            }
-
-            category.Slug = gradients.FirstOrDefault()?.Slug;
-            categories.Add(category);
-
-            AddVirtualTags(gradients, categories, vGradients);
-            _storage.WriteObject(endpoint.GetFile(), gradients);
-
-            return gradients.Length;
+            return collectionGradients.Count;
         }
 
-        private void AddVirtualTags(Gradient[] gradients, List<Category> categories, List<Gradient> vGradients)
+        private void RemoveDuplicates(List<Gradient> collectionGradients, List<Gradient> allGradients)
         {
+            var gradients = collectionGradients.ToArray();
+
             foreach (var gradient in gradients)
             {
-                // Match gradient with virtual list and assign additional tags like "popular"
-                var vTags = vGradients
-                    .Where(x => x.Stylesheet == gradient.Stylesheet)
-                    .SelectMany(x => x.Tags)
-                    .Distinct()
-                    .ToArray();
-
-                gradient.Tags.AddRange(vTags);
-
-                // Match this gradient to virtual category and update it's preview
-                foreach (var vTag in vTags)
+                var existing = allGradients.Find(x => x.Stylesheet == gradient.Stylesheet);
+                if (existing != null)
                 {
-                    var vCategory = categories.FirstOrDefault(x => x.Tag == vTag);
-                    if (vCategory != null)
-                    {
-                        vCategory.Slug = gradient.Slug;
-                    }
+                    existing.Tags.AddRange(gradient.Tags);
+                    collectionGradients.Remove(gradient);
                 }
             }
         }
@@ -109,11 +88,27 @@ namespace MagicCrawler.Services
                 Date = DateTime.Now,
                 NameSpace = "Playground.Data.Resources",
                 Categories = "Categories.json",
-                Themes = "Themes.json",
-                Gradients = _storage.Configuration.Endpoints.Where(x => !x.IsVirtual).Select(x => x.GetFile()).ToArray()
+                Themes = "Themes.json"
+                //Gradients = _storage.Configuration.Collections
+                //    .OrderBy(x => x.DisplayOrder)
+                //    .Select(x => x.GetFile())
+                //    .ToArray()
             };
 
             _storage.WriteObject("Metadata.json", metadata);
+        }
+
+        private void WriteCategories(List<Category> categories)
+        {
+            _storage.WriteObject("Categories.json", categories.OrderBy(x => x.DisplayOrder));
+        }
+
+        private void WriteCollections(IEnumerable<Collection> collections)
+        {
+            foreach (var collection in collections)
+            {
+                _storage.WriteObject(collection.GetFile(), collection.Gradients);
+            }
         }
     }
 }

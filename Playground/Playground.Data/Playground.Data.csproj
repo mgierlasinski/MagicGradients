@@ -24,6 +24,7 @@
     <None Remove="Resources\GinghamColored.json" />
     <None Remove="Resources\LightBg.json" />
     <None Remove="Resources\Metadata.json" />
+    <None Remove="Resources\Popular.json" />
     <None Remove="Resources\RadialStripes.json" />
     <None Remove="Resources\RainbowStandard.json" />
     <None Remove="Resources\RepStripes.json" />
@@ -58,6 +59,7 @@
     <EmbeddedResource Include="Resources\GinghamColored.json" />
     <EmbeddedResource Include="Resources\LightBg.json" />
     <EmbeddedResource Include="Resources\Metadata.json" />
+    <EmbeddedResource Include="Resources\Popular.json" />
     <EmbeddedResource Include="Resources\RadialStripes.json" />
     <EmbeddedResource Include="Resources\RainbowStandard.json" />
     <EmbeddedResource Include="Resources\RepStripes.json" />

@@ -10,10 +10,10 @@ namespace MagicCrawler.Services
     {
         private readonly Regex _regex = new Regex("<div class=\"body\" style=\"(background-image: *(.+?);){1} *(background-size: *(.+?);)?\">");
 
-        public Gradient[] Parse(string html, string tag)
+        public List<Gradient> Parse(string html, string tag)
         {
             var matches = _regex.Matches(html);
-            return matches.Select(x => CreateGradient(x, tag)).ToArray();
+            return matches.Select(x => CreateGradient(x, tag)).ToList();
         }
 
         private Gradient CreateGradient(Match match, string tag)

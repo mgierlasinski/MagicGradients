@@ -58,10 +58,11 @@ namespace Playground.Data.Repositories
         {
             var collection = db.GetCollection<Gradient>(nameof(Gradient));
             collection.Delete(Query.All());
-            
-            var documents = documentRepository.GetDocumentCollection<Gradient>(metadata.NameSpace, metadata.Gradients);
 
-            collection.InsertBulk(documents);
+            var categories = documentRepository.GetDocumentCollection<Category>(metadata.NameSpace, metadata.Categories);
+            var gradients = documentRepository.GetDocumentCollection<Gradient>(metadata.NameSpace, categories.Select(x => x.File).ToArray());
+
+            collection.InsertBulk(gradients);
             collection.EnsureIndex(x => x.Slug);
             collection.EnsureIndex(x => x.Tags);
         }

@@ -8,6 +8,5 @@ namespace MagicCrawler.Models
         public string NameSpace { get; set; }
         public string Categories { get; set; }
         public string Themes { get; set; }
-        public string[] Gradients { get; set; }
     }
 }

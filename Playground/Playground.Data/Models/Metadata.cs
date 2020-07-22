@@ -16,8 +16,5 @@ namespace Playground.Data.Models
 
         [BsonField("themes")]
         public string Themes { get; set; }
-
-        [BsonField("gradients")]
-        public string[] Gradients { get; set; }
     }
 }

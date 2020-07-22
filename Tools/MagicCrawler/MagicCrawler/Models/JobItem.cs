@@ -4,7 +4,7 @@ namespace MagicCrawler.Models
 {
     public class JobItem : ObservableObject
     {
-        public Endpoint Data { get; }
+        public Collection Data { get; }
 
         private string _status;
         public string Status
@@ -13,7 +13,7 @@ namespace MagicCrawler.Models
             set => SetProperty(ref _status, value);
         }
 
-        public JobItem(Endpoint data)
+        public JobItem(Collection data)
         {
             Data = data;
         }
