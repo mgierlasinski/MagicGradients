@@ -23,9 +23,7 @@ namespace Playground.Services
         public IEnumerable<GradientCategory> GetCategories()
         {
             var categories = _categoryRepository.GetCategories().ToArray();
-            var previews = _gradientRepository.GetBySlugs(categories.Select(x => x.Slug).ToArray());
-
-            return categories.Select(x => MapCategory(x, previews));
+            return categories.Select(MapCategory);
         }
 
         public IEnumerable<GradientTheme> GetThemes()
@@ -33,14 +31,11 @@ namespace Playground.Services
             return _categoryRepository.GetThemes().Select(MapTheme);
         }
 
-        private GradientCategory MapCategory(Category source, IEnumerable<Gradient> previews) => new GradientCategory
+        private GradientCategory MapCategory(Category source) => new GradientCategory
         {
             Name = source.Name,
             Tag = source.Tag,
-            GradientSource = new CssGradientSource
-            {
-                Stylesheet = previews.FirstOrDefault(x => x.Slug == source.Slug)?.Stylesheet ?? string.Empty
-            }
+            GradientSource = new CssGradientSource { Stylesheet = source.Stylesheet }
         };
 
         private GradientTheme MapTheme(Theme source) => new GradientTheme

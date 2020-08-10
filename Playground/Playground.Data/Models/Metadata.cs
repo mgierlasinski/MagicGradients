@@ -1,13 +1,14 @@
-﻿using LiteDB;
+﻿using System;
+using LiteDB;
 
 namespace Playground.Data.Models
 {
     public class Metadata
     {
-        [BsonField("version")]
-        public ushort Version { get; set; }
+        [BsonField("date")]
+        public DateTime Date { get; set; }
 
-        [BsonField("namespace")]
+        [BsonField("nameSpace")]
         public string NameSpace { get; set; }
 
         [BsonField("categories")]
@@ -15,8 +16,5 @@ namespace Playground.Data.Models
 
         [BsonField("themes")]
         public string Themes { get; set; }
-
-        [BsonField("gradients")]
-        public string[] Gradients { get; set; }
     }
 }

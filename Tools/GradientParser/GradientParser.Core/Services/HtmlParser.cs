@@ -7,9 +7,9 @@ namespace GradientParser.Services
 {
    public class HtmlParser
     {
-        public string Parse(string html,string tag)
+        public string Parse(string html, string tag)
         {
-            var regex = new Regex("<div class=\"body\" style=\"background-image: *(.+?);\">");
+            var regex = new Regex("<div class=\"body\" style=\"(background-image: *(.+?);){1} *(background-size: *(.+?);)?\">");
             
             var matches = regex.Matches(html);
             var gradients = new StringBuilder();

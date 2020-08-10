@@ -9,10 +9,13 @@ namespace Playground.Data.Models
         [BsonField("name")]
         public string Name { get; set; }
 
+        [BsonField("stylesheet")]
+        public string Stylesheet { get; set; }
+
         [BsonField("tag")]
         public string Tag { get; set; }
 
-        [BsonField("slug")]
-        public string Slug { get; set; }
+        [BsonField("file")]
+        public string File { get; set; }
     }
 }

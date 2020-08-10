@@ -43,12 +43,9 @@ namespace Playground.Data.Repositories
         private void InsertData<T>(LiteDatabase db, IDocumentRepository documentRepository, string nameSpace, string fileName)
         {
             var collection = db.GetCollection<T>(typeof(T).Name);
-            if (collection.Count() > 0)
-            {
-                collection.Delete(Query.All());
-            }
+            collection.Delete(Query.All());
 
-            var documents = documentRepository.GetDocumentCollection<T>(nameSpace, new[] { fileName });
+            var documents = documentRepository.GetDocumentCollection<T>(nameSpace, fileName);
             collection.InsertBulk(documents);
         }
     }

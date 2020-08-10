@@ -8,6 +8,7 @@ namespace Playground
         {
             InitializeComponent();
 
+            IoC.RegisterTypes();
             IoC.Initialize();
 
             MainPage = new AppShell();

@@ -1,5 +1,7 @@
 ﻿using Playground.Data.Models;
 using Playground.Data.Repositories;
+using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Playground.Data.Infrastructure
@@ -8,6 +10,12 @@ namespace Playground.Data.Infrastructure
     {
         private readonly IDatabaseProvider _databaseProvider;
         private readonly IDocumentRepository _documentRepository;
+
+        public DateTime LastUpdate
+        {
+            get => Preferences.Get(nameof(LastUpdate), DateTime.MinValue);
+            set => Preferences.Set(nameof(LastUpdate), value);
+        }
 
         public DatabaseUpdater()
         {
@@ -21,7 +29,7 @@ namespace Playground.Data.Infrastructure
 
             using (var db = _databaseProvider.CreateDatabase())
             {
-                if (db.Engine.UserVersion >= metadata.Version)
+                if (LastUpdate >= metadata.Date)
                     return;
 
                 foreach (var repository in repositories)
@@ -29,7 +37,7 @@ namespace Playground.Data.Infrastructure
                     repository.UpdateDatabase(db, metadata, _documentRepository);
                 }
 
-                db.Engine.UserVersion = metadata.Version;
+                LastUpdate = metadata.Date;
             }
         }
     }

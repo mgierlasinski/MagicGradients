@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -22,8 +22,10 @@
     <None Remove="Resources\FutureStripes.json" />
     <None Remove="Resources\Gingham.json" />
     <None Remove="Resources\GinghamColored.json" />
+    <None Remove="Resources\LensFlare.json" />
     <None Remove="Resources\LightBg.json" />
     <None Remove="Resources\Metadata.json" />
+    <None Remove="Resources\Popular.json" />
     <None Remove="Resources\RadialStripes.json" />
     <None Remove="Resources\RainbowStandard.json" />
     <None Remove="Resources\RepStripes.json" />
@@ -35,6 +37,7 @@
     <None Remove="Resources\StandardAsymmetrical.json" />
     <None Remove="Resources\StandardCircle.json" />
     <None Remove="Resources\Stripes.json" />
+    <None Remove="Resources\Texture.json" />
     <None Remove="Resources\Themes.json" />
   </ItemGroup>
 
@@ -56,24 +59,28 @@
     <EmbeddedResource Include="Resources\FutureStripes.json" />
     <EmbeddedResource Include="Resources\Gingham.json" />
     <EmbeddedResource Include="Resources\GinghamColored.json" />
+    <EmbeddedResource Include="Resources\LensFlare.json" />
     <EmbeddedResource Include="Resources\LightBg.json" />
     <EmbeddedResource Include="Resources\Metadata.json" />
+    <EmbeddedResource Include="Resources\Popular.json" />
     <EmbeddedResource Include="Resources\RadialStripes.json" />
     <EmbeddedResource Include="Resources\RainbowStandard.json" />
     <EmbeddedResource Include="Resources\RepStripes.json" />
     <EmbeddedResource Include="Resources\Retro.json" />
     <EmbeddedResource Include="Resources\SimpleAngular.json" />
     <EmbeddedResource Include="Resources\SimpleCircles.json" />
+    <EmbeddedResource Include="Resources\SimplePatterns.json" />
     <EmbeddedResource Include="Resources\Standard.json" />
     <EmbeddedResource Include="Resources\StandardAsymmetrical.json" />
     <EmbeddedResource Include="Resources\StandardCircle.json" />
     <EmbeddedResource Include="Resources\Stripes.json" />
+    <EmbeddedResource Include="Resources\Texture.json" />
 	  <EmbeddedResource Include="Resources\Themes.json" />
-    <EmbeddedResource Include="Resources\SimplePatterns.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiteDB" Version="4.1.4" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
   </ItemGroup>
 
