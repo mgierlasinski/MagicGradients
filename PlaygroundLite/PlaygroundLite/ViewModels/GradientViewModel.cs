@@ -60,12 +60,12 @@ namespace PlaygroundLite.ViewModels
         private void UpdateLength()
         {
             foreach (var stop in Gradient.Stops)
-                stop.Offset = -1;
+                stop.Offset = Offset.Empty;
 
             Gradient.Measure(0, 0);
 
             foreach (var stop in Gradient.Stops)
-                stop.Offset = stop.RenderOffset * (float)Length;
+                stop.Offset = Offset.Prop(stop.RenderOffset * (float)Length);
         }
     }
 }
