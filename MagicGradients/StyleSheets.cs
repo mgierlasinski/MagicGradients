@@ -31,7 +31,7 @@ namespace MagicGradients
                 var itemProperty = stylePropertiesType.GetProperty("Item");
                 var attributes = itemProperty?.GetValue(styleProperties, new object[] { name });
 
-                attributes?.GetType().GetMethod("Add")?.Invoke(attributes, new[] { styleAttributeInstance });
+                attributes?.GetType().GetMethod("Insert")?.Invoke(attributes, new[] { 0, styleAttributeInstance });
             }
             else
             {
