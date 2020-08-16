@@ -28,6 +28,22 @@ namespace PlaygroundLite.ViewModels
             set => SetProperty(ref _length, value, onChanged: UpdateLength);
         }
 
+        private double _sizeX;
+        public double SizeX
+        {
+            get => _sizeX;
+            set => SetProperty(ref _sizeX, value, onChanged: UpdateSize);
+        }
+
+        private double _sizeY;
+        public double SizeY
+        {
+            get => _sizeY;
+            set => SetProperty(ref _sizeY, value, onChanged: UpdateSize);
+        }
+
+        public Size Size => new Size(SizeX, SizeY);
+
         public ICommand AddStopCommand { get; }
         public ICommand RemoveStopCommand { get; set; }
 
@@ -66,6 +82,11 @@ namespace PlaygroundLite.ViewModels
 
             foreach (var stop in Gradient.Stops)
                 stop.Offset = Offset.Prop(stop.RenderOffset * (float)Length);
+        }
+
+        private void UpdateSize()
+        {
+            RaisePropertyChanged(nameof(Size));
         }
     }
 }

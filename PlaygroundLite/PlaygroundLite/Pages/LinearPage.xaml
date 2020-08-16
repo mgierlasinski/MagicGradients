@@ -5,7 +5,8 @@
              x:Class="PlaygroundLite.Pages.LinearPage"
              Title="Linear gradient">
     <StackLayout>
-        <magic:GradientView x:Name="GradientView" GradientSource="{Binding Gradient}" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" />
+        <magic:GradientView x:Name="GradientView" GradientSource="{Binding Gradient}" GradientSize="{Binding Size}"
+                            HorizontalOptions="Fill" VerticalOptions="FillAndExpand" />
         <StackLayout Margin="10">
             <StackLayout Orientation="Horizontal">
                 <Button Text="Add color" Command="{Binding AddStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
@@ -25,6 +26,13 @@
             <StackLayout Orientation="Horizontal">
                 <Stepper Value="{Binding Angle}" Minimum="-360" Maximum="360" Increment="10" HeightRequest="40" />
                 <Entry Text="{Binding Angle}" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+            </StackLayout>
+            <Label Text="Size" Margin="0,10,0,0" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="X" />
+                <Slider Value="{Binding SizeX}" Maximum="200" Minimum="0" HorizontalOptions="FillAndExpand" />
+                <Label Text="Y" Margin="10,0,0,0" />
+                <Slider Value="{Binding SizeY}" Maximum="200" Minimum="0" HorizontalOptions="FillAndExpand" />
             </StackLayout>
         </StackLayout>
     </StackLayout>

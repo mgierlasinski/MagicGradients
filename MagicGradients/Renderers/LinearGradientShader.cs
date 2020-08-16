@@ -5,16 +5,16 @@ using System.Linq;
 
 namespace MagicGradients.Renderers
 {
-    public class LinearGradientRenderer
+    public class LinearGradientShader : IGradientShader
     {
         private readonly LinearGradient _gradient;
 
-        public LinearGradientRenderer(LinearGradient gradient)
+        public LinearGradientShader(LinearGradient gradient)
         {
             _gradient = gradient;
         }
 
-        public void Render(RenderContext context)
+        public SKShader Create(RenderContext context)
         {
             var info = context.Info;
 
@@ -33,8 +33,7 @@ namespace MagicGradients.Renderers
                 colorPos,
                 _gradient.IsRepeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp);
 
-            context.Paint.Shader = shader;
-            context.Canvas.DrawRect(context.Info.Rect, context.Paint);
+            return shader;
         }
 
         private (SKPoint, SKPoint) GetGradientPoints(int width, int height, double rotation, float offset)

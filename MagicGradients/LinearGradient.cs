@@ -1,12 +1,13 @@
-﻿using System;
-using MagicGradients.Renderers;
+﻿using MagicGradients.Renderers;
+using System;
 using Xamarin.Forms;
 
 namespace MagicGradients
 {
     public class LinearGradient : Gradient
     {
-        private readonly LinearGradientRenderer _renderer;
+        private readonly LinearGradientShader _shader;
+        private readonly GradientRenderer _renderer;
 
         public static readonly BindableProperty AngleProperty = BindableProperty.Create(
             nameof(Angle), typeof(double), typeof(LinearGradient), 0d);
@@ -19,7 +20,8 @@ namespace MagicGradients
 
         public LinearGradient()
         {
-            _renderer = new LinearGradientRenderer(this);
+            _shader = new LinearGradientShader(this);
+            _renderer = new GradientRenderer();
         }
 
         public override void Render(RenderContext context)
@@ -27,7 +29,7 @@ namespace MagicGradients
 #if DEBUG_RENDER
             System.Diagnostics.Debug.WriteLine($"Rendering Linear Gradient with {Stops.Count} stops");
 #endif
-            _renderer.Render(context);
+            _renderer.Render(context, _shader);
         }
 
         protected override double CalculateRenderOffset(double offset, int width, int height)

@@ -5,16 +5,16 @@ using System.Linq;
 
 namespace MagicGradients.Renderers
 {
-    public class RadialGradientRenderer
+    public class RadialGradientShader : IGradientShader
     {
         private readonly RadialGradient _gradient;
 
-        public RadialGradientRenderer(RadialGradient gradient)
+        public RadialGradientShader(RadialGradient gradient)
         {
             _gradient = gradient;
         }
 
-        public void Render(RenderContext context)
+        public SKShader Create(RenderContext context)
         {
             var info = context.Info;
 
@@ -35,8 +35,7 @@ namespace MagicGradients.Renderers
                 _gradient.IsRepeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp,
                 GetScaleMatrix(center, radiusX, radiusY));
 
-            context.Paint.Shader = shader;
-            context.Canvas.DrawRect(info.Rect, context.Paint);
+            return shader;
         }
 
         private SKPoint GetCenter(int width, int height)
