@@ -42,7 +42,7 @@ namespace PlaygroundLite.ViewModels
             set => SetProperty(ref _sizeY, value, onChanged: UpdateSize);
         }
 
-        public Size Size => new Size(SizeX, SizeY);
+        public Dimensions Size => Dimensions.Prop(SizeX, SizeY);
 
         public ICommand AddStopCommand { get; }
         public ICommand RemoveStopCommand { get; set; }

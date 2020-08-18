@@ -17,7 +17,7 @@ namespace MagicGradients
             typeof(IGradientSource), typeof(GradientView), propertyChanged: OnGradientSourceChanged);
 
         public static readonly BindableProperty GradientSizeProperty = BindableProperty.Create(nameof(GradientSize),
-            typeof(Size), typeof(GradientView), propertyChanged: OnGradientSizeChanged);
+            typeof(Dimensions), typeof(GradientView), propertyChanged: OnGradientSizeChanged);
 
         public IGradientSource GradientSource
         {
@@ -25,9 +25,9 @@ namespace MagicGradients
             set => SetValue(GradientSourceProperty, value);
         }
 
-        public Size GradientSize
+        public Dimensions GradientSize
         {
-            get => (Size)GetValue(GradientSizeProperty);
+            get => (Dimensions)GetValue(GradientSizeProperty);
             set => SetValue(GradientSizeProperty, value);
         }
 
@@ -76,7 +76,7 @@ namespace MagicGradients
 
             using (var paint = new SKPaint())
             {
-                var context = new RenderContext(canvas, paint, e.Info, GradientSize.ToSKSize());
+                var context = new RenderContext(canvas, paint, e.Info, GradientSize);
 
                 foreach (var gradient in GradientSource.GetGradients())
                 {

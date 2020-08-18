@@ -9,7 +9,7 @@ namespace MagicGradients.Renderers
         {
             context.Paint.Shader = shader.Create(context);
 
-            if (context.Size.Width > 1 && context.Size.Height > 1)
+            if (context.Size.Width.Value > 0 && context.Size.Height.Value > 0)
             {
                 RenderTiled(context);
             }
@@ -21,16 +21,24 @@ namespace MagicGradients.Renderers
 
         private void RenderTiled(RenderContext context)
         {
-            var rows = Math.Ceiling(context.Info.Height / context.Size.Height);
-            var cols = Math.Ceiling(context.Info.Width / context.Size.Width);
-            var scaleX = context.Size.Width / context.Info.Width;
-            var scaleY = context.Size.Height / context.Info.Height;
+            var tileWidth = context.Size.Width.Type == OffsetType.Proportional
+                ? (float)context.Size.Width.Value * context.Info.Width
+                : (float)context.Size.Width.Value;
+
+            var tileHeight = context.Size.Height.Type == OffsetType.Proportional
+                ? (float)context.Size.Height.Value * context.Info.Height
+                : (float)context.Size.Height.Value;
+
+            var rows = Math.Ceiling(context.Info.Height / tileHeight);
+            var cols = Math.Ceiling(context.Info.Width / tileWidth);
+            var scaleX = tileWidth / context.Info.Width;
+            var scaleY = tileHeight / context.Info.Height;
 
             for (var row = 0; row < rows; row++)
             {
                 for (var col = 0; col < cols; col++)
                 {
-                    var point = new SKPoint(col * context.Size.Width, row * context.Size.Height);
+                    var point = new SKPoint(col * tileWidth, row * tileHeight);
 
                     context.Canvas.Save();
                     context.Canvas.Translate(point);

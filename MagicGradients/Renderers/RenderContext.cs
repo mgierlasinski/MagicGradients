@@ -7,9 +7,9 @@ namespace MagicGradients.Renderers
         public SKCanvas Canvas { get; }
         public SKPaint Paint { get; }
         public SKImageInfo Info { get; }
-        public SKSize Size { get; }
+        public Dimensions Size { get; }
 
-        public RenderContext(SKCanvas canvas, SKPaint paint, SKImageInfo info, SKSize size)
+        public RenderContext(SKCanvas canvas, SKPaint paint, SKImageInfo info, Dimensions size)
         {
             Canvas = canvas;
             Paint = paint;
