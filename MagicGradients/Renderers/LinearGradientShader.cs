@@ -16,7 +16,7 @@ namespace MagicGradients.Renderers
 
         public SKShader Create(RenderContext context)
         {
-            var info = context.Info;
+            var rect = context.RenderRect;
 
             var orderedStops = _gradient.Stops.OrderBy(x => x.RenderOffset).ToArray();
             var lastOffset = orderedStops.LastOrDefault()?.RenderOffset ?? 1;
@@ -24,7 +24,7 @@ namespace MagicGradients.Renderers
             var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = orderedStops.Select(x => x.RenderOffset / lastOffset).ToArray();
 
-            var (startPoint, endPoint) = GetGradientPoints(info.Width, info.Height, _gradient.Angle, lastOffset);
+            var (startPoint, endPoint) = GetGradientPoints((int)rect.Size.Width, (int)rect.Size.Height, _gradient.Angle, lastOffset);
 
             var shader = SKShader.CreateLinearGradient(
                 startPoint,

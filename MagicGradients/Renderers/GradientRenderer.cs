@@ -1,38 +1,73 @@
 ﻿using System;
 using SkiaSharp;
+using SkiaSharp.Views.Forms;
 
 namespace MagicGradients.Renderers
 {
     public class GradientRenderer
     {
+        private readonly GradientView _control;
+
+        public GradientRenderer(GradientView control)
+        {
+            _control = control;
+        }
+
+        public RenderContext CreateContext(SKPaintSurfaceEventArgs e)
+        {
+            var context = new RenderContext
+            {
+                Canvas = e.Surface.Canvas,
+                Paint = new SKPaint(),
+                CanvasRect = e.Info.Rect
+            };
+
+            var size = _control.GradientSize;
+
+            if (size.Width.Value > 0 && size.Height.Value > 0)
+            {
+                var width = size.Width.Type == OffsetType.Proportional
+                    ? (float)size.Width.Value * context.CanvasRect.Width
+                    : (float)size.Width.Value;
+
+                var height = size.Height.Type == OffsetType.Proportional
+                    ? (float)size.Height.Value * context.CanvasRect.Height
+                    : (float)size.Height.Value;
+
+                context.RenderRect = new SKRect(0, 0, width, height);
+            }
+            else
+            {
+                context.RenderRect = context.CanvasRect;
+            }
+
+            return context;
+        }
+
         public void Render(RenderContext context, IGradientShader shader)
         {
             context.Paint.Shader = shader.Create(context);
 
-            if (context.Size.Width.Value > 0 && context.Size.Height.Value > 0)
+            if (context.RenderRect != context.CanvasRect)
             {
                 RenderTiled(context);
             }
             else
             {
-                context.Canvas.DrawRect(context.Info.Rect, context.Paint);
+                context.Canvas.DrawRect(context.RenderRect, context.Paint);
             }
         }
 
         private void RenderTiled(RenderContext context)
         {
-            var tileWidth = context.Size.Width.Type == OffsetType.Proportional
-                ? (float)context.Size.Width.Value * context.Info.Width
-                : (float)context.Size.Width.Value;
+            var width = context.CanvasRect.Size.Width;
+            var height = context.CanvasRect.Size.Height;
 
-            var tileHeight = context.Size.Height.Type == OffsetType.Proportional
-                ? (float)context.Size.Height.Value * context.Info.Height
-                : (float)context.Size.Height.Value;
+            var tileWidth = context.RenderRect.Width;
+            var tileHeight = context.RenderRect.Height;
 
-            var rows = Math.Ceiling(context.Info.Height / tileHeight);
-            var cols = Math.Ceiling(context.Info.Width / tileWidth);
-            var scaleX = tileWidth / context.Info.Width;
-            var scaleY = tileHeight / context.Info.Height;
+            var rows = Math.Ceiling(height / tileHeight);
+            var cols = Math.Ceiling(width / tileWidth);
 
             for (var row = 0; row < rows; row++)
             {
@@ -42,8 +77,16 @@ namespace MagicGradients.Renderers
 
                     context.Canvas.Save();
                     context.Canvas.Translate(point);
-                    context.Canvas.Scale(scaleX, scaleY);
-                    context.Canvas.DrawRect(context.Info.Rect, context.Paint);
+                    context.Canvas.DrawRect(context.RenderRect, context.Paint);
+
+                    using (var paint = new SKPaint())
+                    {
+                        paint.StrokeWidth = 2;
+                        paint.Style = SKPaintStyle.Stroke;
+                        paint.Color = SKColors.Yellow;
+                        context.Canvas.DrawRect(context.RenderRect, paint);
+                    }
+
                     context.Canvas.Restore();
                 }
             }

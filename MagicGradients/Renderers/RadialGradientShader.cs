@@ -16,7 +16,7 @@ namespace MagicGradients.Renderers
 
         public SKShader Create(RenderContext context)
         {
-            var info = context.Info;
+            var rect = context.RenderRect;
 
             var orderedStops = _gradient.Stops.OrderBy(x => x.RenderOffset).ToArray();
             var lastOffset = _gradient.IsRepeating ? orderedStops.LastOrDefault()?.RenderOffset ?? 1 : 1;
@@ -24,8 +24,8 @@ namespace MagicGradients.Renderers
             var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = orderedStops.Select(x => x.RenderOffset / lastOffset).ToArray();
 
-            var center = GetCenter(info.Width, info.Height);
-            var (radiusX, radiusY) = GetRadius(center, info, lastOffset);
+            var center = GetCenter((int)rect.Size.Width, (int)rect.Size.Height);
+            var (radiusX, radiusY) = GetRadius(center, rect, lastOffset);
 
             var shader = SKShader.CreateRadialGradient(
                 center,
@@ -50,14 +50,14 @@ namespace MagicGradients.Renderers
                 yIsProportional ? height * point.Y : point.Y);
         }
 
-        private (float, float) GetRadius(SKPoint center, SKImageInfo info, float offset)
+        private (float, float) GetRadius(SKPoint center, SKRect rect, float offset)
         {
             var radiusX = 0f;
             var radiusY = 0f;
 
             if (_gradient.Shape == RadialGradientShape.Ellipse)
             {
-                var distances = GetDistanceInPoints(center, info);
+                var distances = GetDistanceInPoints(center, rect);
                 var distanceX = distances.Select(p => Math.Abs(p.X)).Where(x => x > 0);
                 var distanceY = distances.Select(p => Math.Abs(p.Y)).Where(y => y > 0);
 
@@ -69,7 +69,7 @@ namespace MagicGradients.Renderers
 
             if (_gradient.Shape == RadialGradientShape.Circle)
             {
-                var distances = GetEuclideanDistance(center, info);
+                var distances = GetEuclideanDistance(center, rect);
                 var distanceXY = _gradient.Size.IsClosest() ? distances.Min() : distances.Max();
 
                 radiusX = distanceXY;
@@ -79,49 +79,49 @@ namespace MagicGradients.Renderers
             if (_gradient.RadiusX > -1)
             {
                 var widthIsProportional = IsProportional(RadialGradientFlags.WidthProportional);
-                radiusX = widthIsProportional ? info.Width * (float)_gradient.RadiusX : (float)_gradient.RadiusX;
+                radiusX = widthIsProportional ? rect.Width * (float)_gradient.RadiusX : (float)_gradient.RadiusX;
             }
 
             if (_gradient.RadiusY > -1)
             {
                 var heightIsProportional = IsProportional(RadialGradientFlags.HeightProportional);
-                radiusY = heightIsProportional ? info.Height * (float)_gradient.RadiusY : (float)_gradient.RadiusY;
+                radiusY = heightIsProportional ? rect.Height * (float)_gradient.RadiusY : (float)_gradient.RadiusY;
             }
             
             return (radiusX * offset, radiusY * offset);
         }
 
-        private SKPoint[] GetCornerPoints(SKImageInfo info)
+        private SKPoint[] GetCornerPoints(SKRect rect)
         {
             var points = new[]
             {
-                new SKPoint(info.Rect.Left, info.Rect.Top),     // leftTop
-                new SKPoint(info.Rect.Right, info.Rect.Top),    // rightTop
-                new SKPoint(info.Rect.Right, info.Rect.Bottom), // rightBottom
-                new SKPoint(info.Rect.Left, info.Rect.Bottom)   // leftBottom
+                new SKPoint(rect.Left, rect.Top),     // leftTop
+                new SKPoint(rect.Right, rect.Top),    // rightTop
+                new SKPoint(rect.Right, rect.Bottom), // rightBottom
+                new SKPoint(rect.Left, rect.Bottom)   // leftBottom
             };
 
             return points;
         }
 
-        private SKPoint[] GetSidePoints(SKPoint center, SKImageInfo info)
+        private SKPoint[] GetSidePoints(SKPoint center, SKRect rect)
         {
             var points = new[]
             {
-                new SKPoint(info.Rect.Left, center.Y),      // left
-                new SKPoint(center.X, info.Rect.Top),       // top
-                new SKPoint(info.Rect.Right, center.Y),     // right
-                new SKPoint(center.X, info.Rect.Bottom)     // bottom
+                new SKPoint(rect.Left, center.Y),      // left
+                new SKPoint(center.X, rect.Top),       // top
+                new SKPoint(rect.Right, center.Y),     // right
+                new SKPoint(center.X, rect.Bottom)     // bottom
             };
 
             return points;
         }
 
-        private SKPoint[] GetDistanceInPoints(SKPoint center, SKImageInfo info)
+        private SKPoint[] GetDistanceInPoints(SKPoint center, SKRect rect)
         {
             var points = _gradient.Size.IsCorner() ?
-                GetCornerPoints(info) :
-                GetSidePoints(center, info);
+                GetCornerPoints(rect) :
+                GetSidePoints(center, rect);
 
             var distances = new SKPoint[points.Length];
 
@@ -133,11 +133,11 @@ namespace MagicGradients.Renderers
             return distances;
         }
 
-        private float[] GetEuclideanDistance(SKPoint center, SKImageInfo info)
+        private float[] GetEuclideanDistance(SKPoint center, SKRect rect)
         {
             var points = _gradient.Size.IsCorner() ?
-                GetCornerPoints(info) :
-                GetSidePoints(center, info);
+                GetCornerPoints(rect) :
+                GetSidePoints(center, rect);
 
             var distances = new float[points.Length];
 

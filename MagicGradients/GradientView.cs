@@ -1,5 +1,4 @@
 using MagicGradients.Renderers;
-using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
@@ -12,6 +11,8 @@ namespace MagicGradients
         {
             StyleSheets.RegisterStyle("background", typeof(GradientView), nameof(GradientSourceProperty));
         }
+
+        public GradientRenderer Renderer { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(nameof(GradientSource), 
             typeof(IGradientSource), typeof(GradientView), propertyChanged: OnGradientSourceChanged);
@@ -74,14 +75,16 @@ namespace MagicGradients
             if (GradientSource == null)
                 return;
 
-            using (var paint = new SKPaint())
-            {
-                var context = new RenderContext(canvas, paint, e.Info, GradientSize);
+            if(Renderer == null)
+                Renderer = new GradientRenderer(this);
 
+            var context = Renderer.CreateContext(e);
+            using (context.Paint)
+            {
                 foreach (var gradient in GradientSource.GetGradients())
                 {
-                    gradient.Measure(e.Info.Width, e.Info.Height);
-                    gradient.Render(context);
+                    gradient.Measure((int)context.RenderRect.Width, (int)context.RenderRect.Height);
+                    Renderer.Render(context, gradient.Shader);
                 }
             }
         }

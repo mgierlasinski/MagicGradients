@@ -28,21 +28,14 @@ namespace PlaygroundLite.ViewModels
             set => SetProperty(ref _length, value, onChanged: UpdateLength);
         }
 
-        private double _sizeX;
-        public double SizeX
+        private double _scale = 1;
+        public double Scale
         {
-            get => _sizeX;
-            set => SetProperty(ref _sizeX, value, onChanged: UpdateSize);
+            get => _scale;
+            set => SetProperty(ref _scale, value, onChanged: UpdateSize);
         }
 
-        private double _sizeY;
-        public double SizeY
-        {
-            get => _sizeY;
-            set => SetProperty(ref _sizeY, value, onChanged: UpdateSize);
-        }
-
-        public Dimensions Size => Dimensions.Prop(SizeX, SizeY);
+        public Dimensions Size => Dimensions.Prop(Scale, Scale);
 
         public ICommand AddStopCommand { get; }
         public ICommand RemoveStopCommand { get; set; }

@@ -6,9 +6,6 @@ namespace MagicGradients
 {
     public class LinearGradient : Gradient
     {
-        private readonly LinearGradientShader _shader;
-        private readonly GradientRenderer _renderer;
-
         public static readonly BindableProperty AngleProperty = BindableProperty.Create(
             nameof(Angle), typeof(double), typeof(LinearGradient), 0d);
 
@@ -20,17 +17,16 @@ namespace MagicGradients
 
         public LinearGradient()
         {
-            _shader = new LinearGradientShader(this);
-            _renderer = new GradientRenderer();
+            Shader = new LinearGradientShader(this);
         }
 
-        public override void Render(RenderContext context)
-        {
-#if DEBUG_RENDER
-            System.Diagnostics.Debug.WriteLine($"Rendering Linear Gradient with {Stops.Count} stops");
-#endif
-            _renderer.Render(context, _shader);
-        }
+//        public override void Render(RenderContext context)
+//        {
+//#if DEBUG_RENDER
+//            System.Diagnostics.Debug.WriteLine($"Rendering Linear Gradient with {Stops.Count} stops");
+//#endif
+//            _renderer.Render(context, _shader);
+//        }
 
         protected override double CalculateRenderOffset(double offset, int width, int height)
         {
