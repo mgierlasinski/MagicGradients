@@ -9,7 +9,12 @@ namespace PlaygroundLite.ViewModels
 {
     public class GradientViewModel<TGradient> : BaseViewModel where TGradient : Gradient
     {
-        public TGradient Gradient { get; set; }
+        private TGradient _gradient;
+        public TGradient Gradient
+        {
+            get => _gradient;
+            set => SetProperty(ref _gradient, value);
+        }
 
         public int StopsCount => Gradient.Stops.Count;
 
@@ -37,8 +42,24 @@ namespace PlaygroundLite.ViewModels
 
         public Dimensions Size => Dimensions.Prop(Scale, Scale);
 
+        public BackgroundRepeat[] RepeatItems { get; set; } =
+        {
+            BackgroundRepeat.Repeat,
+            BackgroundRepeat.RepeatX,
+            BackgroundRepeat.RepeatY,
+            BackgroundRepeat.NoRepeat
+        };
+
+        private BackgroundRepeat _selectedRepeat;
+        public BackgroundRepeat SelectedRepeat
+        {
+            get => _selectedRepeat;
+            set => SetProperty(ref _selectedRepeat, value);
+        }
+
         public ICommand AddStopCommand { get; }
         public ICommand RemoveStopCommand { get; set; }
+        public ICommand ResetCommand { get; set; }
 
         public GradientViewModel()
         {
@@ -53,7 +74,7 @@ namespace PlaygroundLite.ViewModels
                 Color = ColorUtils.GetRandom()
             });
             UpdateLength();
-            RaisePropertyChanged(nameof(StopsCount));
+            UpdateStopsCount();
         }
 
         private void RemoveColorStop()
@@ -62,7 +83,7 @@ namespace PlaygroundLite.ViewModels
             {
                 Gradient.Stops.RemoveAt(Gradient.Stops.Count - 1);
                 UpdateLength();
-                RaisePropertyChanged(nameof(StopsCount));
+                UpdateStopsCount();
             }
         }
 
@@ -75,6 +96,11 @@ namespace PlaygroundLite.ViewModels
 
             foreach (var stop in Gradient.Stops)
                 stop.Offset = Offset.Prop(stop.RenderOffset * (float)Length);
+        }
+
+        protected void UpdateStopsCount()
+        {
+            RaisePropertyChanged(nameof(StopsCount));
         }
 
         private void UpdateSize()

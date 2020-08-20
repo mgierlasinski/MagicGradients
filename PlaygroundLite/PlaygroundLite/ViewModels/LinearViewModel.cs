@@ -1,5 +1,6 @@
 ﻿using MagicGradients;
 using PlaygroundLite.Services;
+using Xamarin.Forms;
 
 namespace PlaygroundLite.ViewModels
 {
@@ -14,10 +15,19 @@ namespace PlaygroundLite.ViewModels
 
         public LinearViewModel()
         {
+            InitializeGradient();
+
+            ResetCommand = new Command(InitializeGradient);
+        }
+
+        private void InitializeGradient()
+        {
             Gradient = new LinearGradient();
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
+
+            UpdateStopsCount();
         }
     }
 }

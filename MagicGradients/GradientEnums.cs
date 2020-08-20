@@ -2,6 +2,14 @@
 
 namespace MagicGradients
 {
+    public enum BackgroundRepeat
+    {
+        Repeat, 
+        RepeatX, 
+        RepeatY, 
+        NoRepeat
+    }
+
     [Flags]
     public enum RadialGradientFlags
     {

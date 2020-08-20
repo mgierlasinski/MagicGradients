@@ -1,6 +1,7 @@
-﻿using System;
-using SkiaSharp;
+﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
+using System;
+using static MagicGradients.BackgroundRepeat;
 
 namespace MagicGradients.Renderers
 {
@@ -66,8 +67,11 @@ namespace MagicGradients.Renderers
             var tileWidth = context.RenderRect.Width;
             var tileHeight = context.RenderRect.Height;
 
-            var rows = Math.Ceiling(height / tileHeight);
-            var cols = Math.Ceiling(width / tileWidth);
+            var rows = _control.GradientRepeat == Repeat || _control.GradientRepeat == RepeatY ? 
+                Math.Ceiling(height / tileHeight) : 1;
+
+            var cols = _control.GradientRepeat == Repeat || _control.GradientRepeat == RepeatX ? 
+                Math.Ceiling(width / tileWidth) : 1;
 
             for (var row = 0; row < rows; row++)
             {
@@ -78,17 +82,20 @@ namespace MagicGradients.Renderers
                     context.Canvas.Save();
                     context.Canvas.Translate(point);
                     context.Canvas.DrawRect(context.RenderRect, context.Paint);
-
-                    using (var paint = new SKPaint())
-                    {
-                        paint.StrokeWidth = 2;
-                        paint.Style = SKPaintStyle.Stroke;
-                        paint.Color = SKColors.Yellow;
-                        context.Canvas.DrawRect(context.RenderRect, paint);
-                    }
-
+                    DebugTile(context);
                     context.Canvas.Restore();
                 }
+            }
+        }
+
+        private void DebugTile(RenderContext context)
+        {
+            using (var paint = new SKPaint())
+            {
+                paint.StrokeWidth = 2;
+                paint.Style = SKPaintStyle.Stroke;
+                paint.Color = SKColors.Yellow;
+                context.Canvas.DrawRect(context.RenderRect, paint);
             }
         }
     }

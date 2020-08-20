@@ -70,6 +70,13 @@ namespace PlaygroundLite.ViewModels
 
         public RadialViewModel()
         {
+            InitializeGradient();
+
+            ResetCommand = new Command(InitializeGradient);
+        }
+
+        private void InitializeGradient()
+        {
             Gradient = new RadialGradient
             {
                 Flags = RadialGradientFlags.PositionProportional
@@ -79,6 +86,7 @@ namespace PlaygroundLite.ViewModels
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
 
+            UpdateStopsCount();
             UpdateCenter();
             UpdateShape();
             UpdateSize();

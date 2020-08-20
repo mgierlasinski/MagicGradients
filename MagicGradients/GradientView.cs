@@ -18,7 +18,10 @@ namespace MagicGradients
             typeof(IGradientSource), typeof(GradientView), propertyChanged: OnGradientSourceChanged);
 
         public static readonly BindableProperty GradientSizeProperty = BindableProperty.Create(nameof(GradientSize),
-            typeof(Dimensions), typeof(GradientView), propertyChanged: OnGradientSizeChanged);
+            typeof(Dimensions), typeof(GradientView), propertyChanged: UpdateCanvas);
+
+        public static readonly BindableProperty GradientRepeatProperty = BindableProperty.Create(nameof(GradientRepeat),
+            typeof(BackgroundRepeat), typeof(GradientView), propertyChanged: UpdateCanvas);
 
         public IGradientSource GradientSource
         {
@@ -30,6 +33,12 @@ namespace MagicGradients
         {
             get => (Dimensions)GetValue(GradientSizeProperty);
             set => SetValue(GradientSizeProperty, value);
+        }
+
+        public BackgroundRepeat GradientRepeat
+        {
+            get => (BackgroundRepeat)GetValue(GradientRepeatProperty);
+            set => SetValue(GradientRepeatProperty, value);
         }
 
         static void OnGradientSourceChanged(BindableObject bindable, object oldValue, object newValue)
@@ -49,7 +58,7 @@ namespace MagicGradients
             gradientView.InvalidateSurface();
         }
 
-        static void OnGradientSizeChanged(BindableObject bindable, object oldValue, object newValue)
+        static void UpdateCanvas(BindableObject bindable, object oldValue, object newValue)
         {
             var gradientView = (GradientView)bindable;
             gradientView.InvalidateSurface();
