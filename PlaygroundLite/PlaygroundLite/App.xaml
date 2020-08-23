@@ -4,15 +4,17 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:PlaygroundLite.Converters;assembly=PlaygroundLite"
+             xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
              mc:Ignorable="d"
              x:Class="PlaygroundLite.App">
     <Application.Resources>
+        <Color x:Key="AccentColor">#1790F9</Color>
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="Medium" />
         </Style>
         <Style TargetType="Slider">
-            <Setter Property="MinimumTrackColor" Value="Blue" />
-            <Setter Property="MaximumTrackColor" Value="Blue" />
+            <Setter Property="MinimumTrackColor" Value="{StaticResource AccentColor}" />
+            <Setter Property="MaximumTrackColor" Value="{StaticResource AccentColor}" />
         </Style>
         <Style TargetType="BoxView" x:Key="ChipBackground">
             <Setter Property="Color" Value="Red" />
@@ -29,6 +31,25 @@
         <Style x:Key="SemiTransparent" TargetType="BoxView">
             <Setter Property="BackgroundColor" Value="Black" />
             <Setter Property="Opacity" Value="0.5" />
+        </Style>
+        <Style x:Key="SegmentedTabs" TargetType="tabs:TabHostView">
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="IsSegmented" Value="True" />
+            <Setter Property="SegmentedHasSeparator" Value="True" />
+            <Setter Property="SegmentedOutlineColor" Value="{StaticResource AccentColor}" />
+        </Style>
+        <Style TargetType="tabs:UnderlinedTabItem">
+            <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />
+            <Setter Property="LabelSize" Value="18" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="UnselectedLabelColor" Value="Gray" />
+        </Style>
+        <Style TargetType="tabs:SegmentedTabItem">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />
+            <Setter Property="LabelSize" Value="14" />
+            <Setter Property="SelectedLabelColor" Value="White" />
+            <Setter Property="UnselectedLabelColor" Value="{StaticResource AccentColor}" />
         </Style>
         <converters:NegativeBoolConverter x:Key="NegativeBoolConverter" />
     </Application.Resources>

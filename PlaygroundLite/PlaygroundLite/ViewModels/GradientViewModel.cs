@@ -30,31 +30,32 @@ namespace PlaygroundLite.ViewModels
         public double Length
         {
             get => _length;
-            set => SetProperty(ref _length, value, onChanged: UpdateLength);
+            set => SetProperty(ref _length, value, UpdateLength);
         }
 
         private double _scale = 1;
         public double Scale
         {
             get => _scale;
-            set => SetProperty(ref _scale, value, onChanged: UpdateSize);
+            set => SetProperty(ref _scale, value, UpdateSize);
         }
 
         public Dimensions Size => Dimensions.Prop(Scale, Scale);
 
-        public BackgroundRepeat[] RepeatItems { get; set; } =
-        {
-            BackgroundRepeat.Repeat,
-            BackgroundRepeat.RepeatX,
-            BackgroundRepeat.RepeatY,
-            BackgroundRepeat.NoRepeat
-        };
+        public BackgroundRepeat SelectedRepeat => (BackgroundRepeat)RepeatIndex;
 
-        private BackgroundRepeat _selectedRepeat;
-        public BackgroundRepeat SelectedRepeat
+        private int _repeatIndex;
+        public int RepeatIndex
         {
-            get => _selectedRepeat;
-            set => SetProperty(ref _selectedRepeat, value);
+            get => _repeatIndex;
+            set => SetProperty(ref _repeatIndex, value, () => RaisePropertyChanged(nameof(SelectedRepeat)));
+        }
+
+        private int _selectedViewModelIndex;
+        public int SelectedViewModelIndex
+        {
+            get => _selectedViewModelIndex;
+            set => SetProperty(ref _selectedViewModelIndex, value);
         }
 
         public ICommand AddStopCommand { get; }

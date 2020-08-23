@@ -2,46 +2,66 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
              x:Class="PlaygroundLite.Pages.LinearPage"
              Title="Linear gradient">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Reset" Command="{Binding ResetCommand}" />
     </ContentPage.ToolbarItems>
 
-    <Grid RowDefinitions="40*,60*" RowSpacing="0">
+    <Grid RowDefinitions="40*,60,60*" RowSpacing="0">
         <magic:GradientView x:Name="GradientView" 
                             GradientSource="{Binding Gradient}" 
                             GradientSize="{Binding Size}"
                             GradientRepeat="{Binding SelectedRepeat}"
                             HorizontalOptions="Fill" 
                             VerticalOptions="FillAndExpand" />
-        <ScrollView Grid.Row="1">
-            <StackLayout Margin="10">
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Add color" Command="{Binding AddStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
-                    <Button Text="Remove color" Command="{Binding RemoveStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
-                    <Grid HorizontalOptions="End" Margin="10,0,0,0">
-                        <BoxView Style="{StaticResource ChipBackground}" />
-                        <Label Text="{Binding StopsCount}" Style="{StaticResource ChipValue}" />
-                    </Grid>
+        <tabs:TabHostView Grid.Row="1" SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
+            <tabs:TabHostView.Tabs>
+                <tabs:UnderlinedTabItem Label="Properties" />
+                <tabs:UnderlinedTabItem Label="Colors" />
+                <tabs:UnderlinedTabItem Label="Background" />
+            </tabs:TabHostView.Tabs>
+        </tabs:TabHostView>
+        <BoxView Grid.Row="1" Color="LightGray" HeightRequest="1" VerticalOptions="End" />
+        <ScrollView Grid.Row="2" Padding="10">
+            <tabs:ViewSwitcher x:Name="Switcher" SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}">
+                <StackLayout>
+                    <Label Text="Angle" />
+                    <StackLayout Orientation="Horizontal">
+                        <Entry Text="{Binding Angle}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+                        <Stepper Value="{Binding Angle}" Minimum="-360" Maximum="360" Increment="10" HeightRequest="40" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Text="Length" HorizontalOptions="StartAndExpand" Margin="0,3,0,0" />
+                        <CheckBox IsChecked="{Binding IsRepeating}" HorizontalOptions="End" />
+                        <Label Text="Repeating" HorizontalOptions="End" Margin="0,3,0,0" />
+                    </StackLayout>
+                    <Slider Value="{Binding Length}" Maximum="1" Minimum="0.1" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
-                    <Label Text="Length" HorizontalOptions="StartAndExpand" Margin="0,3,0,0" />
-                    <CheckBox IsChecked="{Binding IsRepeating}" HorizontalOptions="End" />
-                    <Label Text="Repeating" HorizontalOptions="End" Margin="0,3,0,0" />
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Add color" Command="{Binding AddStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+                        <Button Text="Remove color" Command="{Binding RemoveStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+                        <Grid HorizontalOptions="End" Margin="10,0,0,0">
+                            <BoxView Style="{StaticResource ChipBackground}" />
+                            <Label Text="{Binding StopsCount}" Style="{StaticResource ChipValue}" />
+                        </Grid>
+                    </StackLayout>
                 </StackLayout>
-                <Slider Value="{Binding Length}" Maximum="1" Minimum="0.1" HorizontalOptions="FillAndExpand" />
-                <Label Text="Angle" Margin="0,10,0,0" />
-                <StackLayout Orientation="Horizontal">
-                    <Stepper Value="{Binding Angle}" Minimum="-360" Maximum="360" Increment="10" HeightRequest="40" />
-                    <Entry Text="{Binding Angle}" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" HeightRequest="40" />
-                </StackLayout>
-                <Label Text="Gradient Size" Margin="0,10,0,0" />
-                <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Gradient Size" />
                     <Slider Value="{Binding Scale}" Maximum="1" Minimum="0" HorizontalOptions="FillAndExpand" />
-                    <Picker ItemsSource="{Binding RepeatItems}" SelectedItem="{Binding SelectedRepeat}" HorizontalOptions="FillAndExpand" />
+                    <tabs:TabHostView SelectedIndex="{Binding RepeatIndex, Mode=TwoWay}" Style="{StaticResource SegmentedTabs}" Margin="0,10,0,0">
+                        <tabs:TabHostView.Tabs>
+                            <tabs:SegmentedTabItem Label="Repeat" />
+                            <tabs:SegmentedTabItem Label="Repeat X" />
+                            <tabs:SegmentedTabItem Label="Repeat Y" />
+                            <tabs:SegmentedTabItem Label="No repeat" />
+                        </tabs:TabHostView.Tabs>
+                    </tabs:TabHostView>
                 </StackLayout>
-            </StackLayout>
+            </tabs:ViewSwitcher>
         </ScrollView>
     </Grid>
 </ContentPage>

@@ -10,7 +10,7 @@ namespace PlaygroundLite.ViewModels
         public double Angle
         {
             get => _angle;
-            set => SetProperty(ref _angle, value, onChanged: () => Gradient.Angle = _angle);
+            set => SetProperty(ref _angle, value, () => Gradient.Angle = _angle);
         }
 
         public LinearViewModel()

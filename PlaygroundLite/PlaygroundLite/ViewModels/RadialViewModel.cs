@@ -10,62 +10,69 @@ namespace PlaygroundLite.ViewModels
         public double CenterX
         {
             get => _centerX;
-            set => SetProperty(ref _centerX, value, onChanged: UpdateCenter);
+            set => SetProperty(ref _centerX, value, UpdateCenter);
         }
 
         private double _centerY = 0.5d;
         public double CenterY
         {
             get => _centerY;
-            set => SetProperty(ref _centerY, value, onChanged: UpdateCenter);
+            set => SetProperty(ref _centerY, value, UpdateCenter);
         }
 
         private double _radiusX = 200;
         public double RadiusX
         {
             get => _radiusX;
-            set => SetProperty(ref _radiusX, value, onChanged: UpdateRadiusX);
+            set => SetProperty(ref _radiusX, value, UpdateRadiusX);
         }
 
         private double _radiusY = 200;
         public double RadiusY
         {
             get => _radiusY;
-            set => SetProperty(ref _radiusY, value, onChanged: UpdateRadiusY);
+            set => SetProperty(ref _radiusY, value, UpdateRadiusY);
         }
 
-        public RadialGradientShape[] Shapes { get; set; } =
-        {
-            RadialGradientShape.Circle, RadialGradientShape.Ellipse
-        };
+        public RadialGradientShape SelectedShape => (RadialGradientShape)ShapeIndex;
 
-        public RadialGradientSize[] Sizes { get; set; } =
+        private int _shapeIndex;
+        public int ShapeIndex
         {
-            RadialGradientSize.ClosestCorner, 
-            RadialGradientSize.ClosestSide,
-            RadialGradientSize.FarthestCorner, 
-            RadialGradientSize.FarthestSide
-        };
-
-        private RadialGradientShape _selectedShape = RadialGradientShape.Circle;
-        public RadialGradientShape SelectedShape
-        {
-            get => _selectedShape;
-            set => SetProperty(ref _selectedShape, value, onChanged: UpdateShape);
+            get => _shapeIndex;
+            set => SetProperty(ref _shapeIndex, value, UpdateShape);
         }
 
-        private RadialGradientSize _selectedSize = RadialGradientSize.ClosestSide;
         public RadialGradientSize SelectedSize
         {
-            get => _selectedSize;
-            set => SetProperty(ref _selectedSize, value, onChanged: UpdateSize);
+            get
+            {
+                if (SizeOneIndex == 0)
+                    return SizeTwoIndex == 0 ? RadialGradientSize.ClosestCorner : RadialGradientSize.ClosestSide;
+
+                return SizeTwoIndex == 0 ? RadialGradientSize.FarthestCorner : RadialGradientSize.FarthestSide;
+            }
+        }
+
+        private int _sizeOneIndex;
+        public int SizeOneIndex
+        {
+            get => _sizeOneIndex;
+            set => SetProperty(ref _sizeOneIndex, value, UpdateSize);
+        }
+
+        private int _sizeTwoIndex;
+        public int SizeTwoIndex
+        {
+            get => _sizeTwoIndex;
+            set => SetProperty(ref _sizeTwoIndex, value, UpdateSize);
         }
 
         private bool _isCustomSize;
         public bool IsCustomSize
         {
             get => _isCustomSize;
-            set => SetProperty(ref _isCustomSize, value, onChanged: UpdateIsCustomSize);
+            set => SetProperty(ref _isCustomSize, value, UpdateIsCustomSize);
         }
 
         public RadialViewModel()
