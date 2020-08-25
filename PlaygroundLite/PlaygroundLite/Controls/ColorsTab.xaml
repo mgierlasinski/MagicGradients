@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      x:Class="PlaygroundLite.Controls.ColorsTab"
+      RowDefinitions="60,*" RowSpacing="0">
+
+    <StackLayout Orientation="Horizontal" Margin="10">
+        <Button Text="Add color" Command="{Binding AddStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+        <Button Text="Remove color" Command="{Binding RemoveStopCommand}" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+        <Grid HorizontalOptions="End" Margin="10,0,0,0">
+            <BoxView Style="{StaticResource ChipBackground}" />
+            <Label Text="{Binding StopsCount}" Style="{StaticResource ChipValue}" />
+        </Grid>
+    </StackLayout>
+    <CollectionView ItemsSource="{Binding Gradient.Stops}" Grid.Row="1">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="3" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <ContentView>
+                    <BoxView HeightRequest="50" Color="{Binding Color}" Margin="3" />
+                </ContentView>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</Grid>
