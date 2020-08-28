@@ -1,4 +1,5 @@
-﻿using MagicGradients;
+﻿using System.Linq;
+using MagicGradients;
 using PlaygroundLite.Services;
 using Xamarin.Forms;
 
@@ -92,6 +93,8 @@ namespace PlaygroundLite.ViewModels
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
+
+            SelectedStop = Gradient.Stops.First();
 
             UpdateStopsCount();
             UpdateCenter();

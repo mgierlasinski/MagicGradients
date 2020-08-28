@@ -2,7 +2,7 @@
 
 namespace PlaygroundLite.Controls
 {
-    public partial class ColorsTab : Grid
+    public partial class ColorsTab : StackLayout
     {
         public ColorsTab()
         {

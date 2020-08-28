@@ -52,5 +52,9 @@
             <Setter Property="UnselectedLabelColor" Value="{StaticResource AccentColor}" />
         </Style>
         <converters:NegativeBoolConverter x:Key="NegativeBoolConverter" />
+        <converters:DimensionsConverter x:Key="DimensionsConverter" />
+        <converters:OffsetToDoubleConverter x:Key="OffsetToDoubleConverter" />
+        <converters:OffsetToRectConverter x:Key="OffsetToRectConverter" />
+        <converters:ColorNameConverter x:Key="ColorNameConverter" />
     </Application.Resources>
 </Application>

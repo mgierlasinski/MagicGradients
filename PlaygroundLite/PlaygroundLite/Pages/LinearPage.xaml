@@ -6,9 +6,6 @@
              xmlns:controls="clr-namespace:PlaygroundLite.Controls;assembly=PlaygroundLite"
              x:Class="PlaygroundLite.Pages.LinearPage"
              Title="Linear gradient">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Reset" Command="{Binding ResetCommand}" />
-    </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="40*,60,60*" RowSpacing="0">
         <magic:GradientView x:Name="GradientView" 

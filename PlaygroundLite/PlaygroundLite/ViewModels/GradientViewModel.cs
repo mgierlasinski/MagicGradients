@@ -16,6 +16,13 @@ namespace PlaygroundLite.ViewModels
             set => SetProperty(ref _gradient, value);
         }
 
+        private GradientStop _selectedStop;
+        public GradientStop SelectedStop
+        {
+            get => _selectedStop;
+            set => SetProperty(ref _selectedStop, value);
+        }
+
         public int StopsCount => Gradient.Stops.Count;
 
         private bool _isRepeating;
@@ -33,14 +40,12 @@ namespace PlaygroundLite.ViewModels
             set => SetProperty(ref _length, value, UpdateLength);
         }
 
-        private double _scale = 1;
-        public double Scale
+        private Dimensions _size = Dimensions.Prop(1, 1);
+        public Dimensions Size
         {
-            get => _scale;
-            set => SetProperty(ref _scale, value, UpdateSize);
+            get => _size;
+            set => SetProperty(ref _size, value);
         }
-
-        public Dimensions Size => Dimensions.Prop(Scale, Scale);
 
         public BackgroundRepeat SelectedRepeat => (BackgroundRepeat)RepeatIndex;
 
@@ -61,11 +66,13 @@ namespace PlaygroundLite.ViewModels
         public ICommand AddStopCommand { get; }
         public ICommand RemoveStopCommand { get; set; }
         public ICommand ResetCommand { get; set; }
+        public ICommand SelectStopCommand { get; set; }
 
         public GradientViewModel()
         {
             AddStopCommand = new Command(AddColorStop);
             RemoveStopCommand = new Command(RemoveColorStop);
+            SelectStopCommand = new Command<GradientStop>(s => SelectedStop = s);
         }
 
         private void AddColorStop()
@@ -74,21 +81,25 @@ namespace PlaygroundLite.ViewModels
             {
                 Color = ColorUtils.GetRandom()
             });
-            UpdateLength();
             UpdateStopsCount();
         }
 
         private void RemoveColorStop()
         {
-            if (Gradient.Stops.Any())
+            if(SelectedStop == null || Gradient.Stops.Count == 1)
+                return;
+
+            var index = Gradient.Stops.IndexOf(SelectedStop);
+            if (index >= 0)
             {
-                Gradient.Stops.RemoveAt(Gradient.Stops.Count - 1);
-                UpdateLength();
+                Gradient.Stops.RemoveAt(index);
                 UpdateStopsCount();
+
+                SelectedStop = Gradient.Stops.Any() ? Gradient.Stops.First() : null;
             }
         }
 
-        private void UpdateLength()
+        protected void UpdateLength()
         {
             foreach (var stop in Gradient.Stops)
                 stop.Offset = Offset.Empty;
@@ -102,11 +113,7 @@ namespace PlaygroundLite.ViewModels
         protected void UpdateStopsCount()
         {
             RaisePropertyChanged(nameof(StopsCount));
-        }
-
-        private void UpdateSize()
-        {
-            RaisePropertyChanged(nameof(Size));
+            UpdateLength();
         }
     }
 }
