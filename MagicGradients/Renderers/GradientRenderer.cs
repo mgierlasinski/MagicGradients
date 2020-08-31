@@ -82,7 +82,7 @@ namespace MagicGradients.Renderers
                     context.Canvas.Save();
                     context.Canvas.Translate(point);
                     context.Canvas.DrawRect(context.RenderRect, context.Paint);
-                    DebugTile(context);
+                    //DebugTile(context);
                     context.Canvas.Restore();
                 }
             }

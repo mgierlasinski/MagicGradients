@@ -11,10 +11,12 @@ namespace Playground.Services
     public class GalleryService : IGalleryService
     {
         private readonly IGradientRepository _gradientRepository;
+        private readonly DimensionsTypeConverter _dimensionsConverter;
 
         public GalleryService()
         {
             _gradientRepository = DependencyService.Get<IGradientRepository>();
+            _dimensionsConverter = new DimensionsTypeConverter();
         }
 
         public IEnumerable<GradientItem> GetGradients(string tag)
@@ -36,7 +38,8 @@ namespace Playground.Services
         private GradientItem MapGradient(Gradient source) => new GradientItem
         {
             Id = source.Id,
-            Source = new CssGradientSource {Stylesheet = source.Stylesheet}
+            Source = new CssGradientSource { Stylesheet = source.Stylesheet },
+            Size = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(source.Size)
         };
     }
 }

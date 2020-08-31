@@ -9,6 +9,9 @@ namespace Playground.Data.Models
         [BsonField("stylesheet")]
         public string Stylesheet { get; set; }
 
+        [BsonField("size")]
+        public string Size { get; set; }
+
         [BsonField("tags")]
         public string[] Tags { get; set; }
 

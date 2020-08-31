@@ -10,19 +10,19 @@ namespace MagicGradients
     {
         public override object ConvertFromInvariantString(string value)
         {
-            if (value != null)
+            if (string.IsNullOrEmpty(value))
+                return Offset.Empty;
+
+            value = value.Trim();
+
+            if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var d))
             {
-                value = value.Trim();
+                return new Offset(d, OffsetType.Proportional);
+            }
 
-                if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var d))
-                {
-                    return new Offset(d, OffsetType.Proportional);
-                }
-
-                if (TryExtractOffset(value, out var res))
-                {
-                    return res;
-                }
+            if (TryExtractOffset(value, out var res))
+            {
+                return res;
             }
 
             throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(Offset)}");

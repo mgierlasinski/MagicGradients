@@ -28,6 +28,13 @@ namespace Playground.ViewModels
             set => SetProperty(ref _gradientSource, value);
         }
 
+        private Dimensions _gradientSize;
+        public Dimensions GradientSize
+        {
+            get => _gradientSize;
+            set => SetProperty(ref _gradientSize, value);
+        }
+
         private List<GradientEditorItem> _editorItems;
         public List<GradientEditorItem> EditorItems
         {
@@ -42,9 +49,7 @@ namespace Playground.ViewModels
             set
             {
                 _id = value;
-                GradientSource = _galleryService.GetGradientById(int.Parse(_id)).Source;
-                EditorItems = GradientSource.GetGradients().Select(GradientEditorItem.FromGradient).ToList();
-                SelectedItem = EditorItems.FirstOrDefault();
+                LoadGradientPreview();
             }
         }
 
@@ -85,6 +90,16 @@ namespace Playground.ViewModels
             {
                 await Shell.Current.GoToAsync($"BattleTest?id={Id}");
             });
+        }
+
+        private void LoadGradientPreview()
+        {
+            var gradient = _galleryService.GetGradientById(int.Parse(_id));
+            GradientSource = gradient.Source;
+            GradientSize = gradient.Size;
+
+            EditorItems = GradientSource.GetGradients().Select(GradientEditorItem.FromGradient).ToList();
+            SelectedItem = EditorItems.FirstOrDefault();
         }
     }
 }

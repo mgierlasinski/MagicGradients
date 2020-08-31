@@ -11,6 +11,8 @@ namespace Playground.Models
 
         public IGradientSource Source { get; set; }
 
+        public Dimensions Size { get; set; }
+
         public bool HasColors(Color[] colors)
         {
             foreach (var gradient in Source.GetGradients())
