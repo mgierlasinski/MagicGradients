@@ -6,7 +6,7 @@ namespace MagicGradients.Renderers
     {
         public SKCanvas Canvas { get; set; }
         public SKPaint Paint { get; set; }
-        public SKRect CanvasRect { get; set; }
-        public SKRect RenderRect { get; set; }
+        public SKRectI CanvasRect { get; set; }
+        public SKRectI RenderRect { get; set; }
     }
 }

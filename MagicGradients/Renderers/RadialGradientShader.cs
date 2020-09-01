@@ -25,17 +25,28 @@ namespace MagicGradients.Renderers
             var colorPos = orderedStops.Select(x => x.RenderOffset / lastOffset).ToArray();
 
             var center = GetCenter((int)rect.Size.Width, (int)rect.Size.Height);
-            var (radiusX, radiusY) = GetRadius(center, rect, lastOffset);
+            var radius = GetRadius(center, rect, lastOffset);
 
             var shader = SKShader.CreateRadialGradient(
                 center,
-                Math.Min(radiusX, radiusY), 
+                Math.Min(radius.Width, radius.Height), 
                 colors, 
                 colorPos,
                 _gradient.IsRepeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp,
-                GetScaleMatrix(center, radiusX, radiusY));
+                GetScaleMatrix(center, radius.Width, radius.Height));
 
             return shader;
+        }
+
+        public double CalculateRenderOffset(double offset, int width, int height)
+        {
+            var center = GetCenter(width, height);
+            var radius = GetRadius(center, new SKRect(0, 0, width, height), 1);
+
+            // Use lower dimension (scale = 1) 
+            return radius.Width < radius.Height 
+                ? offset / radius.Width 
+                : offset / radius.Height;
         }
 
         private SKPoint GetCenter(int width, int height)
@@ -50,7 +61,7 @@ namespace MagicGradients.Renderers
                 yIsProportional ? height * point.Y : point.Y);
         }
 
-        private (float, float) GetRadius(SKPoint center, SKRect rect, float offset)
+        private SKSize GetRadius(SKPoint center, SKRect rect, float offset)
         {
             var radiusX = 0f;
             var radiusY = 0f;
@@ -88,7 +99,7 @@ namespace MagicGradients.Renderers
                 radiusY = heightIsProportional ? rect.Height * (float)_gradient.RadiusY : (float)_gradient.RadiusY;
             }
             
-            return (radiusX * offset, radiusY * offset);
+            return new SKSize(radiusX * offset, radiusY * offset);
         }
 
         private SKPoint[] GetCornerPoints(SKRect rect)

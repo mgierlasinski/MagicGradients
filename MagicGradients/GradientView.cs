@@ -92,7 +92,7 @@ namespace MagicGradients
             {
                 foreach (var gradient in GradientSource.GetGradients())
                 {
-                    gradient.Measure((int)context.RenderRect.Width, (int)context.RenderRect.Height);
+                    gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
                     Renderer.Render(context, gradient.Shader);
                 }
             }

@@ -28,14 +28,14 @@ namespace MagicGradients.Renderers
             if (size.Width.Value > 0 && size.Height.Value > 0)
             {
                 var width = size.Width.Type == OffsetType.Proportional
-                    ? (float)size.Width.Value * context.CanvasRect.Width
-                    : (float)size.Width.Value;
+                    ? size.Width.Value * context.CanvasRect.Width
+                    : size.Width.Value;
 
                 var height = size.Height.Type == OffsetType.Proportional
-                    ? (float)size.Height.Value * context.CanvasRect.Height
-                    : (float)size.Height.Value;
+                    ? size.Height.Value * context.CanvasRect.Height
+                    : size.Height.Value;
 
-                context.RenderRect = new SKRect(0, 0, width, height);
+                context.RenderRect = new SKRectI(0, 0, (int)width, (int)height);
             }
             else
             {
@@ -68,10 +68,10 @@ namespace MagicGradients.Renderers
             var tileHeight = context.RenderRect.Height;
 
             var rows = _control.GradientRepeat == Repeat || _control.GradientRepeat == RepeatY ? 
-                Math.Ceiling(height / tileHeight) : 1;
+                (int)Math.Ceiling((double)height / tileHeight) : 1;
 
             var cols = _control.GradientRepeat == Repeat || _control.GradientRepeat == RepeatX ? 
-                Math.Ceiling(width / tileWidth) : 1;
+                (int)Math.Ceiling((double)width / tileWidth) : 1;
 
             for (var row = 0; row < rows; row++)
             {

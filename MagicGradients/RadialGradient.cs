@@ -71,10 +71,5 @@ namespace MagicGradients
 //#endif
 //            _renderer.Render(context, _shader);
 //        }
-
-        protected override double CalculateRenderOffset(double offset, int width, int height)
-        {
-            return offset;
-        }
     }
 }

@@ -32,7 +32,7 @@ namespace Playground.Models
 
         public static GradientEditorItem FromGradient(Gradient gradient)
         {
-            gradient.Measure(0 ,0);
+            gradient.Measure(100 ,100);
 
             var item = new GradientEditorItem
             {
