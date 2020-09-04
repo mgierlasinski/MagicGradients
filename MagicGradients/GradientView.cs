@@ -10,6 +10,8 @@ namespace MagicGradients
         static GradientView()
         {
             StyleSheets.RegisterStyle("background", typeof(GradientView), nameof(GradientSourceProperty));
+            StyleSheets.RegisterStyle("background-size", typeof(GradientView), nameof(GradientSizeProperty));
+            StyleSheets.RegisterStyle("background-repeat", typeof(GradientView), nameof(GradientRepeatProperty));
         }
 
         public GradientRenderer Renderer { get; protected set; }

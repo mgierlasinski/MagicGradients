@@ -1,4 +1,5 @@
 using MagicGradients;
+using MagicGradients.Xaml;
 using Playground.Data.Repositories;
 using Playground.Models;
 using System.Collections.Generic;

@@ -3,21 +3,23 @@ using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MagicGradients
+namespace MagicGradients.Xaml
 {
     [TypeConversion(typeof(Offset))]
     public class OffsetTypeConverter : TypeConverter
     {
-        public override object ConvertFromInvariantString(string value)
+        public override object ConvertFromInvariantString(string value) => GetOffset(value, OffsetType.Proportional);
+
+        public Offset GetOffset(string value, OffsetType defaultType)
         {
-            if (string.IsNullOrEmpty(value))
+            if (string.IsNullOrWhiteSpace(value))
                 return Offset.Empty;
 
             value = value.Trim();
 
             if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var d))
             {
-                return new Offset(d, OffsetType.Proportional);
+                return new Offset(d, defaultType);
             }
 
             if (TryExtractOffset(value, out var res))

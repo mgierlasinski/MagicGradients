@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MagicGradients.Xaml;
+using Xamarin.Forms;
 
 namespace MagicGradients
 {
@@ -20,10 +21,5 @@ namespace MagicGradients
 
         public static Dimensions Prop(double width, double height) => new Dimensions(Offset.Prop(width), Offset.Prop(height));
         public static Dimensions Abs(double width, double height) => new Dimensions(Offset.Abs(width), Offset.Abs(height));
-
-        public static explicit operator Dimensions(Size size)
-        {
-            return Abs(size.Width, size.Height);
-        }
     }
 }

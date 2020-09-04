@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MagicGradients.Xaml;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace MagicGradients.Parser.TokenDefinitions

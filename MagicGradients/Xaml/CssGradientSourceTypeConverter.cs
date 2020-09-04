@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MagicGradients
+namespace MagicGradients.Xaml
 {
     [TypeConversion(typeof(IGradientSource))]
     public class CssGradientSourceTypeConverter : TypeConverter
