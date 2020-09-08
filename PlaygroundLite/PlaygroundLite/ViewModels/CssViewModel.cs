@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MagicGradients.Xaml;
 using Xamarin.Forms;
 
 namespace PlaygroundLite.ViewModels
@@ -14,6 +15,7 @@ namespace PlaygroundLite.ViewModels
     public class CssViewModel : BaseViewModel
     {
         private CssSnippet[] _snippets;
+        private readonly DimensionsTypeConverter _dimensionsConverter;
 
         private string _cssCode;
         public string CssCode
@@ -28,6 +30,20 @@ namespace PlaygroundLite.ViewModels
             });
         }
 
+        private string _size;
+        public string Size
+        {
+            get => _size;
+            set => SetProperty(ref _size, value, onChanged: () =>
+            {
+                if (IsHotReload)
+                {
+                    UpdateSize();
+                }
+            });
+        }
+
+        public Dimensions GradientSize { get; private set; }
         public GradientCollection GradientSource { get; set; }
         
         public bool IsMessageVisible => !string.IsNullOrWhiteSpace(Message);
@@ -53,11 +69,16 @@ namespace PlaygroundLite.ViewModels
 
         public CssViewModel()
         {
+            _dimensionsConverter = new DimensionsTypeConverter();
             GradientSource = new GradientCollection();
 
             ClearCommand = new Command(() => CssCode = string.Empty);
             ShowSnippetsCommand = new Command(() => ShowSnippetsActionSheet());
-            RefreshCommand = new Command(UpdateGradientSource);
+            RefreshCommand = new Command(() =>
+            {
+                UpdateGradientSource();
+                UpdateSize();
+            });
 
             LoadSnippets();
             UpdateGradientSource();
@@ -104,6 +125,22 @@ namespace PlaygroundLite.ViewModels
             catch (Exception e)
             {
                 Message = $"Invalid CSS: {e.Message}";
+            }
+        }
+
+        private void UpdateSize()
+        {
+            Message = string.Empty;
+
+            try
+            {
+                var size = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(Size);
+                GradientSize = size;
+                RaisePropertyChanged(nameof(GradientSize));
+            }
+            catch (Exception e)
+            {
+                Message = $"Invalid size: {e.Message}";
             }
         }
 

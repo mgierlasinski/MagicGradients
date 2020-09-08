@@ -6,18 +6,23 @@
              x:Class="Playground.Views.PasteCssPage"
              Title="Paste CSS"
              BindingContext="{Binding PasteCssViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
-    <Grid RowSpacing="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="33*" />
-            <RowDefinition Height="66*" />
-        </Grid.RowDefinitions>
-        <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" />
-        <magic:GradientView GradientSource="{Binding GradientSource}" Grid.Row="1" />
-        <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="1" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
+    <Grid RowSpacing="0" RowDefinitions="Auto,33*,Auto,Auto,66*">
+        <ContentView BackgroundColor="Black">
+            <Label Text="background" TextColor="White" Margin="5" FontSize="Small" />
+        </ContentView>
+        <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" Grid.Row="1" />
+        <ContentView BackgroundColor="Black" Grid.Row="2">
+            <Label Text="background-size" TextColor="White" Margin="5" FontSize="Small" />
+        </ContentView>
+        <Entry Grid.Row="3" Text="{Binding Size}" Placeholder="300px 300px" />
+        <magic:GradientView GradientSource="{Binding GradientSource}" 
+                            GradientSize="{Binding GradientSize}" 
+                            Grid.Row="4" />
+        <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="4" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
             <BoxView Style="{StaticResource SemiTransparent}" />
             <Label Text="{Binding Message}" TextColor="{StaticResource LightForegroundColor}" Margin="10" />
         </Grid>
-        <Grid Grid.Row="1" VerticalOptions="End">
+        <Grid Grid.Row="4" VerticalOptions="End">
             <BoxView Style="{StaticResource SemiTransparent}" />
             <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <ImageButton Command="{Binding RefreshCommand}" BackgroundColor="Transparent" Padding="10,5">

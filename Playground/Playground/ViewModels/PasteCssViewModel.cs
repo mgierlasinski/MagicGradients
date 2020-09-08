@@ -1,8 +1,8 @@
 ﻿using MagicGradients;
 using MagicGradients.Parser;
+using MagicGradients.Xaml;
 using Playground.Data.Repositories;
 using System;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -14,6 +14,7 @@ namespace Playground.ViewModels
     public class PasteCssViewModel : BaseViewModel
     {
         private readonly IGradientRepository _gradientRepository;
+        private readonly DimensionsTypeConverter _dimensionsConverter;
 
         public ICommand RefreshCommand { get; set; }
 
@@ -29,6 +30,21 @@ namespace Playground.ViewModels
                 }
             });
         }
+
+        private string _size;
+        public string Size
+        {
+            get => _size;
+            set => SetProperty(ref _size, value, onChanged: () =>
+            {
+                if (IsHotReload)
+                {
+                    UpdateSize();
+                }
+            });
+        }
+
+        public Dimensions GradientSize { get; private set; }
 
         private string _id;
         public string Id
@@ -68,11 +84,14 @@ namespace Playground.ViewModels
         public PasteCssViewModel(IGradientRepository gradientRepository)
         {
             _gradientRepository = gradientRepository;
+            _dimensionsConverter = new DimensionsTypeConverter();
 
             GradientSource = new GradientCollection();
-            RefreshCommand = new Command(UpdateGradientSource);
-
-            UpdateGradientSource();
+            RefreshCommand = new Command(() =>
+            {
+                UpdateGradientSource();
+                UpdateSize();
+            });
         }
 
         private void UpdateGradientSource()
@@ -92,6 +111,22 @@ namespace Playground.ViewModels
             }
         }
 
+        private void UpdateSize()
+        {
+            Message = string.Empty;
+
+            try
+            {
+                var size = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(Size);
+                GradientSize = size;
+                OnPropertyChanged(nameof(GradientSize));
+            }
+            catch (Exception e)
+            {
+                Message = $"Invalid size: {e.Message}";
+            }
+        }
+
         private void LoadCssCodeById()
         {
             var gradient = _gradientRepository.GetById(int.Parse(_id));
@@ -99,9 +134,8 @@ namespace Playground.ViewModels
             if (gradient == null)
                 return;
 
-            _cssCode = gradient.Stylesheet;
-            OnPropertyChanged(nameof(CssCode));
-            UpdateGradientSource();
+            CssCode = gradient.Stylesheet;
+            Size = gradient.Size;
         }
 
         private void ValidateEmptyData()
