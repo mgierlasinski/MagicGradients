@@ -13,10 +13,10 @@ namespace MagicGradients.Builder
         protected override GradientBuilder Instance => this;
         public override StopsFactory StopsFactory => GetCurrentBuilder().StopsFactory;
 
-        public GradientBuilder AddLinearGradient(Action<LinearGradientBuilder> setup)
+        public GradientBuilder AddLinearGradient(Action<LinearGradientBuilder> setup = null)
         {
             var builder = new LinearGradientBuilder();
-            setup(builder);
+            setup?.Invoke(builder);
 
             UseBuilder(builder);
             return this;
@@ -33,10 +33,10 @@ namespace MagicGradients.Builder
             return builder;
         }
 
-        public GradientBuilder AddRadialGradient(Action<RadialGradientBuilder> setup)
+        public GradientBuilder AddRadialGradient(Action<RadialGradientBuilder> setup = null)
         {
             var builder = new RadialGradientBuilder();
-            setup(builder);
+            setup?.Invoke(builder);
 
             UseBuilder(builder);
             return this;

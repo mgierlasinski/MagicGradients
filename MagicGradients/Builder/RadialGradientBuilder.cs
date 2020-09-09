@@ -21,6 +21,17 @@ namespace MagicGradients.Builder
         internal RadialGradientSize Size { get; set; }
         internal bool IsRepeating { get; set; }
 
+        public RadialGradientBuilder()
+        {
+            Center = new Point(0.5, 0.5);
+            RadiusX = -1d;
+            RadiusY = -1d;
+            Shape = RadialGradientShape.Ellipse;
+            Size = RadialGradientSize.FarthestCorner;
+            IsRepeating = false;
+            Flags = RadialGradientFlags.PositionProportional;
+        }
+
         public RadialGradientBuilder Circle()
         {
             Shape = RadialGradientShape.Circle;
