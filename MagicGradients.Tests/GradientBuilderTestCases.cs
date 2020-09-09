@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MagicGradients.Builder;
+using Xamarin.Forms;
 using Xunit;
 
 namespace MagicGradients.Tests

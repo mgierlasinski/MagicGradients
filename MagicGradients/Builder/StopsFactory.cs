@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
-namespace MagicGradients
+namespace MagicGradients.Builder
 {
     public class StopsFactory
     {

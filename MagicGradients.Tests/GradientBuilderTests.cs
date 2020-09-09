@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using FluentAssertions.Execution;
+using MagicGradients.Builder;
 using Xamarin.Forms;
 using Xunit;
 

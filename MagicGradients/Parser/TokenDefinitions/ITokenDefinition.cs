@@ -1,3 +1,5 @@
+using MagicGradients.Builder;
+
 namespace MagicGradients.Parser.TokenDefinitions
 {
     public interface ITokenDefinition

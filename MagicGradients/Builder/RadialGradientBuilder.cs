@@ -1,8 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
-using static MagicGradients.FlagsHelper;
 
-namespace MagicGradients
+namespace MagicGradients.Builder
 {
     public class RadialGradientBuilder : StopsBuilder<RadialGradientBuilder>, IChildBuilder
     {
@@ -40,7 +39,7 @@ namespace MagicGradients
             setup?.Invoke(options);
 
             Center = position;
-            SetValue(ref _flags, RadialGradientFlags.PositionProportional, options.IsProportional);
+            FlagsHelper.SetValue(ref _flags, RadialGradientFlags.PositionProportional, options.IsProportional);
 
             return this;
         }
@@ -62,7 +61,7 @@ namespace MagicGradients
 
             RadiusX = radiusX;
             RadiusY = radiusY;
-            SetValue(ref _flags, RadialGradientFlags.SizeProportional, options.IsProportional);
+            FlagsHelper.SetValue(ref _flags, RadialGradientFlags.SizeProportional, options.IsProportional);
 
             return this;
         }

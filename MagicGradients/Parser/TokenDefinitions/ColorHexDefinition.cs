@@ -1,3 +1,4 @@
+using MagicGradients.Builder;
 using System;
 using System.Linq;
 using Xamarin.Forms;

@@ -1,4 +1,4 @@
-﻿namespace MagicGradients
+﻿namespace MagicGradients.Builder
 {
     public interface IChildBuilder
     {
