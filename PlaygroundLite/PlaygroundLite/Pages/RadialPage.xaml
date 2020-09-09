@@ -40,13 +40,6 @@
         <BoxView Grid.Row="2" Color="LightGray" HeightRequest="1" VerticalOptions="End" />
         <tabs:ViewSwitcher x:Name="Switcher" SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}" Grid.Row="3">
             <StackLayout Margin="10">
-                <!--<Label Text="Center" />
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="X" />
-                        <Slider Value="{Binding CenterX}" Maximum="1" Minimum="0" HorizontalOptions="FillAndExpand" />
-                        <Label Text="Y" Margin="10,0,0,0" />
-                        <Slider Value="{Binding CenterY}" Maximum="1" Minimum="0" HorizontalOptions="FillAndExpand" />
-                    </StackLayout>-->
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Shape and Size" HorizontalOptions="StartAndExpand" Margin="0,3,0,0" />
                     <CheckBox IsChecked="{Binding IsCustomSize}" HorizontalOptions="End" />
