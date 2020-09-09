@@ -47,4 +47,25 @@ namespace MagicGradients
         public static bool IsCorner(this RadialGradientSize size) => (int)size % 2 == 0;
         public static bool IsSide(this RadialGradientSize size) => (int)size % 2 != 0;
     }
+
+    public static class FlagsHelper
+    {
+        public static void Set(ref RadialGradientFlags flags, RadialGradientFlags flagToSet)
+        {
+            flags |= flagToSet;
+        }
+
+        public static void Unset(ref RadialGradientFlags flags, RadialGradientFlags flagToSet)
+        {
+            flags ^= flagToSet;
+        }
+
+        public static void SetValue(ref RadialGradientFlags flags, RadialGradientFlags flagToSet, bool value)
+        {
+            if (value)
+                Set(ref flags, flagToSet);
+            else
+                Unset(ref flags, flagToSet);
+        }
+    }
 }

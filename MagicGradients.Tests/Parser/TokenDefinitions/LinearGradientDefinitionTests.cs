@@ -1,9 +1,10 @@
 ﻿using FluentAssertions;
 using FluentAssertions.Execution;
+using MagicGradients.Builder;
 using MagicGradients.Parser;
 using MagicGradients.Parser.TokenDefinitions;
-using System;
 using MagicGradients.Tests.Mock;
+using System;
 using Xamarin.Forms;
 using Xunit;
 

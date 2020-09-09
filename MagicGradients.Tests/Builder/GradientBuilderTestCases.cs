@@ -1,7 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using MagicGradients.Builder;
+using Xamarin.Forms;
 using Xunit;
 
-namespace MagicGradients.Tests
+namespace MagicGradients.Tests.Builder
 {
     public class GradientBuilderTestCases : TheoryData<GradientBuilderTestCase>
     {
