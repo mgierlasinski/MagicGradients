@@ -5,8 +5,6 @@ namespace MagicGradients
 {
     public class RadialGradient : Gradient
     {
-        private readonly RadialGradientRenderer _renderer;
-
         public static readonly BindableProperty CenterProperty = BindableProperty.Create(
             nameof(Center), typeof(Point), typeof(RadialGradient), new Point(0.5, 0.5));
 
@@ -63,20 +61,7 @@ namespace MagicGradients
 
         public RadialGradient()
         {
-            _renderer = new RadialGradientRenderer(this);
-        }
-
-        public override void Render(RenderContext context)
-        {
-#if DEBUG_RENDER
-            System.Diagnostics.Debug.WriteLine($"Rendering Radial Gradient with {Stops.Count} stops");
-#endif
-            _renderer.Render(context);
-        }
-
-        protected override double CalculateRenderOffset(double offset, int width, int height)
-        {
-            return offset;
+            Shader = new RadialGradientShader(this);
         }
     }
 }

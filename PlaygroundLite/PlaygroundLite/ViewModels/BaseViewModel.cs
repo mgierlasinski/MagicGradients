@@ -8,8 +8,8 @@ namespace Playground.ViewModels
     public class BaseViewModel : FreshBasePageModel
     {
         protected bool SetProperty<T>(ref T backingStore, T value,
-            [CallerMemberName]string propertyName = "",
-            Action onChanged = null)
+            Action onChanged = null,
+            [CallerMemberName]string propertyName = "")
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))
                 return false;

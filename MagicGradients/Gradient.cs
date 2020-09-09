@@ -8,6 +8,8 @@ namespace MagicGradients
     [ContentProperty(nameof(Stops))]
     public abstract class Gradient : GradientElement, IGradientSource
     {
+        public IGradientShader Shader { get; protected set; }
+
         private GradientElements<GradientStop> _stops;
         public GradientElements<GradientStop> Stops
         {
@@ -42,15 +44,12 @@ namespace MagicGradients
             Stops.SetInheritedBindingContext(BindingContext);
         }
 
-        public abstract void Render(RenderContext context);
-        protected abstract double CalculateRenderOffset(double offset, int width, int height);
-
         public virtual void Measure(int width, int height)
         {
             foreach (var stop in Stops)
             {
                 stop.RenderOffset = !stop.Offset.IsEmpty && stop.Offset.Type == OffsetType.Absolute 
-                    ? (float)CalculateRenderOffset(stop.Offset.Value, width, height) 
+                    ? (float)Shader.CalculateRenderOffset(stop.Offset.Value, width, height) 
                     : (float)stop.Offset.Value;
             }
 

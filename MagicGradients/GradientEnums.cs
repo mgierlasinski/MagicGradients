@@ -1,7 +1,18 @@
-﻿using System;
+﻿using MagicGradients.Xaml;
+using System;
+using Xamarin.Forms;
 
 namespace MagicGradients
 {
+    [TypeConverter(typeof(BackgroundRepeatTypeConverter))]
+    public enum BackgroundRepeat
+    {
+        Repeat, 
+        RepeatX, 
+        RepeatY, 
+        NoRepeat
+    }
+
     [Flags]
     public enum RadialGradientFlags
     {

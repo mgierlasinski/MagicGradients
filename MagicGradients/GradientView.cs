@@ -1,5 +1,4 @@
 using MagicGradients.Renderers;
-using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
@@ -11,15 +10,37 @@ namespace MagicGradients
         static GradientView()
         {
             StyleSheets.RegisterStyle("background", typeof(GradientView), nameof(GradientSourceProperty));
+            StyleSheets.RegisterStyle("background-size", typeof(GradientView), nameof(GradientSizeProperty));
+            StyleSheets.RegisterStyle("background-repeat", typeof(GradientView), nameof(GradientRepeatProperty));
         }
+
+        public GradientRenderer Renderer { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(nameof(GradientSource), 
             typeof(IGradientSource), typeof(GradientView), propertyChanged: OnGradientSourceChanged);
 
+        public static readonly BindableProperty GradientSizeProperty = BindableProperty.Create(nameof(GradientSize),
+            typeof(Dimensions), typeof(GradientView), propertyChanged: UpdateCanvas);
+
+        public static readonly BindableProperty GradientRepeatProperty = BindableProperty.Create(nameof(GradientRepeat),
+            typeof(BackgroundRepeat), typeof(GradientView), propertyChanged: UpdateCanvas);
+
         public IGradientSource GradientSource
         {
             get => (IGradientSource)GetValue(GradientSourceProperty);
-            set => this.SetValue(GradientSourceProperty, value);
+            set => SetValue(GradientSourceProperty, value);
+        }
+
+        public Dimensions GradientSize
+        {
+            get => (Dimensions)GetValue(GradientSizeProperty);
+            set => SetValue(GradientSizeProperty, value);
+        }
+
+        public BackgroundRepeat GradientRepeat
+        {
+            get => (BackgroundRepeat)GetValue(GradientRepeatProperty);
+            set => SetValue(GradientRepeatProperty, value);
         }
 
         static void OnGradientSourceChanged(BindableObject bindable, object oldValue, object newValue)
@@ -36,6 +57,12 @@ namespace MagicGradients
                 ((GradientElement)newValue).Parent = gradientView;
             }
 
+            gradientView.InvalidateSurface();
+        }
+
+        static void UpdateCanvas(BindableObject bindable, object oldValue, object newValue)
+        {
+            var gradientView = (GradientView)bindable;
             gradientView.InvalidateSurface();
         }
 
@@ -59,14 +86,16 @@ namespace MagicGradients
             if (GradientSource == null)
                 return;
 
-            using (var paint = new SKPaint())
-            {
-                var context = new RenderContext(canvas, paint, e.Info);
+            if(Renderer == null)
+                Renderer = new GradientRenderer(this);
 
+            var context = Renderer.CreateContext(e);
+            using (context.Paint)
+            {
                 foreach (var gradient in GradientSource.GetGradients())
                 {
-                    gradient.Measure(e.Info.Width, e.Info.Height);
-                    gradient.Render(context);
+                    gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
+                    Renderer.Render(context, gradient.Shader);
                 }
             }
         }

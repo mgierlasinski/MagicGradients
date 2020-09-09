@@ -12,7 +12,8 @@
 
   <ItemGroup>
     <PackageReference Include="FreshMvvm" Version="3.0.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
+    <PackageReference Include="Sharpnado.Presentation.Forms" Version="1.7.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1260" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
@@ -21,6 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\ColorsTab.xaml.cs">
+      <DependentUpon>ColorsTab.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\LinearPage.xaml.cs">
       <DependentUpon>LinearPage.xaml</DependentUpon>
     </Compile>
@@ -30,6 +34,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Controls\BackgroundTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\ColorsTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\CssPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

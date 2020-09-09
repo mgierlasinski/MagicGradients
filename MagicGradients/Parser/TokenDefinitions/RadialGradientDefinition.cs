@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MagicGradients.Xaml;
+using System;
 using Xamarin.Forms;
 using static MagicGradients.RadialGradientFlags;
 

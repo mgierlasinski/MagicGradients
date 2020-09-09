@@ -4,17 +4,9 @@ namespace MagicGradients.Renderers
 {
     public class RenderContext
     {
-        public SKCanvas Canvas { get; }
-
-        public SKPaint Paint { get; }
-
-        public SKImageInfo Info { get; }
-
-        public RenderContext(SKCanvas canvas, SKPaint paint, SKImageInfo info)
-        {
-            Canvas = canvas;
-            Paint = paint;
-            Info = info;
-        }
+        public SKCanvas Canvas { get; set; }
+        public SKPaint Paint { get; set; }
+        public SKRectI CanvasRect { get; set; }
+        public SKRectI RenderRect { get; set; }
     }
 }

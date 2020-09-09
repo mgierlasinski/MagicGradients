@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
+             x:Class="PlaygroundLite.Controls.BackgroundTab" Padding="10">
+    <Label Text="Gradient Size" />
+    <Slider Value="{Binding Size, Converter={StaticResource DimensionsConverter}}" 
+            Maximum="1" Minimum="0" HorizontalOptions="FillAndExpand" />
+    <tabs:TabHostView SelectedIndex="{Binding RepeatIndex, Mode=TwoWay}" Style="{StaticResource SegmentedTabs}" Margin="0,10,0,0">
+        <tabs:TabHostView.Tabs>
+            <tabs:SegmentedTabItem Label="Repeat" />
+            <tabs:SegmentedTabItem Label="Repeat X" />
+            <tabs:SegmentedTabItem Label="Repeat Y" />
+            <tabs:SegmentedTabItem Label="No repeat" />
+        </tabs:TabHostView.Tabs>
+    </tabs:TabHostView>
+</StackLayout>

@@ -22,5 +22,6 @@
             <magic:CssGradientSource Stylesheet="{Binding Stylesheet}" />
         </magic:GradientView>
         <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="gradientStyledWithCss" />
+        <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="gradientWithSize" />
     </StackLayout>
 </ContentPage>

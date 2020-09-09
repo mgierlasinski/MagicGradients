@@ -3,26 +3,28 @@ using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MagicGradients
+namespace MagicGradients.Xaml
 {
     [TypeConversion(typeof(Offset))]
     public class OffsetTypeConverter : TypeConverter
     {
-        public override object ConvertFromInvariantString(string value)
+        public override object ConvertFromInvariantString(string value) => GetOffset(value, OffsetType.Proportional);
+
+        public Offset GetOffset(string value, OffsetType defaultType)
         {
-            if (value != null)
+            if (string.IsNullOrWhiteSpace(value))
+                return Offset.Empty;
+
+            value = value.Trim();
+
+            if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var d))
             {
-                value = value.Trim();
+                return new Offset(d, defaultType);
+            }
 
-                if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var d))
-                {
-                    return new Offset(d, OffsetType.Proportional);
-                }
-
-                if (TryExtractOffset(value, out var res))
-                {
-                    return res;
-                }
+            if (TryExtractOffset(value, out var res))
+            {
+                return res;
             }
 
             throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(Offset)}");

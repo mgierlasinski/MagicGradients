@@ -47,7 +47,9 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:GradientItem">
                     <Grid>
-                        <magic:GradientView GradientSource="{Binding Source}" HeightRequest="150" />
+                        <magic:GradientView GradientSource="{Binding Source}" 
+                                            GradientSize="{Binding Size}"
+                                            HeightRequest="150" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

@@ -1,47 +1,45 @@
 ﻿using FluentAssertions;
 using FluentAssertions.Execution;
-using System;
+using MagicGradients.Xaml;
 using System.Collections.Generic;
 using Xunit;
 
-namespace MagicGradients.Tests
+namespace MagicGradients.Tests.Xaml
 {
-    public class OffsetTypeConverterTests
+    public class OffsetTypeConverterTests : TypeConverterTests<Offset, OffsetTypeConverter>
     {
-        public static IEnumerable<object[]> ValidOffsets => new List<object[]>
+        public static IEnumerable<object[]> ValidValues => new List<object[]>
         {
+            new object[] { null, Offset.Empty },
+            new object[] { "", Offset.Empty },
+            new object[] { " ", Offset.Empty },
+            new object[] { "-1", Offset.Empty },
+            new object[] { "0", Offset.Zero },
             new object[] { "0.5", Offset.Prop(0.5) },
             new object[] { " 80%", Offset.Prop(0.8) },
             new object[] { "40px ", Offset.Abs(40) }
         };
 
+        public static IEnumerable<object[]> InvalidValues => new List<object[]>
+        {
+            new object[] { "30sp" },
+            new object[] { "15%%" }
+        };
+
         [Theory]
-        [MemberData(nameof(ValidOffsets))]
+        [MemberData(nameof(ValidValues))]
         public void ConvertFromInvariantString_ValidValue_ValueConverted(string value, Offset expected)
         {
-            // Arrange
-            var converter = new OffsetTypeConverter();
-
-            // Act
-            var converted = converter.ConvertFromInvariantString(value);
-
             // Assert
-            converted.Should().BeOfType<Offset>().And.BeEquivalentTo(expected);
+            AssertValueIsExpected(value, expected);
         }
 
         [Theory]
-        [InlineData("30sp")]
-        [InlineData("15%%")]
-        public void ConvertFromInvariantString_InvalidValue_ValueConverted(string value)
+        [MemberData(nameof(InvalidValues))]
+        public void ConvertFromInvariantString_InvalidValue_ThrowException(string value)
         {
-            // Arrange
-            var converter = new OffsetTypeConverter();
-
-            // Act
-            Action act = () => converter.ConvertFromInvariantString(value);
-
             // Assert
-            act.Should().Throw<InvalidOperationException>();
+            AssertThrowsException(value);
         }
 
         [Theory]
@@ -50,11 +48,8 @@ namespace MagicGradients.Tests
         [InlineData("15ss", false, 0)]
         public void TryConvertOffset_GivenValue_ProperStatusAndNumber(string input, bool expectedSuccess, double expectedValue)
         {
-            // Arrange
-            var converter = new OffsetTypeConverter();
-
             // Act
-            var success = converter.TryExtractOffset(input, out var result);
+            var success = Converter.TryExtractOffset(input, out var result);
 
             // Assert
             using (new AssertionScope())
@@ -75,15 +70,14 @@ namespace MagicGradients.Tests
         [InlineData("100%", 1, true)]
         public void TryConvertPercentToOffset_ConvertingToken_SuccessAndResultConvertedCorrectly(string token, double expectedResult, bool expectedSuccess)
         {
-            // Arrange
-            var converter = new OffsetTypeConverter();
-
             // Act
-            var success = converter.TryExtractOffset(token, out var result);
+            var success = Converter.TryExtractOffset(token, out var result);
 
             // Assert
             success.Should().Be(expectedSuccess);
             result.Value.Should().Be(expectedResult);
         }
+
+        public OffsetTypeConverterTests(OffsetTypeConverter converter) : base(converter) { }
     }
 }

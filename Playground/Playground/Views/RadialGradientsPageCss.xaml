@@ -18,5 +18,6 @@
             </magic:CssGradientSource>
         </magic:GradientView>
         <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="terminatorEye" />
+        <magic:GradientView VerticalOptions="FillAndExpand" StyleClass="terminatorEyeWithSize" />
     </StackLayout>
 </ContentPage>

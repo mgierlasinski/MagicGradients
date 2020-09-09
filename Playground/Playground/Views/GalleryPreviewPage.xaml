@@ -32,7 +32,8 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <Grid x:Name="RootContainer">
-        <magic:GradientView GradientSource="{Binding GradientSource}" />
+        <magic:GradientView GradientSource="{Binding GradientSource}" 
+                            GradientSize="{Binding GradientSize}" />
         <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsEditMode}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
