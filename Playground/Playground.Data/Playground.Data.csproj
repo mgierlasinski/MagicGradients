@@ -25,6 +25,7 @@
     <None Remove="Resources\LensFlare.json" />
     <None Remove="Resources\LightBg.json" />
     <None Remove="Resources\Metadata.json" />
+    <None Remove="Resources\NewRetro.json" />
     <None Remove="Resources\Popular.json" />
     <None Remove="Resources\RadialStripes.json" />
     <None Remove="Resources\RainbowStandard.json" />
@@ -37,6 +38,7 @@
     <None Remove="Resources\StandardAsymmetrical.json" />
     <None Remove="Resources\StandardCircle.json" />
     <None Remove="Resources\Stripes.json" />
+    <None Remove="Resources\SubtleGrid.json" />
     <None Remove="Resources\Texture.json" />
     <None Remove="Resources\Themes.json" />
   </ItemGroup>
@@ -62,6 +64,7 @@
     <EmbeddedResource Include="Resources\LensFlare.json" />
     <EmbeddedResource Include="Resources\LightBg.json" />
     <EmbeddedResource Include="Resources\Metadata.json" />
+    <EmbeddedResource Include="Resources\NewRetro.json" />
     <EmbeddedResource Include="Resources\Popular.json" />
     <EmbeddedResource Include="Resources\RadialStripes.json" />
     <EmbeddedResource Include="Resources\RainbowStandard.json" />
@@ -74,6 +77,7 @@
     <EmbeddedResource Include="Resources\StandardAsymmetrical.json" />
     <EmbeddedResource Include="Resources\StandardCircle.json" />
     <EmbeddedResource Include="Resources\Stripes.json" />
+    <EmbeddedResource Include="Resources\SubtleGrid.json" />
     <EmbeddedResource Include="Resources\Texture.json" />
 	  <EmbeddedResource Include="Resources\Themes.json" />
   </ItemGroup>
