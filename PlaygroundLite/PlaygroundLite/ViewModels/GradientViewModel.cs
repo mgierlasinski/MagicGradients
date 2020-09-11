@@ -1,5 +1,4 @@
 ﻿using MagicGradients;
-using Playground.ViewModels;
 using PlaygroundLite.Services;
 using System.Linq;
 using System.Windows.Input;

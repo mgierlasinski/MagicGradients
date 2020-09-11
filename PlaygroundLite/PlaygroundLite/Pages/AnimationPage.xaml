@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlaygroundLite.Pages.AnimationPage"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients">
+    <StackLayout>
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientView.Resources>
+                <!--<anim:Storyboard x:Key="Storyboard" Duration="3000" RepeatBehavior="Forever">
+                    <anim:ColorAnimation Target="{x:Reference YellowStop}" 
+                                         TargetProperty="magic:GradientStop.Color" 
+                                         From="Yellow" To="Red" AutoReverse="True"
+                                         Duration="1000"
+                                         anim:Storyboard.BeginAt="0" anim:Storyboard.FinishAt="1" />
+                </anim:Storyboard>-->
+                <!--<anim:DoubleAnimation x:Key="Rotate" Target="{x:Reference Gradient}" 
+                                      TargetProperty="magic:LinearGradient.Angle" 
+                                      From="0" To="360" Duration="3000" 
+                                      RepeatBehavior="Forever" />
+                <anim:ColorAnimation x:Key="ColorSingle" Target="{x:Reference RedStop}" 
+                                     Duration="3000"
+                                     TargetProperty="magic:GradientStop.Color" 
+                                     From="Red" To="Blue" 
+                                     RepeatBehavior="Forever" AutoReverse="True" />-->
+                <anim:Storyboard x:Key="MoveCircle" Duration="3000" RepeatBehavior="Forever">
+                    <anim:PointAnimation  
+                                     Target="{x:Reference Radial}" 
+                                     TargetProperty="magic:RadialGradient.Center" 
+                                     From="0.1,0.1" To="0.9,0.9"
+                                     AutoReverse="True" Easing="SinInOut" />
+                </anim:Storyboard>
+            </magic:GradientView.Resources>
+            <magic:GradientView.Behaviors>
+                <anim:Animate Animation="{StaticResource MoveCircle}" />
+                <!--<anim:Animate Animation="{StaticResource Rotate}" />-->
+            </magic:GradientView.Behaviors>
+            <!--<magic:LinearGradient x:Name="Gradient">
+                <magic:GradientStop Color="Yellow" x:Name="YellowStop" />
+                <magic:GradientStop Color="Red" x:Name="RedStop" />
+            </magic:LinearGradient>-->
+            <magic:RadialGradient x:Name="Radial" Shape="Circle" RadiusX="200" RadiusY="200" Center="0.1,0.1">
+                <magic:GradientStop Color="Red" />
+                <magic:GradientStop Color="Yellow" />
+            </magic:RadialGradient>
+        </magic:GradientView>
+    </StackLayout>
+</ContentPage>

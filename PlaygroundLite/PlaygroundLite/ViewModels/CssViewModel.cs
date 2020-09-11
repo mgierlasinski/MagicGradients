@@ -1,6 +1,5 @@
 ﻿using MagicGradients;
 using MagicGradients.Parser;
-using Playground.ViewModels;
 using PlaygroundLite.Models;
 using PlaygroundLite.Services;
 using System;

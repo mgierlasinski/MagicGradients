@@ -1,9 +1,9 @@
-﻿using FreshMvvm;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using FreshMvvm;
 
-namespace Playground.ViewModels
+namespace PlaygroundLite.ViewModels
 {
     public class BaseViewModel : FreshBasePageModel
     {

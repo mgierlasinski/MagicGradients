@@ -9,6 +9,7 @@
             <Button Text="Linear gradient" Command="{Binding LinearCommand}" />
             <Button Text="Radial gradient" Command="{Binding RadialCommand}" />
             <Button Text="CSS gradient" Command="{Binding CssCommand}" />
+            <Button Text="Animation" Command="{Binding AnimationCommand}" />
         </StackLayout>
     </ScrollView>
 
