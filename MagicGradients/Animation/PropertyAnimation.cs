@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MagicGradients.Animation.Tween;
+using System;
 using System.Diagnostics;
 using Xamarin.Forms;
 
@@ -6,9 +7,13 @@ namespace MagicGradients.Animation
 {
     public abstract class PropertyAnimation<TValue> : Timeline
     {
+        public BindableProperty TargetProperty { get; set; } = default;
         public TValue From { get; set; } = default;
         public TValue To { get; set; } = default;
-        public BindableProperty TargetProperty { get; set; } = default;
+        public abstract ITweener<TValue> Tweener { get; }
+
+        private TValue _animateFrom;
+        private TValue _animateTo;
 
         public override void OnBegin()
         {
@@ -19,12 +24,12 @@ namespace MagicGradients.Animation
                 throw new NullReferenceException("Null Target property.");
             }
 
-            SetDefaultFrom((TValue)Target.GetValue(TargetProperty));
+            SetDefaults((TValue)Target.GetValue(TargetProperty));
         }
 
         public override Xamarin.Forms.Animation OnAnimate() => new Xamarin.Forms.Animation(x =>
         {
-            var value = GetProgressValue(From, To, x);
+            var value = Tweener.Tween(_animateFrom, _animateTo, x);
             Target.SetValue(TargetProperty, value);
         },
         easing: Easing.ToEasing(),
@@ -38,17 +43,18 @@ namespace MagicGradients.Animation
         {
             if (AutoReverse)
             {
-                var tmp = From;
-                From = To;
-                To = tmp;
+                var tmp = _animateFrom;
+                _animateFrom = _animateTo;
+                _animateTo = tmp;
             }
         }
 
-        protected abstract TValue GetProgressValue(TValue from, TValue to, double progress);
-
-        private void SetDefaultFrom(TValue value)
+        private void SetDefaults(TValue value)
         {
             From = From.Equals(default(TValue)) ? value : From;
+
+            _animateFrom = From;
+            _animateTo = To;
         }
     }
 }

@@ -7,6 +7,8 @@ namespace MagicGradients.Animation
 {
     public abstract class Timeline : BindableObject
     {
+        private string _handle = Guid.NewGuid().ToString();
+
         private int _playCount = 0;
 
         public uint Duration { get; set; } = 0;
@@ -27,34 +29,27 @@ namespace MagicGradients.Animation
                 await Task.Delay(Delay);
             }
 
-            BeginAnimation();
+            Animate();
         }
 
-        public void End()
+        private void Animate()
         {
-            ViewExtensions.CancelAnimations(Animator);
-        }
-
-        protected virtual void BeginAnimation()
-        {
-            //var taskCompletionSource = new TaskCompletionSource<bool>();
-
-            Animator.Animate(Guid.NewGuid().ToString(), OnAnimate(),
+            Animator.Animate(_handle, OnAnimate(),
                 length: Duration,
                 easing: Easing.ToEasing(),
                 finished: (v, c) =>
                 {
-                    Debug.WriteLine("Finished Timeline");
                     _playCount++;
+                    Debug.WriteLine($"Finished Timeline (plays: {_playCount})");
                     OnFinished();
-                    //if (IsRepeat())
-                    //    OnRepeat();
-                    //else
-                    //    taskCompletionSource.SetResult(c);
                 },
                 repeat: IsRepeat);
+        }
 
-            //return taskCompletionSource.Task;
+        public void End()
+        {
+            Animator.AbortAnimation(_handle);
+            _playCount = 0;
         }
 
         public virtual void OnBegin()
@@ -64,6 +59,7 @@ namespace MagicGradients.Animation
                 throw new NullReferenceException("Null Target property.");
             }
         }
+
         public abstract Xamarin.Forms.Animation OnAnimate();
         protected virtual void OnFinished() { }
 

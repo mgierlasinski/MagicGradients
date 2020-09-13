@@ -1,15 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PlaygroundLite.Controls;assembly=PlaygroundLite"
              x:Class="PlaygroundLite.Pages.MainPage"
              Title="Test your might">
 
     <ScrollView>
         <StackLayout Margin="10">
+            <controls:MenuSection>
+                <Label Text="Gradients" />
+            </controls:MenuSection>
             <Button Text="Linear gradient" Command="{Binding LinearCommand}" />
             <Button Text="Radial gradient" Command="{Binding RadialCommand}" />
+            <controls:MenuSection>
+                <Label Text="Css" />
+            </controls:MenuSection>
             <Button Text="CSS gradient" Command="{Binding CssCommand}" />
-            <Button Text="Animation" Command="{Binding AnimationCommand}" />
+            <controls:MenuSection>
+                <Label Text="Animation" />
+            </controls:MenuSection>
+            <Button Text="Simple Animations" Command="{Binding AnimationCommand}" />
+            <Button Text="Storyboards" Command="{Binding AnimationCommand}" />
+            <Button Text="Key Frames" Command="{Binding AnimationCommand}" />
         </StackLayout>
     </ScrollView>
 

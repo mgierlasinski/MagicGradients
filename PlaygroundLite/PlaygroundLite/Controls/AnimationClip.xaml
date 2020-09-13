@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlaygroundLite.Controls.AnimationClip">
+    <ContentView.ControlTemplate>
+        <ControlTemplate>
+            <Grid RowDefinitions="Auto,*">
+                <ContentView BackgroundColor="Black">
+                    <Label Text="{TemplateBinding BindingContext.Title}" FontSize="12" Margin="2" TextColor="White" />
+                </ContentView>
+                <ContentPresenter Grid.Row="1" />
+                <Button Text="{TemplateBinding BindingContext.Text}"
+                        Command="{TemplateBinding BindingContext.PlayCommand}"
+                        HorizontalOptions="Center" VerticalOptions="End" 
+                        Margin="20" Grid.Row="1" />
+            </Grid>
+        </ControlTemplate>
+    </ContentView.ControlTemplate>
+</ContentView>

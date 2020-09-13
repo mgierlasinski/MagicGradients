@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MagicGradients.Animation.Tween;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
@@ -7,10 +8,11 @@ namespace MagicGradients.Animation
 {
     public abstract class PropertyAnimationUsingKeyFrames<TValue> : Timeline
     {
+        private List<KeyFrame<TValue>> _sortedKeyFrames;
+
         public BindableProperty TargetProperty { get; set; } = default;
         public List<KeyFrame<TValue>> KeyFrames { get; set; } = new List<KeyFrame<TValue>>();
-
-        private List<KeyFrame<TValue>> _sortedKeyFrames;
+        public abstract ITweener<TValue> Tweener { get; }
 
         public override void OnBegin()
         {
@@ -42,7 +44,7 @@ namespace MagicGradients.Animation
 
                 var frameAnimation = new Xamarin.Forms.Animation(x =>
                 {
-                    var value = GetProgressValue(fromFrame.Value, toFrame.Value, x);
+                    var value = Tweener.Tween(fromFrame.Value, toFrame.Value, x);
                     Target.SetValue(TargetProperty, value);
                 },
                 easing: Easing.ToEasing());
@@ -55,7 +57,5 @@ namespace MagicGradients.Animation
 
             return animation;
         }
-
-        protected abstract TValue GetProgressValue(TValue from, TValue to, double progress);
     }
 }
