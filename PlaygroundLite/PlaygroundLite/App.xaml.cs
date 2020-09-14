@@ -10,6 +10,8 @@ namespace PlaygroundLite
     {
         public App()
         {
+            Device.SetFlags(new string[] { "Shapes_Experimental" });
+
             InitializeComponent();
 
             var page = FreshPageModelResolver.ResolvePageModel<MainViewModel>();

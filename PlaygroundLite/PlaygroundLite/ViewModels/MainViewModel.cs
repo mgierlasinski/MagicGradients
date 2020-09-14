@@ -8,14 +8,16 @@ namespace PlaygroundLite.ViewModels
         public ICommand LinearCommand { get; }
         public ICommand RadialCommand { get; }
         public ICommand CssCommand { get; }
-        public ICommand AnimationCommand { get; }
+        public ICommand AnimationsSimpleCommand { get; }
+        public ICommand AnimationsComplexCommand { get; }
 
         public MainViewModel()
         {
             LinearCommand = new Command(() => CoreMethods.PushPageModel<LinearViewModel>());
             RadialCommand = new Command(() => CoreMethods.PushPageModel<RadialViewModel>());
             CssCommand = new Command(() => CoreMethods.PushPageModel<CssViewModel>());
-            AnimationCommand = new Command(() => CoreMethods.PushPageModel<AnimationViewModel>());
+            AnimationsSimpleCommand = new Command(() => CoreMethods.PushPageModel<AnimationsSimpleViewModel>());
+            AnimationsComplexCommand = new Command(() => CoreMethods.PushPageModel<AnimationsComplexViewModel>());
         }
     }
 }

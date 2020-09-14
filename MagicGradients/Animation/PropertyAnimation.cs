@@ -27,6 +27,14 @@ namespace MagicGradients.Animation
             SetDefaults((TValue)Target.GetValue(TargetProperty));
         }
 
+        private void SetDefaults(TValue value)
+        {
+            From = From.Equals(default(TValue)) ? value : From;
+
+            _animateFrom = From;
+            _animateTo = To;
+        }
+
         public override Xamarin.Forms.Animation OnAnimate() => new Xamarin.Forms.Animation(x =>
         {
             var value = Tweener.Tween(_animateFrom, _animateTo, x);
@@ -47,14 +55,6 @@ namespace MagicGradients.Animation
                 _animateFrom = _animateTo;
                 _animateTo = tmp;
             }
-        }
-
-        private void SetDefaults(TValue value)
-        {
-            From = From.Equals(default(TValue)) ? value : From;
-
-            _animateFrom = From;
-            _animateTo = To;
         }
     }
 }

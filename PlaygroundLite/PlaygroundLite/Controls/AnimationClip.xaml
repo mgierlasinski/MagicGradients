@@ -1,19 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlaygroundLite.Controls.AnimationClip">
+             x:Class="PlaygroundLite.Controls.AnimationClip" 
+             HeightRequest="200">
     <ContentView.ControlTemplate>
         <ControlTemplate>
-            <Grid RowDefinitions="Auto,*">
-                <ContentView BackgroundColor="Black">
-                    <Label Text="{TemplateBinding BindingContext.Title}" FontSize="12" Margin="2" TextColor="White" />
-                </ContentView>
-                <ContentPresenter Grid.Row="1" />
-                <Button Text="{TemplateBinding BindingContext.Text}"
-                        Command="{TemplateBinding BindingContext.PlayCommand}"
-                        HorizontalOptions="Center" VerticalOptions="End" 
-                        Margin="20" Grid.Row="1" />
-            </Grid>
+            <Frame HasShadow="True" Visual="Material" Padding="0" CornerRadius="5" IsClippedToBounds="True" Margin="10,10,10,5">
+                <Grid RowDefinitions="*,Auto" RowSpacing="0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{TemplateBinding BindingContext.PlayCommand}" />
+                    </Grid.GestureRecognizers>
+                    <ContentPresenter />
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="50" HeightRequest="50">
+                        <Ellipse Fill="#AA808080" Stroke="White" StrokeThickness="2" />
+                        <Path Data="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"
+                              Fill="White" Aspect="Uniform"
+                              WidthRequest="20" HeightRequest="20"
+                              HorizontalOptions="Center" VerticalOptions="Center"
+                              IsVisible="{TemplateBinding BindingContext.IsRunning, Converter={StaticResource NegativeBoolConverter}}" />
+                        <Path Data="M8 19c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2v10c0 1.1.9 2 2 2zm6-12v10c0 1.1.9 2 2 2s2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2z"
+                              Fill="White" Aspect="Uniform"
+                              WidthRequest="20" HeightRequest="20"
+                              HorizontalOptions="Center" VerticalOptions="Center"
+                              IsVisible="{TemplateBinding BindingContext.IsRunning}" />
+                    </Grid>
+                    <Label Text="{TemplateBinding BindingContext.Title}" 
+                           TextColor="Black" FontAttributes="Bold" FontSize="14"
+                           HorizontalOptions="Center" Margin="0,5" Grid.Row="1" />
+                </Grid>
+            </Frame>
         </ControlTemplate>
     </ContentView.ControlTemplate>
 </ContentView>

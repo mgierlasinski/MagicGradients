@@ -19,9 +19,8 @@
             <controls:MenuSection>
                 <Label Text="Animation" />
             </controls:MenuSection>
-            <Button Text="Simple Animations" Command="{Binding AnimationCommand}" />
-            <Button Text="Storyboards" Command="{Binding AnimationCommand}" />
-            <Button Text="Key Frames" Command="{Binding AnimationCommand}" />
+            <Button Text="Simple Animations" Command="{Binding AnimationsSimpleCommand}" />
+            <Button Text="Complex Animations" Command="{Binding AnimationsComplexCommand}" />
         </StackLayout>
     </ScrollView>
 

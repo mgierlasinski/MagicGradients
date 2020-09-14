@@ -6,12 +6,13 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Animation
 {
+    [ContentProperty(nameof(KeyFrames))]
     public abstract class PropertyAnimationUsingKeyFrames<TValue> : Timeline
     {
-        private List<KeyFrame<TValue>> _sortedKeyFrames;
+        private List<KeyFrame> _sortedKeyFrames;
 
         public BindableProperty TargetProperty { get; set; } = default;
-        public List<KeyFrame<TValue>> KeyFrames { get; set; } = new List<KeyFrame<TValue>>();
+        public List<KeyFrame> KeyFrames { get; set; } = new List<KeyFrame>();
         public abstract ITweener<TValue> Tweener { get; }
 
         public override void OnBegin()
@@ -22,9 +23,16 @@ namespace MagicGradients.Animation
             {
                 throw new NullReferenceException("Null Target property.");
             }
+
+            if (!KeyFrames.Any())
+            {
+                throw new ArgumentException("No key frames");
+            }
+
+            InitFrames();    
         }
 
-        public override Xamarin.Forms.Animation OnAnimate()
+        private void InitFrames()
         {
             var initialKeyFrame = new KeyFrame<TValue>
             {
@@ -35,22 +43,31 @@ namespace MagicGradients.Animation
             _sortedKeyFrames = KeyFrames.OrderBy(x => x.KeyTime).ToList();
             _sortedKeyFrames.Insert(0, initialKeyFrame);
 
+            Duration = (uint)_sortedKeyFrames.Last().KeyTime;
+        }
+
+        public override Xamarin.Forms.Animation OnAnimate()
+        {
             var animation = new Xamarin.Forms.Animation();
 
             for (var i = 1; i < _sortedKeyFrames.Count; i++)
             {
-                var fromFrame = _sortedKeyFrames[i - 1];
-                var toFrame = _sortedKeyFrames[i];
+                var fromFrame = (KeyFrame<TValue>)_sortedKeyFrames[i - 1];
+                var toFrame = (KeyFrame<TValue>)_sortedKeyFrames[i];
+
+                var toFrameEasing = toFrame.Easing != EasingType.Linear
+                    ? toFrame.Easing.ToEasing()
+                    : Easing.ToEasing();
 
                 var frameAnimation = new Xamarin.Forms.Animation(x =>
                 {
                     var value = Tweener.Tween(fromFrame.Value, toFrame.Value, x);
                     Target.SetValue(TargetProperty, value);
                 },
-                easing: Easing.ToEasing());
+                easing: toFrameEasing);
 
-                var beginAt = fromFrame.KeyTime / Duration;
-                var endAt = toFrame.KeyTime / Duration;
+                var beginAt = (double)fromFrame.KeyTime / Duration;
+                var endAt = (double)toFrame.KeyTime / Duration;
 
                 animation.Add(beginAt, endAt, frameAnimation);
             }

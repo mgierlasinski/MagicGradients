@@ -2,9 +2,9 @@
 
 namespace PlaygroundLite.Pages
 {
-    public partial class AnimationPage : ContentPage
+    public partial class AnimationsSimplePage : ContentPage
     {
-        public AnimationPage()
+        public AnimationsSimplePage()
         {
             InitializeComponent();
         }
