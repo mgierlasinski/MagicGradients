@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+    xmlns:controls="clr-namespace:MagicGradients.Controls;assembly=MagicGradients"
     x:Name="battlePage"
     Title="Gradient Battle Test"
     BindingContext="{Binding BattleTestViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
@@ -16,36 +17,22 @@
                 ItemsSource="{Binding ColorNames}"
                 SelectedIndex="{Binding SelectedColorIndex}" />
             <!--  Buttons With Gradient Background  -->
-            <Frame
-                Padding="0"
+            <controls:MagicButton
                 CornerRadius="10"
-                HasShadow="False">
-                <Grid>
-                    <magic:GradientView GradientSource="{Binding GradientSource}" />
-                    <Button
-                        BackgroundColor="Transparent"
-                        FontSize="16"
-                        HeightRequest="100"
-                        Text="MagicGradients Large Button"
-                        TextColor="{Binding TextColor}" />
-                </Grid>
-            </Frame>
-            <Frame
-                Padding="0"
+                GradientSource="{Binding GradientSource}"
+                FontSize="16"
+                HeightRequest="100"
+                Text="MagicGradients Large Button"
+                TextColor="{Binding TextColor}"/>
+            <controls:MagicButton
                 CornerRadius="10"
-                HasShadow="False"
+                GradientSource="{Binding GradientSource}"
+                FontSize="16"
+                WidthRequest="150"
+                HeightRequest="50"
                 HorizontalOptions="Center"
-                WidthRequest="150">
-                <Grid>
-                    <magic:GradientView GradientSource="{Binding GradientSource}" />
-                    <Button
-                        BackgroundColor="Transparent"
-                        FontSize="16"
-                        HeightRequest="50"
-                        Text="Small Button"
-                        TextColor="{Binding TextColor}" />
-                </Grid>
-            </Frame>
+                Text="Small Button"
+                TextColor="{Binding TextColor}"/>
             <!--  Circle With Icon And With Gradient Background  -->
             <CollectionView HeightRequest="50" ItemsSource="{Binding IconsCollection}">
                 <CollectionView.ItemsLayout>
@@ -53,21 +40,16 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame
-                            Padding="0"
+                        <controls:MagicButton
                             CornerRadius="25"
-                            HasShadow="False"
-                            WidthRequest="50">
-                            <Grid>
-                                <magic:GradientView GradientSource="{Binding GradientSource}" />
-                                <Button
-                                    BackgroundColor="Transparent"
-                                    FontFamily="IconFont"
-                                    FontSize="16"
-                                    Text="{Binding Text}"
-                                    TextColor="{Binding TextColor}" />
-                            </Grid>
-                        </Frame>
+                            GradientSource="{Binding GradientSource}"
+                            FontSize="16"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            HorizontalOptions="Center"
+                            Text="{Binding Text}"
+                            FontFamily="IconFont"
+                            TextColor="{Binding TextColor}"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
