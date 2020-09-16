@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ContentView
+<Frame
     x:Class="MagicGradients.Controls.MagicButton"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients">
-    <ContentView.Content>
-        <Frame
-            x:Name="TopFrame"
-            Margin="0"
-            Padding="0"
-            IsClippedToBounds="True"
-            HasShadow="False">
-            <Grid>
-                <magic:GradientView x:Name="GradientView" Margin="-2" />
-                <Button x:Name="ActionButton" BackgroundColor="Transparent" Visual="Default" />
-            </Grid>
-        </Frame>
-    </ContentView.Content>
-</ContentView>
+    xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+    x:Name="TopFrame"
+    Margin="0"
+    Padding="0"
+    IsClippedToBounds="True"
+    HasShadow="False">
+    <Grid>
+        <magic:GradientView x:Name="GradientView" Margin="-2" />
+        <Button x:Name="ActionButton" BackgroundColor="Transparent" Visual="Default" />
+    </Grid>
+</Frame>
