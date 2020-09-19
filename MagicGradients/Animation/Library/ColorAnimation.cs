@@ -12,4 +12,9 @@ namespace MagicGradients.Animation
     {
         public override ITweener<Color> Tweener { get; } = new ColorTweener();
     }
+
+    public class ColorKeyFrame : KeyFrame<Color>
+    {
+
+    }
 }

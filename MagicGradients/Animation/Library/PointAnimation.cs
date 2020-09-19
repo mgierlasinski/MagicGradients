@@ -12,4 +12,9 @@ namespace MagicGradients.Animation
     {
         public override ITweener<Point> Tweener { get; } = new PointTweener();
     }
+
+    public class PointKeyFrame : KeyFrame<Point>
+    {
+
+    }
 }

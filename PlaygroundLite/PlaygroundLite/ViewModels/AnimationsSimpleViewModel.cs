@@ -1,6 +1,6 @@
 ﻿namespace PlaygroundLite.ViewModels
 {
-    public class AnimationsSimpleViewModel : BaseViewModel
+    public class AnimationsSimpleViewModel : AnimationsViewModel
     {
         public AnimationItem DoubleAnimation { get; }
         public AnimationItem ColorAnimation { get; }
@@ -9,10 +9,10 @@
 
         public AnimationsSimpleViewModel()
         {
-            DoubleAnimation = new AnimationItem("Double Animation");
-            ColorAnimation = new AnimationItem("Color Animation");
-            PointAnimation = new AnimationItem("Point Animation");
-            DimensionsAnimation = new AnimationItem("Dimensions Animation");
+            DoubleAnimation = CreateAnimation("Double Animation");
+            ColorAnimation = CreateAnimation("Color Animation");
+            PointAnimation = CreateAnimation("Point Animation");
+            DimensionsAnimation = CreateAnimation("Dimensions Animation");
         }
     }
 }

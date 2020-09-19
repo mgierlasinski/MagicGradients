@@ -1,14 +1,14 @@
 ﻿namespace PlaygroundLite.ViewModels
 {
-    public class AnimationsComplexViewModel : BaseViewModel
+    public class AnimationsComplexViewModel : AnimationsViewModel
     {
         public AnimationItem StoryboardAnimation { get; }
         public AnimationItem PointFrameAnimation { get; }
 
         public AnimationsComplexViewModel()
         {
-            StoryboardAnimation = new AnimationItem("Storyboard Animation");
-            PointFrameAnimation = new AnimationItem("Point Frame Animation");
+            StoryboardAnimation = CreateAnimation("Storyboard Animation");
+            PointFrameAnimation = CreateAnimation("Point Frame Animation");
         }
     }
 }

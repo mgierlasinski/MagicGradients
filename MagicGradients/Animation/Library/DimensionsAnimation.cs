@@ -11,4 +11,9 @@ namespace MagicGradients.Animation
     {
         public override ITweener<Dimensions> Tweener { get; } = new DimensionsTweener();
     }
+
+    public class DimensionsKeyFrame : KeyFrame<Dimensions>
+    {
+
+    }
 }

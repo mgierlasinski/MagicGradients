@@ -11,4 +11,9 @@ namespace MagicGradients.Animation
     {
         public override ITweener<double> Tweener { get; } = new DoubleTweener();
     }
+
+    public class DoubleKeyFrame : KeyFrame<double>
+    {
+
+    }
 }

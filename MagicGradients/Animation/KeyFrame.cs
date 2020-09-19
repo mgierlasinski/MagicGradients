@@ -1,6 +1,4 @@
-﻿using Xamarin.Forms;
-
-namespace MagicGradients.Animation
+﻿namespace MagicGradients.Animation
 {
     public class KeyFrame
     {
@@ -11,20 +9,5 @@ namespace MagicGradients.Animation
     public class KeyFrame<TValue> : KeyFrame
     {
         public TValue Value { get; set; }
-    }
-
-    public class DoubleKeyFrame : KeyFrame<double>
-    {
-        
-    }
-
-    public class ColorKeyFrame : KeyFrame<Color>
-    {
-
-    }
-
-    public class PointKeyFrame : KeyFrame<Point>
-    {
-
     }
 }

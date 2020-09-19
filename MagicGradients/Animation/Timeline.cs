@@ -7,9 +7,8 @@ namespace MagicGradients.Animation
 {
     public abstract class Timeline : BindableObject
     {
-        private string _handle = Guid.NewGuid().ToString();
-
-        private int _playCount = 0;
+        private readonly string _handle = Guid.NewGuid().ToString();
+        private int _playCount;
 
         public uint Duration { get; set; } = 0;
         public int Delay { get; set; } = 0;
@@ -40,7 +39,7 @@ namespace MagicGradients.Animation
                 finished: (v, c) =>
                 {
                     _playCount++;
-                    Debug.WriteLine($"Finished Timeline (plays: {_playCount})");
+                    Debug.WriteLine($"Timeline Finished (plays: {_playCount}, handle: {_handle})");
                     OnFinished();
                 },
                 repeat: IsRepeat);
