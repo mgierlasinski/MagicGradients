@@ -23,6 +23,8 @@ namespace MagicGradients
         public static Offset Prop(double value) => new Offset(value, OffsetType.Proportional);
         public static Offset Abs(double value) => new Offset(value, OffsetType.Absolute);
 
+        public override string ToString() => $"{Value}:{Type}";
+
         public static bool operator ==(Offset o1, Offset o2) => o1.Value == o2.Value;
         public static bool operator !=(Offset o1, Offset o2) => o1.Value != o2.Value;
     }
