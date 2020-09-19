@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Playground.Views.SplashPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients">
+    <ContentPage.Content>
+        <magicGradients:GradientView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <magicGradients:LinearGradient x:Name="SplashTarget" Angle="45">
+                <!--<magicGradients:GradientStop Color="#54edba" Offset="0"/>
+                <magicGradients:GradientStop Color="#54edba" Offset="0.18"/>
+                <magicGradients:GradientStop Color="#54aded" Offset="0.18"/>
+                <magicGradients:GradientStop Color="#54aded" Offset="0.29"/>
+                <magicGradients:GradientStop Color="#6e54ed" Offset="0.29"/>
+                <magicGradients:GradientStop Color="#6e54ed" Offset="0.48"/>
+                <magicGradients:GradientStop Color="#e054ed" Offset="0.48"/>
+                <magicGradients:GradientStop Color="#e054ed" Offset="0.52"/>
+                <magicGradients:GradientStop Color="#ed5487" Offset="0.52"/>
+                <magicGradients:GradientStop Color="#ed5487" Offset="0.69"/>
+                <magicGradients:GradientStop Color="#ed9454" Offset="0.69"/>
+                <magicGradients:GradientStop Color="#ed9454" Offset="0.82"/>
+                <magicGradients:GradientStop Color="#d4ed54" Offset="0.82"/>
+                <magicGradients:GradientStop Color="#d4ed54" Offset="0.89"/>
+                <magicGradients:GradientStop Color="#61ed54" Offset="0.89"/>-->
+                <magicGradients:GradientStop Offset="1" Color="#61ed54" />
+            </magicGradients:LinearGradient>
+        </magicGradients:GradientView>
+    </ContentPage.Content>
+</ContentPage>

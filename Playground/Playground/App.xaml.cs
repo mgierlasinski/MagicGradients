@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Playground.Views;
+using Xamarin.Forms;
 
 namespace Playground
 {
@@ -8,10 +9,7 @@ namespace Playground
         {
             InitializeComponent();
 
-            IoC.RegisterTypes();
-            IoC.Initialize();
-
-            MainPage = new AppShell();
+            MainPage = new SplashPage();
         }
 
         protected override void OnStart()
