@@ -14,11 +14,11 @@
                 IsClippedToBounds="True">
                 <Grid>
                     <magic:GradientView x:Name="GradientView" Margin="-2" />
+                    <ContentPresenter />
                     <Button
                         x:Name="ActionButton"
                         BackgroundColor="Transparent"
                         Visual="Default" />
-                    <ContentPresenter />
                 </Grid>
             </Frame>
         </ControlTemplate>

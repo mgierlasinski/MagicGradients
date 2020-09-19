@@ -18,31 +18,34 @@
                 SelectedIndex="{Binding SelectedColorIndex}" />
             <!--  Buttons With Gradient Background  -->
             <controls:MagicButton
+                Command="{Binding ClickCommand}"
                 CornerRadius="10"
                 FontSize="16"
                 GradientSource="{Binding GradientSource}"
                 HeightRequest="100"
-                Command="{Binding ClickCommand}"
                 Text="MagicGradients Large Button"
                 TextColor="{Binding TextColor}" />
             <controls:MagicButton
+                Command="{Binding ClickCommand}"
                 CornerRadius="10"
                 FontSize="16"
                 GradientSource="{Binding GradientSource}"
                 HeightRequest="50"
-                Command="{Binding ClickCommand}"
                 HorizontalOptions="Center"
                 WidthRequest="150">
                 <Grid>
                     <Label
+                        Margin="10"
                         HorizontalTextAlignment="Start"
                         Text="Small"
                         TextColor="{Binding TextColor}"
-                        VerticalOptions="Center" />
+                        VerticalOptions="End" />
                     <Label
+                        Margin="10"
                         HorizontalTextAlignment="End"
                         Text="Button"
-                        TextColor="{Binding TextColor}" />
+                        TextColor="{Binding TextColor}"
+                        VerticalOptions="Start" />
                 </Grid>
             </controls:MagicButton>
             <!--  Circle With Icon And With Gradient Background  -->
