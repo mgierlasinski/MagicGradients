@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Controls
 {
-     public partial class MagicButton : Frame
+     public partial class MagicButton : ContentView
     {
 
         public static readonly BindableProperty TextProperty = BindableProperty.Create(
@@ -59,15 +59,29 @@ namespace MagicGradients.Controls
         {
             InitializeComponent();
 
-            ActionButton.SetBinding(Button.TextProperty, new Binding(nameof(Text), source: this));
-            ActionButton.SetBinding(Button.FontSizeProperty, new Binding(nameof(FontSize), source: this));
-            ActionButton.SetBinding(Button.TextColorProperty, new Binding(nameof(TextColor), source: this));
-            ActionButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
-            ActionButton.SetBinding(Button.FontFamilyProperty, new Binding(nameof(FontFamily), source: this));
-            
-            GradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
+            //ActionButton.SetBinding(Button.TextProperty, new Binding(nameof(Text), source: this));
+            //ActionButton.SetBinding(Button.FontSizeProperty, new Binding(nameof(FontSize), source: this));
+            //ActionButton.SetBinding(Button.TextColorProperty, new Binding(nameof(TextColor), source: this));
+            //ActionButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
+            //ActionButton.SetBinding(Button.FontFamilyProperty, new Binding(nameof(FontFamily), source: this));
 
-            TopFrame.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
+            //GradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
+
+            //TopFrame.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
+
+            var actionButton = (Button)GetTemplateChild("ActionButton");
+            var gradientView = (GradientView)GetTemplateChild("GradientView");
+            var topFrame = (Frame)GetTemplateChild("TopFrame");
+
+            actionButton.SetBinding(Button.TextProperty, new Binding(nameof(Text), source: this));
+            actionButton.SetBinding(Button.FontSizeProperty, new Binding(nameof(FontSize), source: this));
+            actionButton.SetBinding(Button.TextColorProperty, new Binding(nameof(TextColor), source: this));
+            actionButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
+            actionButton.SetBinding(Button.FontFamilyProperty, new Binding(nameof(FontFamily), source: this));
+
+            gradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
+
+            topFrame.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
         }
         
         public string Text

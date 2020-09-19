@@ -5,6 +5,7 @@ using Playground.Data.Repositories;
 using Playground.Models;
 using Playground.Services;
 using System.Collections.Generic;
+using System.Windows.Input;
 using Xamarin.Forms;
 using static Playground.Constants.IconCodes;
 using Color = System.Drawing.Color;
@@ -78,6 +79,8 @@ namespace Playground.ViewModels
 
         public List<string> ColorNames { get; }
 
+        public ICommand ClickCommand { get; }
+
         public BattleTestViewModel(
             IGradientRepository gradientRepository, 
             IPickerColorsDataProvider pickerColorsDataProvider,
@@ -89,6 +92,10 @@ namespace Playground.ViewModels
 
             ColorNames = _pickerColorsDataProvider.GetColorNames();
             TextColor = Color.White;
+            ClickCommand = new Command(() =>
+            {
+                Application.Current.MainPage.DisplayAlert("","Button Clicked", "OK");
+            });
         }
 
         private void LoadCssCodeById()
