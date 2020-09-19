@@ -20693,6 +20693,7 @@ namespace Playground.Droid
 			// aapt resource value: 0x7F070094
 			public const int xamarin_logo = 2131165332;
 			
+
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
