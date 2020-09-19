@@ -49,13 +49,14 @@
                 </Grid>
             </controls:MagicButton>
             <!--  Circle With Icon And With Gradient Background  -->
-            <CollectionView HeightRequest="50" ItemsSource="{Binding IconsCollection}">
+            <CollectionView HeightRequest="60" ItemsSource="{Binding IconsCollection}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout HorizontalItemSpacing="5" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <controls:MagicButton
+                            Padding="0,5"
                             CornerRadius="25"
                             FontFamily="IconFont"
                             FontSize="16"
