@@ -1,5 +1,4 @@
-﻿using MagicGradients.Parser;
-using System;
+﻿using System;
 using Xamarin.Forms;
 
 namespace MagicGradients.Animation
@@ -9,9 +8,10 @@ namespace MagicGradients.Animation
     {
         public override object ConvertFromInvariantString(string value)
         {
-            if (value != null)
+            if (!string.IsNullOrWhiteSpace(value))
             {
                 value = value.Trim();
+
                 if (value.TryExtractNumber("x", out var count))
                 {
                     return new RepeatBehavior(RepeatBehaviorType.Count, (int)count);
