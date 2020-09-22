@@ -4,10 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Playground.ViewModels;assembly=Playground"
+             xmlns:controls="clr-namespace:MagicGradients.Controls;assembly=MagicGradients"
              mc:Ignorable="d"
              x:Class="Playground.App">
     <Application.Resources>
         <ResourceDictionary Source="Styles/Styles.xaml" />
+        <controls:TextContentConverter x:Key="TextContentConverter" />
         <viewModels:ViewModelLocator x:Key="ViewModelLocator" />
     </Application.Resources>
 </Application>

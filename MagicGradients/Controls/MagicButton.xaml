@@ -13,28 +13,14 @@
                 HasShadow="False"
                 IsClippedToBounds="True">
                 <Grid>
-                    <magic:GradientView x:Name="GradientView" Margin="-2" />
-                    <ContentPresenter />
-                    <Button
-                        x:Name="ActionButton"
-                        BackgroundColor="Transparent"
-                        Visual="Default" />
+                    <magic:GradientView x:Name="GradientView" />
+                    <ContentPresenter x:Name="ContentPresenter">
+                        <ContentPresenter.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapRecognizer" />
+                        </ContentPresenter.GestureRecognizers>
+                    </ContentPresenter>
                 </Grid>
             </Frame>
         </ControlTemplate>
     </ContentView.ControlTemplate>
-    <!--<Frame
-        x:Name="TopFrame"
-        Margin="0"
-        Padding="0"
-        HasShadow="False"
-        IsClippedToBounds="True">
-        <Grid>
-            <magic:GradientView x:Name="GradientView" Margin="-2" />
-            <Button
-                x:Name="ActionButton"
-                BackgroundColor="Transparent"
-                Visual="Default" />
-        </Grid>
-    </Frame>-->
 </ContentView>

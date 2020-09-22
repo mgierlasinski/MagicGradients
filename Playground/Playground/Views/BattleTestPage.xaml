@@ -23,7 +23,7 @@
                 FontSize="16"
                 GradientSource="{Binding GradientSource}"
                 HeightRequest="100"
-                Text="MagicGradients Large Button"
+                Content="MagicGradients Large Button"
                 TextColor="{Binding TextColor}" />
             <controls:MagicButton
                 Command="{Binding ClickCommand}"
@@ -63,7 +63,7 @@
                             GradientSource="{Binding GradientSource}"
                             HeightRequest="50"
                             HorizontalOptions="Center"
-                            Text="{Binding Text}"
+                            Content="{Binding Text, Converter={StaticResource TextContentConverter}}"
                             TextColor="{Binding TextColor}"
                             WidthRequest="50" />
                     </DataTemplate>
