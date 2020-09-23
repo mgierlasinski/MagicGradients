@@ -2,10 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients"
              x:Class="Playground.Views.LinearGradientsAnimationPage"
              Title="Linear Gradients">
     <StackLayout Spacing="0">
         <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientView.Behaviors>
+                <anim:Animate x:Name="RotateAnimation">
+                    <anim:DoubleAnimation Target="{Reference RotateTarget}"
+                                          TargetProperty="magic:LinearGradient.Angle"
+                                          From="0" To="360" 
+                                          Duration="3000"
+                                          RepeatBehavior="Forever" />
+                </anim:Animate>
+            </magic:GradientView.Behaviors>
             <magic:LinearGradient x:Name="RotateTarget">
                 <magic:GradientStop Color="Yellow" />
                 <magic:GradientStop Color="Orange" />
@@ -15,9 +25,19 @@
             </magic:LinearGradient>
         </magic:GradientView>
         <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientView.Behaviors>
+                <anim:Animate x:Name="ScannerAnimation">
+                    <anim:OffsetAnimation Target="{Reference ScannerTarget}"
+                                          TargetProperty="magic:GradientStop.Offset"
+                                          From="0" To="1"
+                                          Duration="1500" 
+                                          AutoReverse="True" 
+                                          RepeatBehavior="Forever" />
+                </anim:Animate>
+            </magic:GradientView.Behaviors>
             <magic:GradientCollection>
                 <magic:LinearGradient >
-                    <magic:GradientStop Color="Black" />
+                    <magic:GradientStop Color="Black" Offset="0" />
                 </magic:LinearGradient>
                 <magic:LinearGradient Angle="90">
                     <magic:GradientStop Color="#14000000" Offset="0" />

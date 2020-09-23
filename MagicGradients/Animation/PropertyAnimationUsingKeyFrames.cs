@@ -9,6 +9,7 @@ namespace MagicGradients.Animation
     [ContentProperty(nameof(KeyFrames))]
     public abstract class PropertyAnimationUsingKeyFrames<TValue> : Timeline
     {
+        private KeyFrame _initialKeyFrame;
         private List<KeyFrame> _sortedKeyFrames;
 
         public BindableProperty TargetProperty { get; set; } = default;
@@ -29,19 +30,22 @@ namespace MagicGradients.Animation
                 throw new ArgumentException("No key frames");
             }
 
-            InitFrames();    
+            InitFrames();
         }
 
         private void InitFrames()
         {
-            var initialKeyFrame = new KeyFrame<TValue>
+            if (_initialKeyFrame == null)
             {
-                Value = (TValue)Target.GetValue(TargetProperty),
-                KeyTime = 0
-            };
+                _initialKeyFrame = new KeyFrame<TValue>
+                {
+                    Value = (TValue)Target.GetValue(TargetProperty),
+                    KeyTime = 0
+                };
+            }
 
             _sortedKeyFrames = KeyFrames.OrderBy(x => x.KeyTime).ToList();
-            _sortedKeyFrames.Insert(0, initialKeyFrame);
+            _sortedKeyFrames.Insert(0, _initialKeyFrame);
 
             Duration = (uint)_sortedKeyFrames.Last().KeyTime;
         }

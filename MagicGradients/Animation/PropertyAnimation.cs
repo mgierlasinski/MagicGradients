@@ -43,11 +43,11 @@ namespace MagicGradients.Animation
         easing: Easing.ToEasing(),
         finished: () =>
         {
-            Debug.WriteLine($"Property [{TargetProperty.PropertyName}] Finished (value: {To})");
+            Debug.WriteLine($"Property [{TargetProperty.PropertyName}] Finished (value: {_animateTo})");
             OnFinished();
         });
 
-        protected override void OnFinished()
+        public override void OnFinished()
         {
             Debug.WriteLine($"Property [{TargetProperty.PropertyName}] OnFinished()");
 

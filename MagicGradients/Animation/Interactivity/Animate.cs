@@ -1,15 +1,16 @@
-﻿using System.Threading.Tasks;
+﻿using System;
 using Xamarin.Forms;
 
 namespace MagicGradients.Animation
 {
+    [ContentProperty(nameof(Animation))]
     public class Animate : Behavior<VisualElement>
     {
         private static VisualElement _associatedObject;
 
         public Timeline Animation { get; set; }
 
-        protected override async void OnAttachedTo(VisualElement bindable)
+        protected override void OnAttachedTo(VisualElement bindable)
         {
             base.OnAttachedTo(bindable);
             _associatedObject = bindable;
@@ -20,9 +21,14 @@ namespace MagicGradients.Animation
             if (Animation.Target == null)
                 Animation.Target = _associatedObject;
 
-            // TODO: is it required?
-            await Task.Delay(250);
-            await Animation.Begin(bindable);
+            _associatedObject.SizeChanged += OnAnimatorLoaded;
+        }
+
+        private void OnAnimatorLoaded(object sender, EventArgs e)
+        {
+            var animator = (VisualElement)sender;
+            animator.SizeChanged -= OnAnimatorLoaded;
+            Animation?.Begin(animator);
         }
 
         protected override void OnDetachingFrom(VisualElement bindable)

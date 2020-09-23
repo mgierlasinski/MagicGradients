@@ -1,5 +1,4 @@
-﻿using MagicGradients;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Playground.Views
 {
@@ -8,11 +7,15 @@ namespace Playground.Views
         public LinearGradientsAnimationPage()
         {
             InitializeComponent();
-
-            AnimateRotate();
-            AnimateScanner();
         }
 
+        protected override void OnDisappearing()
+        {
+            RotateAnimation.Animation?.End();
+            ScannerAnimation.Animation?.End();
+        }
+
+        /*
         private void AnimateRotate()
         {
             var rotateAnimation = new Animation(v => RotateTarget.Angle = (float)v, 0, 360);
@@ -32,5 +35,6 @@ namespace Playground.Views
 
             parentAnimation.Commit(this, "ScannerAnimation", 16, 3000, repeat: () => true);
         }
+        */
     }
 }

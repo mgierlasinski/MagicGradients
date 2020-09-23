@@ -7,10 +7,14 @@ namespace Playground.Views
         public RadialGradientsAnimationPage()
         {
             InitializeComponent();
-
-            AnimatePulse();
         }
 
+        protected override void OnDisappearing()
+        {
+            PulseAnimation.Animation?.End();
+        }
+
+        /*
         private void AnimatePulse()
         {
             var animationXGrow = new Animation(v => PulseTarget.RadiusX = (float)v, 10, 300);
@@ -28,5 +32,6 @@ namespace Playground.Views
 
             parentAnimation.Commit(this, "PulseAnimation", 30, 2000, repeat: () => true);
         }
+        */
     }
 }

@@ -60,7 +60,7 @@ namespace MagicGradients.Animation
         }
 
         public abstract Xamarin.Forms.Animation OnAnimate();
-        protected virtual void OnFinished() { }
+        public virtual void OnFinished() { }
 
         protected bool IsRepeat()
         {
