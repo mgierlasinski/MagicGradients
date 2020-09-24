@@ -25,6 +25,12 @@
     <Compile Update="Controls\ColorsTab.xaml.cs">
       <DependentUpon>ColorsTab.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\AnimationsComplexPage.xaml.cs">
+      <DependentUpon>AnimationsComplexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\AnimationsSimplePage.xaml.cs">
+      <DependentUpon>AnimationsSimplePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\LinearPage.xaml.cs">
       <DependentUpon>LinearPage.xaml</DependentUpon>
     </Compile>
@@ -34,10 +40,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Controls\AnimationClip.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Controls\BackgroundTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ColorsTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\MenuSection.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\AnimationsComplexPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\AnimationsSimplePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\CssPage.xaml">

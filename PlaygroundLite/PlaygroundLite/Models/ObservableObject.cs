@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using FreshMvvm;
+using System.Text;
 
-namespace PlaygroundLite.ViewModels
+namespace PlaygroundLite.Models
 {
-    public class BaseViewModel : FreshBasePageModel
+    public class ObservableObject : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         protected bool SetProperty<T>(ref T backingStore, T value,
             Action onChanged = null,
-            [CallerMemberName]string propertyName = "")
+            [CallerMemberName] string propertyName = "")
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))
                 return false;
@@ -19,6 +22,11 @@ namespace PlaygroundLite.ViewModels
             RaisePropertyChanged(propertyName);
 
             return true;
+        }
+
+        protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
