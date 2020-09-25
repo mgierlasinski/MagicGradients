@@ -36,8 +36,26 @@ namespace MagicGradients.Tests.Parser
         }
 
         [Theory]
-        [ClassData(typeof(GradientsSimple))]
-        public void ParseCss_SimpleGradients_CorrectlyParsed(string css, LinearGradient expected)
+        [ClassData(typeof(GradientsLinear))]
+        public void ParseCss_LinearGradients_CorrectlyParsed(string css, LinearGradient expected)
+        {
+            // Arrange
+            var parser = new CssGradientParser();
+
+            // Act
+            var gradients = parser.ParseCss(css);
+
+            // Assert
+            using (new AssertionScope())
+            {
+                gradients.Should().HaveCount(1);
+                gradients[0].Should().BeEquivalentTo(expected, options => options.IgnoringCyclicReferences());
+            }
+        }
+
+        [Theory]
+        [ClassData(typeof(GradientsRadial))]
+        public void ParseCss_RadialGradients_CorrectlyParsed(string css, RadialGradient expected)
         {
             // Arrange
             var parser = new CssGradientParser();
