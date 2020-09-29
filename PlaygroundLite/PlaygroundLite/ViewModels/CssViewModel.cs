@@ -92,7 +92,7 @@ namespace PlaygroundLite.ViewModels
         private async Task ShowSnippetsActionSheet()
         {
             var values = _snippets.Select(x => x.Name).ToArray();
-            var result = await CoreMethods.DisplayActionSheet("Add CSS snippet", "Cancel", null, values);
+            var result = await CoreMethods.DisplayActionSheet("Pick gradient", "Cancel", null, values);
             var selection = _snippets.FirstOrDefault(x => x.Name == result);
 
             if (selection != null)

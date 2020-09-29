@@ -17,18 +17,22 @@ namespace MagicGradients.Parser.TokenDefinitions
         public void Parse(CssReader reader, GradientBuilder builder)
         {
             var isRepeating = reader.Read().Trim() == CssToken.RepeatingRadialGradient;
-
             var token = reader.ReadNext().Trim();
             var internalReader = new CssReader(token, ' ');
-            
-            var shape = GetShape(internalReader);
-            var shapeSize = GetShapeSize(internalReader);
-            var (position, flags) = GetPositionWithFlags(internalReader);
 
-            builder.AddRadialGradient(position, shape, shapeSize, flags, isRepeating);
+            var hasShape = TryGetShape(internalReader, out var shape);
+            var hasSize = TryGetSize(internalReader, out var size);
+            var hasPos = TryGetPositionWithFlags(internalReader, out var position, out var flags);
+
+            builder.AddRadialGradient(position, shape, size, flags, isRepeating);
+
+            if (!hasShape && !hasSize && !hasPos)
+            {
+                reader.Rollback();
+            }
         }
 
-        private RadialGradientShape GetShape(CssReader reader)
+        private bool TryGetShape(CssReader reader, out RadialGradientShape result)
         {
             if (reader.CanRead)
             {
@@ -37,14 +41,16 @@ namespace MagicGradients.Parser.TokenDefinitions
                 if (Enum.TryParse<RadialGradientShape>(token, true, out var shape))
                 {
                     reader.MoveNext();
-                    return shape;
+                    result = shape;
+                    return true;
                 }
             }
 
-            return RadialGradientShape.Ellipse;
+            result = RadialGradientShape.Ellipse;
+            return false;
         }
 
-        private RadialGradientSize GetShapeSize(CssReader reader)
+        private bool TryGetSize(CssReader reader, out RadialGradientSize result)
         {
             if (reader.CanRead)
             {
@@ -53,14 +59,16 @@ namespace MagicGradients.Parser.TokenDefinitions
                 if (Enum.TryParse<RadialGradientSize>(token, true, out var shapeSize))
                 {
                     reader.MoveNext();
-                    return shapeSize;
+                    result = shapeSize;
+                    return true;
                 }
             }
 
-            return RadialGradientSize.FarthestCorner;
+            result = RadialGradientSize.FarthestCorner;
+            return false;
         }
 
-        private (Point, RadialGradientFlags) GetPositionWithFlags(CssReader reader)
+        private bool TryGetPositionWithFlags(CssReader reader, out Point pResult, out RadialGradientFlags fResult)
         {
             if (reader.CanRead)
             {
@@ -98,11 +106,15 @@ namespace MagicGradients.Parser.TokenDefinitions
                         isPosX ? posX.Value : (direction.X + 1) / 2,
                         isPosY ? posY.Value : (direction.Y + 1) / 2);
 
-                    return (center, flags);
+                    pResult = center;
+                    fResult = flags;
+                    return true;
                 }
             }
 
-            return (new Point(0.5, 0.5), PositionProportional);
+            pResult = new Point(0.5, 0.5);
+            fResult = PositionProportional;
+            return false;
         }
     }
 }
