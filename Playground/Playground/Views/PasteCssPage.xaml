@@ -6,23 +6,31 @@
              x:Class="Playground.Views.PasteCssPage"
              Title="Paste CSS"
              BindingContext="{Binding PasteCssViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
-    <Grid RowSpacing="0" RowDefinitions="Auto,33*,Auto,Auto,66*">
-        <ContentView BackgroundColor="Black">
-            <Label Text="background" TextColor="White" Margin="5" FontSize="Small" />
-        </ContentView>
-        <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" Grid.Row="1" />
-        <ContentView BackgroundColor="Black" Grid.Row="2">
-            <Label Text="background-size" TextColor="White" Margin="5" FontSize="Small" />
-        </ContentView>
-        <Entry Grid.Row="3" Text="{Binding Size}" Placeholder="300px 300px" />
+    <Grid RowSpacing="0" RowDefinitions="Auto,Auto,*">
+        <Expander Grid.Row="0" IsExpanded="True">
+            <Expander.Header>
+                <ContentView BackgroundColor="Black">
+                    <Label Text="background" TextColor="White" Margin="5" FontSize="Small" />
+                </ContentView>
+            </Expander.Header>
+            <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" HeightRequest="200" />
+        </Expander>
+        <Expander Grid.Row="1">
+            <Expander.Header>
+                <ContentView BackgroundColor="Black" Grid.Row="2">
+                    <Label Text="background-size" TextColor="White" Margin="5" FontSize="Small" />
+                </ContentView>
+            </Expander.Header>
+            <Entry Text="{Binding Size}" Placeholder="300px 300px" />
+        </Expander>
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}" 
-                            Grid.Row="4" />
-        <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="4" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
+                            Grid.Row="2" />
+        <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="2" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
             <BoxView Style="{StaticResource SemiTransparent}" />
             <Label Text="{Binding Message}" TextColor="{StaticResource LightForegroundColor}" Margin="10" />
         </Grid>
-        <Grid Grid.Row="4" VerticalOptions="End">
+        <Grid Grid.Row="2" VerticalOptions="End">
             <BoxView Style="{StaticResource SemiTransparent}" />
             <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <ImageButton Command="{Binding RefreshCommand}" BackgroundColor="Transparent" Padding="10,5">

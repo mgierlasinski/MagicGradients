@@ -6,6 +6,8 @@ namespace Playground
     {
         public App()
         {
+            Device.SetFlags(new string[] { "Expander_Experimental" });
+
             InitializeComponent();
 
             IoC.RegisterTypes();
