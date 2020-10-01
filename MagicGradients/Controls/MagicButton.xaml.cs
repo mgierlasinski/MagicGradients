@@ -4,8 +4,53 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Controls
 {
-    public partial class MagicButton : ContentView
+    [ContentProperty("Content")]
+    public partial class MagicButton : TemplatedView
     {
+        public static readonly BindableProperty ContentProperty = BindableProperty.Create(
+            nameof(Content), typeof(View), typeof(MagicButton), null,
+            propertyChanged: OnContentChanged);
+
+        [TypeConverter(typeof(TextContentTypeConverter))]
+        public View Content
+        {
+            get { return (View)GetValue(ContentProperty); }
+            set { SetValue(ContentProperty, value); }
+        }
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            View content = Content;
+            ControlTemplate controlTemplate = ControlTemplate;
+
+            if (content != null && controlTemplate != null)
+            {
+                SetInheritedBindingContext(content, BindingContext);
+            }
+        }
+
+        protected override void OnApplyTemplate()
+        {
+            View content = Content;
+            ControlTemplate controlTemplate = ControlTemplate;
+
+            if (content != null && controlTemplate != null)
+            {
+                SetInheritedBindingContext(content, BindingContext);
+            }
+        }
+
+        public static void OnContentChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newElement = (Element)newValue;
+            if (newElement != null)
+            {
+                BindableObject.SetInheritedBindingContext(newElement, bindable.BindingContext);
+            }
+        }
+
         //public static readonly BindableProperty TextProperty = BindableProperty.Create(
         //    propertyName: nameof(Text),
         //    returnType: typeof(View),
@@ -51,17 +96,6 @@ namespace MagicGradients.Controls
         //    get => (View)GetValue(TextProperty);
         //    set => SetValue(TextProperty, value);
         //}
-
-        [TypeConverter(typeof(TextContentTypeConverter))]
-        public new View Content
-        {
-            get => base.Content;
-            set
-            {
-                base.Content = value;
-                OnContentChanged();
-            }
-        }
 
         [TypeConverter(typeof(FontSizeConverter))]
         public double FontSize
@@ -112,11 +146,6 @@ namespace MagicGradients.Controls
 
             var topFrame = (Frame)GetTemplateChild("TopFrame");
             topFrame.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
-        }
-
-        private void OnContentChanged()
-        {
-
         }
     }
 }
