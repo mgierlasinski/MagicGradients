@@ -6,12 +6,7 @@
     xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients">
     <TemplatedView.ControlTemplate>
         <ControlTemplate>
-            <Frame
-                x:Name="TopFrame"
-                Margin="0"
-                Padding="0"
-                HasShadow="False"
-                IsClippedToBounds="True">
+            <Frame x:Name="BorderFrame" Margin="0" Padding="0" HasShadow="False" IsClippedToBounds="True">
                 <Grid>
                     <magic:GradientView x:Name="GradientView" />
                     <ContentPresenter x:Name="ContentPresenter">

@@ -8,94 +8,39 @@ namespace MagicGradients.Controls
     public partial class MagicButton : TemplatedView
     {
         public static readonly BindableProperty ContentProperty = BindableProperty.Create(
-            nameof(Content), typeof(View), typeof(MagicButton), null,
-            propertyChanged: OnContentChanged);
-
-        [TypeConverter(typeof(TextContentTypeConverter))]
-        public View Content
-        {
-            get { return (View)GetValue(ContentProperty); }
-            set { SetValue(ContentProperty, value); }
-        }
-
-        protected override void OnBindingContextChanged()
-        {
-            base.OnBindingContextChanged();
-
-            View content = Content;
-            ControlTemplate controlTemplate = ControlTemplate;
-
-            if (content != null && controlTemplate != null)
-            {
-                SetInheritedBindingContext(content, BindingContext);
-            }
-        }
-
-        protected override void OnApplyTemplate()
-        {
-            View content = Content;
-            ControlTemplate controlTemplate = ControlTemplate;
-
-            if (content != null && controlTemplate != null)
-            {
-                SetInheritedBindingContext(content, BindingContext);
-            }
-        }
-
-        public static void OnContentChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            var newElement = (Element)newValue;
-            if (newElement != null)
-            {
-                BindableObject.SetInheritedBindingContext(newElement, bindable.BindingContext);
-            }
-        }
-
-        //public static readonly BindableProperty TextProperty = BindableProperty.Create(
-        //    propertyName: nameof(Text),
-        //    returnType: typeof(View),
-        //    declaringType: typeof(MagicButton),
-        //    propertyChanged: PropertyChanged);
+            nameof(Content), typeof(object), typeof(MagicButton), null,
+            propertyChanged: OnContentChanged, coerceValue: CoerceContent);
 
         public static readonly BindableProperty FontSizeProperty = BindableProperty.Create(
-            propertyName: nameof(FontSize),
-            returnType: typeof(double),
-            declaringType: typeof(MagicButton),
-            defaultValue: (double) 18);
+            nameof(FontSize), typeof(double), typeof(MagicButton), (double)18, 
+            propertyChanged: (b, x, y) => ((MagicButton)b).UpdateFontSize());
 
         public static readonly BindableProperty FontFamilyProperty = BindableProperty.Create(
-            propertyName: nameof(FontFamily),
-            returnType: typeof(string),
-            declaringType: typeof(MagicButton));
+            nameof(FontFamily), typeof(string), typeof(MagicButton),
+            propertyChanged: (b, x, y) => ((MagicButton)b).UpdateFontFamily());
 
         public static readonly BindableProperty TextColorProperty = BindableProperty.Create(
-            propertyName: nameof(TextColor),
-            returnType: typeof(Color),
-            declaringType: typeof(MagicButton),
-            defaultValue: Color.White);
+            nameof(TextColor), typeof(Color), typeof(MagicButton), Color.White,
+            propertyChanged: (b, x, y) => ((MagicButton)b).UpdateTextColor());
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
-            propertyName: nameof(GradientSource),
-            returnType: typeof(IGradientSource),
-            declaringType: typeof(MagicButton));
+            nameof(GradientSource), typeof(IGradientSource), typeof(MagicButton));
 
         public static readonly BindableProperty CommandProperty = BindableProperty.Create(
-            propertyName: nameof(Command),
-            returnType: typeof(ICommand),
-            declaringType: typeof(MagicButton));
+            nameof(Command), typeof(ICommand), typeof(MagicButton));
 
         public static readonly BindableProperty CornerRadiusProperty = BindableProperty.Create(
-            propertyName: nameof(CornerRadius),
-            returnType: typeof(float),
-            declaringType: typeof(MagicButton),
-            defaultValue: 15f);
+            nameof(CornerRadius), typeof(float), typeof(MagicButton), 15f);
 
-        //[TypeConverter(typeof(TextContentTypeConverter))]
-        //public View Text
-        //{
-        //    get => (View)GetValue(TextProperty);
-        //    set => SetValue(TextProperty, value);
-        //}
+        public static readonly BindableProperty HasShadowProperty = BindableProperty.Create(
+            nameof(HasShadow), typeof(bool), typeof(MagicButton));
+
+        [TypeConverter(typeof(TextContentTypeConverter))]
+        public object Content
+        {
+            get => GetValue(ContentProperty);
+            set => SetValue(ContentProperty, value);
+        }
 
         [TypeConverter(typeof(FontSizeConverter))]
         public double FontSize
@@ -134,6 +79,12 @@ namespace MagicGradients.Controls
             set => SetValue(CornerRadiusProperty, value);
         }
 
+        public bool HasShadow
+        {
+            get => (bool)GetValue(HasShadowProperty);
+            set => SetValue(HasShadowProperty, value);
+        }
+
         public MagicButton()
         {
             InitializeComponent();
@@ -144,8 +95,82 @@ namespace MagicGradients.Controls
             var gradientView = (GradientView)GetTemplateChild("GradientView");
             gradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
 
-            var topFrame = (Frame)GetTemplateChild("TopFrame");
-            topFrame.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
+            var border = (Frame)GetTemplateChild("BorderFrame");
+            border.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
+            border.SetBinding(Frame.HasShadowProperty, new Binding(nameof(HasShadow), source: this));
+        }
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            View content = (View)Content;
+            ControlTemplate controlTemplate = ControlTemplate;
+
+            if (content != null && controlTemplate != null)
+            {
+                SetInheritedBindingContext(content, BindingContext);
+            }
+        }
+
+        protected override void OnApplyTemplate()
+        {
+            View content = (View)Content;
+            ControlTemplate controlTemplate = ControlTemplate;
+
+            if (content != null && controlTemplate != null)
+            {
+                SetInheritedBindingContext(content, BindingContext);
+            }
+        }
+
+        private static void OnContentChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newElement = (Element)newValue;
+            if (newElement != null)
+            {
+                SetInheritedBindingContext(newElement, bindable.BindingContext);
+
+                var button = (MagicButton)bindable;
+                button.UpdateFontSize();
+                button.UpdateFontFamily();
+                button.UpdateTextColor();
+            }
+        }
+
+        private static object CoerceContent(BindableObject bindable, object value)
+        {
+            if (value is View view)
+                return view;
+
+            if (value != null)
+                return new TextContent { Text = value.ToString() };
+
+            return null;
+        }
+
+        private void UpdateFontSize()
+        {
+            if (Content is Label label)
+            {
+                label.FontSize = FontSize;
+            }
+        }
+
+        private void UpdateFontFamily()
+        {
+            if (Content is Label label)
+            {
+                label.FontFamily = FontFamily;
+            }
+        }
+
+        private void UpdateTextColor()
+        {
+            if (Content is Label label)
+            {
+                label.TextColor = TextColor;
+            }
         }
     }
 }

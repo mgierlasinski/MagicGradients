@@ -9,7 +9,6 @@
              x:Class="Playground.App">
     <Application.Resources>
         <ResourceDictionary Source="Styles/Styles.xaml" />
-        <controls:TextContentConverter x:Key="TextContentConverter" />
         <viewModels:ViewModelLocator x:Key="ViewModelLocator" />
     </Application.Resources>
 </Application>

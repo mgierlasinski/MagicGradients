@@ -8,6 +8,8 @@ namespace MagicGradients.Controls
         {
             HorizontalOptions = LayoutOptions.Fill;
             VerticalOptions = LayoutOptions.Fill;
+            HorizontalTextAlignment = TextAlignment.Center;
+            VerticalTextAlignment = TextAlignment.Center;
         }
     }
 }
