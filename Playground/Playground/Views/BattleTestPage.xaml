@@ -21,6 +21,8 @@
                 Command="{Binding ClickCommand}"
                 CornerRadius="10"
                 FontSize="16"
+                PressedOpacity="0.3"
+                DisableOpacity="0.7"
                 GradientSource="{Binding GradientSource}"
                 HeightRequest="50"
                 Content="MagicGradients Large Button"

@@ -38,6 +38,14 @@ namespace MagicGradients.Controls
         public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(
             nameof(CommandParameter), typeof(object), typeof(MagicButton));
         
+        public static readonly BindableProperty PressedOpacityProperty = BindableProperty.Create(
+            nameof(PressedOpacity), typeof(double), typeof(MagicButton), 0.7,
+            propertyChanged:  (b, x, y) => ((MagicButton)b).UpdatePressedOpacity());
+        
+        public static readonly BindableProperty DisableOpacityProperty = BindableProperty.Create(
+            nameof(DisableOpacity), typeof(double), typeof(MagicButton), 0.3,
+            propertyChanged:  (b, x, y) => ((MagicButton)b).UpdateDisableOpacity());
+        
         [TypeConverter(typeof(TextContentTypeConverter))]
         public object Content
         {
@@ -92,6 +100,18 @@ namespace MagicGradients.Controls
         {
             get => (object)GetValue(CommandParameterProperty);
             set => SetValue(CommandParameterProperty, value);
+        }
+
+        public double PressedOpacity
+        {
+            get => (double) GetValue(PressedOpacityProperty);
+            set => SetValue(PressedOpacityProperty, value);
+        }
+
+        public double DisableOpacity
+        {
+            get => (double) GetValue(DisableOpacityProperty);
+            set => SetValue(DisableOpacityProperty, value);
         }
         
         public MagicButton()
@@ -181,6 +201,30 @@ namespace MagicGradients.Controls
             {
                 label.TextColor = TextColor;
             }
+        }
+
+        private void UpdateDisableOpacity()
+        {
+            var coverButton = GetTemplateChild("CoverButton") as Button;
+            if (coverButton == null)
+                return;
+            var visualStateGroups = VisualStateManager.GetVisualStateGroups(coverButton);
+            var commonGroup =  visualStateGroups.First();
+            var disabledState = commonGroup.States[2];
+            var opacitySetter = disabledState.Setters[0];
+            opacitySetter.Value = DisableOpacity;
+        }
+
+        private void UpdatePressedOpacity()
+        {
+            var coverButton = GetTemplateChild("CoverButton") as Button;
+            if (coverButton == null)
+                return;
+            var visualStateGroups = VisualStateManager.GetVisualStateGroups(coverButton);
+            var commonGroup =  visualStateGroups.First();
+            var pressedState = commonGroup.States[1];
+            var opacitySetter = pressedState.Setters[0];
+            opacitySetter.Value = PressedOpacity;
         }
     }
 }
