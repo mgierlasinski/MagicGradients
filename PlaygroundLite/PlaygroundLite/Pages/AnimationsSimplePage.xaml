@@ -53,7 +53,7 @@
                                                  Duration="3000" 
                                                  RepeatBehavior="Forever"
                                                  AutoReverse="True" 
-                                                 Easing="SinInOut" />
+                                                 Easing="{x:Static Easing.SinInOut}" />
                         </anim:AnimateTrigger>
                     </magic:GradientView.Triggers>
                     <magic:RadialGradient x:Name="Radial" Shape="Circle" RadiusX="200" RadiusY="200" Center="0.1,0.1">
@@ -70,7 +70,7 @@
                                                       TargetProperty="magic:GradientView.GradientSize" 
                                                       From="50,50" To="200,200" 
                                                       Duration="3000" 
-                                                      Easing="SinInOut"
+                                                      Easing="{x:Static Easing.SinInOut}"
                                                       RepeatBehavior="Forever" AutoReverse="True" />
                         </anim:AnimateTrigger>
                     </magic:GradientView.Triggers>

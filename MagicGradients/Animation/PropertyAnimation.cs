@@ -40,7 +40,7 @@ namespace MagicGradients.Animation
             var value = Tweener.Tween(_animateFrom, _animateTo, x);
             Target.SetValue(TargetProperty, value);
         },
-        easing: Easing.ToEasing(),
+        easing: Easing,
         finished: () =>
         {
             Debug.WriteLine($"Property [{TargetProperty.PropertyName}] Finished (value: {_animateTo})");

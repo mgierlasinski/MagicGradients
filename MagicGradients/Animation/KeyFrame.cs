@@ -1,9 +1,11 @@
-﻿namespace MagicGradients.Animation
+﻿using Xamarin.Forms;
+
+namespace MagicGradients.Animation
 {
     public class KeyFrame
     {
         public int KeyTime { get; set; }
-        public EasingType Easing { get; set; } = EasingType.Linear;
+        public Easing Easing { get; set; } = Easing.Linear;
     }
 
     public class KeyFrame<TValue> : KeyFrame

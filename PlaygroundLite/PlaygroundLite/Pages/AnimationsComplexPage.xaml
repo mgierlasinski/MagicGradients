@@ -55,7 +55,7 @@
                                                                RepeatBehavior="Forever">
                                     <anim:PointKeyFrame KeyTime="1000" Value="0.9,0.1" />
                                     <anim:PointKeyFrame KeyTime="1500" Value="0.9,0.9" />
-                                    <anim:PointKeyFrame KeyTime="2500" Value="0.1,0.9" Easing="SinInOut" />
+                                    <anim:PointKeyFrame KeyTime="2500" Value="0.1,0.9" Easing="{x:Static Easing.SinInOut}" />
                                     <anim:PointKeyFrame KeyTime="3000" Value="0.1,0.1" />
                             </anim:PointAnimationUsingKeyFrames>
                         </anim:AnimateTrigger>
