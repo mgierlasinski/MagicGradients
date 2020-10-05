@@ -89,15 +89,16 @@ namespace MagicGradients.Controls
         {
             InitializeComponent();
 
-            var actionButton = (ContentPresenter)GetTemplateChild("ContentPresenter");
-            ((TapGestureRecognizer)actionButton.GestureRecognizers.First()).SetBinding(TapGestureRecognizer.CommandProperty, new Binding(nameof(Command), source: this));
-
             var gradientView = (GradientView)GetTemplateChild("GradientView");
             gradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
 
             var border = (Frame)GetTemplateChild("BorderFrame");
             border.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
             border.SetBinding(Frame.HasShadowProperty, new Binding(nameof(HasShadow), source: this));
+
+            var coverButton = (Button)GetTemplateChild("CoverButton");
+            coverButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
+            //todo coverButton.SetBinding(Button.CommandParameterProperty);
         }
 
         protected override void OnBindingContextChanged()

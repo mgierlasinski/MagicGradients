@@ -35,7 +35,7 @@
                 TextColor="{Binding TextColor}"
                 HasShadow="True" />
             <controls:MagicButton
-                Command="{Binding ClickCommand}"
+                Command="{Binding DisabledCommand}"
                 CornerRadius="10"
                 FontSize="16"
                 GradientSource="{Binding GradientSource}"

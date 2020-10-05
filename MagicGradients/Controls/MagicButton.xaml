@@ -9,11 +9,31 @@
             <Frame x:Name="BorderFrame" Margin="0" Padding="0" HasShadow="False" IsClippedToBounds="True">
                 <Grid>
                     <magic:GradientView x:Name="GradientView" />
-                    <ContentPresenter x:Name="ContentPresenter">
-                        <ContentPresenter.GestureRecognizers>
-                            <TapGestureRecognizer x:Name="TapRecognizer" />
-                        </ContentPresenter.GestureRecognizers>
-                    </ContentPresenter>
+                    <ContentPresenter x:Name="ContentPresenter" />
+                    <Button x:Name="CoverButton" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" InputTransparent="False">
+                         <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Opacity" Value="1" />
+                                        <Setter Property="BackgroundColor" Value="Transparent" />
+                                     </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Opacity" Value="0.7" />
+                                        <Setter Property="BackgroundColor" Value="Black" />
+                                     </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="Opacity" Value="0.3" />
+                                        <Setter Property="BackgroundColor" Value="Black" />
+                                     </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        </Button>
                 </Grid>
             </Frame>
         </ControlTemplate>

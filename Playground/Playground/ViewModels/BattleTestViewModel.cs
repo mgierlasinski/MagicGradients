@@ -80,6 +80,7 @@ namespace Playground.ViewModels
 
         public List<string> ColorNames { get; }
         public ICommand ClickCommand { get; }
+        public ICommand DisabledCommand { get; }
         public string MagicButtonText { get; } = "My Content is bindable";
 
         public BattleTestViewModel(
@@ -97,6 +98,7 @@ namespace Playground.ViewModels
             {
                 Application.Current.MainPage.DisplayAlert("","Button Clicked", "OK");
             });
+            DisabledCommand = new Command(() => { }, () => false);
         }
 
         private void LoadCssCodeById()
