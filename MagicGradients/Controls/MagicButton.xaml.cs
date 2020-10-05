@@ -1,130 +1,176 @@
+using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MagicGradients.Controls
 {
-     public partial class MagicButton : ContentView
+    [ContentProperty("Content")]
+    public partial class MagicButton : TemplatedView
     {
+        public static readonly BindableProperty ContentProperty = BindableProperty.Create(
+            nameof(Content), typeof(object), typeof(MagicButton), null,
+            propertyChanged: OnContentChanged, coerceValue: CoerceContent);
 
-        public static readonly BindableProperty TextProperty = BindableProperty.Create(
-            propertyName: nameof(Text),
-            returnType: typeof(string),
-            declaringType: typeof(MagicButton),
-            defaultValue: default,
-            defaultBindingMode: BindingMode.TwoWay);
-        
         public static readonly BindableProperty FontSizeProperty = BindableProperty.Create(
-            propertyName: nameof(FontSize),
-            returnType: typeof(double),
-            declaringType: typeof(MagicButton),
-            defaultValue: (double)18,
-            defaultBindingMode: BindingMode.TwoWay);
-        
+            nameof(FontSize), typeof(double), typeof(MagicButton), (double)18, 
+            propertyChanged: (b, x, y) => ((MagicButton)b).UpdateFontSize());
+
         public static readonly BindableProperty FontFamilyProperty = BindableProperty.Create(
-            propertyName: nameof(FontFamily),
-            returnType: typeof(string),
-            declaringType: typeof(MagicButton),
-            defaultValue: default,
-            defaultBindingMode: BindingMode.TwoWay);
+            nameof(FontFamily), typeof(string), typeof(MagicButton),
+            propertyChanged: (b, x, y) => ((MagicButton)b).UpdateFontFamily());
 
         public static readonly BindableProperty TextColorProperty = BindableProperty.Create(
-            propertyName: nameof(TextColor),
-            returnType: typeof(Color),
-            declaringType: typeof(MagicButton),
-            defaultValue: Color.White,
-            defaultBindingMode: BindingMode.TwoWay);
+            nameof(TextColor), typeof(Color), typeof(MagicButton), Color.White,
+            propertyChanged: (b, x, y) => ((MagicButton)b).UpdateTextColor());
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
-            propertyName: nameof(GradientSource),
-            returnType: typeof(IGradientSource),
-            declaringType: typeof(MagicButton),
-            defaultValue: null,
-            defaultBindingMode: BindingMode.TwoWay);
+            nameof(GradientSource), typeof(IGradientSource), typeof(MagicButton));
 
         public static readonly BindableProperty CommandProperty = BindableProperty.Create(
-            propertyName: nameof(Command),
-            returnType: typeof(ICommand),
-            declaringType: typeof(MagicButton),
-            defaultValue: null,
-            defaultBindingMode: BindingMode.TwoWay);
+            nameof(Command), typeof(ICommand), typeof(MagicButton));
 
         public static readonly BindableProperty CornerRadiusProperty = BindableProperty.Create(
-            propertyName: nameof(CornerRadius),
-            returnType: typeof(float),
-            declaringType: typeof(MagicButton),
-            defaultValue: 15f,
-            defaultBindingMode: BindingMode.TwoWay);
-        
-        public MagicButton()
+            nameof(CornerRadius), typeof(float), typeof(MagicButton), 15f);
+
+        public static readonly BindableProperty HasShadowProperty = BindableProperty.Create(
+            nameof(HasShadow), typeof(bool), typeof(MagicButton));
+
+        [TypeConverter(typeof(TextContentTypeConverter))]
+        public object Content
         {
-            InitializeComponent();
-
-            //ActionButton.SetBinding(Button.TextProperty, new Binding(nameof(Text), source: this));
-            //ActionButton.SetBinding(Button.FontSizeProperty, new Binding(nameof(FontSize), source: this));
-            //ActionButton.SetBinding(Button.TextColorProperty, new Binding(nameof(TextColor), source: this));
-            //ActionButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
-            //ActionButton.SetBinding(Button.FontFamilyProperty, new Binding(nameof(FontFamily), source: this));
-
-            //GradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
-
-            //TopFrame.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
-
-            var actionButton = (Button)GetTemplateChild("ActionButton");
-            var gradientView = (GradientView)GetTemplateChild("GradientView");
-            var topFrame = (Frame)GetTemplateChild("TopFrame");
-
-            actionButton.SetBinding(Button.TextProperty, new Binding(nameof(Text), source: this));
-            actionButton.SetBinding(Button.FontSizeProperty, new Binding(nameof(FontSize), source: this));
-            actionButton.SetBinding(Button.TextColorProperty, new Binding(nameof(TextColor), source: this));
-            actionButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
-            actionButton.SetBinding(Button.FontFamilyProperty, new Binding(nameof(FontFamily), source: this));
-
-            gradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
-
-            topFrame.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
-        }
-        
-        public string Text
-        {
-            get => (string)GetValue(TextProperty);
-            set => SetValue(TextProperty, value);
+            get => GetValue(ContentProperty);
+            set => SetValue(ContentProperty, value);
         }
 
         [TypeConverter(typeof(FontSizeConverter))]
         public double FontSize
         {
-            get => (double)GetValue(FontSizeProperty);
+            get => (double) GetValue(FontSizeProperty);
             set => SetValue(FontSizeProperty, value);
         }
 
         public string FontFamily
         {
-            get => (string)GetValue(FontFamilyProperty);
+            get => (string) GetValue(FontFamilyProperty);
             set => SetValue(FontFamilyProperty, value);
         }
 
         public Color TextColor
         {
-            get => (Color)GetValue(TextColorProperty);
+            get => (Color) GetValue(TextColorProperty);
             set => SetValue(TextColorProperty, value);
         }
 
         public IGradientSource GradientSource
         {
-            get => (IGradientSource)GetValue(GradientSourceProperty);
+            get => (IGradientSource) GetValue(GradientSourceProperty);
             set => SetValue(GradientSourceProperty, value);
         }
 
         public ICommand Command
         {
-            get => (ICommand)GetValue(CommandProperty);
+            get => (ICommand) GetValue(CommandProperty);
             set => SetValue(CommandProperty, value);
         }
 
         public float CornerRadius
         {
-            get => (float)GetValue(CornerRadiusProperty);
+            get => (float) GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
+        }
+
+        public bool HasShadow
+        {
+            get => (bool)GetValue(HasShadowProperty);
+            set => SetValue(HasShadowProperty, value);
+        }
+
+        public MagicButton()
+        {
+            InitializeComponent();
+
+            var actionButton = (ContentPresenter)GetTemplateChild("ContentPresenter");
+            ((TapGestureRecognizer)actionButton.GestureRecognizers.First()).SetBinding(TapGestureRecognizer.CommandProperty, new Binding(nameof(Command), source: this));
+
+            var gradientView = (GradientView)GetTemplateChild("GradientView");
+            gradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
+
+            var border = (Frame)GetTemplateChild("BorderFrame");
+            border.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
+            border.SetBinding(Frame.HasShadowProperty, new Binding(nameof(HasShadow), source: this));
+        }
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            View content = (View)Content;
+            ControlTemplate controlTemplate = ControlTemplate;
+
+            if (content != null && controlTemplate != null)
+            {
+                SetInheritedBindingContext(content, BindingContext);
+            }
+        }
+
+        protected override void OnApplyTemplate()
+        {
+            View content = (View)Content;
+            ControlTemplate controlTemplate = ControlTemplate;
+
+            if (content != null && controlTemplate != null)
+            {
+                SetInheritedBindingContext(content, BindingContext);
+            }
+        }
+
+        private static void OnContentChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newElement = (Element)newValue;
+            if (newElement != null)
+            {
+                SetInheritedBindingContext(newElement, bindable.BindingContext);
+
+                var button = (MagicButton)bindable;
+                button.UpdateFontSize();
+                button.UpdateFontFamily();
+                button.UpdateTextColor();
+            }
+        }
+
+        private static object CoerceContent(BindableObject bindable, object value)
+        {
+            if (value is View view)
+                return view;
+
+            if (value != null)
+                return new TextContent { Text = value.ToString() };
+
+            return null;
+        }
+
+        private void UpdateFontSize()
+        {
+            if (Content is Label label)
+            {
+                label.FontSize = FontSize;
+            }
+        }
+
+        private void UpdateFontFamily()
+        {
+            if (Content is Label label)
+            {
+                label.FontFamily = FontFamily;
+            }
+        }
+
+        private void UpdateTextColor()
+        {
+            if (Content is Label label)
+            {
+                label.TextColor = TextColor;
+            }
         }
     }
 }

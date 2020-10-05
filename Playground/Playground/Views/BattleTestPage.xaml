@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:MagicGradients.Controls;assembly=MagicGradients"
     xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-    x:Name="battlePage"
+    xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
     Title="Gradient Battle Test"
     BindingContext="{Binding BattleTestViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ScrollView>
@@ -22,8 +22,8 @@
                 CornerRadius="10"
                 FontSize="16"
                 GradientSource="{Binding GradientSource}"
-                HeightRequest="100"
-                Text="MagicGradients Large Button"
+                HeightRequest="50"
+                Content="MagicGradients Large Button"
                 TextColor="{Binding TextColor}" />
             <controls:MagicButton
                 Command="{Binding ClickCommand}"
@@ -31,22 +31,26 @@
                 FontSize="16"
                 GradientSource="{Binding GradientSource}"
                 HeightRequest="50"
+                Content="{Binding MagicButtonText}"
+                TextColor="{Binding TextColor}"
+                HasShadow="True" />
+            <controls:MagicButton
+                Command="{Binding ClickCommand}"
+                CornerRadius="10"
+                FontSize="16"
+                GradientSource="{Binding GradientSource}"
                 HorizontalOptions="Center"
-                WidthRequest="150">
-                <Grid>
-                    <Label
-                        Margin="10"
-                        HorizontalTextAlignment="Start"
-                        Text="Small"
-                        TextColor="{Binding TextColor}"
-                        VerticalOptions="End" />
-                    <Label
-                        Margin="10"
-                        HorizontalTextAlignment="End"
-                        Text="Button"
-                        TextColor="{Binding TextColor}"
-                        VerticalOptions="Start" />
-                </Grid>
+                HasShadow="True"
+                WidthRequest="200">
+                <StackLayout Orientation="Horizontal" Padding="10">
+                    <Label FontFamily="IconFont" FontSize="20" 
+                           Text="{x:Static ic:IconCodes.Bolt}" 
+                           TextColor="{Binding TextColor}" 
+                           VerticalOptions="Center" Margin="5,0" />
+                    <Label FontSize="16" Text="Magic Button" 
+                           TextColor="{Binding TextColor}" 
+                           VerticalOptions="Center"/>
+                </StackLayout>
             </controls:MagicButton>
             <!--  Circle With Icon And With Gradient Background  -->
             <CollectionView HeightRequest="60" ItemsSource="{Binding IconsCollection}">
@@ -63,7 +67,7 @@
                             GradientSource="{Binding GradientSource}"
                             HeightRequest="50"
                             HorizontalOptions="Center"
-                            Text="{Binding Text}"
+                            Content="{Binding Text}"
                             TextColor="{Binding TextColor}"
                             WidthRequest="50" />
                     </DataTemplate>

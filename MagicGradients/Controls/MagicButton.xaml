@@ -1,40 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ContentView
+<TemplatedView 
     x:Class="MagicGradients.Controls.MagicButton"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients">
-    <ContentView.ControlTemplate>
+    <TemplatedView.ControlTemplate>
         <ControlTemplate>
-            <Frame
-                x:Name="TopFrame"
-                Margin="0"
-                Padding="0"
-                HasShadow="False"
-                IsClippedToBounds="True">
+            <Frame x:Name="BorderFrame" Margin="0" Padding="0" HasShadow="False" IsClippedToBounds="True">
                 <Grid>
-                    <magic:GradientView x:Name="GradientView" Margin="-2" />
-                    <ContentPresenter />
-                    <Button
-                        x:Name="ActionButton"
-                        BackgroundColor="Transparent"
-                        Visual="Default" />
+                    <magic:GradientView x:Name="GradientView" />
+                    <ContentPresenter x:Name="ContentPresenter">
+                        <ContentPresenter.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapRecognizer" />
+                        </ContentPresenter.GestureRecognizers>
+                    </ContentPresenter>
                 </Grid>
             </Frame>
         </ControlTemplate>
-    </ContentView.ControlTemplate>
-    <!--<Frame
-        x:Name="TopFrame"
-        Margin="0"
-        Padding="0"
-        HasShadow="False"
-        IsClippedToBounds="True">
-        <Grid>
-            <magic:GradientView x:Name="GradientView" Margin="-2" />
-            <Button
-                x:Name="ActionButton"
-                BackgroundColor="Transparent"
-                Visual="Default" />
-        </Grid>
-    </Frame>-->
-</ContentView>
+    </TemplatedView.ControlTemplate>
+</TemplatedView>

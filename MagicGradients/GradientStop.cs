@@ -26,7 +26,7 @@ namespace MagicGradients
 
         public override string ToString()
         {
-            return $"Offset={Offset}, Color=[{Color.ToString()}]";
+            return $"Offset={Offset}, Color=[{Color}]";
         }
     }
 }

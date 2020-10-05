@@ -18,6 +18,7 @@ namespace Playground.ViewModels
         private readonly IGradientRepository _gradientRepository;
         private readonly IPickerColorsDataProvider _pickerColorsDataProvider;
         private readonly IBattleItemService _battleItemService;
+
         private List<BattleItem> _iconsCollection;
         public List<BattleItem> IconsCollection
         {
@@ -78,8 +79,8 @@ namespace Playground.ViewModels
         }
 
         public List<string> ColorNames { get; }
-
         public ICommand ClickCommand { get; }
+        public string MagicButtonText { get; } = "My Content is bindable";
 
         public BattleTestViewModel(
             IGradientRepository gradientRepository, 
