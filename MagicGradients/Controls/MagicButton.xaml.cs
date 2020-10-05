@@ -35,6 +35,9 @@ namespace MagicGradients.Controls
         public static readonly BindableProperty HasShadowProperty = BindableProperty.Create(
             nameof(HasShadow), typeof(bool), typeof(MagicButton));
 
+        public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(
+            nameof(CommandParameter), typeof(object), typeof(MagicButton));
+        
         [TypeConverter(typeof(TextContentTypeConverter))]
         public object Content
         {
@@ -85,6 +88,12 @@ namespace MagicGradients.Controls
             set => SetValue(HasShadowProperty, value);
         }
 
+        public object CommandParameter
+        {
+            get => (object)GetValue(CommandParameterProperty);
+            set => SetValue(CommandParameterProperty, value);
+        }
+        
         public MagicButton()
         {
             InitializeComponent();
@@ -98,7 +107,7 @@ namespace MagicGradients.Controls
 
             var coverButton = (Button)GetTemplateChild("CoverButton");
             coverButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
-            //todo coverButton.SetBinding(Button.CommandParameterProperty);
+            coverButton.SetBinding(Button.CommandParameterProperty, new Binding(nameof(CommandParameter), source: this));
         }
 
         protected override void OnBindingContextChanged()

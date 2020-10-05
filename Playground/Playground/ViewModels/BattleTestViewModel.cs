@@ -80,6 +80,7 @@ namespace Playground.ViewModels
 
         public List<string> ColorNames { get; }
         public ICommand ClickCommand { get; }
+        public ICommand WithParameterCommand { get; }
         public ICommand DisabledCommand { get; }
         public string MagicButtonText { get; } = "My Content is bindable";
 
@@ -97,6 +98,10 @@ namespace Playground.ViewModels
             ClickCommand = new Command(() =>
             {
                 Application.Current.MainPage.DisplayAlert("","Button Clicked", "OK");
+            });
+            WithParameterCommand = new Command<Color>((color) =>
+            {
+                Application.Current.MainPage.DisplayAlert("", $"Text Color -> {color}", "OK");
             });
             DisabledCommand = new Command(() => { }, () => false);
         }

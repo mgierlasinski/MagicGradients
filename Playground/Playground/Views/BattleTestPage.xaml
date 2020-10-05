@@ -26,7 +26,8 @@
                 Content="MagicGradients Large Button"
                 TextColor="{Binding TextColor}" />
             <controls:MagicButton
-                Command="{Binding ClickCommand}"
+                Command="{Binding WithParameterCommand}"
+                CommandParameter="{Binding TextColor}"
                 CornerRadius="10"
                 FontSize="16"
                 GradientSource="{Binding GradientSource}"
