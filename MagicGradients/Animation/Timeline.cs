@@ -14,7 +14,7 @@ namespace MagicGradients.Animation
         public int Delay { get; set; } = 0;
         public RepeatBehavior RepeatBehavior { get; set; } = new RepeatBehavior(RepeatBehaviorType.Count, 1);
         public bool AutoReverse { get; set; }
-        public EasingType Easing { get; set; } = EasingType.Linear;
+        public Easing Easing { get; set; } = Easing.Linear;
         public BindableObject Target { get; set; } = default;
         public VisualElement Animator { get; private set; } = default;
 
@@ -35,7 +35,7 @@ namespace MagicGradients.Animation
         {
             Animator.Animate(_handle, OnAnimate(),
                 length: Duration,
-                easing: Easing.ToEasing(),
+                easing: Easing,
                 finished: (v, c) =>
                 {
                     _playCount++;

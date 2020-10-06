@@ -59,9 +59,9 @@ namespace MagicGradients.Animation
                 var fromFrame = (KeyFrame<TValue>)_sortedKeyFrames[i - 1];
                 var toFrame = (KeyFrame<TValue>)_sortedKeyFrames[i];
 
-                var toFrameEasing = toFrame.Easing != EasingType.Linear
-                    ? toFrame.Easing.ToEasing()
-                    : Easing.ToEasing();
+                var toFrameEasing = toFrame.Easing != Easing.Linear
+                    ? toFrame.Easing
+                    : Easing;
 
                 var frameAnimation = new Xamarin.Forms.Animation(x =>
                 {

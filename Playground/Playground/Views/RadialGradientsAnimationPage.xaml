@@ -9,7 +9,7 @@
         <magic:GradientView VerticalOptions="FillAndExpand">
             <magic:GradientView.Behaviors>
                 <anim:Animate x:Name="PulseAnimation">
-                    <anim:Storyboard Duration="1000" RepeatBehavior="Forever" Easing="SinInOut">
+                    <anim:Storyboard Duration="1000" RepeatBehavior="Forever" Easing="{x:Static Easing.SinInOut}">
                         <anim:DoubleAnimation Target="{Reference PulseTarget}"
                                               TargetProperty="magic:RadialGradient.RadiusX"
                                               From="10" To="300"
