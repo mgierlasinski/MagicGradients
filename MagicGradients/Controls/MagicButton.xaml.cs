@@ -46,6 +46,12 @@ namespace MagicGradients.Controls
             nameof(DisableOpacity), typeof(double), typeof(MagicButton), 0.3,
             propertyChanged:  (b, x, y) => ((MagicButton)b).UpdateDisableOpacity());
         
+        public static readonly BindableProperty GradientSizeProperty = BindableProperty.Create(nameof(GradientSize),
+            typeof(Dimensions), typeof(GradientView));
+
+        public static readonly BindableProperty GradientRepeatProperty = BindableProperty.Create(nameof(GradientRepeat),
+            typeof(BackgroundRepeat), typeof(GradientView));
+        
         [TypeConverter(typeof(TextContentTypeConverter))]
         public object Content
         {
@@ -76,6 +82,18 @@ namespace MagicGradients.Controls
         {
             get => (IGradientSource) GetValue(GradientSourceProperty);
             set => SetValue(GradientSourceProperty, value);
+        }
+        
+        public Dimensions GradientSize
+        {
+            get => (Dimensions)GetValue(GradientSizeProperty);
+            set => SetValue(GradientSizeProperty, value);
+        }
+
+        public BackgroundRepeat GradientRepeat
+        {
+            get => (BackgroundRepeat)GetValue(GradientRepeatProperty);
+            set => SetValue(GradientRepeatProperty, value);
         }
 
         public ICommand Command
