@@ -1,3 +1,4 @@
+using SkiaSharp.Views.Forms;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -143,9 +144,9 @@ namespace MagicGradients.Controls
             border.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
             border.SetBinding(Frame.HasShadowProperty, new Binding(nameof(HasShadow), source: this));
 
-            var coverButton = (Button)GetTemplateChild("CoverButton");
-            coverButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
-            coverButton.SetBinding(Button.CommandParameterProperty, new Binding(nameof(CommandParameter), source: this));
+            //var coverButton = (Button)GetTemplateChild("CoverButton");
+            //coverButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
+            //coverButton.SetBinding(Button.CommandParameterProperty, new Binding(nameof(CommandParameter), source: this));
         }
 
         protected override void OnBindingContextChanged()
@@ -243,6 +244,25 @@ namespace MagicGradients.Controls
             var pressedState = commonGroup.States[1];
             var opacitySetter = pressedState.Setters[0];
             opacitySetter.Value = PressedOpacity;
+        }
+
+        private void GradientView_Touch(object sender, SkiaSharp.Views.Forms.SKTouchEventArgs e)
+        {
+            switch (e.ActionType)
+            {
+                case SKTouchAction.Pressed:
+                    VisualStateManager.GoToState(this, "Pressed");
+                    break;
+                case SKTouchAction.Released:
+                case SKTouchAction.Cancelled:
+                    if(IsEnabled)
+                        VisualStateManager.GoToState(this, "Normal");
+                    else
+                        VisualStateManager.GoToState(this, "Disabled");
+                    break;
+            }
+            
+            e.Handled = true;
         }
     }
 }
