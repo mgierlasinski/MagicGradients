@@ -5,6 +5,7 @@ using Playground.Data.Repositories;
 using Playground.Models;
 using Playground.Services;
 using System.Collections.Generic;
+using System.Windows.Input;
 using Xamarin.Forms;
 using static Playground.Constants.IconCodes;
 using Color = System.Drawing.Color;
@@ -17,6 +18,7 @@ namespace Playground.ViewModels
         private readonly IGradientRepository _gradientRepository;
         private readonly IPickerColorsDataProvider _pickerColorsDataProvider;
         private readonly IBattleItemService _battleItemService;
+
         private List<BattleItem> _iconsCollection;
         public List<BattleItem> IconsCollection
         {
@@ -77,6 +79,10 @@ namespace Playground.ViewModels
         }
 
         public List<string> ColorNames { get; }
+        public ICommand ClickCommand { get; }
+        public ICommand WithParameterCommand { get; }
+        public ICommand DisabledCommand { get; }
+        public string MagicButtonText { get; } = "My Content is bindable";
 
         public BattleTestViewModel(
             IGradientRepository gradientRepository, 
@@ -89,6 +95,15 @@ namespace Playground.ViewModels
 
             ColorNames = _pickerColorsDataProvider.GetColorNames();
             TextColor = Color.White;
+            ClickCommand = new Command(() =>
+            {
+                Application.Current.MainPage.DisplayAlert("","Button Clicked", "OK");
+            });
+            WithParameterCommand = new Command<Color>((color) =>
+            {
+                Application.Current.MainPage.DisplayAlert("", $"Text Color -> {color}", "OK");
+            });
+            DisabledCommand = new Command(() => { }, () => false);
         }
 
         private void LoadCssCodeById()
