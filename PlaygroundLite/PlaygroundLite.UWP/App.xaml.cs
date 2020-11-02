@@ -1,7 +1,9 @@
+using Sharpnado.Shades.UWP;
+using Sharpnado.Tabs.Uwp;
+using System.Reflection;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-
 
 namespace PlaygroundLite.UWP
 {
@@ -19,7 +21,12 @@ namespace PlaygroundLite.UWP
             if (rootFrame == null)
             {
                 rootFrame = new Frame();
-                Xamarin.Forms.Forms.Init(e);
+                var rendererAssemblies = new[]
+                {
+                    typeof(UWPShadowsRenderer).GetTypeInfo().Assembly,
+                    typeof(UwpTintableImageEffect).GetTypeInfo().Assembly,
+                };
+                Xamarin.Forms.Forms.Init(e, rendererAssemblies);
                 Window.Current.Content = rootFrame;
             }
 
