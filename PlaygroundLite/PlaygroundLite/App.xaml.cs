@@ -14,6 +14,9 @@ namespace PlaygroundLite
 
             InitializeComponent();
 
+            Sharpnado.Shades.Initializer.Initialize(false);
+            Sharpnado.Tabs.Initializer.Initialize(false, false);
+
             var page = FreshPageModelResolver.ResolvePageModel<MainViewModel>();
             var basicNavContainer = new FreshNavigationContainer(page);
             MainPage = basicNavContainer;

@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:PlaygroundLite.Converters;assembly=PlaygroundLite"
-             xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
+             xmlns:tabs="http://sharpnado.com"
              mc:Ignorable="d"
              x:Class="PlaygroundLite.App">
     <Application.Resources>

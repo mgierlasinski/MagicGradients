@@ -1,5 +1,4 @@
 ﻿using Foundation;
-using Sharpnado.Presentation.Forms.iOS;
 using UIKit;
 
 namespace PlaygroundLite.iOS
@@ -20,7 +19,8 @@ namespace PlaygroundLite.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Xamarin.Forms.Forms.Init();
-            SharpnadoInitializer.Initialize();
+            Sharpnado.Tabs.iOS.Preserver.Preserve();
+            Sharpnado.Shades.iOS.iOSShadowsRenderer.Initialize();
 
             LoadApplication(new App());
 
