@@ -1,13 +1,21 @@
 using SkiaSharp.Views.Forms;
-using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
-namespace MagicGradients.Controls
+namespace MagicGradients.Toolkit.Controls
 {
     [ContentProperty("Content")]
     public partial class MagicButton : TemplatedView
     {
+        private const string PressedState = "Pressed";
+        private const string TemplateRootName = "TemplateRoot";
+        private const string GradientViewName = "GradientView";
+        private const string OverlayName = "Overlay";
+
+        private Frame _templateRoot;
+        private GradientView _gradientView;
+        
         public static readonly BindableProperty ContentProperty = BindableProperty.Create(
             nameof(Content), typeof(object), typeof(MagicButton), null,
             propertyChanged: OnContentChanged, coerceValue: CoerceContent);
@@ -30,23 +38,15 @@ namespace MagicGradients.Controls
         public static readonly BindableProperty CommandProperty = BindableProperty.Create(
             nameof(Command), typeof(ICommand), typeof(MagicButton));
 
+        public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(
+            nameof(CommandParameter), typeof(object), typeof(MagicButton));
+
         public static readonly BindableProperty CornerRadiusProperty = BindableProperty.Create(
             nameof(CornerRadius), typeof(float), typeof(MagicButton), 15f);
 
         public static readonly BindableProperty HasShadowProperty = BindableProperty.Create(
             nameof(HasShadow), typeof(bool), typeof(MagicButton));
 
-        public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(
-            nameof(CommandParameter), typeof(object), typeof(MagicButton));
-        
-        public static readonly BindableProperty PressedOpacityProperty = BindableProperty.Create(
-            nameof(PressedOpacity), typeof(double), typeof(MagicButton), 0.7,
-            propertyChanged:  (b, x, y) => ((MagicButton)b).UpdatePressedOpacity());
-        
-        public static readonly BindableProperty DisableOpacityProperty = BindableProperty.Create(
-            nameof(DisableOpacity), typeof(double), typeof(MagicButton), 0.3,
-            propertyChanged:  (b, x, y) => ((MagicButton)b).UpdateDisableOpacity());
-        
         public static readonly BindableProperty GradientSizeProperty = BindableProperty.Create(nameof(GradientSize),
             typeof(Dimensions), typeof(GradientView));
 
@@ -103,6 +103,12 @@ namespace MagicGradients.Controls
             set => SetValue(CommandProperty, value);
         }
 
+        public object CommandParameter
+        {
+            get => GetValue(CommandParameterProperty);
+            set => SetValue(CommandParameterProperty, value);
+        }
+
         public float CornerRadius
         {
             get => (float) GetValue(CornerRadiusProperty);
@@ -115,38 +121,40 @@ namespace MagicGradients.Controls
             set => SetValue(HasShadowProperty, value);
         }
 
-        public object CommandParameter
-        {
-            get => (object)GetValue(CommandParameterProperty);
-            set => SetValue(CommandParameterProperty, value);
-        }
-
-        public double PressedOpacity
-        {
-            get => (double) GetValue(PressedOpacityProperty);
-            set => SetValue(PressedOpacityProperty, value);
-        }
-
-        public double DisableOpacity
-        {
-            get => (double) GetValue(DisableOpacityProperty);
-            set => SetValue(DisableOpacityProperty, value);
-        }
-        
         public MagicButton()
         {
             InitializeComponent();
+            InitializeBindings();
+        }
 
-            var gradientView = (GradientView)GetTemplateChild("GradientView");
-            gradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: this));
+        private void InitializeBindings()
+        {
+            _templateRoot = (Frame)GetTemplateChild(TemplateRootName);
+            _templateRoot.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: RelativeBindingSource.TemplatedParent));
+            _templateRoot.SetBinding(Frame.HasShadowProperty, new Binding(nameof(HasShadow), source: RelativeBindingSource.TemplatedParent));
 
-            var border = (Frame)GetTemplateChild("BorderFrame");
-            border.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: this));
-            border.SetBinding(Frame.HasShadowProperty, new Binding(nameof(HasShadow), source: this));
+            _gradientView = (GradientView)GetTemplateChild(GradientViewName);
+            _gradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: RelativeBindingSource.TemplatedParent));
+            _gradientView.SetBinding(GradientView.GradientSizeProperty, new Binding(nameof(GradientSize), source: RelativeBindingSource.TemplatedParent));
+            _gradientView.SetBinding(GradientView.GradientRepeatProperty, new Binding(nameof(GradientRepeat), source: RelativeBindingSource.TemplatedParent));
+        }
 
-            //var coverButton = (Button)GetTemplateChild("CoverButton");
-            //coverButton.SetBinding(Button.CommandProperty, new Binding(nameof(Command), source: this));
-            //coverButton.SetBinding(Button.CommandParameterProperty, new Binding(nameof(CommandParameter), source: this));
+        private void ExtendNameScope()
+        {
+            var nameScope = NameScope.GetNameScope(this);
+            nameScope.RegisterName(TemplateRootName, _templateRoot);
+            nameScope.RegisterName(GradientViewName, _gradientView);
+            nameScope.RegisterName(OverlayName, (BoxView)GetTemplateChild(OverlayName));
+        }
+
+        protected override void OnPropertyChanged(string propertyName = null)
+        {
+            base.OnPropertyChanged(propertyName);
+
+            if (propertyName == nameof(IsEnabled))
+            {
+                UpdateIsEnabled();
+            }
         }
 
         protected override void OnBindingContextChanged()
@@ -171,6 +179,8 @@ namespace MagicGradients.Controls
             {
                 SetInheritedBindingContext(content, BindingContext);
             }
+
+            ExtendNameScope();
         }
 
         private static void OnContentChanged(BindableObject bindable, object oldValue, object newValue)
@@ -222,47 +232,43 @@ namespace MagicGradients.Controls
             }
         }
 
-        private void UpdateDisableOpacity()
+        private void UpdateIsEnabled()
         {
-            var coverButton = GetTemplateChild("CoverButton") as Button;
-            if (coverButton == null)
-                return;
-            var visualStateGroups = VisualStateManager.GetVisualStateGroups(coverButton);
-            var commonGroup =  visualStateGroups.First();
-            var disabledState = commonGroup.States[2];
-            var opacitySetter = disabledState.Setters[0];
-            opacitySetter.Value = DisableOpacity;
+            GoToState(IsEnabled ?
+                VisualStateManager.CommonStates.Normal :
+                VisualStateManager.CommonStates.Disabled);
         }
 
-        private void UpdatePressedOpacity()
+        private void ExecuteCommand()
         {
-            var coverButton = GetTemplateChild("CoverButton") as Button;
-            if (coverButton == null)
-                return;
-            var visualStateGroups = VisualStateManager.GetVisualStateGroups(coverButton);
-            var commonGroup =  visualStateGroups.First();
-            var pressedState = commonGroup.States[1];
-            var opacitySetter = pressedState.Setters[0];
-            opacitySetter.Value = PressedOpacity;
+            if(Command != null && Command.CanExecute(CommandParameter))
+                Command.Execute(CommandParameter);
         }
 
-        private void GradientView_Touch(object sender, SkiaSharp.Views.Forms.SKTouchEventArgs e)
+        private void GradientView_Touch(object sender, SKTouchEventArgs e)
         {
             switch (e.ActionType)
             {
                 case SKTouchAction.Pressed:
-                    VisualStateManager.GoToState(this, "Pressed");
+                    if (IsEnabled)
+                    {
+                        GoToState(PressedState);
+                        ExecuteCommand();
+                    }
                     break;
                 case SKTouchAction.Released:
                 case SKTouchAction.Cancelled:
-                    if(IsEnabled)
-                        VisualStateManager.GoToState(this, "Normal");
-                    else
-                        VisualStateManager.GoToState(this, "Disabled");
+                    GoToState(VisualStateManager.CommonStates.Normal);
                     break;
             }
             
             e.Handled = true;
+        }
+
+        private void GoToState(string stateName)
+        {
+            VisualStateManager.GoToState(_templateRoot, stateName);
+            VisualStateManager.GoToState(this, stateName);
         }
     }
 }

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MagicGradients.Toolkit\MagicGradients.Toolkit.csproj" />
     <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj" />
     <ProjectReference Include="..\Playground.Data\Playground.Data.csproj" />
   </ItemGroup>

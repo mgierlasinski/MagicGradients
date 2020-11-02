@@ -3,29 +3,34 @@
     x:Class="Playground.Views.BattleTestPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:MagicGradients.Controls;assembly=MagicGradients"
+    xmlns:controls="clr-namespace:MagicGradients.Toolkit.Controls;assembly=MagicGradients.Toolkit"
     xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
     xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
     Title="Gradient Battle Test"
     BindingContext="{Binding BattleTestViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ScrollView>
         <StackLayout Margin="15" Spacing="15">
-            <!--  Control To Select Text Color  -->
             <Picker
                 x:Name="ColumnPicker"
                 HorizontalOptions="FillAndExpand"
                 ItemsSource="{Binding ColorNames}"
                 SelectedIndex="{Binding SelectedColorIndex}" />
-            <!--  Buttons With Gradient Background  -->
             <controls:MagicButton
                 Command="{Binding ClickCommand}"
                 CornerRadius="10"
                 FontSize="16"
-                PressedOpacity="0.3"
-                DisableOpacity="0.7"
                 GradientSource="{Binding GradientSource}"
                 HeightRequest="50"
                 Content="MagicGradients Large Button"
+                TextColor="{Binding TextColor}" />
+            <controls:MagicButton
+                Command="{Binding ClickCommand}"
+                CornerRadius="10"
+                FontSize="16"
+                GradientSource="{Binding GradientSource}"
+                HeightRequest="50"
+                Content="Disabled button"
+                IsEnabled="False"
                 TextColor="{Binding TextColor}" />
             <controls:MagicButton
                 Command="{Binding WithParameterCommand}"
@@ -55,7 +60,6 @@
                            VerticalOptions="Center"/>
                 </StackLayout>
             </controls:MagicButton>
-            <!--  Circle With Icon And With Gradient Background  -->
             <CollectionView HeightRequest="60" ItemsSource="{Binding IconsCollection}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout HorizontalItemSpacing="5" Orientation="Horizontal" />
@@ -76,7 +80,6 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <!--  Background for Collection View  -->
             <Grid HeightRequest="250">
                 <magic:GradientView GradientSource="{Binding GradientSource}" />
                 <CollectionView Margin="5" ItemsSource="{Binding ItemsCollection}">
