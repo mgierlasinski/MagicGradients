@@ -17,7 +17,8 @@
                         </VisualState>
                         <VisualState x:Name="Pressed">
                             <VisualState.Setters>
-                                <Setter TargetName="Overlay" Property="VisualElement.Opacity" Value="0.7" />
+                                <Setter TargetName="Overlay" Property="VisualElement.Opacity" Value="0.5" />
+                                <Setter TargetName="Overlay" Property="BoxView.Color" Value="Black" />
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Disabled">

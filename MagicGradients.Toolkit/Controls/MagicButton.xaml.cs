@@ -29,7 +29,7 @@ namespace MagicGradients.Toolkit.Controls
             propertyChanged: (b, x, y) => ((MagicButton)b).UpdateFontFamily());
 
         public static readonly BindableProperty TextColorProperty = BindableProperty.Create(
-            nameof(TextColor), typeof(Color), typeof(MagicButton), Color.White,
+            nameof(TextColor), typeof(Color), typeof(MagicButton), Color.Black,
             propertyChanged: (b, x, y) => ((MagicButton)b).UpdateTextColor());
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
@@ -73,6 +73,7 @@ namespace MagicGradients.Toolkit.Controls
             set => SetValue(FontFamilyProperty, value);
         }
 
+        [TypeConverter(typeof(ColorTypeConverter))]
         public Color TextColor
         {
             get => (Color) GetValue(TextColorProperty);
@@ -119,6 +120,14 @@ namespace MagicGradients.Toolkit.Controls
         {
             get => (bool)GetValue(HasShadowProperty);
             set => SetValue(HasShadowProperty, value);
+        }
+
+        static MagicButton()
+        {
+            StyleSheets.RegisterStyle("color", typeof(MagicButton), nameof(MagicButton.TextColorProperty));
+            StyleSheets.RegisterStyle("background", typeof(MagicButton), nameof(MagicButton.GradientSourceProperty));
+            StyleSheets.RegisterStyle("background-size", typeof(MagicButton), nameof(MagicButton.GradientSizeProperty));
+            StyleSheets.RegisterStyle("background-repeat", typeof(MagicButton), nameof(MagicButton.GradientRepeatProperty));
         }
 
         public MagicButton()
@@ -181,6 +190,7 @@ namespace MagicGradients.Toolkit.Controls
             }
 
             ExtendNameScope();
+            UpdateIsEnabled();
         }
 
         private static void OnContentChanged(BindableObject bindable, object oldValue, object newValue)
@@ -253,10 +263,12 @@ namespace MagicGradients.Toolkit.Controls
                     if (IsEnabled)
                     {
                         GoToState(PressedState);
-                        ExecuteCommand();
                     }
                     break;
                 case SKTouchAction.Released:
+                    GoToState(VisualStateManager.CommonStates.Normal);
+                    ExecuteCommand();
+                    break;
                 case SKTouchAction.Cancelled:
                     GoToState(VisualStateManager.CommonStates.Normal);
                     break;
@@ -267,7 +279,10 @@ namespace MagicGradients.Toolkit.Controls
 
         private void GoToState(string stateName)
         {
-            VisualStateManager.GoToState(_templateRoot, stateName);
+            if (_templateRoot != null)
+            {
+                VisualStateManager.GoToState(_templateRoot, stateName);
+            }
             VisualStateManager.GoToState(this, stateName);
         }
     }
