@@ -9,7 +9,7 @@ namespace MagicGradients.Toolkit.Controls
     public partial class MagicButton : TemplatedView
     {
         private const string PressedState = "Pressed";
-        private const string HoverState = "Hover";
+        private const string HoveredState = "Hovered";
         private const string TemplateRootName = "TemplateRoot";
         private const string GradientViewName = "GradientView";
         private const string OverlayName = "Overlay";
@@ -274,7 +274,7 @@ namespace MagicGradients.Toolkit.Controls
                     GoToState(VisualStateManager.CommonStates.Normal);
                     break;
                 case SKTouchAction.Entered:
-                    GoToState(HoverState);
+                    GoToState(HoveredState);
                     break;
                 case SKTouchAction.Exited:
                     GoToDefaultState();
