@@ -9,6 +9,7 @@ namespace MagicGradients.Toolkit.Controls
     public partial class MagicButton : TemplatedView
     {
         private const string PressedState = "Pressed";
+        private const string HoverState = "Hover";
         private const string TemplateRootName = "TemplateRoot";
         private const string GradientViewName = "GradientView";
         private const string OverlayName = "Overlay";
@@ -162,7 +163,7 @@ namespace MagicGradients.Toolkit.Controls
 
             if (propertyName == nameof(IsEnabled))
             {
-                UpdateIsEnabled();
+                GoToDefaultState();
             }
         }
 
@@ -190,7 +191,7 @@ namespace MagicGradients.Toolkit.Controls
             }
 
             ExtendNameScope();
-            UpdateIsEnabled();
+            GoToDefaultState();
         }
 
         private static void OnContentChanged(BindableObject bindable, object oldValue, object newValue)
@@ -242,7 +243,7 @@ namespace MagicGradients.Toolkit.Controls
             }
         }
 
-        private void UpdateIsEnabled()
+        private void GoToDefaultState()
         {
             GoToState(IsEnabled ?
                 VisualStateManager.CommonStates.Normal :
@@ -271,6 +272,12 @@ namespace MagicGradients.Toolkit.Controls
                     break;
                 case SKTouchAction.Cancelled:
                     GoToState(VisualStateManager.CommonStates.Normal);
+                    break;
+                case SKTouchAction.Entered:
+                    GoToState(HoverState);
+                    break;
+                case SKTouchAction.Exited:
+                    GoToDefaultState();
                     break;
             }
             

@@ -3,6 +3,7 @@
     "path": "MagicGradients.sln",
     "projects": [
       "MagicGradients\\MagicGradients.csproj",
+      "MagicGradients.Toolkit\\MagicGradients.Toolkit.csproj",
       "Playground\\Playground.Android\\Playground.Android.csproj",
       "Playground\\Playground.Data\\Playground.Data.csproj",
       "Playground\\Playground.iOS\\Playground.iOS.csproj",

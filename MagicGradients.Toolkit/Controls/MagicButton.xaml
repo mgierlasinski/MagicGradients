@@ -11,14 +11,22 @@
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
                             <VisualState.Setters>
+                                <Setter TargetName="TemplateRoot" Property="VisualElement.Scale" Value="1" />
                                 <Setter TargetName="Overlay" Property="VisualElement.Opacity" Value="0" />
                                 <Setter TargetName="Overlay" Property="BoxView.Color" Value="Black" />
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Pressed">
                             <VisualState.Setters>
-                                <Setter TargetName="Overlay" Property="VisualElement.Opacity" Value="0.5" />
+                                <Setter TargetName="TemplateRoot" Property="VisualElement.Scale" Value="0.95" />
+                                <Setter TargetName="Overlay" Property="VisualElement.Opacity" Value="0.3" />
                                 <Setter TargetName="Overlay" Property="BoxView.Color" Value="Black" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Hover">
+                            <VisualState.Setters>
+                                <Setter TargetName="Overlay" Property="VisualElement.Opacity" Value="0.3" />
+                                <Setter TargetName="Overlay" Property="BoxView.Color" Value="White" />
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Disabled">

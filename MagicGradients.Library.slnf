@@ -4,7 +4,8 @@
     "projects": [
       "MagicGradients.Benchmark\\MagicGradients.Benchmark.csproj",
       "MagicGradients.Tests\\MagicGradients.Tests.csproj",
-      "MagicGradients\\MagicGradients.csproj"
+      "MagicGradients\\MagicGradients.csproj",
+      "MagicGradients.Toolkit\\MagicGradients.Toolkit.csproj"
     ]
   }
 }
