@@ -6,7 +6,7 @@ namespace Playground
     {
         public App()
         {
-            Device.SetFlags(new string[] { "Expander_Experimental" });
+            Device.SetFlags(new string[] { "Expander_Experimental", "Shell_UWP_Experimental" });
 
             InitializeComponent();
 
