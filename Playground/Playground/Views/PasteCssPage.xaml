@@ -33,7 +33,7 @@
         <Grid Grid.Row="2" VerticalOptions="End">
             <BoxView Style="{StaticResource SemiTransparent}" />
             <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <ImageButton Command="{Binding RefreshCommand}" BackgroundColor="Transparent" Padding="10,5">
+                <ImageButton Command="{Binding RefreshCommand}" BackgroundColor="Transparent" Padding="10" WidthRequest="60" HeightRequest="60">
                     <ImageButton.Source>
                         <FontImageSource Glyph="{x:Static ic:IconCodes.Refresh}" FontFamily="IconFont" />
                     </ImageButton.Source>

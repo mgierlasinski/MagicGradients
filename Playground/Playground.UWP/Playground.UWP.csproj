@@ -7,8 +7,8 @@
     <ProjectGuid>{F5D68CA9-7C54-4A38-B860-1AA354FD1056}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UwpShellTest.UWP</RootNamespace>
-    <AssemblyName>UwpShellTest.UWP</AssemblyName>
+    <RootNamespace>Playground.UWP</RootNamespace>
+    <AssemblyName>Playground.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
@@ -157,7 +157,7 @@
       <Version>1.5.3.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.8.0.1364</Version>
+      <Version>4.8.0.1560</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

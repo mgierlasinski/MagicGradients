@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="UwpShellTest.UWP.App">
+      EntryPoint="Playground.UWP.App">
       <uap:VisualElements
-        DisplayName="UwpShellTest.UWP"
+        DisplayName="Magic Playground"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="UwpShellTest.UWP"
+        Description="Playground.UWP"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
