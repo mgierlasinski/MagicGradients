@@ -12,12 +12,13 @@
 
   <ItemGroup>
     <PackageReference Include="FreshMvvm" Version="3.0.0" />
-    <PackageReference Include="Sharpnado.Tabs" Version="2.0.0" />
+    <PackageReference Include="Sharpnado.Tabs" Version="2.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MagicGradients.Toolkit\MagicGradients.Toolkit.csproj" />
     <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj" />
   </ItemGroup>
 

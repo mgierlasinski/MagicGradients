@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace MagicGradients.Controls
+namespace MagicGradients.Toolkit.Controls
 {
     public class TextContent : Label
     {

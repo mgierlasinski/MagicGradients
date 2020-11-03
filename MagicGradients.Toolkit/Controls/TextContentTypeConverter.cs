@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MagicGradients.Controls
+namespace MagicGradients.Toolkit.Controls
 {
     [TypeConversion(typeof(TextContent))]
     public class TextContentTypeConverter : TypeConverter
