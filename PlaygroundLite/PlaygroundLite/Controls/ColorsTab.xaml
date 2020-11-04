@@ -35,7 +35,8 @@
         </AbsoluteLayout>-->
     </Grid>
 
-    <Frame Margin="10" BorderColor="LightGray" HasShadow="False" Padding="10">
+    <Frame Margin="10" HasShadow="False" Padding="10" 
+           BorderColor="{AppThemeBinding Light={StaticResource SeparatorColor}, Dark={StaticResource SeparatorColorDark}}">
         <Grid ColumnDefinitions="30*,70*" RowDefinitions="30,40" RowSpacing="0">
             <BoxView Color="{Binding SelectedStop.Color}" Grid.RowSpan="2" />
             <Label Text="{Binding SelectedStop.Color, Converter={StaticResource ColorNameConverter}}" 

@@ -21,7 +21,6 @@
                 <tabs:UnderlinedTabItem Label="Background" />
             </tabs:TabHostView.Tabs>
         </tabs:TabHostView>
-        <BoxView Grid.Row="1" Color="LightGray" HeightRequest="1" VerticalOptions="End" />
         <tabs:ViewSwitcher x:Name="Switcher" SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}" Grid.Row="2">
             <StackLayout Margin="10">
                 <Label Text="Angle" />
