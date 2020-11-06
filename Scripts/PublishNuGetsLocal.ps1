@@ -12,7 +12,7 @@
     }
 }
 
-$NuGetPath = '..\MagicGradients\**\Release\*.nupkg'
+$NuGetPath = '..\MagicGradients\bin\**\Release\*.nupkg'
 
 Remove-Item $NuGetPath
 Build-Solution('..\MagicGradients\MagicGradients.csproj')
