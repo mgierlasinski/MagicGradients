@@ -5,7 +5,8 @@
              x:Class="PlaygroundLite.Pages.CssPage"
              Title="CSS gradient">
     <Grid RowSpacing="0" RowDefinitions="Auto,Auto,Auto,*,Auto">
-        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="WhiteSmoke">
+        <StackLayout Orientation="Horizontal" Padding="10" 
+                     BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}">
             <Button Text="Add" Command="{Binding ShowSnippetsCommand}" />
             <Button Text="Clear" Command="{Binding ClearCommand}" />
             <Button Text="Refresh" Command="{Binding RefreshCommand}" />
@@ -19,7 +20,8 @@
             <BoxView Style="{StaticResource SemiTransparent}" />
             <Label Text="{Binding Message}" Margin="10" TextColor="White" />
         </Grid>
-        <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="WhiteSmoke">
+        <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="FillAndExpand" 
+                     BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}">
             <CheckBox IsChecked="{Binding IsHotReload}" HorizontalOptions="EndAndExpand"  />
             <Label Text="Hot reload" VerticalOptions="Center" HorizontalOptions="End" Margin="0,5,10,5" />
         </StackLayout>

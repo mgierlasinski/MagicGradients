@@ -3,16 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlaygroundLite.Controls.MenuSection">
     <ContentView.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontSize" Value="Medium" />
-            <Setter Property="TextColor" Value="Gray" />
+        <Style TargetType="Label" BasedOn="{StaticResource HeaderStyle}">
+
         </Style>
     </ContentView.Resources>
     <ContentView.ControlTemplate>
       <ControlTemplate>
           <StackLayout Orientation="Horizontal" Margin="5,0" Spacing="10">
               <ContentPresenter />
-              <BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,2,0,0" />
+              <BoxView Style="{StaticResource Separator}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,2,0,0" />
           </StackLayout>
         </ControlTemplate>
   </ContentView.ControlTemplate>

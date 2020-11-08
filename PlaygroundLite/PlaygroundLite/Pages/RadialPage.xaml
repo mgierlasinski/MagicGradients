@@ -37,7 +37,6 @@
                 <tabs:UnderlinedTabItem Label="Background" />
             </tabs:TabHostView.Tabs>
         </tabs:TabHostView>
-        <BoxView Grid.Row="2" Color="LightGray" HeightRequest="1" VerticalOptions="End" />
         <tabs:ViewSwitcher x:Name="Switcher" SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}" Grid.Row="3">
             <StackLayout Margin="10">
                 <StackLayout Orientation="Horizontal">

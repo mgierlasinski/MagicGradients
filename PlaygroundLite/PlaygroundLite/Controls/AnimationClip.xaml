@@ -25,7 +25,7 @@
                               IsVisible="{TemplateBinding BindingContext.IsRunning}" />
                     </Grid>
                     <Label Text="{TemplateBinding BindingContext.Title}" 
-                           TextColor="Black" FontAttributes="Bold" FontSize="14"
+                           FontAttributes="Bold" FontSize="14"
                            HorizontalOptions="Center" Margin="0,5" Grid.Row="1" />
                 </Grid>
             </Frame>
