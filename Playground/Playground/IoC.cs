@@ -1,6 +1,7 @@
 ﻿using Playground.Data.Infrastructure;
 using Playground.Data.Repositories;
-using Playground.Services;
+using Playground.Features.BattleTest.Services;
+using Playground.Features.Gallery.Services;
 using Xamarin.Forms;
 
 namespace Playground

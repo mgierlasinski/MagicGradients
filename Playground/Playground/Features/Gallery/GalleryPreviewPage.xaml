@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
+             x:Class="Playground.Features.Gallery.GalleryPreviewPage"
+             Title="Gradient Preview"
+             BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding EditCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Layers}" 
+                                 FontFamily="IconFont"
+                                 Color="{StaticResource LightForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem Command="{Binding PreviewCssCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
+                                 FontFamily="IconFont"
+                                 Color="{StaticResource LightForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem Command="{Binding BattleTestCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Paint}"
+                                 FontFamily="IconFont"
+                                 Color="{StaticResource LightForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <Grid x:Name="RootContainer">
+        <magic:GradientView GradientSource="{Binding GradientSource}" 
+                            GradientSize="{Binding GradientSize}" />
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsEditMode}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <BoxView BackgroundColor="White" Opacity="0.5" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.RowSpan="2" />
+            <CollectionView ItemsSource="{Binding EditorItems}" 
+                            SelectionMode="Single" 
+                            SelectedItem="{Binding SelectedItem}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="0" Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:GradientEditorItem">
+                        <Grid HeightRequest="50">
+                            <Frame Visual="Material" IsClippedToBounds="True" HasShadow="True" CornerRadius="25" Padding="2" Margin="5">
+                                <Frame CornerRadius="23" Padding="0" IsClippedToBounds="True" HasShadow="False">
+                                    <magic:GradientView GradientSource="{Binding GradientSource}" WidthRequest="46" HeightRequest="46" />
+                                </Frame>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" VerticalOptions="End" Margin="10" Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*" />
+                        <ColumnDefinition Width="33*" />
+                        <ColumnDefinition Width="33*" />
+                    </Grid.ColumnDefinitions>
+                    <controls:CheckeredView />
+                    <magic:GradientView GradientSource="{Binding SelectedItem.GradientSource}" Grid.Row="0" Grid.ColumnSpan="3" />
+                    <AbsoluteLayout BindableLayout.ItemsSource="{Binding SelectedItem.Stops}" Grid.Row="0" Grid.ColumnSpan="3">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Visual="Material" HasShadow="True" Padding="4" 
+                                       AbsoluteLayout.LayoutFlags="XProportional,HeightProportional" 
+                                           AbsoluteLayout.LayoutBounds="{Binding Bounds}">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.SelectCommand, Source={x:Reference RootContainer}}" CommandParameter="{Binding}" />
+                                    </Frame.GestureRecognizers>
+                                    <BoxView Color="{Binding Color}" />
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </AbsoluteLayout>
+                    <Frame Visual="Material" HasShadow="True" CornerRadius="5" 
+                           Padding="0" WidthRequest="100" Margin="4" HorizontalOptions="Start"
+                           BackgroundColor="{Binding SelectedItem.SelectedStop.Color}" 
+                           Grid.Row="1" Grid.Column="0" />
+                    <Label VerticalOptions="Center" Grid.Row="1" Grid.Column="1">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Color" FontAttributes="Bold" />
+                                <Span Text="&#13;&#10;" />
+                                <Span Text="{Binding SelectedItem.SelectedStop.ColorName}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label VerticalOptions="Center" Grid.Row="1" Grid.Column="2">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Position" FontAttributes="Bold" />
+                                <Span Text="&#13;&#10;" />
+                                <Span Text="{Binding SelectedItem.SelectedStop.OffsetName}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:Playground.Views"
+       xmlns:previewer="clr-namespace:Playground.Features.CssPreviewer"
+       xmlns:gallery="clr-namespace:Playground.Features.Gallery"
+       xmlns:linear="clr-namespace:Playground.Features.LinearGradient"
+       xmlns:radial="clr-namespace:Playground.Features.RadialGradient"
        xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
        xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
        x:Class="Playground.AppShell"
@@ -38,7 +41,7 @@
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
-    <ShellContent Title="Gradient Gallery" ContentTemplate="{DataTemplate local:GalleryCategoriesPage}">
+    <ShellContent Title="Gradient Gallery" ContentTemplate="{DataTemplate gallery:GalleryCategoriesPage}">
         <ShellContent.Icon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Gallery}" 
                              FontFamily="IconFont" 
@@ -46,7 +49,7 @@
         </ShellContent.Icon>
     </ShellContent>
 
-    <ShellContent Title="Paste CSS" ContentTemplate="{DataTemplate local:PasteCssPage}">
+    <ShellContent Title="CSS previewer" ContentTemplate="{DataTemplate previewer:CssPreviewerPage}">
         <ShellContent.Icon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
                              FontFamily="IconFont"
@@ -54,59 +57,19 @@
         </ShellContent.Icon>
     </ShellContent>
 
-    <FlyoutItem Title="Linear Gradients">
-        <FlyoutItem.FlyoutIcon>
+    <ShellContent Title="Linear Gradients" ContentTemplate="{DataTemplate linear:LinearGradientSamplesPage}">
+        <ShellContent.FlyoutIcon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Gradient}" 
                              FontFamily="IconFont"
                              Color="{StaticResource ForegroundColor}" />
-        </FlyoutItem.FlyoutIcon>
-        <Tab Title="XAML">
-            <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Code}" FontFamily="IconFont" />
-            </Tab.Icon>
-            <ShellContent Title="Single" ContentTemplate="{DataTemplate local:LinearGradientsPage}" />
-            <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPage}" />
-        </Tab>
-        <Tab Title="CSS">
-            <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" FontFamily="IconFont" />
-            </Tab.Icon>
-            <ShellContent Title="Single" ContentTemplate="{DataTemplate local:LinearGradientsPageCss}" />
-            <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingLinearGradientsPageCss}" />
-        </Tab>
-        <Tab Title="Animation">
-            <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Bolt}" FontFamily="IconFont" />
-            </Tab.Icon>
-            <ShellContent ContentTemplate="{DataTemplate local:LinearGradientsAnimationPage}" />
-        </Tab>
-    </FlyoutItem>
+        </ShellContent.FlyoutIcon>
+    </ShellContent>
 
-    <FlyoutItem Title="Radial Gradients">
-        <FlyoutItem.FlyoutIcon>
+    <ShellContent Title="Radial Gradients" ContentTemplate="{DataTemplate radial:RadialGradientSamplesPage}">
+        <ShellContent.FlyoutIcon>
             <FontImageSource Glyph="{x:Static ic:IconCodes.Radial}" 
                              FontFamily="IconFont"
                              Color="{StaticResource ForegroundColor}" />
-        </FlyoutItem.FlyoutIcon>
-        <Tab Title="XAML">
-            <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Code}" FontFamily="IconFont" />
-            </Tab.Icon>
-            <ShellContent Title="Single" ContentTemplate="{DataTemplate local:RadialGradientsPage}" />
-            <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPage}" />
-        </Tab>
-        <Tab Title="CSS">
-            <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" FontFamily="IconFont" />
-            </Tab.Icon>
-            <ShellContent Title="Single" ContentTemplate="{DataTemplate local:RadialGradientsPageCss}" />
-            <ShellContent Title="Repeating" ContentTemplate="{DataTemplate local:RepeatingRadialGradientsPageCss}" />
-        </Tab>
-        <Tab Title="Animation">
-            <Tab.Icon>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Bolt}" FontFamily="IconFont" />
-            </Tab.Icon>
-            <ShellContent ContentTemplate="{DataTemplate local:RadialGradientsAnimationPage}" />
-        </Tab>
-    </FlyoutItem>
+        </ShellContent.FlyoutIcon>
+    </ShellContent>
 </Shell>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:controls="clr-namespace:Playground.Controls"
+             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+             xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
+             x:Class="Playground.Features.Gallery.GalleryListPage"
+             Title="{Binding Title}"
+             BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding TogglePickerCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
+                                 FontFamily="IconFont"
+                                 Color="{StaticResource LightForegroundColor}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <!--<Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
+            <CollectionView x:Name="ThemeList"
+                            ItemsSource="{Binding Themes}"
+                            SelectionMode="Multiple"
+                            SelectedItems="{Binding SelectedThemes}"
+                            HeightRequest="60">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:GradientTheme">
+                        <Grid>
+                            <BoxView Color="{Binding Color}" WidthRequest="100" Margin="5" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>-->
+        <CollectionView x:Name="GalleryList"
+                        ItemsSource="{Binding Gradients}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedItem}"
+                        SelectionChanged="GalleryList_OnSelectionChanged">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:GradientItem">
+                    <Grid>
+                        <magic:GradientView GradientSource="{Binding Source}" 
+                                            GradientSize="{Binding Size}"
+                                            HeightRequest="150" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <controls:RadialMenu HorizontalOptions="Fill" 
+                             VerticalOptions="Fill" 
+                             ItemsSource="{Binding Themes}" 
+                             SelectedItem="{Binding SelectedTheme}"
+                             IsOpen="{Binding IsPickerVisible}" />
+    </Grid>
+</ContentPage>

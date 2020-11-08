@@ -23,10 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\GalleryCategoriesPage.xaml.cs">
+    <Compile Update="Features\CssPreviewer\CssPreviewerPage.xaml.cs">
+      <DependentUpon>CssPreviewerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Gallery\GalleryCategoriesPage.xaml.cs">
       <DependentUpon>GalleryCategoriesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\GalleryPreviewPage.xaml.cs">
+    <Compile Update="Features\Gallery\GalleryPreviewPage.xaml.cs">
       <DependentUpon>GalleryPreviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\RadialGradientsPageCss.xaml.cs">
@@ -62,16 +65,22 @@
     <EmbeddedResource Update="Controls\RadialMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Features\LinearGradient\LinearGradientSamplesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\RadialGradient\RadialGradientSamplesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Styles\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BattleTestPage.xaml">
+    <EmbeddedResource Update="Features\BattleTest\BattleTestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GalleryPreviewPage.xaml">
+    <EmbeddedResource Update="Features\Gallery\GalleryPreviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GalleryListPage.xaml">
+    <EmbeddedResource Update="Features\Gallery\GalleryListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LinearGradientsAnimationPage.xaml">
@@ -80,7 +89,7 @@
     <EmbeddedResource Update="Views\LinearGradientsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PasteCssPage.xaml">
+    <EmbeddedResource Update="Features\CssPreviewer\CssPreviewerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RadialGradientsAnimationPage.xaml">

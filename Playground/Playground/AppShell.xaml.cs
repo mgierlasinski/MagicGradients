@@ -1,4 +1,7 @@
-﻿using Playground.Views;
+﻿using Playground.Features.BattleTest;
+using Playground.Features.CssPreviewer;
+using Playground.Features.Gallery;
+using Playground.Views;
 using Xamarin.Forms;
 
 namespace Playground
@@ -11,7 +14,7 @@ namespace Playground
 
             Routing.RegisterRoute("GalleryList", typeof(GalleryListPage));
             Routing.RegisterRoute("GalleryPreview", typeof(GalleryPreviewPage));
-            Routing.RegisterRoute("PasteCss", typeof(PasteCssPage));
+            Routing.RegisterRoute("CssPreviewer", typeof(CssPreviewerPage));
             Routing.RegisterRoute("BattleTest", typeof(BattleTestPage));
         }
     }

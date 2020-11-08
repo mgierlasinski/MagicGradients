@@ -1,5 +1,10 @@
 ﻿using Playground.Data.Repositories;
-using Playground.Services;
+using Playground.Features.BattleTest;
+using Playground.Features.BattleTest.Services;
+using Playground.Features.CssPreviewer;
+using Playground.Features.Gallery;
+using Playground.Features.Gallery.Services;
+using Playground.Features.LinearGradient;
 using Xamarin.Forms;
 
 namespace Playground.ViewModels
@@ -16,7 +21,7 @@ namespace Playground.ViewModels
         public GalleryPreviewViewModel GalleryPreviewViewModel => new GalleryPreviewViewModel(
             DependencyService.Get<IGalleryService>());
 
-        public PasteCssViewModel PasteCssViewModel => new PasteCssViewModel(
+        public CssPreviewerViewModel CssPreviewerViewModel => new CssPreviewerViewModel(
             DependencyService.Get<IGradientRepository>());
 
         public BattleTestViewModel BattleTestViewModel => new BattleTestViewModel(
@@ -25,5 +30,7 @@ namespace Playground.ViewModels
             DependencyService.Get<IBattleItemService>());
 
         public LinearGradientsViewModel LinearGradientsViewModel => new LinearGradientsViewModel();
+
+        public LinearGradientSamplesViewModel LinearGradientSamplesViewModel => new LinearGradientSamplesViewModel();
     }
 }
