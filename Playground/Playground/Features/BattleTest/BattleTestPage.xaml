@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:MagicGradients.Toolkit.Controls;assembly=MagicGradients.Toolkit"
     xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-    xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+    xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
     Title="Gradient Battle Test"
     BindingContext="{Binding BattleTestViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ScrollView>
@@ -51,8 +51,8 @@
                 HasShadow="True"
                 WidthRequest="200">
                 <StackLayout Orientation="Horizontal" Padding="10">
-                    <Label FontFamily="IconFont" FontSize="20" 
-                           Text="{x:Static ic:IconCodes.Bolt}" 
+                    <Label FontFamily="IcoMoon" FontSize="20" 
+                           Text="{x:Static ic:IcoMoon.Bolt}" 
                            TextColor="{Binding TextColor}" 
                            VerticalOptions="Center" Margin="5,0" />
                     <Label FontSize="16" Text="Magic Button" 
@@ -69,7 +69,7 @@
                         <controls:MagicButton
                             Padding="0,5"
                             CornerRadius="25"
-                            FontFamily="IconFont"
+                            FontFamily="IcoMoon"
                             FontSize="16"
                             GradientSource="{Binding GradientSource}"
                             HeightRequest="50"

@@ -2,31 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
+             xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              x:Class="Playground.Features.Gallery.GalleryPreviewPage"
              Title="Gradient Preview"
              BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Layers}" 
-                                 FontFamily="IconFont"
+                <FontImageSource Glyph="{x:Static ic:IcoMoon.Layers}" 
+                                 FontFamily="IcoMoon"
                                  Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
         <ToolbarItem Command="{Binding PreviewCssCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                                 FontFamily="IconFont"
+                <FontImageSource Glyph="{x:Static ic:IcoMoon.Palette}" 
+                                 FontFamily="IcoMoon"
                                  Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
         <ToolbarItem Command="{Binding BattleTestCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Paint}"
-                                 FontFamily="IconFont"
+                <FontImageSource Glyph="{x:Static ic:IcoMoon.Paint}"
+                                 FontFamily="IcoMoon"
                                  Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>

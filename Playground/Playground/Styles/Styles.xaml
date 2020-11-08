@@ -21,7 +21,7 @@
     <Style x:Key="FontLabel" TargetType="Label">
         <Setter Property="HorizontalTextAlignment" Value="Center" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
-        <Setter Property="FontFamily" Value="IconFont" />
+        <Setter Property="FontFamily" Value="IcoMoon" />
     </Style>
     <Style x:Key="SemiTransparent" TargetType="BoxView">
         <Setter Property="BackgroundColor" Value="Black" />

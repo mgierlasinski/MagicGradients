@@ -2,7 +2,7 @@
 <Grid xmlns="http://xamarin.com/schemas/2014/forms" 
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       xmlns:controls="clr-namespace:Playground.Controls"
-      xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+      xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
       x:Class="Playground.Controls.RadialMenu">
 
     <BoxView BackgroundColor="White" Opacity="0.6" x:Name="Overlay" />
@@ -16,7 +16,7 @@
         <BoxView WidthRequest="56" HeightRequest="56" CornerRadius="28" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
         <Image HorizontalOptions="Center" VerticalOptions="Center">
             <Image.Source>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
+                <FontImageSource Glyph="{x:Static ic:IcoMoon.Palette}" 
                                  FontFamily="IconFont"
                                  Color="{StaticResource LightForegroundColor}" />
             </Image.Source>

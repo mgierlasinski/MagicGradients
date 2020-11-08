@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+             xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              x:Class="Playground.Features.CssPreviewer.CssPreviewerPage"
              Title="Paste CSS"
              BindingContext="{Binding CssPreviewerViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
@@ -35,7 +35,7 @@
             <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <ImageButton Command="{Binding RefreshCommand}" BackgroundColor="Transparent" Padding="10" WidthRequest="60" HeightRequest="60">
                     <ImageButton.Source>
-                        <FontImageSource Glyph="{x:Static ic:IconCodes.Refresh}" FontFamily="IconFont" />
+                        <FontImageSource Glyph="{x:Static ic:IcoMoon.Refresh}" FontFamily="IcoMoon" />
                     </ImageButton.Source>
                 </ImageButton>
                 <CheckBox IsChecked="{Binding IsHotReload}" HorizontalOptions="EndAndExpand" Color="{StaticResource LightForegroundColor}"  />

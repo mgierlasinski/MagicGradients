@@ -6,7 +6,7 @@
        xmlns:linear="clr-namespace:Playground.Features.LinearGradient"
        xmlns:radial="clr-namespace:Playground.Features.RadialGradient"
        xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-       xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
+       xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
        x:Class="Playground.AppShell"
        Title="Playground">
 
@@ -32,7 +32,7 @@
                         </magic:LinearGradient>
                     </magic:GradientCollection>
                 </magic:GradientView>
-                <Label Text="{x:Static ic:IconCodes.MagicWand}" Style="{StaticResource FontLabel}" 
+                <Label Text="{x:Static ic:IcoMoon.MagicWand}" Style="{StaticResource FontLabel}" 
                        WidthRequest="70" HeightRequest="70" FontSize="70" TextColor="{StaticResource LightForegroundColor}" 
                        HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" />
                 <Label Text="Magic Gradients" TextColor="{StaticResource LightForegroundColor}" FontAttributes="Bold" 
@@ -43,32 +43,32 @@
 
     <ShellContent Title="Gradient Gallery" ContentTemplate="{DataTemplate gallery:GalleryCategoriesPage}">
         <ShellContent.Icon>
-            <FontImageSource Glyph="{x:Static ic:IconCodes.Gallery}" 
-                             FontFamily="IconFont" 
+            <FontImageSource Glyph="{x:Static ic:IcoMoon.Gallery}" 
+                             FontFamily="IcoMoon" 
                              Color="{StaticResource ForegroundColor}" />
         </ShellContent.Icon>
     </ShellContent>
 
     <ShellContent Title="CSS previewer" ContentTemplate="{DataTemplate previewer:CssPreviewerPage}">
         <ShellContent.Icon>
-            <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                             FontFamily="IconFont"
+            <FontImageSource Glyph="{x:Static ic:IcoMoon.Palette}" 
+                             FontFamily="IcoMoon"
                              Color="{StaticResource ForegroundColor}" />
         </ShellContent.Icon>
     </ShellContent>
 
     <ShellContent Title="Linear Gradients" ContentTemplate="{DataTemplate linear:LinearGradientSamplesPage}">
         <ShellContent.FlyoutIcon>
-            <FontImageSource Glyph="{x:Static ic:IconCodes.Gradient}" 
-                             FontFamily="IconFont"
+            <FontImageSource Glyph="{x:Static ic:IcoMoon.Gradient}" 
+                             FontFamily="IcoMoon"
                              Color="{StaticResource ForegroundColor}" />
         </ShellContent.FlyoutIcon>
     </ShellContent>
 
     <ShellContent Title="Radial Gradients" ContentTemplate="{DataTemplate radial:RadialGradientSamplesPage}">
         <ShellContent.FlyoutIcon>
-            <FontImageSource Glyph="{x:Static ic:IconCodes.Radial}" 
-                             FontFamily="IconFont"
+            <FontImageSource Glyph="{x:Static ic:IcoMoon.Radial}" 
+                             FontFamily="IcoMoon"
                              Color="{StaticResource ForegroundColor}" />
         </ShellContent.FlyoutIcon>
     </ShellContent>

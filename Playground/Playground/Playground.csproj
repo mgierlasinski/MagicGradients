@@ -10,6 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\icomoon.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\icomoon.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Bogus" Version="29.0.2" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />  
@@ -59,9 +67,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Fonts\icomoon.ttf" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Update="Controls\RadialMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -98,12 +103,5 @@
     <EmbeddedResource Update="Views\RadialGradientsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Resources\Fonts\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Resources\Fonts\icomoon.ttf" />
   </ItemGroup>
 </Project>

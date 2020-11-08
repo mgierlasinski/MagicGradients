@@ -1,13 +1,13 @@
 ﻿using Bogus;
 using MagicGradients;
-using Playground.Constants;
 using Playground.Data.Repositories;
 using Playground.Features.BattleTest.Services;
 using Playground.ViewModels;
 using System.Collections.Generic;
 using System.Windows.Input;
+using Playground.Resources.Fonts;
 using Xamarin.Forms;
-using static Playground.Constants.IconCodes;
+using static Playground.Resources.Fonts.IcoMoon;
 using Color = System.Drawing.Color;
 
 namespace Playground.Features.BattleTest
@@ -116,8 +116,8 @@ namespace Playground.Features.BattleTest
         private List<BattleItem> GenerateIconsCollection()
         {
             var iconsCodeList = new List<string>{
-               MagicWand, Refresh, IconCodes.Gradient, Radial,
-               Palette, Layers, IconCodes.Gallery, Code, Bolt, Paint
+               MagicWand, Refresh, IcoMoon.Gradient, Radial,
+               Palette, Layers, IcoMoon.Gallery, Code, Bolt, Paint
            };
             var fackedBattleItem = new Faker<BattleItem>()
                 .RuleFor(item => item.Text, (faker) => faker.PickRandom(iconsCodeList))

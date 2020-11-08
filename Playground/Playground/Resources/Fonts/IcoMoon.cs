@@ -1,6 +1,9 @@
-﻿namespace Playground.Constants
+﻿using Xamarin.Forms;
+
+[assembly: ExportFont("icomoon.ttf", Alias = "IcoMoon")]
+namespace Playground.Resources.Fonts
 {
-    public static class IconCodes
+    public static class IcoMoon
     {
         public const string MagicWand = "\ue900";
         public const string Refresh = "\ue901";

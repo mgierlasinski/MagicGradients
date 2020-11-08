@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:controls="clr-namespace:Playground.Controls"
-             xmlns:ic="clr-namespace:Playground.Constants;assembly=Playground"
              xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
+             xmlns:ic="clr-namespace:Playground.Resources.Fonts"
              x:Class="Playground.Features.Gallery.GalleryListPage"
              Title="{Binding Title}"
              BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding TogglePickerCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Glyph="{x:Static ic:IconCodes.Palette}" 
-                                 FontFamily="IconFont"
+                <FontImageSource Glyph="{x:Static ic:IcoMoon.Palette}" 
+                                 FontFamily="IcoMoon"
                                  Color="{StaticResource LightForegroundColor}" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
