@@ -9,7 +9,7 @@ namespace Playground.UWP
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             LoadApplication(new Playground.App());
         }
     }

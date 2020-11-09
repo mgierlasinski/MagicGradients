@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Playground.Features.Animation.AnimationsPage"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
+             Title="Animations"
+             vm:ViewModelLocator.AutoWireViewModel="true">
+    <ScrollView>
+        <StackLayout Spacing="0">
+            <controls:AnimationClip BindingContext="{Binding RotateAnimation}">
+                <magic:GradientView>
+                    <magic:GradientView.Triggers>
+                        <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+                            <anim:DoubleAnimation Target="{x:Reference RotateTarget}" 
+                                                  TargetProperty="magic:LinearGradient.Angle" 
+                                                  From="0" To="360" 
+                                                  Duration="3000"
+                                                  RepeatBehavior="Forever" />
+                        </anim:AnimateTrigger>
+                    </magic:GradientView.Triggers>
+                    <magic:LinearGradient x:Name="RotateTarget">
+                        <magic:GradientStop Color="#FEE140" />
+                        <magic:GradientStop Color="#FA709A" />
+                    </magic:LinearGradient>
+                </magic:GradientView>
+            </controls:AnimationClip>
+            <controls:AnimationClip BindingContext="{Binding ColorAnimation}">
+                <magic:GradientView>
+                    <magic:GradientView.Triggers>
+                        <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+                            <anim:ColorAnimation Target="{x:Reference AnimColor}" 
+                                                 TargetProperty="magic:GradientStop.Color" 
+                                                 From="#C850C0" To="#1FDD15" 
+                                                 Duration="3000"
+                                                 RepeatBehavior="Forever" 
+                                                 AutoReverse="True" />
+                        </anim:AnimateTrigger>
+                    </magic:GradientView.Triggers>
+                    <magic:LinearGradient Angle="45">
+                        <magic:GradientStop Color="#00DBDE" />
+                        <magic:GradientStop Color="#FC00FF" x:Name="AnimColor" />
+                    </magic:LinearGradient>
+                </magic:GradientView>
+            </controls:AnimationClip>
+            <controls:AnimationClip BindingContext="{Binding PointAnimation}">
+                <magic:GradientView>
+                    <magic:GradientView.Triggers>
+                        <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+                            <anim:PointAnimation Target="{x:Reference Radial}" 
+                                                 TargetProperty="magic:RadialGradient.Center" 
+                                                 From="0.1,0.1" To="0.9,0.9"
+                                                 Duration="3000" 
+                                                 RepeatBehavior="Forever"
+                                                 AutoReverse="True" 
+                                                 Easing="{x:Static Easing.SinInOut}" />
+                        </anim:AnimateTrigger>
+                    </magic:GradientView.Triggers>
+                    <magic:RadialGradient x:Name="Radial" Shape="Circle" RadiusX="200" RadiusY="200" Center="0.1,0.1">
+                        <magic:GradientStop Color="Red" />
+                        <magic:GradientStop Color="Yellow" />
+                    </magic:RadialGradient>
+                </magic:GradientView>
+            </controls:AnimationClip>
+            <controls:AnimationClip BindingContext="{Binding DimensionsAnimation}">
+                <magic:GradientView x:Name="AnimatedView" GradientSize="50,50">
+                    <magic:GradientView.Triggers>
+                        <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+                            <anim:DimensionsAnimation Target="{x:Reference AnimatedView}" 
+                                                      TargetProperty="magic:GradientView.GradientSize" 
+                                                      From="50,50" To="200,200" 
+                                                      Duration="3000" 
+                                                      Easing="{x:Static Easing.SinInOut}"
+                                                      RepeatBehavior="Forever" AutoReverse="True" />
+                        </anim:AnimateTrigger>
+                    </magic:GradientView.Triggers>
+                    <magic:LinearGradient Angle="45">
+                        <magic:GradientStop Color="#52ACFF" />
+                        <magic:GradientStop Color="#FFE32C" />
+                    </magic:LinearGradient>
+                </magic:GradientView>
+            </controls:AnimationClip>
+            <controls:AnimationClip BindingContext="{Binding StoryboardAnimation}">
+                <magic:GradientView>
+                    <magic:GradientView.Triggers>
+                        <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+                            <anim:Storyboard Duration="4000" RepeatBehavior="Forever">
+                                <anim:ColorAnimation Target="{x:Reference Color1}" 
+                                                     TargetProperty="magic:GradientStop.Color" 
+                                                     From="White" To="Red" 
+                                                     anim:Storyboard.BeginAt="0"
+                                                     anim:Storyboard.FinishAt="0.8"
+                                                     AutoReverse="True" />
+                                <anim:ColorAnimation Target="{x:Reference Color2}" 
+                                                     TargetProperty="magic:GradientStop.Color" 
+                                                     From="LightGray" To="DarkRed" 
+                                                     anim:Storyboard.BeginAt="0"
+                                                     anim:Storyboard.FinishAt="0.8"
+                                                     AutoReverse="True" />
+                                <anim:ColorAnimation Target="{x:Reference Color3}" 
+                                                     TargetProperty="magic:GradientStop.Color" 
+                                                     From="Red" To="White" 
+                                                     anim:Storyboard.BeginAt="0"
+                                                     anim:Storyboard.FinishAt="1"
+                                                     AutoReverse="True" />
+                            </anim:Storyboard>
+                        </anim:AnimateTrigger>
+                    </magic:GradientView.Triggers>
+                    <magic:GradientCollection>
+                        <magic:LinearGradient Angle="340">
+                            <magic:GradientStop Color="White" x:Name="Color1" />
+                            <magic:GradientStop Color="LightGray" x:Name="Color2" />
+                        </magic:LinearGradient>
+                        <magic:RadialGradient Center="0.2,0.3" RadiusX="200" RadiusY="200">
+                            <magic:GradientStop Color="Red" x:Name="Color3" />
+                            <magic:GradientStop Color="Transparent" />
+                        </magic:RadialGradient>
+                    </magic:GradientCollection>
+                </magic:GradientView>
+            </controls:AnimationClip>
+            <controls:AnimationClip BindingContext="{Binding PointFrameAnimation}">
+                <magic:GradientView>
+                    <magic:GradientView.Triggers>
+                        <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+                            <anim:PointAnimationUsingKeyFrames Target="{x:Reference Radial2}" 
+                                                               TargetProperty="magic:RadialGradient.Center" 
+                                                               RepeatBehavior="Forever">
+                                <anim:PointKeyFrame KeyTime="1000" Value="0.9,0.1" />
+                                <anim:PointKeyFrame KeyTime="1500" Value="0.9,0.9" />
+                                <anim:PointKeyFrame KeyTime="2500" Value="0.1,0.9" Easing="{x:Static Easing.SinInOut}" />
+                                <anim:PointKeyFrame KeyTime="3000" Value="0.1,0.1" />
+                            </anim:PointAnimationUsingKeyFrames>
+                        </anim:AnimateTrigger>
+                    </magic:GradientView.Triggers>
+                    <magic:RadialGradient x:Name="Radial2" Shape="Circle" RadiusX="200" RadiusY="200" Center="0.1,0.1">
+                        <magic:GradientStop Color="Red" />
+                        <magic:GradientStop Color="Yellow" />
+                    </magic:RadialGradient>
+                </magic:GradientView>
+            </controls:AnimationClip>
+            <controls:AnimationClip BindingContext="{Binding ScannerAnimation}">
+                <magic:GradientView>
+                    <magic:GradientView.Triggers>
+                        <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+                            <anim:OffsetAnimation Target="{Reference ScannerTarget}"
+                                                  TargetProperty="magic:GradientStop.Offset"
+                                                  From="0" To="1"
+                                                  Duration="1500" 
+                                                  AutoReverse="True" 
+                                                  RepeatBehavior="Forever" />
+                        </anim:AnimateTrigger>
+                    </magic:GradientView.Triggers>
+                    <magic:GradientCollection>
+                        <magic:LinearGradient >
+                            <magic:GradientStop Color="Black" Offset="0" />
+                        </magic:LinearGradient>
+                        <magic:LinearGradient Angle="90">
+                            <magic:GradientStop Color="#14000000" Offset="0" />
+                            <magic:GradientStop Color="#00FF21" Offset="0" x:Name="ScannerTarget" />
+                            <magic:GradientStop Color="#14000000" Offset="1" />
+                        </magic:LinearGradient>
+                    </magic:GradientCollection>
+                </magic:GradientView>
+            </controls:AnimationClip>
+            <controls:AnimationClip BindingContext="{Binding PulseAnimation}">
+                <magic:GradientView>
+                    <magic:GradientView.Triggers>
+                        <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+                            <anim:Storyboard Duration="1000" RepeatBehavior="Forever" Easing="{x:Static Easing.SinInOut}">
+                                <anim:DoubleAnimation Target="{Reference PulseTarget}"
+                                                      TargetProperty="magic:RadialGradient.RadiusX"
+                                                      From="10" To="300"
+                                                      AutoReverse="True" />
+                                <anim:DoubleAnimation Target="{Reference PulseTarget}"
+                                                      TargetProperty="magic:RadialGradient.RadiusY"
+                                                      From="10" To="300"
+                                                      AutoReverse="True" />
+                            </anim:Storyboard>
+                        </anim:AnimateTrigger>
+                    </magic:GradientView.Triggers>
+                    <magic:RadialGradient Center="0.5,0.5" RadiusX="10" RadiusY="10" x:Name="PulseTarget">
+                        <magic:GradientStop Color="Red" Offset="0" />
+                        <magic:GradientStop Color="Yellow" Offset="0.5" />
+                        <magic:GradientStop Color="Green" Offset="1" />
+                    </magic:RadialGradient>
+                </magic:GradientView>
+            </controls:AnimationClip>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

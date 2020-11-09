@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace Playground.Features.Gallery
 {
-    public class GalleryCategoriesViewModel : BaseViewModel
+    public class GalleryCategoriesViewModel : ObservableObject
     {
         private IEnumerable<GradientCategory> _categories;
         public IEnumerable<GradientCategory> Categories

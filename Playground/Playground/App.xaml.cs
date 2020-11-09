@@ -6,9 +6,17 @@ namespace Playground
     {
         public App()
         {
-            Device.SetFlags(new string[] { "Expander_Experimental", "Shell_UWP_Experimental" });
+            Device.SetFlags(new[]
+            {
+                "Shapes_Experimental", 
+                "Expander_Experimental", 
+                "Shell_UWP_Experimental"
+            });
 
             InitializeComponent();
+
+            Sharpnado.Shades.Initializer.Initialize(false);
+            Sharpnado.Tabs.Initializer.Initialize(false, false);
 
             AppSetup.RegisterTypes();
             AppSetup.RegisterViewModels();

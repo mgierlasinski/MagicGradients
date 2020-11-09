@@ -5,18 +5,18 @@ using Playground.Data.Repositories;
 using Playground.ViewModels;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Playground.Features.CssPreviewer
 {
     [QueryProperty("Id", "id")]
-    public class CssPreviewerViewModel : BaseViewModel
+    public class CssPreviewerViewModel : ObservableObject
     {
         private readonly IGradientRepository _gradientRepository;
         private readonly DimensionsTypeConverter _dimensionsConverter;
-
-        public ICommand RefreshCommand { get; set; }
+        private CssSnippet[] _snippets;
 
         private string _cssCode;
         public string CssCode
@@ -45,6 +45,7 @@ namespace Playground.Features.CssPreviewer
         }
 
         public Dimensions GradientSize { get; private set; }
+        public GradientCollection GradientSource { get; set; }
 
         private string _id;
         public string Id
@@ -57,13 +58,6 @@ namespace Playground.Features.CssPreviewer
             }
         }
 
-        private GradientCollection _gradientSource;
-        public GradientCollection GradientSource
-        {
-            get => _gradientSource;
-            set => SetProperty(ref _gradientSource, value, ValidateEmptyData);
-        }
-
         public bool IsMessageVisible => !string.IsNullOrWhiteSpace(Message);
 
         private string _message;
@@ -71,7 +65,7 @@ namespace Playground.Features.CssPreviewer
         {
             get => _message;
             set => SetProperty(ref _message, value, 
-                () => OnPropertyChanged(nameof(IsMessageVisible)));
+                () => RaisePropertyChanged(nameof(IsMessageVisible)));
         }
 
         private bool _isHotReload = true;
@@ -81,17 +75,26 @@ namespace Playground.Features.CssPreviewer
             set => SetProperty(ref _isHotReload, value);
         }
 
+        public ICommand ClearCommand { get; }
+        public ICommand ShowSnippetsCommand { get; }
+        public ICommand RefreshCommand { get; }
+
         public CssPreviewerViewModel(IGradientRepository gradientRepository)
         {
             _gradientRepository = gradientRepository;
             _dimensionsConverter = new DimensionsTypeConverter();
-
             GradientSource = new GradientCollection();
+
+            ClearCommand = new Command(() => CssCode = string.Empty);
+            ShowSnippetsCommand = new Command(() => ShowSnippetsActionSheet());
             RefreshCommand = new Command(() =>
             {
                 UpdateGradientSource();
                 UpdateSize();
             });
+
+            LoadSnippets();
+            UpdateGradientSource();
         }
 
         private void UpdateGradientSource()
@@ -104,6 +107,7 @@ namespace Playground.Features.CssPreviewer
                 var gradients = parser.ParseCss(CssCode);
 
                 GradientSource.Gradients = new GradientElements<Gradient>(gradients);
+                ValidateEmptyData();
             }
             catch (Exception e)
             {
@@ -119,7 +123,7 @@ namespace Playground.Features.CssPreviewer
             {
                 var size = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(Size);
                 GradientSize = size;
-                OnPropertyChanged(nameof(GradientSize));
+                RaisePropertyChanged(nameof(GradientSize));
             }
             catch (Exception e)
             {
@@ -140,9 +144,35 @@ namespace Playground.Features.CssPreviewer
 
         private void ValidateEmptyData()
         {
-            if (GradientSource == null || !GradientSource.GetGradients().Any())
+            if (!GradientSource.GetGradients().Any())
             {
                 Message = "No gradient data";
+            }
+        }
+
+        private void LoadSnippets()
+        {
+            var provider = new CssSnippetProvider();
+            _snippets = provider.GetCssSnippets();
+        }
+
+        private async Task ShowSnippetsActionSheet()
+        {
+            var values = _snippets.Select(x => x.Name).ToArray();
+            var result = await Shell.Current.DisplayActionSheet("Pick gradient", "Cancel", null, values);
+            var selection = _snippets.FirstOrDefault(x => x.Name == result);
+
+            if (selection != null)
+            {
+                if (string.IsNullOrEmpty(CssCode))
+                {
+                    CssCode = selection.Code;
+                    return;
+                }
+
+                CssCode = CssCode.EndsWith(",") || CssCode.EndsWith(", ") ?
+                    $"{CssCode}{selection.Code}" :
+                    $"{CssCode},{selection.Code}";
             }
         }
     }

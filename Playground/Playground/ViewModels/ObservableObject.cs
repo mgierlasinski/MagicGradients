@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace Playground.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class ObservableObject : INotifyPropertyChanged
     {
         protected bool SetProperty<T>(ref T backingStore, T value,
             Action onChanged = null,
@@ -16,14 +16,14 @@ namespace Playground.ViewModels
 
             backingStore = value;
             onChanged?.Invoke();
-            OnPropertyChanged(propertyName);
+            RaisePropertyChanged(propertyName);
 
             return true;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        protected void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
             changed?.Invoke(this, new PropertyChangedEventArgs(propertyName));

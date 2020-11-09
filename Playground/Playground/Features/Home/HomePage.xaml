@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mtoolkit="clr-namespace:MagicGradients.Toolkit.Controls;assembly=MagicGradients.Toolkit"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
+             x:Class="Playground.Features.Home.HomePage"
+             Title="Welcome to Magic Gradients"
+             vm:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Features/Home/HomePage.css" />
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Margin="10">
+            <controls:MenuSection>
+                <Label Text="Gradients" />
+            </controls:MenuSection>
+            <mtoolkit:MagicButton Content="Linear gradient" Command="{Binding LinearCommand}" />
+            <mtoolkit:MagicButton Content="Radial gradient" Command="{Binding RadialCommand}" />
+            <controls:MenuSection>
+                <Label Text="Css" />
+            </controls:MenuSection>
+            <mtoolkit:MagicButton Content="CSS gradient" Command="{Binding CssCommand}" />
+            <controls:MenuSection>
+                <Label Text="Animation" />
+            </controls:MenuSection>
+            <mtoolkit:MagicButton Content="Simple Animations" Command="{Binding AnimationsSimpleCommand}" />
+            <mtoolkit:MagicButton Content="Complex Animations" Command="{Binding AnimationsComplexCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

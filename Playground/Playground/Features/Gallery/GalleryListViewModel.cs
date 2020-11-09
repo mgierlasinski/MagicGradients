@@ -12,7 +12,7 @@ using Xamarin.Forms;
 namespace Playground.Features.Gallery
 {
     [QueryProperty("CategoryTag", "tag")]
-    public class GalleryListViewModel : BaseViewModel
+    public class GalleryListViewModel : ObservableObject
     {
         private readonly IGalleryService _galleryService;
         private readonly ICategoryService _categoryService;

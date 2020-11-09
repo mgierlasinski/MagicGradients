@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-             x:Class="Playground.Features.RadialGradient.RadialGradientSamplesPage"
+             x:Class="Playground.Features.Radial.RadialSamplesPage"
              Title="Radial Gradients">
     <ContentPage.Resources>
-        <StyleSheet Source="/Features/RadialGradient/RadialGradientSamplesPage.css" />
+        <StyleSheet Source="/Features/Radial/RadialSamplesPage.css" />
         <Style TargetType="magic:GradientView">
             <Setter Property="HeightRequest" Value="150" />
         </Style>

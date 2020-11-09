@@ -10,7 +10,7 @@ using Xamarin.Forms;
 namespace Playground.Features.Gallery
 {
     [QueryProperty("Id", "id")]
-    public class GalleryPreviewViewModel : BaseViewModel
+    public class GalleryPreviewViewModel : ObservableObject
     {
         private readonly IGalleryService _galleryService;
 

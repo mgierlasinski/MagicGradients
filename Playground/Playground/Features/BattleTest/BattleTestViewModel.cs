@@ -1,11 +1,10 @@
 ﻿using Bogus;
 using MagicGradients;
 using Playground.Data.Repositories;
-using Playground.Features.BattleTest.Services;
+using Playground.Resources.Fonts;
 using Playground.ViewModels;
 using System.Collections.Generic;
 using System.Windows.Input;
-using Playground.Resources.Fonts;
 using Xamarin.Forms;
 using static Playground.Resources.Fonts.IcoMoon;
 using Color = System.Drawing.Color;
@@ -13,10 +12,9 @@ using Color = System.Drawing.Color;
 namespace Playground.Features.BattleTest
 {
     [QueryProperty("Id", "id")]
-    public class BattleTestViewModel : BaseViewModel
+    public class BattleTestViewModel : ObservableObject
     {
         private readonly IGradientRepository _gradientRepository;
-        private readonly IPickerColorsDataProvider _pickerColorsDataProvider;
         private readonly IBattleItemService _battleItemService;
 
         private List<BattleItem> _iconsCollection;
@@ -73,7 +71,7 @@ namespace Playground.Features.BattleTest
             {
                 if (SetProperty(ref _selectedColorIndex, value))
                 {
-                    TextColor = _pickerColorsDataProvider.GetColorByName(ColorNames[SelectedColorIndex]);
+                    TextColor = _battleItemService.GetColorByName(ColorNames[SelectedColorIndex]);
                 }
             }
         }
@@ -86,14 +84,12 @@ namespace Playground.Features.BattleTest
 
         public BattleTestViewModel(
             IGradientRepository gradientRepository, 
-            IPickerColorsDataProvider pickerColorsDataProvider,
             IBattleItemService battleItemService)
         {
             _gradientRepository = gradientRepository;
-            _pickerColorsDataProvider = pickerColorsDataProvider;
             _battleItemService = battleItemService;
 
-            ColorNames = _pickerColorsDataProvider.GetColorNames();
+            ColorNames = _battleItemService.GetColorNames();
             TextColor = Color.White;
             ClickCommand = new Command(() =>
             {
@@ -115,25 +111,27 @@ namespace Playground.Features.BattleTest
 
         private List<BattleItem> GenerateIconsCollection()
         {
-            var iconsCodeList = new List<string>{
-               MagicWand, Refresh, IcoMoon.Gradient, Radial,
+            var iconsCodeList = new List<string>
+            {
+               MagicWand, Refresh, IcoMoon.Gradient, IcoMoon.Radial,
                Palette, Layers, IcoMoon.Gallery, Code, Bolt, Paint
-           };
-            var fackedBattleItem = new Faker<BattleItem>()
-                .RuleFor(item => item.Text, (faker) => faker.PickRandom(iconsCodeList))
-                .RuleFor(item => item.TextColor, (faker) => TextColor)
-                .RuleFor(item => item.GradientSource, (faker) => GradientSource);
+            };
 
-            return _battleItemService.GenerateItems(fackedBattleItem, 15);
+            var battleItem = new Faker<BattleItem>()
+                .RuleFor(item => item.Text, faker => faker.PickRandom(iconsCodeList))
+                .RuleFor(item => item.TextColor, faker => TextColor)
+                .RuleFor(item => item.GradientSource, faker => GradientSource);
+
+            return _battleItemService.GenerateItems(battleItem, 15);
         }
 
         private List<BattleItem> GenerateItemsCollection()
         {
-            var fackedBattleItem = new Faker<BattleItem>()
+            var battleItem = new Faker<BattleItem>()
                 .RuleFor(item => item.Text, (faker) => faker.Name.LastName())
                 .RuleFor(item => item.TextColor, (faker) => TextColor);
 
-            return _battleItemService.GenerateItems(fackedBattleItem, 90);
+            return _battleItemService.GenerateItems(battleItem, 90);
         }
     }
 }

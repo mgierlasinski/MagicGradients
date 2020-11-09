@@ -1,12 +1,13 @@
 ﻿using Playground.Data.Infrastructure;
 using Playground.Data.Repositories;
+using Playground.Features.Animation;
 using Playground.Features.BattleTest;
-using Playground.Features.BattleTest.Services;
 using Playground.Features.CssPreviewer;
 using Playground.Features.Gallery;
 using Playground.Features.Gallery.Services;
-using Playground.Features.LinearGradient;
-using Playground.ViewModels;
+using Playground.Features.Home;
+using Playground.Features.Linear;
+using Playground.Features.Radial;
 using SimpleInjector;
 using Xamarin.Forms;
 
@@ -28,21 +29,26 @@ namespace Playground
             IoC.Register<IGalleryService, GalleryService>();
             IoC.Register<ICategoryService, CategoryService>();
             IoC.Register<IBattleItemService, BattleItemService>();
-            IoC.Register<IPickerColorsDataProvider, PickerColorsDataProvider>();
         }
 
         public static void RegisterViewModels()
         {
+            IoC.Register<HomeViewModel>();
+            IoC.Register<LinearGradientViewModel>();
+            IoC.Register<LinearSamplesViewModel>();
+            IoC.Register<RadialGradientViewModel>();
             IoC.Register<GalleryCategoriesViewModel>();
             IoC.Register<GalleryListViewModel>();
             IoC.Register<GalleryPreviewViewModel>();
             IoC.Register<CssPreviewerViewModel>();
             IoC.Register<BattleTestViewModel>();
-            IoC.Register<LinearGradientSamplesViewModel>();
+            IoC.Register<AnimationsViewModel>();
         }
 
         public static void RegisterRoutes()
         {
+            Routing.RegisterRoute("LinearGradient", typeof(LinearGradientPage));
+            Routing.RegisterRoute("RadialGradient", typeof(RadialGradientPage));
             Routing.RegisterRoute("GalleryList", typeof(GalleryListPage));
             Routing.RegisterRoute("GalleryPreview", typeof(GalleryPreviewPage));
             Routing.RegisterRoute("CssPreviewer", typeof(CssPreviewerPage));

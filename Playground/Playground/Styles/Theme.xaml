@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:tabs="http://sharpnado.com">
+    <!-- Default -->
+    <Color x:Key="AccentColor">#1790F9</Color>
+    <Color x:Key="BackgroundColor">#F0F2F5</Color>
+    <Color x:Key="BackgroundContrastColor">#FFFFFF</Color>
+    <Color x:Key="TextColor">#050505</Color>
+    <Color x:Key="HeaderColor">#65676B</Color>
+    <Color x:Key="SeparatorColor">#CED0D4</Color>
+    <!-- Dark -->
+    <Color x:Key="BackgroundColorDark">#18191A</Color>
+    <Color x:Key="BackgroundContrastColorDark">#242526</Color>
+    <Color x:Key="TextColorDark">#E4E6EB</Color>
+    <Color x:Key="HeaderColorDark">#B0B3B8</Color>
+    <Color x:Key="SeparatorColorDark">#3A3B3C</Color>
+    <!-- Styles -->
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}" />
+    </Style>
+    <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+        <Setter Property="BarBackgroundColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="BarTextColor" Value="White" />
+    </Style>
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource TextColorDark}}" />
+    </Style>
+    <Style TargetType="Label" x:Key="HeaderStyle">
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource HeaderColor}, Dark={StaticResource HeaderColorDark}}" />
+    </Style>
+    <Style TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}" />
+    </Style>
+    <Style TargetType="CheckBox">
+        <Setter Property="Color" Value="{StaticResource AccentColor}" />
+    </Style>
+    <Style TargetType="Slider">
+        <Setter Property="MinimumTrackColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="MaximumTrackColor" Value="{StaticResource AccentColor}" />
+    </Style>
+    <Style TargetType="BoxView" x:Key="Separator">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource SeparatorColor}, Dark={StaticResource SeparatorColorDark}}" />
+        <Setter Property="HeightRequest" Value="1" />
+    </Style>
+    <Style x:Key="SemiTransparent" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="Opacity" Value="0.5" />
+    </Style>
+    <Style x:Key="SegmentedTabs" TargetType="tabs:TabHostView">
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="IsSegmented" Value="True" />
+        <Setter Property="SegmentedHasSeparator" Value="True" />
+        <Setter Property="SegmentedOutlineColor" Value="{StaticResource AccentColor}" />
+    </Style>
+    <Style TargetType="tabs:UnderlinedTabItem">
+        <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="LabelSize" Value="18" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}" />
+        <Setter Property="UnselectedLabelColor" Value="{AppThemeBinding Light={StaticResource HeaderColor}, Dark={StaticResource HeaderColorDark}}" />
+    </Style>
+    <Style TargetType="tabs:SegmentedTabItem">
+        <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="LabelSize" Value="14" />
+        <Setter Property="SelectedLabelColor" Value="White" />
+        <Setter Property="UnselectedLabelColor" Value="{StaticResource AccentColor}" />
+    </Style>
+</ResourceDictionary>

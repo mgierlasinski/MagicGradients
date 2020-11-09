@@ -1,4 +1,7 @@
+using Sharpnado.Shades.UWP;
+using Sharpnado.Tabs.Uwp;
 using System;
+using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -40,7 +43,13 @@ namespace Playground.UWP
                 rootFrame = new Frame();
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
+                var rendererAssemblies = new[]
+                {
+                    typeof(UWPShadowsRenderer).GetTypeInfo().Assembly,
+                    typeof(UwpTintableImageEffect).GetTypeInfo().Assembly,
+                };
+
+                Xamarin.Forms.Forms.Init(e, rendererAssemblies);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

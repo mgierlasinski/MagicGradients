@@ -1,8 +1,8 @@
 ﻿using Playground.ViewModels;
 
-namespace Playground.Features.LinearGradient
+namespace Playground.Features.Linear
 {
-    public class LinearGradientSamplesViewModel : BaseViewModel
+    public class LinearSamplesViewModel : ObservableObject
     {
         private string _stylesheet;
         public string Stylesheet
@@ -11,7 +11,7 @@ namespace Playground.Features.LinearGradient
             set => SetProperty(ref _stylesheet, value);
         }
 
-        public LinearGradientSamplesViewModel()
+        public LinearSamplesViewModel()
         {
             Stylesheet = "linear-gradient(red, yellow)";
         }

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
+      x:Class="Playground.Controls.ColorsTab"
+      x:Name="ColorsContainer"
+      Spacing="0" Orientation="Vertical">
+    <StackLayout.Resources>
+        <converters:OffsetToDoubleConverter x:Key="OffsetToDoubleConverter" />
+        <converters:OffsetToRectConverter x:Key="OffsetToRectConverter" />
+        <converters:ColorNameConverter x:Key="ColorNameConverter" />
+    </StackLayout.Resources>
+
+    <StackLayout Orientation="Horizontal" Margin="10" HeightRequest="50">
+        <Button Text="Add color" Command="{Binding AddStopCommand}" HorizontalOptions="FillAndExpand" />
+        <Button Text="Reset colors" Command="{Binding ResetCommand}" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+
+    <Grid Margin="10,0">
+        <StackLayout BindableLayout.ItemsSource="{Binding Gradient.Stops}" Spacing="0" Margin="0,10" Orientation="Horizontal" HeightRequest="50">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <ImageButton BackgroundColor="{Binding Color}" 
+                                 Command="{Binding BindingContext.SelectStopCommand, Source={x:Reference ColorsContainer}}" CommandParameter="{Binding}"
+                                 CornerRadius="0" HorizontalOptions="FillAndExpand" />
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+        <!--<AbsoluteLayout BindableLayout.ItemsSource="{Binding Gradient.Stops}" HeightRequest="50">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Frame Visual="Material" HasShadow="True" Padding="4" 
+                           AbsoluteLayout.LayoutFlags="XProportional,HeightProportional" 
+                           AbsoluteLayout.LayoutBounds="{Binding Offset, Converter={StaticResource OffsetToRectConverter}, Mode=OneWay}">
+                        <ImageButton BackgroundColor="{Binding Color}" 
+                                     Command="{Binding BindingContext.SelectStopCommand, Source={x:Reference ColorsContainer}}" CommandParameter="{Binding}"
+                                     CornerRadius="0" />
+                    </Frame>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </AbsoluteLayout>-->
+    </Grid>
+
+    <Frame Margin="10" HasShadow="False" Padding="10" 
+           BorderColor="{AppThemeBinding Light={StaticResource SeparatorColor}, Dark={StaticResource SeparatorColorDark}}">
+        <Grid ColumnDefinitions="30*,70*" RowDefinitions="30,40" RowSpacing="0">
+            <BoxView Color="{Binding SelectedStop.Color}" Grid.RowSpan="2" />
+            <Label Text="{Binding SelectedStop.Color, Converter={StaticResource ColorNameConverter}}" 
+                   Margin="10,0,0,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
+            <Slider Value="{Binding SelectedStop.Offset, Converter={StaticResource OffsetToDoubleConverter}}" 
+                    Maximum="1" Minimum="0" Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand" />
+            <Button Text="Delete" 
+                    Command="{Binding BindingContext.RemoveStopCommand, Source={x:Reference ColorsContainer}}"
+                    Margin="0,0,10,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+        </Grid>
+    </Frame>
+</StackLayout>
