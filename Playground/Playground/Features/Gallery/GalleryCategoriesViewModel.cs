@@ -19,7 +19,7 @@ namespace Playground.Features.Gallery
         public GradientCategory SelectedItem
         {
             get => _selectedItem;
-            set => SetProperty(ref _selectedItem, value, onChanged: async () =>
+            set => SetProperty(ref _selectedItem, value, async () =>
             {
                 if (_selectedItem == null)
                     return;

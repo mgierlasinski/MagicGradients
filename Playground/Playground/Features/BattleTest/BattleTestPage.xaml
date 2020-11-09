@@ -6,8 +6,9 @@
     xmlns:controls="clr-namespace:MagicGradients.Toolkit.Controls;assembly=MagicGradients.Toolkit"
     xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
     xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
+    xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
     Title="Gradient Battle Test"
-    BindingContext="{Binding BattleTestViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+    vm:ViewModelLocator.AutoWireViewModel="true">
     <ScrollView>
         <StackLayout Margin="15" Spacing="15">
             <Picker

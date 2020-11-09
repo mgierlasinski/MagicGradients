@@ -11,12 +11,10 @@ namespace Playground.Features.Gallery.Services
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _categoryRepository;
-        private readonly IGradientRepository _gradientRepository;
 
-        public CategoryService()
+        public CategoryService(ICategoryRepository categoryRepository)
         {
-            _categoryRepository = DependencyService.Get<ICategoryRepository>();
-            _gradientRepository = DependencyService.Get<IGradientRepository>();
+            _categoryRepository = categoryRepository;
         }
 
         public IEnumerable<GradientCategory> GetCategories()

@@ -10,8 +10,9 @@ namespace Playground
 
             InitializeComponent();
 
-            IoC.RegisterTypes();
-            IoC.Initialize();
+            AppSetup.RegisterTypes();
+            AppSetup.RegisterViewModels();
+            AppSetup.Initialize();
 
             MainPage = new AppShell();
         }

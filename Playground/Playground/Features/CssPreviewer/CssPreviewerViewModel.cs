@@ -22,7 +22,7 @@ namespace Playground.Features.CssPreviewer
         public string CssCode
         {
             get => _cssCode;
-            set => SetProperty(ref _cssCode, value, onChanged: () =>
+            set => SetProperty(ref _cssCode, value, () =>
             {
                 if (IsHotReload)
                 {
@@ -35,7 +35,7 @@ namespace Playground.Features.CssPreviewer
         public string Size
         {
             get => _size;
-            set => SetProperty(ref _size, value, onChanged: () =>
+            set => SetProperty(ref _size, value, () =>
             {
                 if (IsHotReload)
                 {
@@ -61,7 +61,7 @@ namespace Playground.Features.CssPreviewer
         public GradientCollection GradientSource
         {
             get => _gradientSource;
-            set => SetProperty(ref _gradientSource, value, onChanged: ValidateEmptyData);
+            set => SetProperty(ref _gradientSource, value, ValidateEmptyData);
         }
 
         public bool IsMessageVisible => !string.IsNullOrWhiteSpace(Message);
@@ -71,7 +71,7 @@ namespace Playground.Features.CssPreviewer
         {
             get => _message;
             set => SetProperty(ref _message, value, 
-                onChanged: () => OnPropertyChanged(nameof(IsMessageVisible)));
+                () => OnPropertyChanged(nameof(IsMessageVisible)));
         }
 
         private bool _isHotReload = true;

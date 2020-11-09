@@ -5,9 +5,10 @@
              xmlns:controls="clr-namespace:Playground.Controls"
              xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
              xmlns:ic="clr-namespace:Playground.Resources.Fonts"
+             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              x:Class="Playground.Features.Gallery.GalleryListPage"
              Title="{Binding Title}"
-             BindingContext="{Binding GalleryListViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+             vm:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding TogglePickerCommand}">
             <ToolbarItem.IconImageSource>

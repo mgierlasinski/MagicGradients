@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
+             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              x:Class="Playground.Features.Gallery.GalleryCategoriesPage"
              Title="Gradient Gallery"
-             BindingContext="{Binding GalleryCategoriesViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+             vm:ViewModelLocator.AutoWireViewModel="true">
     <Grid Padding="5">
         <CollectionView x:Name="CategoriesList" 
                         ItemsSource="{Binding Categories}" 

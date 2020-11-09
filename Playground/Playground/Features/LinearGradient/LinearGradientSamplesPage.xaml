@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              x:Class="Playground.Features.LinearGradient.LinearGradientSamplesPage"
              Title="Linear Gradients"
-             BindingContext="{Binding LinearGradientSamplesViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+             vm:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.Resources>
         <StyleSheet Source="/Features/LinearGradient/LinearGradientSamplesPage.css" />
         <Style TargetType="magic:GradientView">

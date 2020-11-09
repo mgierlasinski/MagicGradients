@@ -5,9 +5,10 @@
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
+             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              x:Class="Playground.Features.Gallery.GalleryPreviewPage"
              Title="Gradient Preview"
-             BindingContext="{Binding GalleryPreviewViewModel, Source={StaticResource ViewModelLocator}, Mode=OneTime}">
+             vm:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}">
             <ToolbarItem.IconImageSource>

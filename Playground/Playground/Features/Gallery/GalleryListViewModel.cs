@@ -28,7 +28,7 @@ namespace Playground.Features.Gallery
         public string CategoryTag
         {
             get => _categoryTag;
-            set => SetProperty(ref _categoryTag, value, onChanged: () =>
+            set => SetProperty(ref _categoryTag, value, () =>
             {
                 Title = _categoryService.GetCategories().FirstOrDefault(x => x.Tag == _categoryTag)?.Name;
                 _allGradients = _galleryService.GetGradients(_categoryTag).ToList();
@@ -47,7 +47,7 @@ namespace Playground.Features.Gallery
         public GradientTheme SelectedTheme
         {
             get => _selectedTheme;
-            set => SetProperty(ref _selectedTheme, value, onChanged: async () =>
+            set => SetProperty(ref _selectedTheme, value, async () =>
             {
                 RefreshGradients();
                 await Task.Delay(300);
@@ -75,7 +75,7 @@ namespace Playground.Features.Gallery
         public GradientItem SelectedItem
         {
             get => _selectedItem;
-            set => SetProperty(ref _selectedItem, value, onChanged: async () =>
+            set => SetProperty(ref _selectedItem, value, async () =>
             {
                 if (_selectedItem == null)
                     return;

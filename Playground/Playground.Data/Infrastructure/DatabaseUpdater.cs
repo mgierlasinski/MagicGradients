@@ -2,7 +2,6 @@
 using Playground.Data.Repositories;
 using System;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace Playground.Data.Infrastructure
 {
@@ -17,10 +16,12 @@ namespace Playground.Data.Infrastructure
             set => Preferences.Set(nameof(LastUpdate), value);
         }
 
-        public DatabaseUpdater()
+        public DatabaseUpdater(
+            IDatabaseProvider databaseProvider, 
+            IDocumentRepository documentRepository)
         {
-            _databaseProvider = DependencyService.Get<IDatabaseProvider>();
-            _documentRepository = DependencyService.Get<IDocumentRepository>();
+            _databaseProvider = databaseProvider;
+            _documentRepository = documentRepository;
         }
 
         public void RunUpdate(params ICanUpdateMyself[] repositories)

@@ -4,7 +4,6 @@ using Playground.Data.Repositories;
 using Playground.Features.Gallery.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Xamarin.Forms;
 using Gradient = Playground.Data.Models.Gradient;
 
 namespace Playground.Features.Gallery.Services
@@ -14,9 +13,9 @@ namespace Playground.Features.Gallery.Services
         private readonly IGradientRepository _gradientRepository;
         private readonly DimensionsTypeConverter _dimensionsConverter;
 
-        public GalleryService()
+        public GalleryService(IGradientRepository gradientRepository)
         {
-            _gradientRepository = DependencyService.Get<IGradientRepository>();
+            _gradientRepository = gradientRepository;
             _dimensionsConverter = new DimensionsTypeConverter();
         }
 
