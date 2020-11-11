@@ -1,9 +1,9 @@
 ﻿using Xamarin.Forms;
 
-[assembly: ExportFont("icomoon.ttf", Alias = "IcoMoon")]
+[assembly: ExportFont("IcoMoon.ttf", Alias = "IcoMoon")]
 namespace Playground.Resources.Fonts
 {
-    public static class IcoMoon
+    public partial class IcoMoon
     {
         public const string MagicWand = "\ue900";
         public const string Refresh = "\ue901";
@@ -15,5 +15,9 @@ namespace Playground.Resources.Fonts
         public const string Code = "\ue907";
         public const string Bolt = "\ue908";
         public const string Paint = "\ue909";
+        public const string Home = "\ue90b";
+        public const string Add = "\ue90a";
+        public const string Clear = "\ue90c";
+        public const string Delete = "\ue90d";
     }
 }

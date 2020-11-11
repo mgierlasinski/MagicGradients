@@ -5,7 +5,7 @@
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              x:Class="Playground.Features.CssPreviewer.CssPreviewerPage"
-             Title="Paste CSS"
+             Title="CSS previewer"
              vm:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.Resources>
         <Style TargetType="VisualElement" Class="Toolbar" ApplyToDerivedTypes="True">
@@ -14,13 +14,12 @@
     </ContentPage.Resources>
     <Grid RowSpacing="0" RowDefinitions="40,Auto,*">
         <StackLayout Orientation="Horizontal" Spacing="0" StyleClass="Toolbar">
-            <Button Text="Add" Command="{Binding ShowSnippetsCommand}" StyleClass="Toolbar" />
-            <Button Text="Clear" Command="{Binding ClearCommand}" StyleClass="Toolbar" />
-            <Button Text="Refresh" Command="{Binding RefreshCommand}" StyleClass="Toolbar">
-                <Button.ImageSource>
-                    <FontImageSource Glyph="{x:Static ic:IcoMoon.Refresh}" FontFamily="IcoMoon" Size="24" />
-                </Button.ImageSource>
-            </Button>
+            <Button Text="Add" Command="{Binding ShowSnippetsCommand}" StyleClass="Toolbar" 
+                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Add}, Size=24}" />
+            <Button Text="Clear" Command="{Binding ClearCommand}" StyleClass="Toolbar" 
+                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}, Size=24}" />
+            <Button Text="Refresh" Command="{Binding RefreshCommand}" StyleClass="Toolbar" 
+                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Refresh}, Size=24}" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding IsHotReload}" HorizontalOptions="EndAndExpand" />
                 <Label Text="Hot reload" VerticalOptions="Center" HorizontalOptions="End" TextColor="{StaticResource LightForegroundColor}" Margin="0,0,10,0" />
@@ -37,9 +36,7 @@
                 <Entry Text="{Binding Size}" Placeholder="300px 300px" />
             </StackLayout>
         </Expander>
-        <magic:GradientView GradientSource="{Binding GradientSource}" 
-                            GradientSize="{Binding GradientSize}" 
-                            Grid.Row="2" />
+        <magic:GradientView GradientSource="{Binding GradientSource}" GradientSize="{Binding GradientSize}" Grid.Row="2" />
         <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="2" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
             <BoxView Style="{StaticResource SemiTransparent}" />
             <Label Text="{Binding Message}" TextColor="{StaticResource LightForegroundColor}" Margin="10" />

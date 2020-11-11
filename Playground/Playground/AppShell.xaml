@@ -43,51 +43,22 @@
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
-    <ShellContent Title="Home" ContentTemplate="{DataTemplate home:HomePage}">
-        <ShellContent.Icon>
-            <FontImageSource Glyph="{x:Static ic:IcoMoon.Gallery}" 
-                             FontFamily="IcoMoon" 
-                             Color="{StaticResource ForegroundColor}" />
-        </ShellContent.Icon>
-    </ShellContent>
+    <ShellContent Title="Home" ContentTemplate="{DataTemplate home:HomePage}"
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Home}}" />
+        
+    <ShellContent Title="Gradient Gallery" ContentTemplate="{DataTemplate gallery:GalleryCategoriesPage}"
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Gallery}}" />
+        
+    <ShellContent Title="CSS previewer" ContentTemplate="{DataTemplate previewer:CssPreviewerPage}"
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}}" />
+        
+    <ShellContent Title="Linear Gradients" ContentTemplate="{DataTemplate linear:LinearSamplesPage}"
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Gradient}}" />
 
-    <ShellContent Title="Gradient Gallery" ContentTemplate="{DataTemplate gallery:GalleryCategoriesPage}">
-        <ShellContent.Icon>
-            <FontImageSource Glyph="{x:Static ic:IcoMoon.Gallery}" 
-                             FontFamily="IcoMoon" 
-                             Color="{StaticResource ForegroundColor}" />
-        </ShellContent.Icon>
-    </ShellContent>
-
-    <ShellContent Title="CSS previewer" ContentTemplate="{DataTemplate previewer:CssPreviewerPage}">
-        <ShellContent.Icon>
-            <FontImageSource Glyph="{x:Static ic:IcoMoon.Palette}" 
-                             FontFamily="IcoMoon"
-                             Color="{StaticResource ForegroundColor}" />
-        </ShellContent.Icon>
-    </ShellContent>
-
-    <ShellContent Title="Linear Gradients" ContentTemplate="{DataTemplate linear:LinearSamplesPage}">
-        <ShellContent.FlyoutIcon>
-            <FontImageSource Glyph="{x:Static ic:IcoMoon.Gradient}" 
-                             FontFamily="IcoMoon"
-                             Color="{StaticResource ForegroundColor}" />
-        </ShellContent.FlyoutIcon>
-    </ShellContent>
-
-    <ShellContent Title="Radial Gradients" ContentTemplate="{DataTemplate radial:RadialSamplesPage}">
-        <ShellContent.FlyoutIcon>
-            <FontImageSource Glyph="{x:Static ic:IcoMoon.Radial}" 
-                             FontFamily="IcoMoon"
-                             Color="{StaticResource ForegroundColor}" />
-        </ShellContent.FlyoutIcon>
-    </ShellContent>
-
-    <ShellContent Title="Animations" ContentTemplate="{DataTemplate anim:AnimationsPage}">
-        <ShellContent.FlyoutIcon>
-            <FontImageSource Glyph="{x:Static ic:IcoMoon.Bolt}" 
-                             FontFamily="IcoMoon"
-                             Color="{StaticResource ForegroundColor}" />
-        </ShellContent.FlyoutIcon>
-    </ShellContent>
+    <ShellContent Title="Radial Gradients" ContentTemplate="{DataTemplate radial:RadialSamplesPage}"
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Radial}}" />
+        
+    <ShellContent Title="Animations" ContentTemplate="{DataTemplate anim:AnimationsPage}" 
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Bolt}}" />
+    
 </Shell>

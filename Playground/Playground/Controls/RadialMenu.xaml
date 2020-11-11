@@ -14,13 +14,8 @@
         </Grid.GestureRecognizers>
         <BoxView WidthRequest="60" HeightRequest="60" CornerRadius="30" BackgroundColor="White" />
         <BoxView WidthRequest="56" HeightRequest="56" CornerRadius="28" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
-        <Image HorizontalOptions="Center" VerticalOptions="Center">
-            <Image.Source>
-                <FontImageSource Glyph="{x:Static ic:IcoMoon.Palette}" 
-                                 FontFamily="IconFont"
-                                 Color="{StaticResource LightForegroundColor}" />
-            </Image.Source>
-        </Image>
+        <Image HorizontalOptions="Center" VerticalOptions="Center" 
+               Source="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}, Color={StaticResource LightForegroundColor}}"/>
     </Grid>
 
     <Grid x:Name="ClearButton" VerticalOptions="End" HorizontalOptions="Center" Margin="0,0,0,60">
