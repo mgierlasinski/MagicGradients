@@ -11,18 +11,52 @@
         <Style TargetType="VisualElement" Class="Toolbar" ApplyToDerivedTypes="True">
             <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}" />
         </Style>
+        <Style TargetType="Button" x:Key="NormalButton">
+            <Setter Property="WidthRequest" Value="-1" />
+        </Style>
+        <Style TargetType="Button" x:Key="CompactButton">
+            <Setter Property="Text" Value="" />
+            <Setter Property="WidthRequest" Value="60" />
+        </Style>
     </ContentPage.Resources>
-    <Grid RowSpacing="0" RowDefinitions="40,Auto,*">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="Compact">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter TargetName="AddButton" Property="Style" Value="{StaticResource CompactButton}" />
+                    <Setter TargetName="ClearButton" Property="Style" Value="{StaticResource CompactButton}" />
+                    <Setter TargetName="RefreshButton" Property="Style" Value="{StaticResource CompactButton}" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="Normal">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="400" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter TargetName="AddButton" Property="Button.Text" Value="Add" />
+                    <Setter TargetName="AddButton" Property="Style" Value="{StaticResource NormalButton}" />
+                    <Setter TargetName="ClearButton" Property="Button.Text" Value="Clear" />
+                    <Setter TargetName="ClearButton" Property="Style" Value="{StaticResource NormalButton}" />
+                    <Setter TargetName="RefreshButton" Property="Button.Text" Value="Refresh" />
+                    <Setter TargetName="RefreshButton" Property="Style" Value="{StaticResource NormalButton}" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <Grid RowSpacing="0" RowDefinitions="Auto,Auto,*">
         <StackLayout Orientation="Horizontal" Spacing="0" StyleClass="Toolbar">
-            <Button Text="Add" Command="{Binding ShowSnippetsCommand}" StyleClass="Toolbar" 
+            <Button x:Name="AddButton" Command="{Binding ShowSnippetsCommand}" StyleClass="Toolbar" 
                     ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Add}, Size=24}" />
-            <Button Text="Clear" Command="{Binding ClearCommand}" StyleClass="Toolbar" 
+            <Button x:Name="ClearButton" Command="{Binding ClearCommand}" StyleClass="Toolbar" 
                     ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}, Size=24}" />
-            <Button Text="Refresh" Command="{Binding RefreshCommand}" StyleClass="Toolbar" 
+            <Button x:Name="RefreshButton" Command="{Binding RefreshCommand}" StyleClass="Toolbar" 
                     ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Refresh}, Size=24}" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding IsHotReload}" HorizontalOptions="EndAndExpand" />
-                <Label Text="Hot reload" VerticalOptions="Center" HorizontalOptions="End" TextColor="{StaticResource LightForegroundColor}" Margin="0,0,10,0" />
+                <Label Text="Hot reload" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,10,0" />
             </StackLayout>
         </StackLayout>
         <Expander Grid.Row="1" IsExpanded="True">
@@ -39,7 +73,7 @@
         <magic:GradientView GradientSource="{Binding GradientSource}" GradientSize="{Binding GradientSize}" Grid.Row="2" />
         <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="2" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
             <BoxView Style="{StaticResource SemiTransparent}" />
-            <Label Text="{Binding Message}" TextColor="{StaticResource LightForegroundColor}" Margin="10" />
+            <Label Text="{Binding Message}" TextColor="White" Margin="10" />
         </Grid>
     </Grid>
 </ContentPage>

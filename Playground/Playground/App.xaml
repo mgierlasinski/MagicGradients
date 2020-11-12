@@ -4,7 +4,6 @@
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              x:Class="Playground.App">
     <Application.Resources>
-        <ResourceDictionary Source="Styles/Styles.xaml" />
         <ResourceDictionary Source="Styles/Theme.xaml" />
         <converters:NegativeBoolConverter x:Key="NegativeBoolConverter" />
     </Application.Resources>

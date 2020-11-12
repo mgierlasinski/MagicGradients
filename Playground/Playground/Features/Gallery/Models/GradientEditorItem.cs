@@ -38,7 +38,7 @@ namespace Playground.Features.Gallery.Models
                 Stops = gradient.Stops.Select(s => new GradientEditorStop
                 {
                     Color = s.Color,
-                    Offset = s.Offset.Value
+                    Offset = s.RenderOffset
                 }).ToList(),
             };
 

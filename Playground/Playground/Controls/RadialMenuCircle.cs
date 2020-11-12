@@ -13,17 +13,20 @@ namespace Playground.Controls
 
         protected override void OnTouch(SKTouchEventArgs e)
         {
-            RadialMenu.SelectedIndex = -1;
-
-            for (var i = 0; i < _touchPaths.Count; i++)
+            if (e.ActionType == SKTouchAction.Pressed)
             {
-                if(_touchPaths[i].Contains(e.Location.X, e.Location.Y))
+                for (var i = 0; i < _touchPaths.Count; i++)
                 {
-                    RadialMenu.SelectedIndex = i;
-                    InvalidateSurface();
-                    return;
+                    if (_touchPaths[i].Contains(e.Location.X, e.Location.Y))
+                    {
+                        RadialMenu.SelectedIndex = i;
+                        InvalidateSurface();
+                        return;
+                    }
                 }
             }
+
+            e.Handled = true;
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs args)
@@ -77,12 +80,6 @@ namespace Playground.Controls
 
                     _touchPaths.Add(path);
                 }
-
-                //if(RadialMenu.SelectedIndex > -1)
-                //{
-                //    outlinePaint.Color = SKColors.Yellow;
-                //    canvas.DrawPath(_touchPaths[RadialMenu.SelectedIndex], outlinePaint);
-                //}
             }
 
             DrawInnerCircle(canvas, ref center);

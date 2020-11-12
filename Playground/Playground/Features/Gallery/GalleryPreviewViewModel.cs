@@ -15,12 +15,10 @@ namespace Playground.Features.Gallery
         private readonly IGalleryService _galleryService;
 
         public ICommand EditCommand { get; set; }
-
+        public ICommand CloseEditCommand { get; set; }
         public ICommand PreviewCssCommand { get; set; }
-
-        public ICommand SelectCommand { get; set; }
-
         public ICommand BattleTestCommand { get; set; }
+        public ICommand SelectCommand { get; set; }
 
         private IGradientSource _gradientSource;
         public IGradientSource GradientSource
@@ -72,24 +70,22 @@ namespace Playground.Features.Gallery
         {
             _galleryService = galleryService;
 
-            EditCommand = new Command(() => { IsEditMode = !IsEditMode; });
-
+            EditCommand = new Command(() => { IsEditMode = true; });
+            CloseEditCommand = new Command(() => { IsEditMode = false; });
             PreviewCssCommand = new Command(async () =>
             {
                 await Shell.Current.GoToAsync($"CssPreviewer?id={Id}");
             });
-
-            SelectCommand = new Command<GradientEditorStop>((stop) =>
+            BattleTestCommand = new Command(async () =>
+            {
+                await Shell.Current.GoToAsync($"BattleTest?id={Id}");
+            });
+            SelectCommand = new Command<GradientEditorStop>(stop =>
             {
                 if (SelectedItem == null)
                     return;
 
                 SelectedItem.SelectedStop = stop;
-            });
-
-            BattleTestCommand = new Command(async () =>
-            {
-                await Shell.Current.GoToAsync($"BattleTest?id={Id}");
             });
         }
 

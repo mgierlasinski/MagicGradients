@@ -35,9 +35,9 @@
                     </magic:GradientCollection>
                 </magic:GradientView>
                 <Label Text="{x:Static ic:IcoMoon.MagicWand}" Style="{StaticResource FontLabel}" 
-                       WidthRequest="70" HeightRequest="70" FontSize="70" TextColor="{StaticResource LightForegroundColor}" 
+                       WidthRequest="70" HeightRequest="70" FontSize="70" TextColor="White" 
                        HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" />
-                <Label Text="Magic Gradients" TextColor="{StaticResource LightForegroundColor}" FontAttributes="Bold" 
+                <Label Text="Magic Gradients" TextColor="White" FontAttributes="Bold" 
                        FontSize="20" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1" />
             </Grid>
         </DataTemplate>

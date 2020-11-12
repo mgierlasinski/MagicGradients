@@ -104,7 +104,7 @@ namespace Playground.Features.Gallery
             Themes = categoryService.GetThemes().ToList();
             SelectedThemes.CollectionChanged += SelectedThemesOnCollectionChanged;
 
-            TogglePickerCommand = new Command(() => IsPickerVisible = !IsPickerVisible);
+            TogglePickerCommand = new Command(() => IsPickerVisible = true);
         }
 
         private void SelectedThemesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

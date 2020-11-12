@@ -138,6 +138,7 @@ namespace Playground.Controls
             await CenterButton.ScaleTo(0, 300);
 
             IsVisible = false;
+            CircleMenu.InvalidateSurface();
         }
 
         private void InitializeHidden()
@@ -149,7 +150,7 @@ namespace Playground.Controls
             ClearButton.Scale = 0;
         }
 
-        private void CenterButton_Tapped(object sender, EventArgs e)
+        private void CloseButton_Tapped(object sender, EventArgs e)
         {
             IsOpen = false;
         }

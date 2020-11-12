@@ -10,12 +10,14 @@
     <Color x:Key="TextColor">#050505</Color>
     <Color x:Key="HeaderColor">#65676B</Color>
     <Color x:Key="SeparatorColor">#CED0D4</Color>
+
     <!-- Dark -->
     <Color x:Key="BackgroundColorDark">#18191A</Color>
     <Color x:Key="BackgroundContrastColorDark">#242526</Color>
     <Color x:Key="TextColorDark">#E4E6EB</Color>
     <Color x:Key="HeaderColorDark">#B0B3B8</Color>
     <Color x:Key="SeparatorColorDark">#3A3B3C</Color>
+
     <!-- Styles -->
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}" />
@@ -31,8 +33,18 @@
         <Setter Property="FontSize" Value="Medium" />
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource HeaderColor}, Dark={StaticResource HeaderColorDark}}" />
     </Style>
+    <Style TargetType="Label" x:Key="FontLabel">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="IcoMoon" />
+    </Style>
     <Style TargetType="Frame">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}" />
+        <Setter Property="HasShadow" Value="True" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+    <Style TargetType="Frame" x:Key="BorderFrame">
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource SeparatorColor}, Dark={StaticResource SeparatorColorDark}}" />
     </Style>
     <Style TargetType="CheckBox">
         <Setter Property="Color" Value="{StaticResource AccentColor}" />
@@ -45,11 +57,11 @@
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource SeparatorColor}, Dark={StaticResource SeparatorColorDark}}" />
         <Setter Property="HeightRequest" Value="1" />
     </Style>
-    <Style x:Key="SemiTransparent" TargetType="BoxView">
+    <Style TargetType="BoxView" x:Key="SemiTransparent">
         <Setter Property="BackgroundColor" Value="Black" />
-        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Opacity" Value="0.6" />
     </Style>
-    <Style x:Key="SegmentedTabs" TargetType="tabs:TabHostView">
+    <Style TargetType="tabs:TabHostView" x:Key="SegmentedTabs">
         <Setter Property="CornerRadius" Value="5" />
         <Setter Property="IsSegmented" Value="True" />
         <Setter Property="SegmentedHasSeparator" Value="True" />
@@ -67,4 +79,16 @@
         <Setter Property="SelectedLabelColor" Value="White" />
         <Setter Property="UnselectedLabelColor" Value="{StaticResource AccentColor}" />
     </Style>
+    <Style TargetType="Element" x:Key="BaseStyle" >
+        <Setter Property="Shell.BackgroundColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="Shell.ForegroundColor" Value="White" />
+        <Setter Property="Shell.TitleColor" Value="White" />
+        <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+        <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+        <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+        <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+    </Style>
+    <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
 </ResourceDictionary>

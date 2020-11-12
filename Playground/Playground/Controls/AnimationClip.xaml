@@ -5,7 +5,7 @@
              HeightRequest="200">
     <ContentView.ControlTemplate>
         <ControlTemplate>
-            <Frame HasShadow="True" Visual="Material" Padding="0" CornerRadius="5" IsClippedToBounds="True" Margin="10,10,10,5">
+            <Frame Padding="0" IsClippedToBounds="True" Margin="10,10,10,5">
                 <Grid RowDefinitions="*,Auto" RowSpacing="0">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Command="{TemplateBinding BindingContext.PlayCommand}" />

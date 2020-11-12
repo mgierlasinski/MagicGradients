@@ -10,13 +10,9 @@
              Title="{Binding Title}"
              vm:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding TogglePickerCommand}">
-            <ToolbarItem.IconImageSource>
-                <FontImageSource Glyph="{x:Static ic:IcoMoon.Palette}" 
-                                 FontFamily="IcoMoon"
-                                 Color="{StaticResource LightForegroundColor}" />
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
+        <ToolbarItem Command="{Binding TogglePickerCommand}" 
+                     Text="{OnPlatform UWP=Colors}"
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}, Color=White}" />
     </ContentPage.ToolbarItems>
     <Grid>
         <!--<Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
