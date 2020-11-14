@@ -1,4 +1,37 @@
-﻿MagicButton {
+﻿#banner {
+    background: radial-gradient(circle at 70% 18%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 41%,transparent 41%, transparent 100%),radial-gradient(circle at 6% 94%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 52%,transparent 52%, transparent 100%),radial-gradient(circle at 93% 63%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 85%,transparent 85%, transparent 100%),radial-gradient(circle at 5% 85%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 8%,transparent 8%, transparent 100%),radial-gradient(circle at 49% 93%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 37%,transparent 37%, transparent 100%),linear-gradient(45deg, rgb(15, 5, 113),rgb(191, 90, 222));
+}
+
+FlexLayout {
+    margin: 5, 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: start;
+    align-items: start;
+    justify-content: space-between;
+}
+
+MenuSection {
+    margin: 5,10;
+    flex-basis: 100%;
+}
+
+MagicButton {
+    margin: 5,10;
     color: white;
-    background: linear-gradient(90deg, rgb(235, 216, 9),rgb(202, 60, 134));
+    border-radius: 0;
+    background: radial-gradient(circle at top center, rgb(176, 142, 252),rgb(60, 0, 159));
+}
+
+MagicButton Label {
+    color: white;
+    font-size: 18;
+}
+
+.twoColumn {
+    flex-basis: 50%;
+}
+
+.threeColumn {
+    flex-basis: 33.33%;
 }

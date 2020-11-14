@@ -49,9 +49,11 @@ namespace Playground
         {
             Routing.RegisterRoute("LinearGradient", typeof(LinearGradientPage));
             Routing.RegisterRoute("RadialGradient", typeof(RadialGradientPage));
+            Routing.RegisterRoute("Gallery", typeof(GalleryCategoriesPage));
             Routing.RegisterRoute("GalleryList", typeof(GalleryListPage));
             Routing.RegisterRoute("GalleryPreview", typeof(GalleryPreviewPage));
             Routing.RegisterRoute("CssPreviewer", typeof(CssPreviewerPage));
+            Routing.RegisterRoute("Animations", typeof(AnimationsPage));
             Routing.RegisterRoute("BattleTest", typeof(BattleTestPage));
         }
 

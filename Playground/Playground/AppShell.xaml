@@ -14,11 +14,7 @@
 
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="110" />
-                    <RowDefinition Height="60" />
-                </Grid.RowDefinitions>
+            <Grid RowDefinitions="110,60">
                 <magic:GradientView VerticalOptions="FillAndExpand" Grid.RowSpan="2">
                     <magic:GradientCollection>
                         <magic:RadialGradient Center="0.5,0.5" Shape="Circle" Size="ClosestSide">

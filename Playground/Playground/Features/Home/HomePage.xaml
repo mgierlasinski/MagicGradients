@@ -4,28 +4,64 @@
              xmlns:mtoolkit="clr-namespace:MagicGradients.Toolkit.Controls;assembly=MagicGradients.Toolkit"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              x:Class="Playground.Features.Home.HomePage"
-             Title="Welcome to Magic Gradients"
+             Title="Home"
              vm:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.Resources>
         <StyleSheet Source="/Features/Home/HomePage.css" />
     </ContentPage.Resources>
-    <ScrollView>
-        <StackLayout Margin="10">
-            <controls:MenuSection>
-                <Label Text="Gradients" />
-            </controls:MenuSection>
-            <mtoolkit:MagicButton Content="Linear gradient" Command="{Binding LinearCommand}" />
-            <mtoolkit:MagicButton Content="Radial gradient" Command="{Binding RadialCommand}" />
-            <controls:MenuSection>
-                <Label Text="Css" />
-            </controls:MenuSection>
-            <mtoolkit:MagicButton Content="CSS gradient" Command="{Binding CssCommand}" />
-            <controls:MenuSection>
-                <Label Text="Animation" />
-            </controls:MenuSection>
-            <mtoolkit:MagicButton Content="Simple Animations" Command="{Binding AnimationsSimpleCommand}" />
-            <mtoolkit:MagicButton Content="Complex Animations" Command="{Binding AnimationsComplexCommand}" />
+    <Grid RowDefinitions="150,*">
+        <magic:GradientView VerticalOptions="Fill" StyleId="banner" />
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.MagicWand}, Color=White, Size=70}" />
+            <Label Text="Magic Gradients" TextColor="White" FontAttributes="Bold" FontSize="20" />
         </StackLayout>
-    </ScrollView>
+        <ScrollView Grid.Row="1">
+            <FlexLayout>
+                <controls:MenuSection>
+                    <Label Text="Create" />
+                </controls:MenuSection>
+                <mtoolkit:MagicButton Command="{Binding LinearCommand}" StyleClass="threeColumn">
+                    <StackLayout Padding="10" HorizontalOptions="Center">
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Gradient}, Color=White, Size=50}" 
+                               Margin="{OnPlatform UWP='10,0,0,0'}" />
+                        <Label Text="Linear" HorizontalOptions="Center" />
+                    </StackLayout>
+                </mtoolkit:MagicButton>
+                <mtoolkit:MagicButton Command="{Binding RadialCommand}" StyleClass="threeColumn">
+                    <StackLayout Padding="10" HorizontalOptions="Center">
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Radial}, Color=White, Size=50}" 
+                               Margin="{OnPlatform UWP='10,0,0,0'}" />
+                        <Label Text="Radial" HorizontalOptions="Center" />
+                    </StackLayout>
+                </mtoolkit:MagicButton>
+                <mtoolkit:MagicButton Command="{Binding CssCommand}" StyleClass="threeColumn">
+                    <StackLayout Padding="10" HorizontalOptions="Center">
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}, Color=White, Size=50}" 
+                               Margin="{OnPlatform UWP='10,0,0,0'}"/>
+                        <Label Text="CSS" HorizontalOptions="Center" />
+                    </StackLayout>
+                </mtoolkit:MagicButton>
+                <controls:MenuSection>
+                    <Label Text="Discover" />
+                </controls:MenuSection>
+                <mtoolkit:MagicButton Command="{Binding GalleryCommand}" StyleClass="twoColumn">
+                    <StackLayout Padding="10" HorizontalOptions="Center">
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Gallery}, Color=White, Size=50}" 
+                               Margin="{OnPlatform UWP='10,0,0,0'}" />
+                        <Label Text="Gradient Gallery" HorizontalOptions="Center" />
+                    </StackLayout>
+                </mtoolkit:MagicButton>
+                <mtoolkit:MagicButton Command="{Binding AnimationsCommand}" StyleClass="twoColumn">
+                    <StackLayout Padding="10" HorizontalOptions="Center">
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Bolt}, Color=White, Size=50}" 
+                               Margin="{OnPlatform UWP='10,0,0,0'}" />
+                        <Label Text="Animations" HorizontalOptions="Center" />
+                    </StackLayout>
+                </mtoolkit:MagicButton>
+            </FlexLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
