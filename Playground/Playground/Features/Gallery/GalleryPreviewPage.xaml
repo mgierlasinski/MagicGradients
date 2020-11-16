@@ -28,7 +28,7 @@
         <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsEditMode}">
             <BoxView Style="{StaticResource SemiTransparent}" HorizontalOptions="Fill" VerticalOptions="Fill" />
             <Frame Padding="15" HorizontalOptions="Fill" VerticalOptions="Center" Margin="50,0">
-                <Grid RowDefinitions="60,70,50" ColumnDefinitions="33*,33*,33*" RowSpacing="20">
+                <Grid RowDefinitions="60,70,50,Auto" ColumnDefinitions="33*,33*,33*" RowSpacing="20">
                     <CollectionView ItemsSource="{Binding EditorItems}" 
                                     SelectionMode="Single" 
                                     SelectedItem="{Binding SelectedItem}"
@@ -88,6 +88,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
+                    <controls:ColorInspector Gradient="{Binding SelectedItem.Data}" Grid.Row="3" Grid.ColumnSpan="3" />
                 </Grid>
             </Frame>
         </Grid>

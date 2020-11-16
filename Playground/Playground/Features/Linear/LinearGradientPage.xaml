@@ -37,7 +37,8 @@
                 </StackLayout>
                 <Slider Value="{Binding Length}" Maximum="1" Minimum="0.1" HorizontalOptions="FillAndExpand" />
             </StackLayout>
-            <controls:ColorsTab />
+            <!--<controls:ColorsTab />-->
+            <controls:ColorInspector Gradient="{Binding Gradient}" />
             <controls:BackgroundTab />
         </tabs:ViewSwitcher>
     </Grid>

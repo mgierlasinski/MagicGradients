@@ -9,6 +9,7 @@ namespace Playground.Features.Gallery.Models
 {
     public class GradientEditorItem : INotifyPropertyChanged
     {
+        public Gradient Data { get; set; }
         public string Type { get; set; }
         public IGradientSource GradientSource { get; set; }
         public List<GradientEditorStop> Stops { get; set; }
@@ -33,6 +34,7 @@ namespace Playground.Features.Gallery.Models
 
             var item = new GradientEditorItem
             {
+                Data = gradient,
                 GradientSource = new MagicGradients.LinearGradient {Angle = 270, Stops = gradient.Stops},
                 Type = gradient.GetType().Name,
                 Stops = gradient.Stops.Select(s => new GradientEditorStop
