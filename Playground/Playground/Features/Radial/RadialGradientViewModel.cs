@@ -1,7 +1,8 @@
-using System.Linq;
 using MagicGradients;
 using Playground.Extensions;
 using Playground.ViewModels;
+using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 using GradientStop = MagicGradients.GradientStop;
 
@@ -78,6 +79,8 @@ namespace Playground.Features.Radial
             set => SetProperty(ref _isCustomSize, value, UpdateIsCustomSize);
         }
 
+        public ICommand ResetCommand { get; set; }
+
         public RadialGradientViewModel()
         {
             InitializeGradient();
@@ -95,10 +98,8 @@ namespace Playground.Features.Radial
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
+            Gradient.Measure(0, 0);
 
-            SelectedStop = Gradient.Stops.First();
-
-            UpdateStopsCount();
             UpdateCenter();
             UpdateShape();
             UpdateSize();

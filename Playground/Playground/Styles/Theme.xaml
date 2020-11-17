@@ -69,7 +69,7 @@
     </Style>
     <Style TargetType="tabs:UnderlinedTabItem">
         <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />
-        <Setter Property="LabelSize" Value="18" />
+        <Setter Property="LabelSize" Value="20" />
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}" />
         <Setter Property="UnselectedLabelColor" Value="{AppThemeBinding Light={StaticResource HeaderColor}, Dark={StaticResource HeaderColorDark}}" />
     </Style>

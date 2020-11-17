@@ -5,53 +5,92 @@
     xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
     xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
     xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+    xmlns:picker="clr-namespace:Udara.Plugin.XFColorPickerControl;assembly=Udara.Plugin.XFColorPickerControl"
     x:Class="Playground.Controls.ColorInspector">
 
     <ContentView.Resources>
-        <converters:OffsetToDoubleConverter x:Key="OffsetToDoubleConverter" />
         <converters:ColorNameConverter x:Key="ColorNameConverter" />
     </ContentView.Resources>
 
-    <StackLayout Margin="10" Spacing="10" Orientation="Vertical" x:Name="LayoutRoot">
-        <StackLayout.BindingContext>
-            <controls:ColorInspectorViewModel />
-        </StackLayout.BindingContext>
-
-        <StackLayout Orientation="Horizontal" HeightRequest="50">
-            <Button Text="Add color" Command="{Binding AddStopCommand}" HorizontalOptions="FillAndExpand" />
-            <Button Text="Reset colors" Command="{Binding ResetCommand}" HorizontalOptions="FillAndExpand" />
-        </StackLayout>
-
-        <Grid>
-            <controls:CheckeredView Margin="0,10" />
-            <magic:GradientView x:Name="ColorSpectrum" Margin="0,10" />
-            <AbsoluteLayout BindableLayout.ItemsSource="{Binding Gradient.Stops}" HeightRequest="50" x:Name="AbsoluteLayout" 
-                            ChildAdded="AbsoluteLayout_OnChildAdded" ChildRemoved="AbsoluteLayout_OnChildRemoved">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <ContentView  Padding="20,0">
-                            <Frame Padding="4">
-                                <BoxView BackgroundColor="{Binding Color}" CornerRadius="0" />
-                                <!--Command="{Binding Source={RelativeSource AncestorType={x:Type controls:ColorInspectorViewModel}}, Path=SelectStopCommand}" CommandParameter="{Binding}"-->
-                            </Frame>
-                        </ContentView>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </AbsoluteLayout>
-        </Grid>
-
-        <Frame HasShadow="False" Padding="10" Style="{StaticResource BorderFrame}">
-            <Grid ColumnDefinitions="30*,70*" RowDefinitions="30,40" RowSpacing="0">
-                <BoxView Color="{Binding SelectedStop.Color}" Grid.RowSpan="2" />
-                <Label Text="{Binding SelectedStop.Color, Converter={StaticResource ColorNameConverter}}" 
-                       Margin="10,0,0,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
-                <Slider Value="{Binding SelectedStop.Offset, Converter={StaticResource OffsetToDoubleConverter}}" 
-                        ValueChanged="Slider_OnValueChanged"
-                        Maximum="1" Minimum="0" Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand" />
-                <Button Text="Delete" 
-                        Command="{Binding RemoveStopCommand}"
-                        Margin="0,0,10,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+    <ScrollView>
+        <StackLayout Margin="10" Spacing="10" Orientation="Vertical" x:Name="LayoutRoot">
+            <Grid>
+                <controls:CheckeredView Margin="0,10" />
+                <magic:GradientView x:Name="ColorSpectrum" Margin="0,10" />
+                <AbsoluteLayout x:Name="AbsoluteLayout" HeightRequest="50"  
+                                SizeChanged="AbsoluteLayout_OnSizeChanged"
+                                ChildAdded="AbsoluteLayout_OnChildAdded" 
+                                ChildRemoved="AbsoluteLayout_OnChildRemoved">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <ContentView Padding="20,0" x:DataType="controls:GradientStopClone">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup>
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.StateTriggers>
+                                                <StateTrigger IsActive="{Binding IsSelected, Converter={StaticResource NegativeBoolConverter}}" />
+                                            </VisualState.StateTriggers>
+                                            <VisualState.Setters>
+                                                <Setter TargetName="Frame" Property="Frame.BackgroundColor" Value="Black" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Selected">
+                                            <VisualState.StateTriggers>
+                                                <StateTrigger IsActive="{Binding IsSelected}" />
+                                            </VisualState.StateTriggers>
+                                            <VisualState.Setters>
+                                                <Setter TargetName="Frame" Property="Frame.BackgroundColor" Value="Red" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Frame x:Name="Frame" Padding="4">
+                                    <BoxView Color="{Binding Color}" CornerRadius="0" />
+                                </Frame>
+                            </ContentView>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </AbsoluteLayout>
             </Grid>
-        </Frame>
-    </StackLayout>
+
+            <Frame HasShadow="False" Padding="10" Style="{StaticResource BorderFrame}"
+                   BindingContext="{Binding Source={RelativeSource AncestorType={x:Type controls:ColorInspector}}}">
+
+                <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="40,200" RowSpacing="10">
+                    <BoxView Color="{Binding SelectedStop.Color, Mode=TwoWay}" />
+                    <Label Text="{Binding SelectedStop.Color, Converter={StaticResource ColorNameConverter}}" 
+                           Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
+                    <Button Text="Add" Clicked="AddColor_Clicked" Grid.Column="2" />
+                    <Button Text="Delete" Clicked="RemoveColor_Clicked" Grid.Column="3" />
+
+                    <picker:ColorPicker
+                        Grid.ColumnSpan="4" Grid.Row="1"
+                        ColorFlowDirection="Horizontal"
+                        ColorSpectrumStyle="TintToHueToShadeStyle"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        PickedColor="{Binding SelectedStop.Color, Mode=TwoWay}">
+                        <picker:ColorPicker.BaseColorList>
+                            <x:Array Type="{x:Type x:String}">
+                                <!--  Red  -->
+                                <x:String>#ff0000</x:String>
+                                <!--  Yellow  -->
+                                <x:String>#ffff00</x:String>
+                                <!--  Green (Lime)  -->
+                                <x:String>#00ff00</x:String>
+                                <!--  Aqua  -->
+                                <x:String>#00ffff</x:String>
+                                <!--  Blue  -->
+                                <x:String>#0000ff</x:String>
+                                <!--  Fuchsia  -->
+                                <x:String>#ff00ff</x:String>
+                                <!--  Red  -->
+                                <x:String>#ff0000</x:String>
+                            </x:Array>
+                        </picker:ColorPicker.BaseColorList>
+                    </picker:ColorPicker>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
 </ContentView>

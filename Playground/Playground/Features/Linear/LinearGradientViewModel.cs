@@ -2,6 +2,7 @@ using MagicGradients;
 using Playground.Extensions;
 using Playground.ViewModels;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 using GradientStop = MagicGradients.GradientStop;
 
@@ -16,6 +17,8 @@ namespace Playground.Features.Linear
             set => SetProperty(ref _angle, value, () => Gradient.Angle = _angle);
         }
 
+        public ICommand ResetCommand { get; set; }
+
         public LinearGradientViewModel()
         {
             InitializeGradient();
@@ -25,14 +28,11 @@ namespace Playground.Features.Linear
 
         private void InitializeGradient()
         {
-            Gradient = new MagicGradients.LinearGradient();
+            Gradient = new LinearGradient();
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             Gradient.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
-
-            SelectedStop = Gradient.Stops.First();
-
-            UpdateStopsCount();
+            Gradient.Measure(0, 0);
         }
     }
 }

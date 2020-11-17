@@ -164,6 +164,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MagicGradients\MagicGradients.csproj">
+      <Project>{acaf40e8-226e-4f7e-9d21-d317434f37b4}</Project>
+      <Name>MagicGradients</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Playground\Playground.csproj">
       <Project>{05ebbb6c-3b45-498c-b95e-0755f9fca6a0}</Project>
       <Name>Playground</Name>

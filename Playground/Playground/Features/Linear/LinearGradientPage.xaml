@@ -8,7 +8,11 @@
              x:Class="Playground.Features.Linear.LinearGradientPage"
              Title="Linear gradient"
              vm:ViewModelLocator.AutoWireViewModel="true">
-
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </ContentPage.Resources>
     <Grid RowDefinitions="40*,60,60*" RowSpacing="0">
         <magic:GradientView x:Name="GradientView" 
                             GradientSource="{Binding Gradient}" 
@@ -30,14 +34,20 @@
                     <Entry Text="{Binding Angle}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" HeightRequest="40" />
                     <Stepper Value="{Binding Angle}" Minimum="-360" Maximum="360" Increment="10" HeightRequest="40" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                <!--<StackLayout Orientation="Horizontal" Margin="0,10,0,0">
                     <Label Text="Length" HorizontalOptions="StartAndExpand" Margin="0,3,0,0" />
                     <CheckBox IsChecked="{Binding IsRepeating}" HorizontalOptions="End" />
                     <Label Text="Repeating" HorizontalOptions="End" Margin="0,3,0,0" />
                 </StackLayout>
-                <Slider Value="{Binding Length}" Maximum="1" Minimum="0.1" HorizontalOptions="FillAndExpand" />
+                <Slider Value="{Binding Length}" Maximum="1" Minimum="0.1" HorizontalOptions="FillAndExpand" />-->
+                <Label Text="Length" Margin="0,10,0,0" />
+                <tabs:TabHostView SelectedIndex="{Binding LengthIndex, Mode=TwoWay}" Style="{StaticResource SegmentedTabs}">
+                    <tabs:TabHostView.Tabs>
+                        <tabs:SegmentedTabItem Label="Single" />
+                        <tabs:SegmentedTabItem Label="Repeating" />
+                    </tabs:TabHostView.Tabs>
+                </tabs:TabHostView>
             </StackLayout>
-            <!--<controls:ColorsTab />-->
             <controls:ColorInspector Gradient="{Binding Gradient}" />
             <controls:BackgroundTab />
         </tabs:ViewSwitcher>

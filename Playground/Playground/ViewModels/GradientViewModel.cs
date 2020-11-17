@@ -1,9 +1,4 @@
 using MagicGradients;
-using Playground.Extensions;
-using System.Linq;
-using System.Windows.Input;
-using Xamarin.Forms;
-using GradientStop = MagicGradients.GradientStop;
 
 namespace Playground.ViewModels
 {
@@ -16,28 +11,12 @@ namespace Playground.ViewModels
             set => SetProperty(ref _gradient, value);
         }
 
-        private GradientStop _selectedStop;
-        public GradientStop SelectedStop
+        private int _lengthIndex;
+        public int LengthIndex
         {
-            get => _selectedStop;
-            set => SetProperty(ref _selectedStop, value);
-        }
-
-        public int StopsCount => Gradient.Stops.Count;
-
-        private bool _isRepeating;
-        public bool IsRepeating
-        {
-            get => _isRepeating;
-            set => SetProperty(ref _isRepeating, value, 
-                onChanged: () => Gradient.IsRepeating = _isRepeating);
-        }
-
-        private double _length = 1;
-        public double Length
-        {
-            get => _length;
-            set => SetProperty(ref _length, value, UpdateLength);
+            get => _lengthIndex;
+            set => SetProperty(ref _lengthIndex, value, 
+                () => Gradient.IsRepeating = _lengthIndex == 1);
         }
 
         private Dimensions _size = Dimensions.Prop(1, 1);
@@ -61,59 +40,6 @@ namespace Playground.ViewModels
         {
             get => _selectedViewModelIndex;
             set => SetProperty(ref _selectedViewModelIndex, value);
-        }
-
-        public ICommand AddStopCommand { get; }
-        public ICommand RemoveStopCommand { get; set; }
-        public ICommand ResetCommand { get; set; }
-        public ICommand SelectStopCommand { get; set; }
-
-        public GradientViewModel()
-        {
-            AddStopCommand = new Command(AddColorStop);
-            RemoveStopCommand = new Command(RemoveColorStop);
-            SelectStopCommand = new Command<GradientStop>(s => SelectedStop = s);
-        }
-
-        private void AddColorStop()
-        {
-            Gradient.Stops.Add(new GradientStop
-            {
-                Color = ColorUtils.GetRandom()
-            });
-            UpdateStopsCount();
-        }
-
-        private void RemoveColorStop()
-        {
-            if(SelectedStop == null || Gradient.Stops.Count == 1)
-                return;
-
-            var index = Gradient.Stops.IndexOf(SelectedStop);
-            if (index >= 0)
-            {
-                Gradient.Stops.RemoveAt(index);
-                UpdateStopsCount();
-
-                SelectedStop = Gradient.Stops.Any() ? Gradient.Stops.First() : null;
-            }
-        }
-
-        protected void UpdateLength()
-        {
-            foreach (var stop in Gradient.Stops)
-                stop.Offset = Offset.Empty;
-
-            Gradient.Measure(0, 0);
-
-            foreach (var stop in Gradient.Stops)
-                stop.Offset = Offset.Prop(stop.RenderOffset * (float)Length);
-        }
-
-        protected void UpdateStopsCount()
-        {
-            RaisePropertyChanged(nameof(StopsCount));
-            UpdateLength();
         }
     }
 }

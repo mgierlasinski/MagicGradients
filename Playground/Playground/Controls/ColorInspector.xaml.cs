@@ -1,9 +1,6 @@
-﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
+﻿using MagicGradients;
+using System;
 using System.Linq;
-using MagicGradients;
-using Playground.Converters;
 using Xamarin.Forms;
 using GradientStop = MagicGradients.GradientStop;
 
@@ -12,8 +9,13 @@ namespace Playground.Controls
     public partial class ColorInspector : ContentView
     {
         private readonly PanGestureRecognizer _panRecognizer;
+        private readonly TapGestureRecognizer _tapRecognizer;
 
-        public ColorInspectorViewModel ViewModel { get; }
+        private ColorSpectrumGradient _spectrum;
+
+        private double _width;
+        private double _prevTotalX;
+        private int _touchId;
 
         public static readonly BindableProperty GradientProperty = BindableProperty.Create(nameof(Gradient),
             typeof(Gradient), typeof(ColorInspector), propertyChanged: OnGradientChanged);
@@ -24,6 +26,15 @@ namespace Playground.Controls
             set => SetValue(GradientProperty, value);
         }
 
+        public static readonly BindableProperty SelectedStopProperty = BindableProperty.Create(nameof(SelectedStop),
+            typeof(GradientStop), typeof(ColorInspector));
+
+        public GradientStop SelectedStop
+        {
+            get => (GradientStop)GetValue(SelectedStopProperty);
+            set => SetValue(SelectedStopProperty, value);
+        }
+
         public ColorInspector()
         {
             InitializeComponent();
@@ -31,71 +42,73 @@ namespace Playground.Controls
             _panRecognizer = new PanGestureRecognizer();
             _panRecognizer.PanUpdated += PanUpdated;
 
-            //AbsoluteLayout.GestureRecognizers.Add(_panRecognizer);
-            AbsoluteLayout.SizeChanged += AbsoluteLayoutOnSizeChanged;
-            ViewModel = (ColorInspectorViewModel)LayoutRoot.BindingContext;
-            ViewModel.PropertyChanged += ViewModelOnPropertyChanged;
-        }
-
-        private void AbsoluteLayoutOnSizeChanged(object sender, EventArgs e)
-        {
-            _width = AbsoluteLayout.Width;
+            _tapRecognizer = new TapGestureRecognizer();
+            _tapRecognizer.Tapped += OnTapped;
         }
 
         static void OnGradientChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var inspector = (ColorInspector)bindable;
-            var gradient = (Gradient)newValue;
-
-            inspector.ViewModel.OnGradientChanged(gradient);
-            inspector.ColorSpectrum.GradientSource = new LinearGradient { Angle = 270, Stops = gradient.Stops };
+            ((ColorInspector)bindable).CreateSpectrum((Gradient)newValue);
         }
 
-        private void ViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        public void CreateSpectrum(Gradient gradient)
         {
-            if (e.PropertyName == "Offset")
-            {
-                UpdateChildrenPositions();
-            }
+            _spectrum = new ColorSpectrumGradient(gradient);
+
+            BindableLayout.SetItemsSource(AbsoluteLayout, _spectrum.Stops);
+
+            ColorSpectrum.GradientSource = _spectrum;
+
+            SelectStop((GradientStopClone)_spectrum.Stops.FirstOrDefault());
         }
 
-        private void UpdateChildrenPositions()
+        private void AbsoluteLayout_OnSizeChanged(object sender, EventArgs e)
         {
-            Gradient.Measure(0, 0);
-
-            for (var i = 0; i < AbsoluteLayout.Children.Count; i++)
-            {
-                SetPosition(AbsoluteLayout.Children[i], Gradient.Stops[i].RenderOffset);
-            }
-
-            Gradient.InvalidateCanvas();
+            _width = AbsoluteLayout.Width;
         }
-
-        private void Slider_OnValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            UpdateChildrenPositions();
-        }
-
+        
         private void AbsoluteLayout_OnChildAdded(object sender, ElementEventArgs e)
         {
             var view = (View) e.Element;
             var stop = (GradientStop)view.BindingContext;
 
             AbsoluteLayout.SetLayoutFlags(view, AbsoluteLayoutFlags.XProportional | AbsoluteLayoutFlags.HeightProportional);
-            SetPosition(view, stop.RenderOffset);
+            MoveStopTo(view, stop.RenderOffset);
             
             view.GestureRecognizers.Add(_panRecognizer);
+            view.GestureRecognizers.Add(_tapRecognizer);
         }
 
         private void AbsoluteLayout_OnChildRemoved(object sender, ElementEventArgs e)
         {
-            ((View)e.Element).GestureRecognizers.Remove(_panRecognizer);
+            ((View)e.Element).GestureRecognizers.Clear();
         }
 
-        double _width;
-        double _prevTotalX;
-        double _prevTotalY;
-        private int _touchId;
+        private void OnTapped(object sender, EventArgs e)
+        {
+            var bindable = (VisualElement)sender;
+            var stop = (GradientStopClone)bindable.BindingContext;
+
+            SelectStop(stop);
+        }
+
+        private void SelectStop(GradientStopClone stop)
+        {
+            var current = _spectrum.Stops.FirstOrDefault(x => ((GradientStopClone)x).IsSelected);
+            if (current != null)
+            {
+                ((GradientStopClone) current).IsSelected = false;
+            }
+
+            if (stop == null)
+            {
+                SelectedStop = null;
+                return;
+            }
+
+            stop.IsSelected = true;
+            SelectedStop = stop;
+        }
 
         private void PanUpdated(object sender, PanUpdatedEventArgs e)
         {
@@ -104,25 +117,16 @@ namespace Playground.Controls
                 case GestureStatus.Started:
                     _touchId = e.GestureId;
                     _prevTotalX = 0;
-                    _prevTotalY = 0;
                     break;
                 case GestureStatus.Running:
                     if (e.GestureId == _touchId)
                     {
-                        //if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.macOS)
-                        //{
                         var deltaX = e.TotalX - _prevTotalX;
-                        var deltaY = e.TotalY - _prevTotalY;
 
-                        UpdateLayout((BindableObject) sender, deltaX, deltaY);
+                        MoveStopBy((BindableObject)sender, deltaX);
 
                         _prevTotalX = e.TotalX;
-                        _prevTotalY = e.TotalY;
-                        //}
-                        //else
-                        //    UpdateLayout((BindableObject)sender, e.TotalX, e.TotalY);
                     }
-
                     break;
                 case GestureStatus.Completed:
                 case GestureStatus.Canceled:
@@ -130,22 +134,52 @@ namespace Playground.Controls
             }
         }
 
-        private void UpdateLayout(BindableObject sender, double offsetX = 0, double offsetY = 0)
+        private void MoveStopBy(BindableObject stop, double offsetX)
         {
             var deltaX = offsetX / _width;
-            var newX = AbsoluteLayout.GetLayoutBounds(sender).X + deltaX;
+            var newX = AbsoluteLayout.GetLayoutBounds(stop).X + deltaX;
 
-            SetPosition(sender, newX);
+            MoveStopTo(stop, newX);
 
-            ((GradientStop)sender.BindingContext).Offset = Offset.Prop(newX);
+            var stopItem = (GradientStopClone)stop.BindingContext;
+            stopItem.Offset = Offset.Prop(newX);
 
-            Gradient.InvalidateCanvas();
+            SelectStop(stopItem);
         }
 
-        private void SetPosition(BindableObject target, double position)
+        private void MoveStopTo(BindableObject stop, double position)
         {
             var value = new Rectangle(position, 0, 60, 1);
-            AbsoluteLayout.SetLayoutBounds(target, value);
+            AbsoluteLayout.SetLayoutBounds(stop, value);
+        }
+
+        private void AddColor_Clicked(object sender, EventArgs e)
+        {
+            _spectrum.AddStop();
+            UpdateChildrenPositions();
+        }
+
+        private void RemoveColor_Clicked(object sender, EventArgs e)
+        {
+            if (SelectedStop == null || _spectrum.Stops.Count == 1)
+                return;
+
+            var index = _spectrum.Stops.IndexOf(SelectedStop);
+            if (index >= 0)
+            {
+                _spectrum.RemoveStopAt(index);
+                UpdateChildrenPositions();
+                SelectStop((GradientStopClone)_spectrum.Stops.FirstOrDefault());
+            }
+        }
+
+        private void UpdateChildrenPositions()
+        {
+            foreach (var child in AbsoluteLayout.Children)
+            {
+                var stop = (GradientStop)child.BindingContext;
+                MoveStopTo(child, stop.RenderOffset);
+            }
         }
     }
 }
