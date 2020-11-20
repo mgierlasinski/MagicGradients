@@ -50,13 +50,17 @@ namespace Playground.Features.Gallery
             set => SetProperty(ref _gradients, value);
         }
 
-        private Gradient _selectedGradient;
-        public Gradient SelectedGradient
+        private int _selectedIndex = -1;
+        public int SelectedIndex
         {
-            get => _selectedGradient;
-            set => SetProperty(ref _selectedGradient, value);
+            get => _selectedIndex;
+            set => SetProperty(ref _selectedIndex, value, 
+                () => RaisePropertyChanged(nameof(SelectedGradient)));
         }
 
+        public Gradient SelectedGradient => SelectedIndex >= 0 && SelectedIndex < Gradients.Count 
+            ? Gradients[SelectedIndex] : null;
+        
         private bool _isEditMode;
         public bool IsEditMode
         {
@@ -91,8 +95,8 @@ namespace Playground.Features.Gallery
 
         private void EditAction()
         {
-            if (SelectedGradient == null)
-                SelectedGradient = Gradients.FirstOrDefault();
+            if (SelectedIndex < 0)
+                SelectedIndex = 0;
 
             IsEditMode = true;
         }

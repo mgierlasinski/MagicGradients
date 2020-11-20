@@ -3,11 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:tabs="http://sharpnado.com"
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
+             xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              x:Class="Playground.Features.Gallery.GalleryPreviewPage"
              Title="Gradient Preview"
              vm:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.Resources>
+        <converters:GradientNameConverter x:Key="NameConverter" />
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}"
                      Text="{OnPlatform UWP=Edit}"
@@ -23,41 +29,23 @@
     </ContentPage.ToolbarItems>
     <Grid>
         <magic:GradientView GradientSource="{Binding GradientSource}" GradientSize="{Binding GradientSize}" />
-        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsEditMode}">
-            <!--<BoxView Style="{StaticResource SemiTransparent}" HorizontalOptions="Fill" VerticalOptions="Fill" />-->
-            <Frame Padding="10" HorizontalOptions="Fill" VerticalOptions="End" Margin="30">
-                <Grid RowDefinitions="40,Auto" RowSpacing="10">
-                    <CollectionView ItemsSource="{Binding Gradients}" 
-                                    SelectionMode="Single" 
-                                    SelectedItem="{Binding SelectedGradient}"
-                                    ItemSizingStrategy="MeasureFirstItem"
-                                    Margin="0,0,40,0">
-                        <CollectionView.ItemsLayout>
-                            <LinearItemsLayout ItemSpacing="0" Orientation="Horizontal" />
-                        </CollectionView.ItemsLayout>
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="magic:Gradient">
-                                <ContentView WidthRequest="60" HeightRequest="30" Padding="5">
-                                    <BoxView BackgroundColor="Red" HorizontalOptions="Fill" VerticalOptions="Fill"  />
-                                </ContentView>
-                                <!--<Grid WidthRequest="60" HeightRequest="30">
-                                    <Frame IsClippedToBounds="True" CornerRadius="5" Padding="2" Margin="5" HorizontalOptions="Fill" VerticalOptions="Fill">
-                                        <Frame IsClippedToBounds="True" CornerRadius="3" Padding="0" HasShadow="False" HorizontalOptions="Fill" VerticalOptions="Fill">
-                                            <BoxView Color="Red" HorizontalOptions="Fill" VerticalOptions="Fill" />
-                                            --><!--<magic:GradientView GradientSource="{Binding GradientSource}" WidthRequest="46" HeightRequest="46" />--><!--
-                                        </Frame>
-                                    </Frame>
-                                </Grid>-->
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                    <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}}" 
-                                 Command="{Binding CloseEditCommand}"
-                                 WidthRequest="30" HeightRequest="30"
-                                 HorizontalOptions="End" VerticalOptions="Start" />
-                    <controls:ColorInspector Gradient="{Binding SelectedGradient}" Grid.Row="1" />
-                </Grid>
-            </Frame>
-        </Grid>
+        <Frame IsVisible="{Binding IsEditMode}" Padding="10" HorizontalOptions="Fill" VerticalOptions="End" Margin="30">
+            <Grid RowDefinitions="40,Auto" RowSpacing="10">
+                <tabs:TabHostView ItemsSource="{Binding Gradients}" 
+                                  SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
+                                  Margin="0,0,40,0" TabType="Scrollable">
+                    <tabs:TabHostView.ItemTemplate>
+                        <DataTemplate>
+                            <tabs:UnderlinedTabItem Label="{Binding Converter={StaticResource NameConverter}}" Padding="10,0" />
+                        </DataTemplate>
+                    </tabs:TabHostView.ItemTemplate>
+                </tabs:TabHostView>
+                <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}}" 
+                             Command="{Binding CloseEditCommand}"
+                             WidthRequest="30" HeightRequest="30"
+                             HorizontalOptions="End" VerticalOptions="Start" />
+                <controls:ColorInspector Gradient="{Binding SelectedGradient}" Grid.Row="1" />
+            </Grid>
+        </Frame>
     </Grid>
 </ContentPage>

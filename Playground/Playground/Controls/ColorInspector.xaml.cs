@@ -14,6 +14,7 @@ namespace Playground.Controls
         private ColorSpectrumGradient _spectrum;
 
         private double _width;
+        private double _height;
         private double _prevTotalX;
         private int _touchId;
 
@@ -63,6 +64,7 @@ namespace Playground.Controls
         private void AbsoluteLayout_OnSizeChanged(object sender, EventArgs e)
         {
             _width = AbsoluteLayout.Width;
+            _height = AbsoluteLayout.Height;
         }
         
         private void AbsoluteLayout_OnChildAdded(object sender, ElementEventArgs e)
@@ -154,6 +156,24 @@ namespace Playground.Controls
             {
                 _spectrum.RemoveStopAt(index);
                 SelectStop((GradientStopClone)_spectrum.Stops.FirstOrDefault());
+            }
+        }
+
+        private bool _isInitialValue = true;
+
+        private void ColorPicker_OnPickedColorChanged(object sender, Color e)
+        {
+            // Prevent from overriding stop color
+            // By default, first color is center of color picker
+            if (_isInitialValue)
+            {
+                _isInitialValue = false;
+                return;
+            }
+
+            if (SelectedStop != null)
+            {
+                SelectedStop.Color = e;
             }
         }
     }
