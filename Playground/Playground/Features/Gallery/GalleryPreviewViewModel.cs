@@ -1,5 +1,4 @@
 ﻿using MagicGradients;
-using Playground.Features.Gallery.Models;
 using Playground.Features.Gallery.Services;
 using Playground.ViewModels;
 using System.Collections.Generic;
@@ -18,7 +17,17 @@ namespace Playground.Features.Gallery
         public ICommand CloseEditCommand { get; set; }
         public ICommand PreviewCssCommand { get; set; }
         public ICommand BattleTestCommand { get; set; }
-        public ICommand SelectCommand { get; set; }
+
+        private string _id;
+        public string Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                LoadGradient();
+            }
+        }
 
         private IGradientSource _gradientSource;
         public IGradientSource GradientSource
@@ -34,29 +43,18 @@ namespace Playground.Features.Gallery
             set => SetProperty(ref _gradientSize, value);
         }
 
-        private List<GradientEditorItem> _editorItems;
-        public List<GradientEditorItem> EditorItems
+        private List<Gradient> _gradients;
+        public List<Gradient> Gradients
         {
-            get => _editorItems;
-            set => SetProperty(ref _editorItems, value);
+            get => _gradients;
+            set => SetProperty(ref _gradients, value);
         }
 
-        private string _id;
-        public string Id
+        private Gradient _selectedGradient;
+        public Gradient SelectedGradient
         {
-            get => _id;
-            set
-            {
-                _id = value;
-                LoadGradientPreview();
-            }
-        }
-
-        private GradientEditorItem _selectedItem;
-        public GradientEditorItem SelectedItem
-        {
-            get => _selectedItem;
-            set => SetProperty(ref _selectedItem, value);
+            get => _selectedGradient;
+            set => SetProperty(ref _selectedGradient, value);
         }
 
         private bool _isEditMode;
@@ -70,7 +68,7 @@ namespace Playground.Features.Gallery
         {
             _galleryService = galleryService;
 
-            EditCommand = new Command(() => { IsEditMode = true; });
+            EditCommand = new Command(EditAction);
             CloseEditCommand = new Command(() => { IsEditMode = false; });
             PreviewCssCommand = new Command(async () =>
             {
@@ -80,23 +78,23 @@ namespace Playground.Features.Gallery
             {
                 await Shell.Current.GoToAsync($"BattleTest?id={Id}");
             });
-            SelectCommand = new Command<GradientEditorStop>(stop =>
-            {
-                if (SelectedItem == null)
-                    return;
-
-                SelectedItem.SelectedStop = stop;
-            });
         }
 
-        private void LoadGradientPreview()
+        private void LoadGradient()
         {
             var gradient = _galleryService.GetGradientById(int.Parse(_id));
             GradientSource = gradient.Source;
             GradientSize = gradient.Size;
 
-            EditorItems = GradientSource.GetGradients().Select(GradientEditorItem.FromGradient).ToList();
-            SelectedItem = EditorItems.FirstOrDefault();
+            Gradients = GradientSource.GetGradients().ToList();
+        }
+
+        private void EditAction()
+        {
+            if (SelectedGradient == null)
+                SelectedGradient = Gradients.FirstOrDefault();
+
+            IsEditMode = true;
         }
     }
 }

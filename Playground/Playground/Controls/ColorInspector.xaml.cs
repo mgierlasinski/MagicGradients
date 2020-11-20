@@ -54,11 +54,9 @@ namespace Playground.Controls
         public void CreateSpectrum(Gradient gradient)
         {
             _spectrum = new ColorSpectrumGradient(gradient);
-
-            BindableLayout.SetItemsSource(AbsoluteLayout, _spectrum.Stops);
-
             ColorSpectrum.GradientSource = _spectrum;
 
+            BindableLayout.SetItemsSource(AbsoluteLayout, _spectrum.Stops);
             SelectStop((GradientStopClone)_spectrum.Stops.FirstOrDefault());
         }
 
@@ -69,11 +67,7 @@ namespace Playground.Controls
         
         private void AbsoluteLayout_OnChildAdded(object sender, ElementEventArgs e)
         {
-            var view = (View) e.Element;
-            var stop = (GradientStop)view.BindingContext;
-
-            AbsoluteLayout.SetLayoutFlags(view, AbsoluteLayoutFlags.XProportional | AbsoluteLayoutFlags.HeightProportional);
-            MoveStopTo(view, stop.RenderOffset);
+            var view = (View)e.Element;
             
             view.GestureRecognizers.Add(_panRecognizer);
             view.GestureRecognizers.Add(_tapRecognizer);
@@ -139,24 +133,15 @@ namespace Playground.Controls
             var deltaX = offsetX / _width;
             var newX = AbsoluteLayout.GetLayoutBounds(stop).X + deltaX;
 
-            MoveStopTo(stop, newX);
-
             var stopItem = (GradientStopClone)stop.BindingContext;
             stopItem.Offset = Offset.Prop(newX);
 
             SelectStop(stopItem);
         }
 
-        private void MoveStopTo(BindableObject stop, double position)
-        {
-            var value = new Rectangle(position, 0, 60, 1);
-            AbsoluteLayout.SetLayoutBounds(stop, value);
-        }
-
         private void AddColor_Clicked(object sender, EventArgs e)
         {
             _spectrum.AddStop();
-            UpdateChildrenPositions();
         }
 
         private void RemoveColor_Clicked(object sender, EventArgs e)
@@ -168,17 +153,7 @@ namespace Playground.Controls
             if (index >= 0)
             {
                 _spectrum.RemoveStopAt(index);
-                UpdateChildrenPositions();
                 SelectStop((GradientStopClone)_spectrum.Stops.FirstOrDefault());
-            }
-        }
-
-        private void UpdateChildrenPositions()
-        {
-            foreach (var child in AbsoluteLayout.Children)
-            {
-                var stop = (GradientStop)child.BindingContext;
-                MoveStopTo(child, stop.RenderOffset);
             }
         }
     }

@@ -8,6 +8,8 @@ namespace Playground.Features.Gallery
 {
     public class GalleryCategoriesViewModel : ObservableObject
     {
+        private readonly ICategoryService _categoryService;
+
         private IEnumerable<GradientCategory> _categories;
         public IEnumerable<GradientCategory> Categories
         {
@@ -31,7 +33,12 @@ namespace Playground.Features.Gallery
 
         public GalleryCategoriesViewModel(ICategoryService categoryService)
         {
-            Categories = categoryService.GetCategories();
+            _categoryService = categoryService;
+        }
+
+        public void LoadCategories()
+        {
+            Categories = _categoryService.GetCategories();
         }
     }
 }

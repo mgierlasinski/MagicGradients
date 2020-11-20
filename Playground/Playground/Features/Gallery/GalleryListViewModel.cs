@@ -32,7 +32,7 @@ namespace Playground.Features.Gallery
             {
                 Title = _categoryService.GetCategories().FirstOrDefault(x => x.Tag == _categoryTag)?.Name;
                 _allGradients = _galleryService.GetGradients(_categoryTag).ToList();
-                RefreshGradients();
+                //LoadGradients();
             });
         }
 
@@ -49,7 +49,7 @@ namespace Playground.Features.Gallery
             get => _selectedTheme;
             set => SetProperty(ref _selectedTheme, value, async () =>
             {
-                RefreshGradients();
+                LoadGradients();
                 await Task.Delay(300);
                 IsPickerVisible = false;
             });
@@ -109,10 +109,10 @@ namespace Playground.Features.Gallery
 
         private void SelectedThemesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            RefreshGradients();
+            LoadGradients();
         }
 
-        private void RefreshGradients()
+        public void LoadGradients()
         {
             if (SelectedThemes.Any())
             {

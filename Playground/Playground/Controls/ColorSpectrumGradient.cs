@@ -67,7 +67,7 @@ namespace Playground.Controls
             Source = source;
             Color = source.Color;
             RenderOffset = source.RenderOffset;
-            Offset = source.Offset;
+            Offset = source.Offset.IsEmpty ? Offset.Prop(source.RenderOffset) : source.Offset;
         }
 
         protected override void OnPropertyChanged(string propertyName = null)

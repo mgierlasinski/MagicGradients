@@ -48,7 +48,9 @@
                     </tabs:TabHostView.Tabs>
                 </tabs:TabHostView>
             </StackLayout>
-            <controls:ColorInspector Gradient="{Binding Gradient}" />
+            <ScrollView Margin="10">
+                <controls:ColorInspector Gradient="{Binding Gradient}" />
+            </ScrollView>
             <controls:BackgroundTab />
         </tabs:ViewSwitcher>
     </Grid>

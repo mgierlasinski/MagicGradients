@@ -15,24 +15,6 @@
                      IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}, Color=White}" />
     </ContentPage.ToolbarItems>
     <Grid>
-        <!--<Frame Visual="Material" HasShadow="True" CornerRadius="5" Padding="5" Margin="10">
-            <CollectionView x:Name="ThemeList"
-                            ItemsSource="{Binding Themes}"
-                            SelectionMode="Multiple"
-                            SelectedItems="{Binding SelectedThemes}"
-                            HeightRequest="60">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Horizontal" />
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:GradientTheme">
-                        <Grid>
-                            <BoxView Color="{Binding Color}" WidthRequest="100" Margin="5" />
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Frame>-->
         <CollectionView x:Name="GalleryList"
                         ItemsSource="{Binding Gradients}"
                         SelectionMode="Single"
@@ -46,7 +28,7 @@
                     <Grid>
                         <magic:GradientView GradientSource="{Binding Source}" 
                                             GradientSize="{Binding Size}"
-                                            HeightRequest="150" />
+                                            HeightRequest="150" Margin="5" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
