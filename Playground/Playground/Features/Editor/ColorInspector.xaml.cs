@@ -1,10 +1,10 @@
-﻿using MagicGradients;
-using System;
+﻿using System;
 using System.Linq;
+using MagicGradients;
 using Xamarin.Forms;
 using GradientStop = MagicGradients.GradientStop;
 
-namespace Playground.Controls
+namespace Playground.Features.Editor
 {
     public partial class ColorInspector : ContentView
     {

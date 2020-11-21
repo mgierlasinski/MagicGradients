@@ -81,7 +81,7 @@ namespace Playground.Features.Gallery
                     return;
 
                 var id = SelectedItem?.Id ?? 0;
-                await Shell.Current.GoToAsync($"GalleryPreview?id={id}");
+                await Shell.Current.GoToAsync($"GradientEditor?id={id}");
             });
         }
 

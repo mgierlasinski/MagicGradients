@@ -6,6 +6,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
+using ColorPicker.UWP.Effects;
 using Application = Windows.UI.Xaml.Application;
 using Frame = Windows.UI.Xaml.Controls.Frame;
 
@@ -47,6 +48,7 @@ namespace Playground.UWP
                 {
                     typeof(UWPShadowsRenderer).GetTypeInfo().Assembly,
                     typeof(UwpTintableImageEffect).GetTypeInfo().Assembly,
+                    typeof(ColorPickerTouchEffectUWP).GetTypeInfo().Assembly
                 };
 
                 Xamarin.Forms.Forms.Init(e, rendererAssemblies);

@@ -33,9 +33,9 @@ namespace Playground.Features.Radial
                         var deltaX = x - _prev.X;
                         var deltaY = y - _prev.Y;
 
-                        var vm = (RadialGradientViewModel)BindingContext;
-                        vm.CenterX += deltaX;
-                        vm.CenterY += deltaY;
+                        //var vm = (RadialGradientViewModel)BindingContext;
+                        //vm.CenterX += deltaX;
+                        //vm.CenterY += deltaY;
 
                         _prev = new SKPoint(x, y);
                     }

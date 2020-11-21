@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace Playground.Controls
+namespace Playground.Features.Editor
 {
     public partial class BackgroundTab : StackLayout
     {

@@ -3,6 +3,7 @@ using Playground.Data.Repositories;
 using Playground.Features.Animation;
 using Playground.Features.BattleTest;
 using Playground.Features.CssPreviewer;
+using Playground.Features.Editor;
 using Playground.Features.Gallery;
 using Playground.Features.Gallery.Services;
 using Playground.Features.Home;
@@ -10,6 +11,7 @@ using Playground.Features.Linear;
 using Playground.Features.Radial;
 using SimpleInjector;
 using Xamarin.Forms;
+using GradientEditorPage = Playground.Features.Editor.GradientEditorPage;
 
 namespace Playground
 {
@@ -34,12 +36,12 @@ namespace Playground
         public static void RegisterViewModels()
         {
             IoC.Register<HomeViewModel>();
+            IoC.Register<GradientEditorViewModel>();
             IoC.Register<LinearGradientViewModel>();
             IoC.Register<LinearSamplesViewModel>();
             IoC.Register<RadialGradientViewModel>();
             IoC.Register<GalleryCategoriesViewModel>();
             IoC.Register<GalleryListViewModel>();
-            IoC.Register<GalleryPreviewViewModel>();
             IoC.Register<CssPreviewerViewModel>();
             IoC.Register<BattleTestViewModel>();
             IoC.Register<AnimationsViewModel>();
@@ -47,11 +49,11 @@ namespace Playground
 
         public static void RegisterRoutes()
         {
+            Routing.RegisterRoute("GradientEditor", typeof(GradientEditorPage));
             Routing.RegisterRoute("LinearGradient", typeof(LinearGradientPage));
             Routing.RegisterRoute("RadialGradient", typeof(RadialGradientPage));
             Routing.RegisterRoute("Gallery", typeof(GalleryCategoriesPage));
             Routing.RegisterRoute("GalleryList", typeof(GalleryListPage));
-            Routing.RegisterRoute("GalleryPreview", typeof(GalleryPreviewPage));
             Routing.RegisterRoute("CssPreviewer", typeof(CssPreviewerPage));
             Routing.RegisterRoute("Animations", typeof(AnimationsPage));
             Routing.RegisterRoute("BattleTest", typeof(BattleTestPage));

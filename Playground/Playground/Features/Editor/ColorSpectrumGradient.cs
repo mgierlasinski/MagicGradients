@@ -1,8 +1,8 @@
-﻿using MagicGradients;
+﻿using System.Linq;
+using MagicGradients;
 using Playground.Extensions;
-using System.Linq;
 
-namespace Playground.Controls
+namespace Playground.Features.Editor
 {
     public class ColorSpectrumGradient : LinearGradient
     {

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
+    xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+    xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+    xmlns:picker="clr-namespace:Udara.Plugin.XFColorPickerControl;assembly=Udara.Plugin.XFColorPickerControl"
+    xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+    xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
+    xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
+    x:Class="Playground.Features.Editor.ColorInspector">
+
+    <ContentView.Resources>
+        <converters:ColorNameConverter x:Key="ColorNameConverter" />
+        <converters:OffsetToRectConverter x:Key="OffsetConverter" />
+    </ContentView.Resources>
+
+    <StackLayout Spacing="10" Orientation="Vertical">
+        <Grid ColumnDefinitions="*,50">
+            <controls:CheckeredView Margin="0,10" />
+            <magic:GradientView x:Name="ColorSpectrum" Margin="0,10" />
+            <AbsoluteLayout x:Name="AbsoluteLayout" HeightRequest="50"  
+                                SizeChanged="AbsoluteLayout_OnSizeChanged"
+                                ChildAdded="AbsoluteLayout_OnChildAdded" 
+                                ChildRemoved="AbsoluteLayout_OnChildRemoved">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView AbsoluteLayout.LayoutFlags="XProportional,HeightProportional"
+                                     AbsoluteLayout.LayoutBounds="{Binding Offset, Converter={StaticResource OffsetConverter}}"
+                                     Padding="20,0" x:DataType="editor:GradientStopClone">
+                            <Frame x:Name="Frame" Padding="3">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup>
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.StateTriggers>
+                                                <StateTrigger IsActive="{Binding IsSelected, Converter={StaticResource NegativeBoolConverter}}" />
+                                            </VisualState.StateTriggers>
+                                            <VisualState.Setters>
+                                                <Setter Property="Frame.BackgroundColor" Value="Black" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Selected">
+                                            <VisualState.StateTriggers>
+                                                <StateTrigger IsActive="{Binding IsSelected}" />
+                                            </VisualState.StateTriggers>
+                                            <VisualState.Setters>
+                                                <Setter Property="Frame.BackgroundColor" Value="{StaticResource AccentColor}" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <BoxView Color="{Binding Color}" />
+                            </Frame>
+                        </ContentView>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </AbsoluteLayout>
+            <Button Grid.Column="1" Clicked="AddColor_Clicked" 
+                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Add}, Color=White}" Margin="0,10" />
+        </Grid>
+        <!--<Frame HasShadow="False" Padding="10" Style="{StaticResource BorderFrame}" 
+               BindingContext="{Binding Source={RelativeSource AncestorType={x:Type controls:ColorInspector}}}">
+            <Grid ColumnDefinitions="150,*,100,100" RowDefinitions="40,150" RowSpacing="10">
+                <BoxView Color="{Binding SelectedStop.Color, Mode=TwoWay}" />
+                <Label Text="{Binding SelectedStop.Color, Converter={StaticResource ColorNameConverter}}" 
+                       Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
+                <Button Text="Add" Clicked="AddColor_Clicked" Grid.Column="2" />
+                <Button Text="Delete" Clicked="RemoveColor_Clicked" Grid.Column="3" />
+                <picker:ColorPicker
+                    Grid.ColumnSpan="4" Grid.Row="1"
+                    ColorFlowDirection="Horizontal"
+                    ColorSpectrumStyle="TintToHueToShadeStyle"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    PickedColorChanged="ColorPicker_OnPickedColorChanged" />
+            </Grid>
+        </Frame>-->
+        <Frame HasShadow="False" Padding="10" Style="{StaticResource BorderFrame}" 
+               BindingContext="{Binding Source={RelativeSource AncestorType={x:Type editor:ColorInspector}}}">
+            <Grid ColumnDefinitions="250,*" ColumnSpacing="20">
+                <StackLayout Orientation="Vertical" Grid.Column="1">
+                    <StackLayout Orientation="Horizontal">
+                        <controls:ColorView Color="{Binding SelectedStop.Color}" HorizontalOptions="FillAndExpand" />
+                        <Button Clicked="RemoveColor_Clicked" VerticalOptions="Fill"
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Delete}, Color=White}" />
+                    </StackLayout>
+                    <Label Text="Hex" FontSize="Medium" />
+                    <Editor Text="{Binding SelectedStop.Color, Converter={StaticResource ColorNameConverter}, Mode=OneWay}" 
+                            HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="200"
+                            FontAttributes="Bold" FontSize="Medium" IsReadOnly="True" />
+                </StackLayout>
+                <colorPicker:ColorWheel Grid.Column="0"
+                                        ShowAlphaSlider="True"
+                                        ShowLuminositySlider="False"
+                                        ShowLuminosityWheel="True"
+                                        Vertical="True"
+                                        SelectedColor="{Binding SelectedStop.Color, Mode=TwoWay}" />
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentView>

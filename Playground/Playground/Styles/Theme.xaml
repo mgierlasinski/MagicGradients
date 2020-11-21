@@ -19,6 +19,9 @@
     <Color x:Key="SeparatorColorDark">#3A3B3C</Color>
 
     <!-- Styles -->
+    <Style TargetType="VisualElement" ApplyToDerivedTypes="True" Class="ContrastElement">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}" />
+    </Style>
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}" />
     </Style>
@@ -70,7 +73,7 @@
     <Style TargetType="tabs:UnderlinedTabItem">
         <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />
         <Setter Property="LabelSize" Value="20" />
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundContrastColor}, Dark={StaticResource BackgroundContrastColorDark}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}" />
         <Setter Property="UnselectedLabelColor" Value="{AppThemeBinding Light={StaticResource HeaderColor}, Dark={StaticResource HeaderColorDark}}" />
     </Style>
     <Style TargetType="tabs:SegmentedTabItem">

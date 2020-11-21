@@ -14,8 +14,8 @@ namespace Playground.Features.Home
         
         public HomeViewModel()
         {
-            LinearCommand = new Command(async () => await Shell.Current.GoToAsync("LinearGradient"));
-            RadialCommand = new Command(async () => await Shell.Current.GoToAsync("RadialGradient"));
+            LinearCommand = new Command(async () => await Shell.Current.GoToAsync("GradientEditor?id=linear"));
+            RadialCommand = new Command(async () => await Shell.Current.GoToAsync("GradientEditor?id=radial"));
             CssCommand = new Command(async () => await Shell.Current.GoToAsync("CssPreviewer"));
             GalleryCommand = new Command(async () => await Shell.Current.GoToAsync("Gallery"));
             AnimationsCommand = new Command(async () => await Shell.Current.GoToAsync("Animations"));

@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tabs="http://sharpnado.com"
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
-             x:Class="Playground.Controls.BackgroundTab" Padding="10">
+             x:Class="Playground.Features.Editor.BackgroundTab">
     <StackLayout.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+        </Style>
         <converters:DimensionsConverter x:Key="DimensionsConverter" />
     </StackLayout.Resources>
-
+    
     <Label Text="Gradient Size" />
-    <Slider Value="{Binding Size, Converter={StaticResource DimensionsConverter}}" 
+    <Slider Value="{Binding GradientSize, Converter={StaticResource DimensionsConverter}}" 
             Maximum="1" Minimum="0" HorizontalOptions="FillAndExpand" />
     <tabs:TabHostView SelectedIndex="{Binding RepeatIndex, Mode=TwoWay}" Style="{StaticResource SegmentedTabs}" Margin="0,10,0,0">
         <tabs:TabHostView.Tabs>

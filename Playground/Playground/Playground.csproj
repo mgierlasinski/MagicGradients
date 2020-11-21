@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="29.0.2" />
+    <PackageReference Include="ColorPicker.Xamarin.Forms" Version="1.3.4.11" />
     <PackageReference Include="Sharpnado.Tabs" Version="2.0.1" />
     <PackageReference Include="SimpleInjector" Version="5.1.0" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.1.1" />
@@ -37,15 +38,18 @@
     <EmbeddedResource Update="Controls\AnimationClip.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-	<EmbeddedResource Update="Controls\BackgroundTab.xaml">
+	<EmbeddedResource Update="Features\Editor\BackgroundTab.xaml">
 	  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 	</EmbeddedResource>
-	<EmbeddedResource Update="Controls\ColorInspector.xaml">
+	<EmbeddedResource Update="Features\Editor\ColorInspector.xaml">
 	  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 	</EmbeddedResource>
 	<EmbeddedResource Update="Controls\MenuSection.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+	<EmbeddedResource Update="Features\Editor\PropertiesTab.xaml">
+	  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	</EmbeddedResource>
     <EmbeddedResource Update="Controls\RadialMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -56,9 +60,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
 	<EmbeddedResource Update="Features\BattleTest\BattleTestPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Features\Gallery\GalleryPreviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\Gallery\GalleryListPage.xaml">

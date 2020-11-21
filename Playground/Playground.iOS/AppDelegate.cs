@@ -21,6 +21,7 @@ namespace Playground.iOS
             Xamarin.Forms.Forms.Init();
             Sharpnado.Tabs.iOS.Preserver.Preserve();
             Sharpnado.Shades.iOS.iOSShadowsRenderer.Initialize();
+            ColorPicker.iOS.ColorPickerEffects.Init();
 
             LoadApplication(new App());
 
