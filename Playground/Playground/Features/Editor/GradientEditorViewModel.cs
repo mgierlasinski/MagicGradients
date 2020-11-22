@@ -1,12 +1,11 @@
 ﻿using MagicGradients;
-using Playground.Extensions;
+using Playground.Features.Editor.Handlers;
 using Playground.Features.Gallery.Services;
 using Playground.ViewModels;
-using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-using GradientStop = MagicGradients.GradientStop;
 
 namespace Playground.Features.Editor
 {
@@ -15,31 +14,23 @@ namespace Playground.Features.Editor
     {
         private readonly IGalleryService _galleryService;
 
-        private IGradientSource _gradientSource;
-        public IGradientSource GradientSource
+        public LinearHandler Linear { get; }
+        public RadialHandler Radial { get; }
+
+        private GradientCollection _gradientSource;
+        public GradientCollection GradientSource
         {
             get => _gradientSource;
-            set => SetProperty(ref _gradientSource, value, 
-                () => Gradients = GradientSource?.GetGradients()?.ToList());
-        }
-
-        private List<Gradient> _gradients;
-        public List<Gradient> Gradients
-        {
-            get => _gradients;
-            set => SetProperty(ref _gradients, value);
+            set => SetProperty(ref _gradientSource, value);
         }
 
         private Gradient _gradient;
         public Gradient Gradient
         {
             get => _gradient;
-            set => SetProperty(ref _gradient, value, 
-                () => RaisePropertyChanged(nameof(IsRadial)));
+            set => SetProperty(ref _gradient, value, OnGradientChanged);
         }
-
-        public bool IsRadial => Gradient is RadialGradient;
-
+        
         private int _isRepeatingIndex;
         public int IsRepeatingIndex
         {
@@ -63,82 +54,6 @@ namespace Playground.Features.Editor
             get => _repeatIndex;
             set => SetProperty(ref _repeatIndex, value, 
                 () => RaisePropertyChanged(nameof(GradientRepeat)));
-        }
-
-        //private double _angle;
-        //public double Angle
-        //{
-        //    get => _angle;
-        //    set => SetProperty(ref _angle, value, UpdateAngle);
-        //}
-
-        private double _centerX = 0.5d;
-        public double CenterX
-        {
-            get => _centerX;
-            set => SetProperty(ref _centerX, value, UpdateCenter);
-        }
-
-        private double _centerY = 0.5d;
-        public double CenterY
-        {
-            get => _centerY;
-            set => SetProperty(ref _centerY, value, UpdateCenter);
-        }
-
-        private double _radiusX = 200;
-        public double RadiusX
-        {
-            get => _radiusX;
-            set => SetProperty(ref _radiusX, value, UpdateRadiusX);
-        }
-
-        private double _radiusY = 200;
-        public double RadiusY
-        {
-            get => _radiusY;
-            set => SetProperty(ref _radiusY, value, UpdateRadiusY);
-        }
-
-        public RadialGradientShape SelectedShape => (RadialGradientShape)ShapeIndex;
-
-        private int _shapeIndex;
-        public int ShapeIndex
-        {
-            get => _shapeIndex;
-            set => SetProperty(ref _shapeIndex, value, UpdateShape);
-        }
-
-        public RadialGradientSize SelectedSize
-        {
-            get
-            {
-                if (SizeOneIndex == 0)
-                    return SizeTwoIndex == 0 ? RadialGradientSize.ClosestCorner : RadialGradientSize.ClosestSide;
-
-                return SizeTwoIndex == 0 ? RadialGradientSize.FarthestCorner : RadialGradientSize.FarthestSide;
-            }
-        }
-
-        private int _sizeOneIndex;
-        public int SizeOneIndex
-        {
-            get => _sizeOneIndex;
-            set => SetProperty(ref _sizeOneIndex, value, UpdateSize);
-        }
-
-        private int _sizeTwoIndex;
-        public int SizeTwoIndex
-        {
-            get => _sizeTwoIndex;
-            set => SetProperty(ref _sizeTwoIndex, value, UpdateSize);
-        }
-
-        private bool _isCustomSize;
-        public bool IsCustomSize
-        {
-            get => _isCustomSize;
-            set => SetProperty(ref _isCustomSize, value, UpdateIsCustomSize);
         }
 
         private int _selectedTabIndex;
@@ -166,21 +81,36 @@ namespace Playground.Features.Editor
             set => SetProperty(ref _isEditMode, value);
         }
 
-        public ICommand EditCommand { get; set; }
-        public ICommand CloseEditCommand { get; set; }
-        public ICommand PreviewCssCommand { get; set; }
-        public ICommand BattleTestCommand { get; set; }
+        private bool _isRadial;
+        public bool IsRadial
+        {
+            get => _isRadial;
+            set => SetProperty(ref _isRadial, value);
+        }
+
+        public ICommand AddCommand { get; }
+        public ICommand EditCommand { get; }
+        public ICommand CloseEditCommand { get; }
+        public ICommand PreviewCssCommand { get; }
+        public ICommand BattleTestCommand { get; }
 
         public GradientEditorViewModel(IGalleryService galleryService)
         {
             _galleryService = galleryService;
 
+            GradientSource = new GradientCollection();
+            Linear = new LinearHandler(this);
+            Radial = new RadialHandler(this);
+
+            AddCommand = new Command(() => AddAction());
             EditCommand = new Command(EditAction);
             CloseEditCommand = new Command(() => { IsEditMode = false; });
+
             PreviewCssCommand = new Command(async () =>
             {
                 await Shell.Current.GoToAsync($"CssPreviewer?id={Id}");
             });
+
             BattleTestCommand = new Command(async () =>
             {
                 await Shell.Current.GoToAsync($"BattleTest?id={Id}");
@@ -192,129 +122,54 @@ namespace Playground.Features.Editor
             if (int.TryParse(_id, out var id))
             {
                 var gradient = _galleryService.GetGradientById(id);
-                GradientSource = gradient.Source;
+                GradientSource = (GradientCollection)gradient.Source;
                 GradientSize = gradient.Size;
+                return;
             }
 
             if (_id == "linear")
-            {
-                GradientSource = GetLinearGradient();
-                EditCommand.Execute(null);
-            }
+                GradientSource.Gradients.Add(Linear.Create());
 
             if (_id == "radial")
+                GradientSource.Gradients.Add(Radial.Create());
+
+            EditCommand.Execute(null);
+        }
+
+        private void OnGradientChanged()
+        {
+            if (_gradient is RadialGradient radial)
             {
-                GradientSource = GetRadialGradient();
-                EditCommand.Execute(null);
+                Radial.LoadGradient(radial);
+                IsRadial = true;
+            }
+            else
+            {
+                IsRadial = false;
             }
         }
 
-        private IGradientSource GetLinearGradient()
+        private async Task AddAction()
         {
-            var linear = new LinearGradient();
-            linear.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
-            linear.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
-            linear.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
-            linear.Measure(0, 0);
+            var values = new [] { "Linear gradient", "Radial gradient" };
+            var result = await Shell.Current.DisplayActionSheet("Add gradient", "Cancel", null, values);
 
-            return linear;
-        }
+            if(result == values[0])
+                GradientSource.Gradients.Add(Linear.Create());
 
-        private IGradientSource GetRadialGradient()
-        {
-            var radial = new RadialGradient
-            {
-                Flags = RadialGradientFlags.PositionProportional
-            };
+            else if (result == values[1])
+                GradientSource.Gradients.Add(Radial.Create());
 
-            radial.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
-            radial.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
-            radial.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
-            radial.Measure(0, 0);
-
-            UpdateCenter();
-            UpdateShape();
-            UpdateSize();
-
-            return radial;
+            // Select added
+            Gradient = GradientSource?.Gradients?.LastOrDefault();
         }
 
         private void EditAction()
         {
             if (Gradient == null)
-                Gradient = Gradients.FirstOrDefault();
+                Gradient = GradientSource.Gradients.FirstOrDefault();
 
             IsEditMode = true;
-        }
-
-        //protected void UpdateAngle()
-        //{
-        //    if(Gradient is LinearGradient linear)
-        //        linear.Angle = _angle;
-        //}
-
-        protected void UpdateCenter()
-        {
-            if (Gradient is RadialGradient radial)
-                radial.Center = new Point(CenterX, CenterY);
-        }
-
-        protected void UpdateRadiusX()
-        {
-            if (!IsCustomSize)
-                return;
-
-            if (Gradient is RadialGradient radial)
-                radial.RadiusX = RadiusX;
-        }
-
-        protected void UpdateRadiusY()
-        {
-            if (!IsCustomSize)
-                return;
-
-            if (Gradient is RadialGradient radial)
-                radial.RadiusY = RadiusY;
-        }
-
-        protected void UpdateShape()
-        {
-            if (IsCustomSize)
-                return;
-
-            if (Gradient is RadialGradient radial)
-            {
-                radial.RadiusX = -1;
-                radial.RadiusY = -1;
-                radial.Shape = SelectedShape;
-            }
-        }
-
-        protected void UpdateSize()
-        {
-            if (IsCustomSize)
-                return;
-
-            if (Gradient is RadialGradient radial)
-            {
-                radial.RadiusX = -1;
-                radial.RadiusY = -1;
-                radial.Size = SelectedSize;
-            }
-        }
-
-        protected void UpdateIsCustomSize()
-        {
-            if (IsCustomSize)
-            {
-                UpdateRadiusX();
-                UpdateRadiusY();
-            }
-            else
-            {
-                UpdateShape();
-                UpdateSize();
-            }
         }
     }
 }

@@ -31,24 +31,41 @@
     <Grid RowDefinitions="*,Auto" RowSpacing="0">
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
-                            GradientRepeat="{Binding GradientRepeat}" />
+                            GradientRepeat="{Binding GradientRepeat}"
+                            EnableTouchEvents="{Binding IsRadial}" 
+                            Touch="SKCanvasView_OnTouch" 
+                            PaintSurface="SKCanvasView_OnPaintSurface"/>
+
+        <Grid VerticalOptions="Start" BackgroundColor="Black" IsVisible="{Binding IsRadial}">
+            <Label TextColor="White" FontSize="12" Margin="2">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Center:&#160;" />
+                        <Span Text="{Binding Radial.CenterX, StringFormat='{0:0.###}'}" />
+                        <Span Text="&#160;" />
+                        <Span Text="{Binding Radial.CenterY, StringFormat='{0:0.###}'}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label TextColor="White" Text="Drag to move" FontSize="12" Margin="2" HorizontalOptions="End" />
+        </Grid>
+
         <Grid Grid.Row="1" RowDefinitions="40,Auto" ColumnDefinitions="40,*" 
               RowSpacing="0" ColumnSpacing="10" HeightRequest="350"
               IsVisible="{Binding IsEditMode}">
-            <Grid Grid.RowSpan="2" RowDefinitions="40,Auto" StyleClass="ContrastElement">
-                <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" 
-                             Command="{Binding CloseEditCommand}" />
-                <BoxView Style="{StaticResource Separator}" VerticalOptions="End" />
-                <CollectionView ItemsSource="{Binding Gradients}" 
-                                SelectedItem="{Binding Gradient}"
-                                SelectionMode="Single" Grid.Row="1">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding Converter={StaticResource IconConverter}}" />
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </Grid>
+            <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" 
+                         Command="{Binding AddCommand}" />
+            <BoxView Style="{StaticResource Separator}" VerticalOptions="End" />
+            <CollectionView ItemsSource="{Binding GradientSource.Gradients}" 
+                            SelectedItem="{Binding Gradient}"
+                            SelectionMode="Single" Grid.Row="1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding Converter={StaticResource IconConverter}}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <tabs:TabHostView TabType="Scrollable" Margin="0,0,40,0" Grid.Column="1"
                               SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
                 <tabs:TabHostView.Tabs>
@@ -61,8 +78,8 @@
                          Command="{Binding CloseEditCommand}"
                          WidthRequest="30" HeightRequest="30" Grid.Column="1"
                          HorizontalOptions="End" VerticalOptions="Start" />
-            <tabs:ViewSwitcher x:Name="Switcher" Grid.Column="1"
-                               SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}" Grid.Row="1">
+            <tabs:ViewSwitcher x:Name="Switcher" Grid.Row="1" Grid.Column="1"
+                               SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}">
                 <editor:PropertiesTab Margin="10" />
                 <editor:ColorInspector Gradient="{Binding Gradient}" Margin="10" />
                 <editor:BackgroundTab Margin="10" />
