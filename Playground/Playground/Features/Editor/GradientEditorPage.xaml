@@ -16,16 +16,8 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}"
-                     Text="{OnPlatform UWP=Edit}"
+                     Text="{OnPlatform UWP=Edit}" 
                      IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Layers}, Color=White}" />
-
-        <ToolbarItem Command="{Binding PreviewCssCommand}"
-                     Text="{OnPlatform UWP=CSS}"
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}, Color=White}" />
-
-        <ToolbarItem Command="{Binding BattleTestCommand}"
-                     Text="{OnPlatform UWP=Paint}"
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Paint}, Color=White}" />
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,Auto" RowSpacing="0">
@@ -50,19 +42,21 @@
             <Label TextColor="White" Text="Drag to move" FontSize="12" Margin="2" HorizontalOptions="End" />
         </Grid>
 
-        <Grid Grid.Row="1" RowDefinitions="40,Auto" ColumnDefinitions="40,*" 
+        <Grid Grid.Row="1" RowDefinitions="40,*" ColumnDefinitions="40,*" 
               RowSpacing="0" ColumnSpacing="10" HeightRequest="350"
               IsVisible="{Binding IsEditMode}">
             <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
-            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" 
-                         Command="{Binding AddCommand}" />
-            <BoxView Style="{StaticResource Separator}" VerticalOptions="End" />
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" Margin="5"
+                         Command="{Binding AddCommand}" StyleClass="BackgroundElement" />
             <CollectionView ItemsSource="{Binding GradientSource.Gradients}" 
                             SelectedItem="{Binding Gradient}"
                             SelectionMode="Single" Grid.Row="1">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding Converter={StaticResource IconConverter}}" />
+                        <ContentView>
+                            <Image Source="{Binding Converter={StaticResource IconConverter}}" 
+                                   Margin="0,5"/>
+                        </ContentView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
@@ -71,18 +65,31 @@
                 <tabs:TabHostView.Tabs>
                     <tabs:UnderlinedTabItem Label="Properties" Padding="10,0" />
                     <tabs:UnderlinedTabItem Label="Colors" Padding="10,0" />
-                    <tabs:UnderlinedTabItem Label="Background" Padding="10,0" />
+                    <tabs:UnderlinedTabItem Label="Size" Padding="10,0" />
+                    <tabs:UnderlinedTabItem Label="Tools" Padding="10,0" 
+                                            IsVisible="{Binding IsGallery}" />
                 </tabs:TabHostView.Tabs>
             </tabs:TabHostView>
             <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}}" 
                          Command="{Binding CloseEditCommand}"
                          WidthRequest="30" HeightRequest="30" Grid.Column="1"
-                         HorizontalOptions="End" VerticalOptions="Start" />
+                         HorizontalOptions="End" VerticalOptions="Start" 
+                         StyleClass="BackgroundElement" />
             <tabs:ViewSwitcher x:Name="Switcher" Grid.Row="1" Grid.Column="1"
                                SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}">
                 <editor:PropertiesTab Margin="10" />
                 <editor:ColorInspector Gradient="{Binding Gradient}" Margin="10" />
                 <editor:BackgroundTab Margin="10" />
+                <ContentView>
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="180">
+                        <Button Text="CSS previewer" 
+                                Command="{Binding PreviewCssCommand}"
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}}" />
+                        <Button Text="Paint" 
+                                Command="{Binding BattleTestCommand}"
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Paint}}" />
+                    </StackLayout>
+                </ContentView>
             </tabs:ViewSwitcher>
         </Grid>
     </Grid>

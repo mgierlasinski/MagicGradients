@@ -31,14 +31,6 @@ namespace Playground.Features.Editor
             set => SetProperty(ref _gradient, value, OnGradientChanged);
         }
         
-        private int _isRepeatingIndex;
-        public int IsRepeatingIndex
-        {
-            get => _isRepeatingIndex;
-            set => SetProperty(ref _isRepeatingIndex, value,
-                () => Gradient.IsRepeating = _isRepeatingIndex == 1);
-        }
-
         private Dimensions _gradientSize = Dimensions.Prop(1, 1);
         public Dimensions GradientSize
         {
@@ -46,14 +38,11 @@ namespace Playground.Features.Editor
             set => SetProperty(ref _gradientSize, value);
         }
 
-        public BackgroundRepeat GradientRepeat => (BackgroundRepeat)RepeatIndex;
-
-        private int _repeatIndex;
-        public int RepeatIndex
+        private BackgroundRepeat _gradientRepeat;
+        public BackgroundRepeat GradientRepeat
         {
-            get => _repeatIndex;
-            set => SetProperty(ref _repeatIndex, value, 
-                () => RaisePropertyChanged(nameof(GradientRepeat)));
+            get => _gradientRepeat;
+            set => SetProperty(ref _gradientRepeat, value);
         }
 
         private int _selectedTabIndex;
@@ -86,6 +75,13 @@ namespace Playground.Features.Editor
         {
             get => _isRadial;
             set => SetProperty(ref _isRadial, value);
+        }
+
+        private bool _isGallery;
+        public bool IsGallery
+        {
+            get => _isGallery;
+            set => SetProperty(ref _isGallery, value);
         }
 
         public ICommand AddCommand { get; }
@@ -121,9 +117,7 @@ namespace Playground.Features.Editor
         {
             if (int.TryParse(_id, out var id))
             {
-                var gradient = _galleryService.GetGradientById(id);
-                GradientSource = (GradientCollection)gradient.Source;
-                GradientSize = gradient.Size;
+                LoadFromGallery(id);   
                 return;
             }
 
@@ -134,6 +128,14 @@ namespace Playground.Features.Editor
                 GradientSource.Gradients.Add(Radial.Create());
 
             EditCommand.Execute(null);
+        }
+
+        private void LoadFromGallery(int id)
+        {
+            var gradient = _galleryService.GetGradientById(id);
+            GradientSource = (GradientCollection)gradient.Source;
+            GradientSize = gradient.Size;
+            IsGallery = true;
         }
 
         private void OnGradientChanged()

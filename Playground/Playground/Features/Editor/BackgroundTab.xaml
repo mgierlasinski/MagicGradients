@@ -5,16 +5,15 @@
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              x:Class="Playground.Features.Editor.BackgroundTab">
     <StackLayout.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontSize" Value="20" />
-        </Style>
         <converters:DimensionsConverter x:Key="DimensionsConverter" />
+        <converters:EnumToIntConverter x:Key="EnumToIntConverter" />
     </StackLayout.Resources>
     
     <Label Text="Gradient Size" />
     <Slider Value="{Binding GradientSize, Converter={StaticResource DimensionsConverter}}" 
             Maximum="1" Minimum="0" HorizontalOptions="FillAndExpand" />
-    <tabs:TabHostView SelectedIndex="{Binding RepeatIndex, Mode=TwoWay}" Style="{StaticResource SegmentedTabs}" Margin="0,10,0,0">
+    <tabs:TabHostView SelectedIndex="{Binding GradientRepeat, Mode=TwoWay, Converter={StaticResource EnumToIntConverter}}" 
+                      Style="{StaticResource SegmentedTabs}" Margin="0,10,0,0">
         <tabs:TabHostView.Tabs>
             <tabs:SegmentedTabItem Label="Repeat" />
             <tabs:SegmentedTabItem Label="Repeat X" />

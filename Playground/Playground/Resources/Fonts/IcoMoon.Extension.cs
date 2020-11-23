@@ -19,7 +19,7 @@ namespace Playground.Resources.Fonts
         [TypeConverter(typeof(FontSizeConverter))]
         public double Size { get; set; } = (double)FontImageSource.SizeProperty.DefaultValue;
 
-        public FontImageSource ProvideValue(IServiceProvider serviceProvider)
+        public FontImageSource GetIcon()
         {
             var icon = new FontImageSource
             {
@@ -56,9 +56,7 @@ namespace Playground.Resources.Fonts
             }
         }
 
-        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
-        {
-            return ProvideValue(serviceProvider);
-        }
+        public FontImageSource ProvideValue(IServiceProvider serviceProvider) => GetIcon();
+        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider) => ProvideValue(serviceProvider);
     }
 }

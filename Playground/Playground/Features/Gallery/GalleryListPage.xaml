@@ -19,7 +19,7 @@
                         ItemsSource="{Binding Gradients}"
                         SelectionMode="Single"
                         SelectedItem="{Binding SelectedItem}"
-                        SelectionChanged="GalleryList_OnSelectionChanged">
+                        SelectionChanged="GalleryList_OnSelectionChanged" Margin="3">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
@@ -28,7 +28,7 @@
                     <Grid>
                         <magic:GradientView GradientSource="{Binding Source}" 
                                             GradientSize="{Binding Size}"
-                                            HeightRequest="150" Margin="5" />
+                                            HeightRequest="150" Margin="3" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

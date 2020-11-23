@@ -10,18 +10,15 @@ namespace Playground.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var icon = new FontImageSource
-            {
-                FontFamily = "IcoMoon"
-            };
+            var icoMoon = new IcoMoon();
 
             if (value is LinearGradient)
-                icon.Glyph = IcoMoon.Gradient;
+                icoMoon.Glyph = IcoMoon.Gradient;
 
             if (value is RadialGradient)
-                icon.Glyph = IcoMoon.Radial;
+                icoMoon.Glyph = IcoMoon.Radial;
 
-            return icon;
+            return icoMoon.GetIcon();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

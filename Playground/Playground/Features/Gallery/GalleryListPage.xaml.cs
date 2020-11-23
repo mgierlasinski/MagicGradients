@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Playground.Extensions;
+using System;
 using Xamarin.Forms;
 
 namespace Playground.Features.Gallery
@@ -23,8 +24,7 @@ namespace Playground.Features.Gallery
                 _isLoaded = true;
             }
 
-            var cols = (int)Math.Floor(GalleryList.Width / 300);
-            ((GridItemsLayout) GalleryList.ItemsLayout).Span = cols;
+            AdaptiveUtils.SetGridColumns(GalleryList);
         }
 
         private void GalleryList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)

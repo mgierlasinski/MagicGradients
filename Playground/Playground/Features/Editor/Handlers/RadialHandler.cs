@@ -24,52 +24,39 @@ namespace Playground.Features.Editor.Handlers
             set => SetProperty(ref _centerY, value, UpdateCenter);
         }
 
-        private double _radiusX = 200;
+        private double _radiusX;
         public double RadiusX
         {
             get => _radiusX;
             set => SetProperty(ref _radiusX, value, UpdateRadiusX);
         }
 
-        private double _radiusY = 200;
+        private double _radiusY;
         public double RadiusY
         {
             get => _radiusY;
             set => SetProperty(ref _radiusY, value, UpdateRadiusY);
         }
 
-        public RadialGradientShape SelectedShape => (RadialGradientShape)ShapeIndex;
-
-        private int _shapeIndex;
-        public int ShapeIndex
+        private int _shape;
+        public int Shape
         {
-            get => _shapeIndex;
-            set => SetProperty(ref _shapeIndex, value, UpdateShape);
+            get => _shape;
+            set => SetProperty(ref _shape, value, UpdateShape);
         }
 
-        public RadialGradientSize SelectedSize
+        private int _sizeOne;
+        public int SizeOne
         {
-            get
-            {
-                if (SizeOneIndex == 0)
-                    return SizeTwoIndex == 0 ? RadialGradientSize.ClosestCorner : RadialGradientSize.ClosestSide;
-
-                return SizeTwoIndex == 0 ? RadialGradientSize.FarthestCorner : RadialGradientSize.FarthestSide;
-            }
+            get => _sizeOne;
+            set => SetProperty(ref _sizeOne, value, UpdateSize);
         }
 
-        private int _sizeOneIndex;
-        public int SizeOneIndex
+        private int _sizeTwo;
+        public int SizeTwo
         {
-            get => _sizeOneIndex;
-            set => SetProperty(ref _sizeOneIndex, value, UpdateSize);
-        }
-
-        private int _sizeTwoIndex;
-        public int SizeTwoIndex
-        {
-            get => _sizeTwoIndex;
-            set => SetProperty(ref _sizeTwoIndex, value, UpdateSize);
+            get => _sizeTwo;
+            set => SetProperty(ref _sizeTwo, value, UpdateSize);
         }
 
         private bool _isCustomSize;
@@ -84,7 +71,7 @@ namespace Playground.Features.Editor.Handlers
             _parent = parent;
         }
 
-        public Gradient Create()
+        public RadialGradient Create()
         {
             var radial = new RadialGradient
             {
@@ -96,19 +83,28 @@ namespace Playground.Features.Editor.Handlers
             radial.Stops.Add(new GradientStop { Color = ColorUtils.GetRandom() });
             radial.Measure(0, 0);
 
-            UpdateCenter();
-            UpdateShape();
-            UpdateSize();
-
             return radial;
         }
 
         public void LoadGradient(RadialGradient radial)
         {
-            CenterX = radial.Center.X;
-            CenterY = radial.Center.Y;
-            RadiusX = radial.RadiusX;
-            RadiusY = radial.RadiusY;
+            _centerX = radial.Center.X;
+            _centerY = radial.Center.Y;
+            _radiusX = radial.RadiusX;
+            _radiusY = radial.RadiusY;
+            _shape = (int)radial.Shape;
+            _sizeOne = radial.Size.IsClosest() ? 0 : 1;
+            _sizeTwo = radial.Size.IsCorner() ? 0 : 1;
+            _isCustomSize = RadiusX > 0 || RadiusY > 0;
+
+            RaisePropertyChanged(nameof(CenterX));
+            RaisePropertyChanged(nameof(CenterY));
+            RaisePropertyChanged(nameof(RadiusX));
+            RaisePropertyChanged(nameof(RadiusY));
+            RaisePropertyChanged(nameof(Shape));
+            RaisePropertyChanged(nameof(SizeOne));
+            RaisePropertyChanged(nameof(SizeTwo));
+            RaisePropertyChanged(nameof(IsCustomSize));
         }
 
         private void UpdateCenter()
@@ -144,7 +140,7 @@ namespace Playground.Features.Editor.Handlers
             {
                 radial.RadiusX = -1;
                 radial.RadiusY = -1;
-                radial.Shape = SelectedShape;
+                radial.Shape = (RadialGradientShape)Shape;
             }
         }
 
@@ -157,7 +153,9 @@ namespace Playground.Features.Editor.Handlers
             {
                 radial.RadiusX = -1;
                 radial.RadiusY = -1;
-                radial.Size = SelectedSize;
+                radial.Size = SizeOne == 0 ? 
+                    SizeTwo == 0 ? RadialGradientSize.ClosestCorner : RadialGradientSize.ClosestSide :
+                    SizeTwo == 0 ? RadialGradientSize.FarthestCorner : RadialGradientSize.FarthestSide;
             }
         }
 
