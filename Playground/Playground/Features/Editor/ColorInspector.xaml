@@ -1,18 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
-    xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
-    xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
-    xmlns:picker="clr-namespace:Udara.Plugin.XFColorPickerControl;assembly=Udara.Plugin.XFColorPickerControl"
-    xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
-    xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
-    xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
-    x:Class="Playground.Features.Editor.ColorInspector">
-
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+             xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
+             xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
+             x:Class="Playground.Features.Editor.ColorInspector">
     <ContentView.Resources>
-        <converters:ColorNameConverter x:Key="ColorNameConverter" />
         <converters:OffsetToRectConverter x:Key="OffsetConverter" />
     </ContentView.Resources>
 

@@ -37,9 +37,7 @@ namespace Playground
         {
             IoC.Register<HomeViewModel>();
             IoC.Register<GradientEditorViewModel>();
-            IoC.Register<LinearGradientViewModel>();
             IoC.Register<LinearSamplesViewModel>();
-            IoC.Register<RadialGradientViewModel>();
             IoC.Register<GalleryCategoriesViewModel>();
             IoC.Register<GalleryListViewModel>();
             IoC.Register<CssPreviewerViewModel>();
@@ -50,8 +48,6 @@ namespace Playground
         public static void RegisterRoutes()
         {
             Routing.RegisterRoute("GradientEditor", typeof(GradientEditorPage));
-            Routing.RegisterRoute("LinearGradient", typeof(LinearGradientPage));
-            Routing.RegisterRoute("RadialGradient", typeof(RadialGradientPage));
             Routing.RegisterRoute("Gallery", typeof(GalleryCategoriesPage));
             Routing.RegisterRoute("GalleryList", typeof(GalleryListPage));
             Routing.RegisterRoute("CssPreviewer", typeof(CssPreviewerPage));
