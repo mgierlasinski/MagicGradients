@@ -67,8 +67,6 @@ It is also possible to add collection of gradients. You can mix linear and radia
 </magic:GradientView>
 ```
 
-### Builder
-
 You can also build gradient in C# using `GradientBuilder` with Fluent API:
 
 ``` c#
@@ -121,7 +119,7 @@ You can embed CSS inline:
 </magic:GradientView>
 ```
 
-Or from CSS stylesheet:
+Or style from CSS stylesheet:
 
 ``` xml
 <magic:GradientView StyleClass="myGradient" />
@@ -139,16 +137,10 @@ You can test CSS gradient code live within Playground application.
 
 ![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/paste-css.gif)
 
-### Linear gradient function syntax
+### Linear gradient function
 
-Single linear gradient
 ``` css
 linear-gradient(direction, color-stop1, color-stop2, ...);
-```
-
-Repeating linear gradient
-``` css
-releating-linear-gradient(direction, color-stop1, color-stop2, ...);
 ```
 
 Supported directions:
@@ -163,16 +155,10 @@ Suppored color formats:
 - colors in hex: `#ff0000`
 - named colors: `red`, `green`, `blue`, `orange`, `pink`
 
-### Radial gradient function syntax
+### Radial gradient function
 
-Single radial gradient
 ``` css
 radial-gradient(shape size at position, start-color, ..., last-color);
-```
-
-Repeating radial gradient
-``` css
-repeating-radial-gradient(shape size at position, start-color, ..., last-color);
 ```
 
 - supported shapes: `circle`, `ellipse`
