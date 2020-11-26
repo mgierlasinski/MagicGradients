@@ -46,11 +46,11 @@
     <Grid RowSpacing="0" RowDefinitions="Auto,Auto,*">
         <StackLayout Orientation="Horizontal" Spacing="0" StyleClass="ContrastElement">
             <Button x:Name="AddButton" Command="{Binding ShowSnippetsCommand}" StyleClass="ContrastElement" 
-                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Add}, Size=24}" />
+                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Size=24}" />
             <Button x:Name="ClearButton" Command="{Binding ClearCommand}" StyleClass="ContrastElement" 
-                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}, Size=24}" />
+                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Clear}, Size=24}" />
             <Button x:Name="RefreshButton" Command="{Binding RefreshCommand}" StyleClass="ContrastElement" 
-                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Refresh}, Size=24}" />
+                    ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Refresh}, Size=24}" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding IsHotReload}" HorizontalOptions="EndAndExpand" />
                 <Label Text="Hot reload" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,10,0" />

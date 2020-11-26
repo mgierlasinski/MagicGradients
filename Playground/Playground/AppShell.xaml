@@ -30,7 +30,7 @@
                         </magic:LinearGradient>
                     </magic:GradientCollection>
                 </magic:GradientView>
-                <Label Text="{x:Static ic:IcoMoon.MagicWand}" Style="{StaticResource FontLabel}" 
+                <Label Text="{x:Static ic:IcoMoonGlyph.MagicWand}" Style="{StaticResource FontLabel}" 
                        WidthRequest="70" HeightRequest="70" FontSize="70" TextColor="White" 
                        HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" />
                 <Label Text="Magic Gradients" TextColor="White" FontAttributes="Bold" 
@@ -40,21 +40,21 @@
     </Shell.FlyoutHeaderTemplate>
 
     <ShellContent Title="Home" ContentTemplate="{DataTemplate home:HomePage}"
-                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Home}}" />
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Home}}" />
         
     <ShellContent Title="Gradient Gallery" ContentTemplate="{DataTemplate gallery:GalleryCategoriesPage}"
-                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Gallery}}" />
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Gallery}}" />
         
     <ShellContent Title="CSS previewer" ContentTemplate="{DataTemplate previewer:CssPreviewerPage}"
-                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}}" />
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}}" />
         
     <ShellContent Title="Linear Gradients" ContentTemplate="{DataTemplate linear:LinearSamplesPage}"
-                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Gradient}}" />
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Gradient}}" />
 
     <ShellContent Title="Radial Gradients" ContentTemplate="{DataTemplate radial:RadialSamplesPage}"
-                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Radial}}" />
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Radial}}" />
         
     <ShellContent Title="Animations" ContentTemplate="{DataTemplate anim:AnimationsPage}" 
-                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoon.Bolt}}" />
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}}" />
     
 </Shell>
