@@ -14,41 +14,24 @@ Install from NuGet:
 | :heavy_check_mark: iOS |
 | :heavy_check_mark: UWP |
 
-## Gallery
-
-You can preview some of the gradients from [Gradient Magic](https://www.gradientmagic.com/) in Playground app. To use the examples from the gallery, you need just copy Gradient CSS and paste into your project.
-
-(Video on YouTube ⬇️)
-
-[![Gallery](https://img.youtube.com/vi/PFSlubz6_ps/0.jpg)](https://www.youtube.com/watch?v=PFSlubz6_ps)
-
-
-![GIF](./Assets/MagicGradientsGallery.gif)
-
 ## Getting Started
 
 Install via [NuGet](https://www.nuget.org/packages/MagicGradients) or include the Magic Gradients project in your solution and add local references in your shared project.
 
 As it requires SkiaSharp, you will also need to ensure you add SkiaSharp.Views.Forms to your shared Xamarin.Forms project. 
 
-## Setting gradient source
+## Drawing gradient
 
-You can build gradients manually in XAML. To draw single gradient just create `LinearGradient` or `RadialGradient` as direct content of `GradientView`.
+To draw a gradient add `GradientView` control to your XAML page and create `LinearGradient` or `RadialGradient` as direct content.
 
 ``` xml
 <magic:GradientView>
-    <magic:LinearGradient Angle="45">
+    <magic:LinearGradient>
         <magic:GradientStop Color="Red" />
-        <magic:GradientStop Color="Yellow" Offset="20px" />
-        <magic:GradientStop Color="Green" Offset="0.5" />
+        <magic:GradientStop Color="Yellow" />
     </magic:LinearGradient>
 </magic:GradientView>
 ```
-
-Offset types:
-- `0.3`, `30%` - proportional, `Offset.Prop(0.3)` in code
-- `200px` - absolute, `Offset.Abs(200)` in code
-- leave blank - each undefined offset will be calculated like in CSS
 
 It is also possible to add collection of gradients. You can mix linear and radial gradients, use transparency in color definitions to get blend effect. 
 
@@ -127,15 +110,9 @@ Or style from CSS stylesheet:
 
 ``` css
 .myGradient {
-    background: linear-gradient(90deg, rgb(235, 216, 9),rgb(202, 60, 134));
+    background: linear-gradient(90deg, rgb(235, 216, 9), rgb(202, 60, 134));
 }
 ```
-
-### CSS previewer
-
-You can test CSS gradient code live within Playground application.
-
-![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/paste-css.gif)
 
 ### Linear gradient function
 
@@ -163,7 +140,7 @@ radial-gradient(shape size at position, start-color, ..., last-color);
 
 - supported shapes: `circle`, `ellipse`
 - suppored sizes: `closest-side`, `closest-corner`\*, `farthest-side`, `farthest-corner`\* 
-- supported sizes: in pixels (`px`), propoertional (`%`) and named directions (`left`, `right`, `top`, `bottom`, `center`)
+- supported sizes: in pixels (`px`), proportional (`%`) and named directions (`left`, `right`, `top`, `bottom`, `center`)
 - suppored color formats: (see linear gradient)
 
 \* _currently ellipse shape supports only side points, you can use corner variants but there is no difference in rendering_
@@ -178,7 +155,46 @@ radial-gradient(cyan 0%, transparent 20%, salmon 40%);
 radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
 ```
 
+## Magic Playground
+
+### Gallery
+
+You can preview some of the gradients from [Gradient Magic](https://www.gradientmagic.com/) in Playground app. To use the examples from the gallery, you need just copy Gradient CSS and paste into your project.
+
+(Video on YouTube ⬇️)
+
+[![Gallery](https://img.youtube.com/vi/PFSlubz6_ps/0.jpg)](https://www.youtube.com/watch?v=PFSlubz6_ps)
+
+
+![GIF](./Assets/MagicGradientsGallery.gif)
+
+### CSS previewer
+
+You can test CSS gradient code live within Playground application.
+
+![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/paste-css.gif)
+
 ## Advanced drawing
+
+### Color positions
+
+Similar to CSS, with Magic Gradient you can posion each color with proportional value or by absolute pixels.
+
+``` xml
+<magic:GradientView>
+    <magic:LinearGradient>
+        <magic:GradientStop Color="Red" />
+        <magic:GradientStop Color="Yellow" Offset="100px" />
+        <magic:GradientStop Color="Green" Offset="40%" />
+        <magic:GradientStop Color="Blue" Offset="0.8" />
+    </magic:LinearGradient>
+</magic:GradientView>
+```
+
+Offset types:
+- `0.3`, `30%` - proportional, `Offset.Prop(0.3)` in code
+- `200px` - absolute, `Offset.Abs(200)` in code
+- leave blank - each undefined offset will be calculated like in CSS
 
 ### Backgroud size and position
 
