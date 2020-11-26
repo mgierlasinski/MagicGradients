@@ -4,9 +4,7 @@
 
 Draw breathtaking backgrounds in your Xamarin.Forms application today, from simple gradients to complex textures. It's a kind of magic :sparkles:
 
-Install from NuGet:
-
-[![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients)
+// Add some images here
 
 | Supported platforms |
 |---|
@@ -18,13 +16,21 @@ Install from NuGet:
 - Draw as many gradients as you want with single control, blend them together for unique effects
 - Supports CSS gradients, find your ideal background [somewhere on the web](https://www.gradientmagic.com/) and copy + paste into your app
 - Make your background alive with built-in XAML animations :hear_no_evil:
-- Powered by [SkiaSharp](https://github.com/mono/SkiaSharp)
+- Powered by [![Nuget](https://img.shields.io/badge/SkiaSharp-v1.68.1-blue)](https://www.nuget.org/packages/SkiaSharp/)
 
-## Getting Started
+## Installation
 
+`Magic Gradients` are available via NuGet:
+
+[![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients)
+
+Install into shared project, no additional setup required.
+
+<!---
 Install via [NuGet](https://www.nuget.org/packages/MagicGradients) or include the Magic Gradients project in your solution and add local references in your shared project.
 
 As it requires SkiaSharp, you will also need to ensure you add SkiaSharp.Views.Forms to your shared Xamarin.Forms project. 
+-->
 
 ## Drawing gradient
 
