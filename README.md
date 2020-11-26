@@ -2,7 +2,7 @@
 
 # Magic Gradients
 
-Draw breathtaking backgrounds in your Xamarin.Forms application. You can add unlimited number of complex linear and radial gradients to create uniqe effects. It's a kind of magic. Control inspired by [PancakeView](https://github.com/sthewissen/Xamarin.Forms.PancakeView) and [Gradient Magic](https://www.gradientmagic.com/). Powered by [SkiaSharp](https://github.com/mono/SkiaSharp).
+Draw breathtaking backgrounds in your Xamarin.Forms application today, from simple gradients to complex textures. It's a kind of magic :sparkles:
 
 Install from NuGet:
 
@@ -13,6 +13,12 @@ Install from NuGet:
 | :heavy_check_mark: Android |
 | :heavy_check_mark: iOS |
 | :heavy_check_mark: UWP |
+
+- Linear and radial gradients supported
+- Draw as many gradients as you want with single control, blend them together for unique effects
+- Supports CSS gradients, find your ideal background [somewhere on the web](https://www.gradientmagic.com/) and copy + paste into your app
+- Make your background alive with built-in XAML animations :hear_no_evil:
+- Powered by [SkiaSharp](https://github.com/mono/SkiaSharp)
 
 ## Getting Started
 
@@ -125,10 +131,9 @@ Supported directions:
 - angles in degrees: `135deg`
 - angle proportional: `0.45turn` (range should be between 0-1)
 
-Each color stop should contain color information and optionally it's position along the gradient line, described in percents.
+Each color stop should contain color information and optionally position described in percents or pixels. Suppored color formats:
 
-Suppored color formats:
-- colors described by channels in RGB or HSL format: `rgb(red, green, blue)`, `rgba(red, green, blue, alpha)`, `hsl(hue, saturation, lightness)`, `hsla(hue, saturation, lightness, alpha)`
+- colors in RGB or HSL format: `rgb(red, green, blue)`, `rgba(red, green, blue, alpha)`, `hsl(hue, saturation, lightness)`, `hsla(hue, saturation, lightness, alpha)`
 - colors in hex: `#ff0000`
 - named colors: `red`, `green`, `blue`, `orange`, `pink`
 
