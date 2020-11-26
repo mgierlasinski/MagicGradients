@@ -157,9 +157,10 @@ radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
 
 ## Magic Playground
 
-### Gallery
+### Code SAMPLES and Gallery
 
-You can preview some of the gradients from [Gradient Magic](https://www.gradientmagic.com/) in Playground app. To use the examples from the gallery, you need just copy Gradient CSS and paste into your project.
+You can find code samples in preview of the gradients [Gradient Magic](https://www.gradientmagic.com/) in Playground app sample project. 
+To use the examples from the gallery, you need just copy Gradient CSS and paste into your project.
 
 (Video on YouTube ⬇️)
 
