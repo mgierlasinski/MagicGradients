@@ -17,25 +17,38 @@ namespace Playground.Features.Gallery.Services
             _categoryRepository = categoryRepository;
         }
 
-        public IEnumerable<GradientCategory> GetCategories()
+        public IEnumerable<CategoryItem> GetCategories()
         {
             var categories = _categoryRepository.GetCategories().ToArray();
             return categories.Select(MapCategory);
         }
 
-        public IEnumerable<GradientTheme> GetThemes()
+        public IEnumerable<CategoryGroup> GetGroupedCategories()
+        {
+            var result = new List<CategoryGroup>();
+            var groups = _categoryRepository.GetCategories().GroupBy(x => x.Group);
+
+            foreach (var group in groups)
+            {
+                result.Add(new CategoryGroup(group.Key, group.Select(MapCategory)));
+            }
+
+            return result;
+        }
+
+        public IEnumerable<ThemeItem> GetThemes()
         {
             return _categoryRepository.GetThemes().Select(MapTheme);
         }
 
-        private GradientCategory MapCategory(Category source) => new GradientCategory
+        private CategoryItem MapCategory(Category source) => new CategoryItem
         {
             Name = source.Name,
             Tag = source.Tag,
             GradientSource = new CssGradientSource { Stylesheet = source.Stylesheet }
         };
 
-        private GradientTheme MapTheme(Theme source) => new GradientTheme
+        private ThemeItem MapTheme(Theme source) => new ThemeItem
         {
             ColorRaw = source.Color,
             Color = Color.FromHex(source.Color)

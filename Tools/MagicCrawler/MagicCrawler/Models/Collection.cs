@@ -11,6 +11,7 @@ namespace MagicCrawler.Models
         public string BaseUrl { get; set; }
         public string Url { get; set; }
         public string Tag { get; set; }
+        public string Group { get; set; }
         public string File { get; set; }
         public List<Gradient> Gradients { get; set; }
 
@@ -36,6 +37,7 @@ namespace MagicCrawler.Models
             {
                 Name = Title,
                 Tag = GetTag(),
+                Group = Group,
                 Stylesheet = Stylesheet,
                 DisplayOrder = DisplayOrder,
                 File = GetFile()

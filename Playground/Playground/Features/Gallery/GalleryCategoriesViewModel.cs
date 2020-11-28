@@ -10,15 +10,22 @@ namespace Playground.Features.Gallery
     {
         private readonly ICategoryService _categoryService;
 
-        private IEnumerable<GradientCategory> _categories;
-        public IEnumerable<GradientCategory> Categories
+        private IEnumerable<CategoryItem> _categories;
+        public IEnumerable<CategoryItem> Categories
         {
             get => _categories;
             set => SetProperty(ref _categories, value);
         }
 
-        private GradientCategory _selectedItem;
-        public GradientCategory SelectedItem
+        private IEnumerable<CategoryGroup> _groups;
+        public IEnumerable<CategoryGroup> Groups
+        {
+            get => _groups;
+            set => SetProperty(ref _groups, value);
+        }
+
+        private CategoryItem _selectedItem;
+        public CategoryItem SelectedItem
         {
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value, async () =>
@@ -39,6 +46,7 @@ namespace Playground.Features.Gallery
         public void LoadCategories()
         {
             Categories = _categoryService.GetCategories();
+            Groups = _categoryService.GetGroupedCategories();
         }
     }
 }

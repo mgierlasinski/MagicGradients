@@ -15,6 +15,9 @@ namespace Playground.Data.Models
         [BsonField("tag")]
         public string Tag { get; set; }
 
+        [BsonField("group")]
+        public string Group { get; set; }
+
         [BsonField("file")]
         public string File { get; set; }
     }

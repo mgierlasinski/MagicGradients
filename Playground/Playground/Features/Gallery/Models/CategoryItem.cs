@@ -2,12 +2,10 @@
 
 namespace Playground.Features.Gallery.Models
 {
-    public class GradientCategory
+    public class CategoryItem
     {
         public string Name { get; set; }
-
         public string Tag { get; set; }
-
         public IGradientSource GradientSource { get; set; }
     }
 }

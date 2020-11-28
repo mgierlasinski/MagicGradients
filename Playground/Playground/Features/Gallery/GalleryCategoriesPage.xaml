@@ -4,20 +4,29 @@
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              x:Class="Playground.Features.Gallery.GalleryCategoriesPage"
              Title="Gradient Gallery"
              vm:ViewModelLocator.AutoWireViewModel="true">
     <Grid Padding="5">
         <CollectionView x:Name="CategoriesList" 
-                        ItemsSource="{Binding Categories}" 
+                        ItemsSource="{Binding Groups}" 
                         SelectionMode="Single"
                         SelectedItem="{Binding SelectedItem}" 
-                        SelectionChanged="GalleryList_OnSelectionChanged">
+                        SelectionChanged="GalleryList_OnSelectionChanged"
+                        IsGrouped="true">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <controls:MenuSection x:DataType="models:CategoryGroup">
+                        <Label Text="{Binding Name}" />
+                    </controls:MenuSection>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:GradientCategory">
+                <DataTemplate x:DataType="models:CategoryItem">
                     <Grid Padding="5">
                         <Frame Padding="0" IsClippedToBounds="True">
                             <StackLayout Spacing="0">

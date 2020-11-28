@@ -28,6 +28,7 @@
         <controls:WebView x:Name="WebView" Grid.Row="1" Visibility="Collapsed" />
         <DataGrid Grid.Row="1" ItemsSource="{Binding Jobs}"  AutoGenerateColumns="False">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="Group" Binding="{Binding Group}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Title" Binding="{Binding Title}" IsReadOnly="True"/>
                 <DataGridHyperlinkColumn Header="Input" Binding="{Binding Input}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Output" Binding="{Binding Output}" IsReadOnly="True"/>

@@ -1,251 +1,195 @@
 [
   {
-    "slug": "ac9afec1-a33d-4c91-baa2-430ceb43e50f",
+    "slug": "505a5583-d204-47c3-87e0-caaee0be6c25",
     "stylesheet": "linear-gradient(90deg, hsl(226, 81%, 64%), hsl(271, 81%, 64%), hsl(316, 81%, 64%), hsl(1, 81%, 64%), hsl(46, 81%, 64%), hsl(91, 81%, 64%), hsl(136, 81%, 64%), hsl(181, 81%, 64%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "dbe63182-b823-4c00-8a48-99a72b150ea9",
+    "slug": "7c44d522-a43d-4d8f-9fec-62a783993f01",
     "stylesheet": "linear-gradient(0, hsl(297, 86%, 59%), hsl(342, 86%, 59%), hsl(27, 86%, 59%), hsl(72, 86%, 59%), hsl(117, 86%, 59%), hsl(162, 86%, 59%), hsl(207, 86%, 59%), hsl(252, 86%, 59%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "97090cb1-147b-44af-aff6-3d9034767925",
+    "slug": "84a9c02a-ed55-456a-bd83-de03cc38d8ce",
     "stylesheet": "linear-gradient(90deg, hsl(188, 93%, 68%), hsl(233, 93%, 68%), hsl(278, 93%, 68%), hsl(323, 93%, 68%), hsl(8, 93%, 68%), hsl(53, 93%, 68%), hsl(98, 93%, 68%), hsl(143, 93%, 68%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "acfad8be-8ba7-4337-afb0-1373154203d4",
+    "slug": "8aed4c62-e6f8-4657-8262-2b293381b6ad",
     "stylesheet": "linear-gradient(90deg, hsl(141, 80%, 76%), hsl(186, 80%, 76%), hsl(231, 80%, 76%), hsl(276, 80%, 76%), hsl(321, 80%, 76%), hsl(6, 80%, 76%), hsl(51, 80%, 76%), hsl(96, 80%, 76%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "fe7aeb15-1689-4efe-a9fe-46e1096cb82a",
+    "slug": "b8938849-78d9-4137-bc39-148dcbc97651",
     "stylesheet": "linear-gradient(45deg, hsl(19, 67%, 54%), hsl(64, 67%, 54%), hsl(109, 67%, 54%), hsl(154, 67%, 54%), hsl(199, 67%, 54%), hsl(244, 67%, 54%), hsl(289, 67%, 54%), hsl(334, 67%, 54%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "5f61e209-3e33-403c-b045-27161f95ae8a",
+    "slug": "01e0e227-ef81-472a-8ec2-5220b43d0440",
     "stylesheet": "linear-gradient(45deg, hsl(151, 61%, 51%), hsl(196, 61%, 51%), hsl(241, 61%, 51%), hsl(286, 61%, 51%), hsl(331, 61%, 51%), hsl(16, 61%, 51%), hsl(61, 61%, 51%), hsl(106, 61%, 51%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "d2488a8b-1369-4d2c-a6e7-7e2cd7098e2b",
+    "slug": "d457b4b9-bcc2-40be-a60f-78c1a80de150",
     "stylesheet": "linear-gradient(90deg, hsl(260, 59%, 55%), hsl(311, 59%, 55%), hsl(2, 59%, 55%), hsl(54, 59%, 55%), hsl(105, 59%, 55%), hsl(157, 59%, 55%), hsl(208, 59%, 55%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "550c5579-574a-44bb-8331-d7aec092f288",
+    "slug": "71d3e6e0-a2d0-41c7-89bd-b69e170b52fc",
     "stylesheet": "linear-gradient(135deg, hsl(329, 78%, 51%), hsl(20, 78%, 51%), hsl(71, 78%, 51%), hsl(123, 78%, 51%), hsl(174, 78%, 51%), hsl(226, 78%, 51%), hsl(277, 78%, 51%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "b806216c-506e-4267-bd23-38f738453807",
+    "slug": "13104369-687d-4593-9a35-d61444571dbf",
     "stylesheet": "linear-gradient(0, hsl(47, 79%, 62%), hsl(92, 79%, 62%), hsl(137, 79%, 62%), hsl(182, 79%, 62%), hsl(227, 79%, 62%), hsl(272, 79%, 62%), hsl(317, 79%, 62%), hsl(2, 79%, 62%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "bbdbce85-abc5-46cf-825b-074a52145287",
+    "slug": "12b7e809-81a6-418d-9b0a-f50d94933cc9",
     "stylesheet": "linear-gradient(45deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "1e0f242d-729a-4e59-b207-e92a1a31e6a1",
+    "slug": "3a6d9d42-4700-45e7-9c62-01c674b949f6",
     "stylesheet": "linear-gradient(90deg, hsl(141, 73%, 60%), hsl(186, 73%, 60%), hsl(231, 73%, 60%), hsl(276, 73%, 60%), hsl(321, 73%, 60%), hsl(6, 73%, 60%), hsl(51, 73%, 60%), hsl(96, 73%, 60%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "a0c7a2ea-a6ed-4ea2-97ef-565b31053a08",
+    "slug": "5ebac10b-02fa-4e9a-88cd-22f8022182e6",
     "stylesheet": "linear-gradient(135deg, hsl(327, 90%, 59%), hsl(12, 90%, 59%), hsl(57, 90%, 59%), hsl(102, 90%, 59%), hsl(147, 90%, 59%), hsl(192, 90%, 59%), hsl(237, 90%, 59%), hsl(282, 90%, 59%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "f4c6e2eb-930d-45cf-bd55-e907e2999e33",
+    "slug": "dfd6f357-eae2-4622-b822-dee0f89573c3",
     "stylesheet": "linear-gradient(135deg, hsl(292, 89%, 69%), hsl(337, 89%, 69%), hsl(22, 89%, 69%), hsl(67, 89%, 69%), hsl(112, 89%, 69%), hsl(157, 89%, 69%), hsl(202, 89%, 69%), hsl(247, 89%, 69%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "61d483fa-bb6d-4fc8-861d-75c25a46122b",
+    "slug": "07b7cb01-b2ba-43d2-9ee1-86ae1432e901",
     "stylesheet": "linear-gradient(0, hsl(290, 60%, 68%), hsl(335, 60%, 68%), hsl(20, 60%, 68%), hsl(65, 60%, 68%), hsl(110, 60%, 68%), hsl(155, 60%, 68%), hsl(200, 60%, 68%), hsl(245, 60%, 68%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "57dd0ad9-f725-497e-9c49-9096461852c5",
-    "stylesheet": "linear-gradient(0, hsl(249, 75%, 73%), hsl(294, 75%, 73%), hsl(339, 75%, 73%), hsl(24, 75%, 73%), hsl(69, 75%, 73%), hsl(114, 75%, 73%), hsl(159, 75%, 73%), hsl(204, 75%, 73%))",
-    "tags": [
-      "rainbowstandard"
-    ]
-  },
-  {
-    "slug": "a2f92d8e-52d9-4f0e-8c77-a2c7ddcdc723",
+    "slug": "c521c5e1-4044-4e9c-a50b-30eab39be653",
     "stylesheet": "linear-gradient(90deg, hsl(330, 81%, 44%), hsl(15, 81%, 44%), hsl(60, 81%, 44%), hsl(105, 81%, 44%), hsl(150, 81%, 44%), hsl(195, 81%, 44%), hsl(240, 81%, 44%), hsl(285, 81%, 44%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "fa0e1f34-207f-43aa-978f-60342bad0efe",
-    "stylesheet": "linear-gradient(90deg, hsl(205, 77%, 76%), hsl(250, 77%, 76%), hsl(296, 77%, 76%), hsl(340, 77%, 76%), hsl(25, 77%, 76%), hsl(69, 77%, 76%), hsl(115, 77%, 76%), hsl(160, 77%, 76%))",
-    "tags": [
-      "rainbowstandard"
-    ]
-  },
-  {
-    "slug": "5b09a28a-a27f-4d2d-8656-78cd3227a487",
-    "stylesheet": "linear-gradient(270deg, hsl(341, 64%, 71%), hsl(26, 64%, 71%), hsl(71, 64%, 71%), hsl(116, 64%, 71%), hsl(161, 64%, 71%), hsl(206, 64%, 71%), hsl(251, 64%, 71%), hsl(296, 64%, 71%))",
-    "tags": [
-      "rainbowstandard"
-    ]
-  },
-  {
-    "slug": "f9009359-006f-4789-87bd-ff27d50c0f06",
+    "slug": "bbc0eb94-36f0-40c1-a01a-3066267972e4",
     "stylesheet": "linear-gradient(246deg, hsl(325, 59%, 55%), hsl(10, 59%, 55%), hsl(55, 59%, 55%), hsl(100, 59%, 55%), hsl(145, 59%, 55%), hsl(190, 59%, 55%), hsl(235, 59%, 55%), hsl(280, 59%, 55%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "c9c4ece4-6649-490c-b7de-2b27284b71a2",
+    "slug": "ec56c519-f236-43ba-8a32-53c9f768df07",
     "stylesheet": "linear-gradient(139deg, hsl(338, 61%, 62%), hsl(29, 61%, 62%), hsl(80, 61%, 62%), hsl(132, 61%, 62%), hsl(183, 61%, 62%), hsl(235, 61%, 62%), hsl(286, 61%, 62%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "f9ffcad7-5808-4e9f-bda7-56ad6c9fafb5",
+    "slug": "a8513611-9fc1-494f-b6ed-2e6483e66aef",
     "stylesheet": "linear-gradient(162deg, hsl(227, 82%, 51%), hsl(278, 82%, 51%), hsl(329, 82%, 51%), hsl(21, 82%, 51%), hsl(72, 82%, 51%), hsl(124, 82%, 51%), hsl(175, 82%, 51%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "bcb9f546-21f6-4be2-87f4-843ca93c2263",
-    "stylesheet": "linear-gradient(113deg, hsl(266, 77%, 63%), hsl(317, 77%, 63%), hsl(8, 77%, 63%), hsl(60, 77%, 63%), hsl(111, 77%, 63%), hsl(163, 77%, 63%), hsl(214, 77%, 63%))",
-    "tags": [
-      "rainbowstandard"
-    ]
-  },
-  {
-    "slug": "92593534-ff6c-41d8-bb8a-1e35a54a531c",
+    "slug": "26a47ded-1467-4a9f-93b2-bd5a32c5d200",
     "stylesheet": "linear-gradient(34deg, hsl(113, 83%, 65%), hsl(164, 83%, 65%), hsl(215, 83%, 65%), hsl(267, 83%, 65%), hsl(318, 83%, 65%), hsl(10, 83%, 65%), hsl(61, 83%, 65%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "adbc177f-42db-4565-81ef-1df784f2bcbd",
-    "stylesheet": "linear-gradient(267deg, hsl(234, 67%, 68%), hsl(285, 67%, 68%), hsl(336, 67%, 68%), hsl(28, 67%, 68%), hsl(79, 67%, 68%), hsl(131, 67%, 68%), hsl(182, 67%, 68%))",
-    "tags": [
-      "rainbowstandard"
-    ]
-  },
-  {
-    "slug": "f569f0fd-e4e9-4dcc-80f3-4bca54b9594a",
-    "stylesheet": "linear-gradient(290deg, hsl(357, 72%, 52%), hsl(48, 72%, 52%), hsl(99, 72%, 52%), hsl(151, 72%, 52%), hsl(202, 72%, 52%), hsl(254, 72%, 52%), hsl(305, 72%, 52%))",
-    "tags": [
-      "rainbowstandard"
-    ]
-  },
-  {
-    "slug": "194c5cfa-df52-4f03-9a28-a6fd080c1bc9",
+    "slug": "b9799594-d2b7-4267-8b51-b4fb394f06e2",
     "stylesheet": "linear-gradient(305deg, hsl(151, 59%, 76%), hsl(202, 59%, 76%), hsl(253, 59%, 76%), hsl(305, 59%, 76%), hsl(357, 59%, 76%), hsl(48, 59%, 76%), hsl(99, 59%, 76%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "9db6351a-ffb8-4da3-8e3e-331f2421b433",
+    "slug": "c232e36e-c083-4cd0-ba5d-81e4b07c4514",
     "stylesheet": "linear-gradient(231deg, hsl(356, 66%, 68%), hsl(47, 66%, 68%), hsl(98, 66%, 68%), hsl(150, 66%, 68%), hsl(201, 66%, 68%), hsl(253, 66%, 68%), hsl(304, 66%, 68%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "5895adc0-d4c4-4930-9712-e53f6138d3be",
+    "slug": "0f202d24-5b7b-487f-b1e9-53a31ecfd90d",
     "stylesheet": "linear-gradient(0, hsl(34, 82%, 58%), hsl(85, 82%, 58%), hsl(136, 82%, 58%), hsl(188, 82%, 58%), hsl(239, 82%, 58%), hsl(291, 82%, 58%), hsl(342, 82%, 58%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "4cbe6a9a-13cf-46bd-b3ea-fdb8ff933c66",
+    "slug": "d79d215d-e692-4768-8a84-87cdacdec208",
     "stylesheet": "linear-gradient(243deg, hsl(284, 86%, 77%), hsl(335, 86%, 77%), hsl(26, 86%, 77%), hsl(78, 86%, 77%), hsl(129, 86%, 77%), hsl(181, 86%, 77%), hsl(232, 86%, 77%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "345b23e7-5a5e-488e-8053-b115e560be57",
+    "slug": "48e58b9c-3ede-450c-a67e-246e3460a0ce",
     "stylesheet": "linear-gradient(221deg, hsl(289, 84%, 71%), hsl(340, 84%, 71%), hsl(31, 84%, 71%), hsl(83, 84%, 71%), hsl(134, 84%, 71%), hsl(186, 84%, 71%), hsl(237, 84%, 71%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "af6879b6-2ae5-4ae9-a338-2df2c247c3a7",
-    "stylesheet": "linear-gradient(45deg, hsl(124, 79%, 62%) 0%, hsl(169, 79%, 62%) 12%, hsl(214, 79%, 62%) 39%, hsl(259, 79%, 62%) 49%, hsl(304, 79%, 62%) 73%, hsl(349, 79%, 62%) 81%, hsl(34, 79%, 62%) 90%, hsl(79, 79%, 62%) 100%)",
-    "tags": [
-      "rainbowstandard"
-    ]
-  },
-  {
-    "slug": "0d7ad4d2-db03-4be7-99a3-6d242b2d50f6",
-    "stylesheet": "linear-gradient(90deg, hsl(333, 85%, 72%) 0%, hsl(33, 85%, 72%) 29%, hsl(93, 85%, 72%) 55%, hsl(153, 85%, 72%) 62%, hsl(213, 85%, 72%) 67%, hsl(273, 85%, 72%) 100%)",
-    "tags": [
-      "rainbowstandard"
-    ]
-  },
-  {
-    "slug": "c4e70fd5-a394-464c-a664-67980415bfaf",
+    "slug": "c44e5473-10fd-4ebf-a901-b7b037eaf096",
     "stylesheet": "linear-gradient(135deg, hsl(242, 72%, 68%), hsl(293, 72%, 68%), hsl(344, 72%, 68%), hsl(36, 72%, 68%), hsl(87, 72%, 68%), hsl(139, 72%, 68%), hsl(190, 72%, 68%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "44b90598-c2a2-4896-b9db-b5f8c178d153",
+    "slug": "5d4b1a69-6b4a-4a31-9e2c-da6e8c07b639",
     "stylesheet": "linear-gradient(90deg, hsl(259, 61%, 55%), hsl(331, 61%, 55%), hsl(43, 61%, 55%), hsl(115, 61%, 55%), hsl(187, 61%, 55%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "d6694b25-1113-4e03-889a-4d74b91a8546",
+    "slug": "c2db6ec8-f142-4872-9c46-d4e43b2210b4",
     "stylesheet": "linear-gradient(45deg, hsl(165, 64%, 69%), hsl(255, 64%, 69%), hsl(345, 64%, 69%), hsl(75, 64%, 69%))",
     "tags": [
       "rainbowstandard"
     ]
   },
   {
-    "slug": "90559a06-8455-4236-ab50-882f75d2168d",
+    "slug": "0fd23f85-f334-46a0-a7d4-27ef23e2e450",
     "stylesheet": "linear-gradient(328deg, hsl(157, 75%, 62%), hsl(217, 75%, 62%), hsl(277, 75%, 62%), hsl(337, 75%, 62%), hsl(37, 75%, 62%), hsl(97, 75%, 62%))",
     "tags": [
       "rainbowstandard"

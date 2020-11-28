@@ -36,15 +36,15 @@ namespace Playground.Features.Gallery
             });
         }
 
-        private List<GradientTheme> _themes;
-        public List<GradientTheme> Themes
+        private List<ThemeItem> _themes;
+        public List<ThemeItem> Themes
         {
             get => _themes;
             set => SetProperty(ref _themes, value);
         }
 
-        private GradientTheme _selectedTheme;
-        public GradientTheme SelectedTheme
+        private ThemeItem _selectedTheme;
+        public ThemeItem SelectedTheme
         {
             get => _selectedTheme;
             set => SetProperty(ref _selectedTheme, value, async () =>
@@ -116,7 +116,7 @@ namespace Playground.Features.Gallery
         {
             if (SelectedThemes.Any())
             {
-                var colors = SelectedThemes.Cast<GradientTheme>().Select(x => x.Color).ToArray();
+                var colors = SelectedThemes.Cast<ThemeItem>().Select(x => x.Color).ToArray();
                 Gradients = _allGradients.Where(x => x.HasColors(colors)).ToList();
             }
             else if(SelectedTheme != null)

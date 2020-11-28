@@ -23,25 +23,23 @@ namespace MagicCrawler.Services
         {
             _storage.CreateOutput();
 
-            var categories = new List<Category>();
             var gradients = new List<Gradient>();
 
             foreach (var job in jobs)
             {
-                await ExecuteJob(job, categories, gradients);
+                await ExecuteJob(job, gradients);
             }
 
             WriteMetadata();
-            WriteCategories(categories);
-            WriteCollections(jobs.Select(x => x.Data));
+            WriteCollections(jobs.Select(x => x.Data).ToList());
         }
 
-        private async Task ExecuteJob(JobItem job, List<Category> categories, List<Gradient> gradients)
+        private async Task ExecuteJob(JobItem job, List<Gradient> gradients)
         {
             try
             {
                 job.Status = "Parsing...";
-                var result = await ParseCollection(job.Data, categories, gradients);
+                var result = await ParseCollection(job.Data, gradients);
                 job.Status = result == null ? "Done" : $"Parsed {result}";
             }
             catch (Exception e)
@@ -50,10 +48,8 @@ namespace MagicCrawler.Services
             }
         }
 
-        private async Task<int?> ParseCollection(Collection collection, List<Category> categories, List<Gradient> gradients)
+        private async Task<int?> ParseCollection(Collection collection, List<Gradient> gradients)
         {
-            categories.Add(collection.ToCategory());
-
             var html = await _loader.LoadAsync(collection.GetFullUrl());
             var collectionGradients = _parser.Parse(html, collection.GetTag());
 
@@ -93,13 +89,11 @@ namespace MagicCrawler.Services
             _storage.WriteObject("Metadata.json", metadata);
         }
 
-        private void WriteCategories(List<Category> categories)
+        private void WriteCollections(List<Collection> collections)
         {
+            var categories = collections.Select(x => x.ToCategory());
             _storage.WriteObject("Categories.json", categories.OrderBy(x => x.DisplayOrder));
-        }
 
-        private void WriteCollections(IEnumerable<Collection> collections)
-        {
             foreach (var collection in collections)
             {
                 _storage.WriteObject(collection.GetFile(), collection.Gradients);
