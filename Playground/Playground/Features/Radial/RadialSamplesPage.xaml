@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="Playground.Features.Radial.RadialSamplesPage"
+             Title="Radial Gradients">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Features/Radial/RadialSamplesPage.css" />
+        <Style TargetType="magic:GradientView">
+            <Setter Property="HeightRequest" Value="150" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Spacing="0">
+            <magic:GradientView>
+                <magic:RadialGradient Center="0.5,0.5" RadiusX="200" RadiusY="200">
+                    <magic:GradientStop Color="Red" Offset="0" />
+                    <magic:GradientStop Color="Yellow" Offset="0.5" />
+                    <magic:GradientStop Color="Green" Offset="1" />
+                </magic:RadialGradient>
+            </magic:GradientView>
+            <magic:GradientView>
+                <magic:RadialGradient Center="600,50" RadiusX="80" RadiusY="80" Flags="None">
+                    <magic:GradientStop Color="Red" Offset="0" />
+                    <magic:GradientStop Color="Yellow" Offset="0.5" />
+                    <magic:GradientStop Color="Green" Offset="1" />
+                </magic:RadialGradient>
+            </magic:GradientView>
+            <magic:GradientView>
+                <magic:RadialGradient Shape="Circle" Size="ClosestCorner" Center="0.5,0" IsRepeating="True">
+                    <magic:GradientStop Color="Red" Offset="0" />
+                    <magic:GradientStop Color="Green" Offset="0.5" />
+                    <magic:GradientStop Color="Blue" Offset="1" />
+                </magic:RadialGradient>
+            </magic:GradientView>
+            <magic:GradientView>
+                <magic:CssGradientSource>
+                    <x:String>
+                        <![CDATA[
+                            radial-gradient(ellipse at 50% top, red, green, blue)
+                        ]]>
+                    </x:String>
+                </magic:CssGradientSource>
+            </magic:GradientView>
+            <magic:GradientView>
+                <magic:CssGradientSource>
+                    <x:String>
+                        <![CDATA[
+                            repeating-radial-gradient(ellipse closest-side, red 10%, green 20%, blue 30%, red 35%)
+                        ]]>
+                    </x:String>
+                </magic:CssGradientSource>
+            </magic:GradientView>
+            <magic:GradientView StyleClass="terminatorEye" />
+            <magic:GradientView StyleClass="terminatorEyeWithSize" />
+            <magic:GradientView StyleClass="repeatingCircles" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

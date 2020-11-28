@@ -3,7 +3,6 @@ using Playground.Data.Infrastructure;
 using Playground.Data.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Xamarin.Forms;
 
 namespace Playground.Data.Repositories
 {
@@ -11,9 +10,9 @@ namespace Playground.Data.Repositories
     {
         private readonly IDatabaseProvider _databaseProvider;
 
-        public CategoryRepository()
+        public CategoryRepository(IDatabaseProvider databaseProvider)
         {
-            _databaseProvider = DependencyService.Get<IDatabaseProvider>();
+            _databaseProvider = databaseProvider;
         }
 
         public IEnumerable<Category> GetCategories()

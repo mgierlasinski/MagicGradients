@@ -125,10 +125,11 @@ namespace MagicGradients.Toolkit.Controls
 
         static MagicButton()
         {
-            StyleSheets.RegisterStyle("color", typeof(MagicButton), nameof(MagicButton.TextColorProperty));
-            StyleSheets.RegisterStyle("background", typeof(MagicButton), nameof(MagicButton.GradientSourceProperty));
-            StyleSheets.RegisterStyle("background-size", typeof(MagicButton), nameof(MagicButton.GradientSizeProperty));
-            StyleSheets.RegisterStyle("background-repeat", typeof(MagicButton), nameof(MagicButton.GradientRepeatProperty));
+            StyleSheets.RegisterStyle("color", typeof(MagicButton), nameof(TextColorProperty));
+            StyleSheets.RegisterStyle("border-radius", typeof(MagicButton), nameof(CornerRadiusProperty));
+            StyleSheets.RegisterStyle("background", typeof(MagicButton), nameof(GradientSourceProperty));
+            StyleSheets.RegisterStyle("background-size", typeof(MagicButton), nameof(GradientSizeProperty));
+            StyleSheets.RegisterStyle("background-repeat", typeof(MagicButton), nameof(GradientRepeatProperty));
         }
 
         public MagicButton()

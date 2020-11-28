@@ -1,14 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModels="clr-namespace:Playground.ViewModels;assembly=Playground"
-             xmlns:controls="clr-namespace:MagicGradients.Controls;assembly=MagicGradients"
-             mc:Ignorable="d"
+             xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              x:Class="Playground.App">
     <Application.Resources>
-        <ResourceDictionary Source="Styles/Styles.xaml" />
-        <viewModels:ViewModelLocator x:Key="ViewModelLocator" />
+        <ResourceDictionary Source="Styles/Theme.xaml" />
+        <converters:NegativeBoolConverter x:Key="NegativeBoolConverter" />
     </Application.Resources>
 </Application>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:tabs="http://sharpnado.com"
+             xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
+             xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
+             xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
+             xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
+             x:Class="Playground.Features.Editor.GradientEditorPage"
+             Title="Gradient Editor"
+             vm:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.Resources>
+        <converters:GradientIconConverter x:Key="IconConverter" />
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding EditCommand}"
+                     Text="{OnPlatform UWP=Edit}" 
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Layers}, Color=White}" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="*,Auto" RowSpacing="0">
+        <magic:GradientView GradientSource="{Binding GradientSource}" 
+                            GradientSize="{Binding GradientSize}"
+                            GradientRepeat="{Binding GradientRepeat}"
+                            EnableTouchEvents="{Binding IsRadial}" 
+                            Touch="SKCanvasView_OnTouch" 
+                            PaintSurface="SKCanvasView_OnPaintSurface"/>
+
+        <Grid VerticalOptions="Start" BackgroundColor="Black" IsVisible="{Binding IsRadial}">
+            <Label TextColor="White" FontSize="12" Margin="2">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Center:&#160;" />
+                        <Span Text="{Binding Radial.CenterX, StringFormat='{0:0.###}'}" />
+                        <Span Text="&#160;" />
+                        <Span Text="{Binding Radial.CenterY, StringFormat='{0:0.###}'}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label TextColor="White" Text="Drag to move" FontSize="12" Margin="2" HorizontalOptions="End" />
+        </Grid>
+
+        <Grid Grid.Row="1" RowDefinitions="40,*" ColumnDefinitions="40,*" 
+              RowSpacing="0" ColumnSpacing="10" HeightRequest="350"
+              IsVisible="{Binding IsEditMode}">
+            <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" Margin="5"
+                         Command="{Binding AddCommand}" StyleClass="BackgroundElement" />
+            <CollectionView ItemsSource="{Binding GradientSource.Gradients}" 
+                            SelectedItem="{Binding Gradient}"
+                            SelectionMode="Single" Grid.Row="1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <Image Source="{Binding Converter={StaticResource IconConverter}}" 
+                                   Margin="0,5"/>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <tabs:TabHostView TabType="Scrollable" Margin="0,0,40,0" Grid.Column="1"
+                              SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
+                <tabs:TabHostView.Tabs>
+                    <tabs:UnderlinedTabItem Label="Properties" Padding="10,0" />
+                    <tabs:UnderlinedTabItem Label="Colors" Padding="10,0" />
+                    <tabs:UnderlinedTabItem Label="Size" Padding="10,0" />
+                    <tabs:UnderlinedTabItem Label="Tools" Padding="10,0" 
+                                            IsVisible="{Binding IsGallery}" />
+                </tabs:TabHostView.Tabs>
+            </tabs:TabHostView>
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}}" 
+                         Command="{Binding CloseEditCommand}"
+                         WidthRequest="30" HeightRequest="30" Grid.Column="1"
+                         HorizontalOptions="End" VerticalOptions="Start" 
+                         StyleClass="BackgroundElement" />
+            <tabs:ViewSwitcher x:Name="Switcher" Grid.Row="1" Grid.Column="1"
+                               SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}">
+                <editor:PropertiesTab Margin="10" />
+                <editor:ColorInspector Gradient="{Binding Gradient}" Margin="10" />
+                <editor:BackgroundTab Margin="10" />
+                <ContentView>
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="180">
+                        <Button Text="CSS previewer" 
+                                Command="{Binding PreviewCssCommand}"
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}}" />
+                        <Button Text="Paint" 
+                                Command="{Binding BattleTestCommand}"
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Paint}}" />
+                    </StackLayout>
+                </ContentView>
+            </tabs:ViewSwitcher>
+        </Grid>
+    </Grid>
+</ContentPage>

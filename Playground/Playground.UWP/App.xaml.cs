@@ -1,8 +1,12 @@
+using Sharpnado.Shades.UWP;
+using Sharpnado.Tabs.Uwp;
 using System;
+using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
+using ColorPicker.UWP.Effects;
 using Application = Windows.UI.Xaml.Application;
 using Frame = Windows.UI.Xaml.Controls.Frame;
 
@@ -40,7 +44,14 @@ namespace Playground.UWP
                 rootFrame = new Frame();
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
+                var rendererAssemblies = new[]
+                {
+                    typeof(UWPShadowsRenderer).GetTypeInfo().Assembly,
+                    typeof(UwpTintableImageEffect).GetTypeInfo().Assembly,
+                    typeof(ColorPickerTouchEffectUWP).GetTypeInfo().Assembly
+                };
+
+                Xamarin.Forms.Forms.Init(e, rendererAssemblies);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

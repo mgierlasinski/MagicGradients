@@ -1,5 +1,4 @@
-﻿using Playground.Views;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Playground
 {
@@ -9,10 +8,7 @@ namespace Playground
         {
             InitializeComponent();
 
-            Routing.RegisterRoute("GalleryList", typeof(GalleryListPage));
-            Routing.RegisterRoute("GalleryPreview", typeof(GalleryPreviewPage));
-            Routing.RegisterRoute("PasteCss", typeof(PasteCssPage));
-            Routing.RegisterRoute("BattleTest", typeof(BattleTestPage));
+            AppSetup.RegisterRoutes();
         }
     }
 }

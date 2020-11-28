@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+             xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
+             xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
+             x:Class="Playground.Features.Editor.ColorInspector">
+    <ContentView.Resources>
+        <converters:OffsetToRectConverter x:Key="OffsetConverter" />
+    </ContentView.Resources>
+
+    <Grid RowDefinitions="40,*">
+        <controls:CheckeredView Margin="0,5" />
+        <magic:GradientView x:Name="ColorSpectrum" Margin="0,5" />
+        <AbsoluteLayout x:Name="AbsoluteLayout"   
+                                SizeChanged="AbsoluteLayout_OnSizeChanged"
+                                ChildAdded="AbsoluteLayout_OnChildAdded" 
+                                ChildRemoved="AbsoluteLayout_OnChildRemoved">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <ContentView AbsoluteLayout.LayoutFlags="XProportional,HeightProportional"
+                                     AbsoluteLayout.LayoutBounds="{Binding Offset, Converter={StaticResource OffsetConverter}}"
+                                     Padding="20,0" x:DataType="editor:GradientStopClone">
+                        <Frame x:Name="Frame" Padding="3">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup>
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.StateTriggers>
+                                            <StateTrigger IsActive="{Binding IsSelected, Converter={StaticResource NegativeBoolConverter}}" />
+                                        </VisualState.StateTriggers>
+                                        <VisualState.Setters>
+                                            <Setter Property="Frame.BackgroundColor" Value="Black" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Selected">
+                                        <VisualState.StateTriggers>
+                                            <StateTrigger IsActive="{Binding IsSelected}" />
+                                        </VisualState.StateTriggers>
+                                        <VisualState.Setters>
+                                            <Setter Property="Frame.BackgroundColor" Value="{StaticResource AccentColor}" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <BoxView Color="{Binding Color}" />
+                        </Frame>
+                    </ContentView>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </AbsoluteLayout>
+        <Frame HasShadow="False" Padding="10" Style="{StaticResource BorderFrame}" Grid.Row="1" 
+               BindingContext="{Binding Source={RelativeSource AncestorType={x:Type editor:ColorInspector}}}">
+            <Grid RowDefinitions="30,*" ColumnDefinitions="*,30,30" ColumnSpacing="5">
+                <controls:ColorView Color="{Binding SelectedStop.Color}" HorizontalOptions="FillAndExpand" />
+                <ImageButton Clicked="RemoveColor_Clicked" Grid.Column="1" StyleClass="BackgroundElement"
+                             Source="{ic:IcoMoon {x:Static ic:IcoMoon.Delete}}" />
+                <ImageButton Clicked="AddColor_Clicked" Grid.Column="2" StyleClass="BackgroundElement"
+                             Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" />
+                <colorPicker:ColorWheel Grid.Row="1" Grid.ColumnSpan="3"
+                                        ShowAlphaSlider="True"
+                                        ShowLuminositySlider="True"
+                                        ShowLuminosityWheel="False"
+                                        Vertical="True"
+                                        SelectedColor="{Binding SelectedStop.Color, Mode=TwoWay}" />
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentView>
