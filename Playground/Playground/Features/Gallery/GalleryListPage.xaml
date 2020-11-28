@@ -12,7 +12,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding TogglePickerCommand}" 
                      Text="{OnPlatform UWP=Colors}"
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White}" />
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}, Color=White}" />
     </ContentPage.ToolbarItems>
     <Grid>
         <CollectionView x:Name="GalleryList"

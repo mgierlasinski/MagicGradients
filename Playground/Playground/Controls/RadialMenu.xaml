@@ -17,7 +17,7 @@
         <Ellipse Fill="Black" Stroke="White" StrokeThickness="2" />
         <Image Margin="{OnPlatform UWP='12,0,0,0'}"
                HorizontalOptions="Center" VerticalOptions="Center"
-               Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=40}"/>
+               Source="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}, Color=White, Size=40}"/>
     </Grid>
 
     <Grid x:Name="ClearButton" VerticalOptions="End" HorizontalOptions="Center" Margin="0,0,0,60">

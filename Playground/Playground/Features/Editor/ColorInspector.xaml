@@ -56,9 +56,9 @@
             <Grid RowDefinitions="30,*" ColumnDefinitions="*,30,30" ColumnSpacing="5">
                 <controls:ColorView Color="{Binding SelectedStop.Color}" HorizontalOptions="FillAndExpand" />
                 <ImageButton Clicked="RemoveColor_Clicked" Grid.Column="1" StyleClass="BackgroundElement"
-                             Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Delete}}" />
+                             Source="{ic:IcoMoon {x:Static ic:IcoMoon.Delete}}" />
                 <ImageButton Clicked="AddColor_Clicked" Grid.Column="2" StyleClass="BackgroundElement"
-                             Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" />
+                             Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" />
                 <colorPicker:ColorWheel Grid.Row="1" Grid.ColumnSpan="3"
                                         ShowAlphaSlider="True"
                                         ShowLuminositySlider="True"
