@@ -8,9 +8,11 @@ namespace MagicCrawler.Services
 {
     public class Crawler
     {
-        private readonly Storage _storage;
+        private readonly Storage _storage; 
         private readonly HtmlLoader _loader;
         private readonly HtmlParser _parser;
+
+        public Action<string, double> Monitor { get; set; }
 
         public Crawler(Storage storage, HtmlLoader loader)
         {
@@ -22,16 +24,23 @@ namespace MagicCrawler.Services
         public async Task ExecuteJobs(List<JobItem> jobs)
         {
             _storage.CreateOutput();
-
+            
+            var stepProgress = 100d / jobs.Count;
+            var currentProgress = 0d;
             var gradients = new List<Gradient>();
 
             foreach (var job in jobs)
             {
+                Monitor?.Invoke(job.Data.GetFile(), currentProgress);
+                currentProgress += stepProgress;
+
                 await ExecuteJob(job, gradients);
             }
 
             WriteMetadata();
             WriteCollections(jobs.Select(x => x.Data).ToList());
+
+            Monitor?.Invoke($"Done. Parsed {gradients.Count} gradients.", 100);
         }
 
         private async Task ExecuteJob(JobItem job, List<Gradient> gradients)

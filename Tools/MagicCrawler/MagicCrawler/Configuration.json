@@ -9,6 +9,12 @@
       "stylesheet": "linear-gradient(0deg, rgb(113, 136, 223), rgb(17, 213, 207))"
     },
     {
+      "id": "StandardCircle",
+      "title": "Standard Circles",
+      "group": "Standard",
+      "stylesheet": "radial-gradient(circle at center top, rgb(244, 234, 104), rgb(234, 179, 103), rgb(224, 125, 103), rgb(214, 70, 102), rgb(204, 15, 101))"
+    },
+    {
       "id": "StandardAsymmetrical",
       "title": "Standard - Asymmetrical",
       "group": "Standard",
@@ -21,12 +27,6 @@
       "stylesheet": "linear-gradient(90deg, rgb(98, 229, 249), rgb(98, 115, 249), rgb(194, 98, 249), rgb(249, 98, 191), rgb(249, 118, 98), rgb(249, 232, 98), rgb(153, 249, 98), rgb(98, 249, 156))"
     },
     // Circle Gradients
-    {
-      "id": "StandardCircle",
-      "title": "Standard Circles",
-      "group": "Circle Gradients",
-      "stylesheet": "radial-gradient(circle at center top, rgb(244, 234, 104), rgb(234, 179, 103), rgb(224, 125, 103), rgb(214, 70, 102), rgb(204, 15, 101))"
-    },
     {
       "id": "SimpleCircles",
       "title": "Simple Circles",
@@ -44,6 +44,12 @@
       "title": "Lens Flare",
       "group": "Circle Gradients",
       "stylesheet": "radial-gradient(circle at 91% 26%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 27% 63%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 59% 48%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 58% 65%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 55% 21%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 88% 4%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 9% 23%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 40% 78%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 78% 5%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 11% 87%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 11% 24%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 18% 75%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 71% 80%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 34% 79%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 9% 51%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 46% 69%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 54% 90%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 55% 58%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 95% 37%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 9% 4%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), linear-gradient(135deg, rgb(249, 93, 202), rgb(11, 13, 179))"
+    },
+    {
+      "id": "RadialStripes",
+      "title": "Radial Stripes",
+      "group": "Circle Gradients",
+      "stylesheet": "radial-gradient(circle at right top, rgb(36, 9, 119) 0%, rgb(36, 9, 119) 48%, rgb(72, 7, 149) 48%, rgb(72, 7, 149) 53%, rgb(109, 5, 178) 53%, rgb(109, 5, 178) 56%, rgb(145, 2, 208) 56%, rgb(145, 2, 208) 69%, rgb(181, 0, 237) 69%, rgb(181, 0, 237) 100%)"
     },
     // Lines and Angles (Angular)
     {
@@ -100,12 +106,6 @@
       "title": "Futuristic Stripes",
       "group": "Stripes",
       "stylesheet": "linear-gradient(90deg, rgba(6, 6, 6, 0.01) 0%, rgba(6, 6, 6, 0.01) 1%, rgba(131, 131, 131, 0.01) 1%, rgba(131, 131, 131, 0.01) 14%, rgba(250, 250, 250, 0.01) 14%, rgba(250, 250, 250, 0.01) 26%, rgba(30, 30, 30, 0.01) 26%, rgba(30, 30, 30, 0.01) 62%, rgba(117, 117, 117, 0.01) 62%, rgba(117, 117, 117, 0.01) 66%, rgba(248, 248, 248, 0.01) 66%, rgba(248, 248, 248, 0.01) 76%, rgba(39, 39, 39, 0.01) 76%, rgba(39, 39, 39, 0.01) 100%), linear-gradient(90deg, rgba(57, 57, 57, 0.06) 0%, rgba(57, 57, 57, 0.06) 4%, rgba(227, 227, 227, 0.06) 4%, rgba(227, 227, 227, 0.06) 26%, rgba(67, 67, 67, 0.06) 26%, rgba(67, 67, 67, 0.06) 27%, rgba(126, 126, 126, 0.06) 27%, rgba(126, 126, 126, 0.06) 39%, rgba(103, 103, 103, 0.06) 39%, rgba(103, 103, 103, 0.06) 72%, rgba(16, 16, 16, 0.06) 72%, rgba(16, 16, 16, 0.06) 76%, rgba(21, 21, 21, 0.06) 76%, rgba(21, 21, 21, 0.06) 88%, rgba(69, 69, 69, 0.06) 88%, rgba(69, 69, 69, 0.06) 100%), linear-gradient(90deg, rgba(156, 156, 156, 0.05) 0%, rgba(156, 156, 156, 0.05) 12%, rgba(54, 54, 54, 0.05) 12%, rgba(54, 54, 54, 0.05) 48%, rgba(169, 169, 169, 0.05) 48%, rgba(169, 169, 169, 0.05) 59%, rgba(104, 104, 104, 0.05) 59%, rgba(104, 104, 104, 0.05) 62%, rgba(165, 165, 165, 0.05) 62%, rgba(165, 165, 165, 0.05) 68%, rgba(124, 124, 124, 0.05) 68%, rgba(124, 124, 124, 0.05) 77%, rgba(189, 189, 189, 0.05) 77%, rgba(189, 189, 189, 0.05) 85%, rgba(173, 173, 173, 0.05) 85%, rgba(173, 173, 173, 0.05) 100%), linear-gradient(90deg, rgba(182, 182, 182, 0.07) 0%, rgba(182, 182, 182, 0.07) 22%, rgba(122, 122, 122, 0.07) 22%, rgba(122, 122, 122, 0.07) 28%, rgba(62, 62, 62, 0.07) 28%, rgba(62, 62, 62, 0.07) 44%, rgba(89, 89, 89, 0.07) 44%, rgba(89, 89, 89, 0.07) 61%, rgba(110, 110, 110, 0.07) 61%, rgba(110, 110, 110, 0.07) 83%, rgba(185, 185, 185, 0.07) 83%, rgba(185, 185, 185, 0.07) 86%, rgba(192, 192, 192, 0.07) 86%, rgba(192, 192, 192, 0.07) 100%), linear-gradient(90deg, rgba(8, 8, 8, 0.06) 0%, rgba(8, 8, 8, 0.06) 54%, rgba(48, 48, 48, 0.06) 54%, rgba(48, 48, 48, 0.06) 57%, rgba(245, 245, 245, 0.06) 57%, rgba(245, 245, 245, 0.06) 86%, rgba(12, 12, 12, 0.06) 86%, rgba(12, 12, 12, 0.06) 94%, rgba(225, 225, 225, 0.06) 94%, rgba(225, 225, 225, 0.06) 100%), linear-gradient(90deg, rgb(53, 169, 225) 0%, rgb(1, 145, 219) 80%, rgb(26, 221, 247) 100%)"
-    },
-    {
-      "id": "RadialStripes",
-      "title": "Radial Stripes",
-      "group": "Stripes",
-      "stylesheet": "radial-gradient(circle at right top, rgb(36, 9, 119) 0%, rgb(36, 9, 119) 48%, rgb(72, 7, 149) 48%, rgb(72, 7, 149) 53%, rgb(109, 5, 178) 53%, rgb(109, 5, 178) 56%, rgb(145, 2, 208) 56%, rgb(145, 2, 208) 69%, rgb(181, 0, 237) 69%, rgb(181, 0, 237) 100%)"
     },
     {
       "id": "Stripes",
@@ -183,6 +183,24 @@
     },
     // Patterns
     {
+      "id": "StainedGlass",
+      "title": "Stained Glass",
+      "group": "Patterns",
+      "stylesheet": "repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.11) 0px, rgba(0, 0, 0, 0.11) 12px, rgba(1, 1, 1, 0.16) 12px, rgba(1, 1, 1, 0.16) 24px, rgba(0, 0, 0, 0.14) 24px, rgba(0, 0, 0, 0.14) 36px, rgba(0, 0, 0, 0.23) 36px, rgba(0, 0, 0, 0.23) 48px, rgba(0, 0, 0, 0.12) 48px, rgba(0, 0, 0, 0.12) 60px, rgba(1, 1, 1, 0.07) 60px, rgba(1, 1, 1, 0.07) 72px, rgba(0, 0, 0, 0.21) 72px, rgba(0, 0, 0, 0.21) 84px, rgba(0, 0, 0, 0.24) 84px, rgba(0, 0, 0, 0.24) 96px, rgba(1, 1, 1, 0.23) 96px, rgba(1, 1, 1, 0.23) 108px, rgba(1, 1, 1, 0.07) 108px, rgba(1, 1, 1, 0.07) 120px, rgba(0, 0, 0, 0.01) 120px, rgba(0, 0, 0, 0.01) 132px, rgba(1, 1, 1, 0.22) 132px, rgba(1, 1, 1, 0.22) 144px, rgba(1, 1, 1, 0.24) 144px, rgba(1, 1, 1, 0.24) 156px, rgba(0, 0, 0, 0) 156px, rgba(0, 0, 0, 0) 168px, rgba(0, 0, 0, 0.12) 168px, rgba(0, 0, 0, 0.12) 180px), repeating-linear-gradient(90deg, rgba(1, 1, 1, 0.01) 0px, rgba(1, 1, 1, 0.01) 12px, rgba(1, 1, 1, 0.15) 12px, rgba(1, 1, 1, 0.15) 24px, rgba(0, 0, 0, 0.09) 24px, rgba(0, 0, 0, 0.09) 36px, rgba(0, 0, 0, 0.02) 36px, rgba(0, 0, 0, 0.02) 48px, rgba(0, 0, 0, 0.1) 48px, rgba(0, 0, 0, 0.1) 60px, rgba(1, 1, 1, 0.07) 60px, rgba(1, 1, 1, 0.07) 72px, rgba(1, 1, 1, 0.15) 72px, rgba(1, 1, 1, 0.15) 84px, rgba(0, 0, 0, 0.18) 84px, rgba(0, 0, 0, 0.18) 96px, rgba(1, 1, 1, 0.15) 96px, rgba(1, 1, 1, 0.15) 108px, rgba(1, 1, 1, 0.09) 108px, rgba(1, 1, 1, 0.09) 120px, rgba(1, 1, 1, 0.07) 120px, rgba(1, 1, 1, 0.07) 132px, rgba(1, 1, 1, 0.05) 132px, rgba(1, 1, 1, 0.05) 144px, rgba(0, 0, 0, 0.1) 144px, rgba(0, 0, 0, 0.1) 156px, rgba(1, 1, 1, 0.18) 156px, rgba(1, 1, 1, 0.18) 168px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.24) 0px, rgba(0, 0, 0, 0.24) 16px, rgba(1, 1, 1, 0.06) 16px, rgba(1, 1, 1, 0.06) 32px, rgba(0, 0, 0, 0.16) 32px, rgba(0, 0, 0, 0.16) 48px, rgba(1, 1, 1, 0) 48px, rgba(1, 1, 1, 0) 64px, rgba(1, 1, 1, 0.12) 64px, rgba(1, 1, 1, 0.12) 80px, rgba(1, 1, 1, 0.22) 80px, rgba(1, 1, 1, 0.22) 96px, rgba(0, 0, 0, 0.24) 96px, rgba(0, 0, 0, 0.24) 112px, rgba(0, 0, 0, 0.25) 112px, rgba(0, 0, 0, 0.25) 128px, rgba(1, 1, 1, 0.12) 128px, rgba(1, 1, 1, 0.12) 144px, rgba(0, 0, 0, 0.18) 144px, rgba(0, 0, 0, 0.18) 160px, rgba(1, 1, 1, 0.03) 160px, rgba(1, 1, 1, 0.03) 176px, rgba(1, 1, 1, 0.1) 176px, rgba(1, 1, 1, 0.1) 192px), repeating-linear-gradient(135deg, rgba(1, 1, 1, 0.18) 0px, rgba(1, 1, 1, 0.18) 3px, rgba(0, 0, 0, 0.09) 3px, rgba(0, 0, 0, 0.09) 6px, rgba(0, 0, 0, 0.08) 6px, rgba(0, 0, 0, 0.08) 9px, rgba(1, 1, 1, 0.05) 9px, rgba(1, 1, 1, 0.05) 12px, rgba(0, 0, 0, 0.01) 12px, rgba(0, 0, 0, 0.01) 15px, rgba(1, 1, 1, 0.12) 15px, rgba(1, 1, 1, 0.12) 18px, rgba(0, 0, 0, 0.05) 18px, rgba(0, 0, 0, 0.05) 21px, rgba(1, 1, 1, 0.16) 21px, rgba(1, 1, 1, 0.16) 24px, rgba(1, 1, 1, 0.07) 24px, rgba(1, 1, 1, 0.07) 27px, rgba(1, 1, 1, 0.23) 27px, rgba(1, 1, 1, 0.23) 30px, rgba(0, 0, 0, 0.2) 30px, rgba(0, 0, 0, 0.2) 33px, rgba(0, 0, 0, 0.18) 33px, rgba(0, 0, 0, 0.18) 36px, rgba(1, 1, 1, 0.12) 36px, rgba(1, 1, 1, 0.12) 39px, rgba(1, 1, 1, 0.13) 39px, rgba(1, 1, 1, 0.13) 42px, rgba(1, 1, 1, 0.2) 42px, rgba(1, 1, 1, 0.2) 45px, rgba(1, 1, 1, 0.18) 45px, rgba(1, 1, 1, 0.18) 48px, rgba(0, 0, 0, 0.2) 48px, rgba(0, 0, 0, 0.2) 51px, rgba(1, 1, 1, 0) 51px, rgba(1, 1, 1, 0) 54px, rgba(0, 0, 0, 0.03) 54px, rgba(0, 0, 0, 0.03) 57px, rgba(1, 1, 1, 0.06) 57px, rgba(1, 1, 1, 0.06) 60px, rgba(1, 1, 1, 0) 60px, rgba(1, 1, 1, 0) 63px, rgba(0, 0, 0, 0.1) 63px, rgba(0, 0, 0, 0.1) 66px, rgba(1, 1, 1, 0.19) 66px, rgba(1, 1, 1, 0.19) 69px), linear-gradient(90deg, rgb(239, 53, 115), rgb(79, 2, 93))"
+    },
+    {
+      "id": "StandardTexture",
+      "title": "Standard Textures",
+      "group": "Patterns",
+      "stylesheet": "repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.05) 0px, rgba(0, 0, 0, 0.05) 2px, transparent 2px, transparent 4px), linear-gradient(90deg, rgb(29, 67, 158), rgb(219, 239, 242))"
+    },
+    {
+      "id": "Texture",
+      "title": "Subtle Textures",
+      "group": "Patterns",
+      "stylesheet": "repeating-linear-gradient(140deg, rgba(209, 209, 209, 0.12) 0px, transparent 2px, rgba(209, 209, 209, 0.12) 7px, transparent 9px, rgba(209, 209, 209, 0.12) 14px), repeating-linear-gradient(38deg, rgba(209, 209, 209, 0.12) 0px, transparent 2px, rgba(209, 209, 209, 0.12) 7px, transparent 9px, rgba(209, 209, 209, 0.12) 14px), repeating-linear-gradient(0deg, rgba(209, 209, 209, 0.15) 0px, rgba(209, 209, 209, 0.15) 0px, transparent 0px, transparent 1px, rgba(209, 209, 209, 0.15) 1px, rgba(209, 209, 209, 0.15) 4px, transparent 4px, transparent 5px, rgba(209, 209, 209, 0.15) 5px, rgba(209, 209, 209, 0.15) 8px), repeating-linear-gradient(90deg, rgba(209, 209, 209, 0.15) 0px, rgba(209, 209, 209, 0.15) 0px, transparent 0px, transparent 1px, rgba(209, 209, 209, 0.15) 1px, rgba(209, 209, 209, 0.15) 4px, transparent 4px, transparent 5px, rgba(209, 209, 209, 0.15) 5px, rgba(209, 209, 209, 0.15) 8px), linear-gradient(90deg, rgb(58, 58, 58), rgb(58, 58, 58))"
+    },
+    {
       "id": "SimplePatterns",
       "title": "Simple Patterns",
       "group": "Patterns",
@@ -195,12 +213,13 @@
       "stylesheet": "radial-gradient(circle, rgb(59, 135, 192) 0%, rgb(59, 135, 192) 15%, rgb(61, 152, 201) 15%, rgb(61, 152, 201) 70%, rgb(63, 169, 209) 70%, rgb(63, 169, 209) 84%, rgb(65, 186, 218) 84%, rgb(65, 186, 218) 100%)"
     },
     {
-      "id": "Texture",
-      "title": "Subtle Textures",
+      "id": "CarbonFiber",
+      "title": "Carbon Fiber",
       "group": "Patterns",
-      "stylesheet": "repeating-linear-gradient(140deg, rgba(209, 209, 209, 0.12) 0px, transparent 2px, rgba(209, 209, 209, 0.12) 7px, transparent 9px, rgba(209, 209, 209, 0.12) 14px), repeating-linear-gradient(38deg, rgba(209, 209, 209, 0.12) 0px, transparent 2px, rgba(209, 209, 209, 0.12) 7px, transparent 9px, rgba(209, 209, 209, 0.12) 14px), repeating-linear-gradient(0deg, rgba(209, 209, 209, 0.15) 0px, rgba(209, 209, 209, 0.15) 0px, transparent 0px, transparent 1px, rgba(209, 209, 209, 0.15) 1px, rgba(209, 209, 209, 0.15) 4px, transparent 4px, transparent 5px, rgba(209, 209, 209, 0.15) 5px, rgba(209, 209, 209, 0.15) 8px), repeating-linear-gradient(90deg, rgba(209, 209, 209, 0.15) 0px, rgba(209, 209, 209, 0.15) 0px, transparent 0px, transparent 1px, rgba(209, 209, 209, 0.15) 1px, rgba(209, 209, 209, 0.15) 4px, transparent 4px, transparent 5px, rgba(209, 209, 209, 0.15) 5px, rgba(209, 209, 209, 0.15) 8px), linear-gradient(90deg, rgb(58, 58, 58), rgb(58, 58, 58))"
-    },
-    // ----------------
+      "stylesheet": "radial-gradient(circle, rgba(33, 33, 33, 0), rgb(33, 33, 33)), repeating-linear-gradient(135deg, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgb(56, 56, 56) 0px, rgb(56, 56, 56) 5px, transparent 5px, transparent 6px), linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33))"
+    }
+    /*
+    ,
     {
       "id": "Popular",
       "title": "Popular",
@@ -208,5 +227,6 @@
       "stylesheet": "repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.11) 0px, rgba(0, 0, 0, 0.11) 12px, rgba(1, 1, 1, 0.16) 12px, rgba(1, 1, 1, 0.16) 24px, rgba(0, 0, 0, 0.14) 24px, rgba(0, 0, 0, 0.14) 36px, rgba(0, 0, 0, 0.23) 36px, rgba(0, 0, 0, 0.23) 48px, rgba(0, 0, 0, 0.12) 48px, rgba(0, 0, 0, 0.12) 60px, rgba(1, 1, 1, 0.07) 60px, rgba(1, 1, 1, 0.07) 72px, rgba(0, 0, 0, 0.21) 72px, rgba(0, 0, 0, 0.21) 84px, rgba(0, 0, 0, 0.24) 84px, rgba(0, 0, 0, 0.24) 96px, rgba(1, 1, 1, 0.23) 96px, rgba(1, 1, 1, 0.23) 108px, rgba(1, 1, 1, 0.07) 108px, rgba(1, 1, 1, 0.07) 120px, rgba(0, 0, 0, 0.01) 120px, rgba(0, 0, 0, 0.01) 132px, rgba(1, 1, 1, 0.22) 132px, rgba(1, 1, 1, 0.22) 144px, rgba(1, 1, 1, 0.24) 144px, rgba(1, 1, 1, 0.24) 156px, rgba(0, 0, 0, 0) 156px, rgba(0, 0, 0, 0) 168px, rgba(0, 0, 0, 0.12) 168px, rgba(0, 0, 0, 0.12) 180px), repeating-linear-gradient(90deg, rgba(1, 1, 1, 0.01) 0px, rgba(1, 1, 1, 0.01) 12px, rgba(1, 1, 1, 0.15) 12px, rgba(1, 1, 1, 0.15) 24px, rgba(0, 0, 0, 0.09) 24px, rgba(0, 0, 0, 0.09) 36px, rgba(0, 0, 0, 0.02) 36px, rgba(0, 0, 0, 0.02) 48px, rgba(0, 0, 0, 0.1) 48px, rgba(0, 0, 0, 0.1) 60px, rgba(1, 1, 1, 0.07) 60px, rgba(1, 1, 1, 0.07) 72px, rgba(1, 1, 1, 0.15) 72px, rgba(1, 1, 1, 0.15) 84px, rgba(0, 0, 0, 0.18) 84px, rgba(0, 0, 0, 0.18) 96px, rgba(1, 1, 1, 0.15) 96px, rgba(1, 1, 1, 0.15) 108px, rgba(1, 1, 1, 0.09) 108px, rgba(1, 1, 1, 0.09) 120px, rgba(1, 1, 1, 0.07) 120px, rgba(1, 1, 1, 0.07) 132px, rgba(1, 1, 1, 0.05) 132px, rgba(1, 1, 1, 0.05) 144px, rgba(0, 0, 0, 0.1) 144px, rgba(0, 0, 0, 0.1) 156px, rgba(1, 1, 1, 0.18) 156px, rgba(1, 1, 1, 0.18) 168px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.24) 0px, rgba(0, 0, 0, 0.24) 16px, rgba(1, 1, 1, 0.06) 16px, rgba(1, 1, 1, 0.06) 32px, rgba(0, 0, 0, 0.16) 32px, rgba(0, 0, 0, 0.16) 48px, rgba(1, 1, 1, 0) 48px, rgba(1, 1, 1, 0) 64px, rgba(1, 1, 1, 0.12) 64px, rgba(1, 1, 1, 0.12) 80px, rgba(1, 1, 1, 0.22) 80px, rgba(1, 1, 1, 0.22) 96px, rgba(0, 0, 0, 0.24) 96px, rgba(0, 0, 0, 0.24) 112px, rgba(0, 0, 0, 0.25) 112px, rgba(0, 0, 0, 0.25) 128px, rgba(1, 1, 1, 0.12) 128px, rgba(1, 1, 1, 0.12) 144px, rgba(0, 0, 0, 0.18) 144px, rgba(0, 0, 0, 0.18) 160px, rgba(1, 1, 1, 0.03) 160px, rgba(1, 1, 1, 0.03) 176px, rgba(1, 1, 1, 0.1) 176px, rgba(1, 1, 1, 0.1) 192px), repeating-linear-gradient(135deg, rgba(1, 1, 1, 0.18) 0px, rgba(1, 1, 1, 0.18) 3px, rgba(0, 0, 0, 0.09) 3px, rgba(0, 0, 0, 0.09) 6px, rgba(0, 0, 0, 0.08) 6px, rgba(0, 0, 0, 0.08) 9px, rgba(1, 1, 1, 0.05) 9px, rgba(1, 1, 1, 0.05) 12px, rgba(0, 0, 0, 0.01) 12px, rgba(0, 0, 0, 0.01) 15px, rgba(1, 1, 1, 0.12) 15px, rgba(1, 1, 1, 0.12) 18px, rgba(0, 0, 0, 0.05) 18px, rgba(0, 0, 0, 0.05) 21px, rgba(1, 1, 1, 0.16) 21px, rgba(1, 1, 1, 0.16) 24px, rgba(1, 1, 1, 0.07) 24px, rgba(1, 1, 1, 0.07) 27px, rgba(1, 1, 1, 0.23) 27px, rgba(1, 1, 1, 0.23) 30px, rgba(0, 0, 0, 0.2) 30px, rgba(0, 0, 0, 0.2) 33px, rgba(0, 0, 0, 0.18) 33px, rgba(0, 0, 0, 0.18) 36px, rgba(1, 1, 1, 0.12) 36px, rgba(1, 1, 1, 0.12) 39px, rgba(1, 1, 1, 0.13) 39px, rgba(1, 1, 1, 0.13) 42px, rgba(1, 1, 1, 0.2) 42px, rgba(1, 1, 1, 0.2) 45px, rgba(1, 1, 1, 0.18) 45px, rgba(1, 1, 1, 0.18) 48px, rgba(0, 0, 0, 0.2) 48px, rgba(0, 0, 0, 0.2) 51px, rgba(1, 1, 1, 0) 51px, rgba(1, 1, 1, 0) 54px, rgba(0, 0, 0, 0.03) 54px, rgba(0, 0, 0, 0.03) 57px, rgba(1, 1, 1, 0.06) 57px, rgba(1, 1, 1, 0.06) 60px, rgba(1, 1, 1, 0) 60px, rgba(1, 1, 1, 0) 63px, rgba(0, 0, 0, 0.1) 63px, rgba(0, 0, 0, 0.1) 66px, rgba(1, 1, 1, 0.19) 66px, rgba(1, 1, 1, 0.19) 69px), linear-gradient(90deg, rgb(239, 53, 115), rgb(79, 2, 93))",
       "displayOrder": -1
     }
+    */
   ]
 }

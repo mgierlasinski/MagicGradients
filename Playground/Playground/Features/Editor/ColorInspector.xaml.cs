@@ -158,23 +158,5 @@ namespace Playground.Features.Editor
                 SelectStop((GradientStopClone)_spectrum.Stops.FirstOrDefault());
             }
         }
-
-        private bool _isInitialValue = true;
-
-        private void ColorPicker_OnPickedColorChanged(object sender, Color e)
-        {
-            // Prevent from overriding stop color
-            // By default, first color is center of color picker
-            if (_isInitialValue)
-            {
-                _isInitialValue = false;
-                return;
-            }
-
-            if (SelectedStop != null)
-            {
-                SelectedStop.Color = e;
-            }
-        }
     }
 }

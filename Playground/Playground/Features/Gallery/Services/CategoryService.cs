@@ -19,14 +19,14 @@ namespace Playground.Features.Gallery.Services
 
         public IEnumerable<CategoryItem> GetCategories()
         {
-            var categories = _categoryRepository.GetCategories().ToArray();
+            var categories = _categoryRepository.GetCategories();
             return categories.Select(MapCategory);
         }
 
         public IEnumerable<CategoryGroup> GetGroupedCategories()
         {
             var result = new List<CategoryGroup>();
-            var groups = _categoryRepository.GetCategories().GroupBy(x => x.Group);
+            var groups = _categoryRepository.GetGroupedCategories();
 
             foreach (var group in groups)
             {

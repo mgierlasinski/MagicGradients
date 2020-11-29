@@ -6,11 +6,8 @@ namespace Playground.Data.Repositories
     public interface IGradientRepository : ICanUpdateMyself
     {
         Gradient GetById(int id);
-
-        IEnumerable<Gradient> GetByTag(string tag);
-
-        IEnumerable<Gradient> FilterByTags(string category, params string[] tags);
-
-        IEnumerable<Gradient> GetBySlugs(string[] slugs);
+        List<Gradient> GetByTag(string tag);
+        List<Gradient> FilterByTags(string category, params string[] tags);
+        List<Gradient> GetBySlugs(string[] slugs);
     }
 }
