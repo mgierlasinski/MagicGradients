@@ -1,6 +1,6 @@
 [
   {
-    "slug": "7ddf7a34-0ab3-4b57-bc71-3dd5bb8941b1",
+    "slug": "dabdc209-584d-4b7c-9097-4535ff63a54a",
     "stylesheet": "radial-gradient(circle at center, transparent, rgb(33, 33, 33)), repeating-linear-gradient(135deg, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 2px, transparent 2px, transparent 10px, rgb(33, 33, 33) 10px, rgb(33, 33, 33) 11px, transparent 11px, transparent 21px), repeating-linear-gradient(45deg, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 4px, transparent 4px, transparent 8px), linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33))",
     "tags": [
       "darkbg",
@@ -8,7 +8,7 @@
     ]
   },
   {
-    "slug": "e4a07327-8340-4989-a116-3c89ed26c7d4",
+    "slug": "9ce57273-eef5-44e8-923b-ffd230cbd367",
     "stylesheet": "radial-gradient(circle at center, rgba(33, 33, 33, 0), rgb(33, 33, 33)), repeating-linear-gradient(135deg, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgb(56, 56, 56) 0px, rgb(56, 56, 56) 5px, transparent 5px, transparent 6px), linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33))",
     "tags": [
       "darkbg",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "slug": "f8cd36a5-d048-43db-9078-49e537aa5fc6",
+    "slug": "485c9b8f-6201-4c2b-bf29-c45e1859baaf",
     "stylesheet": "repeating-linear-gradient(45deg, rgba(97, 97, 97, 0.1) 0px, rgba(97, 97, 97, 0.1) 2px, transparent 2px, transparent 4px), linear-gradient(90deg, rgb(43, 43, 43), rgb(43, 43, 43))",
     "tags": [
       "darkbg",
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "slug": "670dd4c3-12f3-4f2f-96c1-97ccb8d0e692",
+    "slug": "128540b4-7731-45f8-bd06-637de6bc417f",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 42%, 0.09) 0px, hsla(0, 0%, 42%, 0.09) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, hsla(0, 0%, 42%, 0.09) 0px, hsla(0, 0%, 42%, 0.09) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, hsla(0, 0%, 42%, 0.09) 0px, hsla(0, 0%, 42%, 0.09) 1px, transparent 1px, transparent 10px), repeating-linear-gradient(90deg, hsla(0, 0%, 42%, 0.09) 0px, hsla(0, 0%, 42%, 0.09) 1px, transparent 1px, transparent 10px), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [
       "darkbg",
@@ -33,7 +33,7 @@
     ]
   },
   {
-    "slug": "7dae4300-0e66-4c68-a4ae-b66235a465bb",
+    "slug": "c8f2bf1d-d60f-4f1c-bd3a-b5842f1fe4c9",
     "stylesheet": "linear-gradient(45deg, rgba(187, 187, 187, 0.04) 0%, rgba(187, 187, 187, 0.04) 50%, rgba(86, 86, 86, 0.04) 50%, rgba(86, 86, 86, 0.04) 100%), linear-gradient(135deg, rgba(166, 166, 166, 0.04) 0%, rgba(166, 166, 166, 0.04) 50%, rgba(92, 92, 92, 0.04) 50%, rgba(92, 92, 92, 0.04) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "size": "142px 142px",
     "tags": [
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "slug": "fbfe39ec-afc2-4818-9107-93eebc38d53b",
+    "slug": "c8121238-6b3d-4ad2-a6a2-67eeb9901a5d",
     "stylesheet": "linear-gradient(135deg, rgba(107, 107, 107, 0.06) 0%, rgba(107, 107, 107, 0.06) 50%, rgba(202, 202, 202, 0.06) 50%, rgba(202, 202, 202, 0.06) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "size": "30px 30px",
     "tags": [
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "slug": "9b237695-78e2-4548-8776-acf848a70ee5",
+    "slug": "5d4d3c97-53b7-42b9-acc8-b983554efc17",
     "stylesheet": "linear-gradient(135deg, rgba(234, 234, 234, 0.06) 0%, rgba(234, 234, 234, 0.06) 50%, rgba(169, 169, 169, 0.06) 50%, rgba(169, 169, 169, 0.06) 100%), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "size": "72px 72px",
     "tags": [
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "slug": "1ae9de57-6b1a-40de-aa4f-d82d3391df3a",
+    "slug": "271dbb02-e206-4bde-a042-bc342ee363f9",
     "stylesheet": "radial-gradient(circle at center, rgba(46, 46, 46, 0.05) 0%, rgba(46, 46, 46, 0.05) 22%, rgba(136, 136, 136, 0.05) 22%, rgba(136, 136, 136, 0.05) 26%, rgba(106, 106, 106, 0.05) 26%, rgba(106, 106, 106, 0.05) 66%, rgba(196, 196, 196, 0.05) 66%, rgba(196, 196, 196, 0.05) 77%, rgba(166, 166, 166, 0.05) 77%, rgba(166, 166, 166, 0.05) 93%, rgba(76, 76, 76, 0.05) 93%, rgba(76, 76, 76, 0.05) 100%), radial-gradient(circle at center, rgb(20, 20, 20) 0%, rgb(20, 20, 20) 8%, rgb(20, 20, 20) 8%, rgb(20, 20, 20) 46%, rgb(20, 20, 20) 46%, rgb(20, 20, 20) 60%, rgb(20, 20, 20) 60%, rgb(20, 20, 20) 80%, rgb(20, 20, 20) 80%, rgb(20, 20, 20) 82%, rgb(20, 20, 20) 82%, rgb(20, 20, 20) 100%)",
     "size": "43px 43px",
     "tags": [
@@ -69,7 +69,7 @@
     ]
   },
   {
-    "slug": "5f8ea2a3-9e90-41ae-94c9-c97225337164",
+    "slug": "1b9cbdc6-369a-4326-af9e-3e4d4dd558ae",
     "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 11px, rgba(255, 255, 255, 0.04) 11px, rgba(255, 255, 255, 0.04) 19px, transparent 19px, transparent 29px, rgba(255, 255, 255, 0.04) 29px, rgba(255, 255, 255, 0.04) 33px), repeating-radial-gradient(circle at center, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 5px, rgb(0, 0, 0) 5px, rgb(0, 0, 0) 17px, rgb(0, 0, 0) 17px, rgb(0, 0, 0) 30px, rgb(0, 0, 0) 30px, rgb(0, 0, 0) 43px, rgb(0, 0, 0) 43px, rgb(0, 0, 0) 45px, rgb(0, 0, 0) 45px, rgb(0, 0, 0) 47px)",
     "size": "53px 53px",
     "tags": [
@@ -78,7 +78,7 @@
     ]
   },
   {
-    "slug": "f10ce0ae-d3bd-4ceb-87e7-f09fab9c2cbf",
+    "slug": "b8e4dd59-ab26-4b05-8c1f-67beea9e9083",
     "stylesheet": "repeating-radial-gradient(circle at center, rgb(31, 31, 31) 0px, rgb(31, 31, 31) 33px, rgb(26, 26, 26) 33px, rgb(26, 26, 26) 79px, rgb(20, 20, 20) 79px, rgb(20, 20, 20) 88px)",
     "size": "56px 56px",
     "tags": [
@@ -87,7 +87,7 @@
     ]
   },
   {
-    "slug": "9cb66d53-4e7f-4566-9f24-4eedc42048b1",
+    "slug": "89fd5c2f-8884-4251-86ec-978ea7671722",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 35%, 0.05) 0px, hsla(0, 0%, 35%, 0.05) 1px, transparent 1px, transparent 91px), repeating-linear-gradient(45deg, hsla(0, 0%, 35%, 0.05) 0px, hsla(0, 0%, 35%, 0.05) 1px, transparent 1px, transparent 91px), repeating-linear-gradient(0, hsla(0, 0%, 35%, 0.05) 0px, hsla(0, 0%, 35%, 0.05) 1px, transparent 1px, transparent 61px), repeating-linear-gradient(90deg, hsla(0, 0%, 35%, 0.05) 0px, hsla(0, 0%, 35%, 0.05) 1px, transparent 1px, transparent 61px), repeating-linear-gradient(90deg, hsla(0, 0%, 35%, 0.05) 0px, hsla(0, 0%, 35%, 0.05) 1px, transparent 1px, transparent 16px), repeating-linear-gradient(0, hsla(0, 0%, 35%, 0.05) 0px, hsla(0, 0%, 35%, 0.05) 1px, transparent 1px, transparent 16px), linear-gradient(90deg, hsl(80, 7%, 8%), hsl(80, 7%, 8%))",
     "tags": [
       "darkbg",
@@ -95,7 +95,7 @@
     ]
   },
   {
-    "slug": "8cb5449b-6b68-45c2-a056-1f95b2b23645",
+    "slug": "d9a79102-06c8-4279-8a97-c23cc69c6245",
     "stylesheet": "linear-gradient(90deg, rgb(33, 33, 33) 0%, transparent 59%), repeating-linear-gradient(45deg, rgba(168, 168, 168, 0.1) 0px, rgba(168, 168, 168, 0.1) 1px, transparent 1px, transparent 13px), repeating-linear-gradient(135deg, rgba(168, 168, 168, 0.1) 0px, rgba(168, 168, 168, 0.1) 1px, transparent 1px, transparent 13px), linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33))",
     "tags": [
       "darkbg",
@@ -103,7 +103,7 @@
     ]
   },
   {
-    "slug": "23226ca1-c8c5-4fb6-a333-4a11078d88da",
+    "slug": "a22d027f-49a2-4b57-b57d-85298d11da73",
     "stylesheet": "linear-gradient(45deg, rgb(33, 33, 33) 0%, transparent 73%), repeating-linear-gradient(90deg, rgba(127, 127, 127, 0.1) 0px, rgba(127, 127, 127, 0.1) 1px, transparent 1px, transparent 17px), repeating-linear-gradient(0, rgba(127, 127, 127, 0.1) 0px, rgba(127, 127, 127, 0.1) 1px, transparent 1px, transparent 17px), linear-gradient(0, rgb(33, 33, 33), rgb(33, 33, 33))",
     "tags": [
       "darkbg",
@@ -111,7 +111,7 @@
     ]
   },
   {
-    "slug": "7a8dae71-37da-40d2-91c4-3739ceddc3b1",
+    "slug": "e1955057-7e63-41fd-b45b-bd7f1f35e6c8",
     "stylesheet": "repeating-linear-gradient(45deg, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 1px, transparent 1px, transparent 11px, hsla(0, 0%, 63%, 0.05) 11px, hsla(0, 0%, 63%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 1px, transparent 1px, transparent 11px, hsla(0, 0%, 63%, 0.05) 11px, hsla(0, 0%, 63%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(135deg, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 1px, transparent 1px, transparent 11px, hsla(0, 0%, 63%, 0.05) 11px, hsla(0, 0%, 63%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 1px, transparent 1px, transparent 11px, hsla(0, 0%, 63%, 0.05) 11px, hsla(0, 0%, 63%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, rgb(17, 17, 17), rgb(66, 66, 66))",
     "tags": [
       "darkbg",
@@ -119,7 +119,7 @@
     ]
   },
   {
-    "slug": "01616287-1080-4862-bbc8-432b8f9efa31",
+    "slug": "d8965c44-40a6-4319-8550-de0d37e1dadc",
     "stylesheet": "repeating-linear-gradient(22.5deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 31px, rgba(255, 255, 255, 0.05) 31px, rgba(255, 255, 255, 0.05) 32px, transparent 32px, transparent 92px), repeating-linear-gradient(112.5deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 31px, rgba(255, 255, 255, 0.05) 31px, rgba(255, 255, 255, 0.05) 32px, transparent 32px, transparent 92px), repeating-linear-gradient(0, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 31px, rgba(255, 255, 255, 0.05) 31px, rgba(255, 255, 255, 0.05) 32px, transparent 32px, transparent 92px), linear-gradient(90deg, hsl(0, 0%, 3%), hsl(0, 0%, 3%))",
     "tags": [
       "darkbg",
@@ -127,7 +127,7 @@
     ]
   },
   {
-    "slug": "2d9325d7-bfa5-41fe-a26f-f4a9681da8be",
+    "slug": "6f836de0-265a-4dce-b134-c1c7fbc5714f",
     "stylesheet": "repeating-linear-gradient(135deg, hsla(0, 0%, 44%, 0.09) 0px, hsla(0, 0%, 44%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(45deg, hsla(0, 0%, 44%, 0.09) 0px, hsla(0, 0%, 44%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(0, 0%, 8%), hsl(0, 0%, 8%))",
     "tags": [
       "darkbg",
@@ -135,7 +135,7 @@
     ]
   },
   {
-    "slug": "31be9c7c-6c2b-453f-8ed8-4beeb742cee3",
+    "slug": "02ed29ec-3527-4bde-9ef9-d73d76b6e9d4",
     "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 65%, 0.08) 0px, hsla(0, 0%, 65%, 0.08) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(0, 0%, 65%, 0.08) 0px, hsla(0, 0%, 65%, 0.08) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [
       "darkbg",
@@ -143,7 +143,7 @@
     ]
   },
   {
-    "slug": "4583470f-73a5-49bc-982a-80219c2dd30e",
+    "slug": "66c55afa-b8b4-460b-a8ec-edb3f1e2b23a",
     "stylesheet": "repeating-linear-gradient(0, hsla(103, 11%, 32%, 0.09) 0px, hsla(103, 11%, 32%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(103, 11%, 32%, 0.09) 0px, hsla(103, 11%, 32%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(315, 13%, 6%), hsl(315, 13%, 6%))",
     "tags": [
       "darkbg",
@@ -151,140 +151,140 @@
     ]
   },
   {
-    "slug": "87b934cd-d402-4ffe-aa84-abba1c673047",
+    "slug": "f1d1772a-4a63-4eb2-904d-ec42cde9e091",
     "stylesheet": "linear-gradient(200deg, rgba(171, 171, 171, 0.05) 0%, rgba(171, 171, 171, 0.05) 23%, rgba(90, 90, 90, 0.05) 23%, rgba(90, 90, 90, 0.05) 48%, rgba(65, 65, 65, 0.05) 48%, rgba(65, 65, 65, 0.05) 61%, rgba(232, 232, 232, 0.05) 61%, rgba(232, 232, 232, 0.05) 100%), linear-gradient(126deg, rgba(194, 194, 194, 0.05) 0%, rgba(194, 194, 194, 0.05) 11%, rgba(127, 127, 127, 0.05) 11%, rgba(127, 127, 127, 0.05) 33%, rgba(117, 117, 117, 0.05) 33%, rgba(117, 117, 117, 0.05) 99%, rgba(248, 248, 248, 0.05) 99%, rgba(248, 248, 248, 0.05) 100%), linear-gradient(144deg, rgba(64, 64, 64, 0.05) 0%, rgba(64, 64, 64, 0.05) 33%, rgba(211, 211, 211, 0.05) 33%, rgba(211, 211, 211, 0.05) 50%, rgba(53, 53, 53, 0.05) 50%, rgba(53, 53, 53, 0.05) 75%, rgba(144, 144, 144, 0.05) 75%, rgba(144, 144, 144, 0.05) 100%), linear-gradient(329deg, hsl(0, 0%, 0%), hsl(0, 0%, 0%))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "161ee34f-e0f0-48fa-9881-594325c5b07b",
+    "slug": "cb31d4b5-95eb-43ca-b939-c92afcd17d6c",
     "stylesheet": "linear-gradient(12deg, rgba(193, 193, 193, 0.05) 0%, rgba(193, 193, 193, 0.05) 2%, rgba(129, 129, 129, 0.05) 2%, rgba(129, 129, 129, 0.05) 27%, rgba(185, 185, 185, 0.05) 27%, rgba(185, 185, 185, 0.05) 66%, rgba(83, 83, 83, 0.05) 66%, rgba(83, 83, 83, 0.05) 100%), linear-gradient(321deg, rgba(240, 240, 240, 0.05) 0%, rgba(240, 240, 240, 0.05) 13%, rgba(231, 231, 231, 0.05) 13%, rgba(231, 231, 231, 0.05) 34%, rgba(139, 139, 139, 0.05) 34%, rgba(139, 139, 139, 0.05) 71%, rgba(112, 112, 112, 0.05) 71%, rgba(112, 112, 112, 0.05) 100%), linear-gradient(236deg, rgba(189, 189, 189, 0.05) 0%, rgba(189, 189, 189, 0.05) 47%, rgba(138, 138, 138, 0.05) 47%, rgba(138, 138, 138, 0.05) 58%, rgba(108, 108, 108, 0.05) 58%, rgba(108, 108, 108, 0.05) 85%, rgba(143, 143, 143, 0.05) 85%, rgba(143, 143, 143, 0.05) 100%), linear-gradient(96deg, rgba(53, 53, 53, 0.05) 0%, rgba(53, 53, 53, 0.05) 53%, rgba(44, 44, 44, 0.05) 53%, rgba(44, 44, 44, 0.05) 82%, rgba(77, 77, 77, 0.05) 82%, rgba(77, 77, 77, 0.05) 98%, rgba(8, 8, 8, 0.05) 98%, rgba(8, 8, 8, 0.05) 100%), linear-gradient(334deg, hsl(0, 0%, 2%), hsl(0, 0%, 2%))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "b0b59707-4bb7-495e-b0af-ec3f1ff9d501",
+    "slug": "b4b444ed-b757-430c-a87c-2f5c3dee2130",
     "stylesheet": "linear-gradient(216deg, rgba(77, 77, 77, 0.05) 0%, rgba(77, 77, 77, 0.05) 25%, rgba(42, 42, 42, 0.05) 25%, rgba(42, 42, 42, 0.05) 38%, rgba(223, 223, 223, 0.05) 38%, rgba(223, 223, 223, 0.05) 75%, rgba(36, 36, 36, 0.05) 75%, rgba(36, 36, 36, 0.05) 100%), linear-gradient(44deg, rgba(128, 128, 128, 0.05) 0%, rgba(128, 128, 128, 0.05) 34%, rgba(212, 212, 212, 0.05) 34%, rgba(212, 212, 212, 0.05) 57%, rgba(25, 25, 25, 0.05) 57%, rgba(25, 25, 25, 0.05) 89%, rgba(135, 135, 135, 0.05) 89%, rgba(135, 135, 135, 0.05) 100%), linear-gradient(241deg, rgba(55, 55, 55, 0.05) 0%, rgba(55, 55, 55, 0.05) 14%, rgba(209, 209, 209, 0.05) 14%, rgba(209, 209, 209, 0.05) 60%, rgba(245, 245, 245, 0.05) 60%, rgba(245, 245, 245, 0.05) 69%, rgba(164, 164, 164, 0.05) 69%, rgba(164, 164, 164, 0.05) 100%), linear-gradient(249deg, rgba(248, 248, 248, 0.05) 0%, rgba(248, 248, 248, 0.05) 32%, rgba(148, 148, 148, 0.05) 32%, rgba(148, 148, 148, 0.05) 35%, rgba(202, 202, 202, 0.05) 35%, rgba(202, 202, 202, 0.05) 51%, rgba(181, 181, 181, 0.05) 51%, rgba(181, 181, 181, 0.05) 100%), linear-gradient(92deg, hsl(0, 0%, 11%), hsl(0, 0%, 11%))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "d54396e3-4abb-4f10-ae0c-448171ba2591",
+    "slug": "0f13849b-59e3-4faa-831a-a90d781d90c7",
     "stylesheet": "linear-gradient(346deg, rgba(55, 55, 55, 0.04) 0%, rgba(55, 55, 55, 0.04) 22%, rgba(140, 140, 140, 0.04) 22%, rgba(140, 140, 140, 0.04) 69%, rgba(225, 225, 225, 0.04) 69%, rgba(225, 225, 225, 0.04) 100%), linear-gradient(31deg, rgba(55, 55, 55, 0.04) 0%, rgba(55, 55, 55, 0.04) 42%, rgba(140, 140, 140, 0.04) 42%, rgba(140, 140, 140, 0.04) 85%, rgba(225, 225, 225, 0.04) 85%, rgba(225, 225, 225, 0.04) 100%), linear-gradient(55deg, rgba(55, 55, 55, 0.04) 0%, rgba(55, 55, 55, 0.04) 13%, rgba(140, 140, 140, 0.04) 13%, rgba(140, 140, 140, 0.04) 72%, rgba(225, 225, 225, 0.04) 72%, rgba(225, 225, 225, 0.04) 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "f1a9485b-4756-4454-9873-4697536cedf6",
+    "slug": "72c111b3-ecf4-432e-abb3-34790d9c21da",
     "stylesheet": "linear-gradient(148deg, rgba(15, 15, 15, 0.04) 0%, rgba(15, 15, 15, 0.04) 35%, rgba(113, 113, 113, 0.04) 35%, rgba(113, 113, 113, 0.04) 42%, rgba(210, 210, 210, 0.04) 42%, rgba(210, 210, 210, 0.04) 100%), linear-gradient(70deg, rgba(15, 15, 15, 0.04) 0%, rgba(15, 15, 15, 0.04) 25%, rgba(113, 113, 113, 0.04) 25%, rgba(113, 113, 113, 0.04) 30%, rgba(210, 210, 210, 0.04) 30%, rgba(210, 210, 210, 0.04) 100%), linear-gradient(65deg, rgba(15, 15, 15, 0.04) 0%, rgba(15, 15, 15, 0.04) 13%, rgba(113, 113, 113, 0.04) 13%, rgba(113, 113, 113, 0.04) 27%, rgba(210, 210, 210, 0.04) 27%, rgba(210, 210, 210, 0.04) 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "fbb8c2c5-809f-499f-afe5-f6d2528508c4",
+    "slug": "3097c4c6-24e9-4ce5-9994-de29d7511c7a",
     "stylesheet": "linear-gradient(283deg, rgba(228, 228, 228, 0.04) 0%, rgba(228, 228, 228, 0.04) 30%, rgba(130, 130, 130, 0.04) 30%, rgba(130, 130, 130, 0.04) 49%, rgba(31, 31, 31, 0.04) 49%, rgba(31, 31, 31, 0.04) 100%), linear-gradient(297deg, rgba(228, 228, 228, 0.04) 0%, rgba(228, 228, 228, 0.04) 20%, rgba(130, 130, 130, 0.04) 20%, rgba(130, 130, 130, 0.04) 60%, rgba(31, 31, 31, 0.04) 60%, rgba(31, 31, 31, 0.04) 100%), linear-gradient(242deg, rgba(228, 228, 228, 0.04) 0%, rgba(228, 228, 228, 0.04) 29%, rgba(130, 130, 130, 0.04) 29%, rgba(130, 130, 130, 0.04) 48%, rgba(31, 31, 31, 0.04) 48%, rgba(31, 31, 31, 0.04) 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "cbfbe257-8dc5-4454-8d9d-d6c8afeeb7a3",
+    "slug": "9c6128cf-e00d-43bf-90c2-6a53354e10ee",
     "stylesheet": "linear-gradient(326deg, rgba(236, 236, 236, 0.04) 0%, rgba(236, 236, 236, 0.04) 6%, rgba(157, 157, 157, 0.04) 6%, rgba(157, 157, 157, 0.04) 29%, rgba(77, 77, 77, 0.04) 29%, rgba(77, 77, 77, 0.04) 100%), linear-gradient(164deg, rgba(236, 236, 236, 0.04) 0%, rgba(236, 236, 236, 0.04) 36%, rgba(157, 157, 157, 0.04) 36%, rgba(157, 157, 157, 0.04) 61%, rgba(77, 77, 77, 0.04) 61%, rgba(77, 77, 77, 0.04) 100%), linear-gradient(336deg, rgba(236, 236, 236, 0.04) 0%, rgba(236, 236, 236, 0.04) 64%, rgba(157, 157, 157, 0.04) 64%, rgba(157, 157, 157, 0.04) 69%, rgba(77, 77, 77, 0.04) 69%, rgba(77, 77, 77, 0.04) 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "622a8809-5098-4630-ab4b-257cc798c731",
+    "slug": "6085d24d-c7ca-46cb-9203-afda4a19dd94",
     "stylesheet": "linear-gradient(45deg, rgba(86, 86, 86, 0.04) 0%, rgba(86, 86, 86, 0.04) 50%, rgba(169, 169, 169, 0.04) 50%, rgba(169, 169, 169, 0.04) 71%, rgba(251, 251, 251, 0.04) 71%, rgba(251, 251, 251, 0.04) 100%), linear-gradient(45deg, rgba(86, 86, 86, 0.04) 0%, rgba(86, 86, 86, 0.04) 56%, rgba(169, 169, 169, 0.04) 56%, rgba(169, 169, 169, 0.04) 67%, rgba(251, 251, 251, 0.04) 67%, rgba(251, 251, 251, 0.04) 100%), linear-gradient(135deg, rgba(86, 86, 86, 0.04) 0%, rgba(86, 86, 86, 0.04) 4%, rgba(169, 169, 169, 0.04) 4%, rgba(169, 169, 169, 0.04) 75%, rgba(251, 251, 251, 0.04) 75%, rgba(251, 251, 251, 0.04) 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "d17273c5-f525-444b-8257-c080a2797db5",
+    "slug": "4f79c267-4da8-49c9-9600-2409354fd05b",
     "stylesheet": "linear-gradient(0, transparent 0%, transparent 60%, rgba(183, 183, 183, 0.05) 60%, rgba(183, 183, 183, 0.05) 93%, transparent 93%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 55%, rgba(183, 183, 183, 0.05) 55%, rgba(183, 183, 183, 0.05) 84%, transparent 84%, transparent 100%), linear-gradient(0, transparent 0%, transparent 80%, rgba(183, 183, 183, 0.05) 80%, rgba(183, 183, 183, 0.05) 94%, transparent 94%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "24dd0bbe-64e5-45b9-a7dd-2975963dfc96",
+    "slug": "c0243437-c728-4f27-8d23-1551e6d0ac02",
     "stylesheet": "linear-gradient(348deg, transparent 0%, transparent 76%, rgba(194, 194, 194, 0.04) 76%, rgba(194, 194, 194, 0.04) 93%, transparent 93%, transparent 100%), linear-gradient(150deg, transparent 0%, transparent 10%, rgba(194, 194, 194, 0.04) 10%, rgba(194, 194, 194, 0.04) 74%, transparent 74%, transparent 100%), linear-gradient(68deg, transparent 0%, transparent 36%, rgba(194, 194, 194, 0.04) 36%, rgba(194, 194, 194, 0.04) 47%, transparent 47%, transparent 100%), linear-gradient(199deg, transparent 0%, transparent 37%, rgba(194, 194, 194, 0.04) 37%, rgba(194, 194, 194, 0.04) 47%, transparent 47%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "f81f4b53-e602-4630-a334-b1e770c2ffd9",
+    "slug": "a35dd5f4-3023-40bf-bf62-11ca6a39df24",
     "stylesheet": "linear-gradient(109deg, transparent 0%, transparent 5%, rgba(149, 149, 149, 0.04) 5%, rgba(149, 149, 149, 0.04) 38%, transparent 38%, transparent 100%), linear-gradient(324deg, transparent 0%, transparent 31%, rgba(149, 149, 149, 0.04) 31%, rgba(149, 149, 149, 0.04) 99%, transparent 99%, transparent 100%), linear-gradient(259deg, transparent 0%, transparent 11%, rgba(149, 149, 149, 0.04) 11%, rgba(149, 149, 149, 0.04) 57%, transparent 57%, transparent 100%), linear-gradient(221deg, transparent 0%, transparent 5%, rgba(149, 149, 149, 0.04) 5%, rgba(149, 149, 149, 0.04) 37%, transparent 37%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "d0422067-d373-49d7-9a12-910712e325cc",
+    "slug": "aea33525-b635-4951-adc7-33c59522cb2f",
     "stylesheet": "linear-gradient(66deg, transparent 0%, transparent 24%, rgba(195, 195, 195, 0.04) 24%, rgba(195, 195, 195, 0.04) 80%, transparent 80%, transparent 100%), linear-gradient(153deg, transparent 0%, transparent 29%, rgba(195, 195, 195, 0.04) 29%, rgba(195, 195, 195, 0.04) 45%, transparent 45%, transparent 100%), linear-gradient(199deg, transparent 0%, transparent 32%, rgba(195, 195, 195, 0.04) 32%, rgba(195, 195, 195, 0.04) 59%, transparent 59%, transparent 100%), linear-gradient(277deg, transparent 0%, transparent 56%, rgba(195, 195, 195, 0.04) 56%, rgba(195, 195, 195, 0.04) 57%, transparent 57%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "282fa401-6f8e-45ff-ba86-996e990d8d63",
+    "slug": "c1114ac9-c607-445a-b16e-cafc0c124dc4",
     "stylesheet": "linear-gradient(307deg, transparent 0%, transparent 10%, rgba(190, 190, 190, 0.04) 10%, rgba(190, 190, 190, 0.04) 64%, transparent 64%, transparent 100%), linear-gradient(118deg, transparent 0%, transparent 11%, rgba(190, 190, 190, 0.04) 11%, rgba(190, 190, 190, 0.04) 31%, transparent 31%, transparent 100%), linear-gradient(73deg, transparent 0%, transparent 22%, rgba(190, 190, 190, 0.04) 22%, rgba(190, 190, 190, 0.04) 90%, transparent 90%, transparent 100%), linear-gradient(156deg, transparent 0%, transparent 51%, rgba(190, 190, 190, 0.04) 51%, rgba(190, 190, 190, 0.04) 97%, transparent 97%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "b26533a9-d689-49f1-a6ae-486c72f23a15",
+    "slug": "1d858f4c-7413-48c7-948d-3e09b7c5bc3d",
     "stylesheet": "linear-gradient(324deg, transparent 0%, transparent 45%, rgba(186, 186, 186, 0.04) 45%, rgba(186, 186, 186, 0.04) 47%, transparent 47%, transparent 100%), linear-gradient(208deg, transparent 0%, transparent 40%, rgba(186, 186, 186, 0.04) 40%, rgba(186, 186, 186, 0.04) 80%, transparent 80%, transparent 100%), linear-gradient(202deg, transparent 0%, transparent 20%, rgba(186, 186, 186, 0.04) 20%, rgba(186, 186, 186, 0.04) 40%, transparent 40%, transparent 100%), linear-gradient(338deg, transparent 0%, transparent 10%, rgba(186, 186, 186, 0.04) 10%, rgba(186, 186, 186, 0.04) 72%, transparent 72%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "b20a78db-ebb3-42f7-bb55-725ac9bdbbb9",
+    "slug": "0f511a48-e4a8-40e6-8b04-37bc1e243e4a",
     "stylesheet": "linear-gradient(45deg, transparent 0%, transparent 27%, rgba(214, 214, 214, 0.06) 27%, rgba(214, 214, 214, 0.06) 38%, transparent 38%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 39%, rgba(214, 214, 214, 0.06) 39%, rgba(214, 214, 214, 0.06) 68%, transparent 68%, transparent 100%), linear-gradient(90deg, transparent 0%, transparent 74%, rgba(214, 214, 214, 0.06) 74%, rgba(214, 214, 214, 0.06) 79%, transparent 79%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "8d8aa0d0-975e-4af8-9639-4a3c5b2eb80f",
+    "slug": "9d82b4d7-8dce-47e4-96c8-5cc3ad2ef0a2",
     "stylesheet": "linear-gradient(45deg, transparent 0%, transparent 11%, rgba(156, 156, 156, 0.06) 11%, rgba(156, 156, 156, 0.06) 81%, transparent 81%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 18%, rgba(156, 156, 156, 0.06) 18%, rgba(156, 156, 156, 0.06) 64%, transparent 64%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 13%, rgba(156, 156, 156, 0.06) 13%, rgba(156, 156, 156, 0.06) 22%, transparent 22%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "8c8c62da-8b62-4b0b-8ea8-2270797e7868",
+    "slug": "ed28ef6d-fe82-4379-a602-20291703450e",
     "stylesheet": "linear-gradient(45deg, transparent 0%, transparent 46%, rgba(114, 114, 114, 0.06) 46%, rgba(114, 114, 114, 0.06) 70%, transparent 70%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 59%, rgba(114, 114, 114, 0.06) 59%, rgba(114, 114, 114, 0.06) 91%, transparent 91%, transparent 100%), linear-gradient(0, transparent 0%, transparent 15%, rgba(114, 114, 114, 0.06) 15%, rgba(114, 114, 114, 0.06) 40%, transparent 40%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "69e0fa36-1b3a-4731-a954-4c10446a804b",
+    "slug": "7a11b622-a5bc-488b-8042-67b8eb7d6d91",
     "stylesheet": "linear-gradient(135deg, transparent 0%, transparent 50%, rgba(159, 159, 159, 0.07) 50%, rgba(159, 159, 159, 0.07) 77%, transparent 77%, transparent 100%), linear-gradient(90deg, transparent 0%, transparent 91%, rgba(159, 159, 159, 0.07) 91%, rgba(159, 159, 159, 0.07) 99%, transparent 99%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 24%, rgba(159, 159, 159, 0.07) 24%, rgba(159, 159, 159, 0.07) 63%, transparent 63%, transparent 100%), linear-gradient(0, transparent 0%, transparent 49%, rgba(159, 159, 159, 0.07) 49%, rgba(159, 159, 159, 0.07) 63%, transparent 63%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "0d41b9db-6a93-4998-a6e8-f877bfdf96fd",
+    "slug": "b7b4e352-fe73-474f-859f-5145d027a01f",
     "stylesheet": "linear-gradient(90deg, transparent 0%, transparent 88%, rgba(200, 200, 200, 0.07) 88%, rgba(200, 200, 200, 0.07) 93%, transparent 93%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 83%, rgba(200, 200, 200, 0.07) 83%, rgba(200, 200, 200, 0.07) 91%, transparent 91%, transparent 100%), linear-gradient(0, transparent 0%, transparent 43%, rgba(200, 200, 200, 0.07) 43%, rgba(200, 200, 200, 0.07) 50%, transparent 50%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 16%, rgba(200, 200, 200, 0.07) 16%, rgba(200, 200, 200, 0.07) 56%, transparent 56%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "darkbg"
     ]
   },
   {
-    "slug": "291bc949-189d-4515-9158-dd9dc001df24",
+    "slug": "d10b063d-4116-4ff3-8975-7a7e25749a69",
     "stylesheet": "repeating-linear-gradient(0, rgb(163, 163, 163) 0px, rgb(163, 163, 163) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(163, 163, 163) 0px, rgb(163, 163, 163) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 62%), hsl(0, 0%, 62%))",
     "tags": [
       "darkbg",
@@ -292,7 +292,7 @@
     ]
   },
   {
-    "slug": "fd473d13-4999-4360-8e82-a08d720fe7c0",
+    "slug": "124b2dd3-8288-42ad-a9e4-cfb8aa83aac6",
     "stylesheet": "repeating-linear-gradient(0, rgb(6, 6, 6) 0px, rgb(6, 6, 6) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(6, 6, 6) 0px, rgb(6, 6, 6) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 9%), hsl(0, 0%, 9%))",
     "tags": [
       "darkbg",
@@ -300,7 +300,7 @@
     ]
   },
   {
-    "slug": "ebb9af54-dcb8-420a-9a72-6db455d85479",
+    "slug": "41c3ffd7-aea3-4ceb-8275-10e964821600",
     "stylesheet": "repeating-linear-gradient(0, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 9%), hsl(0, 0%, 9%))",
     "tags": [
       "darkbg",
@@ -308,7 +308,7 @@
     ]
   },
   {
-    "slug": "96a9adf3-54bc-4d01-a4dd-e6ee5ce70bef",
+    "slug": "a0e4a883-6c20-4a4d-825e-9ad6811cb2e7",
     "stylesheet": "repeating-linear-gradient(0, rgb(17, 17, 17) 0px, rgb(17, 17, 17) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgb(17, 17, 17) 0px, rgb(17, 17, 17) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(0, 0%, 3%), hsl(0, 0%, 3%))",
     "tags": [
       "darkbg",
@@ -316,7 +316,7 @@
     ]
   },
   {
-    "slug": "2db640d5-ddbe-45e8-a921-ec767e94f079",
+    "slug": "380b6237-5318-40ee-b947-2619834ddd8d",
     "stylesheet": "repeating-linear-gradient(135deg, rgba(145, 145, 145, 0.02) 0px, rgba(145, 145, 145, 0.02) 39px, rgba(140, 140, 140, 0.02) 39px, rgba(140, 140, 140, 0.02) 57px, rgba(9, 9, 9, 0.02) 57px, rgba(9, 9, 9, 0.02) 91px, rgba(217, 217, 217, 0.02) 91px, rgba(217, 217, 217, 0.02) 119px, rgba(45, 45, 45, 0.02) 119px, rgba(45, 45, 45, 0.02) 141px, rgba(227, 227, 227, 0.02) 141px, rgba(227, 227, 227, 0.02) 184px, rgba(236, 236, 236, 0.02) 184px, rgba(236, 236, 236, 0.02) 227px, rgba(124, 124, 124, 0.02) 227px, rgba(124, 124, 124, 0.02) 244px), repeating-linear-gradient(135deg, rgba(39, 39, 39, 0.02) 0px, rgba(39, 39, 39, 0.02) 23px, rgba(2, 2, 2, 0.02) 23px, rgba(2, 2, 2, 0.02) 55px, rgba(13, 13, 13, 0.02) 55px, rgba(13, 13, 13, 0.02) 71px, rgba(44, 44, 44, 0.02) 71px, rgba(44, 44, 44, 0.02) 98px, rgba(240, 240, 240, 0.02) 98px, rgba(240, 240, 240, 0.02) 134px, rgba(182, 182, 182, 0.02) 134px, rgba(182, 182, 182, 0.02) 159px, rgba(246, 246, 246, 0.02) 159px, rgba(246, 246, 246, 0.02) 174px, rgba(157, 157, 157, 0.02) 174px, rgba(157, 157, 157, 0.02) 190px), repeating-linear-gradient(135deg, rgba(145, 145, 145, 0.02) 0px, rgba(145, 145, 145, 0.02) 35px, rgba(217, 217, 217, 0.02) 35px, rgba(217, 217, 217, 0.02) 53px, rgba(199, 199, 199, 0.02) 53px, rgba(199, 199, 199, 0.02) 70px, rgba(196, 196, 196, 0.02) 70px, rgba(196, 196, 196, 0.02) 114px, rgba(137, 137, 137, 0.02) 114px, rgba(137, 137, 137, 0.02) 143px, rgba(249, 249, 249, 0.02) 143px, rgba(249, 249, 249, 0.02) 191px, rgba(247, 247, 247, 0.02) 191px, rgba(247, 247, 247, 0.02) 239px, rgba(38, 38, 38, 0.02) 239px, rgba(38, 38, 38, 0.02) 273px), linear-gradient(90deg, rgb(69, 69, 69), rgb(3, 3, 3))",
     "tags": [
       "darkbg",
@@ -324,7 +324,7 @@
     ]
   },
   {
-    "slug": "c91f190a-ea9d-4de7-8568-7eec6d9675f3",
+    "slug": "9eb7163e-4011-49f8-a7c8-78efc3c42267",
     "stylesheet": "repeating-linear-gradient(135deg, rgba(19, 19, 19, 0.02) 0px, rgba(19, 19, 19, 0.02) 132px, rgba(233, 233, 233, 0.02) 132px, rgba(233, 233, 233, 0.02) 257px, rgba(87, 87, 87, 0.02) 257px, rgba(87, 87, 87, 0.02) 356px, rgba(139, 139, 139, 0.02) 356px, rgba(139, 139, 139, 0.02) 449px, rgba(107, 107, 107, 0.02) 449px, rgba(107, 107, 107, 0.02) 540px, rgba(141, 141, 141, 0.02) 540px, rgba(141, 141, 141, 0.02) 606px, rgba(197, 197, 197, 0.02) 606px, rgba(197, 197, 197, 0.02) 754px, rgba(79, 79, 79, 0.02) 754px, rgba(79, 79, 79, 0.02) 851px), repeating-linear-gradient(135deg, rgba(152, 152, 152, 0.02) 0px, rgba(152, 152, 152, 0.02) 76px, rgba(91, 91, 91, 0.02) 76px, rgba(91, 91, 91, 0.02) 199px, rgba(68, 68, 68, 0.02) 199px, rgba(68, 68, 68, 0.02) 298px, rgba(216, 216, 216, 0.02) 298px, rgba(216, 216, 216, 0.02) 378px, rgba(254, 254, 254, 0.02) 378px, rgba(254, 254, 254, 0.02) 438px, rgba(79, 79, 79, 0.02) 438px, rgba(79, 79, 79, 0.02) 523px, rgba(47, 47, 47, 0.02) 523px, rgba(47, 47, 47, 0.02) 590px, rgba(241, 241, 241, 0.02) 590px, rgba(241, 241, 241, 0.02) 730px), repeating-linear-gradient(135deg, rgba(39, 39, 39, 0.02) 0px, rgba(39, 39, 39, 0.02) 109px, rgba(131, 131, 131, 0.02) 109px, rgba(131, 131, 131, 0.02) 202px, rgba(18, 18, 18, 0.02) 202px, rgba(18, 18, 18, 0.02) 329px, rgba(217, 217, 217, 0.02) 329px, rgba(217, 217, 217, 0.02) 405px, rgba(93, 93, 93, 0.02) 405px, rgba(93, 93, 93, 0.02) 487px, rgba(194, 194, 194, 0.02) 487px, rgba(194, 194, 194, 0.02) 551px, rgba(202, 202, 202, 0.02) 551px, rgba(202, 202, 202, 0.02) 614px, rgba(224, 224, 224, 0.02) 614px, rgba(224, 224, 224, 0.02) 747px), linear-gradient(90deg, rgb(52, 52, 52), rgb(51, 51, 51))",
     "tags": [
       "darkbg",
@@ -332,7 +332,7 @@
     ]
   },
   {
-    "slug": "2da3fcde-f13b-414f-8f8d-b70cc2c28ca3",
+    "slug": "4faa6184-c022-4936-a4e9-90b5f6b66457",
     "stylesheet": "linear-gradient(135deg, rgba(66, 66, 66, 0.46) 0%, rgba(66, 66, 66, 0.46) 12.5%, rgba(68, 68, 68, 0.46) 12.5%, rgba(68, 68, 68, 0.46) 25%, rgba(71, 71, 71, 0.46) 25%, rgba(71, 71, 71, 0.46) 37.5%, rgba(73, 73, 73, 0.46) 37.5%, rgba(73, 73, 73, 0.46) 50%, rgba(75, 75, 75, 0.46) 50%, rgba(75, 75, 75, 0.46) 62.5%, rgba(77, 77, 77, 0.46) 62.5%, rgba(77, 77, 77, 0.46) 75%, rgba(80, 80, 80, 0.46) 75%, rgba(80, 80, 80, 0.46) 87.5%, rgba(82, 82, 82, 0.46) 87.5%, rgba(82, 82, 82, 0.46) 100%), linear-gradient(45deg, rgb(41, 41, 41) 0%, rgb(41, 41, 41) 12.5%, rgb(43, 43, 43) 12.5%, rgb(43, 43, 43) 25%, rgb(46, 46, 46) 25%, rgb(46, 46, 46) 37.5%, rgb(48, 48, 48) 37.5%, rgb(48, 48, 48) 50%, rgb(50, 50, 50) 50%, rgb(50, 50, 50) 62.5%, rgb(52, 52, 52) 62.5%, rgb(52, 52, 52) 75%, rgb(55, 55, 55) 75%, rgb(55, 55, 55) 87.5%, rgb(57, 57, 57) 87.5%, rgb(57, 57, 57) 100%)",
     "tags": [
       "darkbg",
@@ -340,7 +340,7 @@
     ]
   },
   {
-    "slug": "ba3216bb-429b-43ba-aa44-5b893851a871",
+    "slug": "ed7aabd7-d42b-477b-aa70-d2fff5162be6",
     "stylesheet": "repeating-linear-gradient(45deg, rgb(27, 27, 27) 0px, rgb(27, 27, 27) 97px, rgb(24, 24, 24) 97px, rgb(24, 24, 24) 194px, rgb(20, 20, 20) 194px, rgb(20, 20, 20) 291px)",
     "tags": [
       "darkbg",
@@ -348,7 +348,7 @@
     ]
   },
   {
-    "slug": "e44147da-c5f3-4690-9f52-f569855511d7",
+    "slug": "66396d34-9273-4e87-af57-3c196460c859",
     "stylesheet": "repeating-linear-gradient(90deg, rgb(32, 32, 32) 0px, rgb(32, 32, 32) 2px, rgb(33, 33, 33) 2px, rgb(33, 33, 33) 4px, rgb(34, 34, 34) 4px, rgb(34, 34, 34) 6px, rgb(33, 33, 33) 6px, rgb(33, 33, 33) 8px, rgb(36, 36, 36) 8px, rgb(36, 36, 36) 10px, rgb(35, 35, 35) 10px, rgb(35, 35, 35) 12px, rgb(33, 33, 33) 12px, rgb(33, 33, 33) 14px, rgb(32, 32, 32) 14px, rgb(32, 32, 32) 16px, rgb(36, 36, 36) 16px, rgb(36, 36, 36) 18px, rgb(34, 34, 34) 18px, rgb(34, 34, 34) 20px, rgb(35, 35, 35) 20px, rgb(35, 35, 35) 22px, rgb(35, 35, 35) 22px, rgb(35, 35, 35) 24px)",
     "tags": [
       "darkbg",
@@ -356,7 +356,7 @@
     ]
   },
   {
-    "slug": "992f0747-82c6-4211-9d32-8dc82d11804f",
+    "slug": "2a93f412-1848-4fb3-a560-f519a7d74d8b",
     "stylesheet": "repeating-linear-gradient(90deg, rgb(3, 3, 3) 0px, rgb(3, 3, 3) 18px, rgb(11, 11, 11) 18px, rgb(11, 11, 11) 36px, rgb(0, 0, 0) 36px, rgb(0, 0, 0) 54px, rgb(5, 5, 5) 54px, rgb(5, 5, 5) 72px, rgb(8, 8, 8) 72px, rgb(8, 8, 8) 90px, rgb(14, 14, 14) 90px, rgb(14, 14, 14) 108px, rgb(19, 19, 19) 108px, rgb(19, 19, 19) 126px, rgb(16, 16, 16) 126px, rgb(16, 16, 16) 144px)",
     "tags": [
       "darkbg",

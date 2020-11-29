@@ -1,6 +1,6 @@
 [
   {
-    "slug": "e6a3eaf6-1e77-42a7-8a5c-0e37974dead4",
+    "slug": "b690072e-3b33-4c33-bdc3-f89cd96f0a22",
     "stylesheet": "repeating-linear-gradient(135deg, rgba(189, 189, 189, 0.1) 0px, rgba(189, 189, 189, 0.1) 2px, transparent 2px, transparent 4px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg",
@@ -9,14 +9,14 @@
     ]
   },
   {
-    "slug": "aa46d4cb-eba8-41b4-849a-bd5b7e909554",
+    "slug": "a98b0e24-9d28-4b92-a0e8-903d75a92369",
     "stylesheet": "repeating-linear-gradient(45deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 10px, transparent 10px, transparent 11px), repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 10px, transparent 10px, transparent 11px), linear-gradient(90deg, hsl(260, 7%, 84%), hsl(260, 7%, 84%))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "661d9091-a403-4496-b144-d080020895da",
+    "slug": "1823cd2e-c17f-47f1-ab28-0959127a98a2",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 79%, 0.06) 0px, hsla(0, 0%, 79%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 79%, 0.06) 0px, hsla(0, 0%, 79%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 79%, 0.09) 0px, hsla(0, 0%, 79%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 79%, 0.09) 0px, hsla(0, 0%, 79%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg",
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "slug": "6a9d17e0-8805-4e76-bbba-05968401308c",
+    "slug": "4ca469ad-bd54-418e-a226-58c39f8d3fda",
     "stylesheet": "radial-gradient(circle at center, rgba(217, 217, 217, 0.05) 0%, rgba(217, 217, 217, 0.05) 15%, rgba(197, 197, 197, 0.05) 15%, rgba(197, 197, 197, 0.05) 34%, rgba(178, 178, 178, 0.05) 34%, rgba(178, 178, 178, 0.05) 51%, rgba(237, 237, 237, 0.05) 51%, rgba(237, 237, 237, 0.05) 75%, rgba(138, 138, 138, 0.05) 75%, rgba(138, 138, 138, 0.05) 89%, rgba(158, 158, 158, 0.05) 89%, rgba(158, 158, 158, 0.05) 100%), radial-gradient(circle at center, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 6%, rgb(255, 255, 255) 6%, rgb(255, 255, 255) 12%, rgb(255, 255, 255) 12%, rgb(255, 255, 255) 31%, rgb(255, 255, 255) 31%, rgb(255, 255, 255) 92%, rgb(255, 255, 255) 92%, rgb(255, 255, 255) 97%, rgb(255, 255, 255) 97%, rgb(255, 255, 255) 100%)",
     "size": "42px 42px",
     "tags": [
@@ -33,7 +33,7 @@
     ]
   },
   {
-    "slug": "4250ccef-a810-43f1-926d-930261471b42",
+    "slug": "7e22c575-96dc-4637-949f-5907e8bed6a5",
     "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 3px, transparent 3px, transparent 5px, rgba(0, 0, 0, 0.03) 5px, rgba(0, 0, 0, 0.03) 7px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 9px, rgb(255, 255, 255) 9px, rgb(255, 255, 255) 21px, rgb(255, 255, 255) 21px, rgb(255, 255, 255) 31px, rgb(255, 255, 255) 31px, rgb(255, 255, 255) 40px)",
     "size": "20px 20px",
     "tags": [
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "slug": "5c30bacc-e546-4fe1-814a-60b48d0a2ad6",
+    "slug": "2921eb98-885a-45b6-897d-949152b7ad4b",
     "stylesheet": "repeating-radial-gradient(circle at center, transparent 0px, transparent 13px, rgba(0, 0, 0, 0.03) 13px, rgba(0, 0, 0, 0.03) 24px, transparent 24px, transparent 62px, rgba(0, 0, 0, 0.03) 62px, rgba(0, 0, 0, 0.03) 96px), repeating-radial-gradient(circle at center, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 14px, rgb(255, 255, 255) 18px, rgb(255, 255, 255) 18px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 28px, rgb(255, 255, 255) 32px)",
     "size": "21px 21px",
     "tags": [
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "slug": "9f6464c1-2cfd-4efb-b558-1f338d81bb8e",
+    "slug": "21f7415c-07d5-4233-8f17-4838bb2c8da2",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(300, 16%, 68%, 0.06) 0px, hsla(300, 16%, 68%, 0.06) 1px, transparent 1px, transparent 21px, hsla(300, 16%, 68%, 0.06) 21px, hsla(300, 16%, 68%, 0.06) 22px, transparent 22px, transparent 72px), repeating-linear-gradient(0, hsla(300, 16%, 68%, 0.06) 0px, hsla(300, 16%, 68%, 0.06) 1px, transparent 1px, transparent 21px, hsla(300, 16%, 68%, 0.06) 21px, hsla(300, 16%, 68%, 0.06) 22px, transparent 22px, transparent 72px), repeating-linear-gradient(135deg, hsla(300, 16%, 68%, 0.06) 0px, hsla(300, 16%, 68%, 0.06) 1px, transparent 1px, transparent 21px, hsla(300, 16%, 68%, 0.06) 21px, hsla(300, 16%, 68%, 0.06) 22px, transparent 22px, transparent 72px), linear-gradient(90deg, hsl(240, 7%, 97%), hsl(240, 7%, 97%))",
     "tags": [
       "lightbg",
@@ -59,7 +59,7 @@
     ]
   },
   {
-    "slug": "262d01b9-2def-46c7-b3e3-a20fe1c6a89f",
+    "slug": "9a26e93c-1450-4193-89bf-8a4c30079f78",
     "stylesheet": "repeating-linear-gradient(135deg, hsla(0, 0%, 71%, 0.09) 0px, hsla(0, 0%, 71%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(45deg, hsla(0, 0%, 71%, 0.09) 0px, hsla(0, 0%, 71%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
     "tags": [
       "lightbg",
@@ -67,7 +67,7 @@
     ]
   },
   {
-    "slug": "7a55bf41-23ae-44bc-99ef-058bdd3c60d2",
+    "slug": "4f459a8f-2fe2-4a6e-a2f1-b202d3207691",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(198, 198, 198, 0.05) 0px, rgba(198, 198, 198, 0.05) 1px, transparent 1px, transparent 5px), repeating-linear-gradient(0, rgba(198, 198, 198, 0.05) 0px, rgba(198, 198, 198, 0.05) 1px, transparent 1px, transparent 5px), repeating-linear-gradient(0, rgba(198, 198, 198, 0.06) 0px, rgba(198, 198, 198, 0.06) 1px, transparent 1px, transparent 15px), repeating-linear-gradient(90deg, rgba(198, 198, 198, 0.06) 0px, rgba(198, 198, 198, 0.06) 1px, transparent 1px, transparent 15px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg",
@@ -75,7 +75,7 @@
     ]
   },
   {
-    "slug": "7f51fea4-9ed7-4871-91c9-8be30975dd36",
+    "slug": "61f7a8fa-64f8-4506-97a8-4f3347873008",
     "stylesheet": "repeating-linear-gradient(0, rgba(219, 219, 219, 0.2) 0px, rgba(219, 219, 219, 0.2) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgba(219, 219, 219, 0.2) 0px, rgba(219, 219, 219, 0.2) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg",
@@ -83,112 +83,112 @@
     ]
   },
   {
-    "slug": "5255e7d1-d972-4a79-8717-c6b95baa8758",
+    "slug": "5fb5a6b1-c41b-477b-a7a5-7cecaff0d9db",
     "stylesheet": "linear-gradient(45deg, transparent 0%, transparent 2%, rgba(116, 116, 116, 0.04) 2%, rgba(116, 116, 116, 0.04) 36%, transparent 36%, transparent 100%), linear-gradient(0, transparent 0%, transparent 48%, rgba(116, 116, 116, 0.04) 48%, rgba(116, 116, 116, 0.04) 64%, transparent 64%, transparent 100%), linear-gradient(90deg, transparent 0%, transparent 70%, rgba(116, 116, 116, 0.04) 70%, rgba(116, 116, 116, 0.04) 73%, transparent 73%, transparent 100%), linear-gradient(90deg, transparent 0%, transparent 17%, rgba(116, 116, 116, 0.04) 17%, rgba(116, 116, 116, 0.04) 54%, transparent 54%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "0a9275ca-36e8-40e4-82a8-2bff9fa233bb",
+    "slug": "65538d55-4222-4ddf-a937-264001d66a6c",
     "stylesheet": "linear-gradient(135deg, transparent 0%, transparent 6%, rgba(71, 71, 71, 0.04) 6%, rgba(71, 71, 71, 0.04) 22%, transparent 22%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 20%, rgba(71, 71, 71, 0.04) 20%, rgba(71, 71, 71, 0.04) 47%, transparent 47%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 24%, rgba(71, 71, 71, 0.04) 24%, rgba(71, 71, 71, 0.04) 62%, transparent 62%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 73%, rgba(71, 71, 71, 0.04) 73%, rgba(71, 71, 71, 0.04) 75%, transparent 75%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "f2b891b7-9cd5-407f-adbb-0729df5d1565",
+    "slug": "c8819946-d3b6-496b-907a-ac19b31c1bc4",
     "stylesheet": "linear-gradient(45deg, transparent 0%, transparent 55%, rgba(64, 64, 64, 0.04) 55%, rgba(64, 64, 64, 0.04) 76%, transparent 76%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 14%, rgba(64, 64, 64, 0.04) 14%, rgba(64, 64, 64, 0.04) 41%, transparent 41%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 2%, rgba(64, 64, 64, 0.04) 2%, rgba(64, 64, 64, 0.04) 18%, transparent 18%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 61%, rgba(64, 64, 64, 0.04) 61%, rgba(64, 64, 64, 0.04) 71%, transparent 71%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "7c8157ca-7225-42d9-b35f-c964088c6f2c",
+    "slug": "36e885c2-6ec9-4412-8d44-fd7b23672bf6",
     "stylesheet": "linear-gradient(0, transparent 0%, transparent 58%, rgba(104, 104, 104, 0.05) 58%, rgba(104, 104, 104, 0.05) 92%, transparent 92%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 34%, rgba(104, 104, 104, 0.05) 34%, rgba(104, 104, 104, 0.05) 77%, transparent 77%, transparent 100%), linear-gradient(0, transparent 0%, transparent 33%, rgba(104, 104, 104, 0.05) 33%, rgba(104, 104, 104, 0.05) 53%, transparent 53%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "76e2db6a-b06d-4925-b9f4-4d8e7f1c881e",
+    "slug": "3e3a4747-8b3f-4a2e-b4f5-97e80783d491",
     "stylesheet": "linear-gradient(90deg, transparent 0%, transparent 8%, rgba(90, 90, 90, 0.05) 8%, rgba(90, 90, 90, 0.05) 21%, transparent 21%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 23%, rgba(90, 90, 90, 0.05) 23%, rgba(90, 90, 90, 0.05) 37%, transparent 37%, transparent 100%), linear-gradient(0, transparent 0%, transparent 37%, rgba(90, 90, 90, 0.05) 37%, rgba(90, 90, 90, 0.05) 49%, transparent 49%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "428e4908-66c1-4ad0-8e98-641bdcf09bea",
+    "slug": "2827ad44-66e6-4c28-bb7e-9c755186aa9e",
     "stylesheet": "linear-gradient(135deg, transparent 0%, transparent 24%, rgba(153, 153, 153, 0.05) 24%, rgba(153, 153, 153, 0.05) 25%, transparent 25%, transparent 100%), linear-gradient(0, transparent 0%, transparent 25%, rgba(153, 153, 153, 0.05) 25%, rgba(153, 153, 153, 0.05) 36%, transparent 36%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 63%, rgba(153, 153, 153, 0.05) 63%, rgba(153, 153, 153, 0.05) 69%, transparent 69%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "a6a8d189-1529-4082-a203-b4f49c49930a",
+    "slug": "af57c501-f144-4d0f-9ee2-e486eeafbf94",
     "stylesheet": "linear-gradient(90deg, transparent 0%, transparent 27%, rgba(196, 196, 196, 0.05) 27%, rgba(196, 196, 196, 0.05) 42%, transparent 42%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 38%, rgba(196, 196, 196, 0.05) 38%, rgba(196, 196, 196, 0.05) 41%, transparent 41%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 19%, rgba(196, 196, 196, 0.05) 19%, rgba(196, 196, 196, 0.05) 40%, transparent 40%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "220291a4-05a8-4a5b-a380-2b180333dfce",
+    "slug": "25e1406d-4b73-4417-95e0-1ec2d5c6f280",
     "stylesheet": "linear-gradient(45deg, transparent 0%, transparent 51%, rgba(130, 130, 130, 0.05) 51%, rgba(130, 130, 130, 0.05) 71%, transparent 71%, transparent 100%), linear-gradient(0, transparent 0%, transparent 69%, rgba(130, 130, 130, 0.05) 69%, rgba(130, 130, 130, 0.05) 84%, transparent 84%, transparent 100%), linear-gradient(135deg, transparent 0%, transparent 37%, rgba(130, 130, 130, 0.05) 37%, rgba(130, 130, 130, 0.05) 73%, transparent 73%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "d3e2195d-2961-48e0-9713-a91f905e91e8",
+    "slug": "e17308ba-ea6b-4338-a294-bc8868988622",
     "stylesheet": "linear-gradient(224deg, transparent 0%, transparent 30%, rgba(249, 249, 249, 0.02) 30%, rgba(249, 249, 249, 0.02) 36%, transparent 36%, transparent 100%), linear-gradient(345deg, transparent 0%, transparent 53%, rgba(140, 140, 140, 0.02) 53%, rgba(140, 140, 140, 0.02) 63%, transparent 63%, transparent 100%), linear-gradient(284deg, transparent 0%, transparent 28%, rgba(1, 1, 1, 0.02) 28%, rgba(1, 1, 1, 0.02) 38%, transparent 38%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "e0c723eb-b3f0-4bdc-8cbe-c02a4b8ec44b",
+    "slug": "c72e360d-d9f9-4187-a3b6-905fd6603fc6",
     "stylesheet": "linear-gradient(297deg, transparent 0%, transparent 34%, rgba(178, 178, 178, 0.02) 34%, rgba(178, 178, 178, 0.02) 53%, transparent 53%, transparent 100%), linear-gradient(222deg, transparent 0%, transparent 30%, rgba(8, 8, 8, 0.02) 30%, rgba(8, 8, 8, 0.02) 58%, transparent 58%, transparent 100%), linear-gradient(352deg, transparent 0%, transparent 25%, rgba(88, 88, 88, 0.02) 25%, rgba(88, 88, 88, 0.02) 57%, transparent 57%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "ebf71674-1dd5-41fe-906e-0ab247661db2",
+    "slug": "862f65f8-678e-4ea9-a0b8-2016114366f0",
     "stylesheet": "linear-gradient(78deg, transparent 0%, transparent 36%, rgba(17, 17, 17, 0.02) 36%, rgba(17, 17, 17, 0.02) 56%, transparent 56%, transparent 100%), linear-gradient(30deg, transparent 0%, transparent 2%, rgba(105, 105, 105, 0.02) 2%, rgba(105, 105, 105, 0.02) 75%, transparent 75%, transparent 100%), linear-gradient(206deg, transparent 0%, transparent 68%, rgba(3, 3, 3, 0.02) 68%, rgba(3, 3, 3, 0.02) 99%, transparent 99%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "38f46f49-33a3-4cf2-b61c-54c4dd47d367",
+    "slug": "7c430ad2-0ad3-48b7-9c03-66627c11d433",
     "stylesheet": "repeating-linear-gradient(135deg, rgba(79, 79, 79, 0.01) 0px, rgba(79, 79, 79, 0.01) 14px, rgba(94, 94, 94, 0.01) 14px, rgba(94, 94, 94, 0.01) 28px, rgba(109, 109, 109, 0.01) 28px, rgba(109, 109, 109, 0.01) 42px, rgba(124, 124, 124, 0.01) 42px, rgba(124, 124, 124, 0.01) 56px, rgba(139, 139, 139, 0.01) 56px, rgba(139, 139, 139, 0.01) 70px, rgba(154, 154, 154, 0.01) 70px, rgba(154, 154, 154, 0.01) 84px, rgba(169, 169, 169, 0.01) 84px, rgba(169, 169, 169, 0.01) 98px, rgba(184, 184, 184, 0.01) 98px, rgba(184, 184, 184, 0.01) 112px), repeating-linear-gradient(45deg, rgba(221, 221, 221, 0.01) 0px, rgba(221, 221, 221, 0.01) 14px, rgba(207, 207, 207, 0.01) 14px, rgba(207, 207, 207, 0.01) 28px, rgba(192, 192, 192, 0.01) 28px, rgba(192, 192, 192, 0.01) 42px, rgba(178, 178, 178, 0.01) 42px, rgba(178, 178, 178, 0.01) 56px, rgba(164, 164, 164, 0.01) 56px, rgba(164, 164, 164, 0.01) 70px, rgba(150, 150, 150, 0.01) 70px, rgba(150, 150, 150, 0.01) 84px, rgba(135, 135, 135, 0.01) 84px, rgba(135, 135, 135, 0.01) 98px, rgba(121, 121, 121, 0.01) 98px, rgba(121, 121, 121, 0.01) 112px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "0c316c70-15ee-4eca-9491-8f389543c164",
+    "slug": "893f406f-3aad-4947-bc04-0ee8c45ed693",
     "stylesheet": "repeating-linear-gradient(135deg, rgba(240, 240, 240, 0.02) 0px, rgba(240, 240, 240, 0.02) 21px, rgba(224, 224, 224, 0.02) 21px, rgba(224, 224, 224, 0.02) 42px, rgba(208, 208, 208, 0.02) 42px, rgba(208, 208, 208, 0.02) 63px, rgba(192, 192, 192, 0.02) 63px, rgba(192, 192, 192, 0.02) 84px, rgba(175, 175, 175, 0.02) 84px, rgba(175, 175, 175, 0.02) 105px, rgba(159, 159, 159, 0.02) 105px, rgba(159, 159, 159, 0.02) 126px, rgba(143, 143, 143, 0.02) 126px, rgba(143, 143, 143, 0.02) 147px, rgba(127, 127, 127, 0.02) 147px, rgba(127, 127, 127, 0.02) 168px), repeating-linear-gradient(45deg, rgba(232, 232, 232, 0.02) 0px, rgba(232, 232, 232, 0.02) 21px, rgba(209, 209, 209, 0.02) 21px, rgba(209, 209, 209, 0.02) 42px, rgba(185, 185, 185, 0.02) 42px, rgba(185, 185, 185, 0.02) 63px, rgba(162, 162, 162, 0.02) 63px, rgba(162, 162, 162, 0.02) 84px, rgba(138, 138, 138, 0.02) 84px, rgba(138, 138, 138, 0.02) 105px, rgba(115, 115, 115, 0.02) 105px, rgba(115, 115, 115, 0.02) 126px, rgba(91, 91, 91, 0.02) 126px, rgba(91, 91, 91, 0.02) 147px, rgba(68, 68, 68, 0.02) 147px, rgba(68, 68, 68, 0.02) 168px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "09efc9b0-c22e-4397-b892-c44b2da6ecd2",
+    "slug": "b55b8091-ae6d-4cb8-a182-c0b12669ac20",
     "stylesheet": "linear-gradient(135deg, rgba(244, 244, 244, 0.07) 0%, rgba(244, 244, 244, 0.07) 12.5%, rgba(211, 211, 211, 0.07) 12.5%, rgba(211, 211, 211, 0.07) 25%, rgba(178, 178, 178, 0.07) 25%, rgba(178, 178, 178, 0.07) 37.5%, rgba(145, 145, 145, 0.07) 37.5%, rgba(145, 145, 145, 0.07) 50%, rgba(113, 113, 113, 0.07) 50%, rgba(113, 113, 113, 0.07) 62.5%, rgba(80, 80, 80, 0.07) 62.5%, rgba(80, 80, 80, 0.07) 75%, rgba(47, 47, 47, 0.07) 75%, rgba(47, 47, 47, 0.07) 87.5%, rgba(14, 14, 14, 0.07) 87.5%, rgba(14, 14, 14, 0.07) 100%), linear-gradient(45deg, rgba(236, 236, 236, 0.07) 0%, rgba(236, 236, 236, 0.07) 12.5%, rgba(210, 210, 210, 0.07) 12.5%, rgba(210, 210, 210, 0.07) 25%, rgba(183, 183, 183, 0.07) 25%, rgba(183, 183, 183, 0.07) 37.5%, rgba(157, 157, 157, 0.07) 37.5%, rgba(157, 157, 157, 0.07) 50%, rgba(130, 130, 130, 0.07) 50%, rgba(130, 130, 130, 0.07) 62.5%, rgba(104, 104, 104, 0.07) 62.5%, rgba(104, 104, 104, 0.07) 75%, rgba(77, 77, 77, 0.07) 75%, rgba(77, 77, 77, 0.07) 87.5%, rgba(51, 51, 51, 0.07) 87.5%, rgba(51, 51, 51, 0.07) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "fddd382e-18a0-4cc0-9976-a03ed57e3c98",
+    "slug": "50b4132c-d650-48aa-9948-a71f565add6c",
     "stylesheet": "linear-gradient(135deg, rgba(49, 49, 49, 0.07) 0%, rgba(49, 49, 49, 0.07) 12.5%, rgba(76, 76, 76, 0.07) 12.5%, rgba(76, 76, 76, 0.07) 25%, rgba(102, 102, 102, 0.07) 25%, rgba(102, 102, 102, 0.07) 37.5%, rgba(129, 129, 129, 0.07) 37.5%, rgba(129, 129, 129, 0.07) 50%, rgba(155, 155, 155, 0.07) 50%, rgba(155, 155, 155, 0.07) 62.5%, rgba(182, 182, 182, 0.07) 62.5%, rgba(182, 182, 182, 0.07) 75%, rgba(208, 208, 208, 0.07) 75%, rgba(208, 208, 208, 0.07) 87.5%, rgba(235, 235, 235, 0.07) 87.5%, rgba(235, 235, 235, 0.07) 100%), linear-gradient(45deg, rgba(5, 5, 5, 0.07) 0%, rgba(5, 5, 5, 0.07) 12.5%, rgba(39, 39, 39, 0.07) 12.5%, rgba(39, 39, 39, 0.07) 25%, rgba(73, 73, 73, 0.07) 25%, rgba(73, 73, 73, 0.07) 37.5%, rgba(107, 107, 107, 0.07) 37.5%, rgba(107, 107, 107, 0.07) 50%, rgba(141, 141, 141, 0.07) 50%, rgba(141, 141, 141, 0.07) 62.5%, rgba(175, 175, 175, 0.07) 62.5%, rgba(175, 175, 175, 0.07) 75%, rgba(209, 209, 209, 0.07) 75%, rgba(209, 209, 209, 0.07) 87.5%, rgba(243, 243, 243, 0.07) 87.5%, rgba(243, 243, 243, 0.07) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "94fbcd8c-cb94-4687-98b8-c717da914666",
+    "slug": "54664130-e92c-42fa-8805-3e586869abb1",
     "stylesheet": "repeating-linear-gradient(0, rgb(250, 250, 250) 0px, rgb(250, 250, 250) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(250, 250, 250) 0px, rgb(250, 250, 250) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
     "tags": [
       "lightbg",
@@ -196,7 +196,7 @@
     ]
   },
   {
-    "slug": "a3a12f37-1fa3-46e9-aad7-6499bcc2d085",
+    "slug": "3a198ad6-9a52-44ab-baaf-f5f9aec6f5bc",
     "stylesheet": "repeating-linear-gradient(135deg, rgba(86, 86, 86, 0.02) 0px, rgba(86, 86, 86, 0.02) 22px, rgba(202, 202, 202, 0.02) 22px, rgba(202, 202, 202, 0.02) 67px, rgba(247, 247, 247, 0.02) 67px, rgba(247, 247, 247, 0.02) 113px, rgba(135, 135, 135, 0.02) 113px, rgba(135, 135, 135, 0.02) 132px, rgba(157, 157, 157, 0.02) 132px, rgba(157, 157, 157, 0.02) 153px, rgba(53, 53, 53, 0.02) 153px, rgba(53, 53, 53, 0.02) 171px, rgba(17, 17, 17, 0.02) 171px, rgba(17, 17, 17, 0.02) 181px, rgba(179, 179, 179, 0.02) 181px, rgba(179, 179, 179, 0.02) 220px), repeating-linear-gradient(135deg, rgba(58, 58, 58, 0.02) 0px, rgba(58, 58, 58, 0.02) 41px, rgba(198, 198, 198, 0.02) 41px, rgba(198, 198, 198, 0.02) 60px, rgba(176, 176, 176, 0.02) 60px, rgba(176, 176, 176, 0.02) 99px, rgba(173, 173, 173, 0.02) 99px, rgba(173, 173, 173, 0.02) 146px, rgba(164, 164, 164, 0.02) 146px, rgba(164, 164, 164, 0.02) 167px, rgba(179, 179, 179, 0.02) 167px, rgba(179, 179, 179, 0.02) 205px, rgba(228, 228, 228, 0.02) 205px, rgba(228, 228, 228, 0.02) 230px, rgba(23, 23, 23, 0.02) 230px, rgba(23, 23, 23, 0.02) 241px), repeating-linear-gradient(135deg, rgba(190, 190, 190, 0.02) 0px, rgba(190, 190, 190, 0.02) 15px, rgba(74, 74, 74, 0.02) 15px, rgba(74, 74, 74, 0.02) 45px, rgba(98, 98, 98, 0.02) 45px, rgba(98, 98, 98, 0.02) 71px, rgba(43, 43, 43, 0.02) 71px, rgba(43, 43, 43, 0.02) 95px, rgba(131, 131, 131, 0.02) 95px, rgba(131, 131, 131, 0.02) 118px, rgba(21, 21, 21, 0.02) 118px, rgba(21, 21, 21, 0.02) 130px, rgba(77, 77, 77, 0.02) 130px, rgba(77, 77, 77, 0.02) 167px, rgba(231, 231, 231, 0.02) 167px, rgba(231, 231, 231, 0.02) 189px), linear-gradient(90deg, rgb(251, 251, 251), rgb(250, 250, 250))",
     "tags": [
       "lightbg",
@@ -204,7 +204,7 @@
     ]
   },
   {
-    "slug": "9a4ca6a6-37db-4ca3-a590-58a4e3348285",
+    "slug": "67a9287b-c87d-44b5-a72b-90f5f7fdfece",
     "stylesheet": "linear-gradient(135deg, rgba(159, 159, 159, 0.46) 0%, rgba(159, 159, 159, 0.46) 14.29%, rgba(165, 165, 165, 0.46) 14.29%, rgba(165, 165, 165, 0.46) 28.57%, rgba(171, 171, 171, 0.46) 28.57%, rgba(171, 171, 171, 0.46) 42.86%, rgba(178, 178, 178, 0.46) 42.86%, rgba(178, 178, 178, 0.46) 57.14%, rgba(184, 184, 184, 0.46) 57.14%, rgba(184, 184, 184, 0.46) 71.43%, rgba(190, 190, 190, 0.46) 71.43%, rgba(190, 190, 190, 0.46) 85.72%, rgba(196, 196, 196, 0.46) 85.72%, rgba(196, 196, 196, 0.46) 100%), linear-gradient(45deg, rgb(252, 252, 252) 0%, rgb(252, 252, 252) 14.29%, rgb(246, 246, 246) 14.29%, rgb(246, 246, 246) 28.57%, rgb(241, 241, 241) 28.57%, rgb(241, 241, 241) 42.86%, rgb(235, 235, 235) 42.86%, rgb(235, 235, 235) 57.14%, rgb(229, 229, 229) 57.14%, rgb(229, 229, 229) 71.43%, rgb(224, 224, 224) 71.43%, rgb(224, 224, 224) 85.72%, rgb(218, 218, 218) 85.72%, rgb(218, 218, 218) 100%)",
     "tags": [
       "lightbg",
@@ -212,42 +212,42 @@
     ]
   },
   {
-    "slug": "4f778dd3-07af-4209-bcb5-3628d2bc909f",
+    "slug": "95bd8525-67e8-42b4-b4d4-bb7a22c3c401",
     "stylesheet": "linear-gradient(22.5deg, rgba(67, 67, 67, 0.02) 0%, rgba(67, 67, 67, 0.02) 29%, rgba(47, 47, 47, 0.02) 29%, rgba(47, 47, 47, 0.02) 37%, rgba(23, 23, 23, 0.02) 37%, rgba(23, 23, 23, 0.02) 55%, rgba(182, 182, 182, 0.02) 55%, rgba(182, 182, 182, 0.02) 69%, rgba(27, 27, 27, 0.02) 69%, rgba(27, 27, 27, 0.02) 71%, rgba(250, 250, 250, 0.02) 71%, rgba(250, 250, 250, 0.02) 100%), linear-gradient(67.5deg, rgba(117, 117, 117, 0.02) 0%, rgba(117, 117, 117, 0.02) 14%, rgba(199, 199, 199, 0.02) 14%, rgba(199, 199, 199, 0.02) 40%, rgba(33, 33, 33, 0.02) 40%, rgba(33, 33, 33, 0.02) 48%, rgba(135, 135, 135, 0.02) 48%, rgba(135, 135, 135, 0.02) 60%, rgba(148, 148, 148, 0.02) 60%, rgba(148, 148, 148, 0.02) 95%, rgba(53, 53, 53, 0.02) 95%, rgba(53, 53, 53, 0.02) 100%), linear-gradient(135deg, rgba(190, 190, 190, 0.02) 0%, rgba(190, 190, 190, 0.02) 6%, rgba(251, 251, 251, 0.02) 6%, rgba(251, 251, 251, 0.02) 18%, rgba(2, 2, 2, 0.02) 18%, rgba(2, 2, 2, 0.02) 27%, rgba(253, 253, 253, 0.02) 27%, rgba(253, 253, 253, 0.02) 49%, rgba(128, 128, 128, 0.02) 49%, rgba(128, 128, 128, 0.02) 76%, rgba(150, 150, 150, 0.02) 76%, rgba(150, 150, 150, 0.02) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "ca5eac99-3353-4ebc-a3ee-aa531eeef46f",
+    "slug": "7ffc037c-b3c2-46f7-a8b6-b429c955a7ae",
     "stylesheet": "linear-gradient(22.5deg, rgba(66, 66, 66, 0.02) 0%, rgba(66, 66, 66, 0.02) 11%, rgba(135, 135, 135, 0.02) 11%, rgba(135, 135, 135, 0.02) 24%, rgba(29, 29, 29, 0.02) 24%, rgba(29, 29, 29, 0.02) 38%, rgba(15, 15, 15, 0.02) 38%, rgba(15, 15, 15, 0.02) 50%, rgba(180, 180, 180, 0.02) 50%, rgba(180, 180, 180, 0.02) 77%, rgba(205, 205, 205, 0.02) 77%, rgba(205, 205, 205, 0.02) 100%), linear-gradient(67.5deg, rgba(10, 10, 10, 0.02) 0%, rgba(10, 10, 10, 0.02) 22%, rgba(52, 52, 52, 0.02) 22%, rgba(52, 52, 52, 0.02) 29%, rgba(203, 203, 203, 0.02) 29%, rgba(203, 203, 203, 0.02) 30%, rgba(69, 69, 69, 0.02) 30%, rgba(69, 69, 69, 0.02) 75%, rgba(231, 231, 231, 0.02) 75%, rgba(231, 231, 231, 0.02) 95%, rgba(138, 138, 138, 0.02) 95%, rgba(138, 138, 138, 0.02) 100%), linear-gradient(112.5deg, rgba(221, 221, 221, 0.02) 0%, rgba(221, 221, 221, 0.02) 17%, rgba(190, 190, 190, 0.02) 17%, rgba(190, 190, 190, 0.02) 39%, rgba(186, 186, 186, 0.02) 39%, rgba(186, 186, 186, 0.02) 66%, rgba(191, 191, 191, 0.02) 66%, rgba(191, 191, 191, 0.02) 68%, rgba(16, 16, 16, 0.02) 68%, rgba(16, 16, 16, 0.02) 70%, rgba(94, 94, 94, 0.02) 70%, rgba(94, 94, 94, 0.02) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "9f3d484e-3328-46a9-955a-30c56716fb02",
+    "slug": "4631aed6-8e1d-4e9d-a200-c95d9c7eae90",
     "stylesheet": "linear-gradient(112.5deg, rgba(232, 232, 232, 0.03) 0%, rgba(232, 232, 232, 0.03) 2%, rgba(231, 231, 231, 0.03) 2%, rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 11%, rgba(2, 2, 2, 0.03) 11%, rgba(2, 2, 2, 0.03) 67%, rgba(231, 231, 231, 0.03) 67%, rgba(231, 231, 231, 0.03) 90%, rgba(111, 111, 111, 0.03) 90%, rgba(111, 111, 111, 0.03) 100%), linear-gradient(157.5deg, rgba(210, 210, 210, 0.03) 0%, rgba(210, 210, 210, 0.03) 17%, rgba(254, 254, 254, 0.03) 17%, rgba(254, 254, 254, 0.03) 18%, rgba(96, 96, 96, 0.03) 18%, rgba(96, 96, 96, 0.03) 44%, rgba(159, 159, 159, 0.03) 44%, rgba(159, 159, 159, 0.03) 70%, rgba(24, 24, 24, 0.03) 70%, rgba(24, 24, 24, 0.03) 82%, rgba(16, 16, 16, 0.03) 82%, rgba(16, 16, 16, 0.03) 100%), linear-gradient(22.5deg, rgba(47, 47, 47, 0.03) 0%, rgba(47, 47, 47, 0.03) 32%, rgba(124, 124, 124, 0.03) 32%, rgba(124, 124, 124, 0.03) 40%, rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 42%, rgba(16, 16, 16, 0.03) 42%, rgba(16, 16, 16, 0.03) 64%, rgba(243, 243, 243, 0.03) 64%, rgba(243, 243, 243, 0.03) 94%, rgba(93, 93, 93, 0.03) 94%, rgba(93, 93, 93, 0.03) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "618d5ecb-76d1-4f1a-b9a7-418094a6cf26",
+    "slug": "1c56f290-ec5e-44c5-95ba-6b6b2570e7d2",
     "stylesheet": "linear-gradient(135deg, rgba(186, 186, 186, 0.03) 0%, rgba(186, 186, 186, 0.03) 10%, rgba(133, 133, 133, 0.03) 10%, rgba(133, 133, 133, 0.03) 14%, rgba(38, 38, 38, 0.03) 14%, rgba(38, 38, 38, 0.03) 17%, rgba(93, 93, 93, 0.03) 17%, rgba(93, 93, 93, 0.03) 25%, rgba(80, 80, 80, 0.03) 25%, rgba(80, 80, 80, 0.03) 45%, rgba(239, 239, 239, 0.03) 45%, rgba(239, 239, 239, 0.03) 100%), linear-gradient(135deg, rgba(236, 236, 236, 0.03) 0%, rgba(236, 236, 236, 0.03) 47%, rgba(182, 182, 182, 0.03) 47%, rgba(182, 182, 182, 0.03) 63%, rgba(223, 223, 223, 0.03) 63%, rgba(223, 223, 223, 0.03) 81%, rgba(86, 86, 86, 0.03) 81%, rgba(86, 86, 86, 0.03) 89%, rgba(23, 23, 23, 0.03) 89%, rgba(23, 23, 23, 0.03) 90%, rgba(226, 226, 226, 0.03) 90%, rgba(226, 226, 226, 0.03) 100%), linear-gradient(45deg, rgba(52, 52, 52, 0.03) 0%, rgba(52, 52, 52, 0.03) 31%, rgba(246, 246, 246, 0.03) 31%, rgba(246, 246, 246, 0.03) 63%, rgba(188, 188, 188, 0.03) 63%, rgba(188, 188, 188, 0.03) 71%, rgba(15, 15, 15, 0.03) 71%, rgba(15, 15, 15, 0.03) 87%, rgba(127, 127, 127, 0.03) 87%, rgba(127, 127, 127, 0.03) 93%, rgba(234, 234, 234, 0.03) 93%, rgba(234, 234, 234, 0.03) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "c1df2560-2878-4775-885e-20489510c151",
+    "slug": "45c3c229-1612-40bd-be3d-f7fb0b7065e7",
     "stylesheet": "linear-gradient(90deg, rgba(165, 165, 165, 0.03) 0%, rgba(165, 165, 165, 0.03) 8%, rgba(235, 235, 235, 0.03) 8%, rgba(235, 235, 235, 0.03) 9%, rgba(7, 7, 7, 0.03) 9%, rgba(7, 7, 7, 0.03) 14%, rgba(212, 212, 212, 0.03) 14%, rgba(212, 212, 212, 0.03) 17%, rgba(219, 219, 219, 0.03) 17%, rgba(219, 219, 219, 0.03) 95%, rgba(86, 86, 86, 0.03) 95%, rgba(86, 86, 86, 0.03) 100%), linear-gradient(67.5deg, rgba(80, 80, 80, 0.03) 0%, rgba(80, 80, 80, 0.03) 11%, rgba(138, 138, 138, 0.03) 11%, rgba(138, 138, 138, 0.03) 17%, rgba(122, 122, 122, 0.03) 17%, rgba(122, 122, 122, 0.03) 24%, rgba(166, 166, 166, 0.03) 24%, rgba(166, 166, 166, 0.03) 27%, rgba(245, 245, 245, 0.03) 27%, rgba(245, 245, 245, 0.03) 89%, rgba(88, 88, 88, 0.03) 89%, rgba(88, 88, 88, 0.03) 100%), linear-gradient(67.5deg, rgba(244, 244, 244, 0.03) 0%, rgba(244, 244, 244, 0.03) 4%, rgba(16, 16, 16, 0.03) 4%, rgba(16, 16, 16, 0.03) 10%, rgba(157, 157, 157, 0.03) 10%, rgba(157, 157, 157, 0.03) 20%, rgba(212, 212, 212, 0.03) 20%, rgba(212, 212, 212, 0.03) 83%, rgba(5, 5, 5, 0.03) 83%, rgba(5, 5, 5, 0.03) 84%, rgba(237, 237, 237, 0.03) 84%, rgba(237, 237, 237, 0.03) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"
     ]
   },
   {
-    "slug": "6f97556c-1a34-4259-8a48-ed571cbf5565",
+    "slug": "f108146b-57c9-430c-8055-ce6bc67bebbf",
     "stylesheet": "linear-gradient(22.5deg, rgba(242, 242, 242, 0.03) 0%, rgba(242, 242, 242, 0.03) 16%, rgba(81, 81, 81, 0.03) 16%, rgba(81, 81, 81, 0.03) 26%, rgba(99, 99, 99, 0.03) 26%, rgba(99, 99, 99, 0.03) 73%, rgba(43, 43, 43, 0.03) 73%, rgba(43, 43, 43, 0.03) 84%, rgba(213, 213, 213, 0.03) 84%, rgba(213, 213, 213, 0.03) 85%, rgba(125, 125, 125, 0.03) 85%, rgba(125, 125, 125, 0.03) 100%), linear-gradient(22.5deg, rgba(25, 25, 25, 0.03) 0%, rgba(25, 25, 25, 0.03) 54%, rgba(144, 144, 144, 0.03) 54%, rgba(144, 144, 144, 0.03) 60%, rgba(204, 204, 204, 0.03) 60%, rgba(204, 204, 204, 0.03) 76%, rgba(37, 37, 37, 0.03) 76%, rgba(37, 37, 37, 0.03) 78%, rgba(115, 115, 115, 0.03) 78%, rgba(115, 115, 115, 0.03) 91%, rgba(63, 63, 63, 0.03) 91%, rgba(63, 63, 63, 0.03) 100%), linear-gradient(157.5deg, rgba(71, 71, 71, 0.03) 0%, rgba(71, 71, 71, 0.03) 6%, rgba(75, 75, 75, 0.03) 6%, rgba(75, 75, 75, 0.03) 15%, rgba(131, 131, 131, 0.03) 15%, rgba(131, 131, 131, 0.03) 18%, rgba(110, 110, 110, 0.03) 18%, rgba(110, 110, 110, 0.03) 37%, rgba(215, 215, 215, 0.03) 37%, rgba(215, 215, 215, 0.03) 62%, rgba(5, 5, 5, 0.03) 62%, rgba(5, 5, 5, 0.03) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "lightbg"

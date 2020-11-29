@@ -1,447 +1,447 @@
 [
   {
-    "slug": "39464ace-667e-48b0-a4ce-2641840ba0cf",
+    "slug": "2301e720-2ab5-4df7-a390-caddb5a5c020",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 66%, 0.05) 0px, hsla(0, 0%, 66%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 66%, 0.05) 0px, hsla(0, 0%, 66%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 66%, 0.07) 0px, hsla(0, 0%, 66%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 66%, 0.07) 0px, hsla(0, 0%, 66%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(135deg, hsl(134, 34%, 33%), hsl(134, 34%, 33%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "6b921396-1347-4af2-b91e-0d9d1961365d",
+    "slug": "440aae05-ee22-4ef3-bd91-5d1f18b77846",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 96%, 0.05) 0px, hsla(0, 0%, 96%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 96%, 0.05) 0px, hsla(0, 0%, 96%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 96%, 0.07) 0px, hsla(0, 0%, 96%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 96%, 0.07) 0px, hsla(0, 0%, 96%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(45deg, hsl(213, 62%, 51%), hsl(213, 62%, 51%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "ce75fe8c-6e4c-4cf8-adde-1f53e26238a3",
+    "slug": "a2eb2491-8305-4e1a-bc0f-199baabbb1a1",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 73%, 0.05) 0px, hsla(0, 0%, 73%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 73%, 0.05) 0px, hsla(0, 0%, 73%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 73%, 0.07) 0px, hsla(0, 0%, 73%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 73%, 0.07) 0px, hsla(0, 0%, 73%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(135deg, hsl(235, 45%, 34%), hsl(235, 45%, 34%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "44bb6f43-73a4-4e72-8730-edb5de0d78b7",
+    "slug": "f2e3f0a6-99f9-4dbe-94e2-03b960f7867a",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 66%, 0.05) 0px, hsla(0, 0%, 66%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 66%, 0.05) 0px, hsla(0, 0%, 66%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 66%, 0.07) 0px, hsla(0, 0%, 66%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 66%, 0.07) 0px, hsla(0, 0%, 66%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(0, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "d3bda25a-145d-4709-83fd-d511193f66a9",
+    "slug": "8e82e6f7-6f5e-4233-84f3-c3aea134dd73",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 62%, 0.05) 0px, hsla(0, 0%, 62%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 62%, 0.05) 0px, hsla(0, 0%, 62%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 62%, 0.07) 0px, hsla(0, 0%, 62%, 0.07) 1px, transparent 1px, transparent 52px), repeating-linear-gradient(90deg, hsla(0, 0%, 62%, 0.07) 0px, hsla(0, 0%, 62%, 0.07) 1px, transparent 1px, transparent 52px), linear-gradient(0, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "d42409b7-ffab-4fb8-b427-02b893842e14",
+    "slug": "70eb9537-62bd-46fa-a69f-283bc1690888",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 65%, 0.05) 0px, hsla(0, 0%, 65%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 65%, 0.05) 0px, hsla(0, 0%, 65%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 65%, 0.07) 0px, hsla(0, 0%, 65%, 0.07) 1px, transparent 1px, transparent 52px), repeating-linear-gradient(90deg, hsla(0, 0%, 65%, 0.07) 0px, hsla(0, 0%, 65%, 0.07) 1px, transparent 1px, transparent 52px), linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "8e117715-6db3-4a7c-a9a0-ea1134d962a2",
+    "slug": "1c8827c0-540c-4530-97cf-1d56f54285d9",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.05) 0px, hsla(0, 0%, 63%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.08) 0px, hsla(0, 0%, 63%, 0.08) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.08) 0px, hsla(0, 0%, 63%, 0.08) 1px, transparent 1px, transparent 26px), linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "4d2afa28-8d58-4f35-a5c4-80a439f5e389",
+    "slug": "08108823-e0bf-428f-ac4c-ab30c6ef49a2",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 54%, 0.06) 0px, hsla(0, 0%, 54%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 54%, 0.06) 0px, hsla(0, 0%, 54%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 54%, 0.09) 0px, hsla(0, 0%, 54%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 54%, 0.09) 0px, hsla(0, 0%, 54%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, hsl(249, 32%, 44%), hsl(249, 32%, 44%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "715c5c0e-6ae7-4111-ad01-8432f3941b5a",
+    "slug": "42fae3f9-57ce-49e2-ae5f-51df6a26554a",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 67%, 0.06) 0px, hsla(0, 0%, 67%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 67%, 0.06) 0px, hsla(0, 0%, 67%, 0.06) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 67%, 0.09) 0px, hsla(0, 0%, 67%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 67%, 0.09) 0px, hsla(0, 0%, 67%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, hsl(225, 47%, 26%), hsl(225, 47%, 26%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "22737ef2-056f-4a1f-aa92-8c85807a1c04",
+    "slug": "18004c3d-03e9-48e5-ae93-c65f6a9c8558",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 68%, 0.09) 0px, hsla(0, 0%, 68%, 0.09) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 68%, 0.09) 0px, hsla(0, 0%, 68%, 0.09) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 68%, 0.09) 0px, hsla(0, 0%, 68%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 68%, 0.09) 0px, hsla(0, 0%, 68%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "5eaba09c-22aa-432c-9aab-e6c627f8ef71",
+    "slug": "ed6e41fd-a128-4b9d-b457-6b2ae8a66f90",
     "stylesheet": "repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.09) 0px, hsla(0, 0%, 63%, 0.09) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.09) 0px, hsla(0, 0%, 63%, 0.09) 1px, transparent 1px, transparent 96px), repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.09) 0px, hsla(0, 0%, 63%, 0.09) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.09) 0px, hsla(0, 0%, 63%, 0.09) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "7fd3dfaf-af58-4e54-bf35-e4671a43b462",
+    "slug": "81022751-d1ef-4edf-8396-62aa9143ea6c",
     "stylesheet": "repeating-linear-gradient(0, hsla(346, 18%, 76%, 0.09) 0px, hsla(346, 18%, 76%, 0.09) 1px, transparent 1px, transparent 9px), repeating-linear-gradient(90deg, hsla(346, 18%, 76%, 0.09) 0px, hsla(346, 18%, 76%, 0.09) 1px, transparent 1px, transparent 9px), linear-gradient(90deg, hsl(253, 39%, 53%), hsl(253, 39%, 53%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "5eeefd87-93eb-44ab-99ea-9b6037b3ed69",
+    "slug": "f3243198-c3d2-469c-bcec-3169f2a86c01",
     "stylesheet": "repeating-linear-gradient(0, hsla(209, 43%, 84%, 0.09) 0px, hsla(209, 43%, 84%, 0.09) 1px, transparent 1px, transparent 9px), repeating-linear-gradient(90deg, hsla(209, 43%, 84%, 0.09) 0px, hsla(209, 43%, 84%, 0.09) 1px, transparent 1px, transparent 9px), linear-gradient(90deg, hsl(203, 93%, 43%), hsl(203, 93%, 43%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "bb0f02d5-0730-4268-9767-ec502c890d94",
+    "slug": "15c48b21-683c-4c67-b6d8-30f13fa1790d",
     "stylesheet": "repeating-linear-gradient(0, rgba(251, 211, 29, 0.28) 0px, rgba(251, 211, 29, 0.28) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgba(251, 211, 29, 0.28) 0px, rgba(251, 211, 29, 0.28) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(120, 24%, 53%), hsl(120, 24%, 53%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "8684a6e0-381c-4db6-93b2-f94ef7ec26a3",
+    "slug": "12482f8d-b832-493e-aee7-9de180af21c0",
     "stylesheet": "repeating-linear-gradient(0, rgba(173, 69, 226, 0.23) 0px, rgba(173, 69, 226, 0.23) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgba(173, 69, 226, 0.23) 0px, rgba(173, 69, 226, 0.23) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(246, 31%, 20%), hsl(246, 31%, 20%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "77bc979b-e814-4278-8fd3-4cbb4e4be33d",
+    "slug": "319c5330-1e46-4652-901c-9b9e948bbea4",
     "stylesheet": "repeating-linear-gradient(0, hsla(255, 76%, 92%, 0.08) 0px, hsla(255, 76%, 92%, 0.08) 1px, transparent 1px, transparent 7px), repeating-linear-gradient(90deg, hsla(255, 76%, 92%, 0.08) 0px, hsla(255, 76%, 92%, 0.08) 1px, transparent 1px, transparent 7px), linear-gradient(90deg, hsl(97, 38%, 43%), hsl(97, 38%, 43%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "31b76dc8-6aa2-43c5-85f6-817fa0af8aa1",
+    "slug": "32f6f1a7-8b45-4240-8211-652fae25eaef",
     "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(138, 138, 138, 0.05) 1px, rgba(138, 138, 138, 0.05) 5px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(138, 138, 138, 0.05) 1px, rgba(138, 138, 138, 0.05) 5px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(138, 138, 138, 0.06) 1px, rgba(138, 138, 138, 0.06) 15px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(138, 138, 138, 0.06) 1px, rgba(138, 138, 138, 0.06) 15px), linear-gradient(90deg, hsl(253, 44%, 41%), hsl(253, 44%, 41%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "28b77a3d-8637-4205-8748-2d2f34023a72",
+    "slug": "d878f517-6483-4b97-a88e-a83ac6e482b5",
     "stylesheet": "repeating-linear-gradient(0, rgba(21, 120, 239, 0.12) 0px, rgba(21, 120, 239, 0.12) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgba(21, 120, 239, 0.12) 0px, rgba(21, 120, 239, 0.12) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "a8824976-f704-4ea2-97ca-ab435f66e46e",
+    "slug": "bca66d12-7692-4ec5-a52a-5697b5dcc559",
     "stylesheet": "repeating-linear-gradient(0, rgba(10, 111, 202, 0.05) 0px, rgba(10, 111, 202, 0.05) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(10, 111, 202, 0.05) 0px, rgba(10, 111, 202, 0.05) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "0b905072-9b8b-4961-8e56-0bffa415c593",
+    "slug": "dc6f2922-51d2-4dbd-a5f1-0329cec44e33",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(11, 123, 222, 0.05) 0px, rgba(11, 123, 222, 0.05) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(11, 123, 222, 0.05) 0px, rgba(11, 123, 222, 0.05) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(11, 123, 222, 0.05) 0px, rgba(11, 123, 222, 0.05) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(11, 123, 222, 0.05) 0px, rgba(11, 123, 222, 0.05) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "7c04f62d-a436-4b8a-8702-954a4c838567",
+    "slug": "ea43153d-a8ac-412d-9b4c-52e5cbe49687",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(140, 140, 140, 0.1) 0px, rgba(140, 140, 140, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(140, 140, 140, 0.1) 0px, rgba(140, 140, 140, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(140, 140, 140, 0.1) 0px, rgba(140, 140, 140, 0.1) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(140, 140, 140, 0.1) 0px, rgba(140, 140, 140, 0.1) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, hsl(208, 100%, 22%), hsl(208, 100%, 22%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "f7174267-1377-4ed2-8d94-56c3c38d1248",
+    "slug": "484c2d7f-25e6-49ec-9249-3e291f2ffb8a",
     "stylesheet": "repeating-linear-gradient(0, hsla(284, 14%, 85%, 0.06) 0px, hsla(284, 14%, 85%, 0.06) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, hsla(284, 14%, 85%, 0.06) 0px, hsla(284, 14%, 85%, 0.06) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, hsla(284, 14%, 85%, 0.06) 0px, hsla(284, 14%, 85%, 0.06) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(0, hsla(284, 14%, 85%, 0.06) 0px, hsla(284, 14%, 85%, 0.06) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, hsl(202, 54%, 52%), hsl(202, 54%, 52%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "75a1fce1-e2de-4c37-a6d6-de04d047d775",
+    "slug": "7f575077-81c5-4990-94e4-ae04c1b2a458",
     "stylesheet": "repeating-linear-gradient(135deg, hsla(0, 0%, 33%, 0.09) 0px, hsla(0, 0%, 33%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(45deg, hsla(0, 0%, 33%, 0.09) 0px, hsla(0, 0%, 33%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(0, 0%, 98%), hsl(0, 0%, 98%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "99de7a19-5c3c-4129-a3e9-c276adc780a7",
+    "slug": "52ac055c-4324-46d5-8c41-2ca9970a539b",
     "stylesheet": "repeating-linear-gradient(0, hsla(120, 20%, 97%, 0.09) 0px, hsla(120, 20%, 97%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(120, 20%, 97%, 0.09) 0px, hsla(120, 20%, 97%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(202, 76%, 66%), hsl(202, 76%, 66%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "83805595-a204-4729-9c32-a8a3f803a18e",
+    "slug": "5a5edd1e-b6ea-44c8-a884-6c4e6b6cb4df",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 16px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 16px), linear-gradient(90deg, hsl(13, 52%, 51%), hsl(13, 52%, 51%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "d9b49ca4-b8e7-49b5-9abf-cec20829caa6",
+    "slug": "c1b6b0ef-ecf8-4bbf-887c-4eaa237224be",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(213, 95%, 63%), hsl(213, 95%, 63%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "5c8b110d-5892-4f54-ac2e-71c990d5f0fd",
+    "slug": "615ad86a-58c2-40fd-b4e1-cdcb38515123",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(219, 98%, 17%), hsl(219, 98%, 17%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "b440204b-acbd-474c-bbe2-dae69702feef",
+    "slug": "5b051414-285f-45d4-be42-a01bfe5d20e7",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(0, 95%, 32%), hsl(0, 95%, 32%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "55b0bb0b-cc2e-40f7-9501-4ff3740657c2",
+    "slug": "c9394996-5380-4c32-864e-ba88bf32d675",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(333, 90%, 88%), hsl(333, 90%, 88%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "3a38ab18-f8ae-4987-a424-12c57e41faea",
+    "slug": "7fe671d9-d42e-4992-b1f2-3e7eeb042dbe",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0px, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 26px), linear-gradient(90deg, hsl(220, 55%, 49%), hsl(220, 55%, 49%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "40396f7c-e31a-4f26-a76a-fc964581317a",
+    "slug": "5fb96841-5e9d-4fa4-9400-6a8ad5003190",
     "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.06) 0px, rgba(0, 0, 0, 0.06) 1px, transparent 1px, transparent 16px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0px, rgba(0, 0, 0, 0.06) 1px, transparent 1px, transparent 16px), linear-gradient(90deg, rgb(247, 255, 204), rgb(247, 255, 204))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "ae1c321a-8bd3-4778-b0eb-5655c244442d",
+    "slug": "a9823eea-c3cd-4e78-bf56-45199735020e",
     "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, rgb(237, 154, 38), rgb(237, 154, 38))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "d00ccd6a-164c-41a5-8efa-6f8ef03ee22e",
+    "slug": "9752017b-f19f-438f-9228-3732b7ecf10f",
     "stylesheet": "repeating-linear-gradient(0, rgba(105, 169, 113, 0.5) 0px, rgba(105, 169, 113, 0.5) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(105, 169, 113, 0.5) 0px, rgba(105, 169, 113, 0.5) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, rgb(66, 144, 67), rgb(66, 144, 67))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "66c38b0d-95e9-4f0d-acfa-f632e3e64f39",
+    "slug": "e9ee6152-ff63-4aa9-9160-eff0ff89a893",
     "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, hsl(273, 26%, 49%), hsl(273, 26%, 49%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "3c90fe69-87f0-4c7a-915b-553445139e81",
+    "slug": "c0c3ca77-c1cf-4be5-b78e-b279cb901172",
     "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, rgb(251, 250, 136), rgb(251, 250, 136))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "108e8e44-0f3a-463d-b22b-8124bea93f5c",
+    "slug": "f5670870-177c-4970-981b-cf303abedc44",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, hsl(210, 93%, 63%), hsl(210, 93%, 63%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "122c7202-3ac6-4877-97ba-4b9d6ec1b2c7",
+    "slug": "7ab36b18-d7be-4cce-9236-ec71aace1681",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, hsl(128, 38%, 47%), hsl(128, 38%, 47%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "4d1b3c16-46e5-4241-95d6-46d8bc7976c7",
+    "slug": "24b0e4d8-970b-4f6e-bed3-231a4416f0ef",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, hsl(6, 43%, 42%), hsl(6, 43%, 42%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "9f3e5d56-8bf8-4eeb-9e42-dd2033ff985c",
+    "slug": "132feba5-1607-447b-ba20-31c183940df0",
     "stylesheet": "repeating-linear-gradient(0, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.11) 0px, rgba(255, 255, 255, 0.11) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, hsl(211, 68%, 35%), hsl(211, 68%, 35%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "cdcdce4c-2988-4ace-99c9-02f679920f82",
+    "slug": "02a961ab-c405-4d72-8030-d263d3950cc9",
     "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 67%, 0.08) 0px, hsla(0, 0%, 67%, 0.08) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(0, 0%, 67%, 0.08) 0px, hsla(0, 0%, 67%, 0.08) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "7f61c5fc-c2b0-4971-bb12-cc904a592191",
+    "slug": "518be93f-c36e-494b-9a26-0d3071dd913d",
     "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 63%, 0.08) 0px, hsla(0, 0%, 63%, 0.08) 1px, transparent 1px, transparent 9px), repeating-linear-gradient(90deg, hsla(0, 0%, 63%, 0.08) 0px, hsla(0, 0%, 63%, 0.08) 1px, transparent 1px, transparent 9px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "144080ae-7711-43df-a7af-efe46dcf7674",
+    "slug": "3ee0f4a0-3332-4419-98cd-10af80d946c6",
     "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 45%, 0.08) 0px, hsla(0, 0%, 45%, 0.08) 1px, transparent 1px, transparent 6px), repeating-linear-gradient(90deg, hsla(0, 0%, 45%, 0.08) 0px, hsla(0, 0%, 45%, 0.08) 1px, transparent 1px, transparent 6px), linear-gradient(90deg, hsl(0, 0%, 11%), hsl(0, 0%, 11%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "432eae5f-bd17-470f-88b4-e50205a8445d",
+    "slug": "5d568416-1f4a-4215-986a-125312698441",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(66, 66, 66, 0.05) 0px, rgba(66, 66, 66, 0.05) 1px, transparent 1px, transparent 8px), repeating-linear-gradient(0, rgba(66, 66, 66, 0.05) 0px, rgba(66, 66, 66, 0.05) 1px, transparent 1px, transparent 8px), repeating-linear-gradient(0, rgba(66, 66, 66, 0.06) 0px, rgba(66, 66, 66, 0.06) 1px, transparent 1px, transparent 24px), repeating-linear-gradient(90deg, rgba(66, 66, 66, 0.06) 0px, rgba(66, 66, 66, 0.06) 1px, transparent 1px, transparent 24px), linear-gradient(90deg, hsl(0, 0%, 9%), hsl(0, 0%, 9%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "928f1c68-e987-4755-9372-cc4ca9b2bec5",
+    "slug": "7031a2b4-ee92-41dd-a19d-14988fd8556f",
     "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(135, 135, 135, 0.06) 1px, rgba(135, 135, 135, 0.06) 6px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(135, 135, 135, 0.06) 1px, rgba(135, 135, 135, 0.06) 6px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(135, 135, 135, 0.06) 1px, rgba(135, 135, 135, 0.06) 18px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(135, 135, 135, 0.06) 1px, rgba(135, 135, 135, 0.06) 18px), linear-gradient(90deg, hsl(0, 0%, 5%), hsl(0, 0%, 5%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "d8d6c2df-f4b9-496d-9764-ae9eaeb75868",
+    "slug": "a00c13c3-1135-4f3a-a636-ff6064c2e8ef",
     "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(36, 36, 36, 0.06) 1px, rgba(36, 36, 36, 0.06) 6px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(36, 36, 36, 0.06) 1px, rgba(36, 36, 36, 0.06) 6px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(36, 36, 36, 0.06) 1px, rgba(36, 36, 36, 0.06) 18px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(36, 36, 36, 0.06) 1px, rgba(36, 36, 36, 0.06) 18px), linear-gradient(90deg, rgb(99, 99, 99), rgb(99, 99, 99))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "b8b1fdb8-c658-4ecf-914e-e92ae861e51f",
+    "slug": "e9d6fa6e-5765-4a1a-83da-aab8eea62842",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(203, 203, 203, 0.1) 0px, rgba(203, 203, 203, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(203, 203, 203, 0.1) 0px, rgba(203, 203, 203, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(203, 203, 203, 0.1) 0px, rgba(203, 203, 203, 0.1) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(203, 203, 203, 0.1) 0px, rgba(203, 203, 203, 0.1) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "28e0c43e-c9e4-4537-88e9-659bfe6eecce",
+    "slug": "bf778ee2-b71a-413d-aaea-089cb92e7383",
     "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(13, 13, 13, 0.2) 1px, rgba(13, 13, 13, 0.2) 60px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(13, 13, 13, 0.2) 1px, rgba(13, 13, 13, 0.2) 60px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(13, 13, 13, 0.2) 1px, rgba(13, 13, 13, 0.2) 15px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(13, 13, 13, 0.2) 1px, rgba(13, 13, 13, 0.2) 15px), linear-gradient(90deg, hsl(0, 0%, 30%), hsl(0, 0%, 30%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "0187054b-686a-470d-95dc-fb271d9d4e96",
+    "slug": "9fefeaac-f17a-4efe-9acd-46a8264f9a99",
     "stylesheet": "repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(57, 57, 57, 0.15) 1px, rgba(57, 57, 57, 0.15) 40px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(57, 57, 57, 0.15) 1px, rgba(57, 57, 57, 0.15) 40px), repeating-linear-gradient(0, transparent 0px, transparent 1px, rgba(57, 57, 57, 0.15) 1px, rgba(57, 57, 57, 0.15) 10px), repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(57, 57, 57, 0.15) 1px, rgba(57, 57, 57, 0.15) 10px), linear-gradient(90deg, hsl(0, 0%, 51%), hsl(0, 0%, 51%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "a9c5e463-5036-49ac-9029-08b54edf2fb4",
+    "slug": "58c3e371-10bb-43f5-83d1-ede3fea11a81",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(0, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(0, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 10px), repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 10px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "591088c0-8e2e-448d-881b-1d72cf5add80",
+    "slug": "76ce934b-b0b5-43a8-badb-18389eb30ad6",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 15px), repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.15) 0px, rgba(222, 222, 222, 0.15) 1px, transparent 1px, transparent 15px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "462d99a6-2c69-4ffa-a946-d61b75795e77",
+    "slug": "916d3696-55ca-4307-a2f9-028205a62fc8",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(218, 218, 218, 0.15) 0px, rgba(218, 218, 218, 0.15) 1px, transparent 1px, transparent 30px), repeating-linear-gradient(0, rgba(218, 218, 218, 0.15) 0px, rgba(218, 218, 218, 0.15) 1px, transparent 1px, transparent 30px), repeating-linear-gradient(0, rgba(218, 218, 218, 0.15) 0px, rgba(218, 218, 218, 0.15) 1px, transparent 1px, transparent 15px), repeating-linear-gradient(90deg, rgba(218, 218, 218, 0.15) 0px, rgba(218, 218, 218, 0.15) 1px, transparent 1px, transparent 15px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "9afe73b2-36c7-4a75-a8b8-50b939d0c9ae",
+    "slug": "9f7b039f-ac24-4da0-864f-53ec111de153",
     "stylesheet": "repeating-linear-gradient(90deg, rgba(220, 220, 220, 0.15) 0px, rgba(220, 220, 220, 0.15) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(220, 220, 220, 0.15) 0px, rgba(220, 220, 220, 0.15) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0, rgba(220, 220, 220, 0.15) 0px, rgba(220, 220, 220, 0.15) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, rgba(220, 220, 220, 0.15) 0px, rgba(220, 220, 220, 0.15) 1px, transparent 1px, transparent 20px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "8c7ae076-9681-42cc-ac02-87c18d4aab32",
+    "slug": "9a906ec8-2c19-47ba-b118-a28819341be4",
     "stylesheet": "repeating-linear-gradient(0, transparent 0px, transparent 20px, rgba(98, 98, 98, 0.26) 20px, rgba(98, 98, 98, 0.26) 21px), repeating-linear-gradient(90deg, transparent 0px, transparent 20px, rgba(98, 98, 98, 0.26) 20px, rgba(98, 98, 98, 0.26) 21px), linear-gradient(90deg, rgb(56, 56, 56), rgb(56, 56, 56))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "74569ebf-72f4-4c74-a933-648c89daaba1",
+    "slug": "104e19b4-de28-4779-9fb5-6da610f8dab6",
     "stylesheet": "repeating-linear-gradient(0, rgba(221, 219, 219, 0.2) 0px, rgba(221, 219, 219, 0.2) 1px, transparent 1px, transparent 41px), repeating-linear-gradient(90deg, rgba(221, 219, 219, 0.2) 0px, rgba(221, 219, 219, 0.2) 1px, transparent 1px, transparent 41px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "7b70775a-1368-4db4-a582-dd1063760d27",
+    "slug": "6d5db091-190d-4f06-90d8-b943ac75f18d",
     "stylesheet": "repeating-linear-gradient(0, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 16px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 16px), linear-gradient(90deg, rgb(241, 241, 241), rgb(241, 241, 241))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "c568880b-8917-4358-a016-795fb86fac4e",
+    "slug": "759d75dc-226c-4e3f-9d7c-18011b6a812b",
     "stylesheet": "repeating-linear-gradient(0, hsla(66, 43%, 35%, 0.09) 0px, hsla(66, 43%, 35%, 0.09) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsla(66, 43%, 35%, 0.09) 0px, hsla(66, 43%, 35%, 0.09) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, hsl(120, 2%, 92%), hsl(120, 2%, 92%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "fa73cb37-0aca-4627-8b73-459bf03ac21a",
+    "slug": "434d0697-81e0-4019-ac86-916cbc059208",
     "stylesheet": "repeating-linear-gradient(0, hsla(0, 0%, 86%, 0.45) 0px, hsla(0, 0%, 86%, 0.45) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, hsla(0, 0%, 86%, 0.45) 0px, hsla(0, 0%, 86%, 0.45) 1px, transparent 1px, transparent 36px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "0809d739-996d-4f91-a06e-eb726adbf164",
+    "slug": "5a263169-3b95-455c-bffb-e59f45c93ed4",
     "stylesheet": "repeating-linear-gradient(0, hsl(300, 47%, 97%) 0px, hsl(300, 47%, 97%) 1px, transparent 1px, transparent 31px), repeating-linear-gradient(90deg, hsl(300, 47%, 97%) 0px, hsl(300, 47%, 97%) 1px, transparent 1px, transparent 31px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "ea498901-eed4-4aa5-8b35-230c16a7bd69",
+    "slug": "9107e26e-5f6a-4c0d-ab0a-7846155289e6",
     "stylesheet": "repeating-linear-gradient(0, rgb(245, 245, 245) 0px, rgb(245, 245, 245) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(245, 245, 245) 0px, rgb(245, 245, 245) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 98%), hsl(0, 0%, 98%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "f312c998-7d00-4a66-9162-5497ea84a51b",
+    "slug": "8c3969d5-970f-4854-a79a-7ac5df845f60",
     "stylesheet": "repeating-linear-gradient(0, rgb(49, 49, 49) 0px, rgb(49, 49, 49) 1px, transparent 1px, transparent 21px), repeating-linear-gradient(90deg, rgb(49, 49, 49) 0px, rgb(49, 49, 49) 1px, transparent 1px, transparent 21px), linear-gradient(90deg, hsl(0, 0%, 9%), hsl(0, 0%, 9%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "8929d261-7ab4-4782-ae40-74ae74380699",
+    "slug": "cbf6c953-70b9-4509-a341-a8712e023062",
     "stylesheet": "repeating-linear-gradient(0, rgb(237, 237, 237) 0px, rgb(237, 237, 237) 1px, transparent 1px, transparent 71px), repeating-linear-gradient(90deg, rgb(237, 237, 237) 0px, rgb(237, 237, 237) 1px, transparent 1px, transparent 71px), linear-gradient(90deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "3bfba410-03a1-4ee8-9b02-86505f9be36f",
+    "slug": "9ad42afc-2fd6-462a-9fca-5d54c78a24e7",
     "stylesheet": "repeating-linear-gradient(0, rgb(38, 38, 38) 0px, rgb(38, 38, 38) 1px, transparent 1px, transparent 71px), repeating-linear-gradient(90deg, rgb(38, 38, 38) 0px, rgb(38, 38, 38) 1px, transparent 1px, transparent 71px), linear-gradient(90deg, hsl(0, 0%, 8%), hsl(0, 0%, 8%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "a0097bfa-2515-453c-9f11-d90b695c8538",
+    "slug": "3b13353d-41a7-49b3-a614-5d707ed05355",
     "stylesheet": "repeating-linear-gradient(0, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(0, 0%, 7%), hsl(0, 0%, 7%))",
     "tags": [
       "basicgrid"
     ]
   },
   {
-    "slug": "74ef2f0a-c02e-433c-9e16-3e2a1cbc0601",
+    "slug": "71e2b694-f6fb-4230-b2aa-7d95c39695d8",
     "stylesheet": "repeating-linear-gradient(0, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 1px, transparent 1px, transparent 51px), repeating-linear-gradient(90deg, rgb(47, 47, 47) 0px, rgb(47, 47, 47) 1px, transparent 1px, transparent 51px), linear-gradient(90deg, hsl(0, 0%, 16%), hsl(0, 0%, 16%))",
     "tags": [
       "basicgrid"
