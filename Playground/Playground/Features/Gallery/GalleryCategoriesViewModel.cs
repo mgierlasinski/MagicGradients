@@ -10,13 +10,6 @@ namespace Playground.Features.Gallery
     {
         private readonly ICategoryService _categoryService;
 
-        private IEnumerable<CategoryItem> _categories;
-        public IEnumerable<CategoryItem> Categories
-        {
-            get => _categories;
-            set => SetProperty(ref _categories, value);
-        }
-
         private IEnumerable<CategoryGroup> _groups;
         public IEnumerable<CategoryGroup> Groups
         {
@@ -45,7 +38,6 @@ namespace Playground.Features.Gallery
 
         public void LoadCategories()
         {
-            Categories = _categoryService.GetCategories();
             Groups = _categoryService.GetGroupedCategories();
         }
     }

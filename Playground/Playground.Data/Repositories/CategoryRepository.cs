@@ -20,23 +20,13 @@ namespace Playground.Data.Repositories
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Category>(nameof(Category));
-                return collection.FindAll().OrderBy(x => x.Id).ToList();
-            }
-        }
-
-        public List<IGrouping<string, Category>> GetGroupedCategories()
-        {
-            using (var db = _databaseProvider.CreateDatabase())
-            {
-                var collection = db.GetCollection<Category>(nameof(Category));
                 var result = collection.FindAll()
                     .OrderBy(x => x.Id)
-                    .GroupBy(x => x.Group)
                     .ToList();
 
                 var gradients = db.GetCollection<Gradient>();
 
-                foreach (var cat in result.SelectMany(x => x))
+                foreach (var cat in result)
                 {
                     cat.Count = gradients.Count(x => x.Tags.Contains(cat.Tag));
                 }

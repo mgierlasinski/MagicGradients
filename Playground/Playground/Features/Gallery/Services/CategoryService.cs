@@ -26,7 +26,7 @@ namespace Playground.Features.Gallery.Services
         public IEnumerable<CategoryGroup> GetGroupedCategories()
         {
             var result = new List<CategoryGroup>();
-            var groups = _categoryRepository.GetGroupedCategories();
+            var groups = _categoryRepository.GetCategories().GroupBy(x => x.Group);
 
             foreach (var group in groups)
             {
