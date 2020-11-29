@@ -17,7 +17,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}"
                      Text="{OnPlatform UWP=Edit}" 
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Layers}, Color=White}" />
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Layers}, Color=White}" />
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,Auto" RowSpacing="0">
@@ -46,7 +46,7 @@
               RowSpacing="0" ColumnSpacing="10" HeightRequest="350"
               IsVisible="{Binding IsEditMode}">
             <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
-            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" Margin="5"
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Margin="5"
                          Command="{Binding AddCommand}" StyleClass="BackgroundElement" />
             <CollectionView ItemsSource="{Binding GradientSource.Gradients}" 
                             SelectedItem="{Binding Gradient}"
@@ -70,7 +70,7 @@
                                             IsVisible="{Binding IsGallery}" />
                 </tabs:TabHostView.Tabs>
             </tabs:TabHostView>
-            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}}" 
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Clear}}" 
                          Command="{Binding CloseEditCommand}"
                          WidthRequest="30" HeightRequest="30" Grid.Column="1"
                          HorizontalOptions="End" VerticalOptions="Start" 
@@ -84,10 +84,10 @@
                     <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="180">
                         <Button Text="CSS previewer" 
                                 Command="{Binding PreviewCssCommand}"
-                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}}" />
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}}" />
                         <Button Text="Paint" 
                                 Command="{Binding BattleTestCommand}"
-                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Paint}}" />
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}}" />
                     </StackLayout>
                 </ContentView>
             </tabs:ViewSwitcher>

@@ -15,7 +15,7 @@
     <Grid RowDefinitions="150,*">
         <magic:GradientView VerticalOptions="Fill" StyleId="banner" />
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.MagicWand}, Color=White, Size=70}" />
+            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.MagicWand}, Color=White, Size=70}" />
             <Label Text="Magic Gradients" TextColor="White" FontAttributes="Bold" FontSize="20" />
         </StackLayout>
         <ScrollView Grid.Row="1">
@@ -25,21 +25,21 @@
                 </controls:MenuSection>
                 <mtoolkit:MagicButton Command="{Binding LinearCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
-                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Gradient}, Color=White, Size=50}" 
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Gradient}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Linear" HorizontalOptions="Center" />
                     </StackLayout>
                 </mtoolkit:MagicButton>
                 <mtoolkit:MagicButton Command="{Binding RadialCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
-                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Radial}, Color=White, Size=50}" 
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Radial}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Radial" HorizontalOptions="Center" />
                     </StackLayout>
                 </mtoolkit:MagicButton>
                 <mtoolkit:MagicButton Command="{Binding CssCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
-                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}, Color=White, Size=50}" 
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}"/>
                         <Label Text="CSS" HorizontalOptions="Center" />
                     </StackLayout>
@@ -49,14 +49,14 @@
                 </controls:MenuSection>
                 <mtoolkit:MagicButton Command="{Binding GalleryCommand}" StyleClass="twoColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
-                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Gallery}, Color=White, Size=50}" 
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Gallery}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Gradient Gallery" HorizontalOptions="Center" />
                     </StackLayout>
                 </mtoolkit:MagicButton>
                 <mtoolkit:MagicButton Command="{Binding AnimationsCommand}" StyleClass="twoColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
-                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoon.Bolt}, Color=White, Size=50}" 
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Animations" HorizontalOptions="Center" />
                     </StackLayout>
