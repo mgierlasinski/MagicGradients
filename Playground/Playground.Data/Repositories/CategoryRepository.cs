@@ -29,10 +29,19 @@ namespace Playground.Data.Repositories
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Category>(nameof(Category));
-                return collection.FindAll()
+                var result = collection.FindAll()
                     .OrderBy(x => x.Id)
                     .GroupBy(x => x.Group)
                     .ToList();
+
+                var gradients = db.GetCollection<Gradient>();
+
+                foreach (var cat in result.SelectMany(x => x))
+                {
+                    cat.Count = gradients.Count(x => x.Tags.Contains(cat.Tag));
+                }
+
+                return result;
             }
         }
 

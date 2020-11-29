@@ -29,11 +29,16 @@
                 <DataTemplate x:DataType="models:CategoryItem">
                     <Grid Padding="5">
                         <Frame Padding="0" IsClippedToBounds="True">
-                            <StackLayout Spacing="0">
-                                <magic:GradientView HeightRequest="150" GradientSource="{Binding GradientSource}" />
+                            <Grid RowDefinitions="150,*" RowSpacing="0">
+                                <magic:GradientView GradientSource="{Binding GradientSource}" />
+                                <Grid HeightRequest="20" WidthRequest="35" Margin="5" HorizontalOptions="End" VerticalOptions="Start">
+                                    <BoxView Style="{StaticResource SemiTransparent}" CornerRadius="5" />
+                                    <Label Text="{Binding Count}" TextColor="White" FontAttributes="Bold"
+                                           HorizontalOptions="Center" VerticalOptions="Center" />
+                                </Grid>
                                 <Label Text="{Binding Name}" FontAttributes="Bold" 
-                                       HorizontalOptions="Center" Margin="0,5" />
-                            </StackLayout>
+                                       HorizontalOptions="Center" Margin="5" Grid.Row="1" />
+                            </Grid>
                         </Frame>
                     </Grid>
                 </DataTemplate>

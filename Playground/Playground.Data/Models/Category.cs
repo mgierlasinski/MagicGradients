@@ -20,5 +20,8 @@ namespace Playground.Data.Models
 
         [BsonField("file")]
         public string File { get; set; }
+
+        [BsonIgnore]
+        public int Count { get; set; }
     }
 }

@@ -45,6 +45,7 @@ namespace Playground.Features.Gallery.Services
         {
             Name = source.Name,
             Tag = source.Tag,
+            Count = source.Count,
             GradientSource = new CssGradientSource { Stylesheet = source.Stylesheet }
         };
 
