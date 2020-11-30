@@ -84,11 +84,19 @@ namespace Playground.Features.Editor
             set => SetProperty(ref _isGallery, value);
         }
 
+        private bool _isMenuVisible;
+        public bool IsMenuVisible
+        {
+            get => _isMenuVisible;
+            set => SetProperty(ref _isMenuVisible, value);
+        }
+
         public ICommand AddCommand { get; }
         public ICommand EditCommand { get; }
         public ICommand CloseEditCommand { get; }
         public ICommand PreviewCssCommand { get; }
         public ICommand BattleTestCommand { get; }
+        public ICommand ToggleMenuCommand { get; }
 
         public GradientEditorViewModel(IGalleryService galleryService)
         {
@@ -104,13 +112,17 @@ namespace Playground.Features.Editor
 
             PreviewCssCommand = new Command(async () =>
             {
+                IsMenuVisible = false;
                 await Shell.Current.GoToAsync($"CssPreviewer?id={Id}");
             });
 
             BattleTestCommand = new Command(async () =>
             {
+                IsMenuVisible = false;
                 await Shell.Current.GoToAsync($"BattleTest?id={Id}");
             });
+
+            ToggleMenuCommand = new Command(() => IsMenuVisible = !IsMenuVisible);
         }
 
         private void LoadGradient()

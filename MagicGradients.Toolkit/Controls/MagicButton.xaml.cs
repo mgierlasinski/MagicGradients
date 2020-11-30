@@ -14,12 +14,14 @@ namespace MagicGradients.Toolkit.Controls
         private const string GradientViewName = "GradientView";
         private const string OverlayName = "Overlay";
 
-        private Frame _templateRoot;
-        private GradientView _gradientView;
+        private readonly Frame _templateRoot;
         
         public static readonly BindableProperty ContentProperty = BindableProperty.Create(
             nameof(Content), typeof(object), typeof(MagicButton), null,
             propertyChanged: OnContentChanged, coerceValue: CoerceContent);
+
+        public static readonly BindableProperty ColorProperty = BindableProperty.Create(
+            nameof(Color), typeof(Color), typeof(MagicButton), Color.Default);
 
         public static readonly BindableProperty FontSizeProperty = BindableProperty.Create(
             nameof(FontSize), typeof(double), typeof(MagicButton), (double)18, 
@@ -59,6 +61,12 @@ namespace MagicGradients.Toolkit.Controls
         {
             get => GetValue(ContentProperty);
             set => SetValue(ContentProperty, value);
+        }
+
+        public Color Color
+        {
+            get => (Color)GetValue(ColorProperty);
+            set => SetValue(ColorProperty, value);
         }
 
         [TypeConverter(typeof(FontSizeConverter))]
@@ -135,26 +143,15 @@ namespace MagicGradients.Toolkit.Controls
         public MagicButton()
         {
             InitializeComponent();
-            InitializeBindings();
-        }
 
-        private void InitializeBindings()
-        {
             _templateRoot = (Frame)GetTemplateChild(TemplateRootName);
-            _templateRoot.SetBinding(Frame.CornerRadiusProperty, new Binding(nameof(CornerRadius), source: RelativeBindingSource.TemplatedParent));
-            _templateRoot.SetBinding(Frame.HasShadowProperty, new Binding(nameof(HasShadow), source: RelativeBindingSource.TemplatedParent));
-
-            _gradientView = (GradientView)GetTemplateChild(GradientViewName);
-            _gradientView.SetBinding(GradientView.GradientSourceProperty, new Binding(nameof(GradientSource), source: RelativeBindingSource.TemplatedParent));
-            _gradientView.SetBinding(GradientView.GradientSizeProperty, new Binding(nameof(GradientSize), source: RelativeBindingSource.TemplatedParent));
-            _gradientView.SetBinding(GradientView.GradientRepeatProperty, new Binding(nameof(GradientRepeat), source: RelativeBindingSource.TemplatedParent));
         }
 
         private void ExtendNameScope()
         {
             var nameScope = NameScope.GetNameScope(this);
             nameScope.RegisterName(TemplateRootName, _templateRoot);
-            nameScope.RegisterName(GradientViewName, _gradientView);
+            nameScope.RegisterName(GradientViewName, (GradientView)GetTemplateChild(GradientViewName));
             nameScope.RegisterName(OverlayName, (BoxView)GetTemplateChild(OverlayName));
         }
 
