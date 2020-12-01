@@ -5,7 +5,8 @@ namespace Playground.Features.Gallery.Services
 {
     public interface ICategoryService
     {
-        IEnumerable<GradientCategory> GetCategories();
-        IEnumerable<GradientTheme> GetThemes();
+        IEnumerable<CategoryItem> GetCategories();
+        IEnumerable<CategoryGroup> GetGroupedCategories();
+        IEnumerable<ThemeItem> GetThemes();
     }
 }

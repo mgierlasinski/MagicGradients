@@ -3,7 +3,7 @@
 [assembly: ExportFont("IcoMoon.ttf", Alias = "IcoMoon")]
 namespace Playground.Resources.Fonts
 {
-    public partial class IcoMoon
+    public static class IcoMoonGlyph
     {
         public static string MagicWand = "\ue900";
         public static string Refresh = "\ue901";

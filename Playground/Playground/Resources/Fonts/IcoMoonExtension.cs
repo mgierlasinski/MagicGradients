@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 namespace Playground.Resources.Fonts
 {
     [ContentProperty("Glyph")]
-    public partial class IcoMoon : IMarkupExtension<FontImageSource>
+    public class IcoMoonExtension : IMarkupExtension<FontImageSource>
     {
         private const string LightKey = "TextColor";
         private const string DarkKey = "TextColorDark";

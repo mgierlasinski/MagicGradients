@@ -5,8 +5,7 @@ namespace Playground.Data.Repositories
 {
     public interface ICategoryRepository : ICanUpdateMyself
     {
-        IEnumerable<Category> GetCategories();
-
-        IEnumerable<Theme> GetThemes();
+        List<Category> GetCategories();
+        List<Theme> GetThemes();
     }
 }

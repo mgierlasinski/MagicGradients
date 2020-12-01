@@ -9,6 +9,7 @@
     <None Remove="Resources\BackGammon.json" />
     <None Remove="Resources\BasicGrid.json" />
     <None Remove="Resources\Burst.json" />
+    <None Remove="Resources\CarbonFiber.json" />
     <None Remove="Resources\Categories.json" />
     <None Remove="Resources\Checkered.json" />
     <None Remove="Resources\ComplexCircles.json" />
@@ -26,7 +27,6 @@
     <None Remove="Resources\LightBg.json" />
     <None Remove="Resources\Metadata.json" />
     <None Remove="Resources\NewRetro.json" />
-    <None Remove="Resources\Popular.json" />
     <None Remove="Resources\RadialStripes.json" />
     <None Remove="Resources\RainbowStandard.json" />
     <None Remove="Resources\RepStripes.json" />
@@ -34,9 +34,11 @@
     <None Remove="Resources\SimpleAngular.json" />
     <None Remove="Resources\SimpleCircles.json" />
     <None Remove="Resources\SimplePatterns.json" />
+    <None Remove="Resources\StainedGlass.json" />
     <None Remove="Resources\Standard.json" />
     <None Remove="Resources\StandardAsymmetrical.json" />
     <None Remove="Resources\StandardCircle.json" />
+    <None Remove="Resources\StandardTexture.json" />
     <None Remove="Resources\Stripes.json" />
     <None Remove="Resources\SubtleGrid.json" />
     <None Remove="Resources\Texture.json" />
@@ -48,6 +50,7 @@
     <EmbeddedResource Include="Resources\BackGammon.json" />
     <EmbeddedResource Include="Resources\BasicGrid.json" />
     <EmbeddedResource Include="Resources\Burst.json" />
+    <EmbeddedResource Include="Resources\CarbonFiber.json" />
     <EmbeddedResource Include="Resources\Categories.json" />
     <EmbeddedResource Include="Resources\Checkered.json" />
     <EmbeddedResource Include="Resources\ComplexCircles.json" />
@@ -65,7 +68,6 @@
     <EmbeddedResource Include="Resources\LightBg.json" />
     <EmbeddedResource Include="Resources\Metadata.json" />
     <EmbeddedResource Include="Resources\NewRetro.json" />
-    <EmbeddedResource Include="Resources\Popular.json" />
     <EmbeddedResource Include="Resources\RadialStripes.json" />
     <EmbeddedResource Include="Resources\RainbowStandard.json" />
     <EmbeddedResource Include="Resources\RepStripes.json" />
@@ -73,9 +75,11 @@
     <EmbeddedResource Include="Resources\SimpleAngular.json" />
     <EmbeddedResource Include="Resources\SimpleCircles.json" />
     <EmbeddedResource Include="Resources\SimplePatterns.json" />
+    <EmbeddedResource Include="Resources\StainedGlass.json" />
     <EmbeddedResource Include="Resources\Standard.json" />
     <EmbeddedResource Include="Resources\StandardAsymmetrical.json" />
     <EmbeddedResource Include="Resources\StandardCircle.json" />
+    <EmbeddedResource Include="Resources\StandardTexture.json" />
     <EmbeddedResource Include="Resources\Stripes.json" />
     <EmbeddedResource Include="Resources\SubtleGrid.json" />
     <EmbeddedResource Include="Resources\Texture.json" />
@@ -83,7 +87,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LiteDB" Version="4.1.4" />
+    <PackageReference Include="LiteDB" Version="5.0.9" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
   </ItemGroup>

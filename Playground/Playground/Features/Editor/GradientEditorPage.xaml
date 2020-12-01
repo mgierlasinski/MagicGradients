@@ -7,6 +7,9 @@
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:mtoolkit="clr-namespace:MagicGradients.Toolkit.Controls;assembly=MagicGradients.Toolkit"
+             xmlns:interactivity="clr-namespace:Playground.Interactivity;assembly=Playground"
              x:Class="Playground.Features.Editor.GradientEditorPage"
              Title="Gradient Editor"
              vm:ViewModelLocator.AutoWireViewModel="true">
@@ -17,7 +20,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}"
                      Text="{OnPlatform UWP=Edit}" 
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Layers}, Color=White}" />
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Layers}, Color=White}" />
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,Auto" RowSpacing="0">
@@ -28,6 +31,30 @@
                             Touch="SKCanvasView_OnTouch" 
                             PaintSurface="SKCanvasView_OnPaintSurface"/>
 
+        <controls:ActionMenu IsOpened="{Binding IsMenuVisible}">
+            <controls:ActionMenu.Actions>
+                <controls:ActionItemCollection>
+                    <controls:ActionItem Text="CSS previewer" 
+                                         Command="{Binding PreviewCssCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
+                    <controls:ActionItem Text="Paint" 
+                                         Command="{Binding BattleTestCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=22}" />
+                </controls:ActionItemCollection>
+            </controls:ActionMenu.Actions>
+        </controls:ActionMenu>
+
+        <tabs:Shadows CornerRadius="25" VerticalOptions="End" HorizontalOptions="End" Margin="20"
+                      Shades="{tabs:SingleShade Offset='0, 5', Opacity=0.5, Color=Black}">
+            <mtoolkit:MagicButton Command="{Binding ToggleMenuCommand}" Color="{StaticResource AccentColor}" 
+                                  WidthRequest="50" HeightRequest="50" CornerRadius="25">
+                <mtoolkit:MagicButton.Triggers>
+                    <interactivity:RotateTrigger IsRunning="{Binding IsMenuVisible}" Forward="135" Backward="0" Duration="150" />
+                </mtoolkit:MagicButton.Triggers>
+                <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Color=White}" />
+            </mtoolkit:MagicButton>
+        </tabs:Shadows>
+        
         <Grid VerticalOptions="Start" BackgroundColor="Black" IsVisible="{Binding IsRadial}">
             <Label TextColor="White" FontSize="12" Margin="2">
                 <Label.FormattedText>
@@ -46,7 +73,7 @@
               RowSpacing="0" ColumnSpacing="10" HeightRequest="350"
               IsVisible="{Binding IsEditMode}">
             <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
-            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Add}}" Margin="5"
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Margin="5"
                          Command="{Binding AddCommand}" StyleClass="BackgroundElement" />
             <CollectionView ItemsSource="{Binding GradientSource.Gradients}" 
                             SelectedItem="{Binding Gradient}"
@@ -54,8 +81,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <ContentView>
-                            <Image Source="{Binding Converter={StaticResource IconConverter}}" 
-                                   Margin="0,5"/>
+                            <Image Source="{Binding Converter={StaticResource IconConverter}}" Margin="0,5"/>
                         </ContentView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
@@ -66,11 +92,10 @@
                     <tabs:UnderlinedTabItem Label="Properties" Padding="10,0" />
                     <tabs:UnderlinedTabItem Label="Colors" Padding="10,0" />
                     <tabs:UnderlinedTabItem Label="Size" Padding="10,0" />
-                    <tabs:UnderlinedTabItem Label="Tools" Padding="10,0" 
-                                            IsVisible="{Binding IsGallery}" />
+                    <!--<tabs:UnderlinedTabItem Label="Tools" Padding="10,0" IsVisible="{Binding IsGallery}" />-->
                 </tabs:TabHostView.Tabs>
             </tabs:TabHostView>
-            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoon.Clear}}" 
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Clear}}" 
                          Command="{Binding CloseEditCommand}"
                          WidthRequest="30" HeightRequest="30" Grid.Column="1"
                          HorizontalOptions="End" VerticalOptions="Start" 
@@ -80,16 +105,16 @@
                 <editor:PropertiesTab Margin="10" />
                 <editor:ColorInspector Gradient="{Binding Gradient}" Margin="10" />
                 <editor:BackgroundTab Margin="10" />
-                <ContentView>
+                <!--<ContentView>
                     <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="180">
                         <Button Text="CSS previewer" 
                                 Command="{Binding PreviewCssCommand}"
-                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Palette}}" />
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}}" />
                         <Button Text="Paint" 
                                 Command="{Binding BattleTestCommand}"
-                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoon.Paint}}" />
+                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}}" />
                     </StackLayout>
-                </ContentView>
+                </ContentView>-->
             </tabs:ViewSwitcher>
         </Grid>
     </Grid>

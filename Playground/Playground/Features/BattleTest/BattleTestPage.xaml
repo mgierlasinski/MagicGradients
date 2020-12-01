@@ -53,7 +53,7 @@
                 WidthRequest="200">
                 <StackLayout Orientation="Horizontal" Padding="10">
                     <Label FontFamily="IcoMoon" FontSize="20" 
-                           Text="{x:Static ic:IcoMoon.Bolt}" 
+                           Text="{x:Static ic:IcoMoonGlyph.Bolt}" 
                            TextColor="{Binding TextColor}" 
                            VerticalOptions="Center" Margin="5,0" />
                     <Label FontSize="16" Text="Magic Button" 

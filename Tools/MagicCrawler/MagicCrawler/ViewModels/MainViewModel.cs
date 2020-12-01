@@ -43,13 +43,34 @@ namespace MagicCrawler.ViewModels
             set => SetProperty(ref _isBusy, value, onChanged: GenerateCommand.RaiseCanExecuteChanged);
         }
 
+        private string _progressText;
+        public string ProgressText
+        {
+            get => _progressText;
+            set => SetProperty(ref _progressText, value);
+        }
+
+        private double _progressValue;
+        public double ProgressValue
+        {
+            get => _progressValue;
+            set => SetProperty(ref _progressValue, value);
+        }
+
         public MainViewModel()
         {
             HtmlLoader = new HtmlLoader();
             Jobs = new List<JobItem>();
 
             _storage = new Storage();
-            _crawler = new Crawler(_storage, HtmlLoader);
+            _crawler = new Crawler(_storage, HtmlLoader)
+            {
+                Monitor = (text, value) =>
+                {
+                    ProgressText = text;
+                    ProgressValue = value;
+                }
+            };
 
             BrowseCommand = new Command(Browse);
             GenerateCommand = new AsyncCommand(Generate, x => !IsBusy && _storage.Configuration != null);

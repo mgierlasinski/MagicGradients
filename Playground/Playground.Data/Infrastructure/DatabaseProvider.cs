@@ -8,7 +8,7 @@ namespace Playground.Data.Infrastructure
     {
         public LiteDatabase CreateDatabase()
         {
-            return new LiteDatabase(GetDbPath());
+            return new LiteDatabase($"Filename={GetDbPath()};Upgrade=true");
         }
 
         private string GetDbPath()

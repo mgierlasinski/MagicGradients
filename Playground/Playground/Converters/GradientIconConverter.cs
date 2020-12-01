@@ -10,13 +10,13 @@ namespace Playground.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var icoMoon = new IcoMoon();
+            var icoMoon = new IcoMoonExtension();
 
             if (value is LinearGradient)
-                icoMoon.Glyph = IcoMoon.Gradient;
+                icoMoon.Glyph = IcoMoonGlyph.Gradient;
 
             if (value is RadialGradient)
-                icoMoon.Glyph = IcoMoon.Radial;
+                icoMoon.Glyph = IcoMoonGlyph.Radial;
 
             return icoMoon.GetIcon();
         }

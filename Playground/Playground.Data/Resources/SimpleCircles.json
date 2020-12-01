@@ -1,426 +1,414 @@
 [
   {
-    "slug": "819da4b0-7171-40ef-a699-6e818d94ea4d",
+    "slug": "88cd4252-8e80-4f7f-b3f9-9f04241a6933",
     "stylesheet": "radial-gradient(circle at 85% 1%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 96%, transparent 96%, transparent 100%), radial-gradient(circle at 14% 15%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 1%, transparent 1%, transparent 100%), radial-gradient(circle at 60% 90%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 20%, transparent 20%, transparent 100%), radial-gradient(circle at 79% 7%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 78%, transparent 78%, transparent 100%), radial-gradient(circle at 55% 65%, hsla(0, 0%, 93%, 0.05) 0%, hsla(0, 0%, 93%, 0.05) 52%, transparent 52%, transparent 100%), linear-gradient(135deg, rgb(37, 56, 222), rgb(96, 189, 244))",
     "tags": [
-      "simplecircles",
-      "popular"
+      "simplecircles"
     ]
   },
   {
-    "slug": "b031c3a1-18bb-4a80-8176-0f7da82748f2",
+    "slug": "03c77f5b-61a5-4a88-acc3-93935dac0a56",
     "stylesheet": "radial-gradient(circle at 40% 91%, rgba(251, 251, 251, 0.04) 0%, rgba(251, 251, 251, 0.04) 50%, rgba(229, 229, 229, 0.04) 50%, rgba(229, 229, 229, 0.04) 100%), radial-gradient(circle at 66% 97%, rgba(36, 36, 36, 0.04) 0%, rgba(36, 36, 36, 0.04) 50%, rgba(46, 46, 46, 0.04) 50%, rgba(46, 46, 46, 0.04) 100%), radial-gradient(circle at 86% 7%, rgba(40, 40, 40, 0.04) 0%, rgba(40, 40, 40, 0.04) 50%, rgba(200, 200, 200, 0.04) 50%, rgba(200, 200, 200, 0.04) 100%), radial-gradient(circle at 15% 16%, rgba(99, 99, 99, 0.04) 0%, rgba(99, 99, 99, 0.04) 50%, rgba(45, 45, 45, 0.04) 50%, rgba(45, 45, 45, 0.04) 100%), radial-gradient(circle at 75% 99%, rgba(243, 243, 243, 0.04) 0%, rgba(243, 243, 243, 0.04) 50%, rgba(37, 37, 37, 0.04) 50%, rgba(37, 37, 37, 0.04) 100%), linear-gradient(90deg, rgb(34, 222, 237), rgb(135, 89, 215))",
     "tags": [
-      "simplecircles",
-      "popular"
+      "simplecircles"
     ]
   },
   {
-    "slug": "ccdafae4-1a3f-495c-bd71-969de71d75a8",
+    "slug": "3edaf3aa-a4c5-47dc-bea7-481875258693",
     "stylesheet": "radial-gradient(circle at 52% 94%, rgba(169, 169, 169, 0.04) 0%, rgba(169, 169, 169, 0.04) 50%, rgba(199, 199, 199, 0.04) 50%, rgba(199, 199, 199, 0.04) 100%), radial-gradient(circle at 96% 98%, rgba(61, 61, 61, 0.04) 0%, rgba(61, 61, 61, 0.04) 50%, rgba(201, 201, 201, 0.04) 50%, rgba(201, 201, 201, 0.04) 100%), radial-gradient(circle at 93% 97%, rgba(227, 227, 227, 0.04) 0%, rgba(227, 227, 227, 0.04) 50%, rgba(145, 145, 145, 0.04) 50%, rgba(145, 145, 145, 0.04) 100%), radial-gradient(circle at 79% 52%, rgba(245, 245, 245, 0.04) 0%, rgba(245, 245, 245, 0.04) 50%, rgba(86, 86, 86, 0.04) 50%, rgba(86, 86, 86, 0.04) 100%), linear-gradient(90deg, rgb(210, 9, 198), rgb(25, 38, 118))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "6306b9f5-d418-486e-a088-c5339f7f5a71",
+    "slug": "26e40035-2203-48e1-881b-a3854ae85788",
     "stylesheet": "radial-gradient(circle at 15% 59%, rgba(101, 101, 101, 0.04) 0%, rgba(101, 101, 101, 0.04) 50%, rgba(44, 44, 44, 0.04) 50%, rgba(44, 44, 44, 0.04) 100%), radial-gradient(circle at 47% 11%, rgba(240, 240, 240, 0.04) 0%, rgba(240, 240, 240, 0.04) 50%, rgba(29, 29, 29, 0.04) 50%, rgba(29, 29, 29, 0.04) 100%), radial-gradient(circle at 73% 44%, rgba(252, 252, 252, 0.04) 0%, rgba(252, 252, 252, 0.04) 50%, rgba(130, 130, 130, 0.04) 50%, rgba(130, 130, 130, 0.04) 100%), radial-gradient(circle at 72% 91%, rgba(234, 234, 234, 0.04) 0%, rgba(234, 234, 234, 0.04) 50%, rgba(48, 48, 48, 0.04) 50%, rgba(48, 48, 48, 0.04) 100%), radial-gradient(circle at 27% 3%, rgba(48, 48, 48, 0.04) 0%, rgba(48, 48, 48, 0.04) 50%, rgba(163, 163, 163, 0.04) 50%, rgba(163, 163, 163, 0.04) 100%), linear-gradient(90deg, rgb(116, 48, 82), rgb(207, 76, 172))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "6586b1fc-6264-4737-a6dd-ac5248df2c9f",
+    "slug": "361cbe2e-0384-412c-b612-735bba8f3d7a",
     "stylesheet": "radial-gradient(circle at 77% 43%, rgba(168, 168, 168, 0.04) 0%, rgba(168, 168, 168, 0.04) 50%, rgba(10, 10, 10, 0.04) 50%, rgba(10, 10, 10, 0.04) 100%), radial-gradient(circle at 33% 65%, rgba(248, 248, 248, 0.04) 0%, rgba(248, 248, 248, 0.04) 50%, rgba(228, 228, 228, 0.04) 50%, rgba(228, 228, 228, 0.04) 100%), radial-gradient(circle at 92% 79%, rgba(152, 152, 152, 0.04) 0%, rgba(152, 152, 152, 0.04) 50%, rgba(28, 28, 28, 0.04) 50%, rgba(28, 28, 28, 0.04) 100%), radial-gradient(circle at 91% 13%, rgba(41, 41, 41, 0.04) 0%, rgba(41, 41, 41, 0.04) 50%, rgba(214, 214, 214, 0.04) 50%, rgba(214, 214, 214, 0.04) 100%), linear-gradient(90deg, rgb(11, 127, 96), rgb(139, 205, 191))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "049d80f4-7160-4fb6-a37b-138a0b3ec3ca",
+    "slug": "092ef3aa-cf0e-45ac-abb0-af58b1005e91",
     "stylesheet": "radial-gradient(circle at 79% 30%, rgba(230, 230, 230, 0.04) 0%, rgba(230, 230, 230, 0.04) 50%, rgba(12, 12, 12, 0.04) 50%, rgba(12, 12, 12, 0.04) 100%), radial-gradient(circle at 53% 89%, rgba(210, 210, 210, 0.04) 0%, rgba(210, 210, 210, 0.04) 50%, rgba(24, 24, 24, 0.04) 50%, rgba(24, 24, 24, 0.04) 100%), radial-gradient(circle at 92% 89%, rgba(17, 17, 17, 0.04) 0%, rgba(17, 17, 17, 0.04) 50%, rgba(205, 205, 205, 0.04) 50%, rgba(205, 205, 205, 0.04) 100%), radial-gradient(circle at 21% 13%, rgba(124, 124, 124, 0.04) 0%, rgba(124, 124, 124, 0.04) 50%, rgba(243, 243, 243, 0.04) 50%, rgba(243, 243, 243, 0.04) 100%), radial-gradient(circle at 77% 0%, rgba(16, 16, 16, 0.04) 0%, rgba(16, 16, 16, 0.04) 50%, rgba(130, 130, 130, 0.04) 50%, rgba(130, 130, 130, 0.04) 100%), linear-gradient(90deg, rgb(247, 101, 31), rgb(249, 105, 208))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "f53a41ef-56ca-4ad7-bbf1-32d4d2f94b02",
+    "slug": "3779ea87-87e7-46dc-b939-680478932196",
     "stylesheet": "radial-gradient(circle at 75% 26%, rgba(116, 116, 116, 0.04) 0%, rgba(116, 116, 116, 0.04) 50%, rgba(222, 222, 222, 0.04) 50%, rgba(222, 222, 222, 0.04) 100%), radial-gradient(circle at 62% 63%, rgba(60, 60, 60, 0.04) 0%, rgba(60, 60, 60, 0.04) 50%, rgba(152, 152, 152, 0.04) 50%, rgba(152, 152, 152, 0.04) 100%), radial-gradient(circle at 80% 64%, rgba(108, 108, 108, 0.04) 0%, rgba(108, 108, 108, 0.04) 50%, rgba(252, 252, 252, 0.04) 50%, rgba(252, 252, 252, 0.04) 100%), radial-gradient(circle at 97% 83%, rgba(184, 184, 184, 0.04) 0%, rgba(184, 184, 184, 0.04) 50%, rgba(137, 137, 137, 0.04) 50%, rgba(137, 137, 137, 0.04) 100%), radial-gradient(circle at 60% 7%, rgba(69, 69, 69, 0.04) 0%, rgba(69, 69, 69, 0.04) 50%, rgba(211, 211, 211, 0.04) 50%, rgba(211, 211, 211, 0.04) 100%), linear-gradient(90deg, rgb(212, 245, 239), rgb(253, 123, 174))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "293cce85-3546-4aee-994a-d457abc3027a",
+    "slug": "d583caaf-ddfe-45f6-b73d-d4dd2dbdf36f",
     "stylesheet": "radial-gradient(circle at 22% 15%, rgba(45, 45, 45, 0.05) 0%, rgba(45, 45, 45, 0.05) 50%, rgba(95, 95, 95, 0.05) 50%, rgba(95, 95, 95, 0.05) 100%), radial-gradient(circle at 83% 16%, rgba(122, 122, 122, 0.05) 0%, rgba(122, 122, 122, 0.05) 50%, rgba(194, 194, 194, 0.05) 50%, rgba(194, 194, 194, 0.05) 100%), radial-gradient(circle at 74% 7%, rgba(82, 82, 82, 0.05) 0%, rgba(82, 82, 82, 0.05) 50%, rgba(230, 230, 230, 0.05) 50%, rgba(230, 230, 230, 0.05) 100%), linear-gradient(90deg, rgb(243, 136, 126), rgb(251, 43, 71))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "36963298-aad1-4530-a385-c12e0893dd06",
+    "slug": "6c73f24e-379f-4b1e-a7b0-a80a80932774",
     "stylesheet": "radial-gradient(circle at 32% 86%, rgba(162, 162, 162, 0.05) 0%, rgba(162, 162, 162, 0.05) 50%, rgba(95, 95, 95, 0.05) 50%, rgba(95, 95, 95, 0.05) 100%), radial-gradient(circle at 62% 1%, rgba(99, 99, 99, 0.05) 0%, rgba(99, 99, 99, 0.05) 50%, rgba(70, 70, 70, 0.05) 50%, rgba(70, 70, 70, 0.05) 100%), radial-gradient(circle at 16% 3%, rgba(80, 80, 80, 0.05) 0%, rgba(80, 80, 80, 0.05) 50%, rgba(228, 228, 228, 0.05) 50%, rgba(228, 228, 228, 0.05) 100%), linear-gradient(90deg, rgb(200, 119, 231), rgb(168, 91, 251))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "44bc3d0a-ba55-4b15-8520-7bb87484ccc8",
+    "slug": "c453c2bb-eb86-4640-9b96-ae2aa4b2a2fd",
     "stylesheet": "radial-gradient(circle at 97% 32%, rgba(131, 131, 131, 0.05) 0%, rgba(131, 131, 131, 0.05) 50%, rgba(20, 20, 20, 0.05) 50%, rgba(20, 20, 20, 0.05) 100%), radial-gradient(circle at 61% 40%, rgba(35, 35, 35, 0.05) 0%, rgba(35, 35, 35, 0.05) 50%, rgba(239, 239, 239, 0.05) 50%, rgba(239, 239, 239, 0.05) 100%), radial-gradient(circle at 47% 73%, rgba(122, 122, 122, 0.05) 0%, rgba(122, 122, 122, 0.05) 50%, rgba(5, 5, 5, 0.05) 50%, rgba(5, 5, 5, 0.05) 100%), linear-gradient(90deg, rgb(0, 209, 117), rgb(205, 241, 44))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "bde56bf6-be0e-41a3-b25a-0db010ac7322",
+    "slug": "d6311702-1456-4ae1-ae9d-f47a111acec6",
     "stylesheet": "radial-gradient(circle at 20% 14%, rgba(27, 27, 27, 0.05) 0%, rgba(27, 27, 27, 0.05) 50%, rgba(126, 126, 126, 0.05) 50%, rgba(126, 126, 126, 0.05) 100%), radial-gradient(circle at 18% 51%, rgba(248, 248, 248, 0.05) 0%, rgba(248, 248, 248, 0.05) 50%, rgba(26, 26, 26, 0.05) 50%, rgba(26, 26, 26, 0.05) 100%), radial-gradient(circle at 29% 38%, rgba(160, 160, 160, 0.05) 0%, rgba(160, 160, 160, 0.05) 50%, rgba(212, 212, 212, 0.05) 50%, rgba(212, 212, 212, 0.05) 100%), linear-gradient(90deg, rgb(35, 74, 255), rgb(132, 161, 173))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "a83f9aca-d3d3-4de2-893a-22220ab41bbf",
+    "slug": "43608cf8-3d50-4294-96b9-ed30ad9a3c07",
     "stylesheet": "radial-gradient(circle at 21% 44%, rgba(23, 23, 23, 0.05) 0%, rgba(23, 23, 23, 0.05) 50%, rgba(109, 109, 109, 0.05) 50%, rgba(109, 109, 109, 0.05) 100%), radial-gradient(circle at 21% 96%, rgba(92, 92, 92, 0.05) 0%, rgba(92, 92, 92, 0.05) 50%, rgba(199, 199, 199, 0.05) 50%, rgba(199, 199, 199, 0.05) 100%), radial-gradient(circle at 25% 37%, rgba(230, 230, 230, 0.05) 0%, rgba(230, 230, 230, 0.05) 50%, rgba(25, 25, 25, 0.05) 50%, rgba(25, 25, 25, 0.05) 100%), linear-gradient(90deg, rgb(156, 48, 160), rgb(75, 105, 255))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "1b37e4f4-0cd0-4885-bb8d-632877abee7c",
+    "slug": "4ed28327-70c7-45b9-84ed-ba2199305603",
     "stylesheet": "radial-gradient(circle at 73% 14%, rgba(160, 160, 160, 0.05) 0%, rgba(160, 160, 160, 0.05) 50%, rgba(27, 27, 27, 0.05) 50%, rgba(27, 27, 27, 0.05) 100%), radial-gradient(circle at 22% 0%, rgba(251, 251, 251, 0.05) 0%, rgba(251, 251, 251, 0.05) 50%, rgba(219, 219, 219, 0.05) 50%, rgba(219, 219, 219, 0.05) 100%), radial-gradient(circle at 89% 57%, rgba(49, 49, 49, 0.05) 0%, rgba(49, 49, 49, 0.05) 50%, rgba(206, 206, 206, 0.05) 50%, rgba(206, 206, 206, 0.05) 100%), linear-gradient(90deg, rgb(238, 131, 122), rgb(184, 12, 194))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "5f8cc3c0-f774-4ea0-a062-8c96ea3015fb",
+    "slug": "79237cfb-ec2f-48a2-883c-5ea398a683af",
     "stylesheet": "radial-gradient(circle at left bottom, rgba(185, 101, 3, 0.05) 0%, rgba(185, 101, 3, 0.05) 50%, rgba(250, 212, 23, 0.05) 50%, rgba(250, 212, 23, 0.05) 100%), radial-gradient(circle at right top, rgba(252, 78, 169, 0.05) 0%, rgba(252, 78, 169, 0.05) 50%, rgba(83, 28, 146, 0.05) 50%, rgba(83, 28, 146, 0.05) 100%), radial-gradient(circle at left, rgba(185, 135, 93, 0.05) 0%, rgba(185, 135, 93, 0.05) 50%, rgba(144, 5, 38, 0.05) 50%, rgba(144, 5, 38, 0.05) 100%), linear-gradient(90deg, rgb(66, 192, 39), rgb(20, 215, 67))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "a49a8263-16ef-4d3b-88c5-3af6069f93dc",
+    "slug": "29585f53-5c72-4375-8649-628dd89b9eae",
     "stylesheet": "radial-gradient(circle at 99% 0%, rgba(235, 235, 235, 0.03) 0%, rgba(235, 235, 235, 0.03) 50%, rgba(142, 142, 142, 0.03) 50%, rgba(142, 142, 142, 0.03) 100%), radial-gradient(circle at 84% 89%, rgba(229, 229, 229, 0.03) 0%, rgba(229, 229, 229, 0.03) 50%, rgba(1, 1, 1, 0.03) 50%, rgba(1, 1, 1, 0.03) 100%), radial-gradient(circle at 89% 20%, rgba(219, 219, 219, 0.03) 0%, rgba(219, 219, 219, 0.03) 50%, rgba(38, 38, 38, 0.03) 50%, rgba(38, 38, 38, 0.03) 100%), radial-gradient(circle at 90% 0%, rgba(48, 48, 48, 0.03) 0%, rgba(48, 48, 48, 0.03) 50%, rgba(109, 109, 109, 0.03) 50%, rgba(109, 109, 109, 0.03) 100%), linear-gradient(45deg, rgb(26, 53, 180), rgb(164, 129, 216))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "cbe9459f-aadb-4dea-a007-fc8412835737",
+    "slug": "7f7e78dd-55e9-479f-941b-1255f33310fc",
     "stylesheet": "radial-gradient(circle at 33% 41%, rgba(250, 250, 250, 0.03) 0%, rgba(250, 250, 250, 0.03) 50%, rgba(37, 37, 37, 0.03) 50%, rgba(37, 37, 37, 0.03) 100%), radial-gradient(circle at 76% 49%, rgba(28, 28, 28, 0.03) 0%, rgba(28, 28, 28, 0.03) 50%, rgba(187, 187, 187, 0.03) 50%, rgba(187, 187, 187, 0.03) 100%), radial-gradient(circle at 41% 99%, rgba(247, 247, 247, 0.03) 0%, rgba(247, 247, 247, 0.03) 50%, rgba(120, 120, 120, 0.03) 50%, rgba(120, 120, 120, 0.03) 100%), radial-gradient(circle at 66% 27%, rgba(17, 17, 17, 0.03) 0%, rgba(17, 17, 17, 0.03) 50%, rgba(156, 156, 156, 0.03) 50%, rgba(156, 156, 156, 0.03) 100%), linear-gradient(0, rgb(18, 81, 88), rgb(39, 101, 99))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "4e883546-34e0-4d79-a586-082f6fbda1f1",
+    "slug": "dc530b4b-3b5c-4552-a02b-eed681d42194",
     "stylesheet": "radial-gradient(circle at 53% 90%, rgba(165, 165, 165, 0.03) 0%, rgba(165, 165, 165, 0.03) 50%, rgba(32, 32, 32, 0.03) 50%, rgba(32, 32, 32, 0.03) 100%), radial-gradient(circle at 71% 74%, rgba(191, 191, 191, 0.03) 0%, rgba(191, 191, 191, 0.03) 50%, rgba(68, 68, 68, 0.03) 50%, rgba(68, 68, 68, 0.03) 100%), radial-gradient(circle at 70% 13%, rgba(74, 74, 74, 0.03) 0%, rgba(74, 74, 74, 0.03) 50%, rgba(116, 116, 116, 0.03) 50%, rgba(116, 116, 116, 0.03) 100%), radial-gradient(circle at 83% 61%, rgba(13, 13, 13, 0.03) 0%, rgba(13, 13, 13, 0.03) 50%, rgba(27, 27, 27, 0.03) 50%, rgba(27, 27, 27, 0.03) 100%), linear-gradient(135deg, rgb(176, 49, 156), rgb(251, 15, 99))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "426f2901-8725-4773-a2fa-665a1471ca8b",
+    "slug": "54d7879b-1861-437d-b6c9-4cfdb326408a",
     "stylesheet": "radial-gradient(circle at 17% 1%, rgba(198, 198, 198, 0.03) 0%, rgba(198, 198, 198, 0.03) 50%, rgba(42, 42, 42, 0.03) 50%, rgba(42, 42, 42, 0.03) 100%), radial-gradient(circle at 8% 81%, rgba(253, 253, 253, 0.03) 0%, rgba(253, 253, 253, 0.03) 50%, rgba(36, 36, 36, 0.03) 50%, rgba(36, 36, 36, 0.03) 100%), radial-gradient(circle at 83% 29%, rgba(164, 164, 164, 0.03) 0%, rgba(164, 164, 164, 0.03) 50%, rgba(60, 60, 60, 0.03) 50%, rgba(60, 60, 60, 0.03) 100%), radial-gradient(circle at 96% 62%, rgba(170, 170, 170, 0.03) 0%, rgba(170, 170, 170, 0.03) 50%, rgba(169, 169, 169, 0.03) 50%, rgba(169, 169, 169, 0.03) 100%), linear-gradient(338deg, rgb(2, 141, 213), rgb(5, 172, 81))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "db858dfc-200f-4c60-8dae-0cb7e4c68544",
+    "slug": "7509d242-579c-4da5-9eb0-ef363cc79dda",
     "stylesheet": "radial-gradient(circle at 72% 83%, rgba(12, 12, 12, 0.04) 0%, rgba(12, 12, 12, 0.04) 50%, rgba(172, 172, 172, 0.04) 50%, rgba(172, 172, 172, 0.04) 100%), radial-gradient(circle at 57% 65%, rgba(11, 11, 11, 0.04) 0%, rgba(11, 11, 11, 0.04) 50%, rgba(222, 222, 222, 0.04) 50%, rgba(222, 222, 222, 0.04) 100%), radial-gradient(circle at 64% 31%, rgba(11, 11, 11, 0.04) 0%, rgba(11, 11, 11, 0.04) 50%, rgba(191, 191, 191, 0.04) 50%, rgba(191, 191, 191, 0.04) 100%), linear-gradient(130deg, rgb(5, 235, 123), rgb(47, 52, 6))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "200a1223-b311-4567-8722-145daf61a556",
+    "slug": "d507908c-b278-438a-8efe-e5d70de6e3ff",
     "stylesheet": "radial-gradient(circle at 28% 93%, rgba(2, 2, 2, 0.04) 0%, rgba(2, 2, 2, 0.04) 50%, rgba(223, 223, 223, 0.04) 50%, rgba(223, 223, 223, 0.04) 100%), radial-gradient(circle at 13% 75%, rgba(185, 185, 185, 0.04) 0%, rgba(185, 185, 185, 0.04) 50%, rgba(25, 25, 25, 0.04) 50%, rgba(25, 25, 25, 0.04) 100%), radial-gradient(circle at 79% 39%, rgba(34, 34, 34, 0.04) 0%, rgba(34, 34, 34, 0.04) 50%, rgba(57, 57, 57, 0.04) 50%, rgba(57, 57, 57, 0.04) 100%), linear-gradient(56deg, rgb(39, 37, 178), rgb(169, 88, 194))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "28742339-bfa2-4d5b-9fdf-911102066324",
+    "slug": "f51dbfc9-9534-4b22-9f99-79525ba5c248",
     "stylesheet": "radial-gradient(circle at 71% 88%, rgba(152, 152, 152, 0.04) 0%, rgba(152, 152, 152, 0.04) 50%, rgba(54, 54, 54, 0.04) 50%, rgba(54, 54, 54, 0.04) 100%), radial-gradient(circle at 2% 84%, rgba(224, 224, 224, 0.04) 0%, rgba(224, 224, 224, 0.04) 50%, rgba(146, 146, 146, 0.04) 50%, rgba(146, 146, 146, 0.04) 100%), radial-gradient(circle at 99% 46%, rgba(173, 173, 173, 0.04) 0%, rgba(173, 173, 173, 0.04) 50%, rgba(8, 8, 8, 0.04) 50%, rgba(8, 8, 8, 0.04) 100%), linear-gradient(133deg, rgb(7, 56, 61), rgb(48, 240, 242))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "49e678b6-4e31-4cfd-acaf-7e238cf29e06",
+    "slug": "903b534b-c342-4088-8560-47e4a556dcb7",
     "stylesheet": "radial-gradient(circle at 90% 24%, rgba(209, 209, 209, 0.04) 0%, rgba(209, 209, 209, 0.04) 50%, rgba(160, 160, 160, 0.04) 50%, rgba(160, 160, 160, 0.04) 100%), radial-gradient(circle at 91% 63%, rgba(45, 45, 45, 0.04) 0%, rgba(45, 45, 45, 0.04) 50%, rgba(87, 87, 87, 0.04) 50%, rgba(87, 87, 87, 0.04) 100%), radial-gradient(circle at 17% 2%, rgba(124, 124, 124, 0.04) 0%, rgba(124, 124, 124, 0.04) 50%, rgba(117, 117, 117, 0.04) 50%, rgba(117, 117, 117, 0.04) 100%), linear-gradient(88deg, rgb(33, 20, 105), rgb(1, 15, 13))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "1c405d85-8125-4e53-b9b5-dff156f41529",
+    "slug": "2ce688d8-b2b1-4ec4-95fe-8d8ecd0154f2",
     "stylesheet": "radial-gradient(circle at 48% 77%, rgba(27, 27, 27, 0.04) 0%, rgba(27, 27, 27, 0.04) 50%, rgba(135, 135, 135, 0.04) 50%, rgba(135, 135, 135, 0.04) 100%), radial-gradient(circle at 74% 36%, rgba(223, 223, 223, 0.04) 0%, rgba(223, 223, 223, 0.04) 50%, rgba(113, 113, 113, 0.04) 50%, rgba(113, 113, 113, 0.04) 100%), radial-gradient(circle at 62% 13%, rgba(16, 16, 16, 0.04) 0%, rgba(16, 16, 16, 0.04) 50%, rgba(168, 168, 168, 0.04) 50%, rgba(168, 168, 168, 0.04) 100%), linear-gradient(223deg, rgb(37, 143, 136), rgb(87, 117, 249))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "b216457d-5e49-43ae-9e33-d931e260a2dc",
+    "slug": "c070bba7-bd96-4898-baa4-78ced8991c75",
     "stylesheet": "radial-gradient(circle at 40% 49%, rgba(196, 196, 196, 0.04) 0%, rgba(196, 196, 196, 0.04) 50%, rgba(91, 91, 91, 0.04) 50%, rgba(91, 91, 91, 0.04) 100%), radial-gradient(circle at 32% 80%, rgba(42, 42, 42, 0.04) 0%, rgba(42, 42, 42, 0.04) 50%, rgba(186, 186, 186, 0.04) 50%, rgba(186, 186, 186, 0.04) 100%), radial-gradient(circle at 72% 99%, rgba(233, 233, 233, 0.04) 0%, rgba(233, 233, 233, 0.04) 50%, rgba(53, 53, 53, 0.04) 50%, rgba(53, 53, 53, 0.04) 100%), linear-gradient(148deg, rgb(126, 9, 68), rgb(223, 57, 181))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "9a1bc8da-214b-405b-b956-c16f4f17c756",
+    "slug": "4ce7cca6-9ede-48dd-940a-af3e2210f848",
     "stylesheet": "radial-gradient(circle at 11% 62%, rgba(205, 205, 205, 0.04) 0%, rgba(205, 205, 205, 0.04) 50%, rgba(149, 149, 149, 0.04) 50%, rgba(149, 149, 149, 0.04) 100%), radial-gradient(circle at 78% 10%, rgba(49, 49, 49, 0.04) 0%, rgba(49, 49, 49, 0.04) 50%, rgba(254, 254, 254, 0.04) 50%, rgba(254, 254, 254, 0.04) 100%), radial-gradient(circle at 92% 43%, rgba(34, 34, 34, 0.04) 0%, rgba(34, 34, 34, 0.04) 50%, rgba(206, 206, 206, 0.04) 50%, rgba(206, 206, 206, 0.04) 100%), linear-gradient(329deg, rgb(241, 77, 33), rgb(218, 227, 61))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "1f04bc90-cdc0-4612-b57b-4fbe3c43f45e",
+    "slug": "a7eef97f-7f3b-4fcd-9f3a-fdbe00327852",
     "stylesheet": "radial-gradient(circle at 17% 77%, rgba(17, 17, 17, 0.04) 0%, rgba(17, 17, 17, 0.04) 50%, rgba(197, 197, 197, 0.04) 50%, rgba(197, 197, 197, 0.04) 100%), radial-gradient(circle at 26% 17%, rgba(64, 64, 64, 0.04) 0%, rgba(64, 64, 64, 0.04) 50%, rgba(244, 244, 244, 0.04) 50%, rgba(244, 244, 244, 0.04) 100%), radial-gradient(circle at 44% 60%, rgba(177, 177, 177, 0.04) 0%, rgba(177, 177, 177, 0.04) 50%, rgba(187, 187, 187, 0.04) 50%, rgba(187, 187, 187, 0.04) 100%), linear-gradient(19deg, rgb(28, 117, 250), rgb(34, 2, 159))",
     "tags": [
-      "simplecircles",
-      "popular"
+      "simplecircles"
     ]
   },
   {
-    "slug": "beef4ca9-cc26-4af6-a283-273bb2f9afe7",
+    "slug": "4656d099-f28f-44fd-9821-2e998d4da8b1",
     "stylesheet": "radial-gradient(circle at 57% 90%, rgba(129, 129, 129, 0.04) 0%, rgba(129, 129, 129, 0.04) 50%, rgba(193, 193, 193, 0.04) 50%, rgba(193, 193, 193, 0.04) 100%), radial-gradient(circle at 91% 64%, rgba(253, 253, 253, 0.04) 0%, rgba(253, 253, 253, 0.04) 50%, rgba(58, 58, 58, 0.04) 50%, rgba(58, 58, 58, 0.04) 100%), radial-gradient(circle at 72% 98%, rgba(55, 55, 55, 0.04) 0%, rgba(55, 55, 55, 0.04) 50%, rgba(187, 187, 187, 0.04) 50%, rgba(187, 187, 187, 0.04) 100%), linear-gradient(58deg, rgb(185, 9, 110), rgb(243, 119, 170))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "804ccd03-9c0b-4a41-992e-0159f39b6bc4",
+    "slug": "bdb97a2e-48c5-45e1-8f46-91a2ec2ac56a",
     "stylesheet": "radial-gradient(circle at 79% 8%, rgba(218, 218, 218, 0.04) 0%, rgba(218, 218, 218, 0.04) 50%, rgba(129, 129, 129, 0.04) 50%, rgba(129, 129, 129, 0.04) 100%), radial-gradient(circle at 0% 68%, rgba(47, 47, 47, 0.04) 0%, rgba(47, 47, 47, 0.04) 50%, rgba(30, 30, 30, 0.04) 50%, rgba(30, 30, 30, 0.04) 100%), radial-gradient(circle at 96% 42%, rgba(88, 88, 88, 0.04) 0%, rgba(88, 88, 88, 0.04) 50%, rgba(225, 225, 225, 0.04) 50%, rgba(225, 225, 225, 0.04) 100%), linear-gradient(172deg, rgb(230, 6, 245), rgb(98, 24, 90))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "5680f81f-60c4-42cf-95cc-e1bcd11c7865",
+    "slug": "04c21c09-b9d4-4cb5-a57a-eeca60134a63",
     "stylesheet": "radial-gradient(circle at 50% 30%, rgba(209, 209, 209, 0.04) 0%, rgba(209, 209, 209, 0.04) 50%, rgba(138, 138, 138, 0.04) 50%, rgba(138, 138, 138, 0.04) 100%), radial-gradient(circle at 9% 40%, rgba(209, 209, 209, 0.04) 0%, rgba(209, 209, 209, 0.04) 50%, rgba(71, 71, 71, 0.04) 50%, rgba(71, 71, 71, 0.04) 100%), radial-gradient(circle at 84% 81%, rgba(147, 147, 147, 0.04) 0%, rgba(147, 147, 147, 0.04) 50%, rgba(253, 253, 253, 0.04) 50%, rgba(253, 253, 253, 0.04) 100%), linear-gradient(266deg, rgb(5, 73, 170), rgb(140, 100, 243))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "785ee3ff-d7c1-4893-a668-5b6d584ed89e",
+    "slug": "06bb153b-550d-40c2-ae64-fba1a57e8715",
     "stylesheet": "radial-gradient(circle at 75% 23%, rgba(226, 226, 226, 0.05) 0%, rgba(226, 226, 226, 0.05) 50%, rgba(11, 11, 11, 0.05) 50%, rgba(11, 11, 11, 0.05) 100%), radial-gradient(circle at 75% 51%, rgba(168, 168, 168, 0.05) 0%, rgba(168, 168, 168, 0.05) 50%, rgba(75, 75, 75, 0.05) 50%, rgba(75, 75, 75, 0.05) 100%), radial-gradient(circle at 38% 11%, rgba(31, 31, 31, 0.05) 0%, rgba(31, 31, 31, 0.05) 50%, rgba(254, 254, 254, 0.05) 50%, rgba(254, 254, 254, 0.05) 100%), linear-gradient(114deg, rgb(5, 95, 166), rgb(114, 125, 230))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "8b5063ec-1cd9-4535-b61a-a3591c6a874a",
+    "slug": "78341eca-4198-49af-a234-5372903f8d80",
     "stylesheet": "radial-gradient(circle at 1% 52%, rgba(139, 139, 139, 0.05) 0%, rgba(139, 139, 139, 0.05) 50%, rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 100%), radial-gradient(circle at 41% 28%, rgba(81, 81, 81, 0.05) 0%, rgba(81, 81, 81, 0.05) 50%, rgba(7, 7, 7, 0.05) 50%, rgba(7, 7, 7, 0.05) 100%), radial-gradient(circle at 48% 1%, rgba(93, 93, 93, 0.05) 0%, rgba(93, 93, 93, 0.05) 50%, rgba(7, 7, 7, 0.05) 50%, rgba(7, 7, 7, 0.05) 100%), linear-gradient(255deg, rgb(156, 41, 132), rgb(47, 14, 122))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "3711813a-0704-445a-b7dc-ef9eda35fdb9",
+    "slug": "ff55744a-7741-4266-8331-bcf4dc415bf5",
     "stylesheet": "radial-gradient(circle at 32% 12%, rgba(229, 229, 229, 0.05) 0%, rgba(229, 229, 229, 0.05) 50%, rgba(101, 101, 101, 0.05) 50%, rgba(101, 101, 101, 0.05) 100%), radial-gradient(circle at 49% 59%, rgba(113, 113, 113, 0.05) 0%, rgba(113, 113, 113, 0.05) 50%, rgba(240, 240, 240, 0.05) 50%, rgba(240, 240, 240, 0.05) 100%), radial-gradient(circle at 16% 86%, rgba(118, 118, 118, 0.05) 0%, rgba(118, 118, 118, 0.05) 50%, rgba(207, 207, 207, 0.05) 50%, rgba(207, 207, 207, 0.05) 100%), linear-gradient(252deg, rgb(34, 85, 150), rgb(117, 220, 202))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "4b790d97-1fa1-4d52-9b8d-1151e66c8195",
+    "slug": "d54e2ea2-be31-4333-b320-2f8e3e430729",
     "stylesheet": "radial-gradient(circle at 88% 18%, rgba(136, 136, 136, 0.05) 0%, rgba(136, 136, 136, 0.05) 50%, rgba(172, 172, 172, 0.05) 50%, rgba(172, 172, 172, 0.05) 100%), radial-gradient(circle at 34% 9%, rgba(149, 149, 149, 0.05) 0%, rgba(149, 149, 149, 0.05) 50%, rgba(55, 55, 55, 0.05) 50%, rgba(55, 55, 55, 0.05) 100%), radial-gradient(circle at 37% 56%, rgba(97, 97, 97, 0.05) 0%, rgba(97, 97, 97, 0.05) 50%, rgba(160, 160, 160, 0.05) 50%, rgba(160, 160, 160, 0.05) 100%), linear-gradient(69deg, rgb(10, 68, 151), rgb(72, 211, 165))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "34293cdb-8859-4a7b-a5f8-6f487b50ac0a",
+    "slug": "aa4f2422-4e41-4b12-a5aa-698140172649",
     "stylesheet": "radial-gradient(circle at 79% 12%, rgba(252, 252, 252, 0.04) 0%, rgba(252, 252, 252, 0.04) 50%, rgba(116, 116, 116, 0.04) 50%, rgba(116, 116, 116, 0.04) 100%), radial-gradient(circle at 98% 39%, rgba(136, 136, 136, 0.04) 0%, rgba(136, 136, 136, 0.04) 50%, rgba(34, 34, 34, 0.04) 50%, rgba(34, 34, 34, 0.04) 100%), radial-gradient(circle at 83% 49%, rgba(234, 234, 234, 0.04) 0%, rgba(234, 234, 234, 0.04) 50%, rgba(56, 56, 56, 0.04) 50%, rgba(56, 56, 56, 0.04) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "9a2d953a-3019-43fb-a547-e0416f01926e",
+    "slug": "891b244d-60b6-4784-9a5b-12bc59ab2b10",
     "stylesheet": "radial-gradient(circle at 28% 29%, rgba(237, 237, 237, 0.04) 0%, rgba(237, 237, 237, 0.04) 50%, rgba(136, 136, 136, 0.04) 50%, rgba(136, 136, 136, 0.04) 100%), radial-gradient(circle at 8% 78%, rgba(156, 156, 156, 0.04) 0%, rgba(156, 156, 156, 0.04) 50%, rgba(37, 37, 37, 0.04) 50%, rgba(37, 37, 37, 0.04) 100%), radial-gradient(circle at 29% 46%, rgba(251, 251, 251, 0.04) 0%, rgba(251, 251, 251, 0.04) 50%, rgba(198, 198, 198, 0.04) 50%, rgba(198, 198, 198, 0.04) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "23ae9848-0359-463a-a8ad-0a103a9e73c7",
+    "slug": "504cb0a3-9c1a-467d-bfd9-5800c60f94b3",
     "stylesheet": "radial-gradient(circle at 27% 33%, rgba(193, 193, 193, 0.04) 0%, rgba(193, 193, 193, 0.04) 50%, rgba(77, 77, 77, 0.04) 50%, rgba(77, 77, 77, 0.04) 100%), radial-gradient(circle at 35% 8%, rgba(183, 183, 183, 0.04) 0%, rgba(183, 183, 183, 0.04) 50%, rgba(25, 25, 25, 0.04) 50%, rgba(25, 25, 25, 0.04) 100%), radial-gradient(circle at 93% 50%, rgba(218, 218, 218, 0.04) 0%, rgba(218, 218, 218, 0.04) 50%, rgba(127, 127, 127, 0.04) 50%, rgba(127, 127, 127, 0.04) 100%), linear-gradient(90deg, hsl(0, 0%, 99%), hsl(0, 0%, 99%))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "cbb98aa2-ca6e-4cf6-a639-635392d12067",
+    "slug": "ec26d2e7-edbe-4e6d-a04d-84d6a4abde5b",
     "stylesheet": "radial-gradient(circle at 24% 23%, rgba(167, 167, 167, 0.06) 0%, rgba(167, 167, 167, 0.06) 25%, rgba(148, 148, 148, 0.06) 25%, rgba(148, 148, 148, 0.06) 50%, rgba(129, 129, 129, 0.06) 50%, rgba(129, 129, 129, 0.06) 75%, rgba(110, 110, 110, 0.06) 75%, rgba(110, 110, 110, 0.06) 100%), radial-gradient(circle at 58% 30%, rgba(14, 14, 14, 0.06) 0%, rgba(14, 14, 14, 0.06) 25%, rgba(60, 60, 60, 0.06) 25%, rgba(60, 60, 60, 0.06) 50%, rgba(107, 107, 107, 0.06) 50%, rgba(107, 107, 107, 0.06) 75%, rgba(153, 153, 153, 0.06) 75%, rgba(153, 153, 153, 0.06) 100%), radial-gradient(circle at 79% 53%, rgba(225, 225, 225, 0.06) 0%, rgba(225, 225, 225, 0.06) 25%, rgba(189, 189, 189, 0.06) 25%, rgba(189, 189, 189, 0.06) 50%, rgba(152, 152, 152, 0.06) 50%, rgba(152, 152, 152, 0.06) 75%, rgba(116, 116, 116, 0.06) 75%, rgba(116, 116, 116, 0.06) 100%), linear-gradient(221deg, rgb(0, 0, 0), rgb(0, 0, 0))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "284dc8db-8fbd-4ac7-8cb8-fdf9162a0e5b",
+    "slug": "28259d93-1dc0-494c-bd07-204746a67ba0",
     "stylesheet": "radial-gradient(circle at 69% 86%, rgba(165, 165, 165, 0.06) 0%, rgba(165, 165, 165, 0.06) 25%, rgba(193, 193, 193, 0.06) 25%, rgba(193, 193, 193, 0.06) 50%, rgba(221, 221, 221, 0.06) 50%, rgba(221, 221, 221, 0.06) 75%, rgba(249, 249, 249, 0.06) 75%, rgba(249, 249, 249, 0.06) 100%), radial-gradient(circle at 49% 76%, rgba(129, 129, 129, 0.06) 0%, rgba(129, 129, 129, 0.06) 25%, rgba(164, 164, 164, 0.06) 25%, rgba(164, 164, 164, 0.06) 50%, rgba(200, 200, 200, 0.06) 50%, rgba(200, 200, 200, 0.06) 75%, rgba(235, 235, 235, 0.06) 75%, rgba(235, 235, 235, 0.06) 100%), radial-gradient(circle at 22% 64%, rgba(173, 173, 173, 0.06) 0%, rgba(173, 173, 173, 0.06) 25%, rgba(119, 119, 119, 0.06) 25%, rgba(119, 119, 119, 0.06) 50%, rgba(64, 64, 64, 0.06) 50%, rgba(64, 64, 64, 0.06) 75%, rgba(10, 10, 10, 0.06) 75%, rgba(10, 10, 10, 0.06) 100%), linear-gradient(307deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "simplecircles",
-      "lightbg",
-      "popular"
+      "lightbg"
     ]
   },
   {
-    "slug": "55f29616-595d-4837-ac90-96d690682e3d",
+    "slug": "574fb013-943d-4cdf-9c66-2068e5068321",
     "stylesheet": "radial-gradient(circle at 11% 63%, rgba(82, 82, 82, 0.06) 0%, rgba(82, 82, 82, 0.06) 25%, rgba(136, 136, 136, 0.06) 25%, rgba(136, 136, 136, 0.06) 50%, rgba(191, 191, 191, 0.06) 50%, rgba(191, 191, 191, 0.06) 75%, rgba(245, 245, 245, 0.06) 75%, rgba(245, 245, 245, 0.06) 100%), radial-gradient(circle at 16% 28%, rgba(80, 80, 80, 0.06) 0%, rgba(80, 80, 80, 0.06) 25%, rgba(68, 68, 68, 0.06) 25%, rgba(68, 68, 68, 0.06) 50%, rgba(56, 56, 56, 0.06) 50%, rgba(56, 56, 56, 0.06) 75%, rgba(44, 44, 44, 0.06) 75%, rgba(44, 44, 44, 0.06) 100%), radial-gradient(circle at 51% 54%, rgba(179, 179, 179, 0.06) 0%, rgba(179, 179, 179, 0.06) 25%, rgba(121, 121, 121, 0.06) 25%, rgba(121, 121, 121, 0.06) 50%, rgba(62, 62, 62, 0.06) 50%, rgba(62, 62, 62, 0.06) 75%, rgba(4, 4, 4, 0.06) 75%, rgba(4, 4, 4, 0.06) 100%), linear-gradient(303deg, rgb(255, 255, 255), rgb(255, 255, 255))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "c765b436-dc80-45ab-bb6d-27db8ac5f54a",
+    "slug": "e73a0af3-6cc8-41cc-9b3b-191a3c4d468d",
     "stylesheet": "radial-gradient(circle at 16% 83%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(63, 63, 63, 0.06) 50%, rgba(63, 63, 63, 0.06) 100%), radial-gradient(circle at 68% 87%, rgba(66, 66, 66, 0.06) 0%, rgba(66, 66, 66, 0.06) 50%, rgba(105, 105, 105, 0.06) 50%, rgba(105, 105, 105, 0.06) 100%), radial-gradient(circle at 38% 50%, rgba(123, 123, 123, 0.06) 0%, rgba(123, 123, 123, 0.06) 50%, rgba(172, 172, 172, 0.06) 50%, rgba(172, 172, 172, 0.06) 100%), linear-gradient(90deg, hsl(0, 0%, 1%), hsl(0, 0%, 1%))",
     "tags": [
       "simplecircles",
-      "darkbg",
-      "popular"
+      "darkbg"
     ]
   },
   {
-    "slug": "3f8512bd-e8c3-4458-8f64-d4c7e0170147",
+    "slug": "1513ff64-59bf-4954-9f09-626b658b8454",
     "stylesheet": "radial-gradient(circle at 34% 75%, rgba(142, 142, 142, 0.06) 0%, rgba(142, 142, 142, 0.06) 50%, rgba(11, 11, 11, 0.06) 50%, rgba(11, 11, 11, 0.06) 100%), radial-gradient(circle at 40% 51%, rgba(12, 12, 12, 0.06) 0%, rgba(12, 12, 12, 0.06) 50%, rgba(242, 242, 242, 0.06) 50%, rgba(242, 242, 242, 0.06) 100%), radial-gradient(circle at 50% 87%, rgba(189, 189, 189, 0.06) 0%, rgba(189, 189, 189, 0.06) 50%, rgba(0, 0, 0, 0.06) 50%, rgba(0, 0, 0, 0.06) 100%), linear-gradient(90deg, hsl(0, 0%, 96%), hsl(0, 0%, 96%))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "d526fa00-099b-4437-819b-3d1dc7173276",
+    "slug": "5e1c742b-06b7-4720-b9ff-78339d8b8690",
     "stylesheet": "radial-gradient(circle at 18% 40%, rgba(53, 53, 53, 0.06) 0%, rgba(53, 53, 53, 0.06) 50%, rgba(254, 254, 254, 0.06) 50%, rgba(254, 254, 254, 0.06) 100%), radial-gradient(circle at 66% 36%, rgba(126, 126, 126, 0.06) 0%, rgba(126, 126, 126, 0.06) 50%, rgba(70, 70, 70, 0.06) 50%, rgba(70, 70, 70, 0.06) 100%), radial-gradient(circle at 33% 100%, rgba(237, 237, 237, 0.06) 0%, rgba(237, 237, 237, 0.06) 50%, rgba(162, 162, 162, 0.06) 50%, rgba(162, 162, 162, 0.06) 100%), linear-gradient(90deg, hsl(0, 0%, 89%), hsl(0, 0%, 89%))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "9cb74b11-25f4-41fc-89b5-a4de5a2dec48",
+    "slug": "d3f51b59-37d2-42ba-a762-cb2c1da96680",
     "stylesheet": "radial-gradient(circle at 64% 7%, rgba(55, 55, 55, 0.06) 0%, rgba(55, 55, 55, 0.06) 50%, rgba(228, 228, 228, 0.06) 50%, rgba(228, 228, 228, 0.06) 100%), radial-gradient(circle at 71% 6%, rgba(182, 182, 182, 0.06) 0%, rgba(182, 182, 182, 0.06) 50%, rgba(86, 86, 86, 0.06) 50%, rgba(86, 86, 86, 0.06) 100%), radial-gradient(circle at 94% 76%, rgba(158, 158, 158, 0.06) 0%, rgba(158, 158, 158, 0.06) 50%, rgba(76, 76, 76, 0.06) 50%, rgba(76, 76, 76, 0.06) 100%), linear-gradient(90deg, rgb(250, 250, 250), rgb(220, 220, 220))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "0dd3dd5a-8249-4ae6-bd63-ad1aa13cd034",
+    "slug": "3232079c-0666-4679-b107-17482dec9505",
     "stylesheet": "radial-gradient(circle at 30% 94%, rgba(245, 245, 245, 0.06) 0%, rgba(245, 245, 245, 0.06) 50%, rgba(21, 21, 21, 0.06) 50%, rgba(21, 21, 21, 0.06) 100%), radial-gradient(circle at 59% 19%, rgba(248, 248, 248, 0.06) 0%, rgba(248, 248, 248, 0.06) 50%, rgba(87, 87, 87, 0.06) 50%, rgba(87, 87, 87, 0.06) 100%), radial-gradient(circle at 7% 11%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(254, 254, 254, 0.06) 50%, rgba(254, 254, 254, 0.06) 100%), linear-gradient(90deg, rgb(189, 189, 189), rgb(205, 205, 205))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "e790b00b-7066-4bf6-a433-42746e3e368e",
+    "slug": "0488f1c7-6add-4737-8d4a-dde6eb78ab26",
     "stylesheet": "radial-gradient(circle at 17% 36%, rgba(35, 35, 35, 0.06) 0%, rgba(35, 35, 35, 0.06) 25%, rgba(42, 42, 42, 0.06) 25%, rgba(42, 42, 42, 0.06) 50%, rgba(48, 48, 48, 0.06) 50%, rgba(48, 48, 48, 0.06) 75%, rgba(55, 55, 55, 0.06) 75%, rgba(55, 55, 55, 0.06) 100%), radial-gradient(circle at 4% 82%, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 25%, rgba(39, 39, 39, 0.06) 25%, rgba(39, 39, 39, 0.06) 50%, rgba(78, 78, 78, 0.06) 50%, rgba(78, 78, 78, 0.06) 75%, rgba(117, 117, 117, 0.06) 75%, rgba(117, 117, 117, 0.06) 100%), radial-gradient(circle at 45% 66%, rgba(64, 64, 64, 0.06) 0%, rgba(64, 64, 64, 0.06) 25%, rgba(91, 91, 91, 0.06) 25%, rgba(91, 91, 91, 0.06) 50%, rgba(117, 117, 117, 0.06) 50%, rgba(117, 117, 117, 0.06) 75%, rgba(144, 144, 144, 0.06) 75%, rgba(144, 144, 144, 0.06) 100%), linear-gradient(129deg, rgb(29, 29, 29), rgb(24, 24, 24))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "3ab5f332-4ca2-4ae8-ac89-7f7c5bab3031",
+    "slug": "3c8b0bc7-4dec-4085-aeee-a224f5686093",
     "stylesheet": "radial-gradient(circle at 49% 80%, rgba(105, 105, 105, 0.06) 0%, rgba(105, 105, 105, 0.06) 25%, rgba(119, 119, 119, 0.06) 25%, rgba(119, 119, 119, 0.06) 50%, rgba(134, 134, 134, 0.06) 50%, rgba(134, 134, 134, 0.06) 75%, rgba(148, 148, 148, 0.06) 75%, rgba(148, 148, 148, 0.06) 100%), radial-gradient(circle at 58% 97%, rgba(130, 130, 130, 0.06) 0%, rgba(130, 130, 130, 0.06) 25%, rgba(97, 97, 97, 0.06) 25%, rgba(97, 97, 97, 0.06) 50%, rgba(63, 63, 63, 0.06) 50%, rgba(63, 63, 63, 0.06) 75%, rgba(30, 30, 30, 0.06) 75%, rgba(30, 30, 30, 0.06) 100%), radial-gradient(circle at 77% 62%, rgba(106, 106, 106, 0.06) 0%, rgba(106, 106, 106, 0.06) 25%, rgba(71, 71, 71, 0.06) 25%, rgba(71, 71, 71, 0.06) 50%, rgba(37, 37, 37, 0.06) 50%, rgba(37, 37, 37, 0.06) 75%, rgba(2, 2, 2, 0.06) 75%, rgba(2, 2, 2, 0.06) 100%), radial-gradient(circle at 53% 15%, rgba(182, 182, 182, 0.06) 0%, rgba(182, 182, 182, 0.06) 25%, rgba(149, 149, 149, 0.06) 25%, rgba(149, 149, 149, 0.06) 50%, rgba(115, 115, 115, 0.06) 50%, rgba(115, 115, 115, 0.06) 75%, rgba(82, 82, 82, 0.06) 75%, rgba(82, 82, 82, 0.06) 100%), radial-gradient(circle at 65% 73%, rgba(230, 230, 230, 0.06) 0%, rgba(230, 230, 230, 0.06) 25%, rgba(222, 222, 222, 0.06) 25%, rgba(222, 222, 222, 0.06) 50%, rgba(214, 214, 214, 0.06) 50%, rgba(214, 214, 214, 0.06) 75%, rgba(206, 206, 206, 0.06) 75%, rgba(206, 206, 206, 0.06) 100%), linear-gradient(135deg, rgb(131, 27, 242), rgb(248, 30, 172))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "0c12d74f-45ea-4ce2-a2b6-79dbd905ae5c",
+    "slug": "cd0f6104-bb6a-4607-9a6d-ac66c5777566",
     "stylesheet": "radial-gradient(circle at 10% 26%, rgba(90, 90, 90, 0.06) 0%, rgba(90, 90, 90, 0.06) 25%, rgba(137, 137, 137, 0.06) 25%, rgba(137, 137, 137, 0.06) 50%, rgba(185, 185, 185, 0.06) 50%, rgba(185, 185, 185, 0.06) 75%, rgba(232, 232, 232, 0.06) 75%, rgba(232, 232, 232, 0.06) 100%), radial-gradient(circle at 46% 66%, rgba(171, 171, 171, 0.06) 0%, rgba(171, 171, 171, 0.06) 25%, rgba(128, 128, 128, 0.06) 25%, rgba(128, 128, 128, 0.06) 50%, rgba(84, 84, 84, 0.06) 50%, rgba(84, 84, 84, 0.06) 75%, rgba(41, 41, 41, 0.06) 75%, rgba(41, 41, 41, 0.06) 100%), linear-gradient(90deg, rgb(107, 35, 237), rgb(61, 203, 252))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "7772fe93-b329-4bb2-9f66-a5b0ac4560dc",
+    "slug": "677e2f88-325c-419c-bfbf-b9c9c1898a6a",
     "stylesheet": "radial-gradient(circle at 90% 66%, rgba(25, 25, 25, 0.06) 0%, rgba(25, 25, 25, 0.06) 25%, rgba(23, 23, 23, 0.06) 25%, rgba(23, 23, 23, 0.06) 50%, rgba(20, 20, 20, 0.06) 50%, rgba(20, 20, 20, 0.06) 75%, rgba(18, 18, 18, 0.06) 75%, rgba(18, 18, 18, 0.06) 100%), radial-gradient(circle at 62% 23%, rgba(154, 154, 154, 0.06) 0%, rgba(154, 154, 154, 0.06) 25%, rgba(111, 111, 111, 0.06) 25%, rgba(111, 111, 111, 0.06) 50%, rgba(68, 68, 68, 0.06) 50%, rgba(68, 68, 68, 0.06) 75%, rgba(25, 25, 25, 0.06) 75%, rgba(25, 25, 25, 0.06) 100%), radial-gradient(circle at 47% 85%, rgba(97, 97, 97, 0.06) 0%, rgba(97, 97, 97, 0.06) 25%, rgba(130, 130, 130, 0.06) 25%, rgba(130, 130, 130, 0.06) 50%, rgba(162, 162, 162, 0.06) 50%, rgba(162, 162, 162, 0.06) 75%, rgba(195, 195, 195, 0.06) 75%, rgba(195, 195, 195, 0.06) 100%), radial-gradient(circle at 72% 0%, rgba(214, 214, 214, 0.06) 0%, rgba(214, 214, 214, 0.06) 25%, rgba(223, 223, 223, 0.06) 25%, rgba(223, 223, 223, 0.06) 50%, rgba(231, 231, 231, 0.06) 50%, rgba(231, 231, 231, 0.06) 75%, rgba(240, 240, 240, 0.06) 75%, rgba(240, 240, 240, 0.06) 100%), linear-gradient(90deg, rgb(181, 12, 26), rgb(206, 132, 31))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "5eda3eb0-c280-42dc-ba42-e488ffd90b9e",
-    "stylesheet": "radial-gradient(circle at 56% 8%, rgba(100, 100, 100, 0.06) 0%, rgba(100, 100, 100, 0.06) 33.33%, rgba(69, 69, 69, 0.06) 33.33%, rgba(69, 69, 69, 0.06) 66.67%, rgba(37, 37, 37, 0.06) 66.67%, rgba(37, 37, 37, 0.06) 100%), radial-gradient(circle at 78% 50%, rgba(147, 147, 147, 0.06) 0%, rgba(147, 147, 147, 0.06) 33.33%, rgba(98, 98, 98, 0.06) 33.33%, rgba(98, 98, 98, 0.06) 66.67%, rgba(49, 49, 49, 0.06) 66.67%, rgba(49, 49, 49, 0.06) 100%), radial-gradient(circle at 47% 31%, rgba(62, 62, 62, 0.06) 0%, rgba(62, 62, 62, 0.06) 33.33%, rgba(102, 102, 102, 0.06) 33.33%, rgba(102, 102, 102, 0.06) 66.67%, rgba(141, 141, 141, 0.06) 66.67%, rgba(141, 141, 141, 0.06) 100%), linear-gradient(0, rgb(117, 18, 155), rgb(5, 36, 0))",
-    "tags": [
-      "simplecircles"
-    ]
-  },
-  {
-    "slug": "b381fdca-3179-46a6-9d65-ffeac46f3b88",
+    "slug": "7f68062e-add7-446c-a0f3-15f157d91428",
     "stylesheet": "radial-gradient(circle at 45% 77%, rgba(43, 43, 43, 0.06) 0%, rgba(43, 43, 43, 0.06) 33.33%, rgba(123, 123, 123, 0.06) 33.33%, rgba(123, 123, 123, 0.06) 66.67%, rgba(202, 202, 202, 0.06) 66.67%, rgba(202, 202, 202, 0.06) 100%), radial-gradient(circle at 48% 55%, rgba(21, 21, 21, 0.06) 0%, rgba(21, 21, 21, 0.06) 33.33%, rgba(17, 17, 17, 0.06) 33.33%, rgba(17, 17, 17, 0.06) 66.67%, rgba(13, 13, 13, 0.06) 66.67%, rgba(13, 13, 13, 0.06) 100%), radial-gradient(circle at 71% 42%, rgba(97, 97, 97, 0.06) 0%, rgba(97, 97, 97, 0.06) 33.33%, rgba(164, 164, 164, 0.06) 33.33%, rgba(164, 164, 164, 0.06) 66.67%, rgba(230, 230, 230, 0.06) 66.67%, rgba(230, 230, 230, 0.06) 100%), linear-gradient(45deg, rgb(60, 120, 59), rgb(69, 230, 164))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "60cc52d4-fc2e-4c4e-adb3-760d1a916d09",
+    "slug": "67a31946-cf52-4ada-8872-6f0ddc3dd1b5",
     "stylesheet": "radial-gradient(circle at 30% 97%, rgba(4, 4, 4, 0.06) 0%, rgba(4, 4, 4, 0.06) 33.33%, rgba(4, 4, 4, 0.06) 33.33%, rgba(4, 4, 4, 0.06) 66.67%, rgba(3, 3, 3, 0.06) 66.67%, rgba(3, 3, 3, 0.06) 100%), radial-gradient(circle at 22% 20%, rgba(154, 154, 154, 0.06) 0%, rgba(154, 154, 154, 0.06) 33.33%, rgba(78, 78, 78, 0.06) 33.33%, rgba(78, 78, 78, 0.06) 66.67%, rgba(1, 1, 1, 0.06) 66.67%, rgba(1, 1, 1, 0.06) 100%), radial-gradient(circle at 67% 32%, rgba(129, 129, 129, 0.06) 0%, rgba(129, 129, 129, 0.06) 33.33%, rgba(165, 165, 165, 0.06) 33.33%, rgba(165, 165, 165, 0.06) 66.67%, rgba(201, 201, 201, 0.06) 66.67%, rgba(201, 201, 201, 0.06) 100%), linear-gradient(45deg, rgb(236, 52, 23), rgb(251, 186, 40))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "0800eb5c-2c48-448c-88c2-35a10433522b",
+    "slug": "63d6bea1-2ddd-45d8-9e9d-b40a7374583e",
     "stylesheet": "radial-gradient(circle at 8% 56%, rgba(4, 4, 4, 0.06) 0%, rgba(4, 4, 4, 0.06) 33.33%, rgba(119, 119, 119, 0.06) 33.33%, rgba(119, 119, 119, 0.06) 66.67%, rgba(234, 234, 234, 0.06) 66.67%, rgba(234, 234, 234, 0.06) 100%), radial-gradient(circle at 41% 77%, rgba(42, 42, 42, 0.06) 0%, rgba(42, 42, 42, 0.06) 33.33%, rgba(148, 148, 148, 0.06) 33.33%, rgba(148, 148, 148, 0.06) 66.67%, rgba(254, 254, 254, 0.06) 66.67%, rgba(254, 254, 254, 0.06) 100%), radial-gradient(circle at 77% 5%, rgba(79, 79, 79, 0.06) 0%, rgba(79, 79, 79, 0.06) 33.33%, rgba(88, 88, 88, 0.06) 33.33%, rgba(88, 88, 88, 0.06) 66.67%, rgba(97, 97, 97, 0.06) 66.67%, rgba(97, 97, 97, 0.06) 100%), linear-gradient(90deg, rgb(155, 95, 188), rgb(70, 13, 64))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "020edc61-063d-47a6-a521-48a4f7aaa5e2",
+    "slug": "8d598669-78e5-4eda-9ba8-00df36fd2c7a",
     "stylesheet": "radial-gradient(circle at 52% 33%, rgba(17, 17, 17, 0.08) 0%, rgba(17, 17, 17, 0.08) 33.33%, rgba(74, 74, 74, 0.08) 33.33%, rgba(74, 74, 74, 0.08) 66.67%, rgba(130, 130, 130, 0.08) 66.67%, rgba(130, 130, 130, 0.08) 100%), radial-gradient(circle at 70% 65%, rgba(129, 129, 129, 0.08) 0%, rgba(129, 129, 129, 0.08) 33.33%, rgba(95, 95, 95, 0.08) 33.33%, rgba(95, 95, 95, 0.08) 66.67%, rgba(60, 60, 60, 0.08) 66.67%, rgba(60, 60, 60, 0.08) 100%), radial-gradient(circle at 97% 89%, rgba(21, 21, 21, 0.08) 0%, rgba(21, 21, 21, 0.08) 33.33%, rgba(89, 89, 89, 0.08) 33.33%, rgba(89, 89, 89, 0.08) 66.67%, rgba(156, 156, 156, 0.08) 66.67%, rgba(156, 156, 156, 0.08) 100%), linear-gradient(0, rgb(17, 9, 206), rgb(65, 75, 237))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "f7c856a3-6006-458e-98e6-c7a318d30a7c",
+    "slug": "44be3f04-acbd-4899-8598-1111f40bd2f2",
     "stylesheet": "radial-gradient(circle at 45% 92%, rgba(154, 154, 154, 0.08) 0%, rgba(154, 154, 154, 0.08) 33.33%, rgba(119, 119, 119, 0.08) 33.33%, rgba(119, 119, 119, 0.08) 66.67%, rgba(83, 83, 83, 0.08) 66.67%, rgba(83, 83, 83, 0.08) 100%), radial-gradient(circle at 25% 59%, rgba(82, 82, 82, 0.08) 0%, rgba(82, 82, 82, 0.08) 33.33%, rgba(93, 93, 93, 0.08) 33.33%, rgba(93, 93, 93, 0.08) 66.67%, rgba(104, 104, 104, 0.08) 66.67%, rgba(104, 104, 104, 0.08) 100%), radial-gradient(circle at 7% 33%, rgba(56, 56, 56, 0.08) 0%, rgba(56, 56, 56, 0.08) 33.33%, rgba(134, 134, 134, 0.08) 33.33%, rgba(134, 134, 134, 0.08) 66.67%, rgba(212, 212, 212, 0.08) 66.67%, rgba(212, 212, 212, 0.08) 100%), linear-gradient(90deg, rgb(3, 199, 193), rgb(92, 3, 177))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "1daee8a0-b685-430c-b679-144d454f3072",
+    "slug": "861870f0-7e7d-4b69-a24d-d3bc869f62f2",
     "stylesheet": "radial-gradient(circle at 39% 47%, rgba(107, 107, 107, 0.08) 0%, rgba(107, 107, 107, 0.08) 33.33%, rgba(72, 72, 72, 0.08) 33.33%, rgba(72, 72, 72, 0.08) 66.67%, rgba(36, 36, 36, 0.08) 66.67%, rgba(36, 36, 36, 0.08) 100%), radial-gradient(circle at 53% 74%, rgba(182, 182, 182, 0.08) 0%, rgba(182, 182, 182, 0.08) 33.33%, rgba(202, 202, 202, 0.08) 33.33%, rgba(202, 202, 202, 0.08) 66.67%, rgba(221, 221, 221, 0.08) 66.67%, rgba(221, 221, 221, 0.08) 100%), radial-gradient(circle at 14% 98%, rgba(184, 184, 184, 0.08) 0%, rgba(184, 184, 184, 0.08) 33.33%, rgba(96, 96, 96, 0.08) 33.33%, rgba(96, 96, 96, 0.08) 66.67%, rgba(7, 7, 7, 0.08) 66.67%, rgba(7, 7, 7, 0.08) 100%), linear-gradient(45deg, rgb(97, 14, 117), rgb(20, 32, 127))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "b42b3a88-a406-4dec-af22-0b744f00539f",
+    "slug": "9e990276-d041-483d-a38b-e01d841c42fb",
     "stylesheet": "radial-gradient(circle at 85% 40%, rgba(204, 204, 204, 0.08) 0%, rgba(204, 204, 204, 0.08) 33.33%, rgba(188, 188, 188, 0.08) 33.33%, rgba(188, 188, 188, 0.08) 66.67%, rgba(171, 171, 171, 0.08) 66.67%, rgba(171, 171, 171, 0.08) 100%), radial-gradient(circle at 27% 80%, rgba(196, 196, 196, 0.08) 0%, rgba(196, 196, 196, 0.08) 33.33%, rgba(115, 115, 115, 0.08) 33.33%, rgba(115, 115, 115, 0.08) 66.67%, rgba(33, 33, 33, 0.08) 66.67%, rgba(33, 33, 33, 0.08) 100%), radial-gradient(circle at 95% 54%, rgba(223, 223, 223, 0.08) 0%, rgba(223, 223, 223, 0.08) 33.33%, rgba(168, 168, 168, 0.08) 33.33%, rgba(168, 168, 168, 0.08) 66.67%, rgba(112, 112, 112, 0.08) 66.67%, rgba(112, 112, 112, 0.08) 100%), linear-gradient(45deg, rgb(31, 80, 162), rgb(43, 81, 194))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "7b25bafb-f391-4991-be8e-f37c29386f39",
+    "slug": "f193c3a4-ca06-43e2-8dce-56c8d60ae2db",
     "stylesheet": "radial-gradient(circle at 17% 5%, rgba(185, 185, 185, 0.1) 0%, rgba(185, 185, 185, 0.1) 33.33%, rgba(216, 216, 216, 0.1) 33.33%, rgba(216, 216, 216, 0.1) 66.67%, rgba(247, 247, 247, 0.1) 66.67%, rgba(247, 247, 247, 0.1) 100%), radial-gradient(circle at 36% 54%, rgba(52, 52, 52, 0.1) 0%, rgba(52, 52, 52, 0.1) 33.33%, rgba(111, 111, 111, 0.1) 33.33%, rgba(111, 111, 111, 0.1) 66.67%, rgba(170, 170, 170, 0.1) 66.67%, rgba(170, 170, 170, 0.1) 100%), radial-gradient(circle at 62% 35%, rgba(209, 209, 209, 0.1) 0%, rgba(209, 209, 209, 0.1) 33.33%, rgba(107, 107, 107, 0.1) 33.33%, rgba(107, 107, 107, 0.1) 66.67%, rgba(5, 5, 5, 0.1) 66.67%, rgba(5, 5, 5, 0.1) 100%), linear-gradient(45deg, rgb(49, 231, 152), rgb(120, 182, 17))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "381ed24e-7b76-4229-a972-861d86b254fe",
+    "slug": "5423ca5a-599b-4090-be67-a9f351fcbeb5",
     "stylesheet": "radial-gradient(circle at 93% 91%, rgba(173, 173, 173, 0.11) 0%, rgba(173, 173, 173, 0.11) 33.33%, rgba(211, 211, 211, 0.11) 33.33%, rgba(211, 211, 211, 0.11) 66.67%, rgba(248, 248, 248, 0.11) 66.67%, rgba(248, 248, 248, 0.11) 100%), radial-gradient(circle at 74% 82%, rgba(240, 240, 240, 0.17) 0%, rgba(240, 240, 240, 0.17) 33.33%, rgba(223, 223, 223, 0.17) 33.33%, rgba(223, 223, 223, 0.17) 66.67%, rgba(205, 205, 205, 0.17) 66.67%, rgba(205, 205, 205, 0.17) 100%), radial-gradient(circle at 79% 0%, rgba(198, 198, 198, 0.16) 0%, rgba(198, 198, 198, 0.16) 33.33%, rgba(157, 157, 157, 0.16) 33.33%, rgba(157, 157, 157, 0.16) 66.67%, rgba(116, 116, 116, 0.16) 66.67%, rgba(116, 116, 116, 0.16) 100%), linear-gradient(0, rgb(38, 16, 178), rgb(103, 237, 187))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "6fe657fe-eab6-4d8c-860f-365ae76c0a4f",
+    "slug": "1a3bb40a-bd53-41a1-acec-c1c0935a95be",
     "stylesheet": "radial-gradient(circle at 9% 86%, rgba(238, 238, 238, 0.19) 0%, rgba(238, 238, 238, 0.19) 33.33%, rgba(216, 216, 216, 0.19) 33.33%, rgba(216, 216, 216, 0.19) 66.67%, rgba(194, 194, 194, 0.19) 66.67%, rgba(194, 194, 194, 0.19) 100%), radial-gradient(circle at 20% 5%, rgba(182, 182, 182, 0.07) 0%, rgba(182, 182, 182, 0.07) 33.33%, rgba(155, 155, 155, 0.07) 33.33%, rgba(155, 155, 155, 0.07) 66.67%, rgba(128, 128, 128, 0.07) 66.67%, rgba(128, 128, 128, 0.07) 100%), radial-gradient(circle at 25% 97%, rgba(137, 137, 137, 0.22) 0%, rgba(137, 137, 137, 0.22) 33.33%, rgba(91, 91, 91, 0.22) 33.33%, rgba(91, 91, 91, 0.22) 66.67%, rgba(45, 45, 45, 0.22) 66.67%, rgba(45, 45, 45, 0.22) 100%), linear-gradient(0, rgb(195, 93, 156), rgb(118, 102, 251))",
     "tags": [
       "simplecircles"
     ]
   },
   {
-    "slug": "09bf1d19-6575-4b72-a677-a367f7e270cb",
+    "slug": "eef1685a-1030-48c0-a526-ac4ea9829206",
     "stylesheet": "radial-gradient(circle at 20% 12%, rgba(7, 7, 7, 0.24) 0%, rgba(7, 7, 7, 0.24) 33.33%, rgba(30, 30, 30, 0.24) 33.33%, rgba(30, 30, 30, 0.24) 66.67%, rgba(53, 53, 53, 0.24) 66.67%, rgba(53, 53, 53, 0.24) 100%), radial-gradient(circle at 66% 14%, rgba(45, 45, 45, 0.2) 0%, rgba(45, 45, 45, 0.2) 33.33%, rgba(72, 72, 72, 0.2) 33.33%, rgba(72, 72, 72, 0.2) 66.67%, rgba(99, 99, 99, 0.2) 66.67%, rgba(99, 99, 99, 0.2) 100%), radial-gradient(circle at 3% 81%, rgba(83, 83, 83, 0.16) 0%, rgba(83, 83, 83, 0.16) 33.33%, rgba(142, 142, 142, 0.16) 33.33%, rgba(142, 142, 142, 0.16) 66.67%, rgba(201, 201, 201, 0.16) 66.67%, rgba(201, 201, 201, 0.16) 100%), linear-gradient(45deg, rgb(139, 163, 255), rgb(132, 39, 232))",
     "tags": [
       "simplecircles"

@@ -15,21 +15,32 @@ namespace Playground.Data.Repositories
             _databaseProvider = databaseProvider;
         }
 
-        public IEnumerable<Category> GetCategories()
+        public List<Category> GetCategories()
         {
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Category>(nameof(Category));
-                return collection.FindAll().OrderBy(x => x.Id);
+                var result = collection.FindAll()
+                    .OrderBy(x => x.Id)
+                    .ToList();
+
+                var gradients = db.GetCollection<Gradient>();
+
+                foreach (var cat in result)
+                {
+                    cat.Count = gradients.Count(x => x.Tags.Contains(cat.Tag));
+                }
+
+                return result;
             }
         }
 
-        public IEnumerable<Theme> GetThemes()
+        public List<Theme> GetThemes()
         {
             using (var db = _databaseProvider.CreateDatabase())
             {
                 var collection = db.GetCollection<Theme>(nameof(Theme));
-                return collection.FindAll().OrderBy(x => x.Id);
+                return collection.FindAll().OrderBy(x => x.Id).ToList();
             }
         }
 
@@ -42,7 +53,7 @@ namespace Playground.Data.Repositories
         private void InsertData<T>(LiteDatabase db, IDocumentRepository documentRepository, string nameSpace, string fileName)
         {
             var collection = db.GetCollection<T>(typeof(T).Name);
-            collection.Delete(Query.All());
+            collection.DeleteAll();
 
             var documents = documentRepository.GetDocumentCollection<T>(nameSpace, fileName);
             collection.InsertBulk(documents);

@@ -8,9 +8,11 @@ namespace MagicCrawler.Services
 {
     public class Crawler
     {
-        private readonly Storage _storage;
+        private readonly Storage _storage; 
         private readonly HtmlLoader _loader;
         private readonly HtmlParser _parser;
+
+        public Action<string, double> Monitor { get; set; }
 
         public Crawler(Storage storage, HtmlLoader loader)
         {
@@ -22,26 +24,31 @@ namespace MagicCrawler.Services
         public async Task ExecuteJobs(List<JobItem> jobs)
         {
             _storage.CreateOutput();
-
-            var categories = new List<Category>();
+            
+            var stepProgress = 100d / jobs.Count;
+            var currentProgress = 0d;
             var gradients = new List<Gradient>();
 
             foreach (var job in jobs)
             {
-                await ExecuteJob(job, categories, gradients);
+                Monitor?.Invoke(job.Data.GetFile(), currentProgress);
+                currentProgress += stepProgress;
+
+                await ExecuteJob(job, gradients);
             }
 
             WriteMetadata();
-            WriteCategories(categories);
-            WriteCollections(jobs.Select(x => x.Data));
+            WriteCollections(jobs.Select(x => x.Data).ToList());
+
+            Monitor?.Invoke($"Done. Parsed {gradients.Count} gradients.", 100);
         }
 
-        private async Task ExecuteJob(JobItem job, List<Category> categories, List<Gradient> gradients)
+        private async Task ExecuteJob(JobItem job, List<Gradient> gradients)
         {
             try
             {
                 job.Status = "Parsing...";
-                var result = await ParseCollection(job.Data, categories, gradients);
+                var result = await ParseCollection(job.Data, gradients);
                 job.Status = result == null ? "Done" : $"Parsed {result}";
             }
             catch (Exception e)
@@ -50,10 +57,8 @@ namespace MagicCrawler.Services
             }
         }
 
-        private async Task<int?> ParseCollection(Collection collection, List<Category> categories, List<Gradient> gradients)
+        private async Task<int?> ParseCollection(Collection collection, List<Gradient> gradients)
         {
-            categories.Add(collection.ToCategory());
-
             var html = await _loader.LoadAsync(collection.GetFullUrl());
             var collectionGradients = _parser.Parse(html, collection.GetTag());
 
@@ -93,13 +98,11 @@ namespace MagicCrawler.Services
             _storage.WriteObject("Metadata.json", metadata);
         }
 
-        private void WriteCategories(List<Category> categories)
+        private void WriteCollections(List<Collection> collections)
         {
+            var categories = collections.Select(x => x.ToCategory());
             _storage.WriteObject("Categories.json", categories.OrderBy(x => x.DisplayOrder));
-        }
 
-        private void WriteCollections(IEnumerable<Collection> collections)
-        {
             foreach (var collection in collections)
             {
                 _storage.WriteObject(collection.GetFile(), collection.Gradients);

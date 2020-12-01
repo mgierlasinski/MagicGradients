@@ -34,6 +34,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Controls\ActionMenu\ActionButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\ActionMenu\ActionMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Controls\AnimationClip.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -49,7 +55,7 @@
 	<EmbeddedResource Update="Features\Editor\PropertiesTab.xaml">
 	  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 	</EmbeddedResource>
-    <EmbeddedResource Update="Controls\RadialMenu.xaml">
+    <EmbeddedResource Update="Controls\RadialMenu\RadialMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
 	<EmbeddedResource Update="Features\Linear\LinearSamplesPage.xaml">

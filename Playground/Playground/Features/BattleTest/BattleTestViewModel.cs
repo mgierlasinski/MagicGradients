@@ -6,7 +6,7 @@ using Playground.ViewModels;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
-using static Playground.Resources.Fonts.IcoMoon;
+using static Playground.Resources.Fonts.IcoMoonGlyph;
 using Color = System.Drawing.Color;
 
 namespace Playground.Features.BattleTest
@@ -113,8 +113,8 @@ namespace Playground.Features.BattleTest
         {
             var iconsCodeList = new List<string>
             {
-               MagicWand, Refresh, IcoMoon.Gradient, IcoMoon.Radial,
-               Palette, Layers, IcoMoon.Gallery, Code, Bolt, Paint
+               MagicWand, Refresh, IcoMoonGlyph.Gradient, IcoMoonGlyph.Radial,
+               Palette, Layers, IcoMoonGlyph.Gallery, Code, Bolt, Paint
             };
 
             var battleItem = new Faker<BattleItem>()

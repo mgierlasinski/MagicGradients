@@ -1,581 +1,559 @@
 [
   {
-    "slug": "771b77a6-30d0-4509-a9bf-2e969954f4f3",
+    "slug": "8a731236-e3e5-487b-a263-d99757116c1a",
     "stylesheet": "linear-gradient(90deg, rgb(37, 163, 10), rgb(138, 191, 54), rgb(239, 219, 97))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "b690155e-22ae-4dcf-a1ac-4cdea33a4a3f",
+    "slug": "8e3b2d1a-5266-4fa1-8cef-37be7e09a9b8",
     "stylesheet": "linear-gradient(0, rgb(249, 66, 6), rgb(250, 134, 22), rgb(251, 202, 37))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "e8e67c4b-0a93-447e-9d3d-fcf0c7b24458",
+    "slug": "305caefa-ef89-4f44-bee9-2579452ab7bb",
     "stylesheet": "linear-gradient(135deg, rgb(172, 76, 34), rgb(205, 125, 36), rgb(237, 173, 37))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "c674523f-f1df-4e88-9643-b498d1162b50",
+    "slug": "a8bc62d8-7602-4803-9fb9-d16a1641431f",
     "stylesheet": "linear-gradient(45deg, rgb(252, 169, 90), rgb(162, 85, 124), rgb(71, 0, 157))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "31668706-6424-4b51-95a2-cda9b9013fc6",
+    "slug": "8b72a25c-314b-4d9c-9c71-ba54ecbbc9bc",
     "stylesheet": "linear-gradient(135deg, rgba(238, 238, 238, 0.1), rgba(16, 16, 16, 0.1)), linear-gradient(183deg, rgb(202, 255, 50), rgb(223, 14, 20))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "e024fd7e-ae92-4c8d-ba79-de590bce85f0",
+    "slug": "aebfb187-4bd5-404e-a9b5-e6e8cd79b7f9",
     "stylesheet": "linear-gradient(37deg, rgb(32, 218, 233), rgb(40, 21, 236))",
     "tags": [
-      "standard",
-      "popular"
+      "standard"
     ]
   },
   {
-    "slug": "ecc4f327-9157-4b2e-917b-0421b4da7b54",
+    "slug": "3290a513-6ceb-4d25-b041-37f107a40ad9",
     "stylesheet": "linear-gradient(62deg, rgb(233, 121, 112), rgb(213, 192, 80))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "259762b5-ba36-4771-a91b-c06a398c1cf6",
+    "slug": "ce80e83f-b826-4e74-bfd6-fad3fef8fc1a",
     "stylesheet": "linear-gradient(353deg, rgb(242, 82, 69), rgb(131, 28, 80))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "4e2c3ca8-38ac-430c-ad4d-28d69f047dd6",
+    "slug": "b8ccb121-800b-4961-8317-96c51310a06c",
     "stylesheet": "linear-gradient(3deg, rgb(249, 144, 110), rgb(225, 14, 225))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "254282ad-8ecc-40cb-b8b3-c59e46ee4fe3",
+    "slug": "ef797980-ba5d-4c3c-bea1-ec72eb4968e5",
     "stylesheet": "linear-gradient(80deg, rgb(233, 222, 155), rgb(110, 153, 20))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "e65b839c-5f1b-431b-b680-4d8fc95fc90a",
+    "slug": "15214423-6fa0-4750-bf0a-8cd10256bf43",
     "stylesheet": "linear-gradient(90deg, rgb(243, 114, 209) 0%, rgb(44, 19, 241) 100%)",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "865284d8-bf49-4f47-acdd-8987fe488d16",
+    "slug": "3651becb-d6fc-4635-bda1-0a6dd88dd9bf",
     "stylesheet": "linear-gradient(90deg, rgb(114, 7, 74), rgb(232, 54, 104))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "8d2fa403-4193-4a20-97d7-7442cbeca94e",
+    "slug": "b9d6a6e9-59cb-4fd8-baf3-5dd6cc96d039",
     "stylesheet": "linear-gradient(90deg, rgb(160, 222, 219), rgb(3, 165, 209))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "8f81148e-644f-4dcb-8596-b46f7c76e18c",
+    "slug": "10971cc8-2258-4ef5-a6d1-7eff1d1f2ade",
     "stylesheet": "linear-gradient(90deg, rgb(212, 91, 106), rgb(255, 224, 123))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "b1585b9f-af88-428c-9695-52676fb85582",
+    "slug": "9d85d77e-fd74-4069-bfb7-0c4cdfa62d7f",
     "stylesheet": "linear-gradient(90deg, rgb(237, 228, 100), rgb(252, 152, 51))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "9551024e-348a-4f10-b6ca-ad73b36ae8de",
+    "slug": "0c8f25e7-305d-4d88-bbc8-51057991609d",
     "stylesheet": "linear-gradient(90deg, rgb(90, 35, 81), rgb(207, 104, 69))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "53d9aeec-07b6-4e9b-8090-1febe324d9e2",
+    "slug": "25ea1774-7be7-468a-a936-a377ea8f6a9e",
     "stylesheet": "linear-gradient(90deg, rgb(223, 90, 189), rgb(140, 2, 153))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "86b878ec-8cb1-489b-8d8e-39008feaf16c",
+    "slug": "772a74ef-df73-497e-b34c-b1fdb3cc36fe",
     "stylesheet": "linear-gradient(90deg, rgb(62, 25, 113), rgb(72, 105, 206))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "a64101b8-3ab2-4a30-9bc2-fe5b848f6152",
+    "slug": "1e89d5ef-9b44-43a9-bbca-ea07f2e6c063",
     "stylesheet": "linear-gradient(90deg, rgb(43, 77, 130), rgb(40, 144, 172))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "fef51723-2067-42bf-9167-89d5c91df051",
+    "slug": "7c1e60da-2016-4eea-9d06-7df19fe98f89",
     "stylesheet": "linear-gradient(90deg, rgb(165, 5, 189), rgb(239, 87, 203))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "f7733f68-ef1b-4f91-b231-ee3b683c1a26",
+    "slug": "03e3f0e6-aecb-4d99-a3fe-7a9c1af07cb6",
     "stylesheet": "linear-gradient(90deg, rgb(68, 144, 190), rgb(251, 254, 241))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "841bb61d-07d7-4467-a2e6-ce5db4a1fff5",
+    "slug": "f3dc97c4-1326-4315-9127-b77f1b818040",
     "stylesheet": "linear-gradient(90deg, rgb(183, 57, 12), rgb(229, 127, 73))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "0212fcee-f10e-4a2c-9f7d-cf7cc2af8368",
+    "slug": "6d8db526-5e8f-4d05-bf19-de2836006f75",
     "stylesheet": "linear-gradient(90deg, rgb(251, 114, 182), rgb(85, 22, 132))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "31d38566-8b8d-42d8-b607-913c6ddc2c3a",
+    "slug": "376e32f3-1c0d-4c67-a0dc-543dda9e1cc7",
     "stylesheet": "linear-gradient(90deg, rgb(190, 90, 247), rgb(22, 91, 145))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "42a7acd8-95fc-4912-8c56-c31ee5865b1d",
+    "slug": "f22cfaa7-f444-47fd-a226-e2630b992b83",
     "stylesheet": "linear-gradient(45deg, rgba(130, 89, 219, 0.2), rgba(44, 192, 226, 0.2), rgba(182, 103, 181, 0.2)), linear-gradient(135deg, rgb(39, 20, 149), rgb(65, 82, 185), rgb(91, 144, 220))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "81bcbcb7-54ee-4172-94bc-5a5fe72aacf3",
+    "slug": "23088fb8-e0a9-415d-83c0-01887380a2de",
     "stylesheet": "linear-gradient(145deg, rgba(232, 87, 237, 0.15) 0%, rgba(109, 137, 69, 0.15) 100%), linear-gradient(75deg, rgb(33, 138, 184), rgb(0, 241, 181))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "8672224b-bb59-4fda-948b-59c9e727cdb7",
+    "slug": "0067400a-1402-4110-9c25-75e88b87c776",
     "stylesheet": "linear-gradient(56deg, rgba(43, 46, 224, 0.15) 0%, rgba(26, 218, 182, 0.15) 100%), linear-gradient(336deg, rgb(50, 52, 221), rgb(60, 239, 241))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "43730fcb-746e-4158-8d81-3f89a8345a90",
+    "slug": "3e71dd73-8df3-4aa3-a7c8-905b3b0da061",
     "stylesheet": "linear-gradient(241deg, rgba(18, 99, 158, 0.15) 0%, rgba(28, 247, 0, 0.15) 100%), linear-gradient(194deg, rgb(223, 130, 32), rgb(244, 244, 132))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "bfcdc4a5-d70b-4b52-bf63-394fee469b75",
+    "slug": "97dafdfd-6a2d-4a10-9f52-7627bf8ea645",
     "stylesheet": "linear-gradient(0, rgba(4, 223, 34, 0.15) 0%, rgba(167, 179, 214, 0.15) 100%), linear-gradient(90deg, rgb(210, 94, 235), rgb(219, 158, 203))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "a95e7869-ab9e-46e4-a469-25553a482528",
+    "slug": "fcf88b63-1695-4de4-a46f-40751064326a",
     "stylesheet": "linear-gradient(0, rgba(80, 24, 135, 0.15) 0%, rgba(39, 228, 25, 0.15) 100%), linear-gradient(90deg, rgb(210, 135, 64), rgb(244, 195, 38))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "40130237-edc4-4b97-8933-6bacadd14dba",
+    "slug": "ef3fccc5-69c0-4218-bcb3-e0a3ef71a496",
     "stylesheet": "linear-gradient(0, rgba(26, 228, 244, 0.15) 0%, rgba(50, 206, 35, 0.15) 100%), linear-gradient(90deg, rgb(44, 56, 250), rgb(88, 219, 228))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "c8db107b-5d2f-40e1-92df-4688c8363685",
+    "slug": "5ce57364-6238-45fc-ba2e-46312b62264d",
     "stylesheet": "linear-gradient(0, rgba(168, 105, 74, 0.15) 0%, rgba(49, 77, 202, 0.15) 100%), linear-gradient(90deg, rgb(88, 1, 221), rgb(53, 46, 111))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "0b50634d-e070-49d2-b9cc-387a4c3ad00e",
+    "slug": "e8c27bf2-19ab-4d9a-a8fc-23270dce0a1d",
     "stylesheet": "linear-gradient(0, rgba(71, 224, 17, 0.15) 0%, rgba(159, 153, 81, 0.15) 100%), linear-gradient(90deg, rgb(5, 10, 46), rgb(251, 85, 78))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "bbb37a57-c061-4e28-a27e-b24c91aa38e8",
+    "slug": "ae97d637-77c3-4101-9346-a4ed5438c99a",
     "stylesheet": "linear-gradient(0, rgba(216, 28, 10, 0.3) 0%, rgba(255, 189, 248, 0.3) 100%), linear-gradient(90deg, rgb(208, 18, 218), rgb(197, 126, 179))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "b8025815-3d77-4209-ba79-6624592e6c55",
+    "slug": "73817832-2f51-4024-b748-d671168c80e5",
     "stylesheet": "linear-gradient(0, rgba(99, 109, 81, 0.3) 0%, rgba(198, 203, 94, 0.3) 100%), linear-gradient(90deg, rgb(18, 116, 125), rgb(20, 216, 80))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "134b0e3b-d0ad-4681-8488-3c83604331ac",
+    "slug": "8949128d-2662-4501-82a6-8124c212a231",
     "stylesheet": "linear-gradient(135deg, rgb(195, 39, 2) 0%, rgb(224, 164, 60) 100%)",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "de538ccd-ee31-4e0d-8732-9e1778b9967f",
-    "stylesheet": "linear-gradient(135deg, rgb(191, 152, 26) 0%, rgb(216, 90, 24) 100%)",
-    "tags": [
-      "standard"
-    ]
-  },
-  {
-    "slug": "b6c74599-13c1-467b-9ade-f2fd08fa2ab9",
+    "slug": "598414e3-6187-4628-9836-d12d80477126",
     "stylesheet": "linear-gradient(135deg, rgb(68, 202, 201) 0%, rgb(252, 255, 114) 100%)",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "da30629c-0968-475b-8b3d-7e9279b4969a",
+    "slug": "90630cd2-18f7-4494-9b61-0f44bcd619cd",
     "stylesheet": "linear-gradient(90deg, rgb(54, 181, 183) 0%, rgb(19, 126, 105) 100%)",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "d966c46f-a8dd-4cbb-8a26-fdcd75537068",
+    "slug": "d217c5dc-5e6f-44a0-ae2a-cde93f69827d",
     "stylesheet": "linear-gradient(0, rgb(61, 103, 216), rgb(65, 80, 170), rgb(53, 69, 115))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "417b4058-9c0a-4750-851d-545d5f660284",
+    "slug": "4ece4521-63e1-4d24-a8fa-d5dcde102755",
     "stylesheet": "linear-gradient(90deg, rgb(217, 184, 42) 0%, rgb(131, 178, 27) 31%, rgb(45, 172, 11) 100%)",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "93494766-bf92-403c-b305-bf7b611232ac",
+    "slug": "d0e2fdc4-dcb9-4ae0-bf56-099f4f153f9e",
     "stylesheet": "linear-gradient(135deg, rgb(245, 177, 77), rgb(237, 53, 115))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "ea3225bd-e3fd-462f-a0d7-8b4d42e807f9",
+    "slug": "eb971f0f-b737-471f-b64a-62156ef0087c",
     "stylesheet": "linear-gradient(45deg, rgb(217, 134, 15), rgb(225, 99, 66))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "52b0711b-d26a-4fa4-9c6b-b0b2b10e6b6a",
+    "slug": "6141572e-b927-4050-a8e8-cfdb7051ae98",
     "stylesheet": "linear-gradient(45deg, rgb(56, 120, 78), rgb(175, 255, 102))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "32c242e1-8b9e-49e4-bc01-930e73e04d93",
+    "slug": "c1c59259-35ac-4293-8e3a-7fd5fb51266f",
     "stylesheet": "linear-gradient(45deg, rgb(51, 138, 249), rgb(47, 248, 255))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "1a73ed63-6617-47de-bae4-bd85716fa5bc",
+    "slug": "dcbe7e85-aafe-43f4-8c58-2d801dc0ce33",
     "stylesheet": "linear-gradient(90deg, rgb(215, 125, 57), rgb(184, 86, 67))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "0054a71d-347f-4a8c-ac79-09b2c0dc7a17",
+    "slug": "4635b5a3-75ce-4307-868c-819ec5195be3",
     "stylesheet": "linear-gradient(90deg, rgb(235, 216, 9), rgb(202, 60, 134))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "ae5b1448-063f-4321-8c97-12a6c0b2cf8e",
+    "slug": "4439decc-ef80-435b-9796-58c8be0f2ea8",
     "stylesheet": "linear-gradient(0, rgb(94, 5, 4), rgb(253, 19, 61))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "65072ab4-0ac2-4220-9927-d210400bb7d4",
+    "slug": "aa5555a0-67ec-458b-a585-0264c032c04a",
     "stylesheet": "linear-gradient(90deg, rgb(247, 14, 199), rgb(24, 34, 250))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "436dcd3e-ca4e-46d6-848c-6d5350635783",
+    "slug": "e9eac097-43c3-478e-bf21-fa3349eeee6a",
     "stylesheet": "linear-gradient(0, rgb(176, 207, 255), rgb(92, 104, 168))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "0d4cc3fb-0711-482c-95b4-b71148b0149a",
+    "slug": "c2874bab-083b-4765-adf3-004851da626c",
     "stylesheet": "linear-gradient(45deg, rgb(40, 23, 76), rgb(232, 90, 94))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "ab3e0a8b-7cb6-4855-9eb9-9c12b2a2758a",
+    "slug": "78635a89-3b70-4a03-9eea-d542ad4cacfb",
     "stylesheet": "linear-gradient(90deg, rgb(109, 192, 190), rgb(11, 73, 25))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "cc7aaccb-5ecb-49df-b61a-561f9052c097",
+    "slug": "511c8d5a-0286-46c0-80c3-97374f4a2bde",
     "stylesheet": "linear-gradient(90deg, rgb(84, 21, 156), rgb(132, 51, 77))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "5c48c68b-bf57-4a55-ae62-d77c46f11f1e",
+    "slug": "ab239725-eb13-4eda-a63a-d5aa247a3837",
     "stylesheet": "linear-gradient(90deg, rgb(1, 198, 86), rgb(47, 152, 24))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "f357630d-787e-44ef-ad41-c5987b667eca",
-    "stylesheet": "linear-gradient(90deg, rgb(223, 123, 141), rgb(188, 69, 32))",
-    "tags": [
-      "standard"
-    ]
-  },
-  {
-    "slug": "a0ee1c52-e6b1-4f8d-926e-1340c512b1aa",
+    "slug": "25760e12-2a55-400c-900d-4abb3a1cd7a3",
     "stylesheet": "linear-gradient(90deg, rgb(217, 198, 252), rgb(82, 114, 237))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "c0ce4a94-4ef2-4ef6-85dc-ad1e30f6559d",
+    "slug": "9a1bcff3-9ac2-4d6e-bed1-cf863facb1d2",
     "stylesheet": "linear-gradient(45deg, rgb(139, 59, 210), rgb(47, 30, 152))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "d7d19e2a-dca8-4fb9-ab03-b43f80e716ed",
+    "slug": "9109bd08-b697-4c5f-aae8-901393ca6308",
     "stylesheet": "linear-gradient(0, rgb(113, 136, 223), rgb(17, 213, 207))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "b0a48689-7012-4bc8-96c2-b9f64063fecf",
+    "slug": "be856633-b1b2-46e0-8a55-911c8895f261",
     "stylesheet": "linear-gradient(135deg, rgb(57, 42, 4), rgb(210, 94, 97))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "f766d7cb-7c38-4873-8f1c-2b70b11f5d78",
+    "slug": "4b3a9ea9-62a6-4b5c-8f28-ad316899adda",
     "stylesheet": "linear-gradient(90deg, rgb(119, 14, 191), rgb(238, 141, 125))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "ef540a6a-5133-43a4-9fde-0f8ea282af1a",
+    "slug": "725ba54a-3331-4bdb-b2f6-2d088edcc168",
     "stylesheet": "linear-gradient(90deg, rgb(116, 216, 252), rgb(156, 153, 254))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "b77cb074-4409-479e-9219-8a94d7338432",
+    "slug": "55fb6996-fa25-444f-9bf3-fe5122e77c9a",
     "stylesheet": "linear-gradient(0, rgb(238, 4, 44), rgb(202, 203, 40))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "4c7a2fdf-c6e2-4327-9e1c-613c185ffa0e",
-    "stylesheet": "linear-gradient(45deg, rgb(241, 169, 36), rgb(1, 201, 13))",
-    "tags": [
-      "standard"
-    ]
-  },
-  {
-    "slug": "bc129d7a-f696-46aa-91f7-0a6b579e7e41",
+    "slug": "7f77c800-d52c-47d8-89a7-c5dad91c7146",
     "stylesheet": "linear-gradient(0, rgb(112, 84, 203), rgb(232, 47, 180))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "77c7b746-6675-42b4-acfd-3968287e0907",
+    "slug": "7dc110e0-13a8-456b-b4d4-c9e9ce0a1b4a",
     "stylesheet": "linear-gradient(90deg, rgb(234, 224, 68), rgb(51, 96, 57))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "9af9a12e-c7ca-46cb-9804-fb4caca94d7f",
+    "slug": "ac59e97e-0a81-43c1-a514-c6b9bb9dcbe3",
     "stylesheet": "linear-gradient(135deg, rgb(32, 186, 230), rgb(110, 6, 173))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "df9b62fd-4124-4924-b85e-609242dd9087",
+    "slug": "bdd58d20-ae9c-40c2-b0ab-4c814649c9aa",
     "stylesheet": "linear-gradient(45deg, rgb(140, 85, 250) 0%, rgb(200, 215, 253) 75%, rgb(143, 230, 243) 100%)",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "6cb702b6-8ac7-4e40-8b9f-12d3d95817d7",
+    "slug": "63faa806-0862-458c-9446-22e91086d4f5",
     "stylesheet": "linear-gradient(90deg, rgb(79, 30, 218) 0%, rgb(104, 100, 218) 33%, rgb(35, 219, 162) 100%)",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "90efe57e-e5c3-46fc-aa09-428ce05c6057",
+    "slug": "94689109-efa3-4819-bc43-d94d83ea6d3c",
     "stylesheet": "linear-gradient(90deg, rgb(119, 209, 210) 0%, rgb(174, 202, 76) 58%, rgb(231, 139, 28) 100%)",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "7aef75b8-f51c-42c6-9a11-dcc1b4b872ad",
+    "slug": "8ff71725-e1a3-4e01-8d43-74b923e662a9",
     "stylesheet": "linear-gradient(45deg, rgb(221, 15, 86), rgb(198, 192, 66))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "88231348-538f-457d-991c-9fd9bff5f158",
+    "slug": "18dcb6a0-4636-41f5-947d-a9cb72feca89",
     "stylesheet": "linear-gradient(135deg, rgb(185, 223, 103), rgb(253, 39, 50))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "9a911937-55df-4cfe-bca5-582222f54dcf",
+    "slug": "b9109603-1c69-4aba-9f7d-7bc580cddd8e",
     "stylesheet": "linear-gradient(45deg, rgb(89, 6, 184), rgb(246, 151, 67))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "040fcfb0-0653-47d1-82fd-b4a5664b860a",
+    "slug": "5111de2b-fe34-4cde-bc87-c6fe0bd1071c",
     "stylesheet": "linear-gradient(90deg, rgb(26, 16, 35), rgb(12, 216, 57))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "e4602a94-417d-4e00-a766-a1cbf6d9695f",
+    "slug": "68dad8dd-9d10-4350-abe0-26317d022811",
     "stylesheet": "linear-gradient(0, rgb(246, 19, 218), rgb(2, 28, 51))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "23a88512-f511-47c4-ab22-4cc8716df851",
+    "slug": "9880c8c7-08ae-44fc-84b1-e0ab2fb407e3",
     "stylesheet": "linear-gradient(45deg, rgb(43, 33, 93), rgb(81, 240, 237))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "f4bc92d1-639a-41c3-aa53-799526dffbea",
+    "slug": "b226a331-a300-48ad-8251-782fad7ff5f6",
     "stylesheet": "linear-gradient(0, rgb(85, 217, 233), rgb(86, 73, 252))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "56e5d7b3-159c-479e-b449-944e1720b6aa",
+    "slug": "28033d47-2672-4649-a979-aee243d01d1e",
     "stylesheet": "linear-gradient(45deg, rgb(18, 88, 19), rgb(40, 226, 59))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "b55eaa4f-9103-43ab-aa04-661852731130",
+    "slug": "a6ae6f03-cfc7-48a4-ba65-8eaee689b3c5",
     "stylesheet": "linear-gradient(135deg, rgb(182, 244, 85), rgb(63, 128, 87))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "0e0463ec-3697-43a1-a032-7341fea42dc7",
+    "slug": "7b9e7c7b-b76f-4a3a-82b0-b1fc5ac5c45a",
     "stylesheet": "linear-gradient(0, rgb(217, 153, 41), rgb(211, 4, 236))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "cd5c0e4b-35e9-43e6-9c17-710d17c5e84b",
+    "slug": "d17baf5f-e87f-427f-90a8-811daeb16ac6",
     "stylesheet": "linear-gradient(90deg, rgb(111, 34, 83), rgb(253, 64, 149))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "1cdbb777-6c8f-403b-982d-373a51634693",
+    "slug": "2ca16984-34b2-441f-a3c3-d4d6fdc0bc91",
     "stylesheet": "linear-gradient(90deg, rgb(252, 108, 53), rgb(170, 18, 159))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "e6b29bd8-efac-4947-930c-b42c09007aa9",
+    "slug": "69e32661-3058-417c-ad65-3c5f5eb1dd31",
     "stylesheet": "linear-gradient(90deg, rgb(171, 118, 76), rgb(235, 193, 30))",
     "tags": [
       "standard"
     ]
   },
   {
-    "slug": "a842d9b0-1233-42d0-9134-b0e076afadb6",
+    "slug": "ea69df0e-c04f-4430-a528-400f77b77efb",
     "stylesheet": "linear-gradient(90deg, rgb(234, 208, 36), rgb(134, 205, 157))",
     "tags": [
       "standard"

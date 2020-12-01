@@ -2,7 +2,7 @@
 
 namespace Playground.Features.Gallery.Models
 {
-    public class GradientTheme
+    public class ThemeItem
     {
         public string ColorRaw { get; set; }
         public Color Color { get; set; }
