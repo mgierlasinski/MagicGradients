@@ -1,8 +1,8 @@
 ﻿using Bogus;
 using MagicGradients;
 using Playground.Data.Repositories;
+using Playground.Features.CssPreviewer;
 using Playground.Resources.Fonts;
-using Playground.ViewModels;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -11,11 +11,16 @@ using Color = System.Drawing.Color;
 
 namespace Playground.Features.BattleTest
 {
-    [QueryProperty("Id", "id")]
-    public class BattleTestViewModel : ObservableObject
+    public class BattleTestViewModel : CssPreviewerBase
     {
-        private readonly IGradientRepository _gradientRepository;
         private readonly IBattleItemService _battleItemService;
+
+        private IGradientSource _gradientSource;
+        public IGradientSource GradientSource
+        {
+            get => _gradientSource;
+            set => SetProperty(ref _gradientSource, value);
+        }
 
         private List<BattleItem> _iconsCollection;
         public List<BattleItem> IconsCollection
@@ -31,17 +36,6 @@ namespace Playground.Features.BattleTest
             set => SetProperty(ref _itemsCollection, value);
         }
 
-        private string _id;
-        public string Id //Don't remove it we set it from query
-        {
-            get => _id;
-            set
-            {
-                _id = value;
-                LoadCssCodeById();
-            }
-        }
-
         private Color _textColor;
         public Color TextColor
         {
@@ -54,13 +48,6 @@ namespace Playground.Features.BattleTest
                     ItemsCollection = GenerateItemsCollection();
                 }
             }
-        }
-
-        private IGradientSource _gradientSource;
-        public IGradientSource GradientSource
-        {
-            get => _gradientSource;
-            set => SetProperty(ref _gradientSource, value);
         }
 
         private int _selectedColorIndex;
@@ -81,12 +68,12 @@ namespace Playground.Features.BattleTest
         public ICommand WithParameterCommand { get; }
         public ICommand DisabledCommand { get; }
         public string MagicButtonText { get; } = "My Content is bindable";
-
+        
         public BattleTestViewModel(
             IGradientRepository gradientRepository, 
-            IBattleItemService battleItemService)
+            IBattleItemService battleItemService) 
+            : base(gradientRepository)
         {
-            _gradientRepository = gradientRepository;
             _battleItemService = battleItemService;
 
             ColorNames = _battleItemService.GetColorNames();
@@ -102,10 +89,9 @@ namespace Playground.Features.BattleTest
             DisabledCommand = new Command(() => { }, () => false);
         }
 
-        private void LoadCssCodeById()
+        protected override void UpdateGradientSource()
         {
-            var gradient = _gradientRepository.GetById(int.Parse(Id));
-            GradientSource = new CssGradientSource { Stylesheet = gradient.Stylesheet };
+            GradientSource = new CssGradientSource { Stylesheet = CssCode };
             IconsCollection = GenerateIconsCollection();
         }
 

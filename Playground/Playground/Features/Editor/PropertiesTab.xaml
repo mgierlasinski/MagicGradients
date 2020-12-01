@@ -9,11 +9,22 @@
     </StackLayout.Resources>
 
     <StackLayout IsVisible="{Binding IsRadial, Converter={StaticResource NegativeBoolConverter}}">
-        <Label Text="Angle" />
         <StackLayout Orientation="Horizontal">
-            <Entry Text="{Binding Gradient.Angle}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" HeightRequest="40" />
-            <Stepper Value="{Binding Gradient.Angle}" Minimum="-360" Maximum="360" Increment="10" HeightRequest="40" />
+            <Label Text="Angle" />
+            <Label Text="{Binding Gradient.Angle, StringFormat='{0:N0}°'}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" FontAttributes="Bold" />
         </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Slider Value="{Binding Gradient.Angle}" Maximum="360" Minimum="0" HorizontalOptions="FillAndExpand" />
+            <!--<Label Text="{Binding Gradient.Angle}" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="30" LineBreakMode="TailTruncation" />-->
+            <!--<Stepper Value="{Binding Gradient.Angle}" Minimum="-360" Maximum="360" Increment="10" HeightRequest="40" />-->
+        </StackLayout>
+        <FlexLayout HeightRequest="40" JustifyContent="SpaceBetween">
+            <Button Text="0°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="45°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="90°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="180°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="270°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+        </FlexLayout>
     </StackLayout>
 
     <StackLayout IsVisible="{Binding IsRadial}" Spacing="0">

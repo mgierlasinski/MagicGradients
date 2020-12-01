@@ -1,5 +1,6 @@
 ﻿using MagicGradients;
 using Playground.Features.Editor.Handlers;
+using Playground.Features.Editor.Services;
 using Playground.Features.Gallery.Services;
 using Playground.ViewModels;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Playground.Features.Editor
     public class GradientEditorViewModel : ObservableObject
     {
         private readonly IGalleryService _galleryService;
+        private readonly IShareService _shareService;
+        private readonly IGradientExporter _exporter;
 
         public LinearHandler Linear { get; }
         public RadialHandler Radial { get; }
@@ -97,10 +100,17 @@ namespace Playground.Features.Editor
         public ICommand PreviewCssCommand { get; }
         public ICommand BattleTestCommand { get; }
         public ICommand ToggleMenuCommand { get; }
+        public ICommand ShareCommand { get; }
+        public ICommand CopyCommand { get; }
 
-        public GradientEditorViewModel(IGalleryService galleryService)
+        public GradientEditorViewModel(
+            IGalleryService galleryService, 
+            IShareService shareService,
+            IGradientExporter exporter)
         {
             _galleryService = galleryService;
+            _shareService = shareService;
+            _exporter = exporter;
 
             GradientSource = new GradientCollection();
             Linear = new LinearHandler(this);
@@ -113,16 +123,20 @@ namespace Playground.Features.Editor
             PreviewCssCommand = new Command(async () =>
             {
                 IsMenuVisible = false;
-                await Shell.Current.GoToAsync($"CssPreviewer?id={Id}");
+                //await Shell.Current.GoToAsync($"CssPreviewer?id={Id}");
+                await Shell.Current.GoToAsync($"CssPreviewer?data={GetRawData()}");
             });
 
             BattleTestCommand = new Command(async () =>
             {
                 IsMenuVisible = false;
-                await Shell.Current.GoToAsync($"BattleTest?id={Id}");
+                //await Shell.Current.GoToAsync($"BattleTest?id={Id}");
+                await Shell.Current.GoToAsync($"BattleTest?data={GetRawData()}");
             });
 
             ToggleMenuCommand = new Command(() => IsMenuVisible = !IsMenuVisible);
+            ShareCommand = new Command(() => _shareService.ShareText("Share Gradient", GetShareText()));
+            CopyCommand = new Command(() => _shareService.CopyToClipboard(GetShareText()));
         }
 
         private void LoadGradient()
@@ -184,6 +198,30 @@ namespace Playground.Features.Editor
                 Gradient = GradientSource.Gradients.FirstOrDefault();
 
             IsEditMode = true;
+        }
+
+        private string GetRawData()
+        {
+            var data = new ExportData
+            {
+                GradientSource = GradientSource,
+                GradientSize = GradientSize,
+                GradientRepeat = GradientRepeat
+            };
+
+            return _exporter.ExportRaw(data);
+        }
+
+        private string GetShareText()
+        {
+            var data = new ExportData
+            {
+                GradientSource = GradientSource,
+                GradientSize = GradientSize,
+                GradientRepeat = GradientRepeat
+            };
+
+            return _exporter.ExportCss(data);
         }
     }
 }

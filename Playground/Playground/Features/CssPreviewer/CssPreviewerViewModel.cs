@@ -12,40 +12,10 @@ using Xamarin.Forms;
 namespace Playground.Features.CssPreviewer
 {
     [QueryProperty("Id", "id")]
-    public class CssPreviewerViewModel : ObservableObject
+    [QueryProperty("Data", "data")]
+    public class CssPreviewerBase : ObservableObject
     {
         private readonly IGradientRepository _gradientRepository;
-        private readonly DimensionsTypeConverter _dimensionsConverter;
-        private CssSnippet[] _snippets;
-
-        private string _cssCode;
-        public string CssCode
-        {
-            get => _cssCode;
-            set => SetProperty(ref _cssCode, value, () =>
-            {
-                if (IsHotReload)
-                {
-                    UpdateGradientSource();
-                }
-            });
-        }
-
-        private string _size;
-        public string Size
-        {
-            get => _size;
-            set => SetProperty(ref _size, value, () =>
-            {
-                if (IsHotReload)
-                {
-                    UpdateSize();
-                }
-            });
-        }
-
-        public Dimensions GradientSize { get; private set; }
-        public GradientCollection GradientSource { get; set; }
 
         private string _id;
         public string Id
@@ -54,9 +24,95 @@ namespace Playground.Features.CssPreviewer
             set
             {
                 _id = value;
-                LoadCssCodeById();
+                LoadCssCodeFromGallery(int.Parse(_id));
             }
         }
+
+        private string _data;
+        public string Data
+        {
+            get => _data;
+            set
+            {
+                _data = value;
+                ParseData(_data);
+            }
+        }
+
+        private string _cssCode;
+        public string CssCode
+        {
+            get => _cssCode;
+            set => SetProperty(ref _cssCode, value, () =>
+            {
+                if (IsHotReload)
+                    UpdateGradientSource();
+            });
+        }
+
+        private string _cssSize;
+        public string CssSize
+        {
+            get => _cssSize;
+            set => SetProperty(ref _cssSize, value, () =>
+            {
+                if (IsHotReload)
+                    UpdateGradientSize();
+            });
+        }
+
+        private bool _isHotReload = true;
+        public bool IsHotReload
+        {
+            get => _isHotReload;
+            set => SetProperty(ref _isHotReload, value);
+        }
+
+        public CssPreviewerBase(IGradientRepository gradientRepository)
+        {
+            _gradientRepository = gradientRepository;
+        }
+
+        private void LoadCssCodeFromGallery(int id)
+        {
+            var gradient = _gradientRepository.GetById(id);
+
+            if (gradient == null)
+                return;
+
+            CssCode = gradient.Stylesheet;
+            CssSize = gradient.Size;
+        }
+
+        private void ParseData(string data)
+        {
+            var parts = Uri.UnescapeDataString(data).Split(new [] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length >= 1)
+                CssCode = parts[0];
+
+            if (parts.Length >= 2)
+                CssSize = parts[1];
+        }
+
+        protected virtual void UpdateGradientSource()
+        {
+
+        }
+
+        protected virtual void UpdateGradientSize()
+        {
+
+        }
+    }
+    
+    public class CssPreviewerViewModel : CssPreviewerBase
+    {
+        private readonly DimensionsTypeConverter _dimensionsConverter;
+        private CssSnippet[] _snippets;
+
+        public Dimensions GradientSize { get; private set; }
+        public GradientCollection GradientSource { get; set; }
 
         public bool IsMessageVisible => !string.IsNullOrWhiteSpace(Message);
 
@@ -68,20 +124,13 @@ namespace Playground.Features.CssPreviewer
                 () => RaisePropertyChanged(nameof(IsMessageVisible)));
         }
 
-        private bool _isHotReload = true;
-        public bool IsHotReload
-        {
-            get => _isHotReload;
-            set => SetProperty(ref _isHotReload, value);
-        }
-
         public ICommand ClearCommand { get; }
         public ICommand ShowSnippetsCommand { get; }
         public ICommand RefreshCommand { get; }
 
-        public CssPreviewerViewModel(IGradientRepository gradientRepository)
+        public CssPreviewerViewModel(IGradientRepository gradientRepository) 
+            : base(gradientRepository)
         {
-            _gradientRepository = gradientRepository;
             _dimensionsConverter = new DimensionsTypeConverter();
             GradientSource = new GradientCollection();
 
@@ -90,14 +139,14 @@ namespace Playground.Features.CssPreviewer
             RefreshCommand = new Command(() =>
             {
                 UpdateGradientSource();
-                UpdateSize();
+                UpdateGradientSize();
             });
 
             LoadSnippets();
             UpdateGradientSource();
         }
 
-        private void UpdateGradientSource()
+        protected override void UpdateGradientSource()
         {
             Message = string.Empty;
 
@@ -115,13 +164,13 @@ namespace Playground.Features.CssPreviewer
             }
         }
 
-        private void UpdateSize()
+        protected override void UpdateGradientSize()
         {
             Message = string.Empty;
 
             try
             {
-                var size = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(Size);
+                var size = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(CssSize);
                 GradientSize = size;
                 RaisePropertyChanged(nameof(GradientSize));
             }
@@ -129,17 +178,6 @@ namespace Playground.Features.CssPreviewer
             {
                 Message = $"Invalid size: {e.Message}";
             }
-        }
-
-        private void LoadCssCodeById()
-        {
-            var gradient = _gradientRepository.GetById(int.Parse(_id));
-
-            if (gradient == null)
-                return;
-
-            CssCode = gradient.Stylesheet;
-            Size = gradient.Size;
         }
 
         private void ValidateEmptyData()

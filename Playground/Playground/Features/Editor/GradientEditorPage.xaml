@@ -30,30 +30,6 @@
                             EnableTouchEvents="{Binding IsRadial}" 
                             Touch="SKCanvasView_OnTouch" 
                             PaintSurface="SKCanvasView_OnPaintSurface"/>
-
-        <controls:ActionMenu IsOpened="{Binding IsMenuVisible}">
-            <controls:ActionMenu.Actions>
-                <controls:ActionItemCollection>
-                    <controls:ActionItem Text="CSS previewer" 
-                                         Command="{Binding PreviewCssCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
-                    <controls:ActionItem Text="Paint" 
-                                         Command="{Binding BattleTestCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=22}" />
-                </controls:ActionItemCollection>
-            </controls:ActionMenu.Actions>
-        </controls:ActionMenu>
-
-        <tabs:Shadows CornerRadius="25" VerticalOptions="End" HorizontalOptions="End" Margin="20"
-                      Shades="{tabs:SingleShade Offset='0, 5', Opacity=0.5, Color=Black}">
-            <mtoolkit:MagicButton Command="{Binding ToggleMenuCommand}" Color="{StaticResource AccentColor}" 
-                                  WidthRequest="50" HeightRequest="50" CornerRadius="25">
-                <mtoolkit:MagicButton.Triggers>
-                    <interactivity:RotateTrigger IsRunning="{Binding IsMenuVisible}" Forward="135" Backward="0" Duration="150" />
-                </mtoolkit:MagicButton.Triggers>
-                <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Color=White}" />
-            </mtoolkit:MagicButton>
-        </tabs:Shadows>
         
         <Grid VerticalOptions="Start" BackgroundColor="Black" IsVisible="{Binding IsRadial}">
             <Label TextColor="White" FontSize="12" Margin="2">
@@ -117,5 +93,35 @@
                 </ContentView>-->
             </tabs:ViewSwitcher>
         </Grid>
+
+        <controls:ActionMenu IsOpened="{Binding IsMenuVisible}" Grid.RowSpan="2">
+            <controls:ActionMenu.Actions>
+                <controls:ActionItemCollection>
+                    <controls:ActionItem Text="Share" 
+                                         Command="{Binding ShareCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
+                    <controls:ActionItem Text="Copy" 
+                                         Command="{Binding CopyCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
+                    <controls:ActionItem Text="CSS previewer" 
+                                         Command="{Binding PreviewCssCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
+                    <controls:ActionItem Text="Paint" 
+                                         Command="{Binding BattleTestCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=22}" />
+                </controls:ActionItemCollection>
+            </controls:ActionMenu.Actions>
+        </controls:ActionMenu>
+
+        <tabs:Shadows CornerRadius="25" VerticalOptions="End" HorizontalOptions="End" Margin="20"
+                      Shades="{tabs:SingleShade Offset='0, 5', Opacity=0.5, Color=Black}" Grid.RowSpan="2">
+            <mtoolkit:MagicButton Command="{Binding ToggleMenuCommand}" Color="{StaticResource AccentColor}" 
+                                  WidthRequest="50" HeightRequest="50" CornerRadius="25">
+                <mtoolkit:MagicButton.Triggers>
+                    <interactivity:RotateTrigger IsRunning="{Binding IsMenuVisible}" Forward="135" Backward="0" Duration="150" />
+                </mtoolkit:MagicButton.Triggers>
+                <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Color=White}" />
+            </mtoolkit:MagicButton>
+        </tabs:Shadows>
     </Grid>
 </ContentPage>

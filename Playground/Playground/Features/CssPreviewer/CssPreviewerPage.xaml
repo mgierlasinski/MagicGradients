@@ -43,7 +43,7 @@
             </VisualState>
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-    <Grid RowSpacing="0" RowDefinitions="Auto,Auto,*">
+    <Grid RowSpacing="0" RowDefinitions="40,Auto,*">
         <StackLayout Orientation="Horizontal" Spacing="0" StyleClass="ContrastElement">
             <Button x:Name="AddButton" Command="{Binding ShowSnippetsCommand}" StyleClass="ContrastElement" 
                     ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Size=24}" />
@@ -64,7 +64,7 @@
             </Expander.Header>
             <StackLayout Spacing="0">
                 <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" HeightRequest="200" />
-                <Entry Text="{Binding Size}" Placeholder="300px 300px" />
+                <Entry Text="{Binding CssSize}" Placeholder="300px 300px" />
             </StackLayout>
         </Expander>
         <magic:GradientView GradientSource="{Binding GradientSource}" GradientSize="{Binding GradientSize}" Grid.Row="2" />
