@@ -13,17 +13,13 @@
             <Label Text="Angle" />
             <Label Text="{Binding Gradient.Angle, StringFormat='{0:N0}°'}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" FontAttributes="Bold" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Slider Value="{Binding Gradient.Angle}" Maximum="360" Minimum="0" HorizontalOptions="FillAndExpand" />
-            <!--<Label Text="{Binding Gradient.Angle}" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="30" LineBreakMode="TailTruncation" />-->
-            <!--<Stepper Value="{Binding Gradient.Angle}" Minimum="-360" Maximum="360" Increment="10" HeightRequest="40" />-->
-        </StackLayout>
+        <Slider Value="{Binding Gradient.Angle}" Maximum="360" Minimum="0" HorizontalOptions="FillAndExpand" />
         <FlexLayout HeightRequest="40" JustifyContent="SpaceBetween">
-            <Button Text="0°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
-            <Button Text="45°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
-            <Button Text="90°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
-            <Button Text="180°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
-            <Button Text="270°" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="0°" Command="{Binding RotateCommand}" CommandParameter="0" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="45°" Command="{Binding RotateCommand}" CommandParameter="45" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="90°" Command="{Binding RotateCommand}" CommandParameter="90" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="180°" Command="{Binding RotateCommand}" CommandParameter="180" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="270°" Command="{Binding RotateCommand}" CommandParameter="270" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
         </FlexLayout>
     </StackLayout>
 

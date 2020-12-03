@@ -75,17 +75,16 @@ namespace Playground.Features.Editor.Services
             return builder.ToString();
         }
 
-        private string ExportGradients(IGradientSource source)
-        {
-            return string.Join(",", source.GetGradients().Select(GetGradient));
-        }
+        private string ExportGradients(IGradientSource source) => string.Join(",", source.GetGradients().Select(GetGradient));
 
         private string GetGradient(Gradient gradient)
         {
             if (gradient is LinearGradient linear)
             {
                 var type = linear.IsRepeating ? "repeating-linear-gradient" : "linear-gradient";
-                return $"{type}({GetAngle(linear)}, {GetColors(linear)})";
+                var angle = $"{GradientMath.FromDegrees(linear.Angle)}deg";
+
+                return $"{type}({angle}, {GetColors(linear)})";
             }
 
             if (gradient is RadialGradient radial)
@@ -106,19 +105,27 @@ namespace Playground.Features.Editor.Services
             }));
         }
 
-        private string GetAngle(LinearGradient gradient)
+        private string GetOffset(Offset offset, double fallback)
         {
-            return $"{GradientMath.FromDegrees(gradient.Angle)}deg";
+            if (offset.IsEmpty)
+                return $"{fallback * 100}%";
+
+            return offset.Type == OffsetType.Proportional
+                ? $"{offset.Value * 100}%"
+                : $"{offset.Value}px";
         }
 
-        private string ExportSize(Dimensions size)
-        {
-            return $"{size.Width.Value}px {size.Height.Value}px";
-        }
+        private string ExportSize(Dimensions size) => $"{GetOffset(size.Width, 1)} {GetOffset(size.Height, 1)}";
 
         private string ExportRepeat(BackgroundRepeat repeat)
         {
-            return "...";
+            return repeat switch
+            {
+                BackgroundRepeat.Repeat => "repeat",
+                BackgroundRepeat.RepeatX => "repeat-x",
+                BackgroundRepeat.RepeatY => "repeat-y",
+                _ => "no-repeat"
+            };
         }
     }
 }

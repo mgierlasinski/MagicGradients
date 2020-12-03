@@ -61,6 +61,17 @@ namespace Playground.Features.CssPreviewer
             });
         }
 
+        private string _cssRepeat;
+        public string CssRepeat
+        {
+            get => _cssRepeat;
+            set => SetProperty(ref _cssRepeat, value, () =>
+            {
+                if (IsHotReload)
+                    UpdateGradientRepeat();
+            });
+        }
+
         private bool _isHotReload = true;
         public bool IsHotReload
         {
@@ -93,6 +104,9 @@ namespace Playground.Features.CssPreviewer
 
             if (parts.Length >= 2)
                 CssSize = parts[1];
+
+            if (parts.Length >= 3)
+                CssRepeat = parts[2];
         }
 
         protected virtual void UpdateGradientSource()
@@ -104,15 +118,35 @@ namespace Playground.Features.CssPreviewer
         {
 
         }
+
+        protected virtual void UpdateGradientRepeat()
+        {
+
+        }
     }
     
     public class CssPreviewerViewModel : CssPreviewerBase
     {
         private readonly DimensionsTypeConverter _dimensionsConverter;
+        private readonly BackgroundRepeatTypeConverter _repeatConverter;
         private CssSnippet[] _snippets;
 
-        public Dimensions GradientSize { get; private set; }
+        
         public GradientCollection GradientSource { get; set; }
+
+        private Dimensions _gradientSize;
+        public Dimensions GradientSize
+        {
+            get => _gradientSize;
+            private set => SetProperty(ref _gradientSize, value);
+        }
+
+        private BackgroundRepeat _gradientRepeat;
+        public BackgroundRepeat GradientRepeat
+        {
+            get => _gradientRepeat;
+            private set => SetProperty(ref _gradientRepeat, value);
+        }
 
         public bool IsMessageVisible => !string.IsNullOrWhiteSpace(Message);
 
@@ -132,6 +166,8 @@ namespace Playground.Features.CssPreviewer
             : base(gradientRepository)
         {
             _dimensionsConverter = new DimensionsTypeConverter();
+            _repeatConverter = new BackgroundRepeatTypeConverter();
+
             GradientSource = new GradientCollection();
 
             ClearCommand = new Command(() => CssCode = string.Empty);
@@ -140,6 +176,7 @@ namespace Playground.Features.CssPreviewer
             {
                 UpdateGradientSource();
                 UpdateGradientSize();
+                UpdateGradientRepeat();
             });
 
             LoadSnippets();
@@ -170,13 +207,25 @@ namespace Playground.Features.CssPreviewer
 
             try
             {
-                var size = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(CssSize);
-                GradientSize = size;
-                RaisePropertyChanged(nameof(GradientSize));
+                GradientSize = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(CssSize);
             }
             catch (Exception e)
             {
                 Message = $"Invalid size: {e.Message}";
+            }
+        }
+
+        protected override void UpdateGradientRepeat()
+        {
+            Message = string.Empty;
+
+            try
+            {
+                GradientRepeat = (BackgroundRepeat)_repeatConverter.ConvertFromInvariantString(CssRepeat);
+            }
+            catch (Exception e)
+            {
+                Message = $"Invalid repeat: {e.Message}";
             }
         }
 

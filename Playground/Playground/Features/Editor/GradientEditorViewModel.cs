@@ -102,6 +102,7 @@ namespace Playground.Features.Editor
         public ICommand ToggleMenuCommand { get; }
         public ICommand ShareCommand { get; }
         public ICommand CopyCommand { get; }
+        public ICommand RotateCommand { get; }
 
         public GradientEditorViewModel(
             IGalleryService galleryService, 
@@ -134,9 +135,14 @@ namespace Playground.Features.Editor
                 await Shell.Current.GoToAsync($"BattleTest?data={GetRawData()}");
             });
 
-            ToggleMenuCommand = new Command(() => IsMenuVisible = !IsMenuVisible);
+            ToggleMenuCommand = new Command(() => IsMenuVisible = true);
             ShareCommand = new Command(() => _shareService.ShareText("Share Gradient", GetShareText()));
             CopyCommand = new Command(() => _shareService.CopyToClipboard(GetShareText()));
+            RotateCommand = new Command<string>((x) =>
+            {
+                if (Gradient is LinearGradient linear)
+                    linear.Angle = double.Parse(x);
+            });
         }
 
         private void LoadGradient()

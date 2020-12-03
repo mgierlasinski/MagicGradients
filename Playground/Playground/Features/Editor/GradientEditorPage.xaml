@@ -21,6 +21,9 @@
         <ToolbarItem Command="{Binding EditCommand}"
                      Text="{OnPlatform UWP=Edit}" 
                      IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Layers}, Color=White}" />
+        <ToolbarItem Command="{Binding ToggleMenuCommand}"
+                     Text="{OnPlatform UWP=More}" 
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White}" />
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,Auto" RowSpacing="0">
@@ -97,23 +100,23 @@
         <controls:ActionMenu IsOpened="{Binding IsMenuVisible}" Grid.RowSpan="2">
             <controls:ActionMenu.Actions>
                 <controls:ActionItemCollection>
-                    <controls:ActionItem Text="Share" 
-                                         Command="{Binding ShareCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
-                    <controls:ActionItem Text="Copy" 
-                                         Command="{Binding CopyCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
-                    <controls:ActionItem Text="CSS previewer" 
+                    <controls:ActionItem Text="Show CSS" 
                                          Command="{Binding PreviewCssCommand}"
                                          IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
                     <controls:ActionItem Text="Paint" 
                                          Command="{Binding BattleTestCommand}"
                                          IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=22}" />
+                    <!--<controls:ActionItem Text="Copy" 
+                                         Command="{Binding CopyCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />-->
+                    <controls:ActionItem Text="Share" 
+                                         Command="{Binding ShareCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
                 </controls:ActionItemCollection>
             </controls:ActionMenu.Actions>
         </controls:ActionMenu>
 
-        <tabs:Shadows CornerRadius="25" VerticalOptions="End" HorizontalOptions="End" Margin="20"
+        <!--<tabs:Shadows CornerRadius="25" VerticalOptions="End" HorizontalOptions="End" Margin="20"
                       Shades="{tabs:SingleShade Offset='0, 5', Opacity=0.5, Color=Black}" Grid.RowSpan="2">
             <mtoolkit:MagicButton Command="{Binding ToggleMenuCommand}" Color="{StaticResource AccentColor}" 
                                   WidthRequest="50" HeightRequest="50" CornerRadius="25">
@@ -122,6 +125,31 @@
                 </mtoolkit:MagicButton.Triggers>
                 <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Color=White}" />
             </mtoolkit:MagicButton>
-        </tabs:Shadows>
+        </tabs:Shadows>-->
+
+        <!--<FlexLayout JustifyContent="SpaceBetween" Grid.Row="2" BackgroundColor="{StaticResource AccentColor}">
+            <ImageButton Command="{Binding EditCommand}"
+                         BackgroundColor="{StaticResource AccentColor}"
+                         Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Layers}, Color=White}" 
+                         Margin="5" Padding="5" FlexLayout.Grow="1" />
+            <ImageButton Command="{Binding EditCommand}"
+                         BackgroundColor="{StaticResource AccentColor}"
+                         Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White}" 
+                         Margin="5" Padding="5" FlexLayout.Grow="1" />
+            <ImageButton Command="{Binding EditCommand}"
+                         BackgroundColor="{StaticResource AccentColor}"
+                         Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White}" 
+                         Margin="5" Padding="5" FlexLayout.Grow="1" />
+            <ImageButton Command="{Binding EditCommand}"
+                         BackgroundColor="{StaticResource AccentColor}"
+                         Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White}" 
+                         Margin="5" Padding="5" FlexLayout.Grow="1" />
+            <ImageButton Command="{Binding EditCommand}"
+                         BackgroundColor="{StaticResource AccentColor}"
+                         Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Code}, Color=White}" 
+                         Margin="5" Padding="5" FlexLayout.Grow="1" />
+        </FlexLayout>
+        <BoxView Style="{StaticResource Separator}" Grid.Row="2" VerticalOptions="Start" />-->
+
     </Grid>
 </ContentPage>
