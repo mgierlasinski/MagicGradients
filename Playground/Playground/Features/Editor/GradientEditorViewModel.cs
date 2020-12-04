@@ -1,11 +1,11 @@
 ﻿using MagicGradients;
 using Playground.Features.Editor.Handlers;
-using Playground.Features.Editor.Services;
 using Playground.Features.Gallery.Services;
 using Playground.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Playground.Features.Share;
 using Xamarin.Forms;
 
 namespace Playground.Features.Editor

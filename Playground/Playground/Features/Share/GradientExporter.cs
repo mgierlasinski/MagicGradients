@@ -2,47 +2,9 @@
 using System;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
 
-namespace Playground.Features.Editor.Services
+namespace Playground.Features.Share
 {
-    public interface IShareService
-    {
-        Task ShareText(string title, string text);
-        Task CopyToClipboard(string text);
-    }
-
-    public class ShareService : IShareService
-    {
-        public Task ShareText(string title, string text)
-        {
-            return Share.RequestAsync(new ShareTextRequest
-            {
-                Title = title,
-                Text = text
-            });
-        }
-
-        public Task CopyToClipboard(string text)
-        {
-            return Clipboard.SetTextAsync(text);
-        }
-    }
-
-    public class ExportData
-    {
-        public IGradientSource GradientSource { get; set; }
-        public Dimensions GradientSize { get; set; }
-        public BackgroundRepeat GradientRepeat { get; set; }
-    }
-
-    public interface IGradientExporter
-    {
-        string ExportCss(ExportData data);
-        string ExportRaw(ExportData data);
-    }
-
     public class GradientExporter : IGradientExporter
     {
         public string ExportCss(ExportData data)
