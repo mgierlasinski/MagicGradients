@@ -18,10 +18,10 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}"
                      Text="{OnPlatform UWP=Edit}" 
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Layers}, Color=White}" />
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Equalizer}, Color=White}" />
         <ToolbarItem Command="{Binding ToggleMenuCommand}"
                      Text="{OnPlatform UWP=More}" 
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White}" />
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.More}, Color=White}" />
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,Auto" RowSpacing="0">
@@ -106,11 +106,11 @@
                                          IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=22}" />
                     <controls:ActionItem Text="Copy" 
                                          Command="{Binding CopyCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" 
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Copy}, Color=White, Size=22}" 
                                          IsVisible="{x:OnPlatform UWP=True, Default=False}" />
                     <controls:ActionItem Text="Share" 
                                          Command="{Binding ShareCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White, Size=22}" />
                 </controls:ActionItemCollection>
             </controls:ActionMenu.Actions>
         </controls:ActionMenu>

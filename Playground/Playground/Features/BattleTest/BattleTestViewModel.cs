@@ -89,7 +89,13 @@ namespace Playground.Features.BattleTest
             DisabledCommand = new Command(() => { }, () => false);
         }
 
-        protected override void UpdateGradientSource()
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            if (propertyName == nameof(CssCode))
+                UpdateGradientSource();
+        }
+
+        private void UpdateGradientSource()
         {
             GradientSource = new CssGradientSource { Stylesheet = CssCode };
             IconsCollection = GenerateIconsCollection();

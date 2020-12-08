@@ -19,5 +19,9 @@ namespace Playground.Resources.Fonts
         public static string Home = "\ue90b";
         public static string Clear = "\ue90c";
         public static string Delete = "\ue90d";
+        public static string Equalizer = "\ue90e";
+        public static string Share = "\ue90f";
+        public static string Copy = "\ue910";
+        public static string More = "\ue911";
     }
 }

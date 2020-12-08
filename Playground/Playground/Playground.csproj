@@ -11,11 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Fonts\IcoMoon.ttf" />
+    <None Remove="Resources\Fonts\IcoMooon.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Fonts\IcoMoon.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\IcoMooon.ttf" />
   </ItemGroup>
 
   <ItemGroup>
