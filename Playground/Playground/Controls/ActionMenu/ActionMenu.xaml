@@ -15,12 +15,9 @@
                     <Grid.Behaviors>
                         <interactivity:TapBehavior Command="{Binding Command}" />
                     </Grid.Behaviors>
-
                     <shapes:Rectangle Fill="#18191A" RadiusX="25" RadiusY="25" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="50" StrokeThickness="2" Stroke="#1790F9" />
-
                     <Ellipse Fill="#1790F9" Margin="5" />
                     <Image Source="{Binding IconSource}" HorizontalOptions="Center" VerticalOptions="Center" />
-
                     <Label Text="{Binding Text}" Grid.Column="1" TextColor="{StaticResource TextColorDark}" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,20,0" />
                 </Grid>
             </DataTemplate>

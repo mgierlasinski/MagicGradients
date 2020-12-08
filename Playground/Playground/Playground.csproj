@@ -35,9 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Controls\ActionMenu\ActionButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Controls\ActionMenu\ActionMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

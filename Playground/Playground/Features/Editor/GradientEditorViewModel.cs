@@ -136,8 +136,16 @@ namespace Playground.Features.Editor
             });
 
             ToggleMenuCommand = new Command(() => IsMenuVisible = true);
-            ShareCommand = new Command(() => _shareService.ShareText("Share Gradient", GetShareText()));
-            CopyCommand = new Command(() => _shareService.CopyToClipboard(GetShareText()));
+            ShareCommand = new Command(() =>
+            {
+                IsMenuVisible = false;
+                _shareService.ShareText("Share Gradient", GetShareText());
+            });
+            CopyCommand = new Command(() =>
+            {
+                IsMenuVisible = false;
+                _shareService.CopyToClipboard(GetShareText());
+            });
             RotateCommand = new Command<string>((x) =>
             {
                 if (Gradient is LinearGradient linear)
