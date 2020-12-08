@@ -110,7 +110,7 @@
                                          IsVisible="{x:OnPlatform UWP=True, Default=False}" />
                     <controls:ActionItem Text="Share" 
                                          Command="{Binding ShareCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White, Size=22}" />
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Share}, Color=White, Size=22}" />
                 </controls:ActionItemCollection>
             </controls:ActionMenu.Actions>
         </controls:ActionMenu>
