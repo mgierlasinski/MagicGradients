@@ -56,18 +56,19 @@
                 <Label Text="Hot reload" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,10,0" />
             </StackLayout>
         </StackLayout>
-        <Expander Grid.Row="1" IsExpanded="True">
+        <Grid Grid.Row="1" ColumnDefinitions="50*,50*" RowDefinitions="200,Auto" RowSpacing="0" ColumnSpacing="0">
+            <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" Grid.ColumnSpan="2" />
+            <Entry Text="{Binding CssSize}" Placeholder="300px 300px" Grid.Row="1" />
+            <Entry Text="{Binding CssRepeat}" Placeholder="repeat-xy" Grid.Row="1" Grid.Column="1" />
+        </Grid>
+        <!--<Expander Grid.Row="1" IsExpanded="True">
             <Expander.Header>
                 <ContentView BackgroundColor="Black">
                     <Label Text="background" TextColor="White" Margin="5" FontSize="Small" />
                 </ContentView>
             </Expander.Header>
-            <Grid ColumnDefinitions="50*,50*" RowDefinitions="200,Auto" RowSpacing="0" ColumnSpacing="0">
-                <Editor Text="{Binding CssCode}" Placeholder="Paste CSS with gradient" Grid.ColumnSpan="2" />
-                <Entry Text="{Binding CssSize}" Placeholder="300px 300px" Grid.Row="1" />
-                <Entry Text="{Binding CssRepeat}" Placeholder="repeat-xy" Grid.Row="1" Grid.Column="1" />
-            </Grid>
-        </Expander>
+            
+        </Expander>-->
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}" 
                             GradientRepeat="{Binding GradientRepeat}"

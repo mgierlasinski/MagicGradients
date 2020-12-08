@@ -21,7 +21,7 @@
             <CollectionView.GroupHeaderTemplate>
                 <DataTemplate>
                     <controls:MenuSection x:DataType="models:CategoryGroup">
-                        <Label Text="{Binding Name}" />
+                        <Label Text="{Binding Name}" Style="{StaticResource HeaderStyle}" />
                     </controls:MenuSection>
                 </DataTemplate>
             </CollectionView.GroupHeaderTemplate>

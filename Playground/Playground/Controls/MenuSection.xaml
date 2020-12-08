@@ -2,11 +2,6 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Playground.Controls.MenuSection">
-    <ContentView.Resources>
-        <Style TargetType="Label" BasedOn="{StaticResource HeaderStyle}">
-            
-        </Style>
-    </ContentView.Resources>
     <ContentView.ControlTemplate>
       <ControlTemplate>
           <StackLayout Orientation="Horizontal" Margin="5,0" Spacing="10">
