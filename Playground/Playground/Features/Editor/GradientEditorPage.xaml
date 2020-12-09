@@ -18,7 +18,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}"
                      Text="{OnPlatform UWP=Edit}" 
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Equalizer}, Color=White}" />
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Tune}, Color=White}" />
         <ToolbarItem Command="{Binding ToggleMenuCommand}"
                      Text="{OnPlatform UWP=More}" 
                      IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.More}, Color=White}" />
@@ -100,17 +100,17 @@
                 <controls:ActionItemCollection>
                     <controls:ActionItem Text="Show CSS" 
                                          Command="{Binding PreviewCssCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=24}" />
                     <controls:ActionItem Text="Paint" 
                                          Command="{Binding BattleTestCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=22}" />
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=24}" />
                     <controls:ActionItem Text="Copy" 
                                          Command="{Binding CopyCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Copy}, Color=White, Size=22}" 
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Copy}, Color=White, Size=24}" 
                                          IsVisible="{x:OnPlatform UWP=True, Default=False}" />
                     <controls:ActionItem Text="Share" 
                                          Command="{Binding ShareCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Share}, Color=White, Size=22}" />
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Share}, Color=White, Size=24}" />
                 </controls:ActionItemCollection>
             </controls:ActionMenu.Actions>
         </controls:ActionMenu>

@@ -3,6 +3,7 @@ using MagicGradients.Parser;
 using MagicGradients.Xaml;
 using Playground.Data.Repositories;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -14,9 +15,10 @@ namespace Playground.Features.CssPreviewer
     {
         private readonly DimensionsTypeConverter _dimensionsConverter;
         private readonly BackgroundRepeatTypeConverter _repeatConverter;
-        private CssSnippet[] _snippets;
-        
-        public GradientCollection GradientSource { get; set; }
+        private readonly Dictionary<string, string> _errors = new Dictionary<string, string>();
+        private readonly CssSnippet[] _snippets;
+
+        public CssGradientSource GradientSource { get; set; }
 
         private Dimensions _gradientSize;
         public Dimensions GradientSize
@@ -32,22 +34,15 @@ namespace Playground.Features.CssPreviewer
             private set => SetProperty(ref _gradientRepeat, value);
         }
 
-        public bool IsMessageVisible => !string.IsNullOrWhiteSpace(Message);
-
-        private string _message;
-        public string Message
-        {
-            get => _message;
-            set => SetProperty(ref _message, value, 
-                () => RaisePropertyChanged(nameof(IsMessageVisible)));
-        }
-
         private bool _isHotReload = true;
         public bool IsHotReload
         {
             get => _isHotReload;
             set => SetProperty(ref _isHotReload, value);
         }
+
+        public string Message => string.Join(Environment.NewLine, _errors.Values);
+        public bool IsMessageVisible => !string.IsNullOrWhiteSpace(Message);
 
         public ICommand ClearCommand { get; }
         public ICommand ShowSnippetsCommand { get; }
@@ -58,8 +53,9 @@ namespace Playground.Features.CssPreviewer
         {
             _dimensionsConverter = new DimensionsTypeConverter();
             _repeatConverter = new BackgroundRepeatTypeConverter();
+            _snippets = new CssSnippetProvider().GetCssSnippets();
 
-            GradientSource = new GradientCollection();
+            GradientSource = new CssGradientSource();
 
             ClearCommand = new Command(() => CssCode = string.Empty);
             ShowSnippetsCommand = new Command(() => ShowSnippetsActionSheet());
@@ -70,7 +66,6 @@ namespace Playground.Features.CssPreviewer
                 UpdateGradientRepeat();
             });
 
-            LoadSnippets();
             UpdateGradientSource();
         }
 
@@ -91,62 +86,74 @@ namespace Playground.Features.CssPreviewer
 
         private void UpdateGradientSource()
         {
-            Message = string.Empty;
-
             try
             {
                 var parser = new CssGradientParser();
                 var gradients = parser.ParseCss(CssCode);
-
                 GradientSource.Gradients = new GradientElements<Gradient>(gradients);
-                ValidateEmptyData();
+
+                if (!GradientSource.GetGradients().Any())
+                {
+                    SetError(nameof(CssCode), "No gradient data");
+                    return;
+                } 
+                
+                RemoveError(nameof(CssCode));
             }
             catch (Exception e)
             {
-                Message = $"Invalid CSS: {e.Message}";
+                SetError(nameof(CssCode), e.Message);
             }
         }
 
         private void UpdateGradientSize()
         {
-            Message = string.Empty;
-
             try
             {
-                GradientSize = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(CssSize);
+                if (!string.IsNullOrWhiteSpace(CssSize))
+                    GradientSize = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(CssSize);
+
+                RemoveError(nameof(CssSize));
             }
             catch (Exception e)
             {
-                Message = $"Invalid size: {e.Message}";
+                SetError(nameof(CssSize), e.Message);
             }
         }
 
         private void UpdateGradientRepeat()
         {
-            Message = string.Empty;
-
             try
             {
-                GradientRepeat = (BackgroundRepeat)_repeatConverter.ConvertFromInvariantString(CssRepeat);
+                if (!string.IsNullOrWhiteSpace(CssRepeat))
+                    GradientRepeat = (BackgroundRepeat)_repeatConverter.ConvertFromInvariantString(CssRepeat);
+
+                RemoveError(nameof(CssRepeat));
             }
             catch (Exception e)
             {
-                Message = $"Invalid repeat: {e.Message}";
+                SetError(nameof(CssRepeat), e.Message);
             }
         }
 
-        private void ValidateEmptyData()
+        private void SetError(string key, string error)
         {
-            if (!GradientSource.GetGradients().Any())
-            {
-                Message = "No gradient data";
-            }
+            if (_errors.ContainsKey(key))
+                _errors[key] = error;
+            else
+                _errors.Add(key, error);
+
+            RaisePropertyChanged(nameof(Message));
+            RaisePropertyChanged(nameof(IsMessageVisible));
         }
 
-        private void LoadSnippets()
+        private void RemoveError(string key)
         {
-            var provider = new CssSnippetProvider();
-            _snippets = provider.GetCssSnippets();
+            if (_errors.ContainsKey(key))
+                _errors.Remove(key);
+
+            RaisePropertyChanged(nameof(Message));
+            RaisePropertyChanged(nameof(IsMessageVisible));
         }
 
         private async Task ShowSnippetsActionSheet()
