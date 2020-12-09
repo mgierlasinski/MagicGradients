@@ -110,10 +110,14 @@ namespace Playground.Features.CssPreviewer
         {
             try
             {
-                if (!string.IsNullOrWhiteSpace(CssSize))
-                    GradientSize = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(CssSize);
-
-                RemoveError(nameof(CssSize));
+                if (string.IsNullOrWhiteSpace(CssSize))
+                {
+                    GradientSize = Dimensions.Prop(1, 1);
+                    RemoveError(nameof(CssSize));
+                    return;
+                }
+                
+                GradientSize = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(CssSize);
             }
             catch (Exception e)
             {
@@ -125,10 +129,14 @@ namespace Playground.Features.CssPreviewer
         {
             try
             {
-                if (!string.IsNullOrWhiteSpace(CssRepeat))
-                    GradientRepeat = (BackgroundRepeat)_repeatConverter.ConvertFromInvariantString(CssRepeat);
+                if (string.IsNullOrWhiteSpace(CssRepeat))
+                {
+                    GradientRepeat = BackgroundRepeat.Repeat;
+                    RemoveError(nameof(CssRepeat));
+                    return;
+                }
 
-                RemoveError(nameof(CssRepeat));
+                GradientRepeat = (BackgroundRepeat)_repeatConverter.ConvertFromInvariantString(CssRepeat);
             }
             catch (Exception e)
             {

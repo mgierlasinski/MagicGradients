@@ -124,14 +124,12 @@ namespace Playground.Features.Editor
             PreviewCssCommand = new Command(async () =>
             {
                 IsMenuVisible = false;
-                //await Shell.Current.GoToAsync($"CssPreviewer?id={Id}");
                 await Shell.Current.GoToAsync($"CssPreviewer?data={GetRawData()}");
             });
 
             BattleTestCommand = new Command(async () =>
             {
                 IsMenuVisible = false;
-                //await Shell.Current.GoToAsync($"BattleTest?id={Id}");
                 await Shell.Current.GoToAsync($"BattleTest?data={GetRawData()}");
             });
 

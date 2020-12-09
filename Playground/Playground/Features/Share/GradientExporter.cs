@@ -37,7 +37,7 @@ namespace Playground.Features.Share
             return builder.ToString();
         }
 
-        private string ExportGradients(IGradientSource source) => string.Join(",", source.GetGradients().Select(GetGradient));
+        private string ExportGradients(IGradientSource source) => string.Join(",", source.GetGradients().Reverse().Select(GetGradient));
 
         private string GetGradient(Gradient gradient)
         {
@@ -52,7 +52,9 @@ namespace Playground.Features.Share
             if (gradient is RadialGradient radial)
             {
                 var type = radial.IsRepeating ? "repeating-radial-gradient" : "radial-gradient";
-                return $"{type}({GetColors(radial)})";
+                var shape = radial.Shape.ToString().ToLower();
+
+                return $"{type}({shape} {GetSize(radial)} {GetPosition(radial)}, {GetColors(radial)})";
             }
 
             return string.Empty;
@@ -60,7 +62,7 @@ namespace Playground.Features.Share
 
         private string GetColors(Gradient gradient)
         {
-            return string.Join(",", gradient.Stops.Select(x =>
+            return string.Join(", ", gradient.Stops.Select(x =>
             {
                 var color = $"rgba({Math.Floor(x.Color.R * 255)},{Math.Floor(x.Color.G * 255)},{Math.Floor(x.Color.B * 255)},{x.Color.A})";
                 return $"{color} {x.RenderOffset * 100}%";
@@ -75,6 +77,32 @@ namespace Playground.Features.Share
             return offset.Type == OffsetType.Proportional
                 ? $"{offset.Value * 100}%"
                 : $"{offset.Value}px";
+        }
+
+        private string GetSize(RadialGradient gradient)
+        {
+            return gradient.Size switch
+            {
+                RadialGradientSize.ClosestSide => "closest-side",
+                RadialGradientSize.ClosestCorner => "closest-corner",
+                RadialGradientSize.FarthestSide => "farthest-side",
+                _ => "farthest-corner"
+            };
+        }
+
+        private string GetPosition(RadialGradient gradient)
+        {
+            var center = gradient.Center;
+
+            var posX = FlagsHelper.IsSet(gradient.Flags, RadialGradientFlags.XProportional)
+                ? $"{center.X * 100}%"
+                : $"{center.X}px";
+
+            var posY = FlagsHelper.IsSet(gradient.Flags, RadialGradientFlags.YProportional)
+                ? $"{center.Y * 100}%"
+                : $"{center.Y}px";
+
+            return $"at {posX} {posY}";
         }
 
         private string ExportSize(Dimensions size) => $"{GetOffset(size.Width, 1)} {GetOffset(size.Height, 1)}";
