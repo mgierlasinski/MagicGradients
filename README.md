@@ -169,13 +169,13 @@ radial-gradient(shape size at position, start-color, ..., last-color);
 ```
 
 - supported shapes: `circle`, `ellipse`
-- suppored sizes: `closest-side`, `closest-corner`\*, `farthest-side`, `farthest-corner`\* 
-    
-    TODO: add support for custom radius
+- suppored sizes: `closest-side`, `closest-corner`, `farthest-side`, `farthest-corner`
 - supported positions: in pixels (`px`), proportional (`%`) and named directions (`left`, `right`, `top`, `bottom`, `center`)
 - suppored color formats: (see linear gradient)
 
+<!--
 \* _currently ellipse shape supports only side points, you can use corner variants but there is no difference in rendering_
+-->
 
 ### Play with CSS
 
