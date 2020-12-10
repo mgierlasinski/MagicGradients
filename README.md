@@ -101,14 +101,14 @@ Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_
 
 ## Styling with CSS
 
-Magic Gradients supports [CSS functions](https://www.w3schools.com/css/css3_gradients.asp): 
-
+<!-- 
 - [`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) 
 - [`repeating-linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient) 
 - [`radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient)
 - [`repeating-radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient)
+-->
 
-You can embed CSS inline:
+Magic Gradients supports [CSS functions](https://www.w3schools.com/css/css3_gradients.asp). CSS gradient can be embeded in XAML inline:
 
 ``` xml
 <magic:GradientView>
@@ -122,7 +122,7 @@ You can embed CSS inline:
 </magic:GradientView>
 ```
 
-Or style from CSS stylesheet:
+Styling from CSS stylesheet is also possible:
 
 ``` xml
 <magic:GradientView StyleClass="myGradient" />
@@ -145,16 +145,21 @@ var cssGradientSource = new CssGradientSource()
 gradientView.GradientSource = cssGradientSource;
 ```
 
-### Linear gradient function
+### Linear gradient functions
 
+| ![Alt text](https://www.w3schools.com/cssref/gradient_linear.png) | ![Alt text](https://www.w3schools.com/cssref/gradient_linear.png) |
+|:-----:|:-----:|
+| [`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) | [`repeating-linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient) |
+
+**CSS Syntax**
 ``` css
-linear-gradient(direction, color-stop1, color-stop2, ...);
+linear-gradient(direction | angle, color-stop1, color-stop2, ...);
 ```
 
-Supported directions:
-- named directions: `to left`, `to right`, `to top`, `to bottom`, `to left top`, `to right bottom` etc.
-- angles in degrees: `135deg`
-- angle proportional: `0.45turn` (range should be between 0-1)
+| Value | Description |
+| ------| ----------- |
+| `direction` | Possible values: `to left`, `to right`, `to top`, `to bottom`, `to left top`, `to right bottom` etc. |
+| `angle` | In degrees (`135deg`) or proportional (`0.45turn`, range between 0-1) |
 
 Each color stop should contain color information and optionally position described in percents or pixels. Suppored color formats:
 
@@ -162,20 +167,23 @@ Each color stop should contain color information and optionally position describ
 - colors in hex: `#ff0000`
 - named colors: `red`, `green`, `blue`, `orange`, `pink`
 
-### Radial gradient function
+### Radial gradient functions
 
+| ![Alt text](https://www.w3schools.com/cssref/gradient_radial.jpg) | ![Alt text](https://www.w3schools.com/cssref/gradient_radial.jpg) |
+|:-----:|:-----:|
+| [`radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient) | [`repeating-radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient) |
+
+
+**CSS Syntax**
 ``` css
 radial-gradient(shape size at position, start-color, ..., last-color);
 ```
 
-- supported shapes: `circle`, `ellipse`
-- suppored sizes: `closest-side`, `closest-corner`, `farthest-side`, `farthest-corner`
-- supported positions: in pixels (`px`), proportional (`%`) and named directions (`left`, `right`, `top`, `bottom`, `center`)
-- suppored color formats: (see linear gradient)
-
-<!--
-\* _currently ellipse shape supports only side points, you can use corner variants but there is no difference in rendering_
--->
+| Value | Description |
+| ------| ----------- |
+| `shape` | Possible values: `circle`, `ellipse` |
+| `size` | Possible values: `closest-side`, `closest-corner`, `farthest-side`, `farthest-corner` (default) |
+| `position` | In pixels (`px`), proportional (`%`) or named directions (`left`, `right`, `top`, `bottom`, `center`) |
 
 ### Play with CSS
 
@@ -236,29 +244,30 @@ Control animation from view model:
 
 ### Property animations
 
-`<Type>Animation`
+With this type of animation you can animate single property between two values defined as `From` and `To`.
 
-Built-in types:
-
-`Color`, `Dimensions`, `Double`, `Integer`, `Offset`, `Point`, `Thickness`
-
-For custom types, see Custom animation types.
-
-| Properties |     |
-| ---------- | --- |
-| `From` | Value when animation starts. |
-| `To` | Value when animation ends. |
+| Properties | Value |    |
+| ---------- | ------| --- |
+| `TargetProperty` | `magic:GradientStop.Color` | Animated property with full namespace. |
+| `From` | Value matching `TargetProperty` type |  Value when animation starts. |
+| `To` | Value matching `TargetProperty` type | Value when animation ends. |
 
 Animate color sample:
 
 ``` xml
 <anim:ColorAnimation Target="{x:Reference AnimColor}" 
                      TargetProperty="magic:GradientStop.Color" 
-                     From="#C850C0" To="#1FDD15" 
+                     From="Red" To="Yellow" 
                      Duration="3000"
                      RepeatBehavior="Forever" 
                      AutoReverse="True" />
 ```
+
+Built-in property types:
+
+`ColorAnimation`, `DimensionsAnimation`, `DoubleAnimation`, `IntegerAnimation`, `OffsetAnimation`, `PointAnimation`, `ThicknessAnimation`
+
+For custom types, see Custom animation types.
 
 ### Storyboards
 
