@@ -91,6 +91,14 @@ To apply gradient created in C#, you can use `ToSource()` extension method:
 gradientView.GradientSource = source;
 ```
 
+## Discover amazing backgounds
+
+In `Magic Gradients` repository you can find `Magic Playground`, a `Xamarin.Forms` app for browsing and creating gradients visually. Android, iOS and UWP are supported.
+
+Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_evil: from [Gradient Magic](https://www.gradientmagic.com/), ready to use in any `Xamarin.Forms` app. Find your best pick and copy over to your app.
+
+![GIF](./Assets/MagicGradientsGallery.gif)
+
 ## Styling with CSS
 
 Magic Gradients supports [CSS functions](https://www.w3schools.com/css/css3_gradients.asp): 
@@ -169,6 +177,13 @@ radial-gradient(shape size at position, start-color, ..., last-color);
 
 \* _currently ellipse shape supports only side points, you can use corner variants but there is no difference in rendering_
 
+### Play with CSS
+
+You can play around with CSS functions live in Magic Playground app, Hot Reload :fire: included.
+
+![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/paste-css.gif)
+
+<!--
 ### Examples
 
 ``` css
@@ -178,6 +193,7 @@ linear-gradient(0deg, blue, green 40%, red);
 radial-gradient(cyan 0%, transparent 20%, salmon 40%);
 radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
 ```
+-->
 
 ## Animations (preview)
 
@@ -292,56 +308,7 @@ Move radial circle between corners, at different times:
 </anim:PointAnimationUsingKeyFrames>
 ```
 
-### Custom animation types
-
-- create `ITweener` implementation
-
-``` C#
-public class DoubleTweener : ITweener<double>
-{
-    public double Tween(double @from, double to, double progress)
-    {
-        return from + (to - from) * progress;
-    }
-}
-```
-
-- define animations
-
-``` C#
-public class DoubleAnimation : PropertyAnimation<double>
-{
-    public override ITweener<double> Tweener { get; } = new DoubleTweener();
-}
-
-public class DoubleAnimationUsingKeyFrames : PropertyAnimationUsingKeyFrames<double>
-{
-    public override ITweener<double> Tweener { get; } = new DoubleTweener();
-}
-
-public class DoubleKeyFrame : KeyFrame<double> { }
-```
-
-## Magic Playground
-
-### Gallery
-
-You can preview some of the gradients from [Gradient Magic](https://www.gradientmagic.com/) in Playground app. To use the examples from the gallery, you need just copy Gradient CSS and paste into your project.
-
-(Video on YouTube ⬇️)
-
-[![Gallery](https://img.youtube.com/vi/PFSlubz6_ps/0.jpg)](https://www.youtube.com/watch?v=PFSlubz6_ps)
-
-
-![GIF](./Assets/MagicGradientsGallery.gif)
-
-### CSS previewer
-
-You can test CSS gradient code live within Playground application.
-
-![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/paste-css.gif)
-
-## Advanced drawing
+## Advanced features
 
 ### Color positions
 
@@ -395,6 +362,36 @@ Repeat mode can be set from CSS as well:
     background-size: 60px 60px;
     background-repeat: repeat-x;
 }
+```
+
+### Custom animation types
+
+- create `ITweener` implementation
+
+``` C#
+public class DoubleTweener : ITweener<double>
+{
+    public double Tween(double @from, double to, double progress)
+    {
+        return from + (to - from) * progress;
+    }
+}
+```
+
+- define animations
+
+``` C#
+public class DoubleAnimation : PropertyAnimation<double>
+{
+    public override ITweener<double> Tweener { get; } = new DoubleTweener();
+}
+
+public class DoubleAnimationUsingKeyFrames : PropertyAnimationUsingKeyFrames<double>
+{
+    public override ITweener<double> Tweener { get; } = new DoubleTweener();
+}
+
+public class DoubleKeyFrame : KeyFrame<double> { }
 ```
 
 # Articles
