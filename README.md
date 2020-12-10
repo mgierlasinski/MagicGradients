@@ -162,6 +162,7 @@ radial-gradient(shape size at position, start-color, ..., last-color);
 
 - supported shapes: `circle`, `ellipse`
 - suppored sizes: `closest-side`, `closest-corner`\*, `farthest-side`, `farthest-corner`\* 
+    
     TODO: add support for custom radius
 - supported positions: in pixels (`px`), proportional (`%`) and named directions (`left`, `right`, `top`, `bottom`, `center`)
 - suppored color formats: (see linear gradient)
@@ -184,14 +185,14 @@ radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
 xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients"
 ```
 
-| Timeline porperty | Values |   |
+| Timeline property | Values |   |
 | ----------------- | ---- | --- |
-| Target | `{x:Reference myGradient}` | Reference to animated element. |
-| Duration | `3000` | Length of single loop (in ms). |
-| Delay | `200` | Time before animations starts (in ms). |
-| Easing | `{x:Static Easing.SinInOut}` | Easing function. |            
-| RepeatBehavior | `1x`, `3x`, `Forever`  | How many times animation must be repeated. |
-| AutoReverse | `True`, `False` | If true, next loop will be animated backwards. |
+| `Target` | `{x:Reference myGradient}` | Reference to animated element. |
+| `Duration` | `3000` | Length of single loop (in ms). |
+| `Delay` | `200` | Time before animations starts (in ms). |
+| `Easing` | `{x:Static Easing.SinInOut}` | Easing function. |            
+| `RepeatBehavior` | `1x`, `3x`, `Forever`  | How many times animation must be repeated. |
+| `AutoReverse` | `True`, `False` | If true, next loop will be animated backwards. |
 
 ### Running animation
 
@@ -219,13 +220,20 @@ Control animation from view model:
 
 ### Property animations
 
-- ColorAnimation
-- DimensionsAnimation
-- DoubleAnimation
-- IntegerAnimation
-- OffsetAnimation
-- PointAnimation
-- ThicknessAnimation
+`<Type>Animation`
+
+Built-in types:
+
+`Color`, `Dimensions`, `Double`, `Integer`, `Offset`, `Point`, `Thickness`
+
+For custom types, see Custom animation types.
+
+| Properties |     |
+| ---------- | --- |
+| `From` | Value when animation starts. |
+| `To` | Value when animation ends. |
+
+Animate color sample:
 
 ``` xml
 <anim:ColorAnimation Target="{x:Reference AnimColor}" 
@@ -238,9 +246,12 @@ Control animation from view model:
 
 ### Storyboards
 
-Attached properties:
-- `anim:Storyboard.BeginAt`
-- `anim:Storyboard.FinishAt`
+| Attached properties | Values |    |
+| ------------------- | ------ | -- |
+| `anim:Storyboard.BeginAt` | `from 0 to 1` | Start animation at given point of `Storyboard`. |
+| `anim:Storyboard.FinishAt` | `from 0 to 1` | End animation at given point of `Storyboard`. |
+
+Animate two colors at different times:
 
 ``` xml
 <anim:Storyboard Duration="4000" RepeatBehavior="Forever">
@@ -261,12 +272,14 @@ Attached properties:
 
 ### KeyFrame animations
 
-`<ProperyAnimation>UsingKeyFrames`
+`<Type>AnimationUsingKeyFrames`
 
 `<Type>KeyFrame` properties:
 - `KeyTime` - time when value is applied to animated target
 - `Value` - of type `<Type>`
 - `Easing` - easing function
+
+Move radial circle between corners, at different times:
 
 ``` xml
 <anim:PointAnimationUsingKeyFrames Target="{x:Reference Radial2}" 
