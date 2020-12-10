@@ -126,6 +126,17 @@ Or style from CSS stylesheet:
 }
 ```
 
+CSS can be also set via C#:
+
+``` C#
+var gradientView = new GradientView();
+var cssGradientSource = new CssGradientSource()
+{
+    Stylesheet = "linear-gradient(red, green, blue)"
+};
+gradientView.GradientSource = cssGradientSource;
+```
+
 ### Linear gradient function
 
 ``` css
@@ -151,7 +162,8 @@ radial-gradient(shape size at position, start-color, ..., last-color);
 
 - supported shapes: `circle`, `ellipse`
 - suppored sizes: `closest-side`, `closest-corner`\*, `farthest-side`, `farthest-corner`\* 
-- supported sizes: in pixels (`px`), proportional (`%`) and named directions (`left`, `right`, `top`, `bottom`, `center`)
+    TODO: add support for custom radius
+- supported positions: in pixels (`px`), proportional (`%`) and named directions (`left`, `right`, `top`, `bottom`, `center`)
 - suppored color formats: (see linear gradient)
 
 \* _currently ellipse shape supports only side points, you can use corner variants but there is no difference in rendering_
@@ -164,6 +176,137 @@ linear-gradient(to left top, blue, red);
 linear-gradient(0deg, blue, green 40%, red);
 radial-gradient(cyan 0%, transparent 20%, salmon 40%);
 radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
+```
+
+## Animations (preview)
+
+``` xml
+xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients"
+```
+
+| Timeline porperty | Values |   |
+| ----------------- | ---- | --- |
+| Target | `{x:Reference myGradient}` | Reference to animated element. |
+| Duration | `3000` | Length of single loop (in ms). |
+| Delay | `200` | Time before animations starts (in ms). |
+| Easing | `{x:Static Easing.SinInOut}` | Easing function. |            
+| RepeatBehavior | `1x`, `3x`, `Forever`  | How many times animation must be repeated. |
+| AutoReverse | `True`, `False` | If true, next loop will be animated backwards. |
+
+### Running animation
+
+Run automatically:
+
+``` xml
+<magic:GradientView.Behaviors>
+    <anim:Animate>
+        <anim:DoubleAnimation ... />
+    </anim:Animate>
+</magic:GradientView.Behaviors>
+```
+
+Control animation from view model:
+
+``` xml
+<magic:GradientView.Triggers>
+    <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+         <anim:PointAnimation ... />
+    </anim:AnimateTrigger>
+</magic:GradientView.Triggers>
+```
+
+`AnimateTrigger` is a `MarkupExtension`. It's shorter way of creating `DataTrigger` with `BeginAnimation` and `EndAnimation` as `EnterActions` and `ExitActions`.
+
+### Property animations
+
+- ColorAnimation
+- DimensionsAnimation
+- DoubleAnimation
+- IntegerAnimation
+- OffsetAnimation
+- PointAnimation
+- ThicknessAnimation
+
+``` xml
+<anim:ColorAnimation Target="{x:Reference AnimColor}" 
+                     TargetProperty="magic:GradientStop.Color" 
+                     From="#C850C0" To="#1FDD15" 
+                     Duration="3000"
+                     RepeatBehavior="Forever" 
+                     AutoReverse="True" />
+```
+
+### Storyboards
+
+Attached properties:
+- `anim:Storyboard.BeginAt`
+- `anim:Storyboard.FinishAt`
+
+``` xml
+<anim:Storyboard Duration="4000" RepeatBehavior="Forever">
+    <anim:ColorAnimation Target="{x:Reference Color1}" 
+                         TargetProperty="magic:GradientStop.Color" 
+                         From="White" To="Red" 
+                         anim:Storyboard.BeginAt="0"
+                         anim:Storyboard.FinishAt="0.8"
+                         AutoReverse="True" />
+    <anim:ColorAnimation Target="{x:Reference Color2}" 
+                         TargetProperty="magic:GradientStop.Color" 
+                         From="LightGray" To="DarkRed" 
+                         anim:Storyboard.BeginAt="0.3"
+                         anim:Storyboard.FinishAt="1"
+                         AutoReverse="True" />
+</anim:Storyboard>
+```
+
+### KeyFrame animations
+
+`<ProperyAnimation>UsingKeyFrames`
+
+`<Type>KeyFrame` properties:
+- `KeyTime` - time when value is applied to animated target
+- `Value` - of type `<Type>`
+- `Easing` - easing function
+
+``` xml
+<anim:PointAnimationUsingKeyFrames Target="{x:Reference Radial2}" 
+                                   TargetProperty="magic:RadialGradient.Center" 
+                                   RepeatBehavior="Forever">
+    <anim:PointKeyFrame KeyTime="1000" Value="0.9,0.1" />
+    <anim:PointKeyFrame KeyTime="1500" Value="0.9,0.9" />
+    <anim:PointKeyFrame KeyTime="2500" Value="0.1,0.9" Easing="{x:Static Easing.SinInOut}" />
+    <anim:PointKeyFrame KeyTime="3000" Value="0.1,0.1" />
+</anim:PointAnimationUsingKeyFrames>
+```
+
+### Custom animation types
+
+- create `ITweener` implementation
+
+``` C#
+public class DoubleTweener : ITweener<double>
+{
+    public double Tween(double @from, double to, double progress)
+    {
+        return from + (to - from) * progress;
+    }
+}
+```
+
+- define animations
+
+``` C#
+public class DoubleAnimation : PropertyAnimation<double>
+{
+    public override ITweener<double> Tweener { get; } = new DoubleTweener();
+}
+
+public class DoubleAnimationUsingKeyFrames : PropertyAnimationUsingKeyFrames<double>
+{
+    public override ITweener<double> Tweener { get; } = new DoubleTweener();
+}
+
+public class DoubleKeyFrame : KeyFrame<double> { }
 ```
 
 ## Magic Playground
@@ -237,7 +380,7 @@ Repeat mode can be set from CSS as well:
 .myGradient {
     background: ...;
     background-size: 60px 60px;
-    background-repeat: repeat-xy;
+    background-repeat: repeat-x;
 }
 ```
 
