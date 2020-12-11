@@ -59,7 +59,15 @@
         <Grid Grid.Row="1" ColumnDefinitions="50*,50*" RowDefinitions="200,Auto" RowSpacing="0" ColumnSpacing="0">
             <Editor Text="{Binding CssCode}" Placeholder="Functions: linear-gradient(col1, col2), radial-gradient(col1, col2)" Grid.ColumnSpan="2" />
             <Entry Text="{Binding CssSize}" Placeholder="300px 300px" Grid.Row="1" />
-            <Entry Text="{Binding CssRepeat}" Placeholder="repeat" Grid.Row="1" Grid.Column="1" />
+            <Picker SelectedItem="{Binding CssRepeat}" Grid.Row="1" Grid.Column="1">
+                <Picker.Items>
+                    <x:String></x:String>
+                    <x:String>repeat</x:String>
+                    <x:String>repeat-x</x:String>
+                    <x:String>repeat-y</x:String>
+                    <x:String>no-repeat</x:String>
+                </Picker.Items>
+            </Picker>
         </Grid>
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}" 

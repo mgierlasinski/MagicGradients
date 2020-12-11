@@ -5,7 +5,7 @@
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              x:Class="Playground.Features.Editor.PropertiesTab">
     <StackLayout.Resources>
-        <converters:BoolToIntConverter x:Key="BoolToIntConverter" />
+        <converters:TabBoolConverter x:Key="TabBoolConverter" />
     </StackLayout.Resources>
 
     <StackLayout IsVisible="{Binding IsRadial, Converter={StaticResource NegativeBoolConverter}}">
@@ -58,7 +58,7 @@
     </StackLayout>
 
     <Label Text="Length" Margin="0,10,0,0" />
-    <tabs:TabHostView SelectedIndex="{Binding Gradient.IsRepeating, Mode=TwoWay, Converter={StaticResource BoolToIntConverter}}" 
+    <tabs:TabHostView SelectedIndex="{Binding Gradient.IsRepeating, Mode=TwoWay, Converter={StaticResource TabBoolConverter}}" 
                       Style="{StaticResource SegmentedTabs}">
         <tabs:TabHostView.Tabs>
             <tabs:SegmentedTabItem Label="Single" />

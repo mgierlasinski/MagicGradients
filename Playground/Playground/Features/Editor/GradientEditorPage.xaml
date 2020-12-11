@@ -28,11 +28,12 @@
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
                             GradientRepeat="{Binding GradientRepeat}"
-                            EnableTouchEvents="{Binding IsRadial}" 
+                            EnableTouchEvents="{Binding IsDragEnabled}" 
                             Touch="SKCanvasView_OnTouch" 
                             PaintSurface="SKCanvasView_OnPaintSurface"/>
         
-        <Grid VerticalOptions="Start" BackgroundColor="Black" IsVisible="{Binding IsRadial}">
+        <Grid VerticalOptions="Start" IsVisible="{Binding IsDragEnabled}">
+            <BoxView Style="{StaticResource SemiTransparent}" HeightRequest="20" />
             <Label TextColor="White" FontSize="12" Margin="2">
                 <Label.FormattedText>
                     <FormattedString>
