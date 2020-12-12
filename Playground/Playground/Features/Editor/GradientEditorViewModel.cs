@@ -5,6 +5,7 @@ using Playground.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Playground.Features.Share;
 using Xamarin.Forms;
 
 namespace Playground.Features.Editor
@@ -13,9 +14,22 @@ namespace Playground.Features.Editor
     public class GradientEditorViewModel : ObservableObject
     {
         private readonly IGalleryService _galleryService;
+        private readonly IShareService _shareService;
+        private readonly IGradientExporter _exporter;
 
         public LinearHandler Linear { get; }
         public RadialHandler Radial { get; }
+
+        private string _id;
+        public string Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                LoadGradient();
+            }
+        }
 
         private GradientCollection _gradientSource;
         public GradientCollection GradientSource
@@ -31,11 +45,11 @@ namespace Playground.Features.Editor
             set => SetProperty(ref _gradient, value, OnGradientChanged);
         }
         
-        private Dimensions _gradientSize = Dimensions.Prop(1, 1);
+        private Dimensions _gradientSize;
         public Dimensions GradientSize
         {
             get => _gradientSize;
-            set => SetProperty(ref _gradientSize, value);
+            set => SetProperty(ref _gradientSize, value, UpdateSizeOnUI);
         }
 
         private BackgroundRepeat _gradientRepeat;
@@ -52,30 +66,51 @@ namespace Playground.Features.Editor
             set => SetProperty(ref _selectedTabIndex, value);
         }
 
-        private string _id;
-        public string Id
+        private double _sizeScale = 1;
+        public double SizeScale
         {
-            get => _id;
-            set
-            {
-                _id = value;
-                LoadGradient();
-            }
+            get => _sizeScale;
+            set => SetProperty(ref _sizeScale, value, UpdateSize);
+        }
+
+        private double _sizeWidth = 100;
+        public double SizeWidth
+        {
+            get => _sizeWidth;
+            set => SetProperty(ref _sizeWidth, value, UpdateSize);
+        }
+
+        private double _sizeHeight = 100;
+        public double SizeHeight
+        {
+            get => _sizeHeight;
+            set => SetProperty(ref _sizeHeight, value, UpdateSize);
+        }
+
+        private bool _isPixelSize;
+        public bool IsPixelSize
+        {
+            get => _isPixelSize;
+            set => SetProperty(ref _isPixelSize, value, UpdateSize);
         }
 
         private bool _isEditMode;
         public bool IsEditMode
         {
             get => _isEditMode;
-            set => SetProperty(ref _isEditMode, value);
+            set => SetProperty(ref _isEditMode, value, 
+                () => RaisePropertyChanged(nameof(IsDragEnabled)));
         }
 
         private bool _isRadial;
         public bool IsRadial
         {
             get => _isRadial;
-            set => SetProperty(ref _isRadial, value);
+            set => SetProperty(ref _isRadial, value, 
+                () => RaisePropertyChanged(nameof(IsDragEnabled)));
         }
+
+        public bool IsDragEnabled => IsEditMode && IsRadial;
 
         private bool _isGallery;
         public bool IsGallery
@@ -97,10 +132,18 @@ namespace Playground.Features.Editor
         public ICommand PreviewCssCommand { get; }
         public ICommand BattleTestCommand { get; }
         public ICommand ToggleMenuCommand { get; }
+        public ICommand ShareCommand { get; }
+        public ICommand CopyCommand { get; }
+        public ICommand RotateCommand { get; }
 
-        public GradientEditorViewModel(IGalleryService galleryService)
+        public GradientEditorViewModel(
+            IGalleryService galleryService, 
+            IShareService shareService,
+            IGradientExporter exporter)
         {
             _galleryService = galleryService;
+            _shareService = shareService;
+            _exporter = exporter;
 
             GradientSource = new GradientCollection();
             Linear = new LinearHandler(this);
@@ -113,16 +156,31 @@ namespace Playground.Features.Editor
             PreviewCssCommand = new Command(async () =>
             {
                 IsMenuVisible = false;
-                await Shell.Current.GoToAsync($"CssPreviewer?id={Id}");
+                await Shell.Current.GoToAsync($"CssPreviewer?data={GetRawData()}");
             });
 
             BattleTestCommand = new Command(async () =>
             {
                 IsMenuVisible = false;
-                await Shell.Current.GoToAsync($"BattleTest?id={Id}");
+                await Shell.Current.GoToAsync($"BattleTest?data={GetRawData()}");
             });
 
-            ToggleMenuCommand = new Command(() => IsMenuVisible = !IsMenuVisible);
+            ToggleMenuCommand = new Command(() => IsMenuVisible = true);
+            ShareCommand = new Command(() =>
+            {
+                IsMenuVisible = false;
+                _shareService.ShareText("Share Gradient", GetShareText());
+            });
+            CopyCommand = new Command(() =>
+            {
+                IsMenuVisible = false;
+                _shareService.CopyToClipboard(GetShareText());
+            });
+            RotateCommand = new Command<string>((x) =>
+            {
+                if (Gradient is LinearGradient linear)
+                    linear.Angle = double.Parse(x);
+            });
         }
 
         private void LoadGradient()
@@ -139,6 +197,7 @@ namespace Playground.Features.Editor
             if (_id == "radial")
                 GradientSource.Gradients.Add(Radial.Create());
 
+            GradientSize = Dimensions.Prop(1, 1);
             EditCommand.Execute(null);
         }
 
@@ -184,6 +243,61 @@ namespace Playground.Features.Editor
                 Gradient = GradientSource.Gradients.FirstOrDefault();
 
             IsEditMode = true;
+        }
+
+        private void UpdateSize()
+        {
+            GradientSize = IsPixelSize
+                ? Dimensions.Abs(SizeWidth, SizeHeight)
+                : Dimensions.Prop(SizeScale, SizeScale);
+        }
+
+        private void UpdateSizeOnUI()
+        {
+            if (GradientSize.IsZero)
+                return;
+
+            if (GradientSize.Width.Type == OffsetType.Absolute)
+            {
+                _isPixelSize = true;    
+                _sizeWidth = GradientSize.Width.Value;
+                _sizeHeight = GradientSize.Height.Value;
+            }
+            else
+            {
+                _isPixelSize = false;
+                _sizeScale = GradientSize.Width.Value;
+            }
+
+            // Notify UI only, don't raise OnChanged action
+            RaisePropertyChanged(nameof(IsPixelSize));
+            RaisePropertyChanged(nameof(SizeScale));
+            RaisePropertyChanged(nameof(SizeWidth));
+            RaisePropertyChanged(nameof(SizeHeight));
+        }
+
+        private string GetRawData()
+        {
+            var data = new ExportData
+            {
+                GradientSource = GradientSource,
+                GradientSize = GradientSize,
+                GradientRepeat = GradientRepeat
+            };
+
+            return _exporter.ExportRaw(data);
+        }
+
+        private string GetShareText()
+        {
+            var data = new ExportData
+            {
+                GradientSource = GradientSource,
+                GradientSize = GradientSize,
+                GradientRepeat = GradientRepeat
+            };
+
+            return _exporter.ExportCss(data);
         }
     }
 }

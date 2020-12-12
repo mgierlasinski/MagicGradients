@@ -14,8 +14,9 @@ namespace MagicGradients.Toolkit.Controls
         private const string GradientViewName = "GradientView";
         private const string OverlayName = "Overlay";
 
-        private readonly Frame _templateRoot;
-        
+        private Frame _templateRoot;
+        protected Frame TemplateRoot => _templateRoot ??= (Frame)GetTemplateChild(TemplateRootName);
+
         public static readonly BindableProperty ContentProperty = BindableProperty.Create(
             nameof(Content), typeof(object), typeof(MagicButton), null,
             propertyChanged: OnContentChanged, coerceValue: CoerceContent);
@@ -143,14 +144,12 @@ namespace MagicGradients.Toolkit.Controls
         public MagicButton()
         {
             InitializeComponent();
-
-            _templateRoot = (Frame)GetTemplateChild(TemplateRootName);
         }
 
         private void ExtendNameScope()
         {
             var nameScope = NameScope.GetNameScope(this);
-            nameScope.RegisterName(TemplateRootName, _templateRoot);
+            nameScope.RegisterName(TemplateRootName, TemplateRoot);
             nameScope.RegisterName(GradientViewName, (GradientView)GetTemplateChild(GradientViewName));
             nameScope.RegisterName(OverlayName, (BoxView)GetTemplateChild(OverlayName));
         }
@@ -284,9 +283,9 @@ namespace MagicGradients.Toolkit.Controls
 
         private void GoToState(string stateName)
         {
-            if (_templateRoot != null)
+            if (TemplateRoot != null)
             {
-                VisualStateManager.GoToState(_templateRoot, stateName);
+                VisualStateManager.GoToState(TemplateRoot, stateName);
             }
             VisualStateManager.GoToState(this, stateName);
         }

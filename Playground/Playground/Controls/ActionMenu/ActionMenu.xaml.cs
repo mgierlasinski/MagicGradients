@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -62,7 +63,7 @@ namespace Playground.Controls
         {
             if (Actions != null)
             {
-                BindableLayout.SetItemsSource(ActionsContainer, Actions);
+                BindableLayout.SetItemsSource(ActionsContainer, Actions.Where(x => x.IsVisible));
             }
         }
 

@@ -26,7 +26,13 @@ namespace Playground.ViewModels
         protected void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
+            OnPropertyChanged(propertyName);
             changed?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+
         }
     }
 }

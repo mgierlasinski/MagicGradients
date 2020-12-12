@@ -67,5 +67,10 @@ namespace MagicGradients
             else
                 Unset(ref flags, flagToSet);
         }
+
+        public static bool IsSet(RadialGradientFlags flags, RadialGradientFlags flagToCheck)
+        {
+            return (flags & flagToCheck) != 0;
+        }
     }
 }

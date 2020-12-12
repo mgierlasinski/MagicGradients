@@ -8,7 +8,7 @@ using Playground.Features.Gallery;
 using Playground.Features.Gallery.Services;
 using Playground.Features.Home;
 using Playground.Features.Linear;
-using Playground.Features.Radial;
+using Playground.Features.Share;
 using SimpleInjector;
 using Xamarin.Forms;
 using GradientEditorPage = Playground.Features.Editor.GradientEditorPage;
@@ -31,6 +31,8 @@ namespace Playground
             IoC.Register<IGalleryService, GalleryService>();
             IoC.Register<ICategoryService, CategoryService>();
             IoC.Register<IBattleItemService, BattleItemService>();
+            IoC.Register<IShareService, ShareService>();
+            IoC.Register<IGradientExporter, GradientExporter>();
         }
 
         public static void RegisterViewModels()

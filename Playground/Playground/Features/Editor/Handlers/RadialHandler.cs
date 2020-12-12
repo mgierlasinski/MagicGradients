@@ -97,6 +97,7 @@ namespace Playground.Features.Editor.Handlers
             _sizeTwo = radial.Size.IsCorner() ? 0 : 1;
             _isCustomSize = RadiusX > 0 || RadiusY > 0;
 
+            // Notify UI only, don't raise OnChanged action
             RaisePropertyChanged(nameof(CenterX));
             RaisePropertyChanged(nameof(CenterY));
             RaisePropertyChanged(nameof(RadiusX));

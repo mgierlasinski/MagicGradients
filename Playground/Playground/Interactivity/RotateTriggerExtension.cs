@@ -1,5 +1,4 @@
 ﻿using System;
-using MagicGradients.Toolkit.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

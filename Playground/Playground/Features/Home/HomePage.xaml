@@ -21,7 +21,7 @@
         <ScrollView Grid.Row="1">
             <FlexLayout>
                 <controls:MenuSection>
-                    <Label Text="Create" />
+                    <Label Text="Create" Style="{StaticResource HeaderStyle}" />
                 </controls:MenuSection>
                 <mtoolkit:MagicButton Command="{Binding LinearCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
@@ -45,7 +45,7 @@
                     </StackLayout>
                 </mtoolkit:MagicButton>
                 <controls:MenuSection>
-                    <Label Text="Discover" />
+                    <Label Text="Discover" Style="{StaticResource HeaderStyle}" />
                 </controls:MenuSection>
                 <mtoolkit:MagicButton Command="{Binding GalleryCommand}" StyleClass="twoColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">

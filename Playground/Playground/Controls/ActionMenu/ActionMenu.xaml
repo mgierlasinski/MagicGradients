@@ -8,19 +8,17 @@
       IsVisible="False" VerticalOptions="Fill" HorizontalOptions="Fill">
 
     <BoxView x:Name="BackgroundLayer" Style="{StaticResource SemiTransparent}" />
-    <StackLayout x:Name="ActionsContainer" Spacing="10" Margin="20,20,20,80" VerticalOptions="End" HorizontalOptions="End">
+    <StackLayout x:Name="ActionsContainer" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
         <BindableLayout.ItemTemplate>
             <DataTemplate>
-                <Grid ColumnDefinitions="150,50" RowDefinitions="50" x:DataType="controls:ActionItem">
+                <Grid ColumnDefinitions="50,150" ColumnSpacing="0" RowDefinitions="50" x:DataType="controls:ActionItem">
                     <Grid.Behaviors>
                         <interactivity:TapBehavior Command="{Binding Command}" />
                     </Grid.Behaviors>
-
-                    <shapes:Rectangle Fill="#18191A" RadiusX="25" RadiusY="25" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="50" StrokeThickness="1" Stroke="#1790F9" />
-                    <Label Text="{Binding Text}" TextColor="{StaticResource TextColorDark}" FontSize="18" VerticalOptions="Center" Margin="20,0,0,0" />
-
-                    <Ellipse Fill="#1790F9" Grid.Column="1" Margin="5" />
-                    <Image Source="{Binding IconSource}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
+                    <shapes:Rectangle Fill="#18191A" RadiusX="25" RadiusY="25" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="50" StrokeThickness="2" Stroke="#1790F9" />
+                    <Ellipse Fill="#1790F9" Margin="5" />
+                    <Image Source="{Binding IconSource}" HorizontalOptions="Center" VerticalOptions="Center" />
+                    <Label Text="{Binding Text}" Grid.Column="1" TextColor="{StaticResource TextColorDark}" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,20,0" />
                 </Grid>
             </DataTemplate>
         </BindableLayout.ItemTemplate>

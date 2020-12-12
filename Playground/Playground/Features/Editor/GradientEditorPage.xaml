@@ -8,8 +8,6 @@
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
-             xmlns:mtoolkit="clr-namespace:MagicGradients.Toolkit.Controls;assembly=MagicGradients.Toolkit"
-             xmlns:interactivity="clr-namespace:Playground.Interactivity;assembly=Playground"
              x:Class="Playground.Features.Editor.GradientEditorPage"
              Title="Gradient Editor"
              vm:ViewModelLocator.AutoWireViewModel="true">
@@ -20,42 +18,22 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding EditCommand}"
                      Text="{OnPlatform UWP=Edit}" 
-                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Layers}, Color=White}" />
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Tune}, Color=White}" />
+        <ToolbarItem Command="{Binding ToggleMenuCommand}"
+                     Text="{OnPlatform UWP=More}" 
+                     IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.More}, Color=White}" />
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,Auto" RowSpacing="0">
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
                             GradientRepeat="{Binding GradientRepeat}"
-                            EnableTouchEvents="{Binding IsRadial}" 
+                            EnableTouchEvents="{Binding IsDragEnabled}" 
                             Touch="SKCanvasView_OnTouch" 
                             PaintSurface="SKCanvasView_OnPaintSurface"/>
-
-        <controls:ActionMenu IsOpened="{Binding IsMenuVisible}">
-            <controls:ActionMenu.Actions>
-                <controls:ActionItemCollection>
-                    <controls:ActionItem Text="CSS previewer" 
-                                         Command="{Binding PreviewCssCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=22}" />
-                    <controls:ActionItem Text="Paint" 
-                                         Command="{Binding BattleTestCommand}"
-                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=22}" />
-                </controls:ActionItemCollection>
-            </controls:ActionMenu.Actions>
-        </controls:ActionMenu>
-
-        <tabs:Shadows CornerRadius="25" VerticalOptions="End" HorizontalOptions="End" Margin="20"
-                      Shades="{tabs:SingleShade Offset='0, 5', Opacity=0.5, Color=Black}">
-            <mtoolkit:MagicButton Command="{Binding ToggleMenuCommand}" Color="{StaticResource AccentColor}" 
-                                  WidthRequest="50" HeightRequest="50" CornerRadius="25">
-                <mtoolkit:MagicButton.Triggers>
-                    <interactivity:RotateTrigger IsRunning="{Binding IsMenuVisible}" Forward="135" Backward="0" Duration="150" />
-                </mtoolkit:MagicButton.Triggers>
-                <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Color=White}" />
-            </mtoolkit:MagicButton>
-        </tabs:Shadows>
         
-        <Grid VerticalOptions="Start" BackgroundColor="Black" IsVisible="{Binding IsRadial}">
+        <Grid VerticalOptions="Start" IsVisible="{Binding IsDragEnabled}">
+            <BoxView Style="{StaticResource SemiTransparent}" HeightRequest="20" />
             <Label TextColor="White" FontSize="12" Margin="2">
                 <Label.FormattedText>
                     <FormattedString>
@@ -117,5 +95,25 @@
                 </ContentView>-->
             </tabs:ViewSwitcher>
         </Grid>
+
+        <controls:ActionMenu IsOpened="{Binding IsMenuVisible}" Grid.RowSpan="2">
+            <controls:ActionMenu.Actions>
+                <controls:ActionItemCollection>
+                    <controls:ActionItem Text="Show CSS" 
+                                         Command="{Binding PreviewCssCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=24}" />
+                    <controls:ActionItem Text="Paint" 
+                                         Command="{Binding BattleTestCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}, Color=White, Size=24}" />
+                    <controls:ActionItem Text="Copy" 
+                                         Command="{Binding CopyCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Copy}, Color=White, Size=24}" 
+                                         IsVisible="{x:OnPlatform UWP=True, Default=False}" />
+                    <controls:ActionItem Text="Share" 
+                                         Command="{Binding ShareCommand}"
+                                         IconSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Share}, Color=White, Size=24}" />
+                </controls:ActionItemCollection>
+            </controls:ActionMenu.Actions>
+        </controls:ActionMenu>
     </Grid>
 </ContentPage>

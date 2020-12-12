@@ -17,6 +17,7 @@ namespace Playground.Controls
 
         public ImageSource IconSource { get; set; }
         public string Text { get; set; }
+        public bool IsVisible { get; set; } = true;
     }
 
     public class ActionItemCollection : List<ActionItem>

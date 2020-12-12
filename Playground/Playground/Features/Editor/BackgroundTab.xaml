@@ -5,14 +5,29 @@
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              x:Class="Playground.Features.Editor.BackgroundTab">
     <StackLayout.Resources>
-        <converters:DimensionsConverter x:Key="DimensionsConverter" />
-        <converters:EnumToIntConverter x:Key="EnumToIntConverter" />
+        <converters:TabEnumConverter x:Key="TabEnumConverter" />
+        <converters:TabBoolConverter x:Key="TabBoolConverter" />
     </StackLayout.Resources>
+
+    <Grid ColumnDefinitions="50*,50*" RowDefinitions="Auto,40">
+        <Label Text="Gradient Size" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+        <tabs:TabHostView SelectedIndex="{Binding IsPixelSize, Mode=TwoWay, Converter={StaticResource TabBoolConverter}}" 
+                          Style="{StaticResource SegmentedTabs}" Grid.Column="1" WidthRequest="150" HorizontalOptions="End">
+            <tabs:TabHostView.Tabs>
+                <tabs:SegmentedTabItem Label="%" />
+                <tabs:SegmentedTabItem Label="px" />
+            </tabs:TabHostView.Tabs>
+        </tabs:TabHostView>
+        <Slider Value="{Binding SizeScale}" Maximum="1" Minimum="0"
+                IsVisible="{Binding IsPixelSize, Converter={StaticResource NegativeBoolConverter}}"
+                Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" />
+        <Entry Text="{Binding SizeWidth}" Placeholder="Width" IsVisible="{Binding IsPixelSize}" 
+               Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+        <Entry Text="{Binding SizeHeight}" Placeholder="Height" IsVisible="{Binding IsPixelSize}" 
+               Grid.Row="1" Grid.Column="1" VerticalOptions="Center"/>
+    </Grid>
     
-    <Label Text="Gradient Size" />
-    <Slider Value="{Binding GradientSize, Converter={StaticResource DimensionsConverter}}" 
-            Maximum="1" Minimum="0" HorizontalOptions="FillAndExpand" />
-    <tabs:TabHostView SelectedIndex="{Binding GradientRepeat, Mode=TwoWay, Converter={StaticResource EnumToIntConverter}}" 
+    <tabs:TabHostView SelectedIndex="{Binding GradientRepeat, Mode=TwoWay, Converter={StaticResource TabEnumConverter}}" 
                       Style="{StaticResource SegmentedTabs}" Margin="0,10,0,0">
         <tabs:TabHostView.Tabs>
             <tabs:SegmentedTabItem Label="Repeat" />

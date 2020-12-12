@@ -5,15 +5,22 @@
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              x:Class="Playground.Features.Editor.PropertiesTab">
     <StackLayout.Resources>
-        <converters:BoolToIntConverter x:Key="BoolToIntConverter" />
+        <converters:TabBoolConverter x:Key="TabBoolConverter" />
     </StackLayout.Resources>
 
     <StackLayout IsVisible="{Binding IsRadial, Converter={StaticResource NegativeBoolConverter}}">
-        <Label Text="Angle" />
         <StackLayout Orientation="Horizontal">
-            <Entry Text="{Binding Gradient.Angle}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" HeightRequest="40" />
-            <Stepper Value="{Binding Gradient.Angle}" Minimum="-360" Maximum="360" Increment="10" HeightRequest="40" />
+            <Label Text="Angle" />
+            <Label Text="{Binding Gradient.Angle, StringFormat='{0:N0}°'}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" FontAttributes="Bold" />
         </StackLayout>
+        <Slider Value="{Binding Gradient.Angle}" Maximum="360" Minimum="0" HorizontalOptions="FillAndExpand" />
+        <FlexLayout HeightRequest="40" JustifyContent="SpaceBetween">
+            <Button Text="0°" Command="{Binding RotateCommand}" CommandParameter="0" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="45°" Command="{Binding RotateCommand}" CommandParameter="45" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="90°" Command="{Binding RotateCommand}" CommandParameter="90" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="180°" Command="{Binding RotateCommand}" CommandParameter="180" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="270°" Command="{Binding RotateCommand}" CommandParameter="270" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+        </FlexLayout>
     </StackLayout>
 
     <StackLayout IsVisible="{Binding IsRadial}" Spacing="0">
@@ -51,7 +58,7 @@
     </StackLayout>
 
     <Label Text="Length" Margin="0,10,0,0" />
-    <tabs:TabHostView SelectedIndex="{Binding Gradient.IsRepeating, Mode=TwoWay, Converter={StaticResource BoolToIntConverter}}" 
+    <tabs:TabHostView SelectedIndex="{Binding Gradient.IsRepeating, Mode=TwoWay, Converter={StaticResource TabBoolConverter}}" 
                       Style="{StaticResource SegmentedTabs}">
         <tabs:TabHostView.Tabs>
             <tabs:SegmentedTabItem Label="Single" />
