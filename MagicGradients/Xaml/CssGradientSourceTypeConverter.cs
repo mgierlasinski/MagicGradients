@@ -12,10 +12,7 @@ namespace MagicGradients.Xaml
             if (string.IsNullOrEmpty(value))
                 throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(CssGradientSource)}");
 
-            return new CssGradientSource
-            {
-                Stylesheet = value
-            };
+            return CssGradientSource.Parse(value);
         }
     }
 }

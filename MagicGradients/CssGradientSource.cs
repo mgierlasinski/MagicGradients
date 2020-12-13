@@ -7,7 +7,7 @@ namespace MagicGradients
     public class CssGradientSource : GradientCollection
     {
         public static readonly BindableProperty StylesheetProperty = BindableProperty.Create(
-            nameof(Stylesheet), typeof(string), typeof(CssGradientSource));
+            nameof(Stylesheet), typeof(string), typeof(CssGradientSource), propertyChanged: OnStylesheetChanged);
 
         public string Stylesheet
         {
@@ -15,15 +15,20 @@ namespace MagicGradients
             set => SetValue(StylesheetProperty, value);
         }
 
-        protected override void OnPropertyChanged(string propertyName = null)
+        private static void OnStylesheetChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (propertyName == nameof(Stylesheet))
-            {
-                var parsed = new CssGradientParser().ParseCss(Stylesheet);
-                Gradients = new GradientElements<Gradient>(parsed);
-            }
-
-            base.OnPropertyChanged(propertyName);
+            ((CssGradientSource)bindable).InternalParse((string)newValue);
         }
+
+        private void InternalParse(string css)
+        {
+            var parsed = new CssGradientParser().ParseCss(css);
+            Gradients = new GradientElements<Gradient>(parsed);
+        }
+
+        public static CssGradientSource Parse(string css) => new CssGradientSource
+        {
+            Stylesheet = css
+        };
     }
 }
