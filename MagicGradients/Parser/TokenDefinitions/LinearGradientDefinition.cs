@@ -19,7 +19,11 @@ namespace MagicGradients.Parser.TokenDefinitions
                            TryConvertTurnToAngle(direction, out angle) ||
                            TryConvertNamedDirectionToAngle(direction, out angle);
 
-            builder.AddLinearGradient(angle, repeating);
+            builder.UseBuilder(new LinearGradientBuilder
+            {
+                Angle = angle,
+                IsRepeating = repeating
+            });
 
             if (!hasAngle)
             {

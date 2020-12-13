@@ -16,7 +16,7 @@ namespace MagicGradients.Tests.Builder
             var builder = new GradientBuilder();
 
             // Act
-            testCase.AddGradient(builder);
+            testCase.AddGradientTo(builder);
             builder.AddStop(Color.White);
             builder.AddStop(Color.Black);
 
@@ -39,7 +39,7 @@ namespace MagicGradients.Tests.Builder
 
             // Act
             builder.AddStop(Color.Red);
-            testCase.AddGradient(builder);
+            testCase.AddGradientTo(builder);
             builder.AddStop(Color.White);
             builder.AddStop(Color.Black);
 

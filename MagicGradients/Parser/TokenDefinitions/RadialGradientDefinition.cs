@@ -24,7 +24,14 @@ namespace MagicGradients.Parser.TokenDefinitions
             var hasSize = TryGetSize(internalReader, out var size);
             var hasPos = TryGetPositionWithFlags(internalReader, out var position, out var flags);
 
-            builder.AddRadialGradient(position, shape, size, flags, isRepeating);
+            builder.UseBuilder(new RadialGradientBuilder
+            {
+                Center = position,
+                Shape = shape,
+                Size = size,
+                Flags = flags,
+                IsRepeating = isRepeating
+            });
 
             if (!hasShape && !hasSize && !hasPos)
             {
