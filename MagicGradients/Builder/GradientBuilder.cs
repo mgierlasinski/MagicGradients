@@ -30,6 +30,14 @@ namespace MagicGradients.Builder
             return this;
         }
 
+        public GradientBuilder AddCssGradient(string styleSheet)
+        {
+            var builder = new CssGradientBuilder(styleSheet);
+
+            UseBuilder(builder);
+            return this;
+        }
+
         public void UseBuilder(IChildBuilder builder)
         {
             _currentBuilder = builder;

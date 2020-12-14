@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 using FluentAssertions.Execution;
 using MagicGradients.Builder;
 using Xamarin.Forms;
@@ -6,6 +7,7 @@ using Xunit;
 
 namespace MagicGradients.Tests.Builder
 {
+    [Trait("Feature", "Builder")]
     public class GradientBuilderTests
     {
         [Theory]
@@ -161,6 +163,40 @@ namespace MagicGradients.Tests.Builder
                 source.Should().BeOfType<GradientCollection>();
                 source.GetGradients().Should().HaveCount(1);
             }
+        }
+
+        [Fact]
+        public void AddCssGradient_ValidCss_GradientParsed()
+        {
+            // Act
+            var gradients = new GradientBuilder()
+                .AddCssGradient("linear-gradient(red, orange)")
+                .Build();
+
+            // Assert
+            using (new AssertionScope())
+            {
+                gradients.Should().HaveCount(1);
+                gradients[0].Should().BeOfType<LinearGradient>();
+                gradients[0].Stops.Should().HaveCount(2);
+                gradients[0].Stops[0].Color.Should().Be(Color.Red);
+                gradients[0].Stops[1].Color.Should().Be(Color.Orange);
+            }
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("linear-gradient(black,white), radial-gradient(pink,brown)")]
+        public void AddCssGradient_InvalidCss_InvalidOperationException(string css)
+        {
+            // Arrange
+            var builder = new GradientBuilder().AddCssGradient(css);
+
+            // Act
+            Action action = () => builder.Build();
+
+            // Assert
+            action.Should().Throw<InvalidOperationException>();
         }
     }
 }

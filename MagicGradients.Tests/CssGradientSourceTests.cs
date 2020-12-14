@@ -8,6 +8,7 @@ using Xunit;
 
 namespace MagicGradients.Tests
 {
+    [Trait("Feature", "Core")]
     public class CssGradientSourceTests
     {
         public CssGradientSourceTests()

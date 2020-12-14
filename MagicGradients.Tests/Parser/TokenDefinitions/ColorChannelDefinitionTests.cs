@@ -10,6 +10,7 @@ using Xunit;
 
 namespace MagicGradients.Tests.Parser.TokenDefinitions
 {
+    [Trait("Feature", "Parser")]
     public class ColorChannelDefinitionTests
     {
         [Theory]
