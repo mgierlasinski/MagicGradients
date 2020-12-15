@@ -21,5 +21,8 @@ namespace MagicGradients
 
         public static Dimensions Prop(double width, double height) => new Dimensions(Offset.Prop(width), Offset.Prop(height));
         public static Dimensions Abs(double width, double height) => new Dimensions(Offset.Abs(width), Offset.Abs(height));
+
+        public static bool operator ==(Dimensions d1, Dimensions d2) => (d1.Width == d2.Width) && (d1.Height == d2.Height);
+        public static bool operator !=(Dimensions d1, Dimensions d2) => (d1.Width != d2.Width) || (d1.Height != d2.Height);
     }
 }
