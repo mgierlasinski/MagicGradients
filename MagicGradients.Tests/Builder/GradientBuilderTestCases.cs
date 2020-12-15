@@ -15,25 +15,24 @@ namespace MagicGradients.Tests.Builder
 
     public abstract class GradientBuilderTestCase
     {
-        public abstract void AddGradient(GradientBuilder builder);
+        public abstract void AddGradientTo(GradientBuilder builder);
     }
 
     public class LinearTestCase : GradientBuilderTestCase
     {
-        public override void AddGradient(GradientBuilder builder)
+        public override void AddGradientTo(GradientBuilder builder)
         {
-            builder.AddLinearGradient(45);
+            builder.AddLinearGradient(g => g.Rotate(45));
         }
     }
 
     public class RadialTestCase : GradientBuilderTestCase
     {
-        public override void AddGradient(GradientBuilder builder)
+        public override void AddGradientTo(GradientBuilder builder)
         {
-            builder.AddRadialGradient(
-                new Point(0.5, 0.5),
-                RadialGradientShape.Circle,
-                RadialGradientSize.ClosestSide);
+            builder.AddRadialGradient(g => g
+                .Circle().At(0.5, 0.5)
+                .StretchTo(RadialGradientSize.ClosestSide));
         }
     }
 }

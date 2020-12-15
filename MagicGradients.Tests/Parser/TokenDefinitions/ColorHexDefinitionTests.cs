@@ -9,6 +9,7 @@ using Xunit;
 
 namespace MagicGradients.Tests.Parser.TokenDefinitions
 {
+    [Trait("Feature", "Parser")]
     public class ColorHexDefinitionTests
     {
         [Theory]

@@ -5,6 +5,7 @@ using Xunit;
 
 namespace MagicGradients.Tests.Animation
 {
+    [Trait("Feature", "Animation")]
     public class RepeatBehaviorTypeConverterTests : TypeConverterTests<RepeatBehavior, RepeatBehaviorTypeConverter>
     {
         public static IEnumerable<object[]> ValidValues => new List<object[]>

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Xamarin.Forms;
 
 namespace MagicGradients.Builder
 {
@@ -22,17 +21,6 @@ namespace MagicGradients.Builder
             return this;
         }
 
-        public LinearGradientBuilder AddLinearGradient(double angle, bool isRepeating = false)
-        {
-            var builder = new LinearGradientBuilder
-            {
-                Angle = angle,
-                IsRepeating = isRepeating
-            };
-            UseBuilder(builder);
-            return builder;
-        }
-
         public GradientBuilder AddRadialGradient(Action<RadialGradientBuilder> setup = null)
         {
             var builder = new RadialGradientBuilder();
@@ -42,24 +30,18 @@ namespace MagicGradients.Builder
             return this;
         }
 
-        public RadialGradientBuilder AddRadialGradient(
-            Point center, 
-            RadialGradientShape shape, 
-            RadialGradientSize size, 
-            RadialGradientFlags flags = RadialGradientFlags.PositionProportional, 
-            bool isRepeating = false)
+        public GradientBuilder AddCssGradient(string styleSheet)
         {
-            var builder = new RadialGradientBuilder
-            {
-                Center = center,
-                Shape = shape, 
-                Size = size, 
-                Flags = flags,
-                IsRepeating = isRepeating
-            };
+            var builder = new CssGradientBuilder(styleSheet);
 
             UseBuilder(builder);
-            return builder;
+            return this;
+        }
+
+        public void UseBuilder(IChildBuilder builder)
+        {
+            _currentBuilder = builder;
+            _children.Add(builder);
         }
 
         public Gradient[] Build()
@@ -75,12 +57,6 @@ namespace MagicGradients.Builder
             }
 
             return _currentBuilder;
-        }
-
-        private void UseBuilder(IChildBuilder builder)
-        {
-            _currentBuilder = builder;
-            _children.Add(builder);
         }
     }
 }

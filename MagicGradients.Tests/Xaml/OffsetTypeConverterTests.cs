@@ -6,6 +6,7 @@ using Xunit;
 
 namespace MagicGradients.Tests.Xaml
 {
+    [Trait("Feature", "Xaml")]
     public class OffsetTypeConverterTests : TypeConverterTests<Offset, OffsetTypeConverter>
     {
         public static IEnumerable<object[]> ValidValues => new List<object[]>

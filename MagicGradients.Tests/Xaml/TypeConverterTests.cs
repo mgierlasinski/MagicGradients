@@ -5,6 +5,7 @@ using Xunit;
 
 namespace MagicGradients.Tests.Xaml
 {
+    [Trait("Feature", "Xaml")]
     public class TypeConverterTests<TValue, TConverter> : IClassFixture<TConverter> where TConverter : TypeConverter
     {
         protected TConverter Converter { get; }

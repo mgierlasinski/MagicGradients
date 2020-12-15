@@ -4,6 +4,7 @@ using Xunit;
 
 namespace MagicGradients.Tests
 {
+    [Trait("Feature", "Core")]
     public class StringExtensionsTests
     {
         [Theory]

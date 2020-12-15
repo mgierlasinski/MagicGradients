@@ -4,6 +4,7 @@ using Xunit;
 
 namespace MagicGradients.Tests
 {
+    [Trait("Feature", "Core")]
     public class DimensionsTests
     {
         public static IEnumerable<object[]> TestCases => new List<object[]>
