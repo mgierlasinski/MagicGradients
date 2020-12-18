@@ -76,6 +76,7 @@ You can also build gradient in C# using `GradientBuilder` with Fluent API:
         .StretchTo(RadialGradientSize.FarthestSide)
         .Repeat()
         .AddStops(Color.Red, Color.Green, Color.Blue))
+    .AddCssGradient("linear-gradient(red, orange)")
     .Build();
 ```
 
@@ -137,12 +138,7 @@ Styling from CSS stylesheet is also possible:
 CSS can be also set via C#:
 
 ``` C#
-var gradientView = new GradientView();
-var cssGradientSource = new CssGradientSource()
-{
-    Stylesheet = "linear-gradient(red, green, blue)"
-};
-gradientView.GradientSource = cssGradientSource;
+gradientView.GradientSource = CssGradientSource.Parse("linear-gradient(red, green, blue)");
 ```
 
 ### Linear gradient functions
@@ -182,8 +178,16 @@ radial-gradient(shape size at position, start-color, ..., last-color);
 | Value | Description |
 | ------| ----------- |
 | `shape` | Possible values: `circle`, `ellipse` |
-| `size` | Possible values: `closest-side`, `closest-corner`, `farthest-side`, `farthest-corner` (default) |
-| `position` | In pixels (`px`), proportional (`%`) or named directions (`left`, `right`, `top`, `bottom`, `center`) |
+| `size` | In pixels (`px`), proportional (`%`) or named sizes: `closest-side`, `closest-corner`, `farthest-side`, `farthest-corner` (default) |
+| `position` | In pixels (`px`), proportional (`%`) or named directions: `left`, `right`, `top`, `bottom`, `center` |
+
+**Examples**
+``` css
+radial-gradient(circle at top left, red, green);
+radial-gradient(circle 100px at 70% 20%, red, green);           // one radius for circle
+radial-gradient(ellipse closest-corner at 30% 80%, red, green);
+radial-gradient(ellipse 200px 300px at 50% 60%, red, green);    // two radiuses for ellipse
+```
 
 ### Play with CSS
 
