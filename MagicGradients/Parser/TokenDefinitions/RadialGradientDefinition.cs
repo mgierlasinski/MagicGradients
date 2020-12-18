@@ -20,26 +20,31 @@ namespace MagicGradients.Parser.TokenDefinitions
             var token = reader.ReadNext().Trim();
             var internalReader = new CssReader(token, ' ');
 
-            var hasShape = TryGetShape(internalReader, out var shape);
-            var hasSize = TryGetSize(internalReader, out var size);
-            var hasPos = TryGetPositionWithFlags(internalReader, out var position, out var flags);
+            var flags = None;
+
+            var (hasShape, shape) = GetShape(internalReader);
+            var (hasSize, size) = GetSize(internalReader);
+            var (hasRadius, radius) = GeRadius(internalReader, shape, ref flags);
+            var (hasPos, position) = GetPosition(internalReader, ref flags);
 
             builder.UseBuilder(new RadialGradientBuilder
             {
                 Center = position,
                 Shape = shape,
                 Size = size,
+                RadiusX = radius.Width,
+                RadiusY = radius.Height,
                 Flags = flags,
                 IsRepeating = isRepeating
             });
 
-            if (!hasShape && !hasSize && !hasPos)
+            if (!hasShape && !hasSize && !hasRadius && !hasPos)
             {
                 reader.Rollback();
             }
         }
 
-        private bool TryGetShape(CssReader reader, out RadialGradientShape result)
+        private (bool, RadialGradientShape) GetShape(CssReader reader)
         {
             if (reader.CanRead)
             {
@@ -48,16 +53,14 @@ namespace MagicGradients.Parser.TokenDefinitions
                 if (Enum.TryParse<RadialGradientShape>(token, true, out var shape))
                 {
                     reader.MoveNext();
-                    result = shape;
-                    return true;
+                    return (true, shape);
                 }
             }
-
-            result = RadialGradientShape.Ellipse;
-            return false;
+            
+            return (false, RadialGradientShape.Ellipse);
         }
 
-        private bool TryGetSize(CssReader reader, out RadialGradientSize result)
+        private (bool, RadialGradientSize) GetSize(CssReader reader)
         {
             if (reader.CanRead)
             {
@@ -66,16 +69,68 @@ namespace MagicGradients.Parser.TokenDefinitions
                 if (Enum.TryParse<RadialGradientSize>(token, true, out var shapeSize))
                 {
                     reader.MoveNext();
-                    result = shapeSize;
-                    return true;
+                    return (true, shapeSize);
                 }
             }
 
-            result = RadialGradientSize.FarthestCorner;
-            return false;
+            return (false, RadialGradientSize.FarthestCorner);
         }
 
-        private bool TryGetPositionWithFlags(CssReader reader, out Point pResult, out RadialGradientFlags fResult)
+        private (bool, Size) GeRadius(CssReader reader, RadialGradientShape shape, ref RadialGradientFlags flags)
+        {
+            if (reader.CanRead)
+            {
+                var size = Dimensions.Zero;
+
+                if (shape == RadialGradientShape.Circle)
+                {
+                    var radiusToken = reader.Read();
+                    var isRadius = OffsetConverter.TryExtractOffset(radiusToken, out var radius);
+
+                    if (isRadius)
+                    {
+                        size = new Dimensions(radius, radius);
+                        reader.MoveNext();
+                    }
+                }
+
+                if (shape == RadialGradientShape.Ellipse)
+                {
+                    var radiusHToken = reader.Read();
+                    var radiusVToken = reader.ReadNext();
+
+                    var isRadiusH = OffsetConverter.TryExtractOffset(radiusHToken, out var radiusH);
+                    var isRadiusV = OffsetConverter.TryExtractOffset(radiusVToken, out var radiusV);
+
+                    if (isRadiusH && isRadiusV)
+                    {
+                        size = new Dimensions(radiusH, radiusV);
+                        reader.MoveNext();
+                    }
+                    else
+                    {
+                        // Revert radiusVToken
+                        reader.Rollback();
+                    }
+                }
+
+                if (size != Dimensions.Zero)
+                {
+                    if (size.Width.Type == OffsetType.Proportional)
+                        FlagsHelper.Set(ref flags, WidthProportional);
+
+                    if (size.Height.Type == OffsetType.Proportional)
+                        FlagsHelper.Set(ref flags, HeightProportional);
+
+                    return (true, new Size(size.Width.Value, size.Height.Value));
+                }
+            }
+
+            // Value -1 means undefined for RadialGradientShader
+            return (false, new Size(-1, -1));
+        }
+
+        private (bool, Point) GetPosition(CssReader reader, ref RadialGradientFlags flags)
         {
             if (reader.CanRead)
             {
@@ -101,27 +156,22 @@ namespace MagicGradients.Parser.TokenDefinitions
                         direction.SetNamedDirection(tokenY);
                     }
 
-                    var flags = None;
-
                     if(!isPosX || posX.Type == OffsetType.Proportional)
-                        flags |= XProportional;
+                        FlagsHelper.Set(ref flags, XProportional);
 
                     if (!isPosY || posY.Type == OffsetType.Proportional)
-                        flags |= YProportional;
+                        FlagsHelper.Set(ref flags, YProportional);
 
                     var center = new Point(
                         isPosX ? posX.Value : (direction.X + 1) / 2,
                         isPosY ? posY.Value : (direction.Y + 1) / 2);
 
-                    pResult = center;
-                    fResult = flags;
-                    return true;
+                    return (true, center);
                 }
             }
 
-            pResult = new Point(0.5, 0.5);
-            fResult = PositionProportional;
-            return false;
+            FlagsHelper.Set(ref flags, PositionProportional);
+            return (false, new Point(0.5, 0.5));
         }
     }
 }

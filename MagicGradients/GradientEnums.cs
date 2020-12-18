@@ -57,7 +57,7 @@ namespace MagicGradients
 
         public static void Unset(ref RadialGradientFlags flags, RadialGradientFlags flagToSet)
         {
-            flags ^= flagToSet;
+            flags &= ~flagToSet;
         }
 
         public static void SetValue(ref RadialGradientFlags flags, RadialGradientFlags flagToSet, bool value)
@@ -70,7 +70,7 @@ namespace MagicGradients
 
         public static bool IsSet(RadialGradientFlags flags, RadialGradientFlags flagToCheck)
         {
-            return (flags & flagToCheck) != 0;
+            return (flags & flagToCheck) == flagToCheck;
         }
     }
 }

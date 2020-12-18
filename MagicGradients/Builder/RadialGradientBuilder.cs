@@ -46,7 +46,7 @@ namespace MagicGradients.Builder
 
         public RadialGradientBuilder At(Point position, Action<DimenOptions> setup = null)
         {
-            var options = new DimenOptions();
+            var options = new DimenOptions().Proportional();
             setup?.Invoke(options);
 
             Center = position;
