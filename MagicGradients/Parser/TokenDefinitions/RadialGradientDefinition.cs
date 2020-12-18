@@ -22,10 +22,10 @@ namespace MagicGradients.Parser.TokenDefinitions
 
             var flags = None;
 
-            var hasShape = TryGetShape(internalReader, out var shape);
-            var hasSize = TryGetSize(internalReader, out var size);
+            var (hasShape, shape) = GetShape(internalReader);
+            var (hasSize, size) = GetSize(internalReader);
             var (hasRadius, radius) = GeRadius(internalReader, shape, ref flags);
-            var hasPos = TryGetPosition(internalReader, out var position, ref flags);
+            var (hasPos, position) = GetPosition(internalReader, ref flags);
 
             builder.UseBuilder(new RadialGradientBuilder
             {
@@ -44,7 +44,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             }
         }
 
-        private bool TryGetShape(CssReader reader, out RadialGradientShape result)
+        private (bool, RadialGradientShape) GetShape(CssReader reader)
         {
             if (reader.CanRead)
             {
@@ -53,16 +53,14 @@ namespace MagicGradients.Parser.TokenDefinitions
                 if (Enum.TryParse<RadialGradientShape>(token, true, out var shape))
                 {
                     reader.MoveNext();
-                    result = shape;
-                    return true;
+                    return (true, shape);
                 }
             }
-
-            result = RadialGradientShape.Ellipse;
-            return false;
+            
+            return (false, RadialGradientShape.Ellipse);
         }
 
-        private bool TryGetSize(CssReader reader, out RadialGradientSize result)
+        private (bool, RadialGradientSize) GetSize(CssReader reader)
         {
             if (reader.CanRead)
             {
@@ -71,13 +69,11 @@ namespace MagicGradients.Parser.TokenDefinitions
                 if (Enum.TryParse<RadialGradientSize>(token, true, out var shapeSize))
                 {
                     reader.MoveNext();
-                    result = shapeSize;
-                    return true;
+                    return (true, shapeSize);
                 }
             }
 
-            result = RadialGradientSize.FarthestCorner;
-            return false;
+            return (false, RadialGradientSize.FarthestCorner);
         }
 
         private (bool, Size) GeRadius(CssReader reader, RadialGradientShape shape, ref RadialGradientFlags flags)
@@ -134,7 +130,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             return (false, new Size(-1, -1));
         }
 
-        private bool TryGetPosition(CssReader reader, out Point pResult, ref RadialGradientFlags flags)
+        private (bool, Point) GetPosition(CssReader reader, ref RadialGradientFlags flags)
         {
             if (reader.CanRead)
             {
@@ -170,14 +166,12 @@ namespace MagicGradients.Parser.TokenDefinitions
                         isPosX ? posX.Value : (direction.X + 1) / 2,
                         isPosY ? posY.Value : (direction.Y + 1) / 2);
 
-                    pResult = center;
-                    return true;
+                    return (true, center);
                 }
             }
 
-            pResult = new Point(0.5, 0.5);
             FlagsHelper.Set(ref flags, PositionProportional);
-            return false;
+            return (false, new Point(0.5, 0.5));
         }
     }
 }
