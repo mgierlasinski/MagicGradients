@@ -52,9 +52,8 @@ namespace Playground.Features.Share
             if (gradient is RadialGradient radial)
             {
                 var type = radial.IsRepeating ? "repeating-radial-gradient" : "radial-gradient";
-                var shape = radial.Shape.ToString().ToLower();
 
-                return $"{type}({shape} {GetSize(radial)} {GetPosition(radial)}, {GetColors(radial)})";
+                return $"{type}({GetShapeAndSize(radial)} {GetPosition(radial)}, {GetColors(radial)})";
             }
 
             return string.Empty;
@@ -79,15 +78,31 @@ namespace Playground.Features.Share
                 : $"{offset.Value}px";
         }
 
-        private string GetSize(RadialGradient gradient)
+        private string GetShapeAndSize(RadialGradient gradient)
         {
-            return gradient.Size switch
+            if (gradient.RadiusX > -1 && gradient.RadiusY > -1)
+            {
+                var radiusX = FlagsHelper.IsSet(gradient.Flags, RadialGradientFlags.WidthProportional)
+                    ? $"{gradient.RadiusX * 100}%"
+                    : $"{gradient.RadiusX}px";
+
+                var radiusY = FlagsHelper.IsSet(gradient.Flags, RadialGradientFlags.HeightProportional)
+                    ? $"{gradient.RadiusY * 100}%"
+                    : $"{gradient.RadiusY}px";
+
+                return $"ellipse {radiusX} {radiusY}";
+            }
+
+            var shape = gradient.Shape.ToString().ToLower();
+            var size = gradient.Size switch
             {
                 RadialGradientSize.ClosestSide => "closest-side",
                 RadialGradientSize.ClosestCorner => "closest-corner",
                 RadialGradientSize.FarthestSide => "farthest-side",
                 _ => "farthest-corner"
             };
+
+            return $"{shape} {size}";
         }
 
         private string GetPosition(RadialGradient gradient)
