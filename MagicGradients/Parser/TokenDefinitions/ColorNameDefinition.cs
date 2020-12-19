@@ -9,7 +9,7 @@ namespace MagicGradients.Parser.TokenDefinitions
     {
         public bool IsMatch(string token)
         {
-            var parts = token.Split('.');
+            var parts = token.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
             return parts.Length == 1 || parts.Length == 2 && parts[0] == "Color";
         }
 

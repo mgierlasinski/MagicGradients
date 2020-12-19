@@ -18,13 +18,13 @@ namespace MagicGradients.Renderers
         {
             var rect = context.RenderRect;
 
-            var orderedStops = _gradient.Stops.OrderBy(x => x.RenderOffset).ToArray();
-            var lastOffset = _gradient.IsRepeating ? orderedStops.LastOrDefault()?.RenderOffset ?? 1 : 1;
+            var renderStops = GetRenderStops();
+            var lastOffset = _gradient.IsRepeating ? renderStops.LastOrDefault()?.RenderOffset ?? 1 : 1;
 
-            var colors = orderedStops.Select(x => x.Color.ToSKColor()).ToArray();
-            var colorPos = orderedStops.Select(x => x.RenderOffset / lastOffset).ToArray();
+            var colors = renderStops.Select(x => x.Color.ToSKColor()).ToArray();
+            var colorPos = renderStops.Select(x => lastOffset > 0 ? x.RenderOffset / lastOffset : 0).ToArray();
 
-            var center = GetCenter((int)rect.Size.Width, (int)rect.Size.Height);
+            var center = GetCenter(rect.Size.Width, rect.Size.Height);
             var radius = GetRadius(center, rect, lastOffset);
 
             var shader = SKShader.CreateRadialGradient(
@@ -47,6 +47,21 @@ namespace MagicGradients.Renderers
             return radius.Width < radius.Height 
                 ? offset / radius.Width 
                 : offset / radius.Height;
+        }
+
+        private GradientStop[] GetRenderStops()
+        {
+            // SkiaSharp needs at least two stops to render single color
+            if (_gradient.Stops.Count == 1)
+            {
+                return new[]
+                {
+                    new GradientStop { RenderOffset = 0, Color = _gradient.Stops[0].Color },
+                    new GradientStop { RenderOffset = 1, Color = _gradient.Stops[0].Color }
+                };
+            }
+
+            return _gradient.Stops.OrderBy(x => x.RenderOffset).ToArray();
         }
 
         private SKPoint GetCenter(int width, int height)
