@@ -36,4 +36,11 @@
             <tabs:SegmentedTabItem Label="No repeat" />
         </tabs:TabHostView.Tabs>
     </tabs:TabHostView>
+
+    <Picker ItemsSource="{Binding Masks}" SelectedItem="{Binding SelectedMask}" />
+    <StackLayout Orientation="Horizontal">
+        <Editor Text="{Binding TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
+        <Editor Text="{Binding TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+    <Picker ItemsSource="{Binding FillModes}" SelectedItem="{Binding TextMask.Fill}" />
 </StackLayout>

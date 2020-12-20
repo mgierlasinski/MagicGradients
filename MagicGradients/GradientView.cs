@@ -1,3 +1,4 @@
+using MagicGradients.Masks;
 using MagicGradients.Renderers;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
@@ -17,13 +18,16 @@ namespace MagicGradients
         public GradientRenderer Renderer { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(nameof(GradientSource), 
-            typeof(IGradientSource), typeof(GradientView), propertyChanged: OnGradientSourceChanged);
+            typeof(IGradientSource), typeof(GradientView), propertyChanged: OnGradientElementChanged);
 
         public static readonly BindableProperty GradientSizeProperty = BindableProperty.Create(nameof(GradientSize),
             typeof(Dimensions), typeof(GradientView), propertyChanged: UpdateCanvas);
 
         public static readonly BindableProperty GradientRepeatProperty = BindableProperty.Create(nameof(GradientRepeat),
             typeof(BackgroundRepeat), typeof(GradientView), propertyChanged: UpdateCanvas);
+
+        public static readonly BindableProperty MaskProperty = BindableProperty.Create(nameof(Mask),
+            typeof(IMask), typeof(GradientView), propertyChanged: OnGradientElementChanged);
 
         public IGradientSource GradientSource
         {
@@ -43,21 +47,23 @@ namespace MagicGradients
             set => SetValue(GradientRepeatProperty, value);
         }
 
-        static void OnGradientSourceChanged(BindableObject bindable, object oldValue, object newValue)
+        public IMask Mask
+        {
+            get => (IMask)GetValue(MaskProperty);
+            set => SetValue(MaskProperty, value);
+        }
+
+        private static void OnGradientElementChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var gradientView = (GradientView)bindable;
 
-            if (oldValue != null)
-            {
-                ((GradientElement)oldValue).Parent = null;
-            }
+            if (oldValue != null && oldValue is GradientElement oldElem)
+                oldElem.Parent = null;
 
-            if (newValue != null)
-            {
-                ((GradientElement)newValue).Parent = gradientView;
-            }
+            if (newValue != null && newValue is GradientElement newElem)
+                newElem.Parent = gradientView;
 
-            gradientView.InvalidateSurface();
+            gradientView.InvalidateCanvas();
         }
 
         static void UpdateCanvas(BindableObject bindable, object oldValue, object newValue)
