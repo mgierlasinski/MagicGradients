@@ -11,7 +11,6 @@ namespace MagicGradients.Masks
 
         public static readonly BindableProperty FontSizeProperty = BindableProperty.Create(nameof(FontSize),
             typeof(double), typeof(TextMask), defaultValue: 100d);
-
         
         public string Text
         {

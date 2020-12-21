@@ -27,7 +27,7 @@ namespace MagicGradients
             typeof(BackgroundRepeat), typeof(GradientView), propertyChanged: UpdateCanvas);
 
         public static readonly BindableProperty MaskProperty = BindableProperty.Create(nameof(Mask),
-            typeof(IMask), typeof(GradientView), propertyChanged: OnGradientElementChanged);
+            typeof(GradientMask), typeof(GradientView), propertyChanged: OnGradientElementChanged);
 
         public IGradientSource GradientSource
         {
@@ -47,9 +47,9 @@ namespace MagicGradients
             set => SetValue(GradientRepeatProperty, value);
         }
 
-        public IMask Mask
+        public GradientMask Mask
         {
-            get => (IMask)GetValue(MaskProperty);
+            get => (GradientMask)GetValue(MaskProperty);
             set => SetValue(MaskProperty, value);
         }
 

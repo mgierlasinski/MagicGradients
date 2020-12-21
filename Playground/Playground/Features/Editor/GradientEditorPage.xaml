@@ -71,7 +71,6 @@
                     <tabs:UnderlinedTabItem Label="Properties" Padding="10,0" />
                     <tabs:UnderlinedTabItem Label="Colors" Padding="10,0" />
                     <tabs:UnderlinedTabItem Label="Size" Padding="10,0" />
-                    <!--<tabs:UnderlinedTabItem Label="Tools" Padding="10,0" IsVisible="{Binding IsGallery}" />-->
                 </tabs:TabHostView.Tabs>
             </tabs:TabHostView>
             <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Clear}}" 
@@ -83,17 +82,9 @@
                                SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}">
                 <editor:PropertiesTab Margin="10" />
                 <editor:ColorInspector Gradient="{Binding Gradient}" Margin="10" />
-                <editor:BackgroundTab Margin="10" />
-                <!--<ContentView>
-                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="180">
-                        <Button Text="CSS previewer" 
-                                Command="{Binding PreviewCssCommand}"
-                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}}" />
-                        <Button Text="Paint" 
-                                Command="{Binding BattleTestCommand}"
-                                ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Paint}}" />
-                    </StackLayout>
-                </ContentView>-->
+                <ScrollView>
+                    <editor:BackgroundTab Margin="10" />
+                </ScrollView>
             </tabs:ViewSwitcher>
         </Grid>
 

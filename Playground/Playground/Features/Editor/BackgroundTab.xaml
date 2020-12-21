@@ -39,12 +39,16 @@
         </tabs:TabHostView.Tabs>
     </tabs:TabHostView>
 
-    <Picker ItemsSource="{Binding Mask.Masks}" SelectedItem="{Binding Mask.SelectedMask}" />
+    <Label Text="Mask" />
     <StackLayout Orientation="Horizontal">
+        <Picker ItemsSource="{Binding Mask.Masks}" SelectedItem="{Binding Mask.SelectedMask}" HorizontalOptions="FillAndExpand" />
+        <Picker ItemsSource="{Binding Mask.ClipModes}" SelectedItem="{Binding Mask.ClipMode}" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" IsVisible="{Binding Mask.IsTextMask}">
         <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
         <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
     </StackLayout>
-    <Picker ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" />
-    <Editor Text="{Binding Mask.PathMask.Data}" />
-
+    <Picker ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" IsVisible="{Binding Mask.IsPathMask}" />
+    <Editor Text="{Binding Mask.PathMask.Data}" IsVisible="{Binding Mask.IsPathMask}" />
+    
 </StackLayout>

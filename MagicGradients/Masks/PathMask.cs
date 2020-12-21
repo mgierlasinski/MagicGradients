@@ -4,12 +4,7 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Masks
 {
-    public enum PathFill
-    {
-        Center, Fill
-    }
-
-    public class PathMask : GradientElement, IMask
+    public class PathMask : GradientMask
     {
         public static readonly BindableProperty DataProperty = BindableProperty.Create(nameof(Data),
             typeof(string), typeof(TextMask), 
@@ -30,7 +25,7 @@ namespace MagicGradients.Masks
             set => SetValue(FillProperty, value);
         }
 
-        public virtual void Clip(RenderContext context)
+        public override void Clip(RenderContext context)
         {
             using (var path = SKPath.ParseSvgPathData(Data))
             {
@@ -53,7 +48,7 @@ namespace MagicGradients.Masks
                     context.Canvas.Scale(context.RenderRect.Width / bounds.Width, context.RenderRect.Height / bounds.Height);
 
                 context.Canvas.Translate(-bounds.MidX, -bounds.MidY);
-                context.Canvas.ClipPath(path, antialias: true);
+                context.Canvas.ClipPath(path, ClipMode.ToSkOperation());
             }
         }
 
