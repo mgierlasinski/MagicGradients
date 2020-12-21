@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using MagicGradients;
+﻿using MagicGradients;
 using Playground.Features.Editor.Handlers;
 using Playground.Features.Gallery.Services;
+using Playground.Features.Share;
 using Playground.ViewModels;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MagicGradients.Masks;
-using Playground.Features.Share;
 using Xamarin.Forms;
 
 namespace Playground.Features.Editor
@@ -22,6 +19,7 @@ namespace Playground.Features.Editor
 
         public LinearHandler Linear { get; }
         public RadialHandler Radial { get; }
+        public MaskHandler Mask { get; }
 
         private string _id;
         public string Id
@@ -139,18 +137,6 @@ namespace Playground.Features.Editor
         public ICommand CopyCommand { get; }
         public ICommand RotateCommand { get; }
 
-        public EllipseMask EllipseMask { get; }
-        public TextMask TextMask { get; }
-        public List<IMask> Masks { get; }
-        public List<TextMaskFill> FillModes { get; }
-
-        private IMask _selectedMask;
-        public IMask SelectedMask
-        {
-            get => _selectedMask;
-            set => SetProperty(ref _selectedMask, value);
-        }
-
         public GradientEditorViewModel(
             IGalleryService galleryService, 
             IShareService shareService,
@@ -163,6 +149,7 @@ namespace Playground.Features.Editor
             GradientSource = new GradientCollection();
             Linear = new LinearHandler(this);
             Radial = new RadialHandler(this);
+            Mask = new MaskHandler();
 
             AddCommand = new Command(() => AddAction());
             EditCommand = new Command(EditAction);
@@ -196,21 +183,6 @@ namespace Playground.Features.Editor
                 if (Gradient is LinearGradient linear)
                     linear.Angle = double.Parse(x);
             });
-
-            EllipseMask = new EllipseMask();
-            TextMask = new TextMask();
-            Masks = new List<IMask>
-            {
-                null,
-                EllipseMask,
-                TextMask
-            };
-            FillModes = new List<TextMaskFill>
-            {
-                TextMaskFill.Center,
-                TextMaskFill.CenterAndScale,
-                TextMaskFill.Fill
-            };
         }
 
         private void LoadGradient()

@@ -14,9 +14,6 @@ namespace MagicGradients.Masks
             context.Canvas.ClipRoundRect(rect, antialias: true);
         }
 
-        public override string ToString()
-        {
-            return "Ellipse Mask";
-        }
+        public override string ToString() => "Ellipse Mask";
     }
 }

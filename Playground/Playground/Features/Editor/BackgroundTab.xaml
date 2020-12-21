@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tabs="http://sharpnado.com"
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
-             x:Class="Playground.Features.Editor.BackgroundTab">
+             xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
+             x:Class="Playground.Features.Editor.BackgroundTab"
+             x:DataType="editor:GradientEditorViewModel">
     <StackLayout.Resources>
         <converters:TabEnumConverter x:Key="TabEnumConverter" />
         <converters:TabBoolConverter x:Key="TabBoolConverter" />
@@ -37,10 +39,12 @@
         </tabs:TabHostView.Tabs>
     </tabs:TabHostView>
 
-    <Picker ItemsSource="{Binding Masks}" SelectedItem="{Binding SelectedMask}" />
+    <Picker ItemsSource="{Binding Mask.Masks}" SelectedItem="{Binding Mask.SelectedMask}" />
     <StackLayout Orientation="Horizontal">
-        <Editor Text="{Binding TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
-        <Editor Text="{Binding TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
+        <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
+        <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
     </StackLayout>
-    <Picker ItemsSource="{Binding FillModes}" SelectedItem="{Binding TextMask.Fill}" />
+    <Picker ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" />
+    <Editor Text="{Binding Mask.PathMask.Data}" />
+
 </StackLayout>

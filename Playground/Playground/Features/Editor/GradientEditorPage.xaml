@@ -28,7 +28,7 @@
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
                             GradientRepeat="{Binding GradientRepeat}"
-                            Mask="{Binding SelectedMask}"
+                            Mask="{Binding Mask.SelectedMask}"
                             EnableTouchEvents="{Binding IsDragEnabled}" 
                             Touch="SKCanvasView_OnTouch" 
                             PaintSurface="SKCanvasView_OnPaintSurface"/>
