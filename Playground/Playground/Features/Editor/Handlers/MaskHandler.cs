@@ -1,16 +1,22 @@
-﻿using MagicGradients.Masks;
+﻿using MagicGradients;
+using MagicGradients.Masks;
 using Playground.ViewModels;
+using System;
 using System.Collections.Generic;
-using MagicGradients;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Playground.Features.Editor.Handlers
 {
     public class MaskHandler : ObservableObject
     {
-        public EllipseMask EllipseMask { get; }
-        public TextMask TextMask { get; }
-        public PathMask PathMask { get; }
+        private readonly IShapeProvider _shapeProvider;
+
+        public EllipseMask EllipseMask { get; } = new EllipseMask();
+        public TextMask TextMask { get; } = new TextMask();
+        public PathMask PathMask { get; } = new PathMask();
         public MaskCollection Collection { get; }
 
         public List<GradientMask> Masks { get; }
@@ -21,8 +27,11 @@ namespace Playground.Features.Editor.Handlers
             get => _selectedMask;
             set => SetProperty(ref _selectedMask, value, () =>
             {
-                _clipMode = _selectedMask.ClipMode;
-                RaisePropertyChanged(nameof(ClipMode));
+                if (_selectedMask != null)
+                {
+                    _clipMode = _selectedMask.ClipMode;
+                    RaisePropertyChanged(nameof(ClipMode));
+                }
 
                 if (_selectedMask is PathMask pathMask)
                 {
@@ -35,7 +44,7 @@ namespace Playground.Features.Editor.Handlers
             });
         }
 
-        public List<PathFill> FillModes { get; }
+        public PathFill[] FillModes { get; }
 
         private PathFill _pathFill;
         public PathFill PathFill
@@ -48,7 +57,7 @@ namespace Playground.Features.Editor.Handlers
             });
         }
 
-        public List<ClipMode> ClipModes { get; }
+        public ClipMode[] ClipModes { get; }
 
         private ClipMode _clipMode;
         public ClipMode ClipMode
@@ -60,54 +69,44 @@ namespace Playground.Features.Editor.Handlers
             });
         }
 
-        public List<FontAttributes> FontAttributes { get; }
+        public FontAttributes[] FontAttributes { get; }
 
         public bool IsPathMask => SelectedMask is PathMask;
         public bool IsTextMask => SelectedMask is TextMask;
-        
+
+        public ICommand ShowSnippetsCommand { get; }
+
         public MaskHandler()
         {
-            EllipseMask = new EllipseMask();
-            TextMask = new TextMask();
-            PathMask = new PathMask();
+            _shapeProvider = new ShapeProvider();
 
             Collection = new MaskCollection
             {
                 Masks = new GradientElements<GradientMask>
                 {
-                    EllipseMask,
-                    PathMask,
-                    TextMask
+                    EllipseMask, PathMask, TextMask
                 }
             };
 
             Masks = new List<GradientMask>
             {
-                null,
-                EllipseMask,
-                TextMask,
-                PathMask,
-                Collection
+                null, EllipseMask, TextMask, PathMask, Collection
             };
 
-            FillModes = new List<PathFill>
-            {
-                PathFill.Center,
-                PathFill.Fill
-            };
+            FillModes = Enum.GetValues(typeof(PathFill)).Cast<PathFill>().ToArray();
+            ClipModes = Enum.GetValues(typeof(ClipMode)).Cast<ClipMode>().ToArray();
+            FontAttributes = Enum.GetValues(typeof(FontAttributes)).Cast<FontAttributes>().ToArray();
 
-            ClipModes = new List<ClipMode>
-            {
-                ClipMode.Intersect,
-                ClipMode.Difference
-            };
+            ShowSnippetsCommand = new Command(() => ShowSnippetsActionSheet());
+        }
 
-            FontAttributes = new List<FontAttributes>
+        private async Task ShowSnippetsActionSheet()
+        {
+            var selection = await _shapeProvider.ShowActionSheet();
+            if (selection != null)
             {
-                Xamarin.Forms.FontAttributes.None,
-                Xamarin.Forms.FontAttributes.Bold,
-                Xamarin.Forms.FontAttributes.Italic
-            };
+                PathMask.Data = selection.Data;
+            }
         }
     }
 }

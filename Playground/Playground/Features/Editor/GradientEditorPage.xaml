@@ -25,6 +25,7 @@
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,Auto" RowSpacing="0">
+        <controls:CheckeredView />
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
                             GradientRepeat="{Binding GradientRepeat}"

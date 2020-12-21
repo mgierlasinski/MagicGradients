@@ -4,7 +4,10 @@ namespace MagicGradients.Masks
 {
     public enum PathFill
     {
-        Center, Fill
+        Center,
+        AspectFit,
+        AspectFill,
+        Fill
     }
 
     public enum ClipMode

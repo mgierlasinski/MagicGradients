@@ -50,6 +50,9 @@
         <Picker SelectedItem="{Binding Mask.TextMask.FontAttributes}" ItemsSource="{Binding Mask.FontAttributes}" HorizontalOptions="FillAndExpand" />
     </StackLayout>
     <Picker ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" IsVisible="{Binding Mask.IsPathMask}" />
-    <Editor Text="{Binding Mask.PathMask.Data}" IsVisible="{Binding Mask.IsPathMask}" />
-    
+    <StackLayout Orientation="Horizontal" IsVisible="{Binding Mask.IsPathMask}">
+        <Editor Text="{Binding Mask.PathMask.Data}" HorizontalOptions="FillAndExpand" />
+        <Button Text="Add" Command="{Binding Mask.ShowSnippetsCommand}" />
+    </StackLayout>
+
 </StackLayout>
