@@ -2,6 +2,7 @@
 using Playground.ViewModels;
 using System.Collections.Generic;
 using MagicGradients;
+using Xamarin.Forms;
 
 namespace Playground.Features.Editor.Handlers
 {
@@ -59,6 +60,8 @@ namespace Playground.Features.Editor.Handlers
             });
         }
 
+        public List<FontAttributes> FontAttributes { get; }
+
         public bool IsPathMask => SelectedMask is PathMask;
         public bool IsTextMask => SelectedMask is TextMask;
         
@@ -97,6 +100,13 @@ namespace Playground.Features.Editor.Handlers
             {
                 ClipMode.Intersect,
                 ClipMode.Difference
+            };
+
+            FontAttributes = new List<FontAttributes>
+            {
+                Xamarin.Forms.FontAttributes.None,
+                Xamarin.Forms.FontAttributes.Bold,
+                Xamarin.Forms.FontAttributes.Italic
             };
         }
     }

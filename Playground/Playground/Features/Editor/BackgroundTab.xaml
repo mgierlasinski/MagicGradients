@@ -47,6 +47,7 @@
     <StackLayout Orientation="Horizontal" IsVisible="{Binding Mask.IsTextMask}">
         <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
         <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
+        <Picker SelectedItem="{Binding Mask.TextMask.FontAttributes}" ItemsSource="{Binding Mask.FontAttributes}" HorizontalOptions="FillAndExpand" />
     </StackLayout>
     <Picker ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" IsVisible="{Binding Mask.IsPathMask}" />
     <Editor Text="{Binding Mask.PathMask.Data}" IsVisible="{Binding Mask.IsPathMask}" />
