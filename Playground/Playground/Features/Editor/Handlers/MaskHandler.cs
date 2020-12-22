@@ -12,7 +12,7 @@ namespace Playground.Features.Editor.Handlers
 {
     public class MaskHandler : ObservableObject
     {
-        private readonly IShapeProvider _shapeProvider;
+        private readonly ShapePicker _shapePicker;
 
         public EllipseMask EllipseMask { get; } = new EllipseMask();
         public TextMask TextMask { get; } = new TextMask();
@@ -39,10 +39,11 @@ namespace Playground.Features.Editor.Handlers
                     RaisePropertyChanged(nameof(PathFill));
                 }
 
-                RaisePropertyChanged(nameof(IsPathMask));
-                RaisePropertyChanged(nameof(IsTextMask));
+                RaisePropertyChanged(nameof(MaskState));
             });
         }
+
+        public string MaskState => SelectedMask != null ? SelectedMask.GetType().Name : "None";
 
         public PathFill[] FillModes { get; }
 
@@ -65,20 +66,17 @@ namespace Playground.Features.Editor.Handlers
             get => _clipMode;
             set => SetProperty(ref _clipMode, value, () =>
             {
-                SelectedMask.ClipMode = _clipMode;
+                if(SelectedMask != null)
+                    SelectedMask.ClipMode = _clipMode;
             });
         }
 
         public FontAttributes[] FontAttributes { get; }
-
-        public bool IsPathMask => SelectedMask is PathMask;
-        public bool IsTextMask => SelectedMask is TextMask;
-
         public ICommand ShowSnippetsCommand { get; }
 
         public MaskHandler()
         {
-            _shapeProvider = new ShapeProvider();
+            _shapePicker = new ShapePicker();
 
             Collection = new MaskCollection
             {
@@ -102,7 +100,7 @@ namespace Playground.Features.Editor.Handlers
 
         private async Task ShowSnippetsActionSheet()
         {
-            var selection = await _shapeProvider.ShowActionSheet();
+            var selection = await _shapePicker.ShowActionSheet();
             if (selection != null)
             {
                 PathMask.Data = selection.Data;
