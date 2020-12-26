@@ -6,15 +6,17 @@
 <img src="./Assets/Gifs/gallery-item-battle-test-ios.gif" height="500" width="255" />   
 </div>
 
+
+
 Draw breathtaking backgrounds in your Xamarin.Forms application today, from simple gradients to complex textures. It's a kind of magic :sparkles:
 
 // Add some images here
 
 | Supported platforms |
 |---|
-| :heavy_check_mark: Android |
-| :heavy_check_mark: iOS |
-| :heavy_check_mark: UWP |
+| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="28" height="18" /> Android |
+| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="28" height="18" /> iOS |
+| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="28" height="18" /> UWP |
 
 - Linear and radial gradients supported
 - Draw as many gradients as you want with single control, blend them together for unique effects
