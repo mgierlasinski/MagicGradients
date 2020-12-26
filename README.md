@@ -23,11 +23,11 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
 - Make your background alive with built-in XAML animations :hear_no_evil:
 - Powered by [![Nuget](https://img.shields.io/badge/SkiaSharp-v1.68.1-blue)](https://www.nuget.org/packages/SkiaSharp/)
 
-## Installation <img src="https://media.giphy.com/media/hDO4yt6W6eMRsRMiUd/source.gif" width="25" height="25" />  
+## Installation 
 
 `Magic Gradients` are available via NuGet:
 
-[![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients)
+  [![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients) <img src="https://media.giphy.com/media/hDO4yt6W6eMRsRMiUd/source.gif" width="20" height="20" /> 
 
 Install into shared project, no additional setup required.
 
