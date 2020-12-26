@@ -1,16 +1,15 @@
 # Magic Gradients
 
+
+Draw breathtaking backgrounds in your Xamarin.Forms application today, from simple gradients to complex textures. It's a kind of magic :sparkles:
+
+
 <div>
 <img src="./Assets/Gifs/gallery-preview-ios.gif" height="500" width="255" />   
 <img src="./Assets/Gifs/gallery-item-ios.gif" height="500" width="255" />   
 <img src="./Assets/Gifs/gallery-item-battle-test-ios.gif" height="500" width="255" />   
 </div>
 
-
-
-Draw breathtaking backgrounds in your Xamarin.Forms application today, from simple gradients to complex textures. It's a kind of magic :sparkles:
-
-// Add some images here
 
 | Supported platforms |
 |---|
