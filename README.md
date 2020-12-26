@@ -14,9 +14,9 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
 
 | Supported platforms |
 |---|
-| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="28" height="18" /> Android |
-| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="28" height="18" /> iOS |
-| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="28" height="18" /> UWP |
+| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="22" height="14" /> Android |
+| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="22" height="14" /> iOS |
+| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="22" height="14" /> UWP |
 
 - Linear and radial gradients supported
 - Draw as many gradients as you want with single control, blend them together for unique effects
