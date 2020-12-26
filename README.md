@@ -108,7 +108,10 @@ Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_
 <div>
 <img src="./Assets/Gifs/gallery-preview-ios.gif" height="500" width="255" />   
 <img src="./Assets/Gifs/gallery-item-ios.gif" height="500" width="255" />   
-<img src="./Assets/Gifs/gallery-item-battle-test-ios.gif" height="500" width="255" />   
+<img src="./Assets/Gifs/gallery-item-battle-test-ios.gif" height="500" width="255" />  
+<img src="./Assets/Gifs/paste-css-ios.gif" height="500" width="255" /> 
+<img src="./Assets/Gifs/linear-gradients-ios.gif" height="500" width="255" /> 
+<img src="./Assets/Gifs/radial-gradients-ios.gif" height="500" width="255" /> 
 </div>
 
 ## Styling with CSS
@@ -158,8 +161,6 @@ gradientView.GradientSource = CssGradientSource.Parse("linear-gradient(red, gree
 |:-----:|:-----:|
 | [`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) | [`repeating-linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient) |
 
-<img src="./Assets/Gifs/linear-gradients-ios.gif" height="500" width="255" /> 
-
 **CSS Syntax**
 ``` css
 linear-gradient(direction | angle, color-stop1, color-stop2, ...);
@@ -181,8 +182,6 @@ Each color stop should contain color information and optionally position describ
 | ![Alt text](https://www.w3schools.com/cssref/gradient_radial.jpg) | ![Alt text](https://www.w3schools.com/cssref/gradient_radial.jpg) |
 |:-----:|:-----:|
 | [`radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient) | [`repeating-radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient) |
-
-<img src="./Assets/Gifs/radial-gradients-ios.gif" height="500" width="255" /> 
 
 **CSS Syntax**
 ``` css
