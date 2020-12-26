@@ -101,27 +101,15 @@ gradientView.GradientSource = source;
 
 In `Magic Gradients` repository you can find `Magic Playground`, a `Xamarin.Forms` app for browsing and creating gradients visually. Android, iOS and UWP are supported.
 
-Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_evil: from [Gradient Magic](https://www.gradientmagic.com/), ready to use in any `Xamarin.Forms` app. Find your best pick and copy over to your app.
+Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_evil: from [Gradient Magic](https://www.gradientmagic.com/), ready to use in any `Xamarin.Forms` app. Find your best, pick and copy over to your app.
 
-### Magic Playground Gallery
+### Magic Playground Gallery 
 
 <div>
 <img src="./Assets/Gifs/gallery-preview-ios.gif" height="500" width="255" />   
 <img src="./Assets/Gifs/gallery-item-ios.gif" height="500" width="255" />   
 <img src="./Assets/Gifs/gallery-item-battle-test-ios.gif" height="500" width="255" />   
 </div>
-
-### Magic Playground Paste CSS
-  
-<img src="./Assets/Gifs/paste-css-ios.gif" height="500" width="255" /> 
-
-### Magic Playground Linear Gradients
-
-<img src="./Assets/Gifs/linear-gradients-ios.gif" height="500" width="255" /> 
-
-### Magic Playground Radial Gradients
-
-<img src="./Assets/Gifs/radial-gradients-ios.gif" height="500" width="255" /> 
 
 ## Styling with CSS
 
@@ -170,6 +158,8 @@ gradientView.GradientSource = CssGradientSource.Parse("linear-gradient(red, gree
 |:-----:|:-----:|
 | [`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) | [`repeating-linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient) |
 
+<img src="./Assets/Gifs/linear-gradients-ios.gif" height="500" width="255" /> 
+
 **CSS Syntax**
 ``` css
 linear-gradient(direction | angle, color-stop1, color-stop2, ...);
@@ -192,6 +182,7 @@ Each color stop should contain color information and optionally position describ
 |:-----:|:-----:|
 | [`radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient) | [`repeating-radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient) |
 
+<img src="./Assets/Gifs/radial-gradients-ios.gif" height="500" width="255" /> 
 
 **CSS Syntax**
 ``` css
@@ -216,7 +207,7 @@ radial-gradient(ellipse 200px 300px at 50% 60%, red, green);    // two radiuses 
 
 You can play around with CSS functions live in Magic Playground app, Hot Reload :fire: included.
 
-![Paste CSS](https://raw.githubusercontent.com/mgierlasinski/MagicGradients/master/Assets/paste-css.gif)
+<img src="./Assets/Gifs/paste-css-ios.gif" height="500" width="255" /> 
 
 <!--
 ### Examples
