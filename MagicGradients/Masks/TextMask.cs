@@ -7,13 +7,13 @@ namespace MagicGradients.Masks
     public class TextMask : PathMask
     {
         public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text),
-            typeof(string), typeof(TextMask), defaultValue: "Hello world");
+            typeof(string), typeof(TextMask));
 
         public static readonly BindableProperty FontFamilyProperty = BindableProperty.Create(nameof(FontFamily), 
             typeof(string), typeof(TextMask), default(string));
 
         public static readonly BindableProperty FontSizeProperty = BindableProperty.Create(nameof(FontSize),
-            typeof(double), typeof(TextMask), defaultValue: 100d);
+            typeof(double), typeof(TextMask), defaultValue: 18d);
 
         public static readonly BindableProperty FontAttributesProperty = BindableProperty.Create(nameof(FontAttributes), 
             typeof(FontAttributes), typeof(TextMask), FontAttributes.None);
@@ -45,6 +45,9 @@ namespace MagicGradients.Masks
 
         public override void Clip(RenderContext context)
         {
+            if (!IsActive)
+                return;
+
             var textPaint = new SKPaint
             {
                 TextSize = (float)FontSize,

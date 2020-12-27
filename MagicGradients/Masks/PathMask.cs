@@ -27,7 +27,7 @@ namespace MagicGradients.Masks
 
         public override void Clip(RenderContext context)
         {
-            if(string.IsNullOrEmpty(Data))
+            if (!IsActive || string.IsNullOrEmpty(Data))
                 return;
 
             using var path = SKPath.ParseSvgPathData(Data);

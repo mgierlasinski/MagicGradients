@@ -29,7 +29,7 @@
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
                             GradientRepeat="{Binding GradientRepeat}"
-                            Mask="{Binding Mask.SelectedMask}"
+                            Mask="{Binding Mask.Collection}"
                             EnableTouchEvents="{Binding IsDragEnabled}" 
                             Touch="SKCanvasView_OnTouch" 
                             PaintSurface="SKCanvasView_OnPaintSurface"/>
@@ -72,6 +72,7 @@
                     <tabs:UnderlinedTabItem Label="Properties" Padding="10,0" />
                     <tabs:UnderlinedTabItem Label="Colors" Padding="10,0" />
                     <tabs:UnderlinedTabItem Label="Size" Padding="10,0" />
+                    <tabs:UnderlinedTabItem Label="Masks" Padding="10,0" />
                 </tabs:TabHostView.Tabs>
             </tabs:TabHostView>
             <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Clear}}" 
@@ -86,6 +87,7 @@
                 <ScrollView>
                     <editor:BackgroundTab Margin="10" />
                 </ScrollView>
+                <editor:MasksTab Margin="10" />
             </tabs:ViewSwitcher>
         </Grid>
 

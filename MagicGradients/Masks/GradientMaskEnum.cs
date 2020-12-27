@@ -12,15 +12,15 @@ namespace MagicGradients.Masks
 
     public enum ClipMode
     {
-        Difference = 0,
-        Intersect = 1
+        Include,
+        Exclude
     }
 
     public static class ClipModeExtensions
     {
         public static SKClipOperation ToSkOperation(this ClipMode mode)
         {
-            return (SKClipOperation)mode;
+            return mode == ClipMode.Include ? SKClipOperation.Intersect : SKClipOperation.Difference;
         }
     }
 }

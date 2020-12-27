@@ -6,7 +6,7 @@ namespace Playground.Features.Editor
 {
     public class ShapePicker
     {
-        private readonly ShapeSnippet[] _shapes = 
+        public ShapeSnippet[] Shapes { get; } =
         {
             new ShapeSnippet
             {
@@ -27,11 +27,17 @@ namespace Playground.Features.Editor
 
         public async Task<ShapeSnippet> ShowActionSheet()
         {
-            var values = _shapes.Select(x => x.Name).ToArray();
+            var values = Shapes.Select(x => x.Name).ToArray();
             var result = await Shell.Current.DisplayActionSheet("Pick shape", "Cancel", null, values);
-            var selection = _shapes.FirstOrDefault(x => x.Name == result);
+            var selection = Shapes.FirstOrDefault(x => x.Name == result);
 
             return selection;
+        }
+
+        public async Task<ShapeSnippet> ShowEntry()
+        {
+            var selection = await Shell.Current.DisplayPromptAsync("Custom path", "Enter path data");
+            return !string.IsNullOrEmpty(selection) ? new ShapeSnippet { Data = selection } : null;
         }
     }
 
