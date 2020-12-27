@@ -4,11 +4,93 @@
              xmlns:tabs="http://sharpnado.com"
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
+             xmlns:views="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:handlers="clr-namespace:Playground.Features.Editor.Handlers"
              x:Class="Playground.Features.Editor.BackgroundTab"
              x:DataType="editor:GradientEditorViewModel">
     <StackLayout.Resources>
         <converters:TabEnumConverter x:Key="TabEnumConverter" />
         <converters:TabBoolConverter x:Key="TabBoolConverter" />
+        <DataTemplate x:Key="EllipseTemplate">
+            <Frame Padding="10">
+                <views:Expander>
+                    <views:Expander.Header>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox />
+                            <Label Text="Ellipse Mask" VerticalOptions="Center" />
+                        </StackLayout>
+                    </views:Expander.Header>
+                    <StackLayout Margin="0,10">
+                        <Picker ItemsSource="{Binding Mask.ClipModes}" SelectedItem="{Binding Mask.ClipMode}" HorizontalOptions="FillAndExpand" />
+                        <!--<StackLayout x:Name="TextRow" Orientation="Horizontal">
+                            <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
+                            <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
+                            <Picker SelectedItem="{Binding Mask.TextMask.FontAttributes}" ItemsSource="{Binding Mask.FontAttributes}" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <StackLayout x:Name="PathData" Orientation="Horizontal">
+                            <Editor Text="{Binding Mask.PathMask.Data}" HorizontalOptions="FillAndExpand" />
+                            <Button Text="Add" Command="{Binding Mask.ShowSnippetsCommand}" />
+                        </StackLayout>
+                        <Picker x:Name="PathFill" ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" />-->
+                    </StackLayout>
+                </views:Expander>
+            </Frame>
+        </DataTemplate>
+        <DataTemplate x:Key="TextTemplate">
+            <Frame Padding="10">
+                <views:Expander>
+                    <views:Expander.Header>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox />
+                            <Entry Placeholder="Enter text" WidthRequest="200" />
+                        </StackLayout>
+                    </views:Expander.Header>
+                    <StackLayout Margin="0,10">
+                        <Picker ItemsSource="{Binding Mask.ClipModes}" SelectedItem="{Binding Mask.ClipMode}" HorizontalOptions="FillAndExpand" />
+                        <StackLayout x:Name="TextRow" Orientation="Horizontal">
+                            <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
+                            <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
+                            <Picker SelectedItem="{Binding Mask.TextMask.FontAttributes}" ItemsSource="{Binding Mask.FontAttributes}" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <!--<StackLayout x:Name="PathData" Orientation="Horizontal">
+                            <Editor Text="{Binding Mask.PathMask.Data}" HorizontalOptions="FillAndExpand" />
+                            <Button Text="Add" Command="{Binding Mask.ShowSnippetsCommand}" />
+                        </StackLayout>-->
+                        <Picker x:Name="PathFill" ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" />
+                    </StackLayout>
+                </views:Expander>
+            </Frame>
+        </DataTemplate>
+        <DataTemplate x:Key="PathTemplate">
+            <Frame Padding="10">
+                <views:Expander>
+                    <views:Expander.Header>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox />
+                            <Editor Text="{Binding Mask.PathMask.Data}" Placeholder="Path data" WidthRequest="150" />
+                            <Button Text="Add" Command="{Binding Mask.ShowSnippetsCommand}" WidthRequest="50" />
+                        </StackLayout>
+                    </views:Expander.Header>
+                    <StackLayout Margin="0,10">
+                        <Picker ItemsSource="{Binding Mask.ClipModes}" SelectedItem="{Binding Mask.ClipMode}" HorizontalOptions="FillAndExpand" />
+                        <!--<StackLayout x:Name="TextRow" Orientation="Horizontal">
+                            <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
+                            <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
+                            <Picker SelectedItem="{Binding Mask.TextMask.FontAttributes}" ItemsSource="{Binding Mask.FontAttributes}" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>-->
+                        <!--<StackLayout x:Name="PathData" Orientation="Horizontal">
+                            <Editor Text="{Binding Mask.PathMask.Data}" HorizontalOptions="FillAndExpand" />
+                            <Button Text="Add" Command="{Binding Mask.ShowSnippetsCommand}" />
+                        </StackLayout>-->
+                        <Picker x:Name="PathFill" ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" />
+                    </StackLayout>
+                </views:Expander>
+            </Frame>
+        </DataTemplate>
+        <handlers:MaskTemplateSelector x:Key="MaskTemplateSelector"
+                                       EllipseTemplate="{StaticResource EllipseTemplate}"
+                                       TextTemplate="{StaticResource TextTemplate}"
+                                       PathTemplate="{StaticResource PathTemplate}" />
     </StackLayout.Resources>
 
     <VisualStateManager.VisualStateGroups>
@@ -81,7 +163,40 @@
     </tabs:TabHostView>
     
     <Label Text="Mask" Margin="0,10,0,0" />
-    <Frame Style="{StaticResource BorderFrame}">
+    <CollectionView ItemsSource="{Binding Mask.Collection.Masks}" 
+                    ItemTemplate="{StaticResource MaskTemplateSelector}">
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+        </CollectionView.ItemsLayout>
+        <!--<CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Padding="10">
+                    <views:Expander>
+                        <views:Expander.Header>
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox />
+                                <Label Text="Mask type xxs" VerticalOptions="Center" />
+                            </StackLayout>
+                        </views:Expander.Header>
+                        <StackLayout Margin="0,10">
+                            <Picker ItemsSource="{Binding Mask.ClipModes}" SelectedItem="{Binding Mask.ClipMode}" HorizontalOptions="FillAndExpand" />
+                            <StackLayout x:Name="TextRow" Orientation="Horizontal">
+                                <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
+                                <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
+                                <Picker SelectedItem="{Binding Mask.TextMask.FontAttributes}" ItemsSource="{Binding Mask.FontAttributes}" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                            <StackLayout x:Name="PathData" Orientation="Horizontal">
+                                <Editor Text="{Binding Mask.PathMask.Data}" HorizontalOptions="FillAndExpand" />
+                                <Button Text="Add" Command="{Binding Mask.ShowSnippetsCommand}" />
+                            </StackLayout>
+                            <Picker x:Name="PathFill" ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" />
+                        </StackLayout>
+                    </views:Expander>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>-->
+    </CollectionView>
+    <!--<Frame Style="{StaticResource BorderFrame}">
         <StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Picker ItemsSource="{Binding Mask.Masks}" SelectedItem="{Binding Mask.SelectedMask}" HorizontalOptions="FillAndExpand" />
@@ -98,5 +213,5 @@
             </StackLayout>
             <Picker x:Name="PathFill" ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" IsVisible="False" />
         </StackLayout>
-    </Frame>
+    </Frame>-->
 </StackLayout>
