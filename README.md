@@ -1,15 +1,8 @@
 # Magic Gradients
 
+![image](https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png)
 
 Draw breathtaking backgrounds in your Xamarin.Forms application today, from simple gradients to complex textures. It's a kind of magic :sparkles:
-
-
-<div>
-<img src="./Assets/Gifs/gallery-preview-ios.gif" height="500" width="255" />   
-<img src="./Assets/Gifs/gallery-item-ios.gif" height="500" width="255" />   
-<img src="./Assets/Gifs/gallery-item-battle-test-ios.gif" height="500" width="255" />   
-</div>
-
 
 | Supported platforms |
 |---|
@@ -99,6 +92,8 @@ gradientView.GradientSource = source;
 
 ## Discover amazing backgounds
 
+![image](https://user-images.githubusercontent.com/8330262/103213439-f3e1dc00-490d-11eb-8353-be64293752bd.png)
+
 In `Magic Gradients` repository you can find `Magic Playground`, a `Xamarin.Forms` app for browsing and creating gradients visually. Android, iOS and UWP are supported.
 
 Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_evil: from [Gradient Magic](https://www.gradientmagic.com/), ready to use in any `Xamarin.Forms` app. Find your best, pick and copy over to your app.
@@ -107,11 +102,11 @@ Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_
 
 <div>
 <img src="./Assets/Gifs/gallery-preview-ios.gif" height="500" width="255" />   
-<img src="./Assets/Gifs/gallery-item-ios.gif" height="500" width="255" />   
 <img src="./Assets/Gifs/gallery-item-battle-test-ios.gif" height="500" width="255" />  
 <img src="./Assets/Gifs/paste-css-ios.gif" height="500" width="255" /> 
 <img src="./Assets/Gifs/linear-gradients-ios.gif" height="500" width="255" /> 
 <img src="./Assets/Gifs/radial-gradients-ios.gif" height="500" width="255" /> 
+<img src="./Assets/Gifs/animatioins-ios.gif" height="500" width="255" /> 
 </div>
 
 ## Styling with CSS
