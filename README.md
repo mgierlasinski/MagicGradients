@@ -1,6 +1,6 @@
 # Magic Gradients
 
-<img src="https://user-images.githubusercontent.com/8330262/103219563-5ba02300-491e-11eb-8ae8-4a1f814d5b31.png" width="741" height="400">
+<img src="https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png" width="468" height="350">
 
 ([this picture is draggable, check it out](https://my.spline.design/magicgradientsprod-1071ec2e781f07bf24ab0012e50089f9/))
 
