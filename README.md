@@ -1,7 +1,10 @@
 # Magic Gradients
 
-<img src="https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png" width="468" height="350">
+![asd](https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png)
 
+<!---
+<img src="https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png" width="468" height="350">
+-->
 ([this picture is draggable, check it out](https://my.spline.design/magicgradientsprod-1071ec2e781f07bf24ab0012e50089f9/))
 
 Draw breathtaking backgrounds in your Xamarin.Forms application today, from simple gradients to complex textures. It's a kind of magic :sparkles:
@@ -94,7 +97,7 @@ gradientView.GradientSource = source;
 
 ## Discover amazing backgounds
 
-![image](https://user-images.githubusercontent.com/8330262/103213439-f3e1dc00-490d-11eb-8353-be64293752bd.png)
+![image](https://user-images.githubusercontent.com/8330262/103218824-6fe32080-491c-11eb-861e-5c80d4bdd5a1.png)
 
 In `Magic Gradients` repository you can find `Magic Playground`, a `Xamarin.Forms` app for browsing and creating gradients visually. Android, iOS and UWP are supported.
 
