@@ -1,10 +1,11 @@
 # Magic Gradients
 
-![asd](https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png)
-
 <!---
-<img src="https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png" width="468" height="350">
+![asd](https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png)
 -->
+
+<img src="https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png" width="468" height="350">
+
 ([this picture is draggable, check it out](https://my.spline.design/magicgradientsprod-1071ec2e781f07bf24ab0012e50089f9/))
 
 Draw breathtaking backgrounds in your Xamarin.Forms application today, from simple gradients to complex textures. It's a kind of magic :sparkles:
