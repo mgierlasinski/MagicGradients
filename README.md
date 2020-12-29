@@ -1,6 +1,6 @@
 # Magic Gradients
 
-![](./Assets/Gifs/homer_img.png)
+<img src="./Assets/Gifs/homer_img.png" />
 
 ([this picture is draggable, check it out](https://my.spline.design/magicgradientsprod-1071ec2e781f07bf24ab0012e50089f9/))
 
@@ -94,7 +94,7 @@ gradientView.GradientSource = source;
 
 ## Discover amazing backgounds
 
-![image](![](./Assets/Gifs/all_in_one.png))
+<img src="./Assets/Gifs/all_in_one.png" />
 
 In `Magic Gradients` repository you can find `Magic Playground`, a `Xamarin.Forms` app for browsing and creating gradients visually. Android, iOS and UWP are supported.
 
