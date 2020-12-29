@@ -100,17 +100,11 @@ In `Magic Gradients` repository you can find `Magic Playground`, a `Xamarin.Form
 
 Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_evil: from [Gradient Magic](https://www.gradientmagic.com/), ready to use in any `Xamarin.Forms` app. Find your best, pick and copy over to your app.
 
-<details>
-  <summary>Magic Playground Gallery in GIF's</summary>  
 <div>
-<img src="./Assets/Gifs/gallery-preview-ios.gif" height="500" width="255" />   
-<img src="./Assets/Gifs/gallery-item-battle-test-ios.gif" height="500" width="255" />  
-<img src="./Assets/Gifs/paste-css-ios.gif" height="500" width="255" /> 
-<img src="./Assets/Gifs/linear-gradients-ios.gif" height="500" width="255" /> 
-<img src="./Assets/Gifs/radial-gradients-ios.gif" height="500" width="255" /> 
-<img src="./Assets/Gifs/animatioins-ios.gif" height="500" width="255" /> 
+<img src="./Assets/Gifs/playground_gallery_ios.gif" height="500" width="255" />   
+<img src="./Assets/Gifs/playground_battle_test_ios.gif" height="500" width="255" />  
+<img src="./Assets/Gifs/playground_build_gradient_ios.gif" height="500" width="255" /> 
 </div>
-</details>
 
 ## Styling with CSS
 
@@ -204,7 +198,7 @@ radial-gradient(ellipse 200px 300px at 50% 60%, red, green);    // two radiuses 
 
 You can play around with CSS functions live in Magic Playground app, Hot Reload :fire: included.
 
-<img src="./Assets/Gifs/paste-css-ios.gif" height="500" width="255" /> 
+<img src="./Assets/Gifs/playground_paste_css_ios.gif" height="500" width="255" /> 
 
 <!--
 ### Examples
@@ -232,6 +226,9 @@ xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients"
 | `Easing` | `{x:Static Easing.SinInOut}` | Easing function. |            
 | `RepeatBehavior` | `1x`, `3x`, `Forever`  | How many times animation must be repeated. |
 | `AutoReverse` | `True`, `False` | If true, next loop will be animated backwards. |
+
+
+<img src="./Assets/Gifs/playground_animations_ios.gif" height="500" width="255" /> 
 
 ### Running animation
 
