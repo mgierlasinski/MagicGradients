@@ -77,6 +77,12 @@ namespace Playground.Controls
             if (EnumType == null)
                 return;
 
+            if (SelectedIndex == -1)
+            {
+                SelectedItem = null;
+                return;
+            }
+
             SelectedItem = Enum.ToObject(EnumType, SelectedIndex);
         }
 
@@ -84,6 +90,12 @@ namespace Playground.Controls
         {
             if (EnumType == null || _enumItems == null || !_enumItems.Any())
                 return;
+
+            if (SelectedItem == null)
+            {
+                SelectedIndex = -1;
+                return;
+            }
 
             var name = Enum.GetName(EnumType, SelectedItem);
             var index = _enumItems.IndexOf(name);

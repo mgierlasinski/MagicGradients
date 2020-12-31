@@ -5,52 +5,54 @@
              xmlns:views="http://xamarin.com/schemas/2020/toolkit"
              xmlns:handlers="clr-namespace:Playground.Features.Editor.Handlers"
              xmlns:masks="clr-namespace:MagicGradients.Masks;assembly=MagicGradients"
-             xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
-             xmlns:tabs="http://sharpnado.com" 
+             xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls"
              x:Class="Playground.Features.Editor.MasksTab"
              x:DataType="editor:GradientEditorViewModel">
     <StackLayout.Resources>
         <DataTemplate x:Key="EllipseTemplate">
             <Frame Style="{StaticResource BorderFrame}" Padding="10" x:DataType="masks:EllipseMask">
-                <StackLayout Orientation="Horizontal">
-                    <CheckBox IsChecked="{Binding IsActive}" />
-                    <Label Text="Ellipse Mask" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
-                    <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
-                                         SelectedItem="{Binding ClipMode}" 
-                                         WidthRequest="200" />
-                </StackLayout>
+                <views:Expander>
+                    <views:Expander.Header>
+                        <Grid ColumnDefinitions="Auto,*,30" RowDefinitions="40">
+                            <CheckBox IsChecked="{Binding IsActive}" />
+                            <Label Text="Ellipse Mask" FontSize="16" VerticalOptions="Center" Grid.Column="1" />
+                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="2" />
+                        </Grid>
+                    </views:Expander.Header>
+                    <Grid RowSpacing="10" Margin="0,10" RowDefinitions="35">
+                        <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
+                                             SelectedItem="{Binding ClipMode}" />
+                    </Grid>
+                </views:Expander>
             </Frame>
         </DataTemplate>
         <DataTemplate x:Key="TextTemplate">
             <Frame Style="{StaticResource BorderFrame}" Padding="10" x:DataType="masks:TextMask">
                 <views:Expander>
                     <views:Expander.Header>
-                        <StackLayout Orientation="Horizontal">
+                        <Grid ColumnDefinitions="Auto,*,30" RowDefinitions="40">
                             <CheckBox IsChecked="{Binding IsActive}" />
                             <Entry Text="{Binding Text}" Placeholder="Enter text" 
-                                   WidthRequest="300" />
-                            <BoxView HorizontalOptions="FillAndExpand" />
-                            <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
-                                                 SelectedItem="{Binding ClipMode}" 
-                                                 WidthRequest="200" />
-                        </StackLayout>
+                                   Grid.Column="1" />
+                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="2" />
+                        </Grid>
                     </views:Expander.Header>
-                    <StackLayout Spacing="10" Margin="0,10">
-                        <!--<Entry Text="{Binding FontSize}" Placeholder="Font Size" 
-                               HorizontalOptions="FillAndExpand" />-->
-                        <StackLayout Orientation="Horizontal">
-                            <Slider Value="{Binding FontSize}" Maximum="200" Minimum="10" HorizontalOptions="FillAndExpand" />
-                            <Label Text="{Binding FontSize}" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Grid RowSpacing="10" Margin="0,10" RowDefinitions="35,35,35,35">
+                        <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
+                                             SelectedItem="{Binding ClipMode}" 
+                                             Grid.Row="0" />
+                        <StackLayout Orientation="Horizontal" Grid.Row="1">
+                            <Slider Value="{Binding FontSize}" Maximum="300" Minimum="10" HorizontalOptions="FillAndExpand" ValueChanged="FontSize_OnValueChanged" />
+                            <Label Text="{Binding FontSize}" FontAttributes="Bold" VerticalOptions="Center" Margin="0,0,0,5" />
                         </StackLayout>
-                        
                         <controls:EnumSwitch EnumType="{x:Type FontAttributes}" 
                                              SelectedItem="{Binding FontAttributes}" 
-                                             WidthRequest="250" />
+                                             Grid.Row="2" />
                         <controls:EnumSwitch EnumType="{x:Type masks:PathFill}" 
                                              SelectedItem="{Binding Fill}" 
-                                             HorizontalOptions="FillAndExpand" />
-                    </StackLayout>
+                                             Grid.Row="3" />
+                    </Grid>
                 </views:Expander>
             </Frame>
         </DataTemplate>
@@ -58,21 +60,22 @@
             <Frame Style="{StaticResource BorderFrame}" Padding="10" x:DataType="masks:PathMask">
                 <views:Expander>
                     <views:Expander.Header>
-                        <StackLayout Orientation="Horizontal">
+                        <Grid ColumnDefinitions="Auto,*,*,30" RowDefinitions="40">
                             <CheckBox IsChecked="{Binding IsActive}" />
                             <Button Text="Pick path" Command="{Binding Mask.ShowPickerCommand, Source={RelativeSource AncestorType={x:Type editor:GradientEditorViewModel}}}" 
-                                    WidthRequest="150" StyleClass="BackgroundElement" />
+                                    Grid.Column="1" StyleClass="BackgroundElement" />
                             <Button Text="Set path" Command="{Binding Mask.ShowEntryCommand, Source={RelativeSource AncestorType={x:Type editor:GradientEditorViewModel}}}" 
-                                    WidthRequest="150" StyleClass="BackgroundElement" />
-                            <BoxView HorizontalOptions="FillAndExpand" />
-                            <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
-                                                 SelectedItem="{Binding ClipMode}" 
-                                                 WidthRequest="200" />
-                        </StackLayout>
+                                    Grid.Column="2" StyleClass="BackgroundElement" />
+                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="3" />
+                        </Grid>
                     </views:Expander.Header>
-                    <controls:EnumSwitch EnumType="{x:Type masks:PathFill}" 
-                                         SelectedItem="{Binding Fill}" 
-                                         Margin="0,10" />
+                    <Grid RowSpacing="10" Margin="0,10" RowDefinitions="35,35">
+                        <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
+                                             SelectedItem="{Binding ClipMode}" />
+                        <controls:EnumSwitch EnumType="{x:Type masks:PathFill}" 
+                                             SelectedItem="{Binding Fill}" 
+                                             Grid.Row="1" />
+                    </Grid>
                 </views:Expander>
             </Frame>
         </DataTemplate>
