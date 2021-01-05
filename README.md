@@ -185,7 +185,8 @@ radial-gradient(ellipse 200px 300px at 50% 60%, red, green);    // two radiuses 
 
 You can play around with CSS functions live in Magic Playground app, Hot Reload :fire: included.
 
-<img src="./Assets/Gifs/playground_paste_css_ios.gif" height="500" width="255" /> 
+<img src="./Assets/Gifs/css_add_only.gif" height="480" width="245" /> 
+<img src="./Assets/Gifs/css_hot_reload.gif" height="480" width="245" /> 
 
 <!--
 ### Examples
