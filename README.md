@@ -1,6 +1,6 @@
 # Magic Gradients
 
-![image](https://user-images.githubusercontent.com/8330262/103210690-b463c180-4906-11eb-83eb-b14bfafb7299.png)
+![image](./Assets/Images/home_large.png)
 
 ([this picture is draggable, check it out](https://my.spline.design/magicgradientsprod-1071ec2e781f07bf24ab0012e50089f9/))
 
@@ -8,9 +8,9 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
 
 | Supported platforms |
 |---|
-| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="22" height="14" /> Android |
-| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="22" height="14" /> iOS |
-| <img src="https://media.giphy.com/media/dvxmUOLy5gbQ2FwYUu/source.gif" width="22" height="14" /> UWP |
+| :heavy_check_mark: Android |
+| :heavy_check_mark: iOS |
+| :heavy_check_mark: UWP |
 
 - Linear and radial gradients supported
 - Draw as many gradients as you want with single control, blend them together for unique effects
@@ -22,15 +22,9 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
 
 `Magic Gradients` are available via NuGet:
 
-  [![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients) <img src="https://media.giphy.com/media/hDO4yt6W6eMRsRMiUd/source.gif" width="20" height="20" /> 
+  [![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients)
 
 Install into shared project, no additional setup required.
-
-<!---
-Install via [NuGet](https://www.nuget.org/packages/MagicGradients) or include the Magic Gradients project in your solution and add local references in your shared project.
-
-As it requires SkiaSharp, you will also need to ensure you add SkiaSharp.Views.Forms to your shared Xamarin.Forms project. 
--->
 
 ## Drawing gradient
 
@@ -94,7 +88,7 @@ gradientView.GradientSource = source;
 
 ## Discover amazing backgounds
 
-![image](https://user-images.githubusercontent.com/8330262/103218824-6fe32080-491c-11eb-861e-5c80d4bdd5a1.png)
+![image](./Assets/Images/screens_large.png)
 
 In `Magic Gradients` repository you can find `Magic Playground`, a `Xamarin.Forms` app for browsing and creating gradients visually. Android, iOS and UWP are supported.
 
@@ -107,13 +101,6 @@ Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_
 </div>
 
 ## Styling with CSS
-
-<!-- 
-- [`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) 
-- [`repeating-linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient) 
-- [`radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient)
-- [`repeating-radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient)
--->
 
 Magic Gradients supports [CSS functions](https://www.w3schools.com/css/css3_gradients.asp). CSS gradient can be embeded in XAML inline:
 
