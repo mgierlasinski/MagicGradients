@@ -1,5 +1,4 @@
-﻿using MagicGradients;
-using System;
+﻿using System;
 using System.Globalization;
 using Xamarin.Forms;
 
@@ -9,16 +8,12 @@ namespace Playground.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is BackgroundRepeat repeat)
-                return (int)repeat;
-
-            return 0;
+            return (int)value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            //if (targetType.IsAssignableFrom(typeof(BackgroundRepeat)))
-                return (BackgroundRepeat)value;
+            return Enum.ToObject(targetType, (int)value);
         }
     }
 }

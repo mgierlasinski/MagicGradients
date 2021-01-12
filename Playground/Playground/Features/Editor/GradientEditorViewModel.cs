@@ -1,11 +1,11 @@
 ﻿using MagicGradients;
 using Playground.Features.Editor.Handlers;
 using Playground.Features.Gallery.Services;
+using Playground.Features.Share;
 using Playground.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Playground.Features.Share;
 using Xamarin.Forms;
 
 namespace Playground.Features.Editor
@@ -19,6 +19,7 @@ namespace Playground.Features.Editor
 
         public LinearHandler Linear { get; }
         public RadialHandler Radial { get; }
+        public MaskHandler Mask { get; }
 
         private string _id;
         public string Id
@@ -148,6 +149,7 @@ namespace Playground.Features.Editor
             GradientSource = new GradientCollection();
             Linear = new LinearHandler(this);
             Radial = new RadialHandler(this);
+            Mask = new MaskHandler();
 
             AddCommand = new Command(() => AddAction());
             EditCommand = new Command(EditAction);

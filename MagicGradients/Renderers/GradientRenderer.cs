@@ -55,6 +55,7 @@ namespace MagicGradients.Renderers
             }
             else
             {
+                _control.Mask?.Clip(context);
                 context.Canvas.DrawRect(context.RenderRect, context.Paint);
             }
         }
@@ -81,6 +82,7 @@ namespace MagicGradients.Renderers
 
                     context.Canvas.Save();
                     context.Canvas.Translate(point);
+                    _control.Mask?.Clip(context);
                     context.Canvas.DrawRect(context.RenderRect, context.Paint);
                     //DebugTile(context);
                     context.Canvas.Restore();
