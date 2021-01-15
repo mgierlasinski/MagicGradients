@@ -31,26 +31,6 @@
                 </VisualState.Setters>
             </VisualState>
         </VisualStateGroup>
-        <!--<VisualStateGroup Name="MaskGroup">
-            <VisualState Name="Path">
-                <VisualState.StateTriggers>
-                    <CompareStateTrigger Property="{Binding Mask.MaskState}" Value="PathMask" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter TargetName="PathFill" Property="VisualElement.IsVisible" Value="True" />
-                    <Setter TargetName="PathData" Property="VisualElement.IsVisible" Value="True" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState Name="Text">
-                <VisualState.StateTriggers>
-                    <CompareStateTrigger Property="{Binding Mask.MaskState}" Value="TextMask" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter TargetName="TextRow" Property="VisualElement.IsVisible" Value="True" />
-                    <Setter TargetName="PathFill" Property="VisualElement.IsVisible" Value="True" />
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>-->
     </VisualStateManager.VisualStateGroups>
 
     <Grid ColumnDefinitions="50*,50*" RowDefinitions="Auto,40">
@@ -79,24 +59,4 @@
             <tabs:SegmentedTabItem Label="No repeat" />
         </tabs:TabHostView.Tabs>
     </tabs:TabHostView>
-    
-    <!--<Label Text="Mask" Margin="0,10,0,0" />-->
-    <!--<Frame Style="{StaticResource BorderFrame}">
-        <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Picker ItemsSource="{Binding Mask.Masks}" SelectedItem="{Binding Mask.SelectedMask}" HorizontalOptions="FillAndExpand" />
-                <Picker ItemsSource="{Binding Mask.ClipModes}" SelectedItem="{Binding Mask.ClipMode}" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
-            <StackLayout x:Name="TextRow" Orientation="Horizontal" IsVisible="False">
-                <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
-                <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
-                <Picker SelectedItem="{Binding Mask.TextMask.FontAttributes}" ItemsSource="{Binding Mask.FontAttributes}" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
-            <StackLayout x:Name="PathData" Orientation="Horizontal" IsVisible="False">
-                <Editor Text="{Binding Mask.PathMask.Data}" HorizontalOptions="FillAndExpand" />
-                <Button Text="Add" Command="{Binding Mask.ShowSnippetsCommand}" />
-            </StackLayout>
-            <Picker x:Name="PathFill" ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" IsVisible="False" />
-        </StackLayout>
-    </Frame>-->
 </StackLayout>

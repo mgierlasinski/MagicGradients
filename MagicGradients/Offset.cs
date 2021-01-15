@@ -32,4 +32,21 @@ namespace MagicGradients
         Proportional,
         Absolute
     }
+
+    public static class OffsetExtensions
+    {
+        public static double GetPixels(this Offset offset, int sizeInPixels)
+        {
+            return offset.Type == OffsetType.Proportional
+                ? offset.Value * sizeInPixels
+                : offset.Value;
+        }
+
+        public static double GetScale(this Offset offset, int sizeInPixels)
+        {
+            return offset.Type == OffsetType.Absolute
+                ? offset.Value / sizeInPixels
+                : offset.Value;
+        }
+    }
 }

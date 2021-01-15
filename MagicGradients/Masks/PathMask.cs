@@ -13,6 +13,9 @@ namespace MagicGradients.Masks
         public static readonly BindableProperty FillProperty = BindableProperty.Create(nameof(Fill),
             typeof(PathFill), typeof(TextMask), PathFill.Center);
 
+        //public static readonly BindableProperty ScaleProperty = BindableProperty.Create(nameof(Scale),
+        //    typeof(Size), typeof(TextMask), new Size(1,1));
+
         public string Data
         {
             get => (string)GetValue(DataProperty);
@@ -24,6 +27,12 @@ namespace MagicGradients.Masks
             get => (PathFill)GetValue(FillProperty);
             set => SetValue(FillProperty, value);
         }
+
+        //public Size Scale
+        //{
+        //    get => (Size)GetValue(ScaleProperty);
+        //    set => SetValue(ScaleProperty, value);
+        //}
 
         public override void Clip(RenderContext context)
         {
@@ -61,11 +70,10 @@ namespace MagicGradients.Masks
                         context.Canvas.Scale(scaleX, scaleY);
                 }
 
+                //context.Canvas.Scale((float)Scale.Width, (float)Scale.Height);
                 context.Canvas.Translate(-bounds.MidX, -bounds.MidY);
                 context.Canvas.ClipPath(path, ClipMode.ToSkOperation());
             }
         }
-
-        public override string ToString() => "Path Mask";
     }
 }

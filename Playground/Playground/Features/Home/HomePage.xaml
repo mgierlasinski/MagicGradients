@@ -47,18 +47,25 @@
                 <controls:MenuSection>
                     <Label Text="Discover" Style="{StaticResource HeaderStyle}" />
                 </controls:MenuSection>
-                <mtoolkit:MagicButton Command="{Binding GalleryCommand}" StyleClass="twoColumn">
+                <mtoolkit:MagicButton Command="{Binding GalleryCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Gallery}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Gradient Gallery" HorizontalOptions="Center" />
                     </StackLayout>
                 </mtoolkit:MagicButton>
-                <mtoolkit:MagicButton Command="{Binding AnimationsCommand}" StyleClass="twoColumn">
+                <mtoolkit:MagicButton Command="{Binding AnimationsCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Animations" HorizontalOptions="Center" />
+                    </StackLayout>
+                </mtoolkit:MagicButton>
+                <mtoolkit:MagicButton Command="{Binding MasksCommand}" StyleClass="threeColumn">
+                    <StackLayout Padding="10" HorizontalOptions="Center">
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White, Size=50}" 
+                               Margin="{OnPlatform UWP='10,0,0,0'}" />
+                        <Label Text="Masks" HorizontalOptions="Center" />
                     </StackLayout>
                 </mtoolkit:MagicButton>
             </FlexLayout>

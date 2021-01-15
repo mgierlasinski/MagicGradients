@@ -66,7 +66,5 @@ namespace MagicGradients.Masks
                 ClipPath(context, textPath);
             }
         }
-
-        public override string ToString() => "Text Mask";
     }
 }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
        xmlns:home="clr-namespace:Playground.Features.Home;assembly=Playground"
        xmlns:anim="clr-namespace:Playground.Features.Animation;assembly=Playground"
        xmlns:previewer="clr-namespace:Playground.Features.CssPreviewer;assembly=Playground"
        xmlns:gallery="clr-namespace:Playground.Features.Gallery;assembly=Playground"
        xmlns:linear="clr-namespace:Playground.Features.Linear;assembly=Playground"
        xmlns:radial="clr-namespace:Playground.Features.Radial;assembly=Playground"
-       xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+       xmlns:masks="clr-namespace:Playground.Features.Masks;assembly=Playground"
        xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
        x:Class="Playground.AppShell"
        Title="Playground">
@@ -55,6 +56,9 @@
                   FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Radial}}" />
         
     <ShellContent Title="Animations" ContentTemplate="{DataTemplate anim:AnimationsPage}" 
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}}" />
+
+    <ShellContent Title="Masks" ContentTemplate="{DataTemplate masks:MasksPage}" 
                   FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}}" />
     
 </Shell>
