@@ -44,6 +44,11 @@ namespace MagicGradients
             Stops.SetInheritedBindingContext(BindingContext);
         }
 
+        public virtual void PrepareShader(GradientView view)
+        {
+
+        }
+
         public virtual void Measure(int width, int height)
         {
             foreach (var stop in Stops)

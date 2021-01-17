@@ -59,7 +59,7 @@ namespace MagicGradients
             set => SetValue(SizeProperty, value);
         }
 
-        public RadialGradient()
+        public override void PrepareShader(GradientView view)
         {
             Shader = new RadialGradientShader(this);
         }

@@ -19,12 +19,24 @@ namespace MagicGradients.Renderers
             var rect = context.RenderRect;
 
             var renderStops = GetRenderStops();
-            var lastOffset = renderStops.LastOrDefault()?.RenderOffset ?? 1;
-
             var colors = renderStops.Select(x => x.Color.ToSKColor()).ToArray();
-            var colorPos = renderStops.Select(x => lastOffset > 0 ? x.RenderOffset / lastOffset : 0).ToArray();
+            var colorPos = renderStops.Select(x => x.RenderOffset).ToArray();
 
-            var (startPoint, endPoint) = GetGradientPoints(rect.Size.Width, rect.Size.Height, _gradient.Angle, lastOffset);
+            var line = GetGradientLine(rect, _gradient.Angle);
+            var startPoint = line.Start;
+            var endPoint = line.End;
+
+            if (_gradient.IsRepeating)
+            {
+                var firstOffset = renderStops.FirstOrDefault()?.RenderOffset ?? 0;
+                var lastOffset = renderStops.LastOrDefault()?.RenderOffset ?? 1;
+
+                for (var i = 0; i < colorPos.Length; i++)
+                    colorPos[i] = colorPos[i] / lastOffset;
+
+                startPoint = GetColorPoint(line, firstOffset);
+                endPoint = GetColorPoint(line, lastOffset);
+            }
 
             var shader = SKShader.CreateLinearGradient(
                 startPoint,
@@ -62,24 +74,53 @@ namespace MagicGradients.Renderers
             return _gradient.Stops.OrderBy(x => x.RenderOffset).ToArray();
         }
 
-        private (SKPoint, SKPoint) GetGradientPoints(int width, int height, double rotation, float offset)
+        // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf
+        private GradientLine GetGradientLine(SKRectI boxBounds, double angleDegrees)
         {
-            var angle = rotation / 360.0;
+            var angleRadians = GradientMath.ToRadians(GradientMath.FromDegrees(angleDegrees));
 
-            var a = width * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.75) / 2)), 2);
-            var b = height * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.0) / 2)), 2);
-            var c = width * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.25) / 2)), 2);
-            var d = height * Math.Pow(Math.Sin(2 * Math.PI * ((angle + 0.5) / 2)), 2);
+            var lineLength =
+                Math.Abs(boxBounds.Width * Math.Sin(angleRadians)) +
+                Math.Abs(boxBounds.Height * Math.Cos(angleRadians));
 
-            var start = new SKPoint(
-                (width - (float)a) * offset, 
-                (float)b * offset);
+            var center = new SKPoint(boxBounds.MidX, boxBounds.MidY);
 
-            var end = new SKPoint(
-                (width - (float)c) * offset, 
-                (float)d * offset);
+            var yDiff = (float)(Math.Sin(angleRadians - Math.PI / 2) * lineLength / 2);
+            var xDiff = (float)(Math.Cos(angleRadians - Math.PI / 2) * lineLength / 2);
 
-            return (start, end);
+            return new GradientLine
+            {
+                Start = new SKPoint(
+                    center.X - xDiff, 
+                    center.Y - yDiff),
+                End = new SKPoint(
+                    center.X + xDiff, 
+                    center.Y + yDiff),
+                Length = lineLength,
+                Angle = angleRadians
+            };
         }
+
+        private SKPoint GetColorPoint(GradientLine gradientLine, float position)
+        {
+            var angle = gradientLine.Angle;
+
+            var yDiff = Math.Sin(angle - Math.PI / 2) * 
+                        (gradientLine.Length * position);
+            var xDiff = Math.Cos(angle - Math.PI / 2) *
+                        (gradientLine.Length * position);
+
+            return new SKPoint(
+                gradientLine.Start.X + (float)xDiff, 
+                gradientLine.Start.Y + (float)yDiff);
+        }
+    }
+
+    public class GradientLine
+    {
+        public SKPoint Start { get; set; }
+        public SKPoint End { get; set; }
+        public double Length { get; set; }
+        public double Angle { get; set; }
     }
 }
