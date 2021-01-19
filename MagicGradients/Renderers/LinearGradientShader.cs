@@ -31,11 +31,13 @@ namespace MagicGradients.Renderers
                 var firstOffset = renderStops.FirstOrDefault()?.RenderOffset ?? 0;
                 var lastOffset = renderStops.LastOrDefault()?.RenderOffset ?? 1;
 
-                for (var i = 0; i < colorPos.Length; i++)
-                    colorPos[i] = colorPos[i] / lastOffset;
-
                 startPoint = GetColorPoint(line, firstOffset);
                 endPoint = GetColorPoint(line, lastOffset);
+
+                for (var i = 0; i < colorPos.Length; i++)
+                {
+                    colorPos[i] = ScaleWithBias(colorPos[i], firstOffset, lastOffset, 0, 1);
+                }
             }
 
             var shader = SKShader.CreateLinearGradient(
@@ -46,6 +48,13 @@ namespace MagicGradients.Renderers
                 _gradient.IsRepeating ? SKShaderTileMode.Repeat : SKShaderTileMode.Clamp);
 
             return shader;
+        }
+        
+        private float ScaleWithBias(float input, float inLow, float inHigh, float outLow, float outHigh)
+        {
+            // Calculation
+            // https://gamedev.stackexchange.com/questions/33441/how-to-convert-a-number-from-one-min-max-set-to-another-min-max-set
+            return (input - inLow) / (inHigh - inLow) * (outHigh - outLow) + outLow;
         }
 
         public double CalculateRenderOffset(double offset, int width, int height)
@@ -74,9 +83,12 @@ namespace MagicGradients.Renderers
             return _gradient.Stops.OrderBy(x => x.RenderOffset).ToArray();
         }
 
-        // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf
+        
         private GradientLine GetGradientLine(SKRectI boxBounds, double angleDegrees)
         {
+            // Calculation
+            // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf
+
             var angleRadians = GradientMath.ToRadians(GradientMath.FromDegrees(angleDegrees));
 
             var lineLength =

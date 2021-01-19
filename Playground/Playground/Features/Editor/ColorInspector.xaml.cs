@@ -134,6 +134,8 @@ namespace Playground.Features.Editor
         {
             var deltaX = offsetX / _width;
             var newX = AbsoluteLayout.GetLayoutBounds(stop).X + deltaX;
+            newX = Math.Max(newX, 0);
+            newX = Math.Min(newX, 1);
 
             var stopItem = (GradientStopClone)stop.BindingContext;
             stopItem.Offset = Offset.Prop(newX);
