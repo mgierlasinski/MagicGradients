@@ -10,21 +10,29 @@
              x:Class="Playground.Features.Editor.ColorInspector">
     <ContentView.Resources>
         <converters:OffsetToRectConverter x:Key="OffsetConverter" />
+        <converters:OffsetToPercentConverter x:Key="OffsetToPercentConverter" />
     </ContentView.Resources>
 
-    <Grid RowDefinitions="40,*">
-        <controls:CheckeredView Margin="0,5" />
-        <magic:GradientView x:Name="ColorSpectrum" Margin="0,5" />
-        <AbsoluteLayout x:Name="AbsoluteLayout"   
-                                SizeChanged="AbsoluteLayout_OnSizeChanged"
-                                ChildAdded="AbsoluteLayout_OnChildAdded" 
-                                ChildRemoved="AbsoluteLayout_OnChildRemoved">
+    <Grid RowDefinitions="70,*" RowSpacing="10">
+        <controls:CheckeredView Margin="0,30,0,5" />
+        <magic:GradientView x:Name="ColorSpectrum" Margin="0,30,0,5" />
+        <AbsoluteLayout x:Name="AbsoluteLayout"  
+                        SizeChanged="AbsoluteLayout_OnSizeChanged"
+                        ChildAdded="AbsoluteLayout_OnChildAdded" 
+                        ChildRemoved="AbsoluteLayout_OnChildRemoved">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
-                    <ContentView AbsoluteLayout.LayoutFlags="XProportional,HeightProportional"
-                                     AbsoluteLayout.LayoutBounds="{Binding Offset, Converter={StaticResource OffsetConverter}}"
-                                     Padding="20,0" x:DataType="editor:GradientStopClone">
-                        <Frame x:Name="Frame" Padding="3">
+                    <Grid AbsoluteLayout.LayoutFlags="XProportional,HeightProportional"
+                          AbsoluteLayout.LayoutBounds="{Binding Offset, Converter={StaticResource OffsetConverter}}"
+                          x:DataType="editor:GradientStopClone"
+                          RowDefinitions="20,*" RowSpacing="5">
+                        <Frame HasShadow="False" Padding="0" WidthRequest="40" HorizontalOptions="Center"
+                               BackgroundColor="{StaticResource AccentColor}">
+                            <Label Text="{Binding Offset, StringFormat='{0}%', Converter={StaticResource OffsetToPercentConverter}}" 
+                                   FontAttributes="Bold" FontSize="12" TextColor="White"
+                                   VerticalOptions="Center" HorizontalTextAlignment="Center" />
+                        </Frame>
+                        <Frame x:Name="Frame" Padding="3" Grid.Row="1" Margin="20,0">
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup>
                                     <VisualState x:Name="Normal">
@@ -47,14 +55,15 @@
                             </VisualStateManager.VisualStateGroups>
                             <BoxView Color="{Binding Color}" />
                         </Frame>
-                    </ContentView>
+                    </Grid>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </AbsoluteLayout>
         <Frame HasShadow="False" Padding="10" Style="{StaticResource BorderFrame}" Grid.Row="1" 
                BindingContext="{Binding Source={RelativeSource AncestorType={x:Type editor:ColorInspector}}}">
             <Grid RowDefinitions="30,*" ColumnDefinitions="*,30,30" ColumnSpacing="5">
-                <controls:ColorView Color="{Binding SelectedStop.Color}" HorizontalOptions="FillAndExpand" />
+                <controls:ColorView Color="{Binding SelectedStop.Color}" 
+                                    HorizontalOptions="FillAndExpand" Grid.Column="0" />
                 <ImageButton Clicked="RemoveColor_Clicked" Grid.Column="1" StyleClass="BackgroundElement"
                              Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Delete}}" />
                 <ImageButton Clicked="AddColor_Clicked" Grid.Column="2" StyleClass="BackgroundElement"

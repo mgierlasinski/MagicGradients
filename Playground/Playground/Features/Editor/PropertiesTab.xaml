@@ -21,6 +21,10 @@
             <Button Text="180°" Command="{Binding RotateCommand}" CommandParameter="180" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
             <Button Text="270°" Command="{Binding RotateCommand}" CommandParameter="270" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
         </FlexLayout>
+        <StackLayout Orientation="Horizontal">
+            <CheckBox IsChecked="{Binding Linear.UseLegacyShader}" />
+            <Label Text="Use legacy shader" VerticalOptions="Center" />
+        </StackLayout>
     </StackLayout>
 
     <StackLayout IsVisible="{Binding IsRadial}" Spacing="0">

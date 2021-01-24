@@ -53,6 +53,11 @@ namespace MagicGradients
             set => SetValue(MaskProperty, value);
         }
 
+        public GradientView()
+        {
+            Renderer = new GradientRenderer(this);
+        }
+
         private static void OnGradientElementChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var gradientView = (GradientView)bindable;
@@ -92,14 +97,16 @@ namespace MagicGradients
             if (GradientSource == null)
                 return;
 
-            if(Renderer == null)
-                Renderer = new GradientRenderer(this);
+            //Renderer ??= new GradientRenderer(this);
 
             var context = Renderer.CreateContext(e);
             using (context.Paint)
             {
                 foreach (var gradient in GradientSource.GetGradients())
                 {
+                    if (gradient.Shader == null)
+                        gradient.PrepareShader(this);
+
                     gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
                     Renderer.Render(context, gradient.Shader);
                 }

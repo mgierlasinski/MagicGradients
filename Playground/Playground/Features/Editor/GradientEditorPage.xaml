@@ -32,6 +32,7 @@
                             Mask="{Binding Mask.Collection}"
                             EnableTouchEvents="{Binding IsDragEnabled}" 
                             Touch="SKCanvasView_OnTouch" 
+                            magic:LinearGradient.UseLegacyShader="{Binding Linear.UseLegacyShader}"
                             PaintSurface="SKCanvasView_OnPaintSurface"/>
         
         <Grid VerticalOptions="Start" IsVisible="{Binding IsDragEnabled}">
