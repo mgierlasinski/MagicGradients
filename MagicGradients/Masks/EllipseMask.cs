@@ -20,18 +20,15 @@ namespace MagicGradients.Masks
             if(!IsActive)
                 return;
 
+            var width = (int)Size.Width.GetPixels(context.CanvasRect.Width);
+            var height = (int)Size.Height.GetPixels(context.CanvasRect.Height);
+
+            var bounds = new SKRectI(0, 0, width, height);
+            var ellipse = new SKRoundRect(bounds, (float)width / 2, (float)height / 2);
+
             using (new CanvasLock(context.Canvas))
             {
-                var width = (int)Size.Width.GetPixels(context.RenderRect.Width);
-                var height = (int)Size.Height.GetPixels(context.RenderRect.Height);
-
-                var bounds = new SKRectI(0, 0, width, height);
-                var ellipse = new SKRoundRect(bounds, (float)width / 2, (float)height / 2);
-
-                context.Canvas.Translate(
-                    (float)context.RenderRect.Width / 2 - bounds.MidX, 
-                    (float)context.RenderRect.Height / 2 - bounds.MidY);
-                
+                LayoutBounds(context, bounds, false);
                 context.Canvas.ClipRoundRect(ellipse, ClipMode.ToSkOperation(), true);
             }
         }

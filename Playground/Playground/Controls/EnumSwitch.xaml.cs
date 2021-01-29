@@ -8,13 +8,14 @@ namespace Playground.Controls
 {
     public partial class EnumSwitch : TabHostView
     {
-        private string[] _enumItems;
+        private Array _enumItems;
 
         public static readonly BindableProperty EnumTypeProperty = BindableProperty.Create(nameof(EnumType),
             typeof(Type), typeof(EnumSwitch), propertyChanged: OnEnumTypeChanged);
 
         public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create(nameof(SelectedItem),
-            typeof(object), typeof(EnumSwitch), defaultBindingMode: BindingMode.TwoWay, propertyChanged: OnSelectedItemChanged);
+            typeof(object), typeof(EnumSwitch), defaultBindingMode: BindingMode.TwoWay, 
+            propertyChanged: (bindable, value, newValue) => ((EnumSwitch)bindable).OnSelectedItemChanged());
 
         public Type EnumType
         {
@@ -28,19 +29,22 @@ namespace Playground.Controls
             set => SetValue(SelectedItemProperty, value);
         }
 
+        public event EventHandler SelectedItemChanged;
+
+        public EnumSwitch()
+        {
+            InitializeComponent();
+        }
+
         private static void OnEnumTypeChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
             ((EnumSwitch)bindable).GenerateTabs();
         }
 
-        private static void OnSelectedItemChanged(BindableObject bindable, object oldvalue, object newvalue)
+        private void OnSelectedItemChanged()
         {
-            ((EnumSwitch)bindable).UpdateIndex();
-        }
-
-        public EnumSwitch()
-        {
-            InitializeComponent();
+            UpdateIndex();
+            SelectedItemChanged?.Invoke(this, EventArgs.Empty);
         }
 
         protected override void OnPropertyChanged(string propertyName = null)
@@ -55,21 +59,11 @@ namespace Playground.Controls
 
         private void GenerateTabs()
         {
-            while (Tabs.Count > 0)
-            {
-                Tabs.RemoveAt(0);
-            }
-
             if (EnumType == null)
                 return;
 
-            _enumItems = Enum.GetNames(EnumType);
-
-            foreach (var name in _enumItems)
-            {
-                var tab = new SegmentedTabItem { Label = name };
-                Tabs.Add(tab);
-            }
+            _enumItems = Enum.GetValues(EnumType);
+            ItemsSource = _enumItems;
         }
 
         private void UpdateItem()
@@ -83,12 +77,12 @@ namespace Playground.Controls
                 return;
             }
 
-            SelectedItem = Enum.ToObject(EnumType, SelectedIndex);
+            SelectedItem = _enumItems.GetValue(SelectedIndex);
         }
 
         private void UpdateIndex()
         {
-            if (EnumType == null || _enumItems == null || !_enumItems.Any())
+            if (EnumType == null || _enumItems == null || _enumItems.Length == 0)
                 return;
 
             if (SelectedItem == null)
@@ -97,10 +91,7 @@ namespace Playground.Controls
                 return;
             }
 
-            var name = Enum.GetName(EnumType, SelectedItem);
-            var index = _enumItems.IndexOf(name);
-
-            SelectedIndex = index;
+            SelectedIndex = Array.IndexOf(_enumItems, SelectedItem);
         }
     }
 }

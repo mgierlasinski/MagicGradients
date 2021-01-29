@@ -2,7 +2,7 @@
 
 namespace MagicGradients.Masks
 {
-    public enum PathFill
+    public enum FillMode
     {
         Center,
         AspectFit,

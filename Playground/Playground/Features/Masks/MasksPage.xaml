@@ -4,71 +4,90 @@
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:masks="clr-namespace:MagicGradients.Masks;assembly=MagicGradients"
              xmlns:animation="clr-namespace:MagicGradients.Animation;assembly=MagicGradients"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="Playground.Features.Masks.MasksPage"
              Title="Masks">
     <ContentPage.Resources>
         <StyleSheet Source="/Features/Masks/MasksPage.css" />
     </ContentPage.Resources>
-    <StackLayout>
-        <Grid HeightRequest="200">
-            <magic:GradientView StyleClass="headerForeground" />
-            <magic:GradientView StyleClass="headerBackground" Margin="20">
-                <magic:GradientView.Mask>
-                    <masks:PathMask ClipMode="Include"
-                                    Fill="AspectFit"
-                                    Data="M73.866 0c-6.914.015-13.682 3.94-17.162 9.927L2.57 103.963c-3.427 6.003-3.427 13.85 0 19.853l54.134 94.037c3.48 5.987 10.248 9.913 17.162 9.927h108.268c6.914-.015 13.682-3.94 17.162-9.927l54.134-94.037c3.427-6.003 3.426-13.85 0-19.853L199.296 9.927C195.816 3.939 189.048.014 182.134 0H73.866zm.983 55.013c.149-.015.305-.015.454 0h18.674a2.462 2.462 0 0 1 2.042 1.212l31.679 56.452c.16.28.262.59.3.91.04-.32.142-.63.302-.91l31.603-56.452a2.47 2.47 0 0 1 2.117-1.212h18.675c1.653.014 2.892 2.097 2.117 3.561l-30.923 55.316 30.923 55.24c.848 1.472-.42 3.651-2.117 3.637H162.02a2.47 2.47 0 0 1-2.117-1.288L128.3 115.026c-.16-.279-.262-.59-.301-.909a2.43 2.43 0 0 1-.301.91l-31.68 56.452a2.468 2.468 0 0 1-2.04 1.288H75.302c-1.697.015-2.965-2.165-2.117-3.637l30.923-55.24-30.923-55.316c-.741-1.336.163-3.276 1.663-3.561z" />
-                </magic:GradientView.Mask>
-            </magic:GradientView>
-        </Grid>
-        <magic:GradientView StyleClass="headerForeground" HorizontalOptions="Fill">
-            <magic:GradientView.Mask>
-                <masks:TextMask Text="Hello World!" FontSize="60" />
-            </magic:GradientView.Mask>
-        </magic:GradientView>
-        <magic:GradientView StyleClass="gold"
-                            GradientSize="100,100"
-                            GradientRepeat="RepeatX"
-                            IgnorePixelScaling="True"
-                            WidthRequest="500" HeightRequest="100" 
-                            HorizontalOptions="Center">
-            <magic:GradientView.Mask>
-                <masks:PathMask Fill="AspectFit" 
-                                Data="M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z" />
-            </magic:GradientView.Mask>
-        </magic:GradientView>
-        <magic:GradientView HorizontalOptions="Center"
-                            HeightRequest="200" WidthRequest="600"
-                            GradientSize="200,200"
-                            GradientRepeat="RepeatX"
-                            IgnorePixelScaling="True">
-            <magic:GradientView.Mask>
-                <masks:MaskCollection>
-                    <masks:EllipseMask ClipMode="Include" Size="90%,90%"/>
-                    <masks:EllipseMask ClipMode="Exclude" Size="70%,70%"/>
-                </masks:MaskCollection>
-            </magic:GradientView.Mask>
-            <magic:GradientView.Behaviors>
-                <animation:Animate>
-                    <animation:DoubleAnimation Target="{x:Reference Light}" 
-                                               TargetProperty="magic:LinearGradient.Angle" 
-                                               From="0" To="360"
-                                               Duration="3000"
-                                               RepeatBehavior="Forever" />
-                </animation:Animate>
-            </magic:GradientView.Behaviors>
-            <magic:LinearGradient x:Name="Light">
-                <magic:GradientStop Color="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}" Offset="0.3" />
-                <magic:GradientStop Color="Red" Offset="0.5" />
-                <magic:GradientStop Color="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}" Offset="0.7" />
-            </magic:LinearGradient>
-        </magic:GradientView>
-        <Grid HeightRequest="200">
-            <magic:GradientView StyleClass="headerBackground" />
-            <magic:GradientView StyleClass="headerForeground">
-                <magic:GradientView.Mask>
-                    <masks:EllipseMask ClipMode="Exclude" Size="90%,90%"/>
-                </magic:GradientView.Mask>
-            </magic:GradientView>
-        </Grid>
-    </StackLayout>
+    <xct:TabView TabStripBackgroundColor="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}"
+                 TabIndicatorColor="{StaticResource AccentColor}">
+        <xct:TabViewItem Text="Tab 1">
+            <ScrollView>
+                <StackLayout>
+                    <Grid HeightRequest="150">
+                        <magic:GradientView StyleClass="headerForeground" />
+                        <magic:GradientView StyleClass="headerBackground" Margin="20">
+                            <magic:GradientView.Mask>
+                                <masks:PathMask ClipMode="Include"
+                                        FillMode="AspectFit"
+                                        Data="M73.866 0c-6.914.015-13.682 3.94-17.162 9.927L2.57 103.963c-3.427 6.003-3.427 13.85 0 19.853l54.134 94.037c3.48 5.987 10.248 9.913 17.162 9.927h108.268c6.914-.015 13.682-3.94 17.162-9.927l54.134-94.037c3.427-6.003 3.426-13.85 0-19.853L199.296 9.927C195.816 3.939 189.048.014 182.134 0H73.866zm.983 55.013c.149-.015.305-.015.454 0h18.674a2.462 2.462 0 0 1 2.042 1.212l31.679 56.452c.16.28.262.59.3.91.04-.32.142-.63.302-.91l31.603-56.452a2.47 2.47 0 0 1 2.117-1.212h18.675c1.653.014 2.892 2.097 2.117 3.561l-30.923 55.316 30.923 55.24c.848 1.472-.42 3.651-2.117 3.637H162.02a2.47 2.47 0 0 1-2.117-1.288L128.3 115.026c-.16-.279-.262-.59-.301-.909a2.43 2.43 0 0 1-.301.91l-31.68 56.452a2.468 2.468 0 0 1-2.04 1.288H75.302c-1.697.015-2.965-2.165-2.117-3.637l30.923-55.24-30.923-55.316c-.741-1.336.163-3.276 1.663-3.561z" />
+                            </magic:GradientView.Mask>
+                        </magic:GradientView>
+                    </Grid>
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="0" HeightRequest="100" WidthRequest="600" HorizontalOptions="Center">
+                        <magic:GradientView StyleClass="headerForeground" HorizontalOptions="Fill">
+                            <magic:GradientView.Mask>
+                                <masks:TextMask Text="Magic" FontSize="80" FontAttributes="Bold" />
+                            </magic:GradientView.Mask>
+                        </magic:GradientView>
+                        <magic:GradientView StyleClass="headerForeground" HorizontalOptions="Fill" Grid.Column="1">
+                            <magic:GradientView.Mask>
+                                <masks:TextMask Text="Gradients" FontSize="80" ClipMode="Exclude" />
+                            </magic:GradientView.Mask>
+                        </magic:GradientView>
+                    </Grid>
+                    <magic:GradientView StyleClass="gold"
+                                        GradientSize="100,100"
+                                        GradientRepeat="RepeatX"
+                                        IgnorePixelScaling="True"
+                                        WidthRequest="500" HeightRequest="100" 
+                                        HorizontalOptions="Center">
+                        <magic:GradientView.Mask>
+                            <masks:PathMask FillMode="AspectFit" 
+                                    Data="M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z" />
+                        </magic:GradientView.Mask>
+                    </magic:GradientView>
+                    <magic:GradientView HorizontalOptions="Center"
+                                HeightRequest="150" WidthRequest="450"
+                                GradientSize="150,150"
+                                GradientRepeat="RepeatX"
+                                IgnorePixelScaling="True">
+                        <magic:GradientView.Mask>
+                            <masks:MaskCollection>
+                                <masks:EllipseMask ClipMode="Include" Size="90%,90%" />
+                                <masks:EllipseMask ClipMode="Exclude" Size="70%,70%" />
+                            </masks:MaskCollection>
+                        </magic:GradientView.Mask>
+                        <magic:GradientView.Behaviors>
+                            <animation:Animate>
+                                <animation:DoubleAnimation x:Name="AngleAnimation"
+                                                   Target="{x:Reference Light}" 
+                                                   TargetProperty="magic:LinearGradient.Angle" 
+                                                   From="0" To="360"
+                                                   Duration="3000"
+                                                   RepeatBehavior="Forever" />
+                            </animation:Animate>
+                        </magic:GradientView.Behaviors>
+                        <magic:LinearGradient x:Name="Light">
+                            <magic:GradientStop Color="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}" Offset="0.3" />
+                            <magic:GradientStop Color="Red" Offset="0.5" />
+                            <magic:GradientStop Color="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundColorDark}}" Offset="0.7" />
+                        </magic:LinearGradient>
+                    </magic:GradientView>
+                    <Grid HeightRequest="150">
+                        <magic:GradientView StyleClass="headerBackground" GradientSize="50%,100%" />
+                        <magic:GradientView StyleClass="headerForeground" GradientSize="50%,100%">
+                            <magic:GradientView.Mask>
+                                <masks:EllipseMask ClipMode="Exclude" Size="90%,90%"/>
+                            </magic:GradientView.Mask>
+                        </magic:GradientView>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </xct:TabViewItem>
+        <xct:TabViewItem Text="Tab 2">
+            
+        </xct:TabViewItem>
+    </xct:TabView>
 </ContentPage>

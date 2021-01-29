@@ -50,7 +50,7 @@ namespace Playground.Features.Editor
         public Dimensions GradientSize
         {
             get => _gradientSize;
-            set => SetProperty(ref _gradientSize, value, UpdateSizeOnUI);
+            set => SetProperty(ref _gradientSize, value);
         }
 
         private BackgroundRepeat _gradientRepeat;
@@ -65,34 +65,6 @@ namespace Playground.Features.Editor
         {
             get => _selectedTabIndex;
             set => SetProperty(ref _selectedTabIndex, value);
-        }
-
-        private double _sizeScale = 1;
-        public double SizeScale
-        {
-            get => _sizeScale;
-            set => SetProperty(ref _sizeScale, value, UpdateSize);
-        }
-
-        private double _sizeWidth = 100;
-        public double SizeWidth
-        {
-            get => _sizeWidth;
-            set => SetProperty(ref _sizeWidth, value, UpdateSize);
-        }
-
-        private double _sizeHeight = 100;
-        public double SizeHeight
-        {
-            get => _sizeHeight;
-            set => SetProperty(ref _sizeHeight, value, UpdateSize);
-        }
-
-        private bool _isPixelSize;
-        public bool IsPixelSize
-        {
-            get => _isPixelSize;
-            set => SetProperty(ref _isPixelSize, value, UpdateSize);
         }
 
         private bool _isEditMode;
@@ -245,37 +217,6 @@ namespace Playground.Features.Editor
                 Gradient = GradientSource.Gradients.FirstOrDefault();
 
             IsEditMode = true;
-        }
-
-        private void UpdateSize()
-        {
-            GradientSize = IsPixelSize
-                ? Dimensions.Abs(SizeWidth, SizeHeight)
-                : Dimensions.Prop(SizeScale, SizeScale);
-        }
-
-        private void UpdateSizeOnUI()
-        {
-            if (GradientSize.IsZero)
-                return;
-
-            if (GradientSize.Width.Type == OffsetType.Absolute)
-            {
-                _isPixelSize = true;    
-                _sizeWidth = GradientSize.Width.Value;
-                _sizeHeight = GradientSize.Height.Value;
-            }
-            else
-            {
-                _isPixelSize = false;
-                _sizeScale = GradientSize.Width.Value;
-            }
-
-            // Notify UI only, don't raise OnChanged action
-            RaisePropertyChanged(nameof(IsPixelSize));
-            RaisePropertyChanged(nameof(SizeScale));
-            RaisePropertyChanged(nameof(SizeWidth));
-            RaisePropertyChanged(nameof(SizeHeight));
         }
 
         private string GetRawData()

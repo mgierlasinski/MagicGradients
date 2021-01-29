@@ -18,7 +18,7 @@ namespace Playground.Features.Editor.Handlers
         public PathMask PathMask { get; }
         public MaskCollection Collection { get; }
 
-        public PathFill[] FillModes { get; }
+        public FillMode[] FillModes { get; }
         public ClipMode[] ClipModes { get; }
         public FontAttributes[] FontAttributes { get; }
 
@@ -29,7 +29,7 @@ namespace Playground.Features.Editor.Handlers
         {
             _shapePicker = new ShapePicker();
 
-            FillModes = Enum.GetValues(typeof(PathFill)).Cast<PathFill>().ToArray();
+            FillModes = Enum.GetValues(typeof(FillMode)).Cast<FillMode>().ToArray();
             ClipModes = Enum.GetValues(typeof(ClipMode)).Cast<ClipMode>().ToArray();
             FontAttributes = Enum.GetValues(typeof(FontAttributes)).Cast<FontAttributes>().ToArray();
 
