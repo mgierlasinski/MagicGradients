@@ -6,7 +6,9 @@ using Playground.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MagicGradients.Parser;
 using Xamarin.Forms;
+using System;
 
 namespace Playground.Features.Editor
 {
@@ -198,7 +200,7 @@ namespace Playground.Features.Editor
 
         private async Task AddAction()
         {
-            var values = new [] { "Linear gradient", "Radial gradient" };
+            var values = new [] { "Linear gradient", "Radial gradient", "CSS gradient" };
             var result = await Shell.Current.DisplayActionSheet("Add gradient", "Cancel", null, values);
 
             if(result == values[0])
@@ -207,8 +209,42 @@ namespace Playground.Features.Editor
             else if (result == values[1])
                 GradientSource.Gradients.Add(Radial.Create());
 
+            else if (result == values[2])
+                await LoadCssSource();
+
             // Select added
             Gradient = GradientSource?.Gradients?.LastOrDefault();
+        }
+
+        private async Task LoadCssSource()
+        {
+            try
+            {
+                var code = await Shell.Current.DisplayPromptAsync("CSS gradient", "Enter CSS code");
+
+                if (string.IsNullOrWhiteSpace(code))
+                    return;
+
+                var parser = new CssGradientParser();
+                var gradients = parser.ParseCss(code);
+
+                if (!gradients.Any())
+                {
+                    await Shell.Current.DisplayAlert("CSS gradient", "No gradient data", "OK");
+                    return;
+                }
+
+                GradientSource.Gradients.Clear();
+
+                foreach (var gradient in gradients)
+                {
+                    GradientSource.Gradients.Add(gradient);
+                }
+            }
+            catch (Exception e)
+            {
+                await Shell.Current.DisplayAlert("CSS gradient", e.Message, "OK");
+            }
         }
 
         private void EditAction()

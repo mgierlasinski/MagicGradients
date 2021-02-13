@@ -46,6 +46,7 @@ namespace Playground
             IoC.Register<CssPreviewerViewModel>();
             IoC.Register<BattleTestViewModel>();
             IoC.Register<AnimationsViewModel>();
+            IoC.Register<MasksViewModel>();
         }
 
         public static void RegisterRoutes()

@@ -57,8 +57,11 @@ namespace Playground.Controls
         {
             if ((OffsetType)Type.SelectedItem == OffsetType.Absolute)
             {
-                var width = double.Parse(SizeWidth.Text);
-                var height = double.Parse(SizeHeight.Text);
+                if (!double.TryParse(SizeWidth.Text, out var width))
+                    width = 0;
+
+                if (!double.TryParse(SizeHeight.Text, out var height))
+                    height = 0;
 
                 Value = Dimensions.Abs(width, height);
             }

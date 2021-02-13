@@ -32,6 +32,10 @@ namespace Playground.Features.Editor
             {
                 Name = "Xbox",
                 Data = "M359.3,312.4c40.2,49.3,58.7,89.6,49.3,107.7c-7.2,13.7-51.4,40.5-84,50.7c-26.9,8.4-62,12.1-91.1,9.3c-34.7-3.4-69.8-15.8-99.9-35.4c-25.3-16.5-31-23.3-31-36.8c0-27.1,29.8-74.7,80.9-128.9c29-30.8,69.4-66.9,73.8-65.9C266,215,333.9,281.2,359.3,312.4L359.3,312.4z M194.8,154.2c-26.9-24.4-52.7-48.9-78.4-57.5c-13.8-4.6-14.8-4.4-26,7.3c-26.5,27.6-48.5,72.3-54.7,111c-4.9,31-5.5,39.7-3.8,54.9c5.1,45.8,15.7,77.5,36.7,109.7c8.6,13.2,11,15.7,8.4,9c-3.8-10-0.3-34,8.6-58.1C98.7,295.2,134.6,228.2,194.8,154.2L194.8,154.2z M477.5,211.8c-15.3-72.6-61.2-118.2-67.7-118.2c-6.6,0-22,5.9-32.7,12.6c-21.1,13.2-37.2,28.5-58.3,47.9c38.5,48.3,92.7,126.5,111.5,183.5c6.2,18.8,8.8,37.3,6.7,47.4c-1.5,7.7-1.5,7.7,1.3,4.2c5.5-7,18.1-28.4,23-39.5c6.7-14.7,13.6-36.5,16.9-53.2C482.1,276.1,481.8,232.3,477.5,211.8L477.5,211.8z M151.9,62.8c43.3-2.3,99.5,31.3,103.7,32.1c0.6,0.1,9.4-3.8,19.6-8.8c58-28.2,85.3-23.4,97.4-22.9c-58-35.6-138.5-45.4-212.2-10.6C139.2,62.7,138.7,63.4,151.9,62.8L151.9,62.8z"
+            },
+            new ShapeSnippet
+            {
+                Name = "Custom"
             }
         };
 
@@ -39,8 +43,13 @@ namespace Playground.Features.Editor
         {
             var values = Shapes.Select(x => x.Name).ToArray();
             var result = await Shell.Current.DisplayActionSheet("Pick shape", "Cancel", null, values);
-            var selection = Shapes.FirstOrDefault(x => x.Name == result);
 
+            if (result == "Custom")
+            {
+                return await ShowEntry();
+            }
+
+            var selection = Shapes.FirstOrDefault(x => x.Name == result);
             return selection;
         }
 
@@ -48,6 +57,11 @@ namespace Playground.Features.Editor
         {
             var selection = await Shell.Current.DisplayPromptAsync("Custom path", "Enter path data");
             return !string.IsNullOrEmpty(selection) ? new ShapeSnippet { Data = selection } : null;
+        }
+
+        public string GetData(string name)
+        {
+            return Shapes?.FirstOrDefault(x => x.Name == name)?.Data;
         }
     }
 

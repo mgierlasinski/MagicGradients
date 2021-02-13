@@ -23,7 +23,6 @@ namespace Playground.Features.Editor.Handlers
         public FontAttributes[] FontAttributes { get; }
 
         public ICommand ShowPickerCommand { get; }
-        public ICommand ShowEntryCommand { get; }
 
         public MaskHandler()
         {
@@ -44,7 +43,7 @@ namespace Playground.Features.Editor.Handlers
 
             PathMask = new PathMask
             {
-                Data = _shapePicker.Shapes?.FirstOrDefault(x => x.Name == "Xamagon")?.Data,
+                Data = _shapePicker.GetData("Xamagon"),
                 IsActive = false
             };
 
@@ -57,21 +56,11 @@ namespace Playground.Features.Editor.Handlers
             };
 
             ShowPickerCommand = new Command(() => ShowPicker());
-            ShowEntryCommand = new Command(() => ShowEntry());
         }
 
         private async Task ShowPicker()
         {
             var selection = await _shapePicker.ShowActionSheet();
-            if (selection != null)
-            {
-                PathMask.Data = selection.Data;
-            }
-        }
-
-        private async Task ShowEntry()
-        {
-            var selection = await _shapePicker.ShowEntry();
             if (selection != null)
             {
                 PathMask.Data = selection.Data;

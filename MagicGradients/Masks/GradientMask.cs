@@ -11,7 +11,7 @@ namespace MagicGradients.Masks
             typeof(ClipMode), typeof(GradientMask), ClipMode.Include);
 
         public static readonly BindableProperty FillModeProperty = BindableProperty.Create(nameof(FillMode),
-            typeof(FillMode), typeof(TextMask), FillMode.Center);
+            typeof(FillMode), typeof(GradientMask), FillMode.Center);
 
         public static readonly BindableProperty IsActiveProperty = BindableProperty.Create(nameof(IsActive),
             typeof(bool), typeof(GradientMask), true);

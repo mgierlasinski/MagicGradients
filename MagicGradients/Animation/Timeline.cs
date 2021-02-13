@@ -47,12 +47,17 @@ namespace MagicGradients.Animation
 
         public void End()
         {
-            Animator.AbortAnimation(_handle);
+            Animator?.AbortAnimation(_handle);
             _playCount = 0;
         }
 
         public virtual void OnBegin()
         {
+            if (Animator == null)
+            {
+                throw new NullReferenceException("Null Animator property.");
+            }
+
             if (Target == null)
             {
                 throw new NullReferenceException("Null Target property.");

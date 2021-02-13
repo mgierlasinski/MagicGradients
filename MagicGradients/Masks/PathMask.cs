@@ -7,7 +7,7 @@ namespace MagicGradients.Masks
     public class PathMask : GradientMask
     {
         public static readonly BindableProperty DataProperty = BindableProperty.Create(nameof(Data),
-            typeof(string), typeof(TextMask));
+            typeof(string), typeof(PathMask));
 
         public string Data
         {

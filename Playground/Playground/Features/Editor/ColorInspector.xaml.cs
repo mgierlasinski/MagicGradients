@@ -54,6 +54,9 @@ namespace Playground.Features.Editor
 
         public void CreateSpectrum(Gradient gradient)
         {
+            if (gradient == null)
+                return;
+
             _spectrum = new ColorSpectrumGradient(gradient);
             ColorSpectrum.GradientSource = _spectrum;
 
