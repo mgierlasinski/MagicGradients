@@ -1,6 +1,7 @@
 ﻿using MagicGradients;
 using Playground.Extensions;
 using Playground.ViewModels;
+using System.Windows.Input;
 using Xamarin.Forms;
 using GradientStop = MagicGradients.GradientStop;
 
@@ -24,18 +25,11 @@ namespace Playground.Features.Editor.Handlers
             set => SetProperty(ref _centerY, value, UpdateCenter);
         }
 
-        private double _radiusX;
-        public double RadiusX
+        private Dimensions _radius;
+        public Dimensions Radius
         {
-            get => _radiusX;
-            set => SetProperty(ref _radiusX, value, UpdateRadiusX);
-        }
-
-        private double _radiusY;
-        public double RadiusY
-        {
-            get => _radiusY;
-            set => SetProperty(ref _radiusY, value, UpdateRadiusY);
+            get => _radius;
+            set => SetProperty(ref _radius, value, UpdateRadius);
         }
 
         private int _shape;
@@ -66,9 +60,18 @@ namespace Playground.Features.Editor.Handlers
             set => SetProperty(ref _isCustomSize, value, UpdateIsCustomSize);
         }
 
+        public ICommand MoveToCommand { get; }
+
         public RadialHandler(GradientEditorViewModel parent)
         {
             _parent = parent;
+
+            MoveToCommand = new Command<string>((x) =>
+            {
+                var values = x.Split(';');
+                CenterX = double.Parse(values[0]);
+                CenterY = double.Parse(values[1]);
+            });
         }
 
         public RadialGradient Create()
@@ -90,22 +93,41 @@ namespace Playground.Features.Editor.Handlers
         {
             _centerX = radial.Center.X;
             _centerY = radial.Center.Y;
-            _radiusX = radial.RadiusX;
-            _radiusY = radial.RadiusY;
             _shape = (int)radial.Shape;
             _sizeOne = radial.Size.IsClosest() ? 0 : 1;
             _sizeTwo = radial.Size.IsCorner() ? 0 : 1;
-            _isCustomSize = RadiusX > 0 || RadiusY > 0;
+            _isCustomSize = radial.RadiusX > 0 || radial.RadiusY > 0;
+
+            LoadRadius(radial);
 
             // Notify UI only, don't raise OnChanged action
             RaisePropertyChanged(nameof(CenterX));
             RaisePropertyChanged(nameof(CenterY));
-            RaisePropertyChanged(nameof(RadiusX));
-            RaisePropertyChanged(nameof(RadiusY));
+            RaisePropertyChanged(nameof(Radius));
             RaisePropertyChanged(nameof(Shape));
             RaisePropertyChanged(nameof(SizeOne));
             RaisePropertyChanged(nameof(SizeTwo));
             RaisePropertyChanged(nameof(IsCustomSize));
+        }
+
+        private void LoadRadius(RadialGradient radial)
+        {
+            var flags = radial.Flags;
+            var widthProp = FlagsHelper.IsSet(flags, RadialGradientFlags.WidthProportional);
+            var heightProp = FlagsHelper.IsSet(flags, RadialGradientFlags.HeightProportional);
+
+            var radiusX = radial.RadiusX > 0
+                ? new Offset(radial.RadiusX, widthProp ? OffsetType.Proportional : OffsetType.Absolute)
+                : Offset.Zero;
+
+            var radiusY = radial.RadiusY > 0
+                ? new Offset(radial.RadiusY, heightProp ? OffsetType.Proportional : OffsetType.Absolute)
+                : Offset.Zero;
+
+            _radius = new Dimensions(radiusX, radiusY);
+
+            if (_radius.IsZero)
+                _radius = Dimensions.Prop(0.5, 0.5);
         }
 
         private void UpdateCenter()
@@ -114,22 +136,23 @@ namespace Playground.Features.Editor.Handlers
                 radial.Center = new Point(CenterX, CenterY);
         }
 
-        private void UpdateRadiusX()
+        private void UpdateRadius()
         {
             if (!IsCustomSize)
                 return;
 
             if (_parent.Gradient is RadialGradient radial)
-                radial.RadiusX = RadiusX;
-        }
+            {
+                radial.RadiusX = Radius.Width.Value;
+                radial.RadiusY = Radius.Height.Value;
 
-        private void UpdateRadiusY()
-        {
-            if (!IsCustomSize)
-                return;
+                var flags = radial.Flags;
 
-            if (_parent.Gradient is RadialGradient radial)
-                radial.RadiusY = RadiusY;
+                FlagsHelper.SetValue(ref flags, RadialGradientFlags.WidthProportional, Radius.Width.Type == OffsetType.Proportional);
+                FlagsHelper.SetValue(ref flags, RadialGradientFlags.HeightProportional, Radius.Height.Type == OffsetType.Proportional);
+
+                radial.Flags = flags;
+            }
         }
 
         private void UpdateShape()
@@ -164,8 +187,7 @@ namespace Playground.Features.Editor.Handlers
         {
             if (IsCustomSize)
             {
-                UpdateRadiusX();
-                UpdateRadiusY();
+                UpdateRadius();
             }
             else
             {

@@ -28,11 +28,11 @@ namespace Playground.Features.Editor
             };
 
             var lastStop = Stops.LastOrDefault();
-            if (lastStop != null && lastStop.RenderOffset > 0.9)
+            if (lastStop != null && lastStop.RenderOffset > 0.8)
             {
                 foreach (var x in Stops)
                 {
-                    x.Offset = Offset.Prop(x.RenderOffset * 0.9);
+                    x.Offset = Offset.Prop(x.RenderOffset * 0.8);
                 }
             }
 

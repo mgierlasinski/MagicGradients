@@ -8,10 +8,5 @@ namespace Playground.Features.Masks
         {
             InitializeComponent();
         }
-
-        protected override void OnDisappearing()
-        {
-            AngleAnimation.End();
-        }
     }
 }

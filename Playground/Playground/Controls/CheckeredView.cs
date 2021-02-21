@@ -5,9 +5,10 @@ namespace Playground.Controls
 {
     public class CheckeredView : SKCanvasView
     {
-        private const int GridSize = 40;
         private readonly SKColor _color1 = new SKColor(200, 200, 200, 255);
         private readonly SKColor _color2 = new SKColor(0, 0, 0, 0);
+
+        public int GridSize { get; set; } = 40;
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
         {

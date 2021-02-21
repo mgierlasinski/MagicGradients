@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+      x:Class="Playground.Controls.ColorEditor"
+      ColumnDefinitions="*,*,*,*,100" HeightRequest="40">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState Name="Hex">
+                <VisualState.Setters>
+                    <Setter TargetName="ColorHex" Property="VisualElement.IsVisible" Value="True" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState Name="Rgba">
+                <VisualState.Setters>
+                    <Setter TargetName="ColorR" Property="VisualElement.IsVisible" Value="True" />
+                    <Setter TargetName="ColorG" Property="VisualElement.IsVisible" Value="True" />
+                    <Setter TargetName="ColorB" Property="VisualElement.IsVisible" Value="True" />
+                    <Setter TargetName="ColorA" Property="VisualElement.IsVisible" Value="True" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <Entry x:Name="ColorHex" Placeholder="Hex" IsVisible="False"  
+           TextChanged="ColorHex_OnTextChanged"
+           Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="Center" />
+    <Entry x:Name="ColorR" Placeholder="R" IsVisible="False" 
+           TextChanged="ColorRgba_OnTextChanged"
+           Grid.Column="0" VerticalOptions="Center" />
+    <Entry x:Name="ColorG" Placeholder="G" IsVisible="False"  
+           TextChanged="ColorRgba_OnTextChanged"
+           Grid.Column="1" VerticalOptions="Center" />
+    <Entry x:Name="ColorB" Placeholder="B" IsVisible="False"  
+           TextChanged="ColorRgba_OnTextChanged"
+           Grid.Column="2" VerticalOptions="Center" />
+    <Entry x:Name="ColorA" Placeholder="A" IsVisible="False"  
+           TextChanged="ColorRgba_OnTextChanged"
+           Grid.Column="3" VerticalOptions="Center" />
+
+    <controls:EnumSwitch x:Name="Type" Grid.Column="4" 
+                         EnumType="{x:Type controls:ColorSpace}" 
+                         SelectedItemChanged="Type_OnSelectedItemChanged" />
+</Grid>

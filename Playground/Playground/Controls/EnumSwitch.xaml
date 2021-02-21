@@ -6,7 +6,7 @@
              Style="{StaticResource SegmentedTabs}">
     <tabs:TabHostView.ItemTemplate>
         <DataTemplate>
-            <tabs:SegmentedTabItem Label="{Binding}" />
+            <tabs:SegmentedTabItem Label="{Binding Label}" />
         </DataTemplate>
     </tabs:TabHostView.ItemTemplate>
 </tabs:TabHostView>

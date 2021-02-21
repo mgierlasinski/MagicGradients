@@ -33,5 +33,10 @@
 
     <controls:EnumSwitch x:Name="Type" Grid.Column="2" Margin="10,0,0,0"
                          EnumType="{x:Type magic:OffsetType}" 
-                         SelectedItemChanged="Type_OnSelectedItemChanged" />
+                         SelectedItemChanged="Type_OnSelectedItemChanged">
+        <controls:EnumSwitch.Aliases>
+            <x:String>%</x:String>
+            <x:String>px</x:String>
+        </controls:EnumSwitch.Aliases>
+    </controls:EnumSwitch>
 </Grid>
