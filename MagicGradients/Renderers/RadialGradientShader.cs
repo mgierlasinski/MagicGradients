@@ -105,13 +105,13 @@ namespace MagicGradients.Renderers
             if (_gradient.RadiusX > -1)
             {
                 var widthIsProportional = IsProportional(RadialGradientFlags.WidthProportional);
-                radiusX = widthIsProportional ? rect.Width * (float)_gradient.RadiusX : (float)_gradient.RadiusX;
+                radiusX = widthIsProportional ? (rect.Width / 2) * (float)_gradient.RadiusX : (float)_gradient.RadiusX;
             }
 
             if (_gradient.RadiusY > -1)
             {
                 var heightIsProportional = IsProportional(RadialGradientFlags.HeightProportional);
-                radiusY = heightIsProportional ? rect.Height * (float)_gradient.RadiusY : (float)_gradient.RadiusY;
+                radiusY = heightIsProportional ? (rect.Height / 2) * (float)_gradient.RadiusY : (float)_gradient.RadiusY;
             }
             
             return new SKSize(radiusX * offset, radiusY * offset);
