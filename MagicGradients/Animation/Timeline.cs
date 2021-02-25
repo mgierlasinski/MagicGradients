@@ -53,11 +53,6 @@ namespace MagicGradients.Animation
 
         public virtual void OnBegin()
         {
-            if (Animator == null)
-            {
-                throw new NullReferenceException("Null Animator property.");
-            }
-
             if (Target == null)
             {
                 throw new NullReferenceException("Null Target property.");

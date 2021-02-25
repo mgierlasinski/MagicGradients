@@ -15,7 +15,7 @@
     <Grid RowDefinitions="50,*" RowSpacing="0">
         <tabs:TabHostView SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
             <tabs:TabHostView.Tabs>
-                <tabs:UnderlinedTabItem Label="Welcome" LabelSize="22" />
+                <tabs:UnderlinedTabItem Label="Hello" LabelSize="22" />
                 <tabs:UnderlinedTabItem Label="XBOX" LabelSize="22" />
                 <tabs:UnderlinedTabItem Label="Diamond" LabelSize="22" />
             </tabs:TabHostView.Tabs>

@@ -74,7 +74,7 @@
         <Setter Property="IsSegmented" Value="True" />
         <Setter Property="SegmentedHasSeparator" Value="True" />
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource TabBackground}, Dark={StaticResource TabBackgroundDark}}" />
-        <Setter Property="SegmentedOutlineColor" Value="{AppThemeBinding Light={StaticResource BackgroundColor}, Dark={StaticResource BackgroundContrastColorDark}}" />
+        <Setter Property="SegmentedOutlineColor" Value="{AppThemeBinding Light={StaticResource SeparatorColor}, Dark={StaticResource SeparatorColorDark}}" />
     </Style>
     <Style TargetType="tabs:UnderlinedTabItem">
         <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />

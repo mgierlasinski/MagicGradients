@@ -4,7 +4,7 @@
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              x:Class="Playground.Controls.DimensionsEditor"
-             ColumnDefinitions="33*,33*,33*" HeightRequest="50">
+             ColumnDefinitions="33*,33*,33*" HeightRequest="40">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup Name="SizeGroup">
             <VisualState Name="Pixel">
@@ -23,7 +23,8 @@
 
     <Slider x:Name="SizeScale" Maximum="1" Minimum="0" IsVisible="False"
             ValueChanged="SizeScale_OnValueChanged"
-            Grid.ColumnSpan="2" VerticalOptions="Center" />
+            Grid.ColumnSpan="2" VerticalOptions="Center" 
+            Margin="{x:OnPlatform UWP='0,-5,0,0', Default=0}"/>
     <Entry x:Name="SizeWidth" Placeholder="Width" IsVisible="False"  
            TextChanged="SizePixels_OnTextChanged"
            Grid.Column="0" VerticalOptions="Center" />

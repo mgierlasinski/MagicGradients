@@ -21,7 +21,7 @@
                             <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="2" />
                         </Grid>
                     </views:Expander.Header>
-                    <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="50,35,35">
+                    <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="40,35,35">
                         <controls:DimensionsEditor Value="{Binding Size}" />
                         <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
                                              SelectedItem="{Binding FillMode}" 
