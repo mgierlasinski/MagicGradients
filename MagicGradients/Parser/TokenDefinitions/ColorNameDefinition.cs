@@ -16,7 +16,7 @@ namespace MagicGradients.Parser.TokenDefinitions
         public void Parse(CssReader reader, GradientBuilder builder)
         {
             var parts = reader.Read().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            var color = (Color)ColorConverter.ConvertFromInvariantString(parts[0]);
+            var color = GetNamedColor(parts[0]);
             var offsets = GetOffsets(parts);
 
             if (offsets.Any())
@@ -27,6 +27,14 @@ namespace MagicGradients.Parser.TokenDefinitions
             {
                 builder.AddStop(color);
             }
+        }
+
+        private Color GetNamedColor(string colorName)
+        {
+            // For transparency SkiaSharp needs black color with zero alpha
+            return colorName == "transparent" ?
+                Color.FromRgba(0, 0, 0, 0) :
+                (Color)ColorConverter.ConvertFromInvariantString(colorName);
         }
     }
 }
