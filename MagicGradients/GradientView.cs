@@ -2,6 +2,8 @@ using MagicGradients.Masks;
 using MagicGradients.Renderers;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
+using SKCanvasView = SkiaSharp.Views.Forms.SKCanvasView;
+//using SKCanvasView = SkiaSharp.Views.Forms.SKGLView;
 
 namespace MagicGradients
 {
@@ -102,21 +104,23 @@ namespace MagicGradients
             if (GradientSource == null)
                 return;
 
-            //Renderer ??= new GradientRenderer(this);
-
             var context = Renderer.CreateContext(e);
-            using (context.Paint)
-            {
-                foreach (var gradient in GradientSource.GetGradients())
-                {
-                    if (gradient.Shader == null)
-                        gradient.PrepareShader(this);
-
-                    gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
-                    Renderer.Render(context, gradient.Shader);
-                }
-            }
+            Renderer.RenderGradients(context);
         }
+
+        //protected override void OnPaintSurface(SKPaintGLSurfaceEventArgs e)
+        //{
+        //    base.OnPaintSurface(e);
+
+        //    var canvas = e.Surface.Canvas;
+        //    canvas.Clear();
+
+        //    if (GradientSource == null)
+        //        return;
+
+        //    var context = Renderer.CreateContext(e);
+        //    Renderer.RenderGradients(context);
+        //}
 
         public void InvalidateCanvas()
         {

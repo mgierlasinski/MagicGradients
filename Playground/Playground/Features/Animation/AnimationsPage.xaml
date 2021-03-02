@@ -190,10 +190,9 @@
             </controls:AnimationClip>
             <controls:AnimationClip BindingContext="{Binding IndicatorAnimation}">
                 <magic:GradientView HorizontalOptions="Center"
-                                    HeightRequest="150" WidthRequest="450"
-                                    GradientSize="150,150"
-                                    GradientRepeat="RepeatX"
-                                    IgnorePixelScaling="True">
+                                    WidthRequest="300" HeightRequest="150" 
+                                    GradientSize="50%,100%"
+                                    GradientRepeat="RepeatX">
                     <magic:GradientView.Mask>
                         <masks:MaskCollection>
                             <masks:EllipseMask ClipMode="Include" Size="90%,90%" />

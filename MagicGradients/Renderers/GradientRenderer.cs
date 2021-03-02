@@ -23,6 +23,25 @@ namespace MagicGradients.Renderers
                 CanvasRect = e.Info.Rect
             };
 
+            PrepareContext(context);
+            return context;
+        }
+
+        public RenderContext CreateContext(SKPaintGLSurfaceEventArgs e)
+        {
+            var context = new RenderContext
+            {
+                Canvas = e.Surface.Canvas,
+                Paint = new SKPaint(),
+                CanvasRect = e.BackendRenderTarget.Rect
+            };
+
+            PrepareContext(context);
+            return context;
+        }
+
+        private void PrepareContext(RenderContext context)
+        {
             var size = _control.GradientSize;
 
             if (size.Width.Value > 0 && size.Height.Value > 0)
@@ -41,11 +60,24 @@ namespace MagicGradients.Renderers
             {
                 context.RenderRect = context.CanvasRect;
             }
-
-            return context;
         }
 
-        public void Render(RenderContext context, IGradientShader shader)
+        public void RenderGradients(RenderContext context)
+        {
+            using (context.Paint)
+            {
+                foreach (var gradient in _control.GradientSource.GetGradients())
+                {
+                    if (gradient.Shader == null)
+                        gradient.PrepareShader(_control);
+
+                    gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
+                    Render(context, gradient.Shader);
+                }
+            }
+        }
+
+        private void Render(RenderContext context, IGradientShader shader)
         {
             context.Paint.Shader = shader.Create(context);
 

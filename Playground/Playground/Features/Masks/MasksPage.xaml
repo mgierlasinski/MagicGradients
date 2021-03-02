@@ -37,9 +37,9 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <magic:GradientView StyleClass="headerBackground" />
-                    <magic:GradientView StyleClass="headerXamagonGlow" IgnorePixelScaling="True" HorizontalOptions="Center" VerticalOptions="Center">
+                    <magic:GradientView StyleClass="headerXamagonGlow" HorizontalOptions="Center" VerticalOptions="Center">
                         <magic:GradientView.Mask>
-                            <masks:EllipseMask Size="100,100" FillMode="AspectFit" />
+                            <masks:EllipseMask FillMode="AspectFit" />
                         </magic:GradientView.Mask>
                     </magic:GradientView>
                     <magic:GradientView StyleClass="headerXamagon" HorizontalOptions="Center" VerticalOptions="Center">
@@ -51,7 +51,6 @@
                     </magic:GradientView>
                 </Grid>
                 <magic:GradientView StyleClass="goldStar" 
-                                    IgnorePixelScaling="True"
                                     HorizontalOptions="Center" 
                                     VerticalOptions="Center"
                                     Grid.Row="2">
