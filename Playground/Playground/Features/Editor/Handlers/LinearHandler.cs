@@ -1,6 +1,9 @@
-﻿using MagicGradients;
+﻿using System.Windows.Input;
+using MagicGradients;
 using Playground.Extensions;
 using Playground.ViewModels;
+using Xamarin.Forms;
+using GradientStop = MagicGradients.GradientStop;
 
 namespace Playground.Features.Editor.Handlers
 {
@@ -15,9 +18,17 @@ namespace Playground.Features.Editor.Handlers
             set => SetProperty(ref _useLegacyShader, value);
         }
 
+        public ICommand RotateCommand { get; }
+
         public LinearHandler(GradientEditorViewModel parent)
         {
             _parent = parent;
+
+            RotateCommand = new Command<string>((x) =>
+            {
+                if (_parent.Gradient is LinearGradient linear)
+                    linear.Angle = double.Parse(x);
+            });
         }
 
         public Gradient Create()

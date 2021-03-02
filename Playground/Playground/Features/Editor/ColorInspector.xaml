@@ -61,14 +61,15 @@
         </AbsoluteLayout>
         <Frame HasShadow="False" Padding="10" Style="{StaticResource BorderFrame}" Grid.Row="1" 
                BindingContext="{Binding Source={RelativeSource AncestorType={x:Type editor:ColorInspector}}}">
-            <Grid RowDefinitions="30,*" ColumnDefinitions="*,30,30" ColumnSpacing="5">
+            <Grid RowDefinitions="30,Auto,*" ColumnDefinitions="*,30,30" ColumnSpacing="5">
                 <controls:ColorView Color="{Binding SelectedStop.Color}" 
                                     HorizontalOptions="FillAndExpand" Grid.Column="0" />
                 <ImageButton Clicked="RemoveColor_Clicked" Grid.Column="1" StyleClass="BackgroundElement"
                              Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Delete}}" />
                 <ImageButton Clicked="AddColor_Clicked" Grid.Column="2" StyleClass="BackgroundElement"
                              Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" />
-                <colorPicker:ColorWheel Grid.Row="1" Grid.ColumnSpan="3"
+                <controls:ColorEditor Value="{Binding SelectedStop.Color}" Grid.Row="1" Grid.ColumnSpan="3" />
+                <colorPicker:ColorWheel Grid.Row="2" Grid.ColumnSpan="3"
                                         ShowAlphaSlider="True"
                                         ShowLuminositySlider="True"
                                         ShowLuminosityWheel="False"

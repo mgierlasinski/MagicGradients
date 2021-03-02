@@ -3,9 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tabs="http://sharpnado.com"
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              x:Class="Playground.Features.Editor.PropertiesTab">
     <StackLayout.Resources>
         <converters:TabBoolConverter x:Key="TabBoolConverter" />
+        <Style Class="AnchorButton" TargetType="Button">
+            <Setter Property="WidthRequest" Value="20" />
+            <Setter Property="HeightRequest" Value="20" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Opacity" Value="0.8" />
+        </Style>
     </StackLayout.Resources>
 
     <StackLayout IsVisible="{Binding IsRadial, Converter={StaticResource NegativeBoolConverter}}">
@@ -15,11 +23,11 @@
         </StackLayout>
         <Slider Value="{Binding Gradient.Angle}" Maximum="360" Minimum="0" HorizontalOptions="FillAndExpand" />
         <FlexLayout HeightRequest="40" JustifyContent="SpaceBetween">
-            <Button Text="0°" Command="{Binding RotateCommand}" CommandParameter="0" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
-            <Button Text="45°" Command="{Binding RotateCommand}" CommandParameter="45" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
-            <Button Text="90°" Command="{Binding RotateCommand}" CommandParameter="90" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
-            <Button Text="180°" Command="{Binding RotateCommand}" CommandParameter="180" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
-            <Button Text="270°" Command="{Binding RotateCommand}" CommandParameter="270" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="0°" Command="{Binding Linear.RotateCommand}" CommandParameter="0" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="45°" Command="{Binding Linear.RotateCommand}" CommandParameter="45" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="90°" Command="{Binding Linear.RotateCommand}" CommandParameter="90" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="180°" Command="{Binding Linear.RotateCommand}" CommandParameter="180" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
+            <Button Text="270°" Command="{Binding Linear.RotateCommand}" CommandParameter="270" Margin="5,0" Padding="0" FlexLayout.Grow="1" />
         </FlexLayout>
         <StackLayout Orientation="Horizontal">
             <CheckBox IsChecked="{Binding Linear.UseLegacyShader}" />
@@ -28,12 +36,29 @@
     </StackLayout>
 
     <StackLayout IsVisible="{Binding IsRadial}" Spacing="0">
-        <StackLayout Orientation="Horizontal">
+        <Label Text="Position" />
+        <Grid ColumnDefinitions="*,*">
+            <Entry Text="{Binding Radial.CenterX, StringFormat='{0:0.###}'}" />
+            <Entry Text="{Binding Radial.CenterY, StringFormat='{0:0.###}'}" Grid.Column="1" />
+        </Grid>
+        <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*" Margin="0,10,0,0">
+            <Frame HasShadow="False" Style="{StaticResource BorderFrame}" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="10" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="0;0"  HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="0.5;0" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="1;0" HorizontalOptions="End" Grid.Row="0" Grid.Column="2" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="0;0.5" HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="0.5;0.5" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="1;0.5" HorizontalOptions="End" Grid.Row="1" Grid.Column="2" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="0;1" HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="0.5;1" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" />
+            <Button StyleClass="AnchorButton" Command="{Binding Radial.MoveToCommand}" CommandParameter="1;1" HorizontalOptions="End" Grid.Row="2" Grid.Column="2" />
+        </Grid>
+        <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
             <Label Text="Shape and Size" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
             <CheckBox IsChecked="{Binding Radial.IsCustomSize}" HorizontalOptions="End" />
             <Label Text="Custom size" HorizontalOptions="End" VerticalOptions="Center" />
         </StackLayout>
-        <Grid ColumnDefinitions="50*,50*" RowDefinitions="Auto,Auto" ColumnSpacing="10" IsVisible="{Binding Radial.IsCustomSize, Converter={StaticResource NegativeBoolConverter}}">
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" IsVisible="{Binding Radial.IsCustomSize, Converter={StaticResource NegativeBoolConverter}}">
             <tabs:TabHostView Grid.ColumnSpan="2" SelectedIndex="{Binding Radial.Shape, Mode=TwoWay}" Style="{StaticResource SegmentedTabs}" Margin="0,10,0,0">
                 <tabs:TabHostView.Tabs>
                     <tabs:SegmentedTabItem Label="Ellipse" />
@@ -53,12 +78,7 @@
                 </tabs:TabHostView.Tabs>
             </tabs:TabHostView>
         </Grid>
-        <StackLayout Orientation="Horizontal" HeightRequest="40" IsVisible="{Binding Radial.IsCustomSize}">
-            <Label Text="W" VerticalOptions="Center" />
-            <Slider Value="{Binding Radial.RadiusX}" Maximum="300" Minimum="50" HorizontalOptions="FillAndExpand" />
-            <Label Text="H" Margin="10,0,0,0" VerticalOptions="Center" />
-            <Slider Value="{Binding Radial.RadiusY}" Maximum="300" Minimum="50" HorizontalOptions="FillAndExpand" />
-        </StackLayout>
+        <controls:DimensionsEditor Value="{Binding Radial.Radius}" IsVisible="{Binding Radial.IsCustomSize}" />
     </StackLayout>
 
     <Label Text="Length" Margin="0,10,0,0" />
@@ -70,4 +90,9 @@
         </tabs:TabHostView.Tabs>
     </tabs:TabHostView>
 
+    <Label Text="Manage" Margin="0,10,0,0" />
+    <Grid ColumnDefinitions="*,*">
+        <Button Text="Move down" Command="{Binding MoveDownCommand}" />
+        <Button Text="Move up" Command="{Binding MoveUpCommand}" Grid.Column="1" />
+    </Grid>
 </StackLayout>

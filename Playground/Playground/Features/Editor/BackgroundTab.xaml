@@ -1,102 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:tabs="http://sharpnado.com"
-             xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              x:Class="Playground.Features.Editor.BackgroundTab"
              x:DataType="editor:GradientEditorViewModel">
-    <StackLayout.Resources>
-        <converters:TabEnumConverter x:Key="TabEnumConverter" />
-        <converters:TabBoolConverter x:Key="TabBoolConverter" />
-    </StackLayout.Resources>
-
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup Name="SizeGroup">
-            <VisualState Name="Pixel">
-                <VisualState.StateTriggers>
-                    <StateTrigger IsActive="{Binding IsPixelSize}" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter TargetName="SizeWidth" Property="VisualElement.IsVisible" Value="True" />
-                    <Setter TargetName="SizeHeight" Property="VisualElement.IsVisible" Value="True" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState Name="Proportion">
-                <VisualState.StateTriggers>
-                    <StateTrigger IsActive="{Binding IsPixelSize, Converter={StaticResource NegativeBoolConverter}}" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter TargetName="SizeScale" Property="VisualElement.IsVisible" Value="True" />
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>
-        <!--<VisualStateGroup Name="MaskGroup">
-            <VisualState Name="Path">
-                <VisualState.StateTriggers>
-                    <CompareStateTrigger Property="{Binding Mask.MaskState}" Value="PathMask" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter TargetName="PathFill" Property="VisualElement.IsVisible" Value="True" />
-                    <Setter TargetName="PathData" Property="VisualElement.IsVisible" Value="True" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState Name="Text">
-                <VisualState.StateTriggers>
-                    <CompareStateTrigger Property="{Binding Mask.MaskState}" Value="TextMask" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter TargetName="TextRow" Property="VisualElement.IsVisible" Value="True" />
-                    <Setter TargetName="PathFill" Property="VisualElement.IsVisible" Value="True" />
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>-->
-    </VisualStateManager.VisualStateGroups>
-
-    <Grid ColumnDefinitions="50*,50*" RowDefinitions="Auto,40">
-        <Label Text="Gradient Size" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
-        <tabs:TabHostView SelectedIndex="{Binding IsPixelSize, Mode=TwoWay, Converter={StaticResource TabBoolConverter}}" 
-                          Style="{StaticResource SegmentedTabs}" Grid.Column="1" WidthRequest="150" HorizontalOptions="End">
-            <tabs:TabHostView.Tabs>
-                <tabs:SegmentedTabItem Label="%" />
-                <tabs:SegmentedTabItem Label="px" />
-            </tabs:TabHostView.Tabs>
-        </tabs:TabHostView>
-        <Slider x:Name="SizeScale" Value="{Binding SizeScale}" Maximum="1" Minimum="0" IsVisible="False"
-                Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" />
-        <Entry x:Name="SizeWidth" Text="{Binding SizeWidth}" Placeholder="Width" IsVisible="False"  
-               Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
-        <Entry x:Name="SizeHeight" Text="{Binding SizeHeight}" Placeholder="Height" IsVisible="False" 
-               Grid.Row="1" Grid.Column="1" VerticalOptions="Center"/>
-    </Grid>
     
-    <tabs:TabHostView SelectedIndex="{Binding GradientRepeat, Mode=TwoWay, Converter={StaticResource TabEnumConverter}}" 
-                      Style="{StaticResource SegmentedTabs}" Margin="0,10,0,0">
-        <tabs:TabHostView.Tabs>
-            <tabs:SegmentedTabItem Label="Repeat" />
-            <tabs:SegmentedTabItem Label="Repeat X" />
-            <tabs:SegmentedTabItem Label="Repeat Y" />
-            <tabs:SegmentedTabItem Label="No repeat" />
-        </tabs:TabHostView.Tabs>
-    </tabs:TabHostView>
-    
-    <!--<Label Text="Mask" Margin="0,10,0,0" />-->
-    <!--<Frame Style="{StaticResource BorderFrame}">
-        <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Picker ItemsSource="{Binding Mask.Masks}" SelectedItem="{Binding Mask.SelectedMask}" HorizontalOptions="FillAndExpand" />
-                <Picker ItemsSource="{Binding Mask.ClipModes}" SelectedItem="{Binding Mask.ClipMode}" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
-            <StackLayout x:Name="TextRow" Orientation="Horizontal" IsVisible="False">
-                <Editor Text="{Binding Mask.TextMask.Text}" Placeholder="Text" HorizontalOptions="FillAndExpand" />
-                <Editor Text="{Binding Mask.TextMask.FontSize}" Placeholder="Font Size" HorizontalOptions="FillAndExpand" />
-                <Picker SelectedItem="{Binding Mask.TextMask.FontAttributes}" ItemsSource="{Binding Mask.FontAttributes}" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
-            <StackLayout x:Name="PathData" Orientation="Horizontal" IsVisible="False">
-                <Editor Text="{Binding Mask.PathMask.Data}" HorizontalOptions="FillAndExpand" />
-                <Button Text="Add" Command="{Binding Mask.ShowSnippetsCommand}" />
-            </StackLayout>
-            <Picker x:Name="PathFill" ItemsSource="{Binding Mask.FillModes}" SelectedItem="{Binding Mask.PathFill}" IsVisible="False" />
-        </StackLayout>
-    </Frame>-->
+    <Label Text="Gradient Size" />
+    <controls:DimensionsEditor Value="{Binding GradientSize}" />
+
+    <Label Text="Background repeat" />
+    <controls:EnumSwitch x:Name="Type" Margin="0,10,0,0"
+                         EnumType="{x:Type magic:BackgroundRepeat}" 
+                         SelectedItem="{Binding GradientRepeat}" />
+
 </StackLayout>

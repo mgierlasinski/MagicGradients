@@ -54,6 +54,9 @@ namespace Playground.Features.Editor
 
         public void CreateSpectrum(Gradient gradient)
         {
+            if (gradient == null)
+                return;
+
             _spectrum = new ColorSpectrumGradient(gradient);
             ColorSpectrum.GradientSource = _spectrum;
 
@@ -154,11 +157,15 @@ namespace Playground.Features.Editor
                 return;
 
             var index = _spectrum.Stops.IndexOf(SelectedStop);
-            if (index >= 0)
-            {
-                _spectrum.RemoveStopAt(index);
-                SelectStop((GradientStopClone)_spectrum.Stops.FirstOrDefault());
-            }
+            if (index < 0)
+                return;
+
+            _spectrum.RemoveStopAt(index);
+
+            if (index >= _spectrum.Stops.Count)
+                index = _spectrum.Stops.Count - 1;
+
+            SelectStop((GradientStopClone)_spectrum.Stops[index]);
         }
     }
 }

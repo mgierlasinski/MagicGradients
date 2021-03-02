@@ -8,6 +8,7 @@ using Playground.Features.Gallery;
 using Playground.Features.Gallery.Services;
 using Playground.Features.Home;
 using Playground.Features.Linear;
+using Playground.Features.Masks;
 using Playground.Features.Share;
 using SimpleInjector;
 using Xamarin.Forms;
@@ -45,6 +46,7 @@ namespace Playground
             IoC.Register<CssPreviewerViewModel>();
             IoC.Register<BattleTestViewModel>();
             IoC.Register<AnimationsViewModel>();
+            IoC.Register<MasksViewModel>();
         }
 
         public static void RegisterRoutes()
@@ -55,6 +57,7 @@ namespace Playground
             Routing.RegisterRoute("CssPreviewer", typeof(CssPreviewerPage));
             Routing.RegisterRoute("Animations", typeof(AnimationsPage));
             Routing.RegisterRoute("BattleTest", typeof(BattleTestPage));
+            Routing.RegisterRoute("Masks", typeof(MasksPage));
         }
 
         public static void Initialize()

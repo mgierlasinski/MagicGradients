@@ -24,7 +24,34 @@
                      IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.More}, Color=White}" />
     </ContentPage.ToolbarItems>
 
-    <Grid RowDefinitions="*,Auto" RowSpacing="0">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="Bottom">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter TargetName="Editor" Property="Grid.Column" Value="0" />
+                    <Setter TargetName="Editor" Property="Grid.Row" Value="1" />
+                    <Setter TargetName="Editor" Property="HeightRequest" Value="350" />
+                    <Setter TargetName="Editor" Property="WidthRequest" Value="-1" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="Side">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="600" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter TargetName="Editor" Property="Grid.Column" Value="1" />
+                    <Setter TargetName="Editor" Property="Grid.Row" Value="0" />
+                    <Setter TargetName="Editor" Property="HeightRequest" Value="-1" />
+                    <Setter TargetName="Editor" Property="WidthRequest" Value="400" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <Grid RowSpacing="0" ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
         <controls:CheckeredView />
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
@@ -35,30 +62,21 @@
                             magic:LinearGradient.UseLegacyShader="{Binding Linear.UseLegacyShader}"
                             PaintSurface="SKCanvasView_OnPaintSurface"/>
         
-        <Grid VerticalOptions="Start" IsVisible="{Binding IsDragEnabled}">
+        <Grid VerticalOptions="Start" HorizontalOptions="End" IsVisible="{Binding IsDragEnabled}">
             <BoxView Style="{StaticResource SemiTransparent}" HeightRequest="20" />
-            <Label TextColor="White" FontSize="12" Margin="2">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Center:&#160;" />
-                        <Span Text="{Binding Radial.CenterX, StringFormat='{0:0.###}'}" />
-                        <Span Text="&#160;" />
-                        <Span Text="{Binding Radial.CenterY, StringFormat='{0:0.###}'}" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
             <Label TextColor="White" Text="Drag to move" FontSize="12" Margin="2" HorizontalOptions="End" />
         </Grid>
 
-        <Grid Grid.Row="1" RowDefinitions="40,*" ColumnDefinitions="40,*" 
-              RowSpacing="0" ColumnSpacing="10" HeightRequest="350"
-              IsVisible="{Binding IsEditMode}">
+        <Grid x:Name="Editor" IsVisible="{Binding IsEditMode}" 
+              RowDefinitions="40,*" ColumnDefinitions="40,*" 
+              RowSpacing="0" ColumnSpacing="10">
             <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
             <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Margin="5"
                          Command="{Binding AddCommand}" StyleClass="BackgroundElement" />
             <CollectionView ItemsSource="{Binding GradientSource.Gradients}" 
                             SelectedItem="{Binding Gradient}"
-                            SelectionMode="Single" Grid.Row="1">
+                            SelectionMode="Single" 
+                            Grid.Row="1" Margin="0,0,0,40">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <ContentView>
@@ -67,6 +85,10 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Delete}}" 
+                         Command="{Binding DeleteCommand}" StyleClass="BackgroundElement"
+                         WidthRequest="30" HeightRequest="30" Margin="5" 
+                         Grid.Row="1" VerticalOptions="End"/>
             <tabs:TabHostView TabType="Scrollable" Margin="0,0,40,0" Grid.Column="1"
                               SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
                 <tabs:TabHostView.Tabs>
@@ -83,7 +105,9 @@
                          StyleClass="BackgroundElement" />
             <tabs:ViewSwitcher x:Name="Switcher" Grid.Row="1" Grid.Column="1"
                                SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}">
-                <editor:PropertiesTab Margin="10" />
+                <ScrollView>
+                    <editor:PropertiesTab Margin="10" />
+                </ScrollView>
                 <editor:ColorInspector Gradient="{Binding Gradient}" Margin="10" />
                 <ScrollView>
                     <editor:BackgroundTab Margin="10" />

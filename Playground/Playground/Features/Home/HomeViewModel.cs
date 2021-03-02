@@ -11,7 +11,8 @@ namespace Playground.Features.Home
         public ICommand CssCommand { get; }
         public ICommand GalleryCommand { get; }
         public ICommand AnimationsCommand { get; }
-        
+        public ICommand MasksCommand { get; }
+
         public HomeViewModel()
         {
             LinearCommand = new Command(async () => await Shell.Current.GoToAsync("GradientEditor?id=linear"));
@@ -19,6 +20,7 @@ namespace Playground.Features.Home
             CssCommand = new Command(async () => await Shell.Current.GoToAsync("CssPreviewer"));
             GalleryCommand = new Command(async () => await Shell.Current.GoToAsync("Gallery"));
             AnimationsCommand = new Command(async () => await Shell.Current.GoToAsync("Animations"));
+            MasksCommand = new Command(async () => await Shell.Current.GoToAsync("Masks"));
         }
     }
 }

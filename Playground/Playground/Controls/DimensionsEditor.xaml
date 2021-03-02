@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="Playground.Controls.DimensionsEditor"
+             ColumnDefinitions="33*,33*,33*" HeightRequest="40">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup Name="SizeGroup">
+            <VisualState Name="Pixel">
+                <VisualState.Setters>
+                    <Setter TargetName="SizeWidth" Property="VisualElement.IsVisible" Value="True" />
+                    <Setter TargetName="SizeHeight" Property="VisualElement.IsVisible" Value="True" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState Name="Proportion">
+                <VisualState.Setters>
+                    <Setter TargetName="SizeScale" Property="VisualElement.IsVisible" Value="True" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <Slider x:Name="SizeScale" Maximum="1" Minimum="0" IsVisible="False"
+            ValueChanged="SizeScale_OnValueChanged"
+            Grid.ColumnSpan="2" VerticalOptions="Center" 
+            Margin="{x:OnPlatform UWP='0,-5,0,0', Default=0}"/>
+    <Entry x:Name="SizeWidth" Placeholder="Width" IsVisible="False"  
+           TextChanged="SizePixels_OnTextChanged"
+           Grid.Column="0" VerticalOptions="Center" />
+    <Entry x:Name="SizeHeight" Placeholder="Height" IsVisible="False" 
+           TextChanged="SizePixels_OnTextChanged"
+           Grid.Column="1" VerticalOptions="Center"/>
+
+    <controls:EnumSwitch x:Name="Type" Grid.Column="2" Margin="10,0,0,0"
+                         EnumType="{x:Type magic:OffsetType}" 
+                         SelectedItemChanged="Type_OnSelectedItemChanged">
+        <controls:EnumSwitch.Aliases>
+            <x:String>%</x:String>
+            <x:String>px</x:String>
+        </controls:EnumSwitch.Aliases>
+    </controls:EnumSwitch>
+</Grid>

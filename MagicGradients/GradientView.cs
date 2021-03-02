@@ -85,6 +85,11 @@ namespace MagicGradients
             {
                 SetInheritedBindingContext(bindable, BindingContext);
             }
+
+            if (Mask != null)
+            {
+                SetInheritedBindingContext(Mask, BindingContext);
+            }
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)

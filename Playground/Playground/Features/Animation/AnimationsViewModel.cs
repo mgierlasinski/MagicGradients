@@ -16,6 +16,7 @@ namespace Playground.Features.Animation
         public AnimationItem PointFrameAnimation { get; }
         public AnimationItem ScannerAnimation { get; }
         public AnimationItem PulseAnimation { get; }
+        public AnimationItem IndicatorAnimation { get; }
 
         public AnimationsViewModel()
         {
@@ -27,6 +28,7 @@ namespace Playground.Features.Animation
             PointFrameAnimation = CreateAnimation("Point Frame Animation");
             ScannerAnimation = CreateAnimation("Scanner Animation");
             PulseAnimation = CreateAnimation("Pulse Animation");
+            IndicatorAnimation = CreateAnimation("Indicator Animation");
         }
 
         protected AnimationItem CreateAnimation(string title)

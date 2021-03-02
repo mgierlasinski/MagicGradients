@@ -6,7 +6,9 @@ using Playground.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MagicGradients.Parser;
 using Xamarin.Forms;
+using System;
 
 namespace Playground.Features.Editor
 {
@@ -50,7 +52,7 @@ namespace Playground.Features.Editor
         public Dimensions GradientSize
         {
             get => _gradientSize;
-            set => SetProperty(ref _gradientSize, value, UpdateSizeOnUI);
+            set => SetProperty(ref _gradientSize, value);
         }
 
         private BackgroundRepeat _gradientRepeat;
@@ -65,34 +67,6 @@ namespace Playground.Features.Editor
         {
             get => _selectedTabIndex;
             set => SetProperty(ref _selectedTabIndex, value);
-        }
-
-        private double _sizeScale = 1;
-        public double SizeScale
-        {
-            get => _sizeScale;
-            set => SetProperty(ref _sizeScale, value, UpdateSize);
-        }
-
-        private double _sizeWidth = 100;
-        public double SizeWidth
-        {
-            get => _sizeWidth;
-            set => SetProperty(ref _sizeWidth, value, UpdateSize);
-        }
-
-        private double _sizeHeight = 100;
-        public double SizeHeight
-        {
-            get => _sizeHeight;
-            set => SetProperty(ref _sizeHeight, value, UpdateSize);
-        }
-
-        private bool _isPixelSize;
-        public bool IsPixelSize
-        {
-            get => _isPixelSize;
-            set => SetProperty(ref _isPixelSize, value, UpdateSize);
         }
 
         private bool _isEditMode;
@@ -113,13 +87,6 @@ namespace Playground.Features.Editor
 
         public bool IsDragEnabled => IsEditMode && IsRadial;
 
-        private bool _isGallery;
-        public bool IsGallery
-        {
-            get => _isGallery;
-            set => SetProperty(ref _isGallery, value);
-        }
-
         private bool _isMenuVisible;
         public bool IsMenuVisible
         {
@@ -129,14 +96,16 @@ namespace Playground.Features.Editor
 
         public ICommand AddCommand { get; }
         public ICommand EditCommand { get; }
+        public ICommand DeleteCommand { get; }
         public ICommand CloseEditCommand { get; }
         public ICommand PreviewCssCommand { get; }
         public ICommand BattleTestCommand { get; }
         public ICommand ToggleMenuCommand { get; }
         public ICommand ShareCommand { get; }
         public ICommand CopyCommand { get; }
-        public ICommand RotateCommand { get; }
-
+        public ICommand MoveUpCommand { get; }
+        public ICommand MoveDownCommand { get; }
+        
         public GradientEditorViewModel(
             IGalleryService galleryService, 
             IShareService shareService,
@@ -153,21 +122,22 @@ namespace Playground.Features.Editor
 
             AddCommand = new Command(() => AddAction());
             EditCommand = new Command(EditAction);
-            CloseEditCommand = new Command(() => { IsEditMode = false; });
+            DeleteCommand = new Command(() => DeleteAction());
+            CloseEditCommand = new Command(() => IsEditMode = false);
+            ToggleMenuCommand = new Command(() => IsMenuVisible = true);
+            MoveUpCommand = new Command(() => MoveAction(1));
+            MoveDownCommand = new Command(() => MoveAction(-1));
 
             PreviewCssCommand = new Command(async () =>
             {
                 IsMenuVisible = false;
                 await Shell.Current.GoToAsync($"CssPreviewer?data={GetRawData()}");
             });
-
             BattleTestCommand = new Command(async () =>
             {
                 IsMenuVisible = false;
                 await Shell.Current.GoToAsync($"BattleTest?data={GetRawData()}");
             });
-
-            ToggleMenuCommand = new Command(() => IsMenuVisible = true);
             ShareCommand = new Command(() =>
             {
                 IsMenuVisible = false;
@@ -177,11 +147,6 @@ namespace Playground.Features.Editor
             {
                 IsMenuVisible = false;
                 _shareService.CopyToClipboard(GetShareText());
-            });
-            RotateCommand = new Command<string>((x) =>
-            {
-                if (Gradient is LinearGradient linear)
-                    linear.Angle = double.Parse(x);
             });
         }
 
@@ -208,7 +173,6 @@ namespace Playground.Features.Editor
             var gradient = _galleryService.GetGradientById(id);
             GradientSource = (GradientCollection)gradient.Source;
             GradientSize = gradient.Size;
-            IsGallery = true;
         }
 
         private void OnGradientChanged()
@@ -226,7 +190,7 @@ namespace Playground.Features.Editor
 
         private async Task AddAction()
         {
-            var values = new [] { "Linear gradient", "Radial gradient" };
+            var values = new [] { "Linear gradient", "Radial gradient", "CSS gradient" };
             var result = await Shell.Current.DisplayActionSheet("Add gradient", "Cancel", null, values);
 
             if(result == values[0])
@@ -235,47 +199,83 @@ namespace Playground.Features.Editor
             else if (result == values[1])
                 GradientSource.Gradients.Add(Radial.Create());
 
+            else if (result == values[2])
+                await LoadCssSource();
+
             // Select added
             Gradient = GradientSource?.Gradients?.LastOrDefault();
         }
 
+        private async Task LoadCssSource()
+        {
+            try
+            {
+                var code = await Shell.Current.DisplayPromptAsync("CSS gradient", "Enter CSS code");
+
+                if (string.IsNullOrWhiteSpace(code))
+                    return;
+
+                var parser = new CssGradientParser();
+                var gradients = parser.ParseCss(code);
+
+                if (!gradients.Any())
+                {
+                    await Shell.Current.DisplayAlert("CSS gradient", "No gradient data", "OK");
+                    return;
+                }
+
+                foreach (var gradient in gradients)
+                {
+                    GradientSource.Gradients.Add(gradient);
+                }
+            }
+            catch (Exception e)
+            {
+                await Shell.Current.DisplayAlert("CSS gradient", e.Message, "OK");
+            }
+        }
+
         private void EditAction()
         {
-            if (Gradient == null)
-                Gradient = GradientSource.Gradients.FirstOrDefault();
-
+            Gradient ??= GradientSource.Gradients.FirstOrDefault();
             IsEditMode = true;
         }
 
-        private void UpdateSize()
+        private async Task DeleteAction()
         {
-            GradientSize = IsPixelSize
-                ? Dimensions.Abs(SizeWidth, SizeHeight)
-                : Dimensions.Prop(SizeScale, SizeScale);
-        }
-
-        private void UpdateSizeOnUI()
-        {
-            if (GradientSize.IsZero)
+            if (Gradient == null || GradientSource.Gradients.Count == 1)
                 return;
 
-            if (GradientSize.Width.Type == OffsetType.Absolute)
-            {
-                _isPixelSize = true;    
-                _sizeWidth = GradientSize.Width.Value;
-                _sizeHeight = GradientSize.Height.Value;
-            }
-            else
-            {
-                _isPixelSize = false;
-                _sizeScale = GradientSize.Width.Value;
-            }
+            if (!await Shell.Current.DisplayAlert("Confirmation", "Delete selected gradient?", "Delete", "Cancel"))
+                return;
 
-            // Notify UI only, don't raise OnChanged action
-            RaisePropertyChanged(nameof(IsPixelSize));
-            RaisePropertyChanged(nameof(SizeScale));
-            RaisePropertyChanged(nameof(SizeWidth));
-            RaisePropertyChanged(nameof(SizeHeight));
+            var index = GradientSource.Gradients.IndexOf(Gradient);
+            if (index < 0)
+                return;
+
+            GradientSource.Gradients.RemoveAt(index);
+
+            if (index >= GradientSource.Gradients.Count)
+                index = GradientSource.Gradients.Count - 1;
+
+            Gradient = GradientSource.Gradients[index];
+        }
+
+        private void MoveAction(int direction)
+        {
+            if(Gradient == null || GradientSource.Gradients.Count == 1)
+                return;
+
+            var index = GradientSource.Gradients.IndexOf(Gradient);
+            var newIndex = index + direction;
+
+            if (newIndex < 0 || newIndex > GradientSource.Gradients.Count - 1)
+                return;
+
+            var movedGradient = Gradient;
+            GradientSource.Gradients.RemoveAt(index);
+            GradientSource.Gradients.Insert(newIndex, movedGradient);
+            Gradient = movedGradient;
         }
 
         private string GetRawData()

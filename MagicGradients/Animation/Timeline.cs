@@ -47,7 +47,7 @@ namespace MagicGradients.Animation
 
         public void End()
         {
-            Animator.AbortAnimation(_handle);
+            Animator?.AbortAnimation(_handle);
             _playCount = 0;
         }
 

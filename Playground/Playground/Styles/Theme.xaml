@@ -10,6 +10,7 @@
     <Color x:Key="TextColor">#050505</Color>
     <Color x:Key="HeaderColor">#65676B</Color>
     <Color x:Key="SeparatorColor">#CED0D4</Color>
+    <Color x:Key="TabBackground">#E4E6EB</Color>
 
     <!-- Dark -->
     <Color x:Key="BackgroundColorDark">#18191A</Color>
@@ -17,6 +18,7 @@
     <Color x:Key="TextColorDark">#E4E6EB</Color>
     <Color x:Key="HeaderColorDark">#B0B3B8</Color>
     <Color x:Key="SeparatorColorDark">#3A3B3C</Color>
+    <Color x:Key="TabBackgroundDark">#303031</Color>
 
     <!-- Styles -->
     <Style TargetType="VisualElement" ApplyToDerivedTypes="True" Class="BackgroundElement">
@@ -71,7 +73,8 @@
         <Setter Property="CornerRadius" Value="5" />
         <Setter Property="IsSegmented" Value="True" />
         <Setter Property="SegmentedHasSeparator" Value="True" />
-        <Setter Property="SegmentedOutlineColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource TabBackground}, Dark={StaticResource TabBackgroundDark}}" />
+        <Setter Property="SegmentedOutlineColor" Value="{AppThemeBinding Light={StaticResource SeparatorColor}, Dark={StaticResource SeparatorColorDark}}" />
     </Style>
     <Style TargetType="tabs:UnderlinedTabItem">
         <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />
@@ -83,7 +86,7 @@
         <Setter Property="SelectedTabColor" Value="{StaticResource AccentColor}" />
         <Setter Property="LabelSize" Value="14" />
         <Setter Property="SelectedLabelColor" Value="White" />
-        <Setter Property="UnselectedLabelColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="UnselectedLabelColor" Value="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource TextColorDark}}" />
     </Style>
     <Style TargetType="Element" x:Key="BaseStyle" >
         <Setter Property="Shell.BackgroundColor" Value="{StaticResource AccentColor}" />

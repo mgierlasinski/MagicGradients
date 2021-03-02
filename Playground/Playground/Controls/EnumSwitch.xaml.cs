@@ -1,20 +1,24 @@
-﻿using Sharpnado.Tabs;
+﻿using Playground.ViewModels;
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 
 namespace Playground.Controls
 {
-    public partial class EnumSwitch : TabHostView
+    public partial class EnumSwitch
     {
-        private string[] _enumItems;
+        private List<EnumItem> _tabs;
+
+        public ObservableCollection<string> Aliases { get; set; } = new ObservableCollection<string>();
 
         public static readonly BindableProperty EnumTypeProperty = BindableProperty.Create(nameof(EnumType),
             typeof(Type), typeof(EnumSwitch), propertyChanged: OnEnumTypeChanged);
 
         public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create(nameof(SelectedItem),
-            typeof(object), typeof(EnumSwitch), defaultBindingMode: BindingMode.TwoWay, propertyChanged: OnSelectedItemChanged);
+            typeof(object), typeof(EnumSwitch), defaultBindingMode: BindingMode.TwoWay, 
+            propertyChanged: (bindable, value, newValue) => ((EnumSwitch)bindable).OnSelectedItemChanged());
 
         public Type EnumType
         {
@@ -28,19 +32,31 @@ namespace Playground.Controls
             set => SetValue(SelectedItemProperty, value);
         }
 
+        public event EventHandler SelectedItemChanged;
+
+        public EnumSwitch()
+        {
+            InitializeComponent();
+            Aliases.CollectionChanged += AliasesOnCollectionChanged;
+        }
+
+        private void AliasesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            for (var i = 0; i < e.NewItems.Count; i++)
+            {
+                _tabs[e.NewStartingIndex + i].Label = (string)e.NewItems[i];
+            }
+        }
+
         private static void OnEnumTypeChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
             ((EnumSwitch)bindable).GenerateTabs();
         }
 
-        private static void OnSelectedItemChanged(BindableObject bindable, object oldvalue, object newvalue)
+        private void OnSelectedItemChanged()
         {
-            ((EnumSwitch)bindable).UpdateIndex();
-        }
-
-        public EnumSwitch()
-        {
-            InitializeComponent();
+            UpdateIndex();
+            SelectedItemChanged?.Invoke(this, EventArgs.Empty);
         }
 
         protected override void OnPropertyChanged(string propertyName = null)
@@ -55,21 +71,22 @@ namespace Playground.Controls
 
         private void GenerateTabs()
         {
-            while (Tabs.Count > 0)
-            {
-                Tabs.RemoveAt(0);
-            }
-
             if (EnumType == null)
                 return;
 
-            _enumItems = Enum.GetNames(EnumType);
-
-            foreach (var name in _enumItems)
+            var values = Enum.GetValues(EnumType);
+            _tabs = new List<EnumItem>();
+            
+            foreach (var val in values)
             {
-                var tab = new SegmentedTabItem { Label = name };
-                Tabs.Add(tab);
+                _tabs.Add(new EnumItem
+                {
+                    Label = val.ToString(),
+                    Value = val
+                });
             }
+
+            ItemsSource = _tabs;
         }
 
         private void UpdateItem()
@@ -83,12 +100,12 @@ namespace Playground.Controls
                 return;
             }
 
-            SelectedItem = Enum.ToObject(EnumType, SelectedIndex);
+            SelectedItem = _tabs[SelectedIndex].Value;
         }
 
         private void UpdateIndex()
         {
-            if (EnumType == null || _enumItems == null || !_enumItems.Any())
+            if (EnumType == null || _tabs == null || _tabs.Count == 0)
                 return;
 
             if (SelectedItem == null)
@@ -97,10 +114,19 @@ namespace Playground.Controls
                 return;
             }
 
-            var name = Enum.GetName(EnumType, SelectedItem);
-            var index = _enumItems.IndexOf(name);
-
-            SelectedIndex = index;
+            SelectedIndex = _tabs.FindIndex(x => x.Value.Equals(SelectedItem));
         }
+    }
+
+    public class EnumItem : ObservableObject
+    {
+        private string _label;
+        public string Label
+        {
+            get => _label;
+            set => SetProperty(ref _label, value);
+        }
+
+        public object Value { get; set; }
     }
 }
