@@ -1,15 +1,16 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
+using Xamarin.Forms;
 using static MagicGradients.BackgroundRepeat;
 
 namespace MagicGradients.Renderers
 {
     public class GradientRenderer
     {
-        private readonly GradientView _control;
+        private readonly IGradientControl _control;
 
-        public GradientRenderer(GradientView control)
+        public GradientRenderer(IGradientControl control)
         {
             _control = control;
         }
@@ -23,7 +24,7 @@ namespace MagicGradients.Renderers
                 CanvasRect = e.Info.Rect
             };
 
-            PrepareContext(context);
+            CalculateRenderSize(context);
             return context;
         }
 
@@ -36,11 +37,11 @@ namespace MagicGradients.Renderers
                 CanvasRect = e.BackendRenderTarget.Rect
             };
 
-            PrepareContext(context);
+            CalculateRenderSize(context);
             return context;
         }
 
-        private void PrepareContext(RenderContext context)
+        private void CalculateRenderSize(RenderContext context)
         {
             var size = _control.GradientSize;
 
@@ -62,14 +63,14 @@ namespace MagicGradients.Renderers
             }
         }
 
-        public void RenderGradients(RenderContext context)
+        public void PaintSurface(RenderContext context)
         {
             using (context.Paint)
             {
                 foreach (var gradient in _control.GradientSource.GetGradients())
                 {
                     if (gradient.Shader == null)
-                        gradient.PrepareShader(_control);
+                        gradient.PrepareShader((BindableObject)_control);
 
                     gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
                     Render(context, gradient.Shader);

@@ -51,16 +51,16 @@
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
 
-    <Grid RowSpacing="0" ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
+    <Grid x:Name="RootLayout" ColumnDefinitions="*,Auto" RowDefinitions="*,Auto" ColumnSpacing="0" RowSpacing="0" >
         <controls:CheckeredView />
-        <magic:GradientView GradientSource="{Binding GradientSource}" 
+        <!--<magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
                             GradientRepeat="{Binding GradientRepeat}"
                             Mask="{Binding Mask.Collection}"
                             EnableTouchEvents="{Binding IsDragEnabled}" 
                             Touch="SKCanvasView_OnTouch" 
                             magic:LinearGradient.UseLegacyShader="{Binding Linear.UseLegacyShader}"
-                            PaintSurface="SKCanvasView_OnPaintSurface"/>
+                            PaintSurface="SKCanvasView_OnPaintSurface"/>-->
         
         <Grid VerticalOptions="Start" HorizontalOptions="End" IsVisible="{Binding IsDragEnabled}">
             <BoxView Style="{StaticResource SemiTransparent}" HeightRequest="20" />
@@ -106,7 +106,14 @@
             <tabs:ViewSwitcher x:Name="Switcher" Grid.Row="1" Grid.Column="1"
                                SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}">
                 <ScrollView>
-                    <editor:PropertiesTab Margin="10" />
+                    <StackLayout>
+                        <editor:PropertiesTab Margin="10" />
+                        <Label Text="Rendering" Margin="10,10,10,0" />
+                        <Grid ColumnDefinitions="*,*" Margin="10,0">
+                            <Button x:Name="SoftButton" Text="Software" Clicked="SoftButton_OnClicked" />
+                            <Button x:Name="GpuButton" Text="Accelerated" Clicked="GpuButton_OnClicked" Grid.Column="1" />
+                        </Grid>
+                    </StackLayout>
                 </ScrollView>
                 <editor:ColorInspector Gradient="{Binding Gradient}" Margin="10" />
                 <ScrollView>
