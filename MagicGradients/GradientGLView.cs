@@ -6,15 +6,8 @@ using Xamarin.Forms;
 namespace MagicGradients
 {
     [ContentProperty(nameof(GradientSource))]
-    public class GradientView : SKCanvasView, IGradientControl, IGradientVisualElement
+    public class GradientGLView : SKGLView, IGradientControl, IGradientVisualElement
     {
-        static GradientView()
-        {
-            StyleSheets.RegisterStyle("background", typeof(GradientView), nameof(GradientSourceProperty));
-            StyleSheets.RegisterStyle("background-size", typeof(GradientView), nameof(GradientSizeProperty));
-            StyleSheets.RegisterStyle("background-repeat", typeof(GradientView), nameof(GradientRepeatProperty));
-        }
-
         public GradientRenderer Renderer { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
@@ -46,7 +39,7 @@ namespace MagicGradients
             set => SetValue(MaskProperty, value);
         }
 
-        public GradientView()
+        public GradientGLView()
         {
             Renderer = new GradientRenderer(this);
         }
@@ -66,7 +59,7 @@ namespace MagicGradients
             }
         }
 
-        protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
+        protected override void OnPaintSurface(SKPaintGLSurfaceEventArgs e)
         {
             base.OnPaintSurface(e);
 

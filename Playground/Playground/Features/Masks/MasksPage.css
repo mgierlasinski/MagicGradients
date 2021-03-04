@@ -11,8 +11,8 @@
 
 .headerXamagonGlow {
     background: radial-gradient(circle at center center, rgb(216, 248, 247),rgb(253, 176, 22));
-    width: 130;
-    height: 130;
+    width: 120;
+    height: 120;
     margin: 20;
 }
 
@@ -26,9 +26,9 @@
 
 .goldStar {
     background: radial-gradient(circle at center center, rgb(233, 240, 92),rgb(236, 129, 32));
-    background-size: 100px, 100px;
+    background-size: 25%, 100%;
     background-repeat: repeat-x;
-    width: 300;
+    width: 350;
     height: 100;
 }
 

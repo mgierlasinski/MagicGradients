@@ -1,15 +1,16 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
+using Xamarin.Forms;
 using static MagicGradients.BackgroundRepeat;
 
 namespace MagicGradients.Renderers
 {
     public class GradientRenderer
     {
-        private readonly GradientView _control;
+        private readonly IGradientControl _control;
 
-        public GradientRenderer(GradientView control)
+        public GradientRenderer(IGradientControl control)
         {
             _control = control;
         }
@@ -23,6 +24,25 @@ namespace MagicGradients.Renderers
                 CanvasRect = e.Info.Rect
             };
 
+            CalculateRenderSize(context);
+            return context;
+        }
+
+        public RenderContext CreateContext(SKPaintGLSurfaceEventArgs e)
+        {
+            var context = new RenderContext
+            {
+                Canvas = e.Surface.Canvas,
+                Paint = new SKPaint(),
+                CanvasRect = e.BackendRenderTarget.Rect
+            };
+
+            CalculateRenderSize(context);
+            return context;
+        }
+
+        private void CalculateRenderSize(RenderContext context)
+        {
             var size = _control.GradientSize;
 
             if (size.Width.Value > 0 && size.Height.Value > 0)
@@ -41,11 +61,24 @@ namespace MagicGradients.Renderers
             {
                 context.RenderRect = context.CanvasRect;
             }
-
-            return context;
         }
 
-        public void Render(RenderContext context, IGradientShader shader)
+        public void PaintSurface(RenderContext context)
+        {
+            using (context.Paint)
+            {
+                foreach (var gradient in _control.GradientSource.GetGradients())
+                {
+                    if (gradient.Shader == null)
+                        gradient.PrepareShader((BindableObject)_control);
+
+                    gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
+                    Render(context, gradient.Shader);
+                }
+            }
+        }
+
+        private void Render(RenderContext context, IGradientShader shader)
         {
             context.Paint.Shader = shader.Create(context);
 

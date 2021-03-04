@@ -22,7 +22,7 @@ namespace MagicGradients
         public static bool GetUseLegacyShader(BindableObject view) => (bool)view.GetValue(UseLegacyShaderProperty);
         public static void SetUseLegacyShader(BindableObject view, bool value) => view.SetValue(UseLegacyShaderProperty, value);
 
-        public override void PrepareShader(GradientView view)
+        public override void PrepareShader(BindableObject view)
         {
             if (GetUseLegacyShader(view))
                 Shader = new LinearGradientShaderLegacy(this);
@@ -32,16 +32,16 @@ namespace MagicGradients
 
         private static void OnUseLegacyShaderChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var view = (GradientView)bindable;
+            var view = (IGradientControl)bindable;
 
             if (view.GradientSource != null)
             {
                 foreach (var gradient in view.GradientSource.GetGradients().Where(x => x is LinearGradient))
                 {
-                    gradient.PrepareShader(view);
+                    gradient.PrepareShader(bindable);
                 }
 
-                view.InvalidateCanvas();
+                ((IGradientVisualElement)view).InvalidateCanvas();
             }
         }
     }
