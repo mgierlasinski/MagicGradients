@@ -6,6 +6,8 @@ namespace Playground.Controls
 {
     public partial class DimensionsEditor : Grid
     {
+        private bool _isUpdating;
+
         public static readonly BindableProperty ValueProperty = BindableProperty.Create(nameof(Value),
             typeof(Dimensions), typeof(DimensionsEditor), Dimensions.Prop(1,1), BindingMode.TwoWay,
             propertyChanged: OnValueChanged);
@@ -55,6 +57,11 @@ namespace Playground.Controls
 
         private void UpdateValue()
         {
+            if (_isUpdating)
+                return;
+
+            _isUpdating = true;
+
             if ((OffsetType)Type.SelectedItem == OffsetType.Absolute)
             {
                 if (!double.TryParse(SizeWidth.Text, out var width))
@@ -69,13 +76,19 @@ namespace Playground.Controls
             {
                 Value = Dimensions.Prop(SizeScale.Value, SizeScale.Value);
             }
+
+            _isUpdating = false;
         }
 
         private void UpdateEditor()
         {
+            if (_isUpdating)
+                return;
+
             if (Value.IsZero)
                 return;
 
+            _isUpdating = true;
             Type.SelectedItem = Value.Width.Type;
 
             if (Value.Width.Type == OffsetType.Absolute)
@@ -87,6 +100,8 @@ namespace Playground.Controls
             {
                 SizeScale.Value = Value.Width.Value;
             }
+
+            _isUpdating = false;
         }
     }
 }

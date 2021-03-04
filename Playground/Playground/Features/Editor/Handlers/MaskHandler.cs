@@ -13,6 +13,7 @@ namespace Playground.Features.Editor.Handlers
     {
         private readonly ShapePicker _shapePicker;
 
+        public RectangleMask RectangleMask { get; }
         public EllipseMask EllipseMask { get; }
         public TextMask TextMask { get; }
         public PathMask PathMask { get; }
@@ -32,8 +33,9 @@ namespace Playground.Features.Editor.Handlers
             ClipModes = Enum.GetValues(typeof(ClipMode)).Cast<ClipMode>().ToArray();
             FontAttributes = Enum.GetValues(typeof(FontAttributes)).Cast<FontAttributes>().ToArray();
 
+            RectangleMask = new RectangleMask { IsActive = false };
             EllipseMask = new EllipseMask { IsActive = false };
-
+            
             TextMask = new TextMask
             {
                 FontSize = 100,
@@ -51,7 +53,7 @@ namespace Playground.Features.Editor.Handlers
             {
                 Masks = new GradientElements<GradientMask>
                 {
-                    EllipseMask, TextMask, PathMask
+                    RectangleMask, EllipseMask, TextMask, PathMask
                 }
             };
 

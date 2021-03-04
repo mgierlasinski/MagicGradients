@@ -24,7 +24,7 @@ namespace MagicGradients.Masks
             ClipPath(context, path);
         }
 
-        protected void ClipPath(RenderContext context, SKPath path)
+        protected internal void ClipPath(RenderContext context, SKPath path)
         {
             path.GetTightBounds(out var bounds);
 

@@ -11,6 +11,29 @@
              x:Class="Playground.Features.Editor.MasksTab"
              x:DataType="editor:GradientEditorViewModel">
     <StackLayout.Resources>
+        <DataTemplate x:Key="RectangleTemplate">
+            <Frame Style="{StaticResource BorderFrame}" Padding="10" x:DataType="masks:RectangleMask">
+                <views:Expander>
+                    <views:Expander.Header>
+                        <Grid ColumnDefinitions="Auto,*,30" RowDefinitions="40">
+                            <CheckBox IsChecked="{Binding IsActive}" />
+                            <Label Text="Rectangle" FontSize="16" VerticalOptions="Center" Grid.Column="1" />
+                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="2" />
+                        </Grid>
+                    </views:Expander.Header>
+                    <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="40,40,35,35">
+                        <controls:DimensionsEditor Value="{Binding Size}" />
+                        <controls:DimensionsEditor Value="{Binding Corners}" Grid.Row="1" />
+                        <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
+                                             SelectedItem="{Binding FillMode}" 
+                                             Grid.Row="2" />
+                        <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
+                                             SelectedItem="{Binding ClipMode}" 
+                                             Grid.Row="3" />
+                    </Grid>
+                </views:Expander>
+            </Frame>
+        </DataTemplate>
         <DataTemplate x:Key="EllipseTemplate">
             <Frame Style="{StaticResource BorderFrame}" Padding="10" x:DataType="masks:EllipseMask">
                 <views:Expander>
@@ -104,6 +127,7 @@
         </DataTemplate>
         <handlers:MaskTemplateSelector 
             x:Key="MaskTemplateSelector" 
+            RectangleTemplate="{StaticResource RectangleTemplate}"
             EllipseTemplate="{StaticResource EllipseTemplate}"
             TextTemplate="{StaticResource TextTemplate}"
             PathTemplate="{StaticResource PathTemplate}" />
