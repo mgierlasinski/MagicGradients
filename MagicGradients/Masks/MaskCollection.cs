@@ -23,6 +23,12 @@ namespace MagicGradients.Masks
             Masks = new GradientElements<GradientMask>();
         }
 
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+            Masks.SetInheritedBindingContext(BindingContext);
+        }
+
         public override void Clip(RenderContext context)
         {
             foreach (var mask in Masks)

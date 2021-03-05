@@ -10,13 +10,17 @@ namespace MagicGradients.Masks
             if(!IsActive)
                 return;
 
+            var ellipse = GetEllipse(context);
+            ClipRoundRect(context, ellipse);
+        }
+
+        private SKRoundRect GetEllipse(RenderContext context)
+        {
             var width = (int)Size.Width.GetPixels(context.CanvasRect.Width);
             var height = (int)Size.Height.GetPixels(context.CanvasRect.Height);
 
             var bounds = new SKRectI(0, 0, width, height);
-            var ellipse = new SKRoundRect(bounds, (float)width / 2, (float)height / 2);
-
-            ClipRoundRect(context, ellipse);
+            return new SKRoundRect(bounds, (float)width / 2, (float)height / 2);
         }
     }
 }

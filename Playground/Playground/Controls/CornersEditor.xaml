@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+      x:Class="Playground.Controls.CornersEditor"
+      RowDefinitions="40,40,40,40" RowSpacing="0">
+    <controls:DimensionsEditor x:Name="LeftTop" ValueChanged="Corner_OnValueChanged" />
+    <controls:DimensionsEditor x:Name="RightTop" ValueChanged="Corner_OnValueChanged" Grid.Row="1" />
+    <controls:DimensionsEditor x:Name="LeftBottom" ValueChanged="Corner_OnValueChanged" Grid.Row="2" />
+    <controls:DimensionsEditor x:Name="RightBottom" ValueChanged="Corner_OnValueChanged" Grid.Row="3" />
+</Grid>

@@ -33,9 +33,14 @@ namespace Playground.Features.Editor.Handlers
             ClipModes = Enum.GetValues(typeof(ClipMode)).Cast<ClipMode>().ToArray();
             FontAttributes = Enum.GetValues(typeof(FontAttributes)).Cast<FontAttributes>().ToArray();
 
-            RectangleMask = new RectangleMask { IsActive = false };
             EllipseMask = new EllipseMask { IsActive = false };
-            
+
+            RectangleMask = new RectangleMask
+            {
+                IsActive = false,
+                Corners = new Corners(Dimensions.Abs(50, 50))
+            };
+
             TextMask = new TextMask
             {
                 FontSize = 100,

@@ -21,9 +21,13 @@
                             <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="2" />
                         </Grid>
                     </views:Expander.Header>
-                    <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="40,40,35,35">
+                    <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="40,160,35,35">
                         <controls:DimensionsEditor Value="{Binding Size}" />
-                        <controls:DimensionsEditor Value="{Binding Corners}" Grid.Row="1" />
+                        <controls:CornersEditor Value="{Binding Corners}" Grid.Row="1" />
+                        <!--<controls:DimensionsEditor Value="{Binding Corners.LeftTop}" Grid.Row="1" />
+                        <controls:DimensionsEditor Value="{Binding Corners.RightTop}" Grid.Row="2" />
+                        <controls:DimensionsEditor Value="{Binding Corners.LeftBottom}" Grid.Row="3" />
+                        <controls:DimensionsEditor Value="{Binding Corners.RightBottom}" Grid.Row="4" />-->
                         <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
                                              SelectedItem="{Binding FillMode}" 
                                              Grid.Row="2" />

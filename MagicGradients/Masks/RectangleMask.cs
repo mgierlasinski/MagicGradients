@@ -10,7 +10,7 @@ namespace MagicGradients.Masks
             typeof(Dimensions), typeof(RectangleMask), Dimensions.Prop(1, 1));
 
         public static readonly BindableProperty CornersProperty = BindableProperty.Create(nameof(Corners),
-            typeof(Dimensions), typeof(RectangleMask), Dimensions.Abs(200, 200));
+            typeof(Corners), typeof(RectangleMask));
 
         public Dimensions Size
         {
@@ -18,9 +18,9 @@ namespace MagicGradients.Masks
             set => SetValue(SizeProperty, value);
         }
 
-        public Dimensions Corners
+        public Corners Corners
         {
-            get => (Dimensions)GetValue(CornersProperty);
+            get => (Corners)GetValue(CornersProperty);
             set => SetValue(CornersProperty, value);
         }
 
@@ -29,6 +29,12 @@ namespace MagicGradients.Masks
             if (!IsActive)
                 return;
 
+            var roundRect = GetRoundRect(context);
+            ClipRoundRect(context, roundRect);
+        }
+
+        private SKRoundRect GetRoundRect(RenderContext context)
+        {
             var width = (int)Size.Width.GetPixels(context.CanvasRect.Width);
             var height = (int)Size.Height.GetPixels(context.CanvasRect.Height);
 
@@ -37,13 +43,13 @@ namespace MagicGradients.Masks
 
             roundRect.SetRectRadii(bounds, new[]
             {
-                GetCornerPoint(Corners, bounds),
-                GetCornerPoint(Corners, bounds),
-                GetCornerPoint(Corners, bounds),
-                GetCornerPoint(Corners, bounds)
+                GetCornerPoint(Corners.LeftTop, bounds),
+                GetCornerPoint(Corners.RightTop, bounds),
+                GetCornerPoint(Corners.LeftBottom, bounds),
+                GetCornerPoint(Corners.RightBottom, bounds)
             });
 
-            ClipRoundRect(context, roundRect);
+            return roundRect;
         }
 
         protected internal void ClipRoundRect(RenderContext context, SKRoundRect roundRect)
