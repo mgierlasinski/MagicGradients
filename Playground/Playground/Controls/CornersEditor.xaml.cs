@@ -27,7 +27,7 @@ namespace Playground.Controls
             ((CornersEditor)bindable).UpdateEditor();
         }
 
-        private void Corner_OnValueChanged(object sender, ValueChangedEventArgs e)
+        private void OnEditorChanged(object sender, ValueChangedEventArgs e)
         {
             UpdateValue();
         }
@@ -39,7 +39,7 @@ namespace Playground.Controls
 
             _isUpdating = true;
 
-            Value = new Corners(LeftTop.Value, RightTop.Value, LeftBottom.Value, RightBottom.Value);
+            Value = new Corners(TopLeft.Value, TopRight.Value, BottomLeft.Value, BottomRight.Value);
 
             _isUpdating = false;
         }
@@ -51,10 +51,10 @@ namespace Playground.Controls
 
             _isUpdating = true;
 
-            LeftTop.Value = Value.LeftTop;
-            RightTop.Value = Value.RightTop;
-            LeftBottom.Value = Value.LeftBottom;
-            RightBottom.Value = Value.RightBottom;
+            TopLeft.Value = Value.TopLeft;
+            TopRight.Value = Value.TopRight;
+            BottomLeft.Value = Value.BottomLeft;
+            BottomRight.Value = Value.BottomRight;
 
             _isUpdating = false;
         }

@@ -43,10 +43,10 @@ namespace MagicGradients.Masks
 
             roundRect.SetRectRadii(bounds, new[]
             {
-                GetCornerPoint(Corners.LeftTop, bounds),
-                GetCornerPoint(Corners.RightTop, bounds),
-                GetCornerPoint(Corners.LeftBottom, bounds),
-                GetCornerPoint(Corners.RightBottom, bounds)
+                GetCornerPoint(Corners.TopLeft, bounds),
+                GetCornerPoint(Corners.TopRight, bounds),
+                GetCornerPoint(Corners.BottomRight, bounds),
+                GetCornerPoint(Corners.BottomLeft, bounds)
             });
 
             return roundRect;

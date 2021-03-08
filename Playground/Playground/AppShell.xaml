@@ -59,6 +59,6 @@
                   FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}}" />
 
     <ShellContent Title="Masks" ContentTemplate="{DataTemplate masks:MasksPage}" 
-                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}}" />
+                  FlyoutIcon="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Mask}}" />
     
 </Shell>

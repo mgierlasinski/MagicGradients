@@ -14,6 +14,12 @@ namespace MagicGradients.Xaml
             value = value.Trim();
 
             var dim = value.Split(new []{',', ' '}, StringSplitOptions.RemoveEmptyEntries);
+
+            if (dim.Length == 1)
+            {
+                return new Dimensions(GetOffset(dim[0], OffsetType.Absolute));
+            }
+
             if (dim.Length == 2)
             {
                 return new Dimensions(

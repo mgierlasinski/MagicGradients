@@ -24,5 +24,8 @@ namespace Playground.Resources.Fonts
         public static string Copy = "\ue910";
         public static string More = "\ue911";
         public static string Brush = "\ue912";
+        public static string Mask = "\ue913";
+        public static string Corner = "\ue914";
+        public static string Arrow = "\ue915";
     }
 }

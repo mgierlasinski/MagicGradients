@@ -13,6 +13,11 @@ namespace MagicGradients
 
         public bool IsZero => Width.Value == 0 && Height.Value == 0;
 
+        public Dimensions(Offset uniformSize) 
+            : this(uniformSize, uniformSize)
+        {
+        }
+
         public Dimensions(Offset width, Offset height)
         {
             Width = width;

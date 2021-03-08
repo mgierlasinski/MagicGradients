@@ -72,7 +72,7 @@
               RowSpacing="0" ColumnSpacing="10">
             <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
             <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Margin="5"
-                         Command="{Binding AddCommand}" StyleClass="BackgroundElement" />
+                         Command="{Binding AddCommand}" BackgroundColor="{StaticResource AccentColor}" />
             <CollectionView ItemsSource="{Binding GradientSource.Gradients}" 
                             SelectedItem="{Binding Gradient}"
                             SelectionMode="Single" 

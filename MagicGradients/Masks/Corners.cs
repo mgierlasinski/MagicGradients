@@ -2,10 +2,10 @@
 {
     public struct Corners
     {
-        public Dimensions LeftTop { get; set; }
-        public Dimensions LeftBottom { get; set; }
-        public Dimensions RightTop { get; set; }
-        public Dimensions RightBottom { get; set; }
+        public Dimensions TopLeft { get; set; }
+        public Dimensions TopRight { get; set; }
+        public Dimensions BottomLeft { get; set; }
+        public Dimensions BottomRight { get; set; }
 
         public Corners(Dimensions uniformSize) 
             : this(uniformSize, uniformSize, uniformSize, uniformSize)
@@ -17,13 +17,13 @@
         {
         }
 
-        public Corners(Dimensions leftTop, Dimensions rightTop, Dimensions rightBottom, Dimensions leftBottom) 
+        public Corners(Dimensions topLeft, Dimensions topRight, Dimensions bottomRight, Dimensions bottomLeft) 
             : this()
         {
-            LeftTop = leftTop;
-            LeftBottom = leftBottom;
-            RightTop = rightTop;
-            RightBottom = rightBottom;
+            TopLeft = topLeft;
+            TopRight = topRight;
+            BottomLeft = bottomLeft;
+            BottomRight = bottomRight;
         }
     }
 }
