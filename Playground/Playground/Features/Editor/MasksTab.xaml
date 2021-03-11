@@ -28,8 +28,8 @@
                         <controls:DimensionsEditor Value="{Binding Corners.RightTop}" Grid.Row="2" />
                         <controls:DimensionsEditor Value="{Binding Corners.LeftBottom}" Grid.Row="3" />
                         <controls:DimensionsEditor Value="{Binding Corners.RightBottom}" Grid.Row="4" />-->
-                        <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
-                                             SelectedItem="{Binding FillMode}" 
+                        <controls:EnumSwitch EnumType="{x:Type masks:Stretch}" 
+                                             SelectedItem="{Binding Stretch}" 
                                              Grid.Row="2" />
                         <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
                                              SelectedItem="{Binding ClipMode}" 
@@ -50,8 +50,8 @@
                     </views:Expander.Header>
                     <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="40,35,35">
                         <controls:DimensionsEditor Value="{Binding Size}" />
-                        <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
-                                             SelectedItem="{Binding FillMode}" 
+                        <controls:EnumSwitch EnumType="{x:Type masks:Stretch}" 
+                                             SelectedItem="{Binding Stretch}" 
                                              Grid.Row="1" />
                         <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
                                              SelectedItem="{Binding ClipMode}" 
@@ -79,8 +79,8 @@
                         <controls:EnumSwitch EnumType="{x:Type FontAttributes}" 
                                              SelectedItem="{Binding FontAttributes}" 
                                              Grid.Row="1" />
-                        <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
-                                             SelectedItem="{Binding FillMode}" 
+                        <controls:EnumSwitch EnumType="{x:Type masks:Stretch}" 
+                                             SelectedItem="{Binding Stretch}" 
                                              Grid.Row="2" />
                         <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
                                              SelectedItem="{Binding ClipMode}" 
@@ -108,7 +108,7 @@
                                 </ContentView.GestureRecognizers>
                                 <magic:GradientView Margin="5">
                                     <magic:GradientView.Mask>
-                                        <masks:PathMask Data="{Binding Data}" FillMode="AspectFit" />
+                                        <masks:PathMask Data="{Binding Data}" Stretch="AspectFit" />
                                     </magic:GradientView.Mask>
                                     <magic:LinearGradient>
                                         <magic:GradientStop Color="{StaticResource AccentColor}" />
@@ -119,8 +119,8 @@
                         </Grid>
                     </views:Expander.Header>
                     <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="35,35">
-                        <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
-                                             SelectedItem="{Binding FillMode}" 
+                        <controls:EnumSwitch EnumType="{x:Type masks:Stretch}" 
+                                             SelectedItem="{Binding Stretch}" 
                                              Grid.Row="0" />
                         <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
                                              SelectedItem="{Binding ClipMode}" 

@@ -1,4 +1,5 @@
-﻿using MagicGradients.Masks;
+﻿using MagicGradients;
+using MagicGradients.Masks;
 using Xamarin.Forms;
 
 namespace Playground.Controls
@@ -20,6 +21,11 @@ namespace Playground.Controls
         public CornersEditor()
         {
             InitializeComponent();
+
+            TopLeft.Value = Dimensions.Prop(0.25d, 0.25d);
+            TopRight.Value = Dimensions.Prop(0.25d, 0.25d);
+            BottomRight.Value = Dimensions.Prop(0.25d, 0.25d);
+            BottomLeft.Value = Dimensions.Prop(0.25d, 0.25d);
         }
 
         private static void OnValueChanged(BindableObject bindable, object oldvalue, object newvalue)

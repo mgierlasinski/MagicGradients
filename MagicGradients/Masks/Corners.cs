@@ -1,7 +1,12 @@
-﻿namespace MagicGradients.Masks
+﻿using Xamarin.Forms;
+
+namespace MagicGradients.Masks
 {
+    [TypeConverter(typeof(CornersTypeConverter))]
     public struct Corners
     {
+        public static Corners Zero { get; } = new Corners(Dimensions.Zero);
+
         public Dimensions TopLeft { get; set; }
         public Dimensions TopRight { get; set; }
         public Dimensions BottomLeft { get; set; }

@@ -2,9 +2,9 @@
 
 namespace MagicGradients.Masks
 {
-    public enum FillMode
+    public enum Stretch
     {
-        Center,
+        None,
         AspectFit,
         AspectFill,
         Fill

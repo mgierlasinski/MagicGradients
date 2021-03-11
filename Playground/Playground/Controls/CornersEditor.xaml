@@ -11,16 +11,8 @@
     <magic:GradientView Margin="0,10">
         <magic:GradientView.Mask>
             <masks:MaskCollection>
-                <masks:RectangleMask>
-                    <masks:RectangleMask.Corners>
-                        <masks:Corners TopLeft="15" TopRight="0" BottomLeft="0" BottomRight="0" />
-                    </masks:RectangleMask.Corners>
-                </masks:RectangleMask>
-                <masks:RectangleMask Size="80%" ClipMode="Exclude">
-                    <masks:RectangleMask.Corners>
-                        <masks:Corners TopLeft="15" TopRight="0" BottomLeft="0" BottomRight="0" />
-                    </masks:RectangleMask.Corners>
-                </masks:RectangleMask>
+                <masks:RectangleMask Corners="15,0,0,0" />
+                <masks:RectangleMask Corners="15,0,0,0" Size="80%" ClipMode="Exclude" />
             </masks:MaskCollection>
         </magic:GradientView.Mask>
         <magic:LinearGradient Angle="315">
@@ -34,16 +26,8 @@
     <magic:GradientView Grid.Row="1" Margin="0,10">
         <magic:GradientView.Mask>
             <masks:MaskCollection>
-                <masks:RectangleMask>
-                    <masks:RectangleMask.Corners>
-                        <masks:Corners TopLeft="0" TopRight="15" BottomLeft="0" BottomRight="0" />
-                    </masks:RectangleMask.Corners>
-                </masks:RectangleMask>
-                <masks:RectangleMask Size="80%" ClipMode="Exclude">
-                    <masks:RectangleMask.Corners>
-                        <masks:Corners TopLeft="0" TopRight="15" BottomLeft="0" BottomRight="0" />
-                    </masks:RectangleMask.Corners>
-                </masks:RectangleMask>
+                <masks:RectangleMask Corners="0,15,0,0" />
+                <masks:RectangleMask Corners="0,15,0,0" Size="80%" ClipMode="Exclude" />
             </masks:MaskCollection>
         </magic:GradientView.Mask>
         <magic:LinearGradient Angle="45">
@@ -57,16 +41,8 @@
     <magic:GradientView Grid.Row="2" Margin="0,10">
         <magic:GradientView.Mask>
             <masks:MaskCollection>
-                <masks:RectangleMask>
-                    <masks:RectangleMask.Corners>
-                        <masks:Corners TopLeft="0" TopRight="0" BottomLeft="0" BottomRight="15" />
-                    </masks:RectangleMask.Corners>
-                </masks:RectangleMask>
-                <masks:RectangleMask Size="80%" ClipMode="Exclude">
-                    <masks:RectangleMask.Corners>
-                        <masks:Corners TopLeft="0" TopRight="0" BottomLeft="0" BottomRight="15" />
-                    </masks:RectangleMask.Corners>
-                </masks:RectangleMask>
+                <masks:RectangleMask Corners="0,0,15,0" />
+                <masks:RectangleMask Corners="0,0,15,0" Size="80%" ClipMode="Exclude" />
             </masks:MaskCollection>
         </magic:GradientView.Mask>
         <magic:LinearGradient Angle="135">
@@ -80,16 +56,8 @@
     <magic:GradientView Grid.Row="3" Margin="0,10">
         <magic:GradientView.Mask>
             <masks:MaskCollection>
-                <masks:RectangleMask>
-                    <masks:RectangleMask.Corners>
-                        <masks:Corners TopLeft="0" TopRight="0" BottomLeft="15" BottomRight="0" />
-                    </masks:RectangleMask.Corners>
-                </masks:RectangleMask>
-                <masks:RectangleMask Size="80%" ClipMode="Exclude">
-                    <masks:RectangleMask.Corners>
-                        <masks:Corners TopLeft="0" TopRight="0" BottomLeft="15" BottomRight="0" />
-                    </masks:RectangleMask.Corners>
-                </masks:RectangleMask>
+                <masks:RectangleMask Corners="0,0,0,15" />
+                <masks:RectangleMask Corners="0,0,0,15" Size="80%" ClipMode="Exclude" />
             </masks:MaskCollection>
         </magic:GradientView.Mask>
         <magic:LinearGradient Angle="225">

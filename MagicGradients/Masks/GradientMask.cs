@@ -10,8 +10,8 @@ namespace MagicGradients.Masks
         public static readonly BindableProperty ClipModeProperty = BindableProperty.Create(nameof(ClipMode),
             typeof(ClipMode), typeof(GradientMask), ClipMode.Include);
 
-        public static readonly BindableProperty FillModeProperty = BindableProperty.Create(nameof(FillMode),
-            typeof(FillMode), typeof(GradientMask), FillMode.Center);
+        public static readonly BindableProperty StretchProperty = BindableProperty.Create(nameof(Stretch),
+            typeof(Stretch), typeof(GradientMask), Stretch.None);
 
         public static readonly BindableProperty IsActiveProperty = BindableProperty.Create(nameof(IsActive),
             typeof(bool), typeof(GradientMask), true);
@@ -22,10 +22,10 @@ namespace MagicGradients.Masks
             set => SetValue(ClipModeProperty, value);
         }
 
-        public FillMode FillMode
+        public Stretch Stretch
         {
-            get => (FillMode)GetValue(FillModeProperty);
-            set => SetValue(FillModeProperty, value);
+            get => (Stretch)GetValue(StretchProperty);
+            set => SetValue(StretchProperty, value);
         }
 
         public bool IsActive
@@ -42,7 +42,7 @@ namespace MagicGradients.Masks
         {
             context.Canvas.Translate((float)context.RenderRect.Width / 2, (float)context.RenderRect.Height / 2);
 
-            if (FillMode == FillMode.Center)
+            if (Stretch == Stretch.None)
             {
                 var scaleX = (float)context.RenderRect.Width / context.CanvasRect.Width;
                 var scaleY = (float)context.RenderRect.Height / context.CanvasRect.Height;
@@ -57,13 +57,13 @@ namespace MagicGradients.Masks
                 var scaleX = context.RenderRect.Width / bounds.Width;
                 var scaleY = context.RenderRect.Height / bounds.Height;
 
-                if (FillMode == FillMode.AspectFit)
+                if (Stretch == Stretch.AspectFit)
                     context.Canvas.Scale(Math.Min(scaleX, scaleY));
 
-                if (FillMode == FillMode.AspectFill)
+                if (Stretch == Stretch.AspectFill)
                     context.Canvas.Scale(Math.Max(scaleX, scaleY));
 
-                if (FillMode == FillMode.Fill)
+                if (Stretch == Stretch.Fill)
                     context.Canvas.Scale(scaleX, scaleY);
             }
 
