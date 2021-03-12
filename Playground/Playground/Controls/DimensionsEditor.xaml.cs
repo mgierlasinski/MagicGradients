@@ -4,8 +4,12 @@ using Xamarin.Forms;
 
 namespace Playground.Controls
 {
-    public partial class DimensionsEditor : Grid
+    public partial class DimensionsEditor
     {
+        private bool _isUpdating;
+
+        public event EventHandler<ValueChangedEventArgs> ValueChanged;
+
         public static readonly BindableProperty ValueProperty = BindableProperty.Create(nameof(Value),
             typeof(Dimensions), typeof(DimensionsEditor), Dimensions.Prop(1,1), BindingMode.TwoWay,
             propertyChanged: OnValueChanged);
@@ -26,9 +30,11 @@ namespace Playground.Controls
             SizeHeight.Text = "100";
         }
 
-        private static void OnValueChanged(BindableObject bindable, object oldvalue, object newvalue)
+        private static void OnValueChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            ((DimensionsEditor)bindable).UpdateEditor();
+            var editor = (DimensionsEditor) bindable;
+            editor.UpdateEditor();
+            editor.ValueChanged?.Invoke(editor, new ValueChangedEventArgs(0, 0));
         }
 
         private void SizeScale_OnValueChanged(object sender, ValueChangedEventArgs e)
@@ -55,6 +61,11 @@ namespace Playground.Controls
 
         private void UpdateValue()
         {
+            if (_isUpdating)
+                return;
+
+            _isUpdating = true;
+            var old = Value;
             if ((OffsetType)Type.SelectedItem == OffsetType.Absolute)
             {
                 if (!double.TryParse(SizeWidth.Text, out var width))
@@ -69,13 +80,20 @@ namespace Playground.Controls
             {
                 Value = Dimensions.Prop(SizeScale.Value, SizeScale.Value);
             }
+
+            
+            _isUpdating = false;
         }
 
         private void UpdateEditor()
         {
+            if (_isUpdating)
+                return;
+
             if (Value.IsZero)
                 return;
 
+            _isUpdating = true;
             Type.SelectedItem = Value.Width.Type;
 
             if (Value.Width.Type == OffsetType.Absolute)
@@ -87,6 +105,8 @@ namespace Playground.Controls
             {
                 SizeScale.Value = Value.Width.Value;
             }
+
+            _isUpdating = false;
         }
     }
 }

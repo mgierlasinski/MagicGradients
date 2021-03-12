@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+      xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+      xmlns:masks="clr-namespace:MagicGradients.Masks;assembly=MagicGradients"
+      x:Class="Playground.Controls.CornersEditor"
+      RowDefinitions="40,40,40,40" ColumnDefinitions="20,*" 
+      RowSpacing="0" ColumnSpacing="15">
+
+    <magic:GradientView Margin="0,10">
+        <magic:GradientView.Mask>
+            <masks:MaskCollection>
+                <masks:RectangleMask Corners="15,0,0,0" />
+                <masks:RectangleMask Corners="15,0,0,0" Size="80%" ClipMode="Exclude" />
+            </masks:MaskCollection>
+        </magic:GradientView.Mask>
+        <magic:LinearGradient Angle="315">
+            <magic:GradientStop Color="#FFCC70" />
+            <magic:GradientStop Color="#C850C0" />
+            <magic:GradientStop Color="#4158D0" />
+        </magic:LinearGradient>
+    </magic:GradientView>
+    <controls:DimensionsEditor x:Name="TopLeft" ValueChanged="OnEditorChanged" Grid.Column="1" />
+
+    <magic:GradientView Grid.Row="1" Margin="0,10">
+        <magic:GradientView.Mask>
+            <masks:MaskCollection>
+                <masks:RectangleMask Corners="0,15,0,0" />
+                <masks:RectangleMask Corners="0,15,0,0" Size="80%" ClipMode="Exclude" />
+            </masks:MaskCollection>
+        </magic:GradientView.Mask>
+        <magic:LinearGradient Angle="45">
+            <magic:GradientStop Color="#FFCC70" />
+            <magic:GradientStop Color="#C850C0" />
+            <magic:GradientStop Color="#4158D0" />
+        </magic:LinearGradient>
+    </magic:GradientView>
+    <controls:DimensionsEditor x:Name="TopRight" ValueChanged="OnEditorChanged" Grid.Row="1" Grid.Column="1" />
+
+    <magic:GradientView Grid.Row="2" Margin="0,10">
+        <magic:GradientView.Mask>
+            <masks:MaskCollection>
+                <masks:RectangleMask Corners="0,0,15,0" />
+                <masks:RectangleMask Corners="0,0,15,0" Size="80%" ClipMode="Exclude" />
+            </masks:MaskCollection>
+        </magic:GradientView.Mask>
+        <magic:LinearGradient Angle="135">
+            <magic:GradientStop Color="#FFCC70" />
+            <magic:GradientStop Color="#C850C0" />
+            <magic:GradientStop Color="#4158D0" />
+        </magic:LinearGradient>
+    </magic:GradientView>
+    <controls:DimensionsEditor x:Name="BottomLeft" ValueChanged="OnEditorChanged" Grid.Row="2" Grid.Column="1" />
+
+    <magic:GradientView Grid.Row="3" Margin="0,10">
+        <magic:GradientView.Mask>
+            <masks:MaskCollection>
+                <masks:RectangleMask Corners="0,0,0,15" />
+                <masks:RectangleMask Corners="0,0,0,15" Size="80%" ClipMode="Exclude" />
+            </masks:MaskCollection>
+        </magic:GradientView.Mask>
+        <magic:LinearGradient Angle="225">
+            <magic:GradientStop Color="#FFCC70" />
+            <magic:GradientStop Color="#C850C0" />
+            <magic:GradientStop Color="#4158D0" />
+        </magic:LinearGradient>
+    </magic:GradientView>
+    <controls:DimensionsEditor x:Name="BottomRight" ValueChanged="OnEditorChanged" Grid.Row="3" Grid.Column="1" />
+</Grid>

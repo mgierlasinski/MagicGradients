@@ -1,8 +1,6 @@
 ﻿using MagicGradients;
 using MagicGradients.Masks;
 using Playground.ViewModels;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -13,14 +11,11 @@ namespace Playground.Features.Editor.Handlers
     {
         private readonly ShapePicker _shapePicker;
 
+        public RectangleMask RectangleMask { get; }
         public EllipseMask EllipseMask { get; }
         public TextMask TextMask { get; }
         public PathMask PathMask { get; }
         public MaskCollection Collection { get; }
-
-        public FillMode[] FillModes { get; }
-        public ClipMode[] ClipModes { get; }
-        public FontAttributes[] FontAttributes { get; }
 
         public ICommand ShowPickerCommand { get; }
 
@@ -28,11 +23,13 @@ namespace Playground.Features.Editor.Handlers
         {
             _shapePicker = new ShapePicker();
 
-            FillModes = Enum.GetValues(typeof(FillMode)).Cast<FillMode>().ToArray();
-            ClipModes = Enum.GetValues(typeof(ClipMode)).Cast<ClipMode>().ToArray();
-            FontAttributes = Enum.GetValues(typeof(FontAttributes)).Cast<FontAttributes>().ToArray();
-
             EllipseMask = new EllipseMask { IsActive = false };
+
+            RectangleMask = new RectangleMask
+            {
+                IsActive = false,
+                Corners = new Corners(Dimensions.Abs(50, 50))
+            };
 
             TextMask = new TextMask
             {
@@ -51,7 +48,7 @@ namespace Playground.Features.Editor.Handlers
             {
                 Masks = new GradientElements<GradientMask>
                 {
-                    EllipseMask, TextMask, PathMask
+                    RectangleMask, EllipseMask, TextMask, PathMask
                 }
             };
 

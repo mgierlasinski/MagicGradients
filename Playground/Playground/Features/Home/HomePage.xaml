@@ -63,7 +63,7 @@
                 </mtoolkit:MagicButton>
                 <mtoolkit:MagicButton Command="{Binding MasksCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
-                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White, Size=50}" 
+                        <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Mask}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Masks" HorizontalOptions="Center" />
                     </StackLayout>

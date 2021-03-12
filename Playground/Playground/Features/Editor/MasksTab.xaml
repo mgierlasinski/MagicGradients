@@ -11,6 +11,33 @@
              x:Class="Playground.Features.Editor.MasksTab"
              x:DataType="editor:GradientEditorViewModel">
     <StackLayout.Resources>
+        <DataTemplate x:Key="RectangleTemplate">
+            <Frame Style="{StaticResource BorderFrame}" Padding="10" x:DataType="masks:RectangleMask">
+                <views:Expander>
+                    <views:Expander.Header>
+                        <Grid ColumnDefinitions="Auto,*,30" RowDefinitions="40">
+                            <CheckBox IsChecked="{Binding IsActive}" />
+                            <Label Text="Rectangle" FontSize="16" VerticalOptions="Center" Grid.Column="1" />
+                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Arrow}}" Grid.Column="2" />
+                        </Grid>
+                    </views:Expander.Header>
+                    <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="40,160,35,35">
+                        <controls:DimensionsEditor Value="{Binding Size}" />
+                        <controls:CornersEditor Value="{Binding Corners}" Grid.Row="1" />
+                        <!--<controls:DimensionsEditor Value="{Binding Corners.LeftTop}" Grid.Row="1" />
+                        <controls:DimensionsEditor Value="{Binding Corners.RightTop}" Grid.Row="2" />
+                        <controls:DimensionsEditor Value="{Binding Corners.LeftBottom}" Grid.Row="3" />
+                        <controls:DimensionsEditor Value="{Binding Corners.RightBottom}" Grid.Row="4" />-->
+                        <controls:EnumSwitch EnumType="{x:Type masks:Stretch}" 
+                                             SelectedItem="{Binding Stretch}" 
+                                             Grid.Row="2" />
+                        <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
+                                             SelectedItem="{Binding ClipMode}" 
+                                             Grid.Row="3" />
+                    </Grid>
+                </views:Expander>
+            </Frame>
+        </DataTemplate>
         <DataTemplate x:Key="EllipseTemplate">
             <Frame Style="{StaticResource BorderFrame}" Padding="10" x:DataType="masks:EllipseMask">
                 <views:Expander>
@@ -18,13 +45,13 @@
                         <Grid ColumnDefinitions="Auto,*,30" RowDefinitions="40">
                             <CheckBox IsChecked="{Binding IsActive}" />
                             <Label Text="Ellipse" FontSize="16" VerticalOptions="Center" Grid.Column="1" />
-                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="2" />
+                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Arrow}}" Grid.Column="2" />
                         </Grid>
                     </views:Expander.Header>
                     <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="40,35,35">
                         <controls:DimensionsEditor Value="{Binding Size}" />
-                        <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
-                                             SelectedItem="{Binding FillMode}" 
+                        <controls:EnumSwitch EnumType="{x:Type masks:Stretch}" 
+                                             SelectedItem="{Binding Stretch}" 
                                              Grid.Row="1" />
                         <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
                                              SelectedItem="{Binding ClipMode}" 
@@ -41,7 +68,7 @@
                             <CheckBox IsChecked="{Binding IsActive}" />
                             <Label Text="Text" FontSize="16" VerticalOptions="Center" Grid.Column="1" />
                             <Entry Text="{Binding Text}" Placeholder="Enter text" Grid.Column="2" />
-                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="3" />
+                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Arrow}}" Grid.Column="3" />
                         </Grid>
                     </views:Expander.Header>
                     <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="35,35,35,35">
@@ -52,8 +79,8 @@
                         <controls:EnumSwitch EnumType="{x:Type FontAttributes}" 
                                              SelectedItem="{Binding FontAttributes}" 
                                              Grid.Row="1" />
-                        <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
-                                             SelectedItem="{Binding FillMode}" 
+                        <controls:EnumSwitch EnumType="{x:Type masks:Stretch}" 
+                                             SelectedItem="{Binding Stretch}" 
                                              Grid.Row="2" />
                         <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
                                              SelectedItem="{Binding ClipMode}" 
@@ -81,19 +108,19 @@
                                 </ContentView.GestureRecognizers>
                                 <magic:GradientView Margin="5">
                                     <magic:GradientView.Mask>
-                                        <masks:PathMask Data="{Binding Data}" FillMode="AspectFit" />
+                                        <masks:PathMask Data="{Binding Data}" Stretch="AspectFit" />
                                     </magic:GradientView.Mask>
                                     <magic:LinearGradient>
                                         <magic:GradientStop Color="{StaticResource AccentColor}" />
                                     </magic:LinearGradient>
                                 </magic:GradientView>
                             </ContentView>
-                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Grid.Column="3" />
+                            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Arrow}}" Grid.Column="3" />
                         </Grid>
                     </views:Expander.Header>
                     <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="35,35">
-                        <controls:EnumSwitch EnumType="{x:Type masks:FillMode}" 
-                                             SelectedItem="{Binding FillMode}" 
+                        <controls:EnumSwitch EnumType="{x:Type masks:Stretch}" 
+                                             SelectedItem="{Binding Stretch}" 
                                              Grid.Row="0" />
                         <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
                                              SelectedItem="{Binding ClipMode}" 
@@ -104,6 +131,7 @@
         </DataTemplate>
         <handlers:MaskTemplateSelector 
             x:Key="MaskTemplateSelector" 
+            RectangleTemplate="{StaticResource RectangleTemplate}"
             EllipseTemplate="{StaticResource EllipseTemplate}"
             TextTemplate="{StaticResource TextTemplate}"
             PathTemplate="{StaticResource PathTemplate}" />

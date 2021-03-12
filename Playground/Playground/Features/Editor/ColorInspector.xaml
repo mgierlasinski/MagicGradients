@@ -66,7 +66,7 @@
                                     HorizontalOptions="FillAndExpand" Grid.Column="0" />
                 <ImageButton Clicked="RemoveColor_Clicked" Grid.Column="1" StyleClass="BackgroundElement"
                              Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Delete}}" />
-                <ImageButton Clicked="AddColor_Clicked" Grid.Column="2" StyleClass="BackgroundElement"
+                <ImageButton Clicked="AddColor_Clicked" Grid.Column="2" BackgroundColor="{StaticResource AccentColor}"
                              Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" />
                 <controls:ColorEditor Value="{Binding SelectedStop.Color}" Grid.Row="1" Grid.ColumnSpan="3" />
                 <colorPicker:ColorWheel Grid.Row="2" Grid.ColumnSpan="3"

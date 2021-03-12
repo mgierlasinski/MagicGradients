@@ -48,7 +48,15 @@ namespace MagicGradients.Masks
             if (!IsActive)
                 return;
 
-            var textPaint = new SKPaint
+            using var textPaint = GetTextPaint();
+            using var textPath = textPaint.GetTextPath(Text, 0, 0);
+
+            ClipPath(context, textPath);
+        }
+
+        private SKPaint GetTextPaint()
+        {
+            return new SKPaint
             {
                 TextSize = (float)FontSize,
                 Typeface = SKTypeface.FromFamilyName(FontFamily, FontAttributes switch
@@ -59,12 +67,6 @@ namespace MagicGradients.Masks
                 }),
                 IsAntialias = true
             };
-
-            using (textPaint)
-            using (var textPath = textPaint.GetTextPath(Text, 0, 0))
-            {
-                ClipPath(context, textPath);
-            }
         }
     }
 }
