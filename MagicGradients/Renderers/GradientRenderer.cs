@@ -1,6 +1,8 @@
-﻿using SkiaSharp;
+﻿using MagicGradients.Builder;
+using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
+using System.Linq;
 using Xamarin.Forms;
 using static MagicGradients.BackgroundRepeat;
 
@@ -70,7 +72,7 @@ namespace MagicGradients.Renderers
                 foreach (var gradient in _control.GradientSource.GetGradients())
                 {
                     if (gradient.Shader == null)
-                        gradient.PrepareShader((BindableObject)_control);
+                        gradient.InstantiateShader((BindableObject)_control);
 
                     gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
                     Render(context, gradient.Shader);
@@ -88,9 +90,15 @@ namespace MagicGradients.Renderers
             }
             else
             {
-                _control.Mask?.Clip(context);
-                context.Canvas.DrawRect(context.RenderRect, context.Paint);
+                RenderSingle(context);
             }
+        }
+
+        private void RenderSingle(RenderContext context)
+        {
+            _control.Mask?.Clip(context);
+            context.Canvas.DrawRect(context.RenderRect, context.Paint);
+            //DrawBorder(context);
         }
 
         private void RenderTiled(RenderContext context)
@@ -115,23 +123,28 @@ namespace MagicGradients.Renderers
 
                     context.Canvas.Save();
                     context.Canvas.Translate(point);
-                    _control.Mask?.Clip(context);
-                    context.Canvas.DrawRect(context.RenderRect, context.Paint);
-                    //DebugTile(context);
+                    RenderSingle(context);
                     context.Canvas.Restore();
                 }
             }
         }
 
-        private void DebugTile(RenderContext context)
+        private void DrawBorder(RenderContext context)
         {
-            using (var paint = new SKPaint())
+            using var paint = new SKPaint
             {
-                paint.StrokeWidth = 2;
-                paint.Style = SKPaintStyle.Stroke;
-                paint.Color = SKColors.Yellow;
-                context.Canvas.DrawRect(context.RenderRect, paint);
-            }
+                StrokeWidth = 10, 
+                Style = SKPaintStyle.Stroke, 
+                Color = SKColors.Yellow
+            };
+
+            var gradient = new GradientBuilder().AddCssGradient("linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)").Build().First();
+            gradient.InstantiateShader((BindableObject)_control);
+            gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
+
+            paint.Shader = gradient.Shader.Create(context);
+
+            context.Canvas.DrawRect(context.RenderRect, paint);
         }
     }
 }

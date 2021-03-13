@@ -44,7 +44,7 @@ namespace MagicGradients
             Stops.SetInheritedBindingContext(BindingContext);
         }
 
-        public virtual void PrepareShader(BindableObject view)
+        public virtual void InstantiateShader(BindableObject view)
         {
 
         }
