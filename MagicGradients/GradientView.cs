@@ -15,7 +15,7 @@ namespace MagicGradients
             StyleSheets.RegisterStyle("background-repeat", typeof(GradientView), nameof(GradientRepeatProperty));
         }
 
-        public GradientRenderer Renderer { get; protected set; }
+        public GradientRenderer<GradientView> Renderer { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -48,7 +48,7 @@ namespace MagicGradients
 
         public GradientView()
         {
-            Renderer = new GradientRenderer(this);
+            Renderer = new GradientRenderer<GradientView>(this);
         }
 
         protected override void OnBindingContextChanged()

@@ -8,11 +8,11 @@ using static MagicGradients.BackgroundRepeat;
 
 namespace MagicGradients.Renderers
 {
-    public class GradientRenderer
+    public class GradientRenderer<T> where T : VisualElement, IGradientControl
     {
-        private readonly IGradientControl _control;
+        private readonly T _control;
 
-        public GradientRenderer(IGradientControl control)
+        public GradientRenderer(T control)
         {
             _control = control;
         }
@@ -63,6 +63,8 @@ namespace MagicGradients.Renderers
             {
                 context.RenderRect = context.CanvasRect;
             }
+
+            context.PixelScaling = context.CanvasRect.Width / _control.Width;
         }
 
         public void PaintSurface(RenderContext context)
@@ -72,7 +74,7 @@ namespace MagicGradients.Renderers
                 foreach (var gradient in _control.GradientSource.GetGradients())
                 {
                     if (gradient.Shader == null)
-                        gradient.InstantiateShader((BindableObject)_control);
+                        gradient.InstantiateShader(_control);
 
                     gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
                     Render(context, gradient.Shader);
@@ -139,7 +141,7 @@ namespace MagicGradients.Renderers
             };
 
             var gradient = new GradientBuilder().AddCssGradient("linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)").Build().First();
-            gradient.InstantiateShader((BindableObject)_control);
+            gradient.InstantiateShader(_control);
             gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
 
             paint.Shader = gradient.Shader.Create(context);
