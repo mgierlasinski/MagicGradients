@@ -22,21 +22,20 @@
         </tabs:TabHostView>
         <tabs:ViewSwitcher x:Name="Switcher" SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}" Grid.Row="1">
             <Grid RowDefinitions="30*,40*,30*">
-                <Grid ColumnDefinitions="*,*" ColumnSpacing="10" WidthRequest="600" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="10" WidthRequest="310" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Center">
                     <magic:GradientView StyleClass="textInclude" HorizontalOptions="Fill">
                         <magic:GradientView.Mask>
                             <masks:MaskCollection>
                                 <masks:RectangleMask Corners="50,0,0,0" />
-                                <!--<masks:RectangleMask Corners="50,0,0,0" Size="96%,90%" ClipMode="Exclude" />-->
-                                <masks:RectangleMask Corners="50,0,0,0" Size="285,90" ClipMode="Exclude" />
+                                <masks:RectangleMask Corners="50,0,0,0" Size="140,90" ClipMode="Exclude" />
                             </masks:MaskCollection>
                         </magic:GradientView.Mask>
                     </magic:GradientView>
-                    <magic:GradientView Mask="{masks:Text 'Magic', FontSize=80, FontAttributes=Bold}" StyleClass="textInclude" HorizontalOptions="Fill" />
+                    <magic:GradientView Mask="{masks:Text 'Magic', FontAttributes=Bold, Stretch=AspectFit}" Margin="30" StyleClass="textInclude" HorizontalOptions="Fill" />
                     <magic:GradientView StyleClass="textExclude" HorizontalOptions="Fill" Grid.Column="1">
                         <magic:GradientView.Mask>
                             <masks:MaskCollection>
-                                <masks:TextMask Text="Gradients" FontSize="80" ClipMode="Exclude" />
+                                <masks:TextMask Text="Gradients" FontSize="50" ClipMode="Exclude" />
                                 <masks:RectangleMask Corners="0,0,50,0" />
                             </masks:MaskCollection>
                         </magic:GradientView.Mask>

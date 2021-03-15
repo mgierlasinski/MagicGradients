@@ -12,7 +12,7 @@ namespace MagicGradients.Masks
         public FontAttributes FontAttributes { get; set; }
 
         [TypeConverter(typeof(FontSizeConverter))]
-        public double FontSize { get; set; }
+        public double FontSize { get; set; } = TextMask.DefaultFontSize;
 
         public TextMask ProvideValue(IServiceProvider serviceProvider)
         {
