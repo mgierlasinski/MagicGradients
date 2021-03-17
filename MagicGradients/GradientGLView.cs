@@ -8,7 +8,7 @@ namespace MagicGradients
     [ContentProperty(nameof(GradientSource))]
     public class GradientGLView : SKGLView, IGradientControl, IGradientVisualElement
     {
-        public GradientRenderer Renderer { get; protected set; }
+        public GradientRenderer<GradientGLView> Renderer { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -41,7 +41,7 @@ namespace MagicGradients
 
         public GradientGLView()
         {
-            Renderer = new GradientRenderer(this);
+            Renderer = new GradientRenderer<GradientGLView>(this);
         }
 
         protected override void OnBindingContextChanged()

@@ -35,18 +35,18 @@ namespace MagicGradients.Masks
 
         private SKRoundRect GetRoundRect(RenderContext context)
         {
-            var width = (int)Size.Width.GetPixels(context.CanvasRect.Width);
-            var height = (int)Size.Height.GetPixels(context.CanvasRect.Height);
+            var width = (int)Size.Width.GetDrawPixels(context.CanvasRect.Width, context.PixelScaling);
+            var height = (int)Size.Height.GetDrawPixels(context.CanvasRect.Height, context.PixelScaling);
 
             var bounds = new SKRectI(0, 0, width, height);
             var roundRect = new SKRoundRect();
 
             roundRect.SetRectRadii(bounds, new[]
             {
-                GetCornerPoint(Corners.TopLeft, bounds),
-                GetCornerPoint(Corners.TopRight, bounds),
-                GetCornerPoint(Corners.BottomRight, bounds),
-                GetCornerPoint(Corners.BottomLeft, bounds)
+                GetCornerPoint(Corners.TopLeft, bounds, context.PixelScaling),
+                GetCornerPoint(Corners.TopRight, bounds, context.PixelScaling),
+                GetCornerPoint(Corners.BottomRight, bounds, context.PixelScaling),
+                GetCornerPoint(Corners.BottomLeft, bounds, context.PixelScaling)
             });
 
             return roundRect;
@@ -61,11 +61,11 @@ namespace MagicGradients.Masks
             }
         }
 
-        private SKPoint GetCornerPoint(Dimensions cornerSize, SKRectI bounds)
+        private SKPoint GetCornerPoint(Dimensions cornerSize, SKRectI bounds, double pixelScaling)
         {
             return new SKPoint(
-                (int)cornerSize.Width.GetPixels(bounds.Width), 
-                (int)cornerSize.Height.GetPixels(bounds.Height));
+                (int)cornerSize.Width.GetDrawPixels(bounds.Width, pixelScaling), 
+                (int)cornerSize.Height.GetDrawPixels(bounds.Height, pixelScaling));
         }
     }
 }

@@ -8,5 +8,6 @@ namespace MagicGradients.Renderers
         public SKPaint Paint { get; set; }
         public SKRectI CanvasRect { get; set; }
         public SKRectI RenderRect { get; set; }
+        public double PixelScaling { get; set; }
     }
 }
