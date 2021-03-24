@@ -3,8 +3,11 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Animation
 {
+    [Obsolete("Use AnimateBehavior instead")]
+    public class Animate : AnimateBehavior { }
+
     [ContentProperty(nameof(Animation))]
-    public class Animate : Behavior<VisualElement>
+    public class AnimateBehavior : Behavior<VisualElement>
     {
         private static VisualElement _associatedObject;
 

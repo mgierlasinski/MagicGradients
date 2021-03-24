@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
-             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:magic="http://magic.com/schemas/gradients"
              xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
