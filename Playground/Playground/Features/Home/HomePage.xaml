@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mtoolkit="clr-namespace:MagicGradients.Toolkit.Controls;assembly=MagicGradients.Toolkit"
+             xmlns:magic="http://magic.com/schemas/gradients"
+             xmlns:toolkit="http://magic.com/schemas/toolkit"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
-             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              x:Class="Playground.Features.Home.HomePage"
              Title="Home"
@@ -23,51 +23,51 @@
                 <controls:MenuSection>
                     <Label Text="Create" Style="{StaticResource HeaderStyle}" />
                 </controls:MenuSection>
-                <mtoolkit:MagicButton Command="{Binding LinearCommand}" StyleClass="threeColumn">
+                <toolkit:MagicButton Command="{Binding LinearCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Gradient}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Linear" HorizontalOptions="Center" />
                     </StackLayout>
-                </mtoolkit:MagicButton>
-                <mtoolkit:MagicButton Command="{Binding RadialCommand}" StyleClass="threeColumn">
+                </toolkit:MagicButton>
+                <toolkit:MagicButton Command="{Binding RadialCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Radial}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Radial" HorizontalOptions="Center" />
                     </StackLayout>
-                </mtoolkit:MagicButton>
-                <mtoolkit:MagicButton Command="{Binding CssCommand}" StyleClass="threeColumn">
+                </toolkit:MagicButton>
+                <toolkit:MagicButton Command="{Binding CssCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}"/>
                         <Label Text="CSS" HorizontalOptions="Center" />
                     </StackLayout>
-                </mtoolkit:MagicButton>
+                </toolkit:MagicButton>
                 <controls:MenuSection>
                     <Label Text="Discover" Style="{StaticResource HeaderStyle}" />
                 </controls:MenuSection>
-                <mtoolkit:MagicButton Command="{Binding GalleryCommand}" StyleClass="threeColumn">
+                <toolkit:MagicButton Command="{Binding GalleryCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Gallery}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Gradient Gallery" HorizontalOptions="Center" />
                     </StackLayout>
-                </mtoolkit:MagicButton>
-                <mtoolkit:MagicButton Command="{Binding AnimationsCommand}" StyleClass="threeColumn">
+                </toolkit:MagicButton>
+                <toolkit:MagicButton Command="{Binding AnimationsCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Bolt}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Animations" HorizontalOptions="Center" />
                     </StackLayout>
-                </mtoolkit:MagicButton>
-                <mtoolkit:MagicButton Command="{Binding MasksCommand}" StyleClass="threeColumn">
+                </toolkit:MagicButton>
+                <toolkit:MagicButton Command="{Binding MasksCommand}" StyleClass="threeColumn">
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Mask}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
                         <Label Text="Masks" HorizontalOptions="Center" />
                     </StackLayout>
-                </mtoolkit:MagicButton>
+                </toolkit:MagicButton>
             </FlexLayout>
         </ScrollView>
     </Grid>

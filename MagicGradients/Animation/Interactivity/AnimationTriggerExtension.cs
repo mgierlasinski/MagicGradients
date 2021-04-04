@@ -4,8 +4,11 @@ using Xamarin.Forms.Xaml;
 
 namespace MagicGradients.Animation
 {
+    [Obsolete("Use AnimationTrigger instead")]
+    public class AnimateTrigger : AnimationTriggerExtension { }
+
     [ContentProperty(nameof(Animation))]
-    public class AnimateTrigger : IMarkupExtension<TriggerBase>
+    public class AnimationTriggerExtension : IMarkupExtension<TriggerBase>
     {
         public Timeline Animation { get; set; }
         public BindingBase IsRunning { get; set; }
