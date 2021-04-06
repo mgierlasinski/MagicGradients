@@ -6,6 +6,9 @@ namespace Playground
     {
         public App()
         {
+            var _ = new MagicGradients.LinearGradient();
+            var __ = new MagicGradients.Toolkit.Controls.MagicButton();
+
             Device.SetFlags(new[]
             {
                 "Shapes_Experimental", 
