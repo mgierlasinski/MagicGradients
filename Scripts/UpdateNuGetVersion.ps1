@@ -29,6 +29,7 @@ Function Update-AllNuGetVersions{
         )
         
         Update-NuGetVersion $Version '..\MagicGradients\MagicGradients.csproj';
+        #Update-NuGetVersion $Version '..\MagicGradients.Toolkit\MagicGradients.Toolkit.csproj';
 }
 
 Update-AllNuGetVersions
