@@ -6,8 +6,7 @@ namespace Playground
     {
         public App()
         {
-            var _ = new MagicGradients.LinearGradient();
-            var __ = new MagicGradients.Toolkit.Controls.MagicButton();
+            MagicGradients.Toolkit.Initializer.Init();
 
             Device.SetFlags(new[]
             {
