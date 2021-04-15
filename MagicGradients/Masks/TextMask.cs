@@ -58,15 +58,18 @@ namespace MagicGradients.Masks
 
         private SKPaint GetTextPaint()
         {
+            var isBold = (FontAttributes & FontAttributes.Bold) == FontAttributes.Bold;
+            var isItalic = (FontAttributes & FontAttributes.Italic) == FontAttributes.Italic;
+
+            var fontStyle = isBold && isItalic ? SKFontStyle.BoldItalic 
+                : isBold ? SKFontStyle.Bold 
+                : isItalic ? SKFontStyle.Italic : 
+                SKFontStyle.Normal;
+
             return new SKPaint
             {
                 TextSize = (float)FontSize,
-                Typeface = SKTypeface.FromFamilyName(FontFamily, FontAttributes switch
-                {
-                    FontAttributes.Bold => SKFontStyle.Bold,
-                    FontAttributes.Italic => SKFontStyle.Italic,
-                    _ => SKFontStyle.Normal
-                }),
+                Typeface = SKTypeface.FromFamilyName(FontFamily, fontStyle),
                 IsAntialias = true
             };
         }

@@ -30,7 +30,7 @@
                             </magic:MaskCollection>
                         </magic:GradientView.Mask>
                     </magic:GradientView>
-                    <magic:GradientView Mask="{magic:Text 'Magic', FontAttributes=Bold, Stretch=AspectFit}" Margin="30" StyleClass="textInclude" HorizontalOptions="Fill" />
+                    <magic:GradientView Mask="{magic:Text 'Magic', FontAttributes='Bold,Italic', Stretch=AspectFit}" Margin="30" StyleClass="textInclude" HorizontalOptions="Fill" />
                     <magic:GradientView StyleClass="textExclude" HorizontalOptions="Fill" Grid.Column="1">
                         <magic:GradientView.Mask>
                             <magic:MaskCollection>

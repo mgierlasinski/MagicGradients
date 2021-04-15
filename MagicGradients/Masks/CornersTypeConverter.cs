@@ -24,7 +24,9 @@ namespace MagicGradients.Masks
             if (dim.Length == 2)
             {
                 return new Corners(
-                    new Dimensions(GetOffset(dim[0], OffsetType.Absolute)),
+                    new Dimensions(GetOffset(dim[0], OffsetType.Absolute)), 
+                    new Dimensions(GetOffset(dim[0], OffsetType.Absolute)), 
+                    new Dimensions(GetOffset(dim[1], OffsetType.Absolute)), 
                     new Dimensions(GetOffset(dim[1], OffsetType.Absolute)));
             }
 
