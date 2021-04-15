@@ -7,8 +7,6 @@ namespace Playground
         public AppShell()
         {
             InitializeComponent();
-
-            AppSetup.RegisterRoutes();
         }
     }
 }

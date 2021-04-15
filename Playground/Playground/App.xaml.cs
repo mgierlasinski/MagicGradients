@@ -6,21 +6,15 @@ namespace Playground
     {
         public App()
         {
-            Device.SetFlags(new[]
-            {
-                "Shapes_Experimental", 
-                "Expander_Experimental", 
-                "Shell_UWP_Experimental"
-            });
+            Device.SetFlags(new[] { "Shell_UWP_Experimental" });
 
             InitializeComponent();
 
+            MagicGradients.Toolkit.Initializer.Init();
             Sharpnado.Shades.Initializer.Initialize(false);
             Sharpnado.Tabs.Initializer.Initialize(false, false);
 
-            AppSetup.RegisterTypes();
-            AppSetup.RegisterViewModels();
-            AppSetup.Initialize();
+            AppSetup.ConfigureAndRun();
 
             MainPage = new AppShell();
         }
