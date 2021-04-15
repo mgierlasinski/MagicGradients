@@ -6,8 +6,6 @@ namespace Playground
     {
         public App()
         {
-            MagicGradients.Toolkit.Initializer.Init();
-
             Device.SetFlags(new[]
             {
                 "Shapes_Experimental", 

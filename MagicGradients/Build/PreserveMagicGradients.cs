@@ -1,3 +1,3 @@
-using MagicGradients.Build;
+using MagicGradients.Properties;
 
 [assembly: PreserveMagicGradients]

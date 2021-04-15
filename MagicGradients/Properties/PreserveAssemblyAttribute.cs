@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace MagicGradients.Build
+namespace MagicGradients.Properties
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
     [AttributeUsage(AttributeTargets.Assembly)]
