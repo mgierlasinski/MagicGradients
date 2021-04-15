@@ -7,7 +7,7 @@
              xmlns:masks="clr-namespace:MagicGradients.Masks;assembly=MagicGradients"
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls" 
-             xmlns:magic="http://magic.com/schemas/gradients"
+             xmlns:magic="http://magic.com/schemas/2021/gradients"
              x:Class="Playground.Features.Editor.MasksTab"
              x:DataType="editor:GradientEditorViewModel">
     <StackLayout.Resources>

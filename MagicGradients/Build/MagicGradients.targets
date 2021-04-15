@@ -1,7 +1,6 @@
 <Project>
     <ItemGroup>
-        <Compile Condition="'$(MSBuildProjectExtension)' == '.csproj'"
-                 Include="$(MSBuildThisFileDirectory)PreserveMagicGradients.cs"
+        <Compile Include="$(MSBuildThisFileDirectory)PreserveMagicGradients.cs"
                  Visible="false" />
     </ItemGroup>
 </Project>

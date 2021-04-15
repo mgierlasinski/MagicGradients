@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:magic="http://magic.com/schemas/gradients"
-             xmlns:toolkit="http://magic.com/schemas/toolkit"
+             xmlns:magic="http://magic.com/schemas/2021/gradients"
+             xmlns:toolkit="http://magic.com/schemas/2021/toolkit"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"

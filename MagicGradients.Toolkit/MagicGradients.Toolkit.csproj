@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MagicGradients\MagicGradients.csproj" />
-    <None Include="Build\**\*.cs;Build\**\*.targets" Pack="true" PackagePath="\" />
+    <None Include="Build\**\*.cs;Build\**\*.targets" Pack="true" PackagePath="Build" />
   </ItemGroup>
 
   <ItemGroup>

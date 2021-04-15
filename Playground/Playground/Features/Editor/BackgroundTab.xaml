@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
-             xmlns:magic="http://magic.com/schemas/gradients"
+             xmlns:magic="http://magic.com/schemas/2021/gradients"
              x:Class="Playground.Features.Editor.BackgroundTab"
              x:DataType="editor:GradientEditorViewModel">
     
