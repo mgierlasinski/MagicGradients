@@ -25,6 +25,7 @@
   <ItemGroup>
     <None Include="..\LICENSE" Pack="True" PackagePath="\" />
     <None Include="..\Assets\icon.png" Pack="True" PackagePath="\" />
+    <None Include="Build\**\*.cs;Build\**\*.targets" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
