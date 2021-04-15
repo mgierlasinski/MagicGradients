@@ -2,5 +2,5 @@
 using Xamarin.Forms.Internals;
 
 [assembly: Preserve]
-[assembly: XmlnsDefinition("http://magic.com/schemas/2021/toolkit", "MagicGradients.Toolkit")]
-[assembly: XmlnsDefinition("http://magic.com/schemas/2021/toolkit", "MagicGradients.Toolkit.Controls")]
+[assembly: XmlnsDefinition("http://magic.com/schemas/toolkit", "MagicGradients.Toolkit")]
+[assembly: XmlnsDefinition("http://magic.com/schemas/toolkit", "MagicGradients.Toolkit.Controls")]

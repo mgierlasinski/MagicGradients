@@ -24,13 +24,7 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
 
   [![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients)
 
-Install into the shared project. If you are using the NuGet version less or equal `1.2.0` then no additional setup required. But if you are using a version higher `1.2.0` then you need to add initialization at `App.xaml.cs` file:
-
-```cs
-MagicGradients.Initializer.Init();
-```
-
-Only this one line is required.
+Install into shared project, no additional setup required.
 
 ## Drawing gradient
 
