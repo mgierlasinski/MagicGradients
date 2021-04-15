@@ -51,7 +51,7 @@
                     <StackLayout Padding="10" HorizontalOptions="Center">
                         <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Gallery}, Color=White, Size=50}" 
                                Margin="{OnPlatform UWP='10,0,0,0'}" />
-                        <Label Text="Gradient Gallery" HorizontalOptions="Center" />
+                        <Label Text="Gallery" HorizontalOptions="Center" />
                     </StackLayout>
                 </toolkit:MagicButton>
                 <toolkit:MagicButton Command="{Binding AnimationsCommand}" StyleClass="threeColumn">

@@ -7,6 +7,8 @@
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="false"
              x:Class="Playground.Features.Editor.GradientEditorPage"
              Title="Gradient Editor"
              vm:ViewModelLocator.AutoWireViewModel="true">

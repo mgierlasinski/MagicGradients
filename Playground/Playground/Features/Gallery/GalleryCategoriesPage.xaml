@@ -5,6 +5,8 @@
              xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="false"
              x:Class="Playground.Features.Gallery.GalleryCategoriesPage"
              Title="Gradient Gallery"
              vm:ViewModelLocator.AutoWireViewModel="true">
