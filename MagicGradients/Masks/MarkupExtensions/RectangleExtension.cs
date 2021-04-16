@@ -4,7 +4,7 @@ using Xamarin.Forms.Xaml;
 
 namespace MagicGradients.Masks
 {
-    [ContentProperty(nameof(Corners))]
+    [ContentProperty(nameof(Size))]
     public class RectangleExtension : MaskExtension, IMarkupExtension<RectangleMask>
     {
         public Dimensions Size { get; set; } = Dimensions.Prop(1, 1);

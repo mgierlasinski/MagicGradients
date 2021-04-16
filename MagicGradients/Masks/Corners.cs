@@ -17,11 +17,6 @@ namespace MagicGradients.Masks
         {
         }
 
-        public Corners(Dimensions topSize, Dimensions bottomSize) 
-            : this(topSize, topSize, bottomSize, bottomSize)
-        {
-        }
-
         public Corners(Dimensions topLeft, Dimensions topRight, Dimensions bottomRight, Dimensions bottomLeft) 
             : this()
         {
