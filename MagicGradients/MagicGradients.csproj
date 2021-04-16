@@ -26,5 +26,10 @@
     <None Include="..\LICENSE" Pack="True" PackagePath="\" />
     <None Include="..\Assets\icon.png" Pack="True" PackagePath="\" />
   </ItemGroup>
+	
+  <ItemGroup>
+    <Compile Remove="Build\*.cs" />
+    <None Include="Build\**\*.cs;Build\**\*.targets" Pack="true" PackagePath="build" />
+  </ItemGroup>
 
 </Project>
