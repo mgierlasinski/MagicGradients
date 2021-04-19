@@ -227,7 +227,11 @@ You can play around with CSS functions live in Magic Playground app, Hot Reload 
 <img src="./Assets/Gifs/css_hot_reload.gif" height="480" width="245" /> 
 </div>
 
-## Masks
+## :performing_arts: Masks
+
+![image](./Assets/Images/masks.png)
+
+Masks can be used to clip `GradientView` into any shape or even text. Every mask shares base properties:
 
 | Property | Values |     |
 | -------- | ------ | --- |
@@ -235,33 +239,123 @@ You can play around with CSS functions live in Magic Playground app, Hot Reload 
 | `Stretch` | `None`, `AspectFit`, `AspectFill`, `Fill` | Other than `None` will ignore shape size and match `GradientView` bounds. |
 | `IsActive` | `True`, `False` | If `False`, mask will be ignored. |
 
+
+<p align="center">
+<img src="./Assets/Images/clip_mode_include.png" height="150" />&nbsp;&nbsp;&nbsp;
+<img src="./Assets/Images/clip_mode_exclude.png" height="150" />
+<br />
+<span><b>ClipMode: include &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+<span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ClipMode: exclude</b></span>
+</p>
+
 ### Rectangle
 
-Enhances `GradientView` with custom sizing and rounded corners.
+Enhances `GradientView` with custom sizing and rounded corners. To customize shape of the rectangle use properties:
 
 | Property | Values |     |
 | -------- | ------ | --- |
 | `Size` | `200,200`, `90%,90%`, `50%` | Uniform or two dimensions, pixels and percent supported. |
 | `Corners` | `20,20,30,30`, `10%,15%` | Direction from top left to bottom right clockwise, pixels and percent supported. |
 
+Rounding corners of a `GradientView` scaled down to 90% of available space can be made like this:
+
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:RectangleMask Size="90%" Corners="50,0,50,0" />
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+Or even simplier with markup extension:
+
+``` xml
+<magic:GradientView Mask="{magic:Rectangle '90%', Corners='50,0,50,0'}" />
+```
+
+Each corner can be defined separately. By defining different width and height you can have ellipse corner rather that circle:
+
+``` xml
+<magic:RectangleMask>
+    <magic:RectangleMask.Corners>
+        <magic:Corners TopLeft="100,40" BottomRight="100,40" />
+    </magic:RectangleMask.Corners>
+</magic:RectangleMask>
+```
+
 ### Ellipse
 
 Draws `GradientView` as oval shape. Use `Size` property for custom sizing.
 
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:EllipseMask Size="90%" />
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+To create `EllipseMask` inline, use markup extension:
+
+``` xml
+<magic:GradientView Mask="{magic:Ellipse '150,150'}" />
+```
+
 ### Path
 
 With `PathMask` you can turn `GradientView` into any shape, just set `Data` property with any SVG path.
+
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:PathMask Stretch="AspectFit" Data="...svg path..." />
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+To create `PathMask` inline, use markup extension:
+
+``` xml
+<magic:GradientView Mask="{magic:Path '...svg path...', Stretch=AspectFit}" />
+```
 
 ### Text
 
 To draw a text painted with gradient, use `TextMask` and set it's `Text` property.
 For font customization use properties from `Label` control like: `FontFamily`, `FontSize`, `FontAttributes`.
 
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:TextMask Text="Hello!" FontSize="80" FontAttributes="Bold,Italic" />
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+To create `TextMask` inline, use markup extension:
+
+``` xml
+<magic:GradientView Mask="{magic:Text 'Hello!'}" />
+```
+
 ### Mask Collection
 
-You can combine multiple masks in one `GradientView` with `MaskCollection`.
+You can combine multiple masks in one `GradientView` with `MaskCollection`:
 
-## Animations (preview)
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:MaskCollection>
+            <magic:EllipseMask Size="200,200" />
+            <magic:PathMask ClipMode="Exclude"
+                            Stretch="AspectFit" 
+                            Data="M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"/>
+        </magic:MaskCollection>
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+## :clapper: Animations (preview)
 
 | Property | Values |     |
 | -------- | ------ | --- |
