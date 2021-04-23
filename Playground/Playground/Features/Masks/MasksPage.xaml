@@ -34,7 +34,7 @@
                     <magic:GradientView StyleClass="textExclude" HorizontalOptions="Fill" Grid.Column="1">
                         <magic:GradientView.Mask>
                             <magic:MaskCollection>
-                                <magic:TextMask Text="Gradients" FontSize="50" ClipMode="Exclude" />
+                                <magic:TextMask Text="Gradients" FontSize="30" ClipMode="Exclude" />
                                 <magic:RectangleMask Corners="0,0,50,0" />
                             </magic:MaskCollection>
                         </magic:GradientView.Mask>
