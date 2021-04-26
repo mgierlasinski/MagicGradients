@@ -50,13 +50,13 @@ namespace MagicGradients.Masks
             if (!IsActive)
                 return;
 
-            using var textPaint = GetTextPaint();
+            using var textPaint = GetTextPaint(context);
             using var textPath = textPaint.GetTextPath(Text, 0, 0);
 
             ClipPath(context, textPath);
         }
 
-        private SKPaint GetTextPaint()
+        private SKPaint GetTextPaint(RenderContext context)
         {
             var isBold = (FontAttributes & FontAttributes.Bold) == FontAttributes.Bold;
             var isItalic = (FontAttributes & FontAttributes.Italic) == FontAttributes.Italic;
@@ -68,7 +68,7 @@ namespace MagicGradients.Masks
 
             return new SKPaint
             {
-                TextSize = (float)FontSize,
+                TextSize = (float)(FontSize * context.PixelScaling),
                 Typeface = SKTypeface.FromFamilyName(FontFamily, fontStyle),
                 IsAntialias = true
             };

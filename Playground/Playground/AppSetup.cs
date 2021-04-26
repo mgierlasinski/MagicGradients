@@ -20,6 +20,14 @@ namespace Playground
     {
         public static Container IoC { get; } = new Container();
 
+        public static void ConfigureAndRun()
+        {
+            RegisterTypes();
+            RegisterViewModels();
+            RegisterRoutes();
+            Initialize();
+        }
+
         public static void RegisterTypes()
         {
             IoC.Register<IDatabaseProvider, DatabaseProvider>();

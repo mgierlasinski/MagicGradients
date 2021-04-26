@@ -15,8 +15,12 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
 - Linear and radial gradients supported
 - Draw as many gradients as you want with single control, blend them together for unique effects
 - Supports CSS gradients, find your ideal background [somewhere on the web](https://www.gradientmagic.com/) and copy + paste into your app
-- Make your background alive with built-in XAML animations :hear_no_evil:
+- Make your background alive with built-in XAML animations
+- Gradient'em all - paint gradient on any shape or text with clipping masks
 - Powered by [![Nuget](https://img.shields.io/badge/SkiaSharp-v1.68.1-blue)](https://www.nuget.org/packages/SkiaSharp/)
+
+| [Drawing gradient](#drawing-gradient) | [:art: Styling with CSS](#art-styling-with-css) | [:performing_arts: Masks](#performing_arts-masks) | [:clapper: Animations](#clapper-animations-preview) |
+| --- | --- | --- | --- |
 
 ## Installation 
 
@@ -25,6 +29,17 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
   [![Nuget](https://img.shields.io/nuget/vpre/MagicGradients)](https://www.nuget.org/packages/MagicGradients)
 
 Install into shared project, no additional setup required.
+
+To start using `Magic Gradients` in XAML import namespace:
+``` xml
+<ContentPage xmlns:magic="http://magic.com/schemas/gradients" />
+```
+
+## Sample app
+
+In `Magic Gradients` repository you can find [`Magic Playground`](https://github.com/mgierlasinski/MagicGradients/tree/master/Playground) app for browsing and creating gradients visually. Android, iOS and UWP are supported.
+
+`Magic Playground` contains samples for all kinds of gradients, animations, masks and other features. It's the best place to start and see gradients in action.
 
 ## Drawing gradient
 
@@ -86,13 +101,23 @@ To apply gradient created in C#, you can use `ToSource()` extension method:
 gradientView.GradientSource = source;
 ```
 
+
+Version 1.3 introduced improved linear gradient rendering, turned on by default. If for some reason you prefer the old one, use attached property:
+
+``` xml
+<magic:GradientView magic:LinearGradient.UseLegacyShader="True" />
+```
+
+For complex backgrounds you can use GPU accelerated version `GradientView`:
+``` xml
+<GradientGLView />
+```
+
 ## Discover amazing backgounds
 
 ![image](./Assets/Images/screens_large.png)
 
-In `Magic Gradients` repository you can find `Magic Playground`, a `Xamarin.Forms` app for browsing and creating gradients visually. Android, iOS and UWP are supported.
-
-Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_evil: from [Gradient Magic](https://www.gradientmagic.com/), ready to use in any `Xamarin.Forms` app. Find your best, pick and copy over to your app.
+Be sure to check out the `Gallery` in `Magic Playground` app. It contains over **1700+** samples :hear_no_evil: from [Gradient Magic](https://www.gradientmagic.com/), ready to use in any `Xamarin.Forms` app. Find your best, pick and copy over to your app.
 
 <div>
 <img src="./Assets/Gifs/playground_gallery_ios.gif" height="500" width="255" />   
@@ -100,9 +125,14 @@ Be sure to check out the `Gallery`. It contains over **1700+** samples :hear_no_
 <img src="./Assets/Gifs/playground_build_gradient_ios.gif" height="500" width="255" /> 
 </div>
 
-## Styling with CSS
+## :art: Styling with CSS
 
-Magic Gradients supports [CSS functions](https://www.w3schools.com/css/css3_gradients.asp). CSS gradient can be embeded in XAML inline:
+`Magic Gradients` supports following [CSS functions](https://www.w3schools.com/css/css3_gradients.asp): 
+
+- Linear gradients: [`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient), [`repeating-linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient)
+- Radial gradients: [`radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient), [`repeating-radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient)
+
+CSS gradient can be embeded in XAML inline:
 
 ``` xml
 <magic:GradientView>
@@ -134,13 +164,14 @@ CSS can be also set via C#:
 gradientView.GradientSource = CssGradientSource.Parse("linear-gradient(red, green, blue)");
 ```
 
-### Linear gradient functions
+### Linear gradient function
 
+<!--
 | ![Alt text](https://www.w3schools.com/cssref/gradient_linear.png) | ![Alt text](https://www.w3schools.com/cssref/gradient_linear.png) |
 |:-----:|:-----:|
 | [`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) | [`repeating-linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient) |
+-->
 
-**CSS Syntax**
 ``` css
 linear-gradient(direction | angle, color-stop1, color-stop2, ...);
 ```
@@ -156,15 +187,24 @@ Each color stop should contain color information and optionally position describ
 - colors in hex: `#ff0000`
 - named colors: `red`, `green`, `blue`, `orange`, `pink`
 
-### Radial gradient functions
+**Examples**
 
+``` css
+linear-gradient(45deg, blue, red);
+linear-gradient(to left top, #0000ff, #ff0000);
+linear-gradient(blue, green 40%, red);
+```
+
+### Radial gradient function
+
+<!--
 | ![Alt text](https://www.w3schools.com/cssref/gradient_radial.jpg) | ![Alt text](https://www.w3schools.com/cssref/gradient_radial.jpg) |
 |:-----:|:-----:|
 | [`radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient) | [`repeating-radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient) |
+-->
 
-**CSS Syntax**
 ``` css
-radial-gradient(shape size at position, start-color, ..., last-color);
+radial-gradient(shape size at position, color-stop1, color-stop2, ...);
 ```
 
 | Value | Description |
@@ -190,26 +230,150 @@ You can play around with CSS functions live in Magic Playground app, Hot Reload 
 <img src="./Assets/Gifs/css_hot_reload.gif" height="480" width="245" /> 
 </div>
 
-<!--
-### Examples
+## :performing_arts: Masks
 
-``` css
-linear-gradient(45deg, blue, red);
-linear-gradient(to left top, blue, red);
-linear-gradient(0deg, blue, green 40%, red);
-radial-gradient(cyan 0%, transparent 20%, salmon 40%);
-radial-gradient(farthest-corner at 40px 40px, #f35 0%, #43e 100%);
-```
--->
+![image](./Assets/Images/masks.png)
 
-## Animations (preview)
+Masks can be used to clip `GradientView` into any shape or even text. Each mask type shares common properties:
+
+| Property | Values |     |
+| -------- | ------ | --- |
+| `ClipMode` | `Include`, `Exclude` | Draw shape or cut shape from the background. |
+| `Stretch` | `None`, `AspectFit`, `AspectFill`, `Fill` | Other than `None` will ignore shape size and match `GradientView` bounds. |
+| `IsActive` | `True`, `False` | If `False`, mask will be ignored. |
+
+
+<p align="center">
+<img src="./Assets/Images/clip_mode_include.png" height="150" />&nbsp;
+<img src="./Assets/Images/clip_mode_exclude.png" height="150" />
+<br />
+<em><b>ClipMode</b> set to <b>Include</b> and <b>Exclude</b></em>
+</p>
+
+### Rectangle
+
+<img src="./Assets/Images/mask_rectangle.png" height="150" />
+
+Enhances `GradientView` with custom sizing and rounded corners. To customize shape of the rectangle use properties:
+
+| Property | Values |     |
+| -------- | ------ | --- |
+| `Size` | `200,200`, `90%,90%`, `50%` | Uniform or two dimensions, pixels and percent supported. |
+| `Corners` | `20,20,30,30`, `10%,15%` | Direction from top left to bottom right clockwise, pixels and percent supported. |
+
+Rounding corners of a `GradientView` scaled down to 90% of available space can be made like this:
 
 ``` xml
-xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients"
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:RectangleMask Size="90%" Corners="50,0,50,0" />
+    </magic:GradientView.Mask>
+</magic:GradientView>
 ```
 
-| Timeline property | Values |   |
-| ----------------- | ---- | --- |
+Or even simplier with markup extension:
+
+``` xml
+<magic:GradientView Mask="{magic:Rectangle '90%', Corners='50,0,50,0'}" />
+```
+
+Each corner can be defined separately. By defining different width and height you can have ellipse corner rather that circle:
+
+``` xml
+<magic:RectangleMask>
+    <magic:RectangleMask.Corners>
+        <magic:Corners TopLeft="100,40" BottomRight="100,40" />
+    </magic:RectangleMask.Corners>
+</magic:RectangleMask>
+```
+
+### Ellipse
+
+<img src="./Assets/Images/mask_ellipse.png" height="150" />
+
+Draws `GradientView` as oval shape. Use `Size` property for custom sizing.
+
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:EllipseMask Size="90%" />
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+To create `EllipseMask` inline, use markup extension:
+
+``` xml
+<magic:GradientView Mask="{magic:Ellipse '150,150'}" />
+```
+
+### Path
+
+<img src="./Assets/Images/mask_path.png" height="150" />
+
+With `PathMask` you can turn `GradientView` into any shape, just set `Data` property with any SVG path.
+
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:PathMask Stretch="AspectFit" 
+                        Data="M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z" />
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+To create `PathMask` inline, use markup extension:
+
+``` xml
+<magic:GradientView Mask="{magic:Path '...svg path...', Stretch=AspectFit}" />
+```
+
+### Text
+
+<img src="./Assets/Images/mask_text.png" height="150" />
+
+To draw a text painted with gradient, use `TextMask` and set it's `Text` property.
+For font customization use properties from `Label` control like: `FontFamily`, `FontSize`, `FontAttributes`.
+
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:TextMask Text="Magic!" FontSize="80" FontAttributes="Bold,Italic" />
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+To create `TextMask` inline, use markup extension:
+
+``` xml
+<magic:GradientView Mask="{magic:Text 'Magic!'}" />
+```
+
+### Mask Collection
+
+<img src="./Assets/Images/mask_collection.png" height="150" />
+
+You can combine multiple masks in one `GradientView` with `MaskCollection`:
+
+``` xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <magic:MaskCollection>
+            <magic:EllipseMask Size="200,200" />
+            <magic:PathMask ClipMode="Exclude"
+                            Stretch="AspectFit" 
+                            Data="M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"/>
+        </magic:MaskCollection>
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+## :clapper: Animations (preview)
+
+`Magic Gradients` comes with built-in animation system. You can animate any element and property of the gradient. Each type of animation extends `Timeline` class with common properties:
+
+| Property | Values |     |
+| -------- | ------ | --- |
 | `Target` | `{x:Reference myGradient}` | Reference to animated element. |
 | `Duration` | `3000` | Length of single loop (in ms). |
 | `Delay` | `200` | Time before animations starts (in ms). |
@@ -217,39 +381,42 @@ xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients"
 | `RepeatBehavior` | `1x`, `3x`, `Forever`  | How many times animation must be repeated. |
 | `AutoReverse` | `True`, `False` | If true, next loop will be animated backwards. |
 
+Be sure to check `Magic playground` app for sample animations:
 
 <img src="./Assets/Gifs/playground_animations_ios.gif" height="500" width="255" /> 
 
 ### Running animation
 
-Run automatically:
+Animations can be run from `Behavior` or can be controlled by view model with `DataTrigger` and dedicated actions.
+
+To run animation automatically, use `AnimateBehavior` and set `Animation` property:
 
 ``` xml
 <magic:GradientView.Behaviors>
-    <anim:Animate>
+    <anim:AnimateBehavior>
         <anim:DoubleAnimation ... />
-    </anim:Animate>
+    </anim:AnimateBehavior>
 </magic:GradientView.Behaviors>
 ```
 
-Control animation from view model:
+Running animation from view model can be done with dedicated `BeginAnimation` and `EndAnimation` actions inside `DataTrigger`. To avoid boilerplate XAML for setting `EnterActions` and `ExitActions`, you can use `AnimationTrigger` markup extension. Setup `Animation` property and set `IsRunning` that will turn animation on and off when value changes:
 
 ``` xml
 <magic:GradientView.Triggers>
-    <anim:AnimateTrigger IsRunning="{Binding IsRunning}">
+    <anim:AnimationTrigger IsRunning="{Binding IsRunning}">
          <anim:PointAnimation ... />
-    </anim:AnimateTrigger>
+    </anim:AnimationTrigger>
 </magic:GradientView.Triggers>
 ```
 
-`AnimateTrigger` is a `MarkupExtension`. It's shorter way of creating `DataTrigger` with `BeginAnimation` and `EndAnimation` as `EnterActions` and `ExitActions`.
+> :warning: If you set **`RepeatBehavior`** to  **`Forever`**, make sure you stop every running animation by calling **`End()`** before you leave the page.
 
 ### Property animations
 
 With this type of animation you can animate single property between two values defined as `From` and `To`.
 
-| Properties | Value |    |
-| ---------- | ------| --- |
+| Property | Values |     |
+| -------- | -------| --- |
 | `TargetProperty` | `magic:GradientStop.Color` | Animated property with full namespace. |
 | `From` | Value matching `TargetProperty` type |  Value when animation starts. |
 | `To` | Value matching `TargetProperty` type | Value when animation ends. |
@@ -269,16 +436,18 @@ Built-in property types:
 
 `ColorAnimation`, `DimensionsAnimation`, `DoubleAnimation`, `IntegerAnimation`, `OffsetAnimation`, `PointAnimation`, `ThicknessAnimation`
 
-For custom types, see Custom animation types.
+For custom types, see [Custom animation types](#custom-animation-types).
 
 ### Storyboards
 
-| Attached properties | Values |    |
-| ------------------- | ------ | -- |
+With `Storyboard` you can run multiple animations simultaneously in the same time period. Unlike standalone animation, `Duration` and `RepeatBehavior` is controlled by `Storyboard`. Each animation can start and end at different point of `Storyboard` timeline, this can be controlled by attached properties:
+
+| Attached property | Values |     |
+| ----------------- | ------ | --- |
 | `anim:Storyboard.BeginAt` | `from 0 to 1` | Start animation at given point of `Storyboard`. |
 | `anim:Storyboard.FinishAt` | `from 0 to 1` | End animation at given point of `Storyboard`. |
 
-Animate two colors at different times:
+Below you can see an example of animating two colors of a gradient stop. First animation starts immediately and ends at `0.8` of `4 seconds` duration. Second animations starts at `0.3` and runs till the end of `Storyboard`.
 
 ``` xml
 <anim:Storyboard Duration="4000" RepeatBehavior="Forever">
@@ -299,14 +468,17 @@ Animate two colors at different times:
 
 ### KeyFrame animations
 
-`<Type>AnimationUsingKeyFrames`
+`AnimationUsingKeyFrames` lets you animate value of a property that changes multiple times over a period. Each `KeyFrame` object describes expected property value at given time:
 
-`<Type>KeyFrame` properties:
-- `KeyTime` - time when value is applied to animated target
-- `Value` - of type `<Type>`
-- `Easing` - easing function
+| Property | Values |     |
+| -------- | -------| --- |
+| `KeyTime` | Time in miliseconds. | Time when property must be at given `Value`. |
+| `Value` | Value proper for `KeyFrame` type. | `Value` of animated property at given `KeyTime`.
+| `Easing` | `{x:Static Easing.SinInOut}` | Easing function for non-linear interpolation between two key frames. |
 
-Move radial circle between corners, at different times:
+There are several built-in animation types following naming convention `<Type>AnimationUsingKeyFrames`, for example: `ColorAnimationUsingKeyFrames`. Supported types are: `Color`, `Dimensions`, `Double`, `Integer`, `Offset`, `Point`, `Thickness`. Each animation type has coresponding `KeyFrame` of the same type: `DoubleKeyFrame`, `ColorKeyFrame` etc.
+
+Below you can see an example of moving radial circle between corners, at different times:
 
 ``` xml
 <anim:PointAnimationUsingKeyFrames Target="{x:Reference Radial2}" 
