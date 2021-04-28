@@ -6,8 +6,6 @@
              xmlns:models="clr-namespace:Playground.Features.Gallery.Models;assembly=Playground"
              xmlns:ic="clr-namespace:Playground.Resources.Fonts"
              xmlns:vm="clr-namespace:Playground.ViewModels;assembly=Playground"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.UseSafeArea="false"
              x:Class="Playground.Features.Gallery.GalleryListPage"
              Title="{Binding Title}"
              vm:ViewModelLocator.AutoWireViewModel="true">
@@ -16,7 +14,7 @@
                      Text="{OnPlatform UWP=Colors}"
                      IconImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Palette}, Color=White}" />
     </ContentPage.ToolbarItems>
-    <Grid>
+    <Grid Margin="{DynamicResource SafeAreaInsets}">
         <CollectionView x:Name="GalleryList"
                         ItemsSource="{Binding Gradients}"
                         SelectionMode="Single"

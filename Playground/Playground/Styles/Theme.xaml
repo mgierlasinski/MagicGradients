@@ -19,6 +19,10 @@
     <Color x:Key="HeaderColorDark">#B0B3B8</Color>
     <Color x:Key="SeparatorColorDark">#3A3B3C</Color>
     <Color x:Key="TabBackgroundDark">#303031</Color>
+    
+    <!-- Thickness -->
+    <Thickness
+        x:Key="SafeAreaInsets" />
 
     <!-- Styles -->
     <Style TargetType="VisualElement" ApplyToDerivedTypes="True" Class="BackgroundElement">
