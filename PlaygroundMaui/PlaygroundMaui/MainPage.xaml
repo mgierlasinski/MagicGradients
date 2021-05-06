@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Microsoft.Maui.Graphics.Forms;assembly=Microsoft.Maui.Graphics.Forms"
+             xmlns:magic="clr-namespace:MagicGradients.Maui.Graphics;assembly=MagicGradients.Maui"
              x:Class="PlaygroundMaui.MainPage">
 
     <StackLayout>
@@ -19,6 +21,11 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
+        <forms:GraphicsView HeightRequest="80">
+            <forms:GraphicsView.Drawable>
+                <magic:GradientDrawable />
+            </forms:GraphicsView.Drawable>
+        </forms:GraphicsView>
     </StackLayout>
 
 </ContentPage>
