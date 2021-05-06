@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:forms="clr-namespace:Microsoft.Maui.Graphics.Forms;assembly=Microsoft.Maui.Graphics.Forms"
-             xmlns:magic="clr-namespace:MagicGradients.Maui.Graphics;assembly=MagicGradients.Maui"
+             xmlns:maui="clr-namespace:MagicGradients.Maui;assembly=MagicGradients.Maui"
+             xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients"
              x:Class="PlaygroundMaui.MainPage">
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Label Text="Magic Gradients" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Using Microsoft.Maui.Graphics" FontSize="Title" Padding="30,10,30,10"/>
+        <!--
         <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
         <Label FontSize="16" Padding="30,24,30,0">
             <Label.FormattedText>
@@ -20,12 +21,15 @@
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>
-        </Label>
-        <forms:GraphicsView HeightRequest="80">
-            <forms:GraphicsView.Drawable>
-                <magic:GradientDrawable />
-            </forms:GraphicsView.Drawable>
-        </forms:GraphicsView>
+        </Label>-->
+        <maui:GradientView2 HeightRequest="160" GradientSize="40">
+            <magicGradients:LinearGradient Angle="45">
+                <magicGradients:GradientStop Color="Blue" />
+                <magicGradients:GradientStop Color="Yellow" />
+            </magicGradients:LinearGradient>
+        </maui:GradientView2>
+        <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" />
+        <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" />
     </StackLayout>
 
 </ContentPage>

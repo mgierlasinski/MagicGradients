@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace MagicGradients
 {
-    static class GradientControl
+    public static class GradientControl
     {
         public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
             nameof(IGradientControl.GradientSource), 
