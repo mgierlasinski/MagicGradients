@@ -5,10 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Graphics.Forms" Version="6.0.103-preview.4" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\MagicGradients.Graphics.Forms\MagicGradients.Graphics.Forms.csproj" />
     <ProjectReference Include="..\MagicGradients\MagicGradients.csproj" />
   </ItemGroup>
 

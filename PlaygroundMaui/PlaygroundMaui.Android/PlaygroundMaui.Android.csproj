@@ -54,9 +54,6 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Graphics.Forms">
-      <Version>6.0.103-preview.4</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
@@ -88,6 +85,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MagicGradients.Graphics.Forms\MagicGradients.Graphics.Forms.csproj">
+      <Project>{17e51d17-392e-476e-8bd4-7606624acfae}</Project>
+      <Name>MagicGradients.Graphics.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlaygroundMaui\PlaygroundMaui.csproj">
       <Project>{03F4D97F-60A6-48F0-B66D-8C26664740BE}</Project>
       <Name>PlaygroundMaui</Name>
