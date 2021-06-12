@@ -6,7 +6,7 @@
 
   <ItemGroup>
 	<PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-	<PackageReference Include="Microsoft.Maui.Graphics" Version="6.0.100-preview.4.158" />
+	<PackageReference Include="Microsoft.Maui.Graphics" Version="6.0.100-preview.5.246" />
 	<PackageReference Include="NETStandard.Library" Version="2.0.3" />
   </ItemGroup>
 

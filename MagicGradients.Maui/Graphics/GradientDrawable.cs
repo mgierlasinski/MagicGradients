@@ -8,11 +8,13 @@ namespace MagicGradients.Maui.Graphics
     {
         private readonly IGradientControl _control;
         private readonly LinearGradientPainter _linearPainter;
+        private readonly RadialGradientPainter _radialPainter;
 
         public GradientDrawable(IGradientControl control)
         {
             _control = control;
             _linearPainter = new LinearGradientPainter();
+            _radialPainter = new RadialGradientPainter();
         }
 
         public void Draw(ICanvas canvas, RectangleF dirtyRect)
@@ -37,9 +39,10 @@ namespace MagicGradients.Maui.Graphics
         private Paint GetPaint(Gradient gradient, DrawContext context)
         {
             if (gradient is LinearGradient linear)
-            {
                 return _linearPainter.CreatePaint(linear, context);
-            }
+
+            if (gradient is RadialGradient radial)
+                return _radialPainter.CreatePaint(radial, context);
 
             return new SolidPaint(Colors.Black);
         }
