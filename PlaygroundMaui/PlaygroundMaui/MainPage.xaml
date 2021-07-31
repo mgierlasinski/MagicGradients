@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:maui="clr-namespace:MagicGradients.Maui;assembly=MagicGradients.Maui"
+             xmlns:maui="clr-namespace:MagicGradients.Maui.Graphics.Forms;assembly=MagicGradients.Maui.Graphics.Forms"
              xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients"
              x:Class="PlaygroundMaui.MainPage">
     <ScrollView>

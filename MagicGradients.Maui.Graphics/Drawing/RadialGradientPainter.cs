@@ -1,7 +1,7 @@
 ﻿using Microsoft.Maui.Graphics;
 using static MagicGradients.FlagsHelper;
 
-namespace MagicGradients.Maui.Graphics
+namespace MagicGradients.Maui.Graphics.Drawing
 {
     public class RadialGradientPainter : GradientPainter
     {

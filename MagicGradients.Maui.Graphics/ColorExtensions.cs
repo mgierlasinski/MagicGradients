@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Maui
+namespace MagicGradients.Maui.Graphics
 {
     public static class ColorExtensions
     {

@@ -1,7 +1,7 @@
-﻿using Microsoft.Maui.Graphics;
-using System;
+﻿using System;
+using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Maui.Graphics
+namespace MagicGradients.Maui.Graphics.Drawing
 {
     public class GradientLine
     {

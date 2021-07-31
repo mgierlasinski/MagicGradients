@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using MauiGradientStop = Microsoft.Maui.Graphics.GradientStop;
 
-namespace MagicGradients.Maui.Graphics
+namespace MagicGradients.Maui.Graphics.Drawing
 {
     public abstract class GradientPainter
     {

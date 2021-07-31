@@ -1,9 +1,9 @@
 ﻿using MagicGradients.Masks;
-using MagicGradients.Maui.Graphics;
+using MagicGradients.Maui.Graphics.Drawing;
 using Microsoft.Maui.Graphics.Forms;
 using Xamarin.Forms;
 
-namespace MagicGradients.Maui
+namespace MagicGradients.Maui.Graphics.Forms
 {
     [ContentProperty(nameof(GradientSource))]
     public class GradientView2 : GraphicsView, IGradientControl, IGradientVisualElement
