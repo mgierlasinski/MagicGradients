@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maui="clr-namespace:MagicGradients.Maui.Graphics.Forms;assembly=MagicGradients.Maui.Graphics.Forms"
              xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:masks="http://magic.com/schemas/gradients"
              x:Class="PlaygroundMaui.MainPage">
     <ScrollView>
         <StackLayout>
@@ -22,8 +23,8 @@
                     <magicGradients:GradientStop Color="Yellow" />
                 </magicGradients:LinearGradient>
             </maui:GradientView2>
-            <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" />
-            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" />
+            <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
+            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '50%,50%'}" />
             <maui:GradientView2 HeightRequest="160">
                 <magicGradients:RadialGradient Center="100,80" Flags="None">
                     <magicGradients:GradientStop Color="Red" />

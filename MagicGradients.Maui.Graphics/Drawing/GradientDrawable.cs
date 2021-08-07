@@ -9,12 +9,14 @@ namespace MagicGradients.Maui.Graphics.Drawing
         private readonly IGradientControl _control;
         private readonly LinearGradientPainter _linearPainter;
         private readonly RadialGradientPainter _radialPainter;
+        private readonly MaskDrawable _maskDrawable;
 
         public GradientDrawable(IGradientControl control)
         {
             _control = control;
             _linearPainter = new LinearGradientPainter();
             _radialPainter = new RadialGradientPainter();
+            _maskDrawable = new MaskDrawable();
         }
 
         public void Draw(ICanvas canvas, RectangleF dirtyRect)
@@ -60,13 +62,14 @@ namespace MagicGradients.Maui.Graphics.Drawing
 
             var cols = _control.GradientRepeat == Repeat || _control.GradientRepeat == RepeatX ?
                 (int)Math.Ceiling((double)width / tileWidth) : 1;
-
+            
             for (var row = 0; row < rows; row++)
             {
                 for (var col = 0; col < cols; col++)
                 {
                     context.Canvas.SaveState();
                     context.Canvas.Translate(col * tileWidth, row * tileHeight);
+                    _maskDrawable.Clip(context, _control.Mask);
                     context.Canvas.FillRectangle(context.RenderRect);
                     context.Canvas.RestoreState();
                 }
