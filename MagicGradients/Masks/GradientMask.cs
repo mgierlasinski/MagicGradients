@@ -38,7 +38,7 @@ namespace MagicGradients.Masks
         {
         }
 
-        protected void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
+        protected virtual void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
         {
             context.Canvas.Translate((float)context.RenderRect.Width / 2, (float)context.RenderRect.Height / 2);
 

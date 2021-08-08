@@ -98,6 +98,7 @@ namespace MagicGradients.Renderers
 
         private void RenderSingle(RenderContext context)
         {
+            DrawBorder(context);
             _control.Mask?.Clip(context);
             context.Canvas.DrawRect(context.RenderRect, context.Paint);
             //DrawBorder(context);
