@@ -43,7 +43,8 @@
             </VisualState>
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-    <Grid RowSpacing="0" RowDefinitions="40,Auto,*">
+    <Grid RowSpacing="0" RowDefinitions="40,Auto,*"
+          Margin="{DynamicResource SafeAreaInsets}">
         <StackLayout Orientation="Horizontal" Spacing="0" StyleClass="ContrastElement">
             <Button x:Name="AddButton" Command="{Binding ShowSnippetsCommand}" StyleClass="ContrastElement" 
                     ImageSource="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Size=24}" />
@@ -72,7 +73,7 @@
         <magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}" 
                             GradientRepeat="{Binding GradientRepeat}"
-                            Grid.Row="2" />
+                            Grid.Row="2"/>
         <Grid IsVisible="{Binding IsMessageVisible}" Grid.Row="2" Margin="20" HorizontalOptions="Center" VerticalOptions="Center">
             <BoxView Style="{StaticResource SemiTransparent}" />
             <Label Text="{Binding Message}" TextColor="White" Margin="10" HorizontalTextAlignment="Center" />

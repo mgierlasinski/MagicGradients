@@ -50,7 +50,9 @@
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
 
-    <Grid x:Name="RootLayout" ColumnDefinitions="*,Auto" RowDefinitions="*,Auto" ColumnSpacing="0" RowSpacing="0" >
+    <Grid x:Name="RootLayout" ColumnDefinitions="*,Auto" 
+          RowDefinitions="*,Auto" ColumnSpacing="0" RowSpacing="0"
+          Margin="{DynamicResource SafeAreaInsets}">
         <controls:CheckeredView />
         <!--<magic:GradientView GradientSource="{Binding GradientSource}" 
                             GradientSize="{Binding GradientSize}"
@@ -67,7 +69,7 @@
         </Grid>
 
         <Grid x:Name="Editor" IsVisible="{Binding IsEditMode}" 
-              RowDefinitions="40,*" ColumnDefinitions="40,*" 
+              RowDefinitions="40,*" ColumnDefinitions="40,*"
               RowSpacing="0" ColumnSpacing="10">
             <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
             <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Margin="5"

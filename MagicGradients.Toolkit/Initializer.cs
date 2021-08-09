@@ -1,10 +1,7 @@
-﻿namespace MagicGradients.Toolkit
+namespace MagicGradients.Toolkit
 {
     public static class Initializer
     {
-        public static void Init()
-        {
-
-        }
+        public static void Init(){}
     }
 }

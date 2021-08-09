@@ -8,7 +8,7 @@
              x:Class="Playground.Features.Gallery.GalleryCategoriesPage"
              Title="Gradient Gallery"
              vm:ViewModelLocator.AutoWireViewModel="true">
-    <Grid Padding="5">
+    <Grid Padding="5" Margin="{DynamicResource SafeAreaInsets}">
         <CollectionView x:Name="CategoriesList" 
                         ItemsSource="{Binding Groups}" 
                         SelectionMode="Single"

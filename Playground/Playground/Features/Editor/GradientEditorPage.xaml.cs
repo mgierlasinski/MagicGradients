@@ -23,6 +23,15 @@ namespace Playground.Features.Editor
             AddSoftwareView();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if(Application.Current.Resources["SafeAreaInsets"] is Thickness safeInsets)
+            {
+                Editor.Margin = new Thickness(0,0,0, safeInsets.Bottom * -1);
+            }
+        }
+
         private void SKCanvasView_OnTouch(object sender, SKTouchEventArgs e)
         {
             var x = e.Location.X / _size.Width;
