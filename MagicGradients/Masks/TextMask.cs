@@ -1,5 +1,4 @@
-﻿using System;
-using MagicGradients.Renderers;
+﻿using MagicGradients.Renderers;
 using SkiaSharp;
 using Xamarin.Forms;
 
@@ -72,40 +71,100 @@ namespace MagicGradients.Masks
             using var textPaint = GetTextPaint(context);
             using var textPath = textPaint.GetTextPath(Text, 0, 0);
 
-            //textPath.Transform(SKMatrix.MakeTranslation(-textPath.Bounds.Left, -textPath.Bounds.Top));
-
+            // Make sure it starts from (0, 0)
+            //if (textPath.Bounds.Top != 0 || textPath.Bounds.Left != 0)
+            //{
+            //    textPath.Transform(SKMatrix.MakeTranslation(-textPath.Bounds.Left, -textPath.Bounds.Top));
+            //}
+            
             ClipPath(context, textPath);
         }
 
-        protected override void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
+        private SKPaint GetTextPaint(RenderContext context)
         {
-            if (Stretch != Stretch.None)
+            var isBold = (FontAttributes & FontAttributes.Bold) == FontAttributes.Bold;
+            var isItalic = (FontAttributes & FontAttributes.Italic) == FontAttributes.Italic;
+
+            var fontStyle = isBold && isItalic ? SKFontStyle.BoldItalic 
+                : isBold ? SKFontStyle.Bold 
+                : isItalic ? SKFontStyle.Italic : 
+                SKFontStyle.Normal;
+
+            return new SKPaint
             {
-                base.LayoutBounds(context, bounds, keepAspectRatio);
-                return;
-            }
+                TextSize = (float)(FontSize * context.PixelScaling),
+                Typeface = SKTypeface.FromFamilyName(FontFamily, fontStyle),
+                IsAntialias = true
+            };
+        }
 
-            var scaleX = (float)context.RenderRect.Width / context.CanvasRect.Width;
-            var scaleY = (float)context.RenderRect.Height / context.CanvasRect.Height;
-            var scale = Math.Max(scaleX, scaleY);
-
+        protected override void BeginLayout(RenderContext context, SKRect bounds)
+        {
             var posX = HorizontalTextAlignment switch
             {
-                TextAlignment.Center => (float)context.RenderRect.Width / 2 - bounds.MidX * scale,
-                TextAlignment.End => context.RenderRect.Width - bounds.Right * scale,
-                _ => -bounds.Left * scale
+                TextAlignment.Center => (float)context.RenderRect.Width / 2,
+                TextAlignment.End => context.RenderRect.Width,
+                _ => 0
             };
 
             var posY = VerticalTextAlignment switch
             {
-                TextAlignment.Center => (float)context.RenderRect.Height / 2 - bounds.MidY * scale,
-                TextAlignment.End => context.RenderRect.Height - bounds.Bottom * scale,
-                _ => -bounds.Top * scale
+                TextAlignment.Center => (float)context.RenderRect.Height / 2,
+                TextAlignment.End => context.RenderRect.Height,
+                _ => 0
             };
 
             context.Canvas.Translate(posX, posY);
-            context.Canvas.Scale(scale);
         }
+
+        protected override void EndLayout(RenderContext context, SKRect bounds)
+        {
+            var movX = HorizontalTextAlignment switch
+            {
+                TextAlignment.Center => -bounds.MidX,
+                TextAlignment.End => -bounds.Right,
+                _ => -bounds.Left
+            };
+
+            var movY = VerticalTextAlignment switch
+            {
+                TextAlignment.Center => -bounds.MidY,
+                TextAlignment.End => -bounds.Bottom,
+                _ => -bounds.Top
+            };
+
+            context.Canvas.Translate(movX, movY);
+        }
+
+        //protected override void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
+        //{
+        //    if (Stretch != Stretch.None)
+        //    {
+        //        base.LayoutBounds(context, bounds, keepAspectRatio);
+        //        return;
+        //    }
+
+        //    var scaleX = (float)context.RenderRect.Width / context.CanvasRect.Width;
+        //    var scaleY = (float)context.RenderRect.Height / context.CanvasRect.Height;
+        //    var scale = Math.Max(scaleX, scaleY);
+
+        //    var posX = HorizontalTextAlignment switch
+        //    {
+        //        TextAlignment.Center => (float)context.RenderRect.Width / 2 - bounds.MidX * scale,
+        //        TextAlignment.End => context.RenderRect.Width - bounds.Right * scale,
+        //        _ => -bounds.Left * scale
+        //    };
+
+        //    var posY = VerticalTextAlignment switch
+        //    {
+        //        TextAlignment.Center => (float)context.RenderRect.Height / 2 - bounds.MidY * scale,
+        //        TextAlignment.End => context.RenderRect.Height - bounds.Bottom * scale,
+        //        _ => -bounds.Top * scale
+        //    };
+
+        //    context.Canvas.Translate(posX, posY);
+        //    context.Canvas.Scale(scale);
+        //}
 
         //protected override void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
         //{
@@ -151,23 +210,5 @@ namespace MagicGradients.Masks
         //    context.Canvas.Scale(scale);
         //    context.Canvas.Translate(movX, movY);
         //}
-
-        private SKPaint GetTextPaint(RenderContext context)
-        {
-            var isBold = (FontAttributes & FontAttributes.Bold) == FontAttributes.Bold;
-            var isItalic = (FontAttributes & FontAttributes.Italic) == FontAttributes.Italic;
-
-            var fontStyle = isBold && isItalic ? SKFontStyle.BoldItalic 
-                : isBold ? SKFontStyle.Bold 
-                : isItalic ? SKFontStyle.Italic : 
-                SKFontStyle.Normal;
-
-            return new SKPaint
-            {
-                TextSize = (float)(FontSize * context.PixelScaling),
-                Typeface = SKTypeface.FromFamilyName(FontFamily, fontStyle),
-                IsAntialias = true
-            };
-        }
     }
 }
