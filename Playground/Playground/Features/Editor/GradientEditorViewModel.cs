@@ -152,6 +152,9 @@ namespace Playground.Features.Editor
 
         private void LoadGradient()
         {
+            if (GradientSource.Gradients.Any())
+                return;
+
             if (int.TryParse(_id, out var id))
             {
                 LoadFromGallery(id);   

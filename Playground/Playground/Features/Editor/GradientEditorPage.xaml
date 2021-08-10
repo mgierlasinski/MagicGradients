@@ -7,6 +7,7 @@
              xmlns:converters="clr-namespace:Playground.Converters;assembly=Playground"
              xmlns:editor="clr-namespace:Playground.Features.Editor;assembly=Playground"
              xmlns:controls="clr-namespace:Playground.Controls;assembly=Playground"
+             xmlns:toolkit="http://magic.com/schemas/toolkit"
              x:Class="Playground.Features.Editor.GradientEditorPage"
              Title="Gradient Editor"
              vm:ViewModelLocator.AutoWireViewModel="true">
@@ -72,8 +73,10 @@
               RowDefinitions="40,*" ColumnDefinitions="40,*"
               RowSpacing="0" ColumnSpacing="10">
             <BoxView Grid.RowSpan="2" StyleClass="ContrastElement" />
-            <ImageButton Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" Margin="5"
-                         Command="{Binding AddCommand}" BackgroundColor="{StaticResource AccentColor}" />
+            <toolkit:MagicButton Command="{Binding AddCommand}" CornerRadius="4" Margin="5"
+                                 GradientSource="linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)">
+                <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Color=White}" />
+            </toolkit:MagicButton>
             <CollectionView ItemsSource="{Binding GradientSource.Gradients}" 
                             SelectedItem="{Binding Gradient}"
                             SelectionMode="Single" 

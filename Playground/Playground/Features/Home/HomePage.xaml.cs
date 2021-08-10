@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
+﻿using Playground.Extensions;
+using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-using Application = Xamarin.Forms.Application;
 
 namespace Playground.Features.Home
 {
@@ -18,10 +16,7 @@ namespace Playground.Features.Home
         {
             if (e.PropertyName == "SafeAreaInsets")
             {
-                var safeInsets = On<iOS>().SafeAreaInsets();
-                safeInsets.Top = 0;
-                safeInsets.Bottom = safeInsets.Bottom * -1;
-                Application.Current.Resources["SafeAreaInsets"] = safeInsets;
+                this.InitSafeAreaInsets();
             }
         }
     }

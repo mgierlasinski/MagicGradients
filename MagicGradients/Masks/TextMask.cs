@@ -70,12 +70,6 @@ namespace MagicGradients.Masks
 
             using var textPaint = GetTextPaint(context);
             using var textPath = textPaint.GetTextPath(Text, 0, 0);
-
-            // Make sure it starts from (0, 0)
-            //if (textPath.Bounds.Top != 0 || textPath.Bounds.Left != 0)
-            //{
-            //    textPath.Transform(SKMatrix.MakeTranslation(-textPath.Bounds.Left, -textPath.Bounds.Top));
-            //}
             
             ClipPath(context, textPath);
         }
@@ -135,80 +129,5 @@ namespace MagicGradients.Masks
 
             context.Canvas.Translate(movX, movY);
         }
-
-        //protected override void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
-        //{
-        //    if (Stretch != Stretch.None)
-        //    {
-        //        base.LayoutBounds(context, bounds, keepAspectRatio);
-        //        return;
-        //    }
-
-        //    var scaleX = (float)context.RenderRect.Width / context.CanvasRect.Width;
-        //    var scaleY = (float)context.RenderRect.Height / context.CanvasRect.Height;
-        //    var scale = Math.Max(scaleX, scaleY);
-
-        //    var posX = HorizontalTextAlignment switch
-        //    {
-        //        TextAlignment.Center => (float)context.RenderRect.Width / 2 - bounds.MidX * scale,
-        //        TextAlignment.End => context.RenderRect.Width - bounds.Right * scale,
-        //        _ => -bounds.Left * scale
-        //    };
-
-        //    var posY = VerticalTextAlignment switch
-        //    {
-        //        TextAlignment.Center => (float)context.RenderRect.Height / 2 - bounds.MidY * scale,
-        //        TextAlignment.End => context.RenderRect.Height - bounds.Bottom * scale,
-        //        _ => -bounds.Top * scale
-        //    };
-
-        //    context.Canvas.Translate(posX, posY);
-        //    context.Canvas.Scale(scale);
-        //}
-
-        //protected override void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
-        //{
-        //    if (Stretch != Stretch.None)
-        //    {
-        //        base.LayoutBounds(context, bounds, keepAspectRatio);
-        //        return;
-        //    }
-
-        //    var scaleX = (float)context.RenderRect.Width / context.CanvasRect.Width;
-        //    var scaleY = (float)context.RenderRect.Height / context.CanvasRect.Height;
-        //    var scale = Math.Max(scaleX, scaleY);
-
-        //    var posX = HorizontalTextAlignment switch
-        //    {
-        //        TextAlignment.Center => (float)context.RenderRect.Width / 2,
-        //        TextAlignment.End => context.RenderRect.Width,
-        //        _ => 0
-        //    };
-
-        //    var movX = HorizontalTextAlignment switch
-        //    {
-        //        TextAlignment.Center => -bounds.MidX,
-        //        TextAlignment.End => -bounds.Width,
-        //        _ => 0
-        //    };
-
-        //    var posY = VerticalTextAlignment switch
-        //    {
-        //        TextAlignment.Center => (float)context.RenderRect.Height / 2,
-        //        TextAlignment.End => context.RenderRect.Height,
-        //        _ => 0
-        //    };
-
-        //    var movY = VerticalTextAlignment switch
-        //    {
-        //        TextAlignment.Center => -bounds.MidY,
-        //        TextAlignment.End => -bounds.Height,
-        //        _ => 0
-        //    };
-
-        //    context.Canvas.Translate(posX, posY);
-        //    context.Canvas.Scale(scale);
-        //    context.Canvas.Translate(movX, movY);
-        //}
     }
 }

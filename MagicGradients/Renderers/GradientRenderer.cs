@@ -98,7 +98,7 @@ namespace MagicGradients.Renderers
 
         private void RenderSingle(RenderContext context)
         {
-            DrawBorder(context);
+            //DrawBorder(context);
             _control.Mask?.Clip(context);
             context.Canvas.DrawRect(context.RenderRect, context.Paint);
             //DrawBorder(context);
@@ -134,18 +134,17 @@ namespace MagicGradients.Renderers
 
         private void DrawBorder(RenderContext context)
         {
-            using var paint = new SKPaint
-            {
-                StrokeWidth = 10, 
-                Style = SKPaintStyle.Stroke, 
-                Color = SKColors.Yellow
-            };
-
             var gradient = new GradientBuilder().AddCssGradient("linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)").Build().First();
             gradient.InstantiateShader(_control);
             gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
 
-            paint.Shader = gradient.Shader.Create(context);
+            using var paint = new SKPaint
+            {
+                StrokeWidth = 10, 
+                Style = SKPaintStyle.Stroke, 
+                Color = SKColors.Yellow,
+                Shader = gradient.Shader.Create(context)
+            };
 
             context.Canvas.DrawRect(context.RenderRect, paint);
         }
