@@ -17,5 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MagicGradients.Maui.Graphics.Forms\MagicGradients.Maui.Graphics.Forms.csproj" />
+    <ProjectReference Include="..\..\MagicGradients.Skia.Forms\MagicGradients.Skia.Forms.csproj" />
   </ItemGroup>
 </Project>

@@ -5,8 +5,8 @@ namespace MagicGradients.Maui.Graphics.Drawing
 {
     public class GradientLine
     {
-        public Point Start { get; }
-        public Point End { get; }
+        public PointF Start { get; }
+        public PointF End { get; }
         public double Length { get; }
         public double Angle { get; }
 
@@ -26,18 +26,25 @@ namespace MagicGradients.Maui.Graphics.Drawing
             var yDiff = (float)(Math.Sin(angleRadians - Math.PI / 2) * lineLength / 2);
             var xDiff = (float)(Math.Cos(angleRadians - Math.PI / 2) * lineLength / 2);
 
-            Start = new Point(center.X - xDiff, center.Y - yDiff);
-            End = new Point(center.X + xDiff, center.Y + yDiff);
+            Start = new PointF(center.X - xDiff, center.Y - yDiff);
+            End = new PointF(center.X + xDiff, center.Y + yDiff);
             Length = lineLength;
             Angle = angleRadians;
         }
 
-        public Point GetColorPointAt(float position)
+        public PointF GetColorPointAt(float position)
         {
             var yDiff = Math.Sin(Angle - Math.PI / 2) * (Length * position);
             var xDiff = Math.Cos(Angle - Math.PI / 2) * (Length * position);
 
-            return new Point(Start.X + (float)xDiff, Start.Y + (float)yDiff);
+            return new PointF(Start.X + (float)xDiff, Start.Y + (float)yDiff);
+        }
+
+        public float ScaleWithBias(float input, float inLow, float inHigh, float outLow, float outHigh)
+        {
+            // Calculation
+            // https://gamedev.stackexchange.com/questions/33441/how-to-convert-a-number-from-one-min-max-set-to-another-min-max-set
+            return (input - inLow) / (inHigh - inLow) * (outHigh - outLow) + outLow;
         }
     }
 }

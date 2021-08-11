@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MagicGradients.Maui.Graphics\MagicGradients.Maui.Graphics.csproj" />
+    <ProjectReference Include="..\MagicGradients\MagicGradients.csproj" />
+  </ItemGroup>
+
+</Project>

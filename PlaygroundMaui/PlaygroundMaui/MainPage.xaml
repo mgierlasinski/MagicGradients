@@ -4,6 +4,7 @@
              xmlns:maui="clr-namespace:MagicGradients.Maui.Graphics.Forms;assembly=MagicGradients.Maui.Graphics.Forms"
              xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:masks="http://magic.com/schemas/gradients"
+             xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
              x:Class="PlaygroundMaui.MainPage">
     <ScrollView>
         <StackLayout>
@@ -17,14 +18,29 @@
                     </Label.FormattedText>
                 </Label>
             </Frame>
-            <maui:GradientView2 HeightRequest="160" GradientSize="40">
+            <skia:GradientView HeightRequest="160" GradientSize="40">
+                <magicGradients:LinearGradient Angle="45">
+                    <magicGradients:GradientStop Color="Blue" />
+                    <magicGradients:GradientStop Color="Yellow" />
+                </magicGradients:LinearGradient>
+            </skia:GradientView>
+                <maui:GradientView2 HeightRequest="160" GradientSize="40">
                 <magicGradients:LinearGradient Angle="45">
                     <magicGradients:GradientStop Color="Blue" />
                     <magicGradients:GradientStop Color="Yellow" />
                 </magicGradients:LinearGradient>
             </maui:GradientView2>
-            <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
-            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '50%,50%'}" />
+            <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
+            <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" />
+            <skia:GradientView HeightRequest="160" StyleClass="AngularGradient" />
+            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" />
+            <skia:GradientView HeightRequest="160">
+                <magicGradients:RadialGradient Center="0.2,0.5" Flags="All" RadiusX="0.5" RadiusY="1">
+                    <magicGradients:GradientStop Color="Red" />
+                    <magicGradients:GradientStop Color="Green" />
+                    <magicGradients:GradientStop Color="Blue" />
+                </magicGradients:RadialGradient>
+            </skia:GradientView>
             <maui:GradientView2 HeightRequest="160">
                 <magicGradients:RadialGradient Center="100,80" Flags="None">
                     <magicGradients:GradientStop Color="Red" />
@@ -32,6 +48,8 @@
                     <magicGradients:GradientStop Color="Blue" />
                 </magicGradients:RadialGradient>
             </maui:GradientView2>
+            <!--<maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
+            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '50%,50%'}" />-->
         </StackLayout>
     </ScrollView>
 </ContentPage>
