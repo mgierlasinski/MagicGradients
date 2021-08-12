@@ -9,7 +9,7 @@ namespace MagicGradients.Skia.Forms.Drawing
         public SKPaint Paint { get; set; }
         public SKRectI CanvasRect { get; set; }
         public SKRectI RenderRect { get; set; }
-        public double PixelScaling { get; set; }
+        public float PixelScaling { get; set; }
 
         public DrawContext(SKPaintSurfaceEventArgs e)
         {
@@ -27,7 +27,7 @@ namespace MagicGradients.Skia.Forms.Drawing
 
         public void Measure(Dimensions size, double viewWidth)
         {
-            PixelScaling = CanvasRect.Width / viewWidth;
+            PixelScaling = (float)(CanvasRect.Width / viewWidth);
 
             if (size.Width.Value > 0 && size.Height.Value > 0)
             {

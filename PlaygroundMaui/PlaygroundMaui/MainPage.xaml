@@ -35,14 +35,14 @@
             <skia:GradientView HeightRequest="160" StyleClass="AngularGradient" />
             <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" />
             <skia:GradientView HeightRequest="160">
-                <magicGradients:RadialGradient Center="0.2,0.5" Flags="All" RadiusX="0.5" RadiusY="1">
+                <magicGradients:RadialGradient Center="100,80" Flags="None" RadiusX="100" RadiusY="100">
                     <magicGradients:GradientStop Color="Red" />
                     <magicGradients:GradientStop Color="Green" />
                     <magicGradients:GradientStop Color="Blue" />
                 </magicGradients:RadialGradient>
             </skia:GradientView>
             <maui:GradientView2 HeightRequest="160">
-                <magicGradients:RadialGradient Center="100,80" Flags="None">
+                <magicGradients:RadialGradient Center="100,80" Flags="None" RadiusX="100" RadiusY="100">
                     <magicGradients:GradientStop Color="Red" />
                     <magicGradients:GradientStop Color="Green" />
                     <magicGradients:GradientStop Color="Blue" />

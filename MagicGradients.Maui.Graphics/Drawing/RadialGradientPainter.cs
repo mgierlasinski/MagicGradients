@@ -1,5 +1,5 @@
-﻿using Microsoft.Maui.Graphics;
-using static MagicGradients.FlagsHelper;
+﻿using System;
+using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Maui.Graphics.Drawing
 {
@@ -10,21 +10,15 @@ namespace MagicGradients.Maui.Graphics.Drawing
             var rect = context.RenderRect;
 
             var renderStops = GetRenderStops(gradient);
-            var center = GetCenter(gradient, rect);
+            var circle = new RadialGradientGeometry(gradient, rect, 1, 1);
 
-            return new RadialGradientPaint(renderStops, center, 0.5);
-        }
+            var center = new Point(circle.Center.X / rect.Width, circle.Center.Y / rect.Height);
+            var radius = Math.Min(circle.Radius.Width / rect.Width, circle.Radius.Height / rect.Height);
 
-        private Point GetCenter(RadialGradient gradient, RectangleF rect)
-        {
-            var point = gradient.Center;
+            // TODO: Missing TileMode.Repeat
+            // TODO: Missing transform Matrix, only single radius supported
 
-            var xIsProportional = IsSet(gradient.Flags, RadialGradientFlags.XProportional);
-            var yIsProportional = IsSet(gradient.Flags, RadialGradientFlags.YProportional);
-
-            return new Point(
-                xIsProportional ? point.X : point.X / rect.Width,
-                yIsProportional ? point.Y : point.Y / rect.Height);
+            return new RadialGradientPaint(renderStops, center, radius);
         }
     }
 }

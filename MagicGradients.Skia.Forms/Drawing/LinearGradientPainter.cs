@@ -15,7 +15,7 @@ namespace MagicGradients.Skia.Forms.Drawing
             var colors = renderStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = renderStops.Select(x => x.RenderOffset).ToArray();
 
-            var line = new GradientLine(rect.ToRectF(), gradient.Angle);
+            var line = new LinearGradientGeometry(rect.ToRectF(), gradient.Angle);
             var startPoint = line.Start;
             var endPoint = line.End;
 
@@ -42,16 +42,5 @@ namespace MagicGradients.Skia.Forms.Drawing
 
             return shader;
         }
-        
-        //public double CalculateRenderOffset(double offset, int width, int height)
-        //{
-        //    // Here the Pythagorean Theorem + Trigonometry is applied
-        //    // to figure out the length of the gradient, which is needed to accurately calculate offset.
-        //    // https://en.wikibooks.org/wiki/Trigonometry/The_Pythagorean_Theorem
-        //    var angleRad = GradientMath.ToRadians(_gradient.Angle);
-        //    var computedLength = Math.Sqrt(Math.Pow(width * Math.Cos(angleRad), 2) + Math.Pow(height * Math.Sin(angleRad), 2));
-
-        //    return computedLength != 0 ? offset / computedLength : 1;
-        //}
     }
 }

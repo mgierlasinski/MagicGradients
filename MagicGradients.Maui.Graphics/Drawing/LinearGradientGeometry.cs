@@ -3,14 +3,14 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Maui.Graphics.Drawing
 {
-    public class GradientLine
+    public class LinearGradientGeometry
     {
         public PointF Start { get; }
         public PointF End { get; }
         public double Length { get; }
         public double Angle { get; }
 
-        public GradientLine(RectangleF boxBounds, double angleDegrees)
+        public LinearGradientGeometry(RectangleF boxBounds, double angleDegrees)
         {
             // Calculation
             // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf
