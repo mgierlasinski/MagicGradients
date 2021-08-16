@@ -1,4 +1,5 @@
 ﻿using System;
+using MagicGradients.Maui.Graphics.Masks;
 using Microsoft.Maui.Graphics;
 using static MagicGradients.BackgroundRepeat;
 
@@ -69,7 +70,7 @@ namespace MagicGradients.Maui.Graphics.Drawing
                 {
                     context.Canvas.SaveState();
                     context.Canvas.Translate(col * tileWidth, row * tileHeight);
-                    _maskDrawable.Clip(context, _control.Mask);
+                    _maskDrawable.Clip(_control.Mask, context);
                     context.Canvas.FillRectangle(context.RenderRect);
                     context.Canvas.RestoreState();
                 }

@@ -1,25 +1,26 @@
-﻿using MagicGradients.Masks;
+﻿using System;
+using MagicGradients.Masks;
+using MagicGradients.Maui.Graphics.Drawing;
 using Microsoft.Maui.Graphics;
-using System;
 using PathF = Microsoft.Maui.Graphics.PathF;
 
-namespace MagicGradients.Maui.Graphics.Drawing
+namespace MagicGradients.Maui.Graphics.Masks
 {
     public class MaskDrawable
     {
-        public void Clip(DrawContext context, GradientMask mask)
+        public void Clip(GradientMask mask, DrawContext context)
         {
             if (mask is EllipseMask ellipseMask)
-                ClipMask(context, ellipseMask);
+                ClipMask(ellipseMask, context);
 
             else if (mask is RectangleMask rectangleMask)
-                ClipMask(context, rectangleMask);
+                ClipMask(rectangleMask, context);
 
             else if (mask is PathMask pathMask)
-                ClipMask(context, pathMask);
+                ClipMask(pathMask, context);
         }
 
-        private void ClipMask(DrawContext context, RectangleMask mask)
+        private void ClipMask(RectangleMask mask, DrawContext context)
         {
             var bounds = GetSizeRect(context, mask.Size);
 
@@ -36,7 +37,7 @@ namespace MagicGradients.Maui.Graphics.Drawing
             float GetRadius(Dimensions cornerSize) => (float)cornerSize.Width.GetDrawPixels((int)bounds.Width, 1);
         }
 
-        private void ClipMask(DrawContext context, EllipseMask mask)
+        private void ClipMask(EllipseMask mask, DrawContext context)
         {
             var bounds = GetSizeRect(context, mask.Size);
 
@@ -47,7 +48,7 @@ namespace MagicGradients.Maui.Graphics.Drawing
             context.Canvas.ClipPath(path);
         }
 
-        private void ClipMask(DrawContext context, PathMask mask)
+        private void ClipMask(PathMask mask, DrawContext context)
         {
             
         }

@@ -1,4 +1,5 @@
 ﻿using MagicGradients.Builder;
+using MagicGradients.Skia.Forms.Masks;
 using SkiaSharp;
 using System;
 using System.Linq;
@@ -12,12 +13,14 @@ namespace MagicGradients.Skia.Forms.Drawing
         private readonly T _control;
         private readonly LinearGradientPainter _linearPainter;
         private readonly RadialGradientPainter _radialPainter;
+        private readonly MaskDrawable _maskDrawable;
 
         public GradientDrawable(T control)
         {
             _control = control;
             _linearPainter = new LinearGradientPainter();
             _radialPainter = new RadialGradientPainter();
+            _maskDrawable = new MaskDrawable();
         }
         
         public void Draw(DrawContext context)
@@ -72,7 +75,7 @@ namespace MagicGradients.Skia.Forms.Drawing
                     context.Canvas.Save();
                     context.Canvas.Translate(point);
                     //DrawBorder(context);
-                    //_control.Mask?.Clip(context);
+                    _maskDrawable.Clip(_control.Mask, context);
                     context.Canvas.DrawRect(context.RenderRect, context.Paint);
                     //DrawBorder(context);
                     context.Canvas.Restore();
