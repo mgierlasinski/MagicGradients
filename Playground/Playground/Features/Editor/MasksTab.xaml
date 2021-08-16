@@ -67,7 +67,7 @@
                             <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Arrow}}" Grid.Column="3" />
                         </Grid>
                     </views:Expander.Header>
-                    <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="35,35,35,35">
+                    <Grid RowSpacing="10" Margin="0,10,0,0" RowDefinitions="35,35,35,35,35,35">
                         <StackLayout Orientation="Horizontal" Grid.Row="0">
                             <Slider Value="{Binding FontSize}" Maximum="300" Minimum="10" HorizontalOptions="FillAndExpand" ValueChanged="FontSize_OnValueChanged" />
                             <Label Text="{Binding FontSize}" FontAttributes="Bold" VerticalOptions="Center" Margin="0,0,0,5" />
@@ -81,6 +81,12 @@
                         <controls:EnumSwitch EnumType="{x:Type masks:ClipMode}" 
                                              SelectedItem="{Binding ClipMode}" 
                                              Grid.Row="3" />
+                        <controls:EnumSwitch EnumType="{x:Type TextAlignment}" 
+                                             SelectedItem="{Binding HorizontalTextAlignment}" 
+                                             Grid.Row="4" />
+                        <controls:EnumSwitch EnumType="{x:Type TextAlignment}" 
+                                             SelectedItem="{Binding VerticalTextAlignment}" 
+                                             Grid.Row="5" />
                     </Grid>
                 </views:Expander>
             </Frame>

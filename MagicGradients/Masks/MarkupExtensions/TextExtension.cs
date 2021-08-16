@@ -10,6 +10,8 @@ namespace MagicGradients.Masks
         public string Text { get; set; }
         public string FontFamily { get; set; }
         public FontAttributes FontAttributes { get; set; }
+        public TextAlignment HorizontalTextAlignment { get; set; }
+        public TextAlignment VerticalTextAlignment { get; set; }
 
         [TypeConverter(typeof(FontSizeConverter))]
         public double FontSize { get; set; } = TextMask.DefaultFontSize;
@@ -21,7 +23,9 @@ namespace MagicGradients.Masks
                 Text = Text,
                 FontFamily = FontFamily,
                 FontSize = FontSize,
-                FontAttributes = FontAttributes
+                FontAttributes = FontAttributes,
+                HorizontalTextAlignment = HorizontalTextAlignment,
+                VerticalTextAlignment = VerticalTextAlignment
             };
 
             FillValues(mask);

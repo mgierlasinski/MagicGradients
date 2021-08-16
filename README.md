@@ -146,6 +146,12 @@ CSS gradient can be embeded in XAML inline:
 </magic:GradientView>
 ```
 
+Or even shorter using implicit conversion to `CssGradientSource`:
+
+``` xml
+<magic:GradientView GradientSource="linear-gradient(242deg, red, green, orange)" />
+```
+
 Styling from CSS stylesheet is also possible:
 
 ``` xml
@@ -165,12 +171,6 @@ gradientView.GradientSource = CssGradientSource.Parse("linear-gradient(red, gree
 ```
 
 ### Linear gradient function
-
-<!--
-| ![Alt text](https://www.w3schools.com/cssref/gradient_linear.png) | ![Alt text](https://www.w3schools.com/cssref/gradient_linear.png) |
-|:-----:|:-----:|
-| [`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) | [`repeating-linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient) |
--->
 
 ``` css
 linear-gradient(direction | angle, color-stop1, color-stop2, ...);
@@ -196,12 +196,6 @@ linear-gradient(blue, green 40%, red);
 ```
 
 ### Radial gradient function
-
-<!--
-| ![Alt text](https://www.w3schools.com/cssref/gradient_radial.jpg) | ![Alt text](https://www.w3schools.com/cssref/gradient_radial.jpg) |
-|:-----:|:-----:|
-| [`radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient) | [`repeating-radial-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient) |
--->
 
 ``` css
 radial-gradient(shape size at position, color-stop1, color-stop2, ...);
@@ -339,6 +333,18 @@ For font customization use properties from `Label` control like: `FontFamily`, `
 <magic:GradientView>
     <magic:GradientView.Mask>
         <magic:TextMask Text="Magic!" FontSize="80" FontAttributes="Bold,Italic" />
+    </magic:GradientView.Mask>
+</magic:GradientView>
+```
+
+Text can be positioned inside `GradientView` with `HorizontalTextAlignment` and `VerticalTextAlignment` just like with `Label`:
+
+```xml
+<magic:GradientView>
+    <magic:GradientView.Mask>
+        <masks:TextMask Text="Hello!" 
+                        HorizontalTextAlignment="Start" 
+                        VerticalTextAlignment="End" />
     </magic:GradientView.Mask>
 </magic:GradientView>
 ```

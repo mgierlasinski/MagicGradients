@@ -67,7 +67,7 @@
                 <ImageButton Clicked="RemoveColor_Clicked" Grid.Column="1" StyleClass="BackgroundElement"
                              Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Delete}}" />
                 <ImageButton Clicked="AddColor_Clicked" Grid.Column="2" BackgroundColor="{StaticResource AccentColor}"
-                             Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}}" />
+                             Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.Add}, Color=White}" />
                 <controls:ColorEditor Value="{Binding SelectedStop.Color}" Grid.Row="1" Grid.ColumnSpan="3" />
                 <colorPicker:ColorWheel Grid.Row="2" Grid.ColumnSpan="3"
                                         ShowAlphaSlider="True"

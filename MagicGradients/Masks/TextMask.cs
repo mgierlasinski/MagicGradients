@@ -19,6 +19,12 @@ namespace MagicGradients.Masks
 
         public static readonly BindableProperty FontAttributesProperty = BindableProperty.Create(nameof(FontAttributes), 
             typeof(FontAttributes), typeof(TextMask), FontAttributes.None);
+        
+        public static readonly BindableProperty HorizontalTextAlignmentProperty = BindableProperty.Create(nameof(HorizontalTextAlignment), 
+            typeof(TextAlignment), typeof(TextMask), TextAlignment.Center);
+
+        public static readonly BindableProperty VerticalTextAlignmentProperty = BindableProperty.Create(nameof(VerticalTextAlignment), 
+            typeof(TextAlignment), typeof(TextMask), TextAlignment.Center);
 
         public string Text
         {
@@ -45,6 +51,18 @@ namespace MagicGradients.Masks
             set => SetValue(FontAttributesProperty, value);
         }
 
+        public TextAlignment HorizontalTextAlignment
+        {
+            get => (TextAlignment)GetValue(HorizontalTextAlignmentProperty);
+            set => SetValue(HorizontalTextAlignmentProperty, value);
+        }
+
+        public TextAlignment VerticalTextAlignment
+        {
+            get => (TextAlignment)GetValue(VerticalTextAlignmentProperty);
+            set => SetValue(VerticalTextAlignmentProperty, value);
+        }
+
         public override void Clip(RenderContext context)
         {
             if (!IsActive)
@@ -52,7 +70,7 @@ namespace MagicGradients.Masks
 
             using var textPaint = GetTextPaint(context);
             using var textPath = textPaint.GetTextPath(Text, 0, 0);
-
+            
             ClipPath(context, textPath);
         }
 
@@ -72,6 +90,44 @@ namespace MagicGradients.Masks
                 Typeface = SKTypeface.FromFamilyName(FontFamily, fontStyle),
                 IsAntialias = true
             };
+        }
+
+        protected override void BeginLayout(RenderContext context, SKRect bounds)
+        {
+            var posX = HorizontalTextAlignment switch
+            {
+                TextAlignment.Center => (float)context.RenderRect.Width / 2,
+                TextAlignment.End => context.RenderRect.Width,
+                _ => 0
+            };
+
+            var posY = VerticalTextAlignment switch
+            {
+                TextAlignment.Center => (float)context.RenderRect.Height / 2,
+                TextAlignment.End => context.RenderRect.Height,
+                _ => 0
+            };
+
+            context.Canvas.Translate(posX, posY);
+        }
+
+        protected override void EndLayout(RenderContext context, SKRect bounds)
+        {
+            var movX = HorizontalTextAlignment switch
+            {
+                TextAlignment.Center => -bounds.MidX,
+                TextAlignment.End => -bounds.Right,
+                _ => -bounds.Left
+            };
+
+            var movY = VerticalTextAlignment switch
+            {
+                TextAlignment.Center => -bounds.MidY,
+                TextAlignment.End => -bounds.Bottom,
+                _ => -bounds.Top
+            };
+
+            context.Canvas.Translate(movX, movY);
         }
     }
 }

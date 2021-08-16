@@ -3,6 +3,7 @@ using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
 using System.Threading.Tasks;
+using Playground.Extensions;
 using Xamarin.Forms;
 using VM = Playground.Features.Editor.GradientEditorViewModel;
 
@@ -26,10 +27,9 @@ namespace Playground.Features.Editor
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if(Application.Current.Resources["SafeAreaInsets"] is Thickness safeInsets)
-            {
-                Editor.Margin = new Thickness(0,0,0, safeInsets.Bottom * -1);
-            }
+
+            var safeInsets = this.GetSafeAreaInsets();
+            Editor.Margin = new Thickness(0, 0, 0, safeInsets.Bottom * -1);
         }
 
         private void SKCanvasView_OnTouch(object sender, SKTouchEventArgs e)

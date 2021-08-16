@@ -15,7 +15,9 @@
     <Grid RowDefinitions="150,*">
         <magic:GradientView VerticalOptions="Fill" StyleId="banner" />
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Image Source="{ic:IcoMoon {x:Static ic:IcoMoonGlyph.MagicWand}, Color=White, Size=70}" />
+            <Label Text="{x:Static ic:IcoMoonGlyph.MagicWand}" 
+                   Style="{StaticResource FontLabel}" 
+                   FontSize="70" TextColor="White" />
             <Label Text="Magic Gradients" TextColor="White" FontAttributes="Bold" FontSize="20" />
         </StackLayout>
         <ScrollView Grid.Row="1">

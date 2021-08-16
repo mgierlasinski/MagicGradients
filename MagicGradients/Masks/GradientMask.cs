@@ -38,9 +38,9 @@ namespace MagicGradients.Masks
         {
         }
 
-        protected void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
+        protected virtual void LayoutBounds(RenderContext context, SKRect bounds, bool keepAspectRatio)
         {
-            context.Canvas.Translate((float)context.RenderRect.Width / 2, (float)context.RenderRect.Height / 2);
+            BeginLayout(context, bounds);
 
             if (Stretch == Stretch.None)
             {
@@ -67,6 +67,16 @@ namespace MagicGradients.Masks
                     context.Canvas.Scale(scaleX, scaleY);
             }
 
+            EndLayout(context, bounds);
+        }
+
+        protected virtual void BeginLayout(RenderContext context, SKRect bounds)
+        {
+            context.Canvas.Translate((float)context.RenderRect.Width / 2, (float)context.RenderRect.Height / 2);
+        }
+
+        protected virtual void EndLayout(RenderContext context, SKRect bounds)
+        {
             context.Canvas.Translate(-bounds.MidX, -bounds.MidY);
         }
     }
