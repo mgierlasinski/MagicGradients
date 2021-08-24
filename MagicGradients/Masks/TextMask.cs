@@ -65,7 +65,7 @@ namespace MagicGradients.Masks
 
         public override void Clip(RenderContext context)
         {
-            if (!IsActive)
+            if (!IsActive || string.IsNullOrEmpty(Text))
                 return;
 
             using var textPaint = GetTextPaint(context);
