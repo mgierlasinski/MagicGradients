@@ -1,11 +1,12 @@
 ﻿using MagicGradients.Masks;
+using MagicGradients.Maui.Graphics.Masks;
 using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp;
 using Xamarin.Forms;
 
 namespace MagicGradients.Skia.Forms.Masks
 {
-    public class TextMaskPainter : PathMaskPainter
+    public class TextMaskPainter : PathMaskPainter, ITextMaskPainter<DrawContext>
     {
         public void Clip(TextMask mask, DrawContext context)
         {

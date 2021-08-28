@@ -55,8 +55,8 @@
                                     VerticalTextAlignment="Start" />
                 </skia:GradientView.Mask>
             </skia:GradientView>
-            <!--<maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
-            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '50%,50%'}" />-->
+            <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
+            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '50%,50%'}" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

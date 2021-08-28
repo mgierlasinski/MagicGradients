@@ -13,14 +13,18 @@ namespace MagicGradients.Skia.Forms.Drawing
         private readonly T _control;
         private readonly LinearGradientPainter _linearPainter;
         private readonly RadialGradientPainter _radialPainter;
-        private readonly MaskDrawable _maskDrawable;
+        private readonly Maui.Graphics.Masks.MaskDrawable<DrawContext> _maskDrawable;
 
         public GradientDrawable(T control)
         {
             _control = control;
             _linearPainter = new LinearGradientPainter();
             _radialPainter = new RadialGradientPainter();
-            _maskDrawable = new MaskDrawable();
+            _maskDrawable = new Maui.Graphics.Masks.MaskDrawable<DrawContext>(
+                new EllipseMaskPainter(),
+                new RectangleMaskPainter(),
+                new TextMaskPainter(),
+                new PathMaskPainter());
         }
         
         public void Draw(DrawContext context)

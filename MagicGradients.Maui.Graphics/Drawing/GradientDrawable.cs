@@ -1,6 +1,6 @@
-﻿using System;
-using MagicGradients.Maui.Graphics.Masks;
+﻿using MagicGradients.Maui.Graphics.Masks;
 using Microsoft.Maui.Graphics;
+using System;
 using static MagicGradients.BackgroundRepeat;
 
 namespace MagicGradients.Maui.Graphics.Drawing
@@ -10,14 +10,18 @@ namespace MagicGradients.Maui.Graphics.Drawing
         private readonly IGradientControl _control;
         private readonly LinearGradientPainter _linearPainter;
         private readonly RadialGradientPainter _radialPainter;
-        private readonly MaskDrawable _maskDrawable;
+        private readonly MaskDrawable<DrawContext> _maskDrawable;
 
         public GradientDrawable(IGradientControl control)
         {
             _control = control;
             _linearPainter = new LinearGradientPainter();
             _radialPainter = new RadialGradientPainter();
-            _maskDrawable = new MaskDrawable();
+            _maskDrawable = new MaskDrawable<DrawContext>(
+                new EllipseMaskPainter(), 
+                new RectangleMaskPainter(), 
+                new TextMaskPainter(), 
+                new PathMaskPainter());
         }
 
         public void Draw(ICanvas canvas, RectangleF dirtyRect)

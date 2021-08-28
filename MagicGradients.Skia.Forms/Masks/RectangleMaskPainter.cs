@@ -1,10 +1,11 @@
 ﻿using MagicGradients.Masks;
+using MagicGradients.Maui.Graphics.Masks;
 using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp;
 
 namespace MagicGradients.Skia.Forms.Masks
 {
-    public class RectangleMaskPainter : GradientMaskPainter
+    public class RectangleMaskPainter : GradientMaskPainter, IRectangleMaskPainter<DrawContext>
     {
         public void Clip(RectangleMask mask, DrawContext context)
         {
