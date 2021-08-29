@@ -1,18 +1,19 @@
 ﻿using MagicGradients.Maui.Graphics.Masks;
 using Microsoft.Maui.Graphics;
 using System;
+using Xamarin.Forms;
 using static MagicGradients.BackgroundRepeat;
 
 namespace MagicGradients.Maui.Graphics.Drawing
 {
-    public class GradientDrawable : IDrawable
+    public class GradientDrawable<T> : IDrawable where T : VisualElement, IGradientControl
     {
-        private readonly IGradientControl _control;
+        private readonly T _control;
         private readonly LinearGradientPainter _linearPainter;
         private readonly RadialGradientPainter _radialPainter;
         private readonly MaskDrawable<DrawContext> _maskDrawable;
 
-        public GradientDrawable(IGradientControl control)
+        public GradientDrawable(T control)
         {
             _control = control;
             _linearPainter = new LinearGradientPainter();
@@ -30,7 +31,7 @@ namespace MagicGradients.Maui.Graphics.Drawing
                 return;
 
             var context = new DrawContext(canvas, dirtyRect);
-            context.Measure(_control.GradientSize);
+            context.Measure(_control.GradientSize, _control.Width);
 
             foreach (var gradient in _control.GradientSource.GetGradients())
             {

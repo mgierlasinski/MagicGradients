@@ -1,12 +1,12 @@
-﻿using MagicGradients.Masks;
-using MagicGradients.Maui.Graphics.Drawing;
-using Microsoft.Maui.Graphics.Forms;
+using MagicGradients.Masks;
+using MagicGradients.Skia.Forms.Drawing;
+using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
-namespace MagicGradients.Maui.Graphics.Forms
+namespace MagicGradients.Skia.Forms
 {
     [ContentProperty(nameof(GradientSource))]
-    public class GradientView2 : GraphicsView, IGradientControl, IGradientVisualElement
+    public class GradientView2 : SKCanvasView, IGradientControl, IGradientVisualElement
     {
         static GradientView2()
         {
@@ -14,6 +14,8 @@ namespace MagicGradients.Maui.Graphics.Forms
             StyleSheets.RegisterStyle("background-size", typeof(GradientView2), nameof(GradientControl.GradientSourceProperty));
             StyleSheets.RegisterStyle("background-repeat", typeof(GradientView2), nameof(GradientControl.GradientSourceProperty));
         }
+
+        public MagicGradients.Maui.Graphics.Drawing.GradientDrawable<GradientView2> Drawable { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -46,7 +48,7 @@ namespace MagicGradients.Maui.Graphics.Forms
 
         public GradientView2()
         {
-            Drawable = new GradientDrawable<GradientView2>(this);
+            Drawable = new MagicGradients.Maui.Graphics.Drawing.GradientDrawable<GradientView2>(this);
         }
 
         protected override void OnBindingContextChanged()
@@ -64,9 +66,19 @@ namespace MagicGradients.Maui.Graphics.Forms
             }
         }
 
+        protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
+        {
+            base.OnPaintSurface(e);
+
+            var canvas = new SkiaCanvasEx {Canvas = e.Surface.Canvas};
+            var rect = e.Info.Rect.ToRectF();
+            
+            Drawable.Draw(canvas, rect);
+        }
+
         public void InvalidateCanvas()
         {
-            //InvalidateSurface();
+            InvalidateSurface();
         }
     }
 }

@@ -5,7 +5,7 @@ using SkiaSharp;
 
 namespace MagicGradients.Skia.Forms.Masks
 {
-    public class EllipseMaskPainter : RectangleMaskPainter, IEllipseMaskPainter<DrawContext>
+    public class EllipseMaskPainter : RectangleMaskPainter, IMaskPainter<EllipseMask, DrawContext>
     {
         public void Clip(EllipseMask mask, DrawContext context)
         {

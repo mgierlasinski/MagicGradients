@@ -3,7 +3,7 @@ using MagicGradients.Maui.Graphics.Drawing;
 
 namespace MagicGradients.Maui.Graphics.Masks
 {
-    public class PathMaskPainter : GradientMaskPainter, IPathMaskPainter<DrawContext>
+    public class PathMaskPainter : GradientMaskPainter, IMaskPainter<PathMask, DrawContext>
     {
         public void Clip(PathMask mask, DrawContext context)
         {

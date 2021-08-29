@@ -5,7 +5,7 @@ using SkiaSharp;
 
 namespace MagicGradients.Skia.Forms.Masks
 {
-    public class RectangleMaskPainter : GradientMaskPainter, IRectangleMaskPainter<DrawContext>
+    public class RectangleMaskPainter : GradientMaskPainter, IMaskPainter<RectangleMask, DrawContext>
     {
         public void Clip(RectangleMask mask, DrawContext context)
         {

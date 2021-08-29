@@ -1,8 +1,6 @@
-﻿using MagicGradients.Builder;
-using MagicGradients.Skia.Forms.Masks;
+﻿using MagicGradients.Skia.Forms.Masks;
 using SkiaSharp;
 using System;
-using System.Linq;
 using Xamarin.Forms;
 using static MagicGradients.BackgroundRepeat;
 
@@ -78,30 +76,11 @@ namespace MagicGradients.Skia.Forms.Drawing
 
                     context.Canvas.Save();
                     context.Canvas.Translate(point);
-                    //DrawBorder(context);
                     _maskDrawable.Clip(_control.Mask, context);
                     context.Canvas.DrawRect(context.RenderRect, context.Paint);
-                    //DrawBorder(context);
                     context.Canvas.Restore();
                 }
             }
-        }
-        
-        private void DrawBorder(DrawContext context)
-        {
-            var gradient = new GradientBuilder().AddCssGradient("linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)").Build().First();
-            gradient.InstantiateShader(_control);
-            gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
-
-            using var paint = new SKPaint
-            {
-                StrokeWidth = 10, 
-                Style = SKPaintStyle.Stroke, 
-                Color = SKColors.Yellow,
-                Shader = GetShader(gradient, context)
-            };
-            
-            context.Canvas.DrawRect(context.RenderRect, paint);
         }
     }
 }

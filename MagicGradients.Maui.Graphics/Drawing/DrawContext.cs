@@ -7,7 +7,7 @@ namespace MagicGradients.Maui.Graphics.Drawing
         public ICanvas Canvas { get; }
         public RectangleF CanvasRect { get; }
         public RectangleF RenderRect { get; private set; }
-        //public double PixelScaling { get; private set; }
+        public float PixelScaling { get; private set; }
 
         public DrawContext(ICanvas canvas, RectangleF canvasRect)
         {
@@ -15,17 +15,19 @@ namespace MagicGradients.Maui.Graphics.Drawing
             CanvasRect = canvasRect;
         }
 
-        public void Measure(Dimensions size/*, double viewWidth*/)
+        public void Measure(Dimensions size, double viewWidth)
         {
+            PixelScaling = (float)(CanvasRect.Width / viewWidth);
+
             if (size.Width.Value > 0 && size.Height.Value > 0)
             {
                 var width = size.Width.Type == OffsetType.Proportional
                     ? size.Width.Value * CanvasRect.Width
-                    : size.Width.Value;
+                    : size.Width.Value * PixelScaling;
 
                 var height = size.Height.Type == OffsetType.Proportional
                     ? size.Height.Value * CanvasRect.Height
-                    : size.Height.Value;
+                    : size.Height.Value * PixelScaling;
 
                 RenderRect = new RectangleF(0, 0, (int)width, (int)height);
             }
@@ -33,8 +35,6 @@ namespace MagicGradients.Maui.Graphics.Drawing
             {
                 RenderRect = CanvasRect;
             }
-
-            //PixelScaling = CanvasRect.Width / viewWidth;
         }
     }
 }

@@ -5,26 +5,11 @@ using System;
 
 namespace MagicGradients.Maui.Graphics.Masks
 {
-    public interface IEllipseMaskPainter<TContext>
+    public interface IMaskPainter<TMask, TContext>
     {
-        void Clip(EllipseMask mask, TContext context);
+        void Clip(TMask mask, TContext context);
     }
-
-    public interface IRectangleMaskPainter<TContext>
-    {
-        void Clip(RectangleMask mask, TContext context);
-    }
-
-    public interface ITextMaskPainter<TContext>
-    {
-        void Clip(TextMask mask, TContext context);
-    }
-
-    public interface IPathMaskPainter<TContext>
-    {
-        void Clip(PathMask mask, TContext context);
-    }
-
+    
     public abstract class GradientMaskPainter
     {
         protected RectangleF GetSizeRect(DrawContext context, Dimensions size)

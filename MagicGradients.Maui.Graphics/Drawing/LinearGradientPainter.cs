@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Graphics;
+﻿using System.Linq;
+using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Maui.Graphics.Drawing
 {
@@ -10,12 +11,28 @@ namespace MagicGradients.Maui.Graphics.Drawing
 
             var renderStops = GetRenderStops(gradient);
             var line = new LinearGradientGeometry(rect, gradient.Angle);
-            var startPoint = new Point(line.Start.X / rect.Width, line.Start.Y / rect.Height);
-            var endPoint = new Point(line.End.X / rect.Width, line.End.Y / rect.Height);
+            var start = line.Start;
+            var end = line.End;
 
-            // TODO: Missing TileMode.Repeat
+            if (gradient.IsRepeating)
+            {
+                var firstOffset = renderStops.FirstOrDefault()?.Offset ?? 0;
+                var lastOffset = renderStops.LastOrDefault()?.Offset ?? 1;
 
-            return new LinearGradientPaint(renderStops, startPoint, endPoint);
+                start = line.GetColorPointAt(firstOffset);
+                end = line.GetColorPointAt(lastOffset);
+
+                foreach (var stop in renderStops)
+                {
+                    stop.Offset = line.ScaleWithBias(stop.Offset, firstOffset, lastOffset, 0, 1);
+                }
+            }
+
+            // Convert pixels to proportional
+            var startPoint = new Point(start.X / rect.Width, start.Y / rect.Height);
+            var endPoint = new Point(end.X / rect.Width, end.Y / rect.Height);
+            
+            return new LinearGradientPaintEx(renderStops, startPoint, endPoint, gradient.IsRepeating);
         }
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Maui.Graphics.Masks
 {
-    public class RectangleMaskPainter : GradientMaskPainter, IRectangleMaskPainter<DrawContext>
+    public class RectangleMaskPainter : GradientMaskPainter, IMaskPainter<RectangleMask, DrawContext>
     {
         public void Clip(RectangleMask mask, DrawContext context)
         {

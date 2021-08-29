@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Maui.Graphics.Drawing
@@ -10,15 +11,20 @@ namespace MagicGradients.Maui.Graphics.Drawing
             var rect = context.RenderRect;
 
             var renderStops = GetRenderStops(gradient);
-            var circle = new RadialGradientGeometry(gradient, rect, 1, 1);
+            var lastOffset = gradient.IsRepeating ? renderStops.LastOrDefault()?.Offset ?? 1 : 1;
 
+            foreach (var stop in renderStops)
+            {
+                stop.Offset = lastOffset > 0 ? stop.Offset / lastOffset : 0;
+            }
+
+            var circle = new RadialGradientGeometry(gradient, rect, lastOffset, context.PixelScaling);
+
+            // Convert pixels to proportional
             var center = new Point(circle.Center.X / rect.Width, circle.Center.Y / rect.Height);
-            var radius = Math.Min(circle.Radius.Width / rect.Width, circle.Radius.Height / rect.Height);
-
-            // TODO: Missing TileMode.Repeat
-            // TODO: Missing transform Matrix, only single radius supported
-
-            return new RadialGradientPaint(renderStops, center, radius);
+            var radius = new Size(circle.Radius.Width / rect.Width, circle.Radius.Height / rect.Height);
+            
+            return new RadialGradientPaintEx(renderStops, center, radius, gradient.IsRepeating);
         }
     }
 }

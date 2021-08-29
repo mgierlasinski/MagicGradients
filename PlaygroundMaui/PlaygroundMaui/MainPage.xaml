@@ -5,9 +5,10 @@
              xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:masks="clr-namespace:MagicGradients.Masks;assembly=MagicGradients"
              xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
+             xmlns:pages="clr-namespace:PlaygroundMaui.Pages;assembly=PlaygroundMaui"
              x:Class="PlaygroundMaui.MainPage">
     <ScrollView>
-        <StackLayout Spacing="0">
+        <StackLayout Spacing="5">
             <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                 <Label HorizontalTextAlignment="Center" TextColor="White">
                     <Label.FormattedText>
@@ -18,31 +19,23 @@
                     </Label.FormattedText>
                 </Label>
             </Frame>
-            <skia:GradientView HeightRequest="160" GradientSize="40">
-                <magicGradients:LinearGradient Angle="45">
-                    <magicGradients:GradientStop Color="Blue" />
-                    <magicGradients:GradientStop Color="Yellow" />
-                </magicGradients:LinearGradient>
-            </skia:GradientView>
-                <maui:GradientView2 HeightRequest="160" GradientSize="40">
-                <magicGradients:LinearGradient Angle="45">
-                    <magicGradients:GradientStop Color="Blue" />
-                    <magicGradients:GradientStop Color="Yellow" />
-                </magicGradients:LinearGradient>
-            </maui:GradientView2>
-            <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
-            <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" />
-            <skia:GradientView HeightRequest="160" StyleClass="AngularGradient" />
-            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" />
+            <Button Text="Linear Gradients" Command="{pages:Navigate {x:Type pages:LinearPage}}" />
             <skia:GradientView HeightRequest="160">
-                <magicGradients:RadialGradient Center="100,80" Flags="None" RadiusX="100" RadiusY="100">
+                <magicGradients:RadialGradient>
                     <magicGradients:GradientStop Color="Red" />
                     <magicGradients:GradientStop Color="Green" />
                     <magicGradients:GradientStop Color="Blue" />
                 </magicGradients:RadialGradient>
             </skia:GradientView>
+            <skia:GradientView2 HeightRequest="160">
+                <magicGradients:RadialGradient>
+                    <magicGradients:GradientStop Color="Red" />
+                    <magicGradients:GradientStop Color="Green" />
+                    <magicGradients:GradientStop Color="Blue" />
+                </magicGradients:RadialGradient>
+            </skia:GradientView2>
             <maui:GradientView2 HeightRequest="160">
-                <magicGradients:RadialGradient Center="100,80" Flags="None" RadiusX="100" RadiusY="100">
+                <magicGradients:RadialGradient>
                     <magicGradients:GradientStop Color="Red" />
                     <magicGradients:GradientStop Color="Green" />
                     <magicGradients:GradientStop Color="Blue" />

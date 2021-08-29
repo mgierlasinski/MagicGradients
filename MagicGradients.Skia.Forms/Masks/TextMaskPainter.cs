@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Skia.Forms.Masks
 {
-    public class TextMaskPainter : PathMaskPainter, ITextMaskPainter<DrawContext>
+    public class TextMaskPainter : PathMaskPainter, IMaskPainter<TextMask, DrawContext>
     {
         public void Clip(TextMask mask, DrawContext context)
         {

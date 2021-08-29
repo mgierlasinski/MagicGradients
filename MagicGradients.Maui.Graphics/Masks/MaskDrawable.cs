@@ -4,16 +4,16 @@ namespace MagicGradients.Maui.Graphics.Masks
 {
     public class MaskDrawable<TContext>
     {
-        private readonly IEllipseMaskPainter<TContext> _ellipsePainter;
-        private readonly IRectangleMaskPainter<TContext> _rectanglePainter;
-        private readonly ITextMaskPainter<TContext> _textPainter;
-        private readonly IPathMaskPainter<TContext> _pathPainter;
+        private readonly IMaskPainter<EllipseMask, TContext> _ellipsePainter;
+        private readonly IMaskPainter<RectangleMask, TContext> _rectanglePainter;
+        private readonly IMaskPainter<TextMask, TContext> _textPainter;
+        private readonly IMaskPainter<PathMask, TContext> _pathPainter;
 
         public MaskDrawable(
-            IEllipseMaskPainter<TContext> ellipsePainter,
-            IRectangleMaskPainter<TContext> rectanglePainter,
-            ITextMaskPainter<TContext> textPainter,
-            IPathMaskPainter<TContext> pathPainter)
+            IMaskPainter<EllipseMask, TContext> ellipsePainter,
+            IMaskPainter<RectangleMask, TContext> rectanglePainter,
+            IMaskPainter<TextMask, TContext> textPainter,
+            IMaskPainter<PathMask, TContext> pathPainter)
         {
             _ellipsePainter = ellipsePainter;
             _rectanglePainter = rectanglePainter;
