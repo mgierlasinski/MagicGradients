@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics.Skia;
 using SkiaSharp;
 using System;
 
-namespace MagicGradients.Skia.Forms.Drawing
+namespace MagicGradients.Graphics.Skia.Drawing
 {
     public class SkiaCanvasEx : SkiaCanvas
     {
@@ -33,6 +33,17 @@ namespace MagicGradients.Skia.Forms.Drawing
             }
         }
         
+        protected override void NativeScale(float xFactor, float yFactor)
+        {
+            CurrentState.SetScale(Math.Abs(xFactor), Math.Abs(yFactor));
+            Canvas.Scale(Math.Abs(xFactor), Math.Abs(yFactor));
+        }
+
+        protected override void NativeTranslate(float tx, float ty)
+        {
+            Canvas.Translate(tx, ty);
+        }
+
         private void DrawLinearGradient(LinearGradientPaintEx paint, RectangleF rectangle)
         {
             var colors = new SKColor[paint.GradientStops.Length];

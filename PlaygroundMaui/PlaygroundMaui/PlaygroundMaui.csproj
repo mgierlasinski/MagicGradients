@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MagicGradients.Graphics.Skia\MagicGradients.Graphics.Skia.csproj" />
     <ProjectReference Include="..\..\MagicGradients.Maui.Graphics.Forms\MagicGradients.Maui.Graphics.Forms.csproj" />
     <ProjectReference Include="..\..\MagicGradients.Skia.Forms\MagicGradients.Skia.Forms.csproj" />
   </ItemGroup>

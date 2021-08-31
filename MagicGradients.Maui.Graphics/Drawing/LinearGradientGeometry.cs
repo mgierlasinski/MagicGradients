@@ -10,11 +10,12 @@ namespace MagicGradients.Maui.Graphics.Drawing
         public double Length { get; }
         public double Angle { get; }
 
-        public LinearGradientGeometry(RectangleF boxBounds, double angleDegrees)
+        public LinearGradientGeometry(LinearGradient gradient, RectangleF boxBounds)
         {
             // Calculation
             // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf
 
+            var angleDegrees = gradient.Angle;
             var angleRadians = GradientMath.ToRadians(GradientMath.FromDegrees(angleDegrees));
 
             var lineLength =

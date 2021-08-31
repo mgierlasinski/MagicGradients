@@ -15,7 +15,7 @@ namespace MagicGradients.Skia.Forms.Drawing
             var colors = renderStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = renderStops.Select(x => x.RenderOffset).ToArray();
 
-            var line = new LinearGradientGeometry(rect.ToRectF(), gradient.Angle);
+            var line = new LinearGradientGeometry(gradient, rect.ToRectF());
             var startPoint = line.Start;
             var endPoint = line.End;
 

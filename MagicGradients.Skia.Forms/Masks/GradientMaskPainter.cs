@@ -7,6 +7,14 @@ namespace MagicGradients.Skia.Forms.Masks
 {
     public abstract class GradientMaskPainter
     {
+        protected SKRectI GetBounds(Dimensions size, DrawContext context)
+        {
+            var width = (int)size.Width.GetDrawPixels(context.CanvasRect.Width, context.PixelScaling);
+            var height = (int)size.Height.GetDrawPixels(context.CanvasRect.Height, context.PixelScaling);
+
+            return new SKRectI(0, 0, width, height);
+        }
+
         protected void LayoutBounds(GradientMask mask, SKRect bounds, DrawContext context, bool keepAspectRatio)
         {
             BeginLayout(mask, bounds, context);

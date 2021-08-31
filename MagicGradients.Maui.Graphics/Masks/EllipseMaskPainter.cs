@@ -11,7 +11,7 @@ namespace MagicGradients.Maui.Graphics.Masks
             if (!mask.IsActive)
                 return;
 
-            var bounds = GetSizeRect(context, mask.Size);
+            var bounds = GetBounds(mask.Size, context);
 
             var path = new PathF();
             path.AppendEllipse(bounds);

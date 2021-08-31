@@ -24,17 +24,9 @@ namespace MagicGradients.Skia.Forms.Masks
             context.Canvas.ClipRoundRect(roundRect, mask.ClipMode.ToSkOperation(), true);
         }
 
-        protected SKRectI GetBounds(RectangleMask mask, DrawContext context)
-        {
-            var width = (int)mask.Size.Width.GetDrawPixels(context.CanvasRect.Width, context.PixelScaling);
-            var height = (int)mask.Size.Height.GetDrawPixels(context.CanvasRect.Height, context.PixelScaling);
-
-            return new SKRectI(0, 0, width, height);
-        }
-
         private SKRoundRect GetRoundRect(RectangleMask mask, DrawContext context)
         {
-            var bounds = GetBounds(mask, context);
+            var bounds = GetBounds(mask.Size, context);
             var roundRect = new SKRoundRect();
 
             roundRect.SetRectRadii(bounds, new[]

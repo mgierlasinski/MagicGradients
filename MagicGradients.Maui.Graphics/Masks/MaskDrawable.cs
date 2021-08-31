@@ -4,10 +4,10 @@ namespace MagicGradients.Maui.Graphics.Masks
 {
     public class MaskDrawable<TContext>
     {
-        private readonly IMaskPainter<EllipseMask, TContext> _ellipsePainter;
-        private readonly IMaskPainter<RectangleMask, TContext> _rectanglePainter;
-        private readonly IMaskPainter<TextMask, TContext> _textPainter;
-        private readonly IMaskPainter<PathMask, TContext> _pathPainter;
+        public IMaskPainter<EllipseMask, TContext> EllipsePainter { get; set; }
+        public IMaskPainter<RectangleMask, TContext> RectanglePainter { get; set; }
+        public IMaskPainter<TextMask, TContext> TextPainter { get; set; }
+        public IMaskPainter<PathMask, TContext> PathPainter { get; set; }
 
         public MaskDrawable(
             IMaskPainter<EllipseMask, TContext> ellipsePainter,
@@ -15,10 +15,10 @@ namespace MagicGradients.Maui.Graphics.Masks
             IMaskPainter<TextMask, TContext> textPainter,
             IMaskPainter<PathMask, TContext> pathPainter)
         {
-            _ellipsePainter = ellipsePainter;
-            _rectanglePainter = rectanglePainter;
-            _textPainter = textPainter;
-            _pathPainter = pathPainter;
+            EllipsePainter = ellipsePainter;
+            RectanglePainter = rectanglePainter;
+            TextPainter = textPainter;
+            PathPainter = pathPainter;
         }
 
         public void Clip(GradientMask mask, TContext context)
@@ -26,16 +26,16 @@ namespace MagicGradients.Maui.Graphics.Masks
             switch (mask)
             {
                 case EllipseMask ellipseMask:
-                    _ellipsePainter.Clip(ellipseMask, context);
+                    EllipsePainter.Clip(ellipseMask, context);
                     break;
                 case RectangleMask rectangleMask:
-                    _rectanglePainter.Clip(rectangleMask, context);
+                    RectanglePainter.Clip(rectangleMask, context);
                     break;
                 case TextMask textMask:
-                    _textPainter.Clip(textMask, context);
+                    TextPainter.Clip(textMask, context);
                     break;
                 case PathMask pathMask:
-                    _pathPainter.Clip(pathMask, context);
+                    PathPainter.Clip(pathMask, context);
                     break;
                 case MaskCollection maskCollection:
                     ClipCollection(maskCollection, context);

@@ -9,7 +9,7 @@ namespace MagicGradients.Maui.Graphics.Masks
         {
             if (!mask.IsActive || string.IsNullOrEmpty(mask.Data))
                 return;
-            
+
             // TODO: apply clipping
         }
     }

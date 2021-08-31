@@ -12,10 +12,10 @@ namespace MagicGradients.Maui.Graphics.Masks
     
     public abstract class GradientMaskPainter
     {
-        protected RectangleF GetSizeRect(DrawContext context, Dimensions size)
+        protected RectangleF GetBounds(Dimensions size, DrawContext context)
         {
-            var width = (float)size.Width.GetDrawPixels((int)context.CanvasRect.Width, 1);
-            var height = (float)size.Height.GetDrawPixels((int)context.CanvasRect.Height, 1);
+            var width = (float)size.Width.GetDrawPixels((int)context.CanvasRect.Width, context.PixelScaling);
+            var height = (float)size.Height.GetDrawPixels((int)context.CanvasRect.Height, context.PixelScaling);
 
             return new RectangleF(0, 0, width, height);
         }
@@ -26,8 +26,8 @@ namespace MagicGradients.Maui.Graphics.Masks
 
             if (mask.Stretch == Stretch.None)
             {
-                var scaleX = (float)context.RenderRect.Width / context.CanvasRect.Width;
-                var scaleY = (float)context.RenderRect.Height / context.CanvasRect.Height;
+                var scaleX = context.RenderRect.Width / context.CanvasRect.Width;
+                var scaleY = context.RenderRect.Height / context.CanvasRect.Height;
 
                 if (keepAspectRatio)
                 {
@@ -63,7 +63,7 @@ namespace MagicGradients.Maui.Graphics.Masks
 
         protected virtual void BeginLayout(GradientMask mask, RectangleF bounds, DrawContext context)
         {
-            context.Canvas.Translate((float)context.RenderRect.Width / 2, (float)context.RenderRect.Height / 2);
+            context.Canvas.Translate(context.RenderRect.Width / 2, context.RenderRect.Height / 2);
         }
 
         protected virtual void EndLayout(GradientMask mask, RectangleF bounds, DrawContext context)

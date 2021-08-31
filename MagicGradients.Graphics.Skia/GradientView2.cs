@@ -1,9 +1,10 @@
+using MagicGradients.Graphics.Skia.Drawing;
+using MagicGradients.Graphics.Skia.Masks;
 using MagicGradients.Masks;
-using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
-namespace MagicGradients.Skia.Forms
+namespace MagicGradients.Graphics.Skia
 {
     [ContentProperty(nameof(GradientSource))]
     public class GradientView2 : SKCanvasView, IGradientControl, IGradientVisualElement
@@ -15,7 +16,7 @@ namespace MagicGradients.Skia.Forms
             StyleSheets.RegisterStyle("background-repeat", typeof(GradientView2), nameof(GradientControl.GradientSourceProperty));
         }
 
-        public MagicGradients.Maui.Graphics.Drawing.GradientDrawable<GradientView2> Drawable { get; protected set; }
+        public Maui.Graphics.Drawing.GradientDrawable<GradientView2> Drawable { get; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -48,7 +49,9 @@ namespace MagicGradients.Skia.Forms
 
         public GradientView2()
         {
-            Drawable = new MagicGradients.Maui.Graphics.Drawing.GradientDrawable<GradientView2>(this);
+            Drawable = new Maui.Graphics.Drawing.GradientDrawable<GradientView2>(this);
+            Drawable.MaskDrawable.PathPainter = new SkiaPathMaskPainter();
+            Drawable.MaskDrawable.TextPainter = new SkiaTextMaskPainter();
         }
 
         protected override void OnBindingContextChanged()
