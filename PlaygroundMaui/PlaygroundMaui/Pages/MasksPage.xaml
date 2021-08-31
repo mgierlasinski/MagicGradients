@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:masks="clr-namespace:MagicGradients.Masks;assembly=MagicGradients"
+             xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
+             xmlns:maui="clr-namespace:MagicGradients.Maui.Graphics.Forms;assembly=MagicGradients.Maui.Graphics.Forms"
+             x:Class="PlaygroundMaui.Pages.MasksPage"
+             Title="Masks">
+    <ScrollView>
+        <StackLayout Spacing="5">
+            <skia:GradientView HeightRequest="180" StyleClass="RainbowGradient">
+                <skia:GradientView.Mask>
+                    <masks:TextMask Text="Dupa" FontSize="80" 
+                                    HorizontalTextAlignment="Start" 
+                                    VerticalTextAlignment="Start" />
+                </skia:GradientView.Mask>
+            </skia:GradientView>
+            <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
+            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '50%,50%'}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

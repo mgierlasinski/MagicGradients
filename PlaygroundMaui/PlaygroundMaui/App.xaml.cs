@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using PlaygroundMaui.Pages;
+using Xamarin.Forms;
 
 namespace PlaygroundMaui
 {

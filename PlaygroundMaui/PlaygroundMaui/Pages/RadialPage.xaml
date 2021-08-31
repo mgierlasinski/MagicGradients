@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
+             xmlns:maui="clr-namespace:MagicGradients.Maui.Graphics.Forms;assembly=MagicGradients.Maui.Graphics.Forms"
+             x:Class="PlaygroundMaui.Pages.RadialPage"
+             Title="Radial Gradients">
+    <ScrollView>
+        <StackLayout Spacing="5">
+            <skia:GradientView HeightRequest="160">
+                <magic:RadialGradient>
+                    <magic:GradientStop Color="Red" />
+                    <magic:GradientStop Color="Green" />
+                    <magic:GradientStop Color="Blue" />
+                </magic:RadialGradient>
+            </skia:GradientView>
+            <skia:GradientView2 HeightRequest="160">
+                <magic:RadialGradient>
+                    <magic:GradientStop Color="Red" />
+                    <magic:GradientStop Color="Green" />
+                    <magic:GradientStop Color="Blue" />
+                </magic:RadialGradient>
+            </skia:GradientView2>
+            <maui:GradientView2 HeightRequest="160">
+                <magic:RadialGradient>
+                    <magic:GradientStop Color="Red" />
+                    <magic:GradientStop Color="Green" />
+                    <magic:GradientStop Color="Blue" />
+                </magic:RadialGradient>
+            </maui:GradientView2>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -5,7 +5,7 @@
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
              x:Class="PlaygroundMaui.Pages.LinearPage"
-             Title="Linear gradients">
+             Title="Linear Gradients">
     <ScrollView>
         <StackLayout Spacing="5">
             <!-- Repeating -->
