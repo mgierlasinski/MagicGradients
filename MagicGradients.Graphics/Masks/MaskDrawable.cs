@@ -1,6 +1,6 @@
 ﻿using MagicGradients.Masks;
 
-namespace MagicGradients.Maui.Graphics.Masks
+namespace MagicGradients.Graphics.Masks
 {
     public class MaskDrawable<TContext>
     {

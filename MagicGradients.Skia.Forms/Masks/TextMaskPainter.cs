@@ -1,5 +1,5 @@
-﻿using MagicGradients.Masks;
-using MagicGradients.Maui.Graphics.Masks;
+﻿using MagicGradients.Graphics.Masks;
+using MagicGradients.Masks;
 using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp;
 using Xamarin.Forms;

@@ -4,8 +4,8 @@
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              xmlns:masks="clr-namespace:MagicGradients.Masks;assembly=MagicGradients"
              xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
-             xmlns:maui="clr-namespace:MagicGradients.Maui.Graphics.Forms;assembly=MagicGradients.Maui.Graphics.Forms"
              xmlns:skix="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
+             xmlns:maui="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
              x:Class="PlaygroundMaui.Pages.MasksPage"
              Title="Masks">
     <ScrollView>

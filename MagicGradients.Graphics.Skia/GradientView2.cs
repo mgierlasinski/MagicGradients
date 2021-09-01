@@ -1,3 +1,4 @@
+using MagicGradients.Graphics.Drawing;
 using MagicGradients.Graphics.Skia.Drawing;
 using MagicGradients.Graphics.Skia.Masks;
 using MagicGradients.Masks;
@@ -16,7 +17,7 @@ namespace MagicGradients.Graphics.Skia
             StyleSheets.RegisterStyle("background-repeat", typeof(GradientView2), nameof(GradientControl.GradientSourceProperty));
         }
 
-        public Maui.Graphics.Drawing.GradientDrawable<GradientView2> Drawable { get; }
+        public GradientDrawable<GradientView2> Drawable { get; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -49,7 +50,7 @@ namespace MagicGradients.Graphics.Skia
 
         public GradientView2()
         {
-            Drawable = new Maui.Graphics.Drawing.GradientDrawable<GradientView2>(this);
+            Drawable = new GradientDrawable<GradientView2>(this);
             Drawable.MaskDrawable.PathPainter = new SkiaPathMaskPainter();
             Drawable.MaskDrawable.TextPainter = new SkiaTextMaskPainter();
         }

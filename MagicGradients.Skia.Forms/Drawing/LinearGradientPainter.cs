@@ -1,7 +1,7 @@
-﻿using MagicGradients.Maui.Graphics.Drawing;
-using SkiaSharp;
+﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System.Linq;
+using MagicGradients.Graphics.Drawing;
 
 namespace MagicGradients.Skia.Forms.Drawing
 {

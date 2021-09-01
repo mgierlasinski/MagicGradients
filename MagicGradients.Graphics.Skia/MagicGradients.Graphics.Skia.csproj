@@ -7,10 +7,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Graphics.Skia" Version="6.0.100-preview.7.358" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MagicGradients.Maui.Graphics\MagicGradients.Maui.Graphics.csproj" />
-    <ProjectReference Include="..\MagicGradients\MagicGradients.csproj" />
+    <ProjectReference Include="..\MagicGradients.Graphics\MagicGradients.Graphics.csproj" />
   </ItemGroup>
 </Project>

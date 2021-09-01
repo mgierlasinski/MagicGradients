@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,8 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MagicGradients.Maui.Graphics\MagicGradients.Maui.Graphics.csproj" />
-    <ProjectReference Include="..\MagicGradients\MagicGradients.csproj" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MagicGradients.Graphics\MagicGradients.Graphics.csproj" />
   </ItemGroup>
 
 </Project>

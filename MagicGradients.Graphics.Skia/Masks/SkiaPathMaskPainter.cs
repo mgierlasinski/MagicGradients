@@ -1,7 +1,7 @@
-﻿using MagicGradients.Graphics.Skia.Drawing;
+﻿using MagicGradients.Graphics.Drawing;
+using MagicGradients.Graphics.Masks;
+using MagicGradients.Graphics.Skia.Drawing;
 using MagicGradients.Masks;
-using MagicGradients.Maui.Graphics.Drawing;
-using MagicGradients.Maui.Graphics.Masks;
 using Microsoft.Maui.Graphics.Skia;
 using SkiaSharp;
 

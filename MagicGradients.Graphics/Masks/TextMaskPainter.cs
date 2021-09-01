@@ -1,7 +1,7 @@
-﻿using MagicGradients.Masks;
-using MagicGradients.Maui.Graphics.Drawing;
+﻿using MagicGradients.Graphics.Drawing;
+using MagicGradients.Masks;
 
-namespace MagicGradients.Maui.Graphics.Masks
+namespace MagicGradients.Graphics.Masks
 {
     public class TextMaskPainter : GradientMaskPainter, IMaskPainter<TextMask, DrawContext>
     {

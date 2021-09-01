@@ -1,9 +1,9 @@
-﻿using MagicGradients.Masks;
-using MagicGradients.Maui.Graphics.Drawing;
+﻿using System;
+using MagicGradients.Graphics.Drawing;
+using MagicGradients.Masks;
 using Microsoft.Maui.Graphics;
-using System;
 
-namespace MagicGradients.Maui.Graphics.Masks
+namespace MagicGradients.Graphics.Masks
 {
     public interface IMaskPainter<TMask, TContext>
     {

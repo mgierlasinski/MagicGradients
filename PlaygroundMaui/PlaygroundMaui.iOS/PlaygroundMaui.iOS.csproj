@@ -128,9 +128,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\MagicGradients.Maui.Graphics.Forms\MagicGradients.Maui.Graphics.Forms.csproj">
+    <ProjectReference Include="..\..\MagicGradients.Graphics.Forms\MagicGradients.Graphics.Forms.csproj">
       <Project>{17e51d17-392e-476e-8bd4-7606624acfae}</Project>
-      <Name>MagicGradients.Maui.Graphics.Forms</Name>
+      <Name>MagicGradients.Graphics.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlaygroundMaui\PlaygroundMaui.csproj">
       <Project>{03F4D97F-60A6-48F0-B66D-8C26664740BE}</Project>

@@ -1,14 +1,14 @@
-﻿using MagicGradients.Maui.Graphics.Masks;
-using Microsoft.Maui.Graphics;
-using System;
+﻿using System;
 using System.Linq;
+using MagicGradients.Graphics.Masks;
+using Microsoft.Maui.Graphics;
 using Xamarin.Forms;
 using static MagicGradients.BackgroundRepeat;
 using PaintGradientStop = Microsoft.Maui.Graphics.GradientStop;
 using Point = Microsoft.Maui.Graphics.Point;
 using Size = Microsoft.Maui.Graphics.Size;
 
-namespace MagicGradients.Maui.Graphics.Drawing
+namespace MagicGradients.Graphics.Drawing
 {
     public class GradientDrawable<T> : IDrawable where T : VisualElement, IGradientControl
     {

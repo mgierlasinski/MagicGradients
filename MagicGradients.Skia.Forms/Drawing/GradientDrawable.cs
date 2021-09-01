@@ -1,4 +1,4 @@
-﻿using MagicGradients.Skia.Forms.Masks;
+﻿using MagicGradients.Graphics.Masks;
 using SkiaSharp;
 using System;
 using Xamarin.Forms;
@@ -11,18 +11,18 @@ namespace MagicGradients.Skia.Forms.Drawing
         private readonly T _control;
         private readonly LinearGradientPainter _linearPainter;
         private readonly RadialGradientPainter _radialPainter;
-        private readonly Maui.Graphics.Masks.MaskDrawable<DrawContext> _maskDrawable;
+        private readonly MaskDrawable<DrawContext> _maskDrawable;
 
         public GradientDrawable(T control)
         {
             _control = control;
             _linearPainter = new LinearGradientPainter();
             _radialPainter = new RadialGradientPainter();
-            _maskDrawable = new Maui.Graphics.Masks.MaskDrawable<DrawContext>(
-                new EllipseMaskPainter(),
-                new RectangleMaskPainter(),
-                new TextMaskPainter(),
-                new PathMaskPainter());
+            _maskDrawable = new MaskDrawable<DrawContext>(
+                new Masks.EllipseMaskPainter(),
+                new Masks.RectangleMaskPainter(),
+                new Masks.TextMaskPainter(),
+                new Masks.PathMaskPainter());
         }
         
         public void Draw(DrawContext context)

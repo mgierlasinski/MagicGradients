@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MagicGradients\MagicGradients.csproj" />
+    <ProjectReference Include="..\MagicGradients.Core\MagicGradients.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,17 +9,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundMaui.iOS", "Playg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundMaui", "PlaygroundMaui\PlaygroundMaui\PlaygroundMaui.csproj", "{DFB31BC2-033C-423F-A585-D92C1D2CFFDB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Maui.Graphics", "MagicGradients.Maui.Graphics\MagicGradients.Maui.Graphics.csproj", "{F0A5D72D-AF68-44D0-B58E-22B32372CBAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Graphics", "MagicGradients.Graphics\MagicGradients.Graphics.csproj", "{F0A5D72D-AF68-44D0-B58E-22B32372CBAD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients", "MagicGradients\MagicGradients.csproj", "{D33D9329-C2DD-4A1F-8FE5-51CD7B2685AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Maui.Graphics.Forms", "MagicGradients.Maui.Graphics.Forms\MagicGradients.Maui.Graphics.Forms.csproj", "{17E51D17-392E-476E-8BD4-7606624ACFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Graphics.Forms", "MagicGradients.Graphics.Forms\MagicGradients.Graphics.Forms.csproj", "{17E51D17-392E-476E-8BD4-7606624ACFAE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Playground", "Playground", "{FA5BD101-83A8-45B9-ACAB-5F03DC75C241}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Skia.Forms", "MagicGradients.Skia.Forms\MagicGradients.Skia.Forms.csproj", "{7A46EA7E-A0D3-4606-89CF-F6140C85CE80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicGradients.Graphics.Skia", "MagicGradients.Graphics.Skia\MagicGradients.Graphics.Skia.csproj", "{7A007E7D-11CF-4754-84C4-ED78D7B647F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Graphics.Skia", "MagicGradients.Graphics.Skia\MagicGradients.Graphics.Skia.csproj", "{7A007E7D-11CF-4754-84C4-ED78D7B647F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicGradients.Core", "MagicGradients.Core\MagicGradients.Core.csproj", "{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +147,18 @@ Global
 		{7A007E7D-11CF-4754-84C4-ED78D7B647F4}.Release|iPhone.Build.0 = Release|Any CPU
 		{7A007E7D-11CF-4754-84C4-ED78D7B647F4}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{7A007E7D-11CF-4754-84C4-ED78D7B647F4}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|iPhone.Build.0 = Release|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,8 @@
-﻿using MagicGradients.Maui.Graphics.Drawing;
-using Microsoft.Maui.Graphics;
+﻿using Microsoft.Maui.Graphics;
 using Microsoft.Maui.Graphics.Skia;
 using SkiaSharp;
 using System;
+using MagicGradients.Graphics.Drawing;
 
 namespace MagicGradients.Graphics.Skia.Drawing
 {

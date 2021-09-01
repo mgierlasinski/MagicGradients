@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Maui.Graphics.Drawing
+namespace MagicGradients.Graphics.Drawing
 {
     public class DrawContext
     {

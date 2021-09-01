@@ -30,7 +30,7 @@
     <None Include="**\*.Standard.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MagicGradients.Maui.Graphics\MagicGradients.Maui.Graphics.csproj" />
+    <ProjectReference Include="..\MagicGradients.Graphics\MagicGradients.Graphics.csproj" />
   </ItemGroup>
 
   <!--<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid10.0' Or '$(TargetPlatformIdentifier)' == 'android'">
