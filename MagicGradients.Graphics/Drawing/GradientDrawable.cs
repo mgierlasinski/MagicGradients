@@ -36,7 +36,7 @@ namespace MagicGradients.Graphics.Drawing
 
             foreach (var gradient in _control.GradientSource.GetGradients())
             {
-                gradient.Measure((int)context.RenderRect.Width, (int)context.RenderRect.Height);
+                //gradient.Measure((int)context.RenderRect.Width, (int)context.RenderRect.Height);
 
                 var paint = GetPaint(gradient, context);
                 canvas.SetFillPaint(paint, context.RenderRect);
@@ -60,8 +60,11 @@ namespace MagicGradients.Graphics.Drawing
         {
             var rect = context.RenderRect;
 
+            var line = new LinearGradientGeometry();
+            line.CalculateOffsets(gradient, (int)context.RenderRect.Width, (int)context.RenderRect.Height);
+            line.CalculateGeometry(gradient, rect);
+
             var renderStops = GetRenderStops(gradient);
-            var line = new LinearGradientGeometry(gradient, rect);
             var start = line.Start;
             var end = line.End;
 
@@ -90,9 +93,13 @@ namespace MagicGradients.Graphics.Drawing
         {
             var rect = context.RenderRect;
 
+            var circle = new RadialGradientGeometry();
+            circle.CalculateOffsets(gradient, (int)context.RenderRect.Width, (int)context.RenderRect.Height);
+
             var renderStops = GetRenderStops(gradient);
             var lastOffset = gradient.IsRepeating ? renderStops.LastOrDefault()?.Offset ?? 1 : 1;
-            var circle = new RadialGradientGeometry(gradient, rect, lastOffset, context.PixelScaling);
+
+            circle.CalculateGeometry(gradient, rect, lastOffset, context.PixelScaling);
 
             foreach (var stop in renderStops)
             {

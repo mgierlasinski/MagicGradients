@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Graphics;
+﻿using MagicGradients.Masks;
+using Microsoft.Maui.Graphics;
 using SkiaSharp;
 
 namespace MagicGradients.Graphics.Skia
@@ -13,6 +14,11 @@ namespace MagicGradients.Graphics.Skia
         public static RectangleF ToRectF(this SKRectI rect)
         {
             return new RectangleF(rect.Left, rect.Top, rect.Width, rect.Height);
+        }
+
+        public static SKClipOperation ToSkOperation(this ClipMode mode)
+        {
+            return mode == ClipMode.Include ? SKClipOperation.Intersect : SKClipOperation.Difference;
         }
     }
 }

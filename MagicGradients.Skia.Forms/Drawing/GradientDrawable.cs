@@ -36,7 +36,7 @@ namespace MagicGradients.Skia.Forms.Drawing
             {
                 foreach (var gradient in _control.GradientSource.GetGradients())
                 {
-                    gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
+                    //gradient.Measure(context.RenderRect.Width, context.RenderRect.Height);
                     context.Paint.Shader = GetShader(gradient, context);
                     DrawGradient(context);
                 }

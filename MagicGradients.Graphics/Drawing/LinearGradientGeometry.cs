@@ -3,14 +3,27 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Graphics.Drawing
 {
-    public class LinearGradientGeometry
+    public class LinearGradientGeometry : GradientGeometry<LinearGradient>
     {
-        public PointF Start { get; }
-        public PointF End { get; }
-        public double Length { get; }
-        public double Angle { get; }
+        public PointF Start { get; private set; }
+        public PointF End { get; private set; }
+        public double Length { get; private set; }
+        public double Angle { get; private set; }
+        
+        protected override double CalculateRenderOffset(LinearGradient gradient, double offset, int width, int height)
+        {
+            // Here the Pythagorean Theorem + Trigonometry is applied
+            // to figure out the length of the gradient, which is needed to accurately calculate offset.
+            // https://en.wikibooks.org/wiki/Trigonometry/The_Pythagorean_Theorem
 
-        public LinearGradientGeometry(LinearGradient gradient, RectangleF boxBounds)
+            var angleDeg = gradient.Angle;
+            var angleRad = GradientMath.ToRadians(angleDeg);
+            var computedLength = Math.Sqrt(Math.Pow(width * Math.Cos(angleRad), 2) + Math.Pow(height * Math.Sin(angleRad), 2));
+
+            return computedLength != 0 ? offset / computedLength : 1;
+        }
+
+        public void CalculateGeometry(LinearGradient gradient, RectangleF boxBounds)
         {
             // Calculation
             // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf

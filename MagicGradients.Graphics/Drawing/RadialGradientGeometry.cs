@@ -5,12 +5,23 @@ using static MagicGradients.FlagsHelper;
 
 namespace MagicGradients.Graphics.Drawing
 {
-    public class RadialGradientGeometry
+    public class RadialGradientGeometry : GradientGeometry<RadialGradient>
     {
-        public PointF Center { get; }
-        public SizeF Radius { get; }
+        public PointF Center { get; private set; }
+        public SizeF Radius { get; private set; }
+        
+        protected override double CalculateRenderOffset(RadialGradient gradient, double offset, int width, int height)
+        {
+            var rect = new RectangleF(0, 0, width, height);
 
-        public RadialGradientGeometry(RadialGradient gradient, RectangleF rect, float offset, float pixelScaling)
+            var center = GetCenter(gradient, rect, 1);
+            var radius = GetRadius(gradient, center, rect, 1, 1);
+
+            // Use lower dimension (scale = 1) 
+            return radius.Width < radius.Height ? offset / radius.Width : offset / Radius.Height;
+        }
+
+        public void CalculateGeometry(RadialGradient gradient, RectangleF rect, float offset, float pixelScaling)
         {
             Center = GetCenter(gradient, rect, pixelScaling);
             Radius = GetRadius(gradient, Center, rect, offset, pixelScaling);

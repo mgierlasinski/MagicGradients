@@ -11,11 +11,14 @@ namespace MagicGradients.Skia.Forms.Drawing
         {
             var rect = context.RenderRect;
 
+            var line = new LinearGradientGeometry();
+            line.CalculateOffsets(gradient, context.RenderRect.Width, context.RenderRect.Height);
+            line.CalculateGeometry(gradient, rect.ToRectF());
+
             var renderStops = GetRenderStops(gradient);
             var colors = renderStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = renderStops.Select(x => x.RenderOffset).ToArray();
 
-            var line = new LinearGradientGeometry(gradient, rect.ToRectF());
             var startPoint = line.Start;
             var endPoint = line.End;
 

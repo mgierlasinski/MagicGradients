@@ -12,13 +12,16 @@ namespace MagicGradients.Skia.Forms.Drawing
         {
             var rect = context.RenderRect.ToRectF();
 
+            var circle = new RadialGradientGeometry();
+            circle.CalculateOffsets(gradient, context.RenderRect.Width, context.RenderRect.Height);
+
             var renderStops = GetRenderStops(gradient);
             var lastOffset = gradient.IsRepeating ? renderStops.LastOrDefault()?.RenderOffset ?? 1 : 1;
-
             var colors = renderStops.Select(x => x.Color.ToSKColor()).ToArray();
             var colorPos = renderStops.Select(x => lastOffset > 0 ? x.RenderOffset / lastOffset : 0).ToArray();
 
-            var circle = new RadialGradientGeometry(gradient, rect, lastOffset, context.PixelScaling);
+            circle.CalculateGeometry(gradient, rect, lastOffset, context.PixelScaling);
+
             var center = circle.Center.ToSKPoint();
 
             var shader = SKShader.CreateRadialGradient(
