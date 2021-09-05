@@ -10,6 +10,12 @@ namespace MagicGradients.Graphics.Skia.Drawing
     {
         private SKShader _shader;
 
+        public void ClipPath(SKPath path, SKClipOperation operation)
+        {
+            path.Transform(SKMatrix.CreateScale(CurrentState.ScaleX, CurrentState.ScaleY));
+            Canvas.ClipPath(path, operation);
+        }
+
         public override void SetFillPaint(Paint paint, RectangleF rectangle)
         {
             if (_shader != null)
@@ -33,17 +39,6 @@ namespace MagicGradients.Graphics.Skia.Drawing
             }
         }
         
-        protected override void NativeScale(float xFactor, float yFactor)
-        {
-            CurrentState.SetScale(Math.Abs(xFactor), Math.Abs(yFactor));
-            Canvas.Scale(Math.Abs(xFactor), Math.Abs(yFactor));
-        }
-
-        protected override void NativeTranslate(float tx, float ty)
-        {
-            Canvas.Translate(tx, ty);
-        }
-
         private void DrawLinearGradient(LinearGradientPaintEx paint, RectangleF rectangle)
         {
             var colors = new SKColor[paint.GradientStops.Length];
@@ -126,5 +121,27 @@ namespace MagicGradients.Graphics.Skia.Drawing
 
             return SKMatrix.CreateIdentity();
         }
+
+        //protected override void NativeScale(float xFactor, float yFactor)
+        //{
+        //    CurrentState.SetScale(Math.Abs(xFactor), Math.Abs(yFactor));
+        //    Canvas.Scale(Math.Abs(xFactor), Math.Abs(yFactor));
+        //}
+
+        //protected override void NativeTranslate(float tx, float ty)
+        //{
+        //    Canvas.Translate(tx, ty);
+        //}
+
+        //protected override void NativeConcatenateTransform(AffineTransform transform)
+        //{
+        //    var values = new float[9];
+        //    Canvas.TotalMatrix.GetValues(values);
+
+        //    var matrix = new SKMatrix { Values = values };
+        //    var newMatrix = matrix.PostConcat(transform.AsMatrix());
+
+        //    Canvas.SetMatrix(newMatrix);
+        //}
     }
 }

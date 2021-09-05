@@ -56,7 +56,7 @@ namespace MagicGradients.Graphics.Skia.Masks
                 _ => 0
             };
 
-            context.Canvas.Translate(posX, posY);
+            Translate(context.Canvas, posX, posY);
         }
 
         protected override void EndLayout(GradientMask mask, RectangleF bounds, DrawContext context)
@@ -77,7 +77,7 @@ namespace MagicGradients.Graphics.Skia.Masks
                 _ => -bounds.Top
             };
 
-            context.Canvas.Translate(movX, movY);
+            Translate(context.Canvas, movX, movY);
         }
     }
 }

@@ -10,16 +10,19 @@
     <ScrollView>
         <StackLayout Spacing="5">
             <!-- Rectangle -->
-            <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
+            <!--<skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />-->
             <skix:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
             <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Rectangle Corners='50,50,50,50'}" />
+
             <!-- Ellipse -->
-            <skia:GradientView HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '90%,90%'}" />
+            <!--<skia:GradientView HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '90%,90%'}" />-->
             <skix:GradientView2 HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '90%,90%'}" />
             <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" Mask="{masks:Ellipse '90%,90%'}" />
+
             <!-- Path -->
             <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Path 'M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z', Stretch=AspectFit}" />
             <skix:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Path 'M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z', Stretch=AspectFit}" />
+
             <!-- Text -->
             <Frame BackgroundColor="Red" Padding="2">
                 <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient">

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PlaygroundMaui.ViewModels;assembly=PlaygroundMaui"
+             xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
+             xmlns:skix="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
+             xmlns:maui="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
+             xmlns:models="clr-namespace:PlaygroundMaui.Models;assembly=PlaygroundMaui"
+             xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients.Core"
+             x:Class="PlaygroundMaui.Pages.CategoriesPage"
+             x:DataType="viewModels:CategoriesViewModel">
+    <ContentPage.BindingContext>
+        <viewModels:CategoriesViewModel />
+    </ContentPage.BindingContext>
+    <CollectionView ItemsSource="{Binding Categories}">
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Margin="0,0,0,10" x:DataType="models:Category">
+                    <StackLayout Spacing="2">
+                        <Label Text="{Binding Name}" />
+                        <skia:GradientView HeightRequest="160">
+                            <magicGradients:CssGradientSource Stylesheet="{Binding Stylesheet}" />
+                        </skia:GradientView>
+                        <skix:GradientView2 HeightRequest="160">
+                            <magicGradients:CssGradientSource Stylesheet="{Binding Stylesheet}" />
+                        </skix:GradientView2>
+                        <maui:GradientView2 HeightRequest="160">
+                            <magicGradients:CssGradientSource Stylesheet="{Binding Stylesheet}" />
+                        </maui:GradientView2>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

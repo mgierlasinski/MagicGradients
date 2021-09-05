@@ -18,6 +18,7 @@ namespace MagicGradients.Graphics.Masks
 
             LayoutBounds(mask, bounds, context, false);
             context.Canvas.ClipPath(path);
+            RestoreTransform(context.Canvas);
         }
     }
 }

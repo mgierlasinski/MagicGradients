@@ -23,6 +23,7 @@ namespace MagicGradients.Graphics.Masks
 
             LayoutBounds(mask, bounds, context, false);
             context.Canvas.ClipPath(path);
+            RestoreTransform(context.Canvas);
         }
 
         private PointF GetCornerPoint(Dimensions cornerSize, RectangleF bounds, double pixelScaling)
