@@ -2,7 +2,7 @@
 
 namespace MagicGradients.Graphics
 {
-    public static class ColorExtensions
+    public static class GraphicsExtensions
     {
         public static Color ToMauiColor(this Xamarin.Forms.Color formsColor)
         {

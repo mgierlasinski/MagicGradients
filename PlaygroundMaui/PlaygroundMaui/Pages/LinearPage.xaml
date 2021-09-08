@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Core"
              xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
-             xmlns:skix="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
-             xmlns:maui="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
+             xmlns:gski="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
+             xmlns:gnat="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
              x:Class="PlaygroundMaui.Pages.LinearPage"
              Title="Linear Gradients">
     <ScrollView>
@@ -16,18 +16,18 @@
                     <magic:GradientStop Color="Yellow" Offset="0.5" />
                 </magic:LinearGradient>
             </skia:GradientView>
-            <skix:GradientView2 HeightRequest="160">
+            <gski:GradientView HeightRequest="160">
                 <magic:LinearGradient Angle="45" IsRepeating="True">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" Offset="0.5" />
                 </magic:LinearGradient>
-            </skix:GradientView2>
-            <maui:GradientView2 HeightRequest="160">
+            </gski:GradientView>
+            <gnat:GradientView HeightRequest="160">
                 <magic:LinearGradient Angle="45" IsRepeating="True">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" Offset="0.5" />
                 </magic:LinearGradient>
-            </maui:GradientView2>
+            </gnat:GradientView>
             <!-- GradientSize -->
             <skia:GradientView HeightRequest="160" GradientSize="40">
                 <magic:LinearGradient Angle="45">
@@ -35,26 +35,26 @@
                     <magic:GradientStop Color="Yellow" />
                 </magic:LinearGradient>
             </skia:GradientView>
-            <skix:GradientView2 HeightRequest="160" GradientSize="40">
+            <gski:GradientView HeightRequest="160" GradientSize="40">
                 <magic:LinearGradient Angle="45">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" />
                 </magic:LinearGradient>
-            </skix:GradientView2>
-            <maui:GradientView2 HeightRequest="160" GradientSize="40">
+            </gski:GradientView>
+            <gnat:GradientView HeightRequest="160" GradientSize="40">
                 <magic:LinearGradient Angle="45">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" />
                 </magic:LinearGradient>
-            </maui:GradientView2>
+            </gnat:GradientView>
             <!-- CSS -->
             <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
-            <skix:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" />
-            <maui:GradientView2 HeightRequest="160" StyleClass="RainbowGradient" />
+            <gski:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
+            <gnat:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
 
             <skia:GradientView HeightRequest="160" StyleClass="AngularGradient" />
-            <skix:GradientView2 HeightRequest="160" StyleClass="AngularGradient" />
-            <maui:GradientView2 HeightRequest="160" StyleClass="AngularGradient" />
+            <gski:GradientView HeightRequest="160" StyleClass="AngularGradient" />
+            <gnat:GradientView HeightRequest="160" StyleClass="AngularGradient" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

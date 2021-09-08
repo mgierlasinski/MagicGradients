@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:PlaygroundMaui.ViewModels;assembly=PlaygroundMaui"
              xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
-             xmlns:skix="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
-             xmlns:maui="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
+             xmlns:gski="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
+             xmlns:gnat="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
              xmlns:models="clr-namespace:PlaygroundMaui.Models;assembly=PlaygroundMaui"
-             xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients.Core"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Core"
              x:Class="PlaygroundMaui.Pages.CategoriesPage"
-             x:DataType="viewModels:CategoriesViewModel">
+             x:DataType="viewModels:CategoriesViewModel"
+             Title="Categories">
     <ContentPage.BindingContext>
         <viewModels:CategoriesViewModel />
     </ContentPage.BindingContext>
@@ -18,18 +19,27 @@
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Frame Margin="0,0,0,10" x:DataType="models:Category">
+                <Frame x:DataType="models:Category">
                     <StackLayout Spacing="2">
-                        <Label Text="{Binding Name}" />
-                        <skia:GradientView HeightRequest="160">
-                            <magicGradients:CssGradientSource Stylesheet="{Binding Stylesheet}" />
-                        </skia:GradientView>
-                        <skix:GradientView2 HeightRequest="160">
-                            <magicGradients:CssGradientSource Stylesheet="{Binding Stylesheet}" />
-                        </skix:GradientView2>
-                        <maui:GradientView2 HeightRequest="160">
-                            <magicGradients:CssGradientSource Stylesheet="{Binding Stylesheet}" />
-                        </maui:GradientView2>
+                        <Label Text="{Binding Name}" FontSize="Large" />
+                        <Grid>
+                            <skia:GradientView HeightRequest="160">
+                                <magic:CssGradientSource Stylesheet="{Binding Stylesheet}" />
+                            </skia:GradientView>
+                            <Label Text="Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
+                        </Grid>
+                        <Grid>
+                            <gski:GradientView HeightRequest="160">
+                                <magic:CssGradientSource Stylesheet="{Binding Stylesheet}" />
+                            </gski:GradientView>
+                            <Label Text="Graphics.Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
+                        </Grid>
+                        <Grid>
+                            <gnat:GradientView HeightRequest="160">
+                                <magic:CssGradientSource Stylesheet="{Binding Stylesheet}" />
+                            </gnat:GradientView>
+                            <Label Text="Graphics.Native" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
+                        </Grid>
                     </StackLayout>
                 </Frame>
             </DataTemplate>

@@ -6,13 +6,11 @@ using Xamarin.Forms;
 namespace MagicGradients.Graphics.Forms
 {
     [ContentProperty(nameof(GradientSource))]
-    public class GradientView2 : GraphicsView, IGradientControl, IGradientVisualElement
+    public class GradientView : GraphicsView, IGradientControl, IGradientVisualElement
     {
-        static GradientView2()
+        static GradientView()
         {
-            StyleSheets.RegisterStyle("background", typeof(GradientView2), nameof(GradientControl.GradientSourceProperty));
-            StyleSheets.RegisterStyle("background-size", typeof(GradientView2), nameof(GradientControl.GradientSourceProperty));
-            StyleSheets.RegisterStyle("background-repeat", typeof(GradientView2), nameof(GradientControl.GradientSourceProperty));
+            StyleSheetsConfig.RegisterStyles<GradientView>();
         }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
@@ -44,9 +42,9 @@ namespace MagicGradients.Graphics.Forms
             set => SetValue(MaskProperty, value);
         }
 
-        public GradientView2()
+        public GradientView()
         {
-            Drawable = new GradientDrawable<GradientView2>(this);
+            Drawable = new GradientDrawable<GradientView>(this);
         }
 
         protected override void OnBindingContextChanged()

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Core"
              xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
-             xmlns:skix="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
-             xmlns:maui="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
+             xmlns:gski="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
+             xmlns:gnat="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
              x:Class="PlaygroundMaui.Pages.RadialPage"
              Title="Radial Gradients">
     <ScrollView>
@@ -16,20 +16,20 @@
                     <magic:GradientStop Color="Blue" />
                 </magic:RadialGradient>
             </skia:GradientView>
-            <skix:GradientView2 HeightRequest="160">
+            <gski:GradientView HeightRequest="160">
                 <magic:RadialGradient>
                     <magic:GradientStop Color="Red" />
                     <magic:GradientStop Color="Green" />
                     <magic:GradientStop Color="Blue" />
                 </magic:RadialGradient>
-            </skix:GradientView2>
-            <maui:GradientView2 HeightRequest="160">
+            </gski:GradientView>
+            <gnat:GradientView HeightRequest="160">
                 <magic:RadialGradient>
                     <magic:GradientStop Color="Red" />
                     <magic:GradientStop Color="Green" />
                     <magic:GradientStop Color="Blue" />
                 </magic:RadialGradient>
-            </maui:GradientView2>
+            </gnat:GradientView>
         </StackLayout>
     </ScrollView>
 </ContentPage>

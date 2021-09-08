@@ -10,9 +10,7 @@ namespace MagicGradients.Skia.Forms
     {
         static GradientView()
         {
-            StyleSheets.RegisterStyle("background", typeof(GradientView), nameof(GradientSourceProperty));
-            StyleSheets.RegisterStyle("background-size", typeof(GradientView), nameof(GradientSizeProperty));
-            StyleSheets.RegisterStyle("background-repeat", typeof(GradientView), nameof(GradientRepeatProperty));
+            StyleSheetsConfig.RegisterStyles<GradientView>();
         }
 
         public GradientDrawable<GradientView> Drawable { get; protected set; }
