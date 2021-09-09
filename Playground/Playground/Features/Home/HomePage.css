@@ -23,7 +23,7 @@ MagicButton {
     background: radial-gradient(circle at top center, rgb(176, 142, 252),rgb(60, 0, 159));
 }
 
-MagicButton Label {
+MagicButton .MenuText {
     color: white;
     font-size: 18;
 }
