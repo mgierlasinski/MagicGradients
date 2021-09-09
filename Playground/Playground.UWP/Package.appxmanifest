@@ -8,14 +8,14 @@
 
   <Identity
     Name="b5b1f605-13f6-4991-b27e-63b48449d581"
-    Publisher="CN=bbenetskyi"
+    Publisher="CN=mgierlasinski"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="b5b1f605-13f6-4991-b27e-63b48449d581" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>UwpShellTest.UWP</DisplayName>
-    <PublisherDisplayName>bbenetskyi</PublisherDisplayName>
+    <DisplayName>MagicGradients.Playground</DisplayName>
+    <PublisherDisplayName>mgierlasinski</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
