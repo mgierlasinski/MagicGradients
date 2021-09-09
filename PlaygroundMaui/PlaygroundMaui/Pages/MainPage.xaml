@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:PlaygroundMaui.Pages;assembly=PlaygroundMaui"
+             x:Class="PlaygroundMaui.Pages.MainPage"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <StackLayout Spacing="5">
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label HorizontalTextAlignment="Center" TextColor="White">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Magic Gradients" FontSize="36" />
+                            <Span Text="&#x0a;using Microsoft.Maui.Graphics" FontSize="18" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Frame>
+            <Button Text="Linear Gradients" Command="{pages:Navigate {x:Type pages:LinearPage}}" />
+            <Button Text="Radial Gradients" Command="{pages:Navigate {x:Type pages:RadialPage}}" />
+            <Button Text="Masks" Command="{pages:Navigate {x:Type pages:MasksPage}}" />
+            <Button Text="Gallery" Command="{pages:Navigate {x:Type pages:CategoriesPage}}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
