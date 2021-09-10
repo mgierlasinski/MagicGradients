@@ -19,8 +19,8 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
 - Gradient'em all - paint gradient on any shape or text with clipping masks
 - Powered by [![Nuget](https://img.shields.io/badge/SkiaSharp-v1.68.1-blue)](https://www.nuget.org/packages/SkiaSharp/)
 
-| [Drawing gradient](#drawing-gradient) | [:art: Styling with CSS](#art-styling-with-css) | [:performing_arts: Masks](#performing_arts-masks) | [:clapper: Animations](#clapper-animations-preview) |
-| --- | --- | --- | --- |
+| [:joystick: Download](#joystick-play-with-magic-gradients) | [Drawing gradient](#drawing-gradient) | [:art: Styling with CSS](#art-styling-with-css) | [:performing_arts: Masks](#performing_arts-masks) | [:clapper: Animations](#clapper-animations-preview) |
+| --- | --- | --- | --- | --- |
 
 ## Installation 
 
