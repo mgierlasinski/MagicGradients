@@ -41,6 +41,10 @@ In `Magic Gradients` repository you can find [`Magic Playground`](https://github
 
 `Magic Playground` contains samples for all kinds of gradients, animations, masks and other features. It's the best place to start and see gradients in action.
 
+## :joystick: Play with Magic Gradients
+
+Install `Magic Playground` on your device and see some cool backgrounds right now.
+
 [![Install link](https://img.shields.io/badge/Install%20on%20Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://install.appcenter.ms/users/marcin.gierlasinski/apps/magicplayground/distribution_groups/public)
 
 ## Drawing gradient
