@@ -19,9 +19,7 @@ namespace PlaygroundMaui.Pages
             {
                 throw new ArgumentNullException(nameof(Type));
             }
-
-            var page = (Page)Activator.CreateInstance(Type);
-            ((App)Application.Current).MainPage.Navigation.PushAsync(page);
+            ((App)Application.Current).Navigation.NavigateTo(Type);
         }
     }
 }

@@ -1,15 +1,19 @@
-﻿using PlaygroundMaui.Pages;
+﻿using PlaygroundMaui.Infrastructure;
+using PlaygroundMaui.Pages;
 using Xamarin.Forms;
 
 namespace PlaygroundMaui
 {
     public partial class App : Application
     {
+        public NavigationService Navigation { get; }
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+            Navigation = new NavigationService(MainPage);
         }
 
         protected override void OnStart()

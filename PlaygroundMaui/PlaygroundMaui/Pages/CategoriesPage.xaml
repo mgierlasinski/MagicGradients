@@ -13,7 +13,11 @@
     <ContentPage.BindingContext>
         <viewModels:CategoriesViewModel />
     </ContentPage.BindingContext>
-    <CollectionView ItemsSource="{Binding Categories}">
+    <CollectionView x:Name="CategoriesList"
+                    ItemsSource="{Binding Categories}"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedCategory}"
+                    SelectionChanged="OnSelectionChanged">
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" />
         </CollectionView.ItemsLayout>
