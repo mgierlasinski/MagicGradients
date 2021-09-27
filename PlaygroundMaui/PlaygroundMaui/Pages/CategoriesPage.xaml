@@ -23,7 +23,7 @@
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Frame x:DataType="models:Category">
+                <Frame x:DataType="models:CategoryItem">
                     <StackLayout Spacing="2">
                         <Label Text="{Binding Name}" FontSize="Large" />
                         <Grid>

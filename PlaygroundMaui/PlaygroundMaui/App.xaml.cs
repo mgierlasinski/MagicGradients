@@ -12,6 +12,7 @@ namespace PlaygroundMaui
         {
             InitializeComponent();
 
+            AppSetup.ConfigureAndRun();
             MainPage = new NavigationPage(new MainPage());
             Navigation = new NavigationService(MainPage);
         }
