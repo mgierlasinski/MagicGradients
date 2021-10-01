@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace PlaygroundMaui
 {
-    public partial class App : Application
+    public partial class App : Application, INavigationHandler
     {
         public NavigationService Navigation { get; }
 

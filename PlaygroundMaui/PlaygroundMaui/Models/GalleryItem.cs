@@ -1,8 +1,10 @@
-﻿namespace PlaygroundMaui.Models
+﻿using MagicGradients;
+
+namespace PlaygroundMaui.Models
 {
     public class GalleryItem
     {
-        public string Stylesheet { get; set; }
-        public string Size { get; set; }
+        public IGradientSource Source { get; set; }
+        public Dimensions Size { get; set; }
     }
 }

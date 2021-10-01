@@ -6,7 +6,6 @@
              xmlns:gski="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
              xmlns:gnat="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
              xmlns:models="clr-namespace:PlaygroundMaui.Models;assembly=PlaygroundMaui"
-             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Core"
              x:Class="PlaygroundMaui.Pages.CategoriesPage"
              x:DataType="viewModels:CategoriesViewModel"
              Title="Categories">
@@ -23,29 +22,25 @@
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Frame x:DataType="models:CategoryItem">
+                <Grid>
+                <Frame x:DataType="models:CategoryItem" HasShadow="True" Margin="10" Padding="10">
                     <StackLayout Spacing="2">
                         <Label Text="{Binding Name}" FontSize="Large" />
                         <Grid>
-                            <skia:GradientView HeightRequest="160">
-                                <magic:CssGradientSource Stylesheet="{Binding Stylesheet}" />
-                            </skia:GradientView>
+                            <skia:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
                             <Label Text="Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                         <Grid>
-                            <gski:GradientView HeightRequest="160">
-                                <magic:CssGradientSource Stylesheet="{Binding Stylesheet}" />
-                            </gski:GradientView>
+                            <gski:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
                             <Label Text="Graphics.Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                         <Grid>
-                            <gnat:GradientView HeightRequest="160">
-                                <magic:CssGradientSource Stylesheet="{Binding Stylesheet}" />
-                            </gnat:GradientView>
+                            <gnat:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
                             <Label Text="Graphics.Native" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                     </StackLayout>
                 </Frame>
+                </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

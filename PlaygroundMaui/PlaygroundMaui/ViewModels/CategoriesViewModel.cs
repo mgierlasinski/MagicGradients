@@ -1,4 +1,5 @@
-﻿using Playground.Data.Infrastructure;
+﻿using MagicGradients;
+using Playground.Data.Infrastructure;
 using Playground.Data.Repositories;
 using PlaygroundMaui.Infrastructure;
 using PlaygroundMaui.Models;
@@ -17,12 +18,12 @@ namespace PlaygroundMaui.ViewModels
         public CategoryItem SelectedCategory
         {
             get => _selectedCategory;
-            set => SetProperty(ref _selectedCategory, value, async () =>
+            set => SetProperty(ref _selectedCategory, value, () =>
             {
                 if (_selectedCategory == null)
                     return;
 
-                ((App)Application.Current).Navigation.NavigateTo<GalleryPage, CategoryItem>(_selectedCategory);
+                (Application.Current as INavigationHandler)?.Navigation.NavigateTo<GalleryPage, CategoryItem>(_selectedCategory);
             });
         }
 
@@ -39,7 +40,7 @@ namespace PlaygroundMaui.ViewModels
             Categories = repository.GetCategories().Select(x => new CategoryItem
             {
                 Name = x.Name,
-                Stylesheet = x.Stylesheet,
+                Source = CssGradientSource.Parse(x.Stylesheet),
                 Tag = x.Tag
             }).ToList();
         }
