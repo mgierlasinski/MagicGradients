@@ -2,6 +2,6 @@
 {
     public interface INavigationHandler
     {
-        NavigationService Navigation { get; }
+        INavigationService Navigation { get; }
     }
 }

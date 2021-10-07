@@ -1,9 +1,16 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PlaygroundMaui.Infrastructure
 {
-    public class NavigationService
+    public interface INavigationService
+    {
+        Task NavigateTo(Type type);
+        Task NavigateTo<TPage, TParameter>(TParameter parameter);
+    }
+
+    public class NavigationService : INavigationService
     {
         private readonly Page _mainPage;
 
@@ -12,20 +19,20 @@ namespace PlaygroundMaui.Infrastructure
             _mainPage = mainPage;
         }
 
-        public void NavigateTo(Type type)
+        public Task NavigateTo(Type type)
         {
             var page = CreateInstance(type);
-            _mainPage.Navigation.PushAsync(page);
+            return _mainPage.Navigation.PushAsync(page);
         }
 
-        public void NavigateTo<TPage, TParameter>(TParameter parameter)
+        public Task NavigateTo<TPage, TParameter>(TParameter parameter)
         {
             var page = CreateInstance(typeof(TPage));
             if (page.BindingContext is INavigationAware<TParameter> navAware)
             {
                 navAware.Prepare(parameter);
             }
-            _mainPage.Navigation.PushAsync(page);
+            return _mainPage.Navigation.PushAsync(page);
         }
 
         private Page CreateInstance(Type type)

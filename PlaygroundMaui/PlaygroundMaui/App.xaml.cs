@@ -6,15 +6,18 @@ namespace PlaygroundMaui
 {
     public partial class App : Application, INavigationHandler
     {
-        public NavigationService Navigation { get; }
+        public new static App Current { get; private set; }
+        public INavigationService Navigation { get; }
 
         public App()
         {
             InitializeComponent();
 
             AppSetup.ConfigureAndRun();
+
             MainPage = new NavigationPage(new MainPage());
             Navigation = new NavigationService(MainPage);
+            Current = this;
         }
 
         protected override void OnStart()

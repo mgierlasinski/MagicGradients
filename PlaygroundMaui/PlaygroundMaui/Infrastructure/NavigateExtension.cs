@@ -1,6 +1,6 @@
-﻿using System;
+﻿using PlaygroundMaui.Infrastructure;
+using System;
 using System.Windows.Input;
-using PlaygroundMaui.Infrastructure;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

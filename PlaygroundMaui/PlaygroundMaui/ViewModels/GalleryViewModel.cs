@@ -33,7 +33,7 @@ namespace PlaygroundMaui.ViewModels
                 if (_selectedItem == null)
                     return;
 
-                (Application.Current as INavigationHandler)?.Navigation.NavigateTo<GradientPage, GalleryItem>(_selectedItem);
+                App.Current.Navigation.NavigateTo<GradientPage, GalleryItem>(_selectedItem);
             });
         }
 

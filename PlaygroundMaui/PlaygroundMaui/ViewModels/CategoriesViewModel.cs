@@ -23,7 +23,7 @@ namespace PlaygroundMaui.ViewModels
                 if (_selectedCategory == null)
                     return;
 
-                (Application.Current as INavigationHandler)?.Navigation.NavigateTo<GalleryPage, CategoryItem>(_selectedCategory);
+                App.Current.Navigation.NavigateTo<GalleryPage, CategoryItem>(_selectedCategory);
             });
         }
 
