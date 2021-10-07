@@ -22,6 +22,7 @@
             <!-- Path -->
             <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Path 'M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z', Stretch=AspectFit}" />
             <gski:GradientView HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Path 'M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z', Stretch=AspectFit}" />
+            <gnat:GradientView HeightRequest="160" StyleClass="RainbowGradient" Mask="{masks:Path 'M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z', Stretch=AspectFit}" />
 
             <!-- Text -->
             <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient">

@@ -1,5 +1,6 @@
 ﻿using MagicGradients.Graphics.Drawing;
 using MagicGradients.Masks;
+using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Graphics.Masks
 {
@@ -10,7 +11,13 @@ namespace MagicGradients.Graphics.Masks
             if (!mask.IsActive || string.IsNullOrEmpty(mask.Data))
                 return;
 
-            // TODO: apply clipping
+            var path = PathBuilder.Build(mask.Data);
+            //var bounds = path.Bounds;  // Requires native GraphicsService
+            var bounds = path.GetBoundsByFlattening();
+
+            LayoutBounds(mask, bounds, context, false);
+            context.Canvas.ClipPath(path);
+            RestoreTransform(context.Canvas);
         }
     }
 }
