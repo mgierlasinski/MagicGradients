@@ -132,7 +132,7 @@ namespace MagicGradients.Graphics.Drawing
 
             for (var i = 0; i < distances.Length; i++)
             {
-                distances[i] = Distance(center, points[i]);
+                distances[i] = center.Distance(points[i]);
             }
 
             return distances;
@@ -141,15 +141,6 @@ namespace MagicGradients.Graphics.Drawing
         private PointF Subtract(PointF pt, PointF sz)
         {
             return new PointF(pt.X - sz.X, pt.Y - sz.Y);
-        }
-
-        private float Distance(PointF point, PointF other)
-        {
-            var dx = point.X - other.X;
-            var dy = point.X - other.X;
-            var ls = dx * dx + dy * dy;
-
-            return (float)Math.Sqrt(ls);
         }
     }
 }

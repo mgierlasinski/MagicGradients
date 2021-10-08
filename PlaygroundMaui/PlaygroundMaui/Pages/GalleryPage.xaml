@@ -6,41 +6,44 @@
              xmlns:gski="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
              xmlns:gnat="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
              xmlns:models="clr-namespace:PlaygroundMaui.Models;assembly=PlaygroundMaui"
-             x:Class="PlaygroundMaui.Pages.CategoriesPage"
-             x:DataType="viewModels:CategoriesViewModel"
-             Title="Categories">
+             x:Class="PlaygroundMaui.Pages.GalleryPage"
+             x:DataType="viewModels:GalleryViewModel"
+             Title="{Binding Name}">
     <ContentPage.BindingContext>
-        <viewModels:CategoriesViewModel />
+        <viewModels:GalleryViewModel />
     </ContentPage.BindingContext>
-    <CollectionView x:Name="CategoriesList"
-                    ItemsSource="{Binding Categories}"
+    <CollectionView x:Name="GradientList"
+                    ItemsSource="{Binding GalleryItems}"
                     SelectionMode="Single"
-                    SelectedItem="{Binding SelectedCategory}"
+                    SelectedItem="{Binding SelectedItem}"
                     SelectionChanged="OnSelectionChanged">
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" />
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Grid>
-                <Frame x:DataType="models:CategoryItem" HasShadow="True" Margin="10" Padding="10">
+                <Frame x:DataType="models:GalleryItem">
                     <StackLayout Spacing="2">
-                        <Label Text="{Binding Name}" FontSize="Large" />
                         <Grid>
-                            <skia:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
+                            <skia:GradientView GradientSource="{Binding Source}" 
+                                               GradientSize="{Binding Size}" 
+                                               HeightRequest="160" />
                             <Label Text="Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                         <Grid>
-                            <gski:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
+                            <gski:GradientView GradientSource="{Binding Source}" 
+                                               GradientSize="{Binding Size}" 
+                                               HeightRequest="160" />
                             <Label Text="Graphics.Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                         <Grid>
-                            <gnat:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
+                            <gnat:GradientView GradientSource="{Binding Source}" 
+                                               GradientSize="{Binding Size}" 
+                                               HeightRequest="160" />
                             <Label Text="Graphics.Native" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                     </StackLayout>
                 </Frame>
-                </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

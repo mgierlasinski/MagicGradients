@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Graphics.Ski
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "MagicGradients.Core\MagicGradients.Core.csproj", "{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Data", "Playground\Playground.Data\Playground.Data.csproj", "{1E372DD0-5F01-44BB-BDFA-03719AE579DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,18 @@ Global
 		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|iPhone.Build.0 = Release|Any CPU
 		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Release|iPhone.Build.0 = Release|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,6 +167,7 @@ Global
 		{8DA67C42-A32D-44A9-B5EF-F695799EA762} = {FA5BD101-83A8-45B9-ACAB-5F03DC75C241}
 		{7F964273-647E-4C04-94DE-32DA3678CBAF} = {FA5BD101-83A8-45B9-ACAB-5F03DC75C241}
 		{DFB31BC2-033C-423F-A585-D92C1D2CFFDB} = {FA5BD101-83A8-45B9-ACAB-5F03DC75C241}
+		{1E372DD0-5F01-44BB-BDFA-03719AE579DF} = {FA5BD101-83A8-45B9-ACAB-5F03DC75C241}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC0D2571-32E8-4D58-95BB-7B1881CCF14D}

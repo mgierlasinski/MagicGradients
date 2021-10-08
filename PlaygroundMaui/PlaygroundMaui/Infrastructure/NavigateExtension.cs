@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlaygroundMaui.Infrastructure;
+using System;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,8 +21,7 @@ namespace PlaygroundMaui.Pages
                 throw new ArgumentNullException(nameof(Type));
             }
 
-            var page = (Page)Activator.CreateInstance(Type);
-            ((App)Application.Current).MainPage.Navigation.PushAsync(page);
+            (Application.Current as INavigationHandler)?.Navigation.NavigateTo(Type);
         }
     }
 }

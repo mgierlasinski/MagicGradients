@@ -12,16 +12,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Categories.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Categories.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
@@ -29,10 +21,17 @@
     <ProjectReference Include="..\..\MagicGradients.Graphics.Forms\MagicGradients.Graphics.Forms.csproj" />
     <ProjectReference Include="..\..\MagicGradients.Graphics.Skia\MagicGradients.Graphics.Skia.csproj" />
     <ProjectReference Include="..\..\MagicGradients.Skia.Forms\MagicGradients.Skia.Forms.csproj" />
+    <ProjectReference Include="..\..\Playground\Playground.Data\Playground.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Pages\CategoriesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\GalleryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\GradientPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\LinearPage.xaml">

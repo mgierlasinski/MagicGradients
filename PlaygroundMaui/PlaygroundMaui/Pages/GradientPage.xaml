@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PlaygroundMaui.ViewModels;assembly=PlaygroundMaui"
+             xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
+             xmlns:gski="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
+             xmlns:gnat="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
+             x:Class="PlaygroundMaui.Pages.GradientPage"
+             x:DataType="viewModels:GradientViewModel"
+             Title="Gradient preview">
+    <ContentPage.BindingContext>
+        <viewModels:GradientViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Grid IsVisible="{Binding IsSkiaVisible}" VerticalOptions="FillAndExpand">
+            <skia:GradientView GradientSource="{Binding Source}" 
+                               GradientSize="{Binding Size}" 
+                               HeightRequest="160" />
+            <Label Text="Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
+        </Grid>
+        <Grid IsVisible="{Binding IsGraphicsSkiaVisible}" VerticalOptions="FillAndExpand">
+            <gski:GradientView GradientSource="{Binding Source}" 
+                               GradientSize="{Binding Size}" 
+                               HeightRequest="160" />
+            <Label Text="Graphics.Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
+        </Grid>
+        <Grid IsVisible="{Binding IsGraphicsNativeVisible}" VerticalOptions="FillAndExpand">
+            <gnat:GradientView GradientSource="{Binding Source}" 
+                               GradientSize="{Binding Size}" 
+                               HeightRequest="160" />
+            <Label Text="Graphics.Native" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
+        </Grid>
+        <Grid ColumnDefinitions="*,*,*,*" VerticalOptions="End">
+            <Button Text="All" Grid.Column="0" Command="{Binding ShowTabCommand}" CommandParameter="all" />
+            <Button Text="Skia" Grid.Column="1" Command="{Binding ShowTabCommand}" CommandParameter="skia" />
+            <Button Text="G.Skia" Grid.Column="2" Command="{Binding ShowTabCommand}" CommandParameter="gskia" />
+            <Button Text="G.Native" Grid.Column="3" Command="{Binding ShowTabCommand}" CommandParameter="gnative" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

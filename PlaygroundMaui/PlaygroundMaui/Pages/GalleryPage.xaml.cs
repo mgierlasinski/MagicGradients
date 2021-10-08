@@ -2,18 +2,18 @@
 
 namespace PlaygroundMaui.Pages
 {
-    public partial class CategoriesPage
+    public partial class GalleryPage
     {
-        public CategoriesPage()
+        public GalleryPage()
         {
             InitializeComponent();
         }
 
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (CategoriesList.SelectedItem != null)
+            if (GradientList.SelectedItem != null)
             {
-                CategoriesList.SelectedItem = null;
+                GradientList.SelectedItem = null;
             }
         }
     }
