@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Graphics" Version="6.0.100-rc.1.413" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MagicGradients.Core\MagicGradients.Core.csproj" />
   </ItemGroup>
 

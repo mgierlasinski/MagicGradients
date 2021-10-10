@@ -146,14 +146,14 @@ namespace MagicGradients.Graphics.Drawing
             {
                 return new[]
                 {
-                    new PaintGradientStop(0, gradient.Stops[0].Color.ToMauiColor()),
-                    new PaintGradientStop(1, gradient.Stops[0].Color.ToMauiColor())
+                    new PaintGradientStop(0, gradient.Stops[0].Color),
+                    new PaintGradientStop(1, gradient.Stops[0].Color)
                 };
             }
 
             return gradient.Stops
                 .OrderBy(x => x.RenderOffset)
-                .Select(x => new PaintGradientStop(x.RenderOffset, x.Color.ToMauiColor()))
+                .Select(x => new PaintGradientStop(x.RenderOffset, x.Color))
                 .ToArray();
         }
     }

@@ -1,8 +1,8 @@
 ﻿using MagicGradients.Builder;
+using Microsoft.Maui.Graphics;
 using System;
 using System.Linq;
 using System.Text;
-using Xamarin.Forms;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
@@ -17,7 +17,7 @@ namespace MagicGradients.Parser.TokenDefinitions
         public void Parse(CssReader reader, GradientBuilder builder)
         {
             var colorString = GetColorString(reader);
-            var color = (Color)ColorConverter.ConvertFromInvariantString(colorString);
+            var color = Color.Parse(colorString);
             var parts = reader.ReadNext().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             var offsets = GetOffsets(parts);
 
