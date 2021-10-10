@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using MagicGradients;
 using Playground.Features.Initializer;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using GradientStop = MagicGradients.GradientStop;
 
 namespace Playground.Features.Splash
@@ -19,7 +20,7 @@ namespace Playground.Features.Splash
             Task.Run(() =>
             {
                 SetupIoC();
-                //Device.BeginInvokeOnMainThread(() => Application.Current.MainPage = new AppShell()); 
+                Device.BeginInvokeOnMainThread(() => Application.Current.MainPage = new AppShell()); 
             });
         }
 
@@ -27,7 +28,8 @@ namespace Playground.Features.Splash
         {
             AppSetup.ConfigureAndRun();
             
-            AppSetup.IoC.GetInstance<IInitializer>().Initialize();
+            if(Device.RuntimePlatform == Device.iOS)
+                AppSetup.IoC.GetInstance<IPlatformInitializer>().Initialize();
             
             MagicGradients.Toolkit.Initializer.Init();
             Sharpnado.Shades.Initializer.Initialize(false);

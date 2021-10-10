@@ -1,6 +1,6 @@
 namespace Playground.Features.Initializer
 {
-    public interface IInitializer
+    public interface IPlatformInitializer
     {
         void Initialize();
     }

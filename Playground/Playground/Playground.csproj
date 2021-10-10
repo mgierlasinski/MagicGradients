@@ -90,9 +90,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\Splash\SplashPage.xaml.cs">
-      <DependentUpon>SplashPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <EmbeddedResource Update="Features\Splash\SplashPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

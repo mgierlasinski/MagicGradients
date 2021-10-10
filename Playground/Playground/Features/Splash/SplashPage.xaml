@@ -70,7 +70,7 @@
              <magic:GradientView Grid.Row="1" 
                                  HeightRequest="150" 
                                  WidthRequest="150"
-                                 Margin="0,35,0,0"
+                                 Margin="5,35,0,0"
                                  HorizontalOptions="Center"  
                                  VerticalOptions="Start"> 
                  <magic:LinearGradient> 
