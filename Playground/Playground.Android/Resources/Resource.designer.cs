@@ -14,7 +14,7 @@ namespace Playground.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.0.99.22")]
 	public partial class Resource
 	{
 		
@@ -20693,7 +20693,6 @@ namespace Playground.Droid
 			// aapt resource value: 0x7F070094
 			public const int xamarin_logo = 2131165332;
 			
-
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

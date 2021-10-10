@@ -1,4 +1,4 @@
-﻿using Playground.Views;
+﻿using Playground.Features.Splash;
 using Xamarin.Forms;
 
 namespace Playground
@@ -7,17 +7,19 @@ namespace Playground
     {
         public App()
         {
-            Device.SetFlags(new[] { "Shell_UWP_Experimental" });
-
             InitializeComponent();
+#if WINDOWS_UWP
+            Device.SetFlags(new[] { "Shell_UWP_Experimental" });
 
             MagicGradients.Toolkit.Initializer.Init();
             Sharpnado.Shades.Initializer.Initialize(false);
             Sharpnado.Tabs.Initializer.Initialize(false, false);
 
             AppSetup.ConfigureAndRun();
-
+            MainPage = new AppShell();
+#else
             MainPage = new SplashPage();
+#endif
         }
 
         protected override void OnStart()

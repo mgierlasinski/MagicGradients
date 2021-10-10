@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Playground.Features.Initializer;
 using UIKit;
 
 namespace Playground.iOS
@@ -7,7 +8,7 @@ namespace Playground.iOS
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IInitializer
     {
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
@@ -19,13 +20,18 @@ namespace Playground.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Xamarin.Forms.Forms.Init();
-            Sharpnado.Tabs.iOS.Preserver.Preserve();
-            Sharpnado.Shades.iOS.iOSShadowsRenderer.Initialize();
-            ColorPicker.iOS.ColorPickerEffects.Init();
-
+            AppSetup.IoC.RegisterInstance<IInitializer>(this);
+            
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public void Initialize()
+        {
+            Sharpnado.Tabs.iOS.Preserver.Preserve();
+            Sharpnado.Shades.iOS.iOSShadowsRenderer.Initialize();
+            ColorPicker.iOS.ColorPickerEffects.Init();
         }
     }
 }

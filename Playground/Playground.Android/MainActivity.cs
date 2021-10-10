@@ -2,12 +2,17 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Playground.Features.Initializer;
 using System;
 
 namespace Playground.Droid
 {
-    [Activity(Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    [Activity(
+        Icon = "@mipmap/icon",
+        Theme = "@style/MainTheme",
+        MainLauncher = false,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IInitializer
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -21,6 +26,7 @@ namespace Playground.Droid
 #endif
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            AppSetup.IoC.RegisterInstance<IInitializer>(this);
 
             LoadApplication(new App());
         }
@@ -46,6 +52,11 @@ namespace Playground.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public void Initialize()
+        {
+            //ignore for now
         }
     }
 }
