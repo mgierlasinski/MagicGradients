@@ -1,7 +1,7 @@
-﻿using MagicGradients.Xaml;
+﻿using MagicGradients.Converters;
 using System;
+using System.ComponentModel;
 using System.Globalization;
-using Xamarin.Forms;
 
 namespace MagicGradients
 {
@@ -68,6 +68,12 @@ namespace MagicGradients
 
             result = Zero;
             return false;
+        }
+
+        public string ToStringWithUnit()
+        {
+            var unit = Type == OffsetType.Absolute ? "px" : "%";
+            return $"{Value.ToString(CultureInfo.InvariantCulture)}{unit}";
         }
     }
 

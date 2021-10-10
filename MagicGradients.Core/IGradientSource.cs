@@ -1,6 +1,6 @@
-using MagicGradients.Xaml;
+using MagicGradients.Converters;
 using System.Collections.Generic;
-using Xamarin.Forms;
+using System.ComponentModel;
 
 namespace MagicGradients
 {
