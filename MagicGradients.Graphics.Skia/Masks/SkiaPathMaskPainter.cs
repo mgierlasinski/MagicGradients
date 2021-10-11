@@ -7,7 +7,7 @@ using SkiaSharp;
 
 namespace MagicGradients.Graphics.Skia.Masks
 {
-    public class SkiaPathMaskPainter : GradientMaskPainter, IMaskPainter<PathMask, DrawContext>
+    public class SkiaPathMaskPainter : MaskPainter, IMaskPainter<PathMask, DrawContext>
     {
         public void Clip(PathMask mask, DrawContext context)
         {

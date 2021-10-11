@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Graphics.Masks
 {
-    public class EllipseMaskPainter : GradientMaskPainter, IMaskPainter<EllipseMask, DrawContext>
+    public class EllipseMaskPainter : MaskPainter, IMaskPainter<EllipseMask, DrawContext>
     {
         public void Clip(EllipseMask mask, DrawContext context)
         {

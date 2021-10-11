@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Graphics.Masks
 {
-    public class PathMaskPainter : GradientMaskPainter, IMaskPainter<PathMask, DrawContext>
+    public class PathMaskPainter : MaskPainter, IMaskPainter<PathMask, DrawContext>
     {
         public void Clip(PathMask mask, DrawContext context)
         {

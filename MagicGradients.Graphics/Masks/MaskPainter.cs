@@ -6,7 +6,12 @@ using System.Collections.Generic;
 
 namespace MagicGradients.Graphics.Masks
 {
-    public abstract class GradientMaskPainter
+    public interface IMaskPainter<TMask, TContext>
+    {
+        void Clip(TMask mask, TContext context);
+    }
+
+    public abstract class MaskPainter
     {
         private readonly Stack<AffineTransform> _transforms = new Stack<AffineTransform>();
         //private AffineTransform _transform = new AffineTransform();

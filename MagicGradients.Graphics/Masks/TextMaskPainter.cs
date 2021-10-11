@@ -3,7 +3,7 @@ using MagicGradients.Masks;
 
 namespace MagicGradients.Graphics.Masks
 {
-    public class TextMaskPainter : GradientMaskPainter, IMaskPainter<TextMask, DrawContext>
+    public class TextMaskPainter : MaskPainter, IMaskPainter<TextMask, DrawContext>
     {
         public void Clip(TextMask mask, DrawContext context)
         {
