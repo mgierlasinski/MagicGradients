@@ -1,4 +1,4 @@
-﻿using MagicGradients.Graphics.Masks;
+﻿using MagicGradients.Drawing;
 using SkiaSharp;
 using System;
 using Xamarin.Forms;

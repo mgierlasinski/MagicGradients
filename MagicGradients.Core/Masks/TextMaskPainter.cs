@@ -1,7 +1,6 @@
-﻿using MagicGradients.Graphics.Drawing;
-using MagicGradients.Masks;
+﻿using MagicGradients.Drawing;
 
-namespace MagicGradients.Graphics.Masks
+namespace MagicGradients.Masks
 {
     public class TextMaskPainter : MaskPainter, IMaskPainter<TextMask, DrawContext>
     {

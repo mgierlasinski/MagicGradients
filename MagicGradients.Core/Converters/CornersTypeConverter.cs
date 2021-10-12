@@ -1,5 +1,4 @@
-﻿using MagicGradients.Masks;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Globalization;
 

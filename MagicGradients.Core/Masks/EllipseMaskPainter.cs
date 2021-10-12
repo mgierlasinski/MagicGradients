@@ -1,8 +1,7 @@
-﻿using MagicGradients.Graphics.Drawing;
-using MagicGradients.Masks;
+﻿using MagicGradients.Drawing;
 using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Graphics.Masks
+namespace MagicGradients.Masks
 {
     public class EllipseMaskPainter : MaskPainter, IMaskPainter<EllipseMask, DrawContext>
     {

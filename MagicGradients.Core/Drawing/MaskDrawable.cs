@@ -1,6 +1,6 @@
 ﻿using MagicGradients.Masks;
 
-namespace MagicGradients.Graphics.Masks
+namespace MagicGradients.Drawing
 {
     public class MaskDrawable<TContext>
     {

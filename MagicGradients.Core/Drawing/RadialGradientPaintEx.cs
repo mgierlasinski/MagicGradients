@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.Maui.Graphics;
+﻿using Microsoft.Maui.Graphics;
+using System;
 
-namespace MagicGradients.Graphics.Drawing
+namespace MagicGradients.Drawing
 {
     public class RadialGradientPaintEx : RadialGradientPaint
     {

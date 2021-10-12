@@ -1,7 +1,7 @@
 ﻿using MagicGradients.Converters;
 using System.ComponentModel;
 
-namespace MagicGradients.Masks
+namespace MagicGradients
 {
     [TypeConverter(typeof(CornersTypeConverter))]
     public struct Corners

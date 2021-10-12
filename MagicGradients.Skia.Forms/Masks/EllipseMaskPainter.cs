@@ -1,7 +1,7 @@
-﻿using MagicGradients.Graphics.Masks;
+﻿using MagicGradients.Drawing;
 using MagicGradients.Masks;
-using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp;
+using DrawContext = MagicGradients.Skia.Forms.Drawing.DrawContext;
 
 namespace MagicGradients.Skia.Forms.Masks
 {

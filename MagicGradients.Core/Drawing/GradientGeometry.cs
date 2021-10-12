@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MagicGradients.Graphics.Drawing
+namespace MagicGradients.Drawing
 {
     public abstract class GradientGeometry<TGradient> where TGradient : Gradient
     {

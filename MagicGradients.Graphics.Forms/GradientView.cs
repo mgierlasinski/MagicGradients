@@ -1,4 +1,4 @@
-﻿using MagicGradients.Graphics.Drawing;
+﻿using MagicGradients.Drawing;
 using MagicGradients.Masks;
 using Microsoft.Maui.Graphics.Forms;
 using Xamarin.Forms;

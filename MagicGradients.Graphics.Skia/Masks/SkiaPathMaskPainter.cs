@@ -1,5 +1,4 @@
-﻿using MagicGradients.Graphics.Drawing;
-using MagicGradients.Graphics.Masks;
+﻿using MagicGradients.Drawing;
 using MagicGradients.Graphics.Skia.Drawing;
 using MagicGradients.Masks;
 using Microsoft.Maui.Graphics.Skia;

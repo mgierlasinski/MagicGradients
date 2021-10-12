@@ -1,4 +1,4 @@
-using MagicGradients.Graphics.Drawing;
+using MagicGradients.Drawing;
 using MagicGradients.Graphics.Skia.Drawing;
 using MagicGradients.Graphics.Skia.Masks;
 using MagicGradients.Masks;
