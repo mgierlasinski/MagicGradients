@@ -2,7 +2,7 @@
 using Microsoft.Maui.Graphics;
 using SkiaSharp;
 
-namespace MagicGradients.Graphics.Skia
+namespace MagicGradients.Forms.Skia
 {
     public static class SkiaExtensions
     {

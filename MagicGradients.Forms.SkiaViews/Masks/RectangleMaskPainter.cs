@@ -1,4 +1,5 @@
 ﻿using MagicGradients.Drawing;
+using MagicGradients.Forms.SkiaViews;
 using MagicGradients.Masks;
 using SkiaSharp;
 using DrawContext = MagicGradients.Skia.Forms.Drawing.DrawContext;

@@ -3,7 +3,7 @@ using MagicGradients.Masks;
 using Microsoft.Maui.Graphics.Forms;
 using Xamarin.Forms;
 
-namespace MagicGradients.Graphics.Forms
+namespace MagicGradients.Forms
 {
     [ContentProperty(nameof(GradientSource))]
     public class GradientView : GraphicsView, IGradientControl, IGradientVisualElement

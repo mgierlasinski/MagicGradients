@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:masks="clr-namespace:MagicGradients.Masks;assembly=MagicGradients.Core"
-             xmlns:skia="clr-namespace:MagicGradients.Skia.Forms;assembly=MagicGradients.Skia.Forms"
-             xmlns:gski="clr-namespace:MagicGradients.Graphics.Skia;assembly=MagicGradients.Graphics.Skia"
-             xmlns:gnat="clr-namespace:MagicGradients.Graphics.Forms;assembly=MagicGradients.Graphics.Forms"
+             xmlns:gnat="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
+             xmlns:gski="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
+             xmlns:skia="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
              x:Class="PlaygroundMaui.Pages.MasksPage"
              Title="Masks">
     <ScrollView>

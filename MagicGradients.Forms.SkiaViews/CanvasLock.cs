@@ -1,7 +1,7 @@
 ﻿using System;
 using SkiaSharp;
 
-namespace MagicGradients.Skia.Forms
+namespace MagicGradients.Forms.SkiaViews
 {
     public class CanvasLock : IDisposable
     {

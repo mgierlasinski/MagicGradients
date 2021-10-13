@@ -1,9 +1,11 @@
+using MagicGradients.Drawing;
+using MagicGradients.Graphics.Skia.Drawing;
+using MagicGradients.Graphics.Skia.Masks;
 using MagicGradients.Masks;
-using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
-namespace MagicGradients.Skia.Forms
+namespace MagicGradients.Forms.Skia
 {
     [ContentProperty(nameof(GradientSource))]
     public class GradientView : SKCanvasView, IGradientControl, IGradientVisualElement
@@ -13,7 +15,7 @@ namespace MagicGradients.Skia.Forms
             StyleSheetsConfig.RegisterStyles<GradientView>();
         }
 
-        public GradientDrawable<GradientView> Drawable { get; protected set; }
+        public GradientDrawable<GradientView> Drawable { get; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -47,6 +49,8 @@ namespace MagicGradients.Skia.Forms
         public GradientView()
         {
             Drawable = new GradientDrawable<GradientView>(this);
+            Drawable.MaskDrawable.PathPainter = new SkiaPathMaskPainter();
+            Drawable.MaskDrawable.TextPainter = new SkiaTextMaskPainter();
         }
 
         protected override void OnBindingContextChanged()
@@ -68,10 +72,10 @@ namespace MagicGradients.Skia.Forms
         {
             base.OnPaintSurface(e);
 
-            var context = new DrawContext(e);
-            context.Measure(GradientSize, Width);
-
-            Drawable.Draw(context);
+            var canvas = new SkiaCanvasEx {Canvas = e.Surface.Canvas};
+            var rect = e.Info.Rect.ToRectF();
+            
+            Drawable.Draw(canvas, rect);
         }
 
         public void InvalidateCanvas()

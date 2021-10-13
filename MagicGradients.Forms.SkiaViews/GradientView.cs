@@ -3,12 +3,17 @@ using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
-namespace MagicGradients.Skia.Forms
+namespace MagicGradients.Forms.SkiaViews
 {
     [ContentProperty(nameof(GradientSource))]
-    public class GradientGLView : SKGLView, IGradientControl, IGradientVisualElement
+    public class GradientView : SKCanvasView, IGradientControl, IGradientVisualElement
     {
-        public GradientDrawable<GradientGLView> Drawable { get; protected set; }
+        static GradientView()
+        {
+            StyleSheetsConfig.RegisterStyles<GradientView>();
+        }
+
+        public GradientDrawable<GradientView> Drawable { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -39,9 +44,9 @@ namespace MagicGradients.Skia.Forms
             set => SetValue(MaskProperty, value);
         }
 
-        public GradientGLView()
+        public GradientView()
         {
-            Drawable = new GradientDrawable<GradientGLView>(this);
+            Drawable = new GradientDrawable<GradientView>(this);
         }
 
         protected override void OnBindingContextChanged()
@@ -59,7 +64,7 @@ namespace MagicGradients.Skia.Forms
             }
         }
 
-        protected override void OnPaintSurface(SKPaintGLSurfaceEventArgs e)
+        protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
         {
             base.OnPaintSurface(e);
 

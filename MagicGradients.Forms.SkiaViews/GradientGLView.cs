@@ -1,21 +1,14 @@
-using MagicGradients.Drawing;
-using MagicGradients.Graphics.Skia.Drawing;
-using MagicGradients.Graphics.Skia.Masks;
 using MagicGradients.Masks;
+using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
-namespace MagicGradients.Graphics.Skia
+namespace MagicGradients.Forms.SkiaViews
 {
     [ContentProperty(nameof(GradientSource))]
-    public class GradientView : SKCanvasView, IGradientControl, IGradientVisualElement
+    public class GradientGLView : SKGLView, IGradientControl, IGradientVisualElement
     {
-        static GradientView()
-        {
-            StyleSheetsConfig.RegisterStyles<GradientView>();
-        }
-
-        public GradientDrawable<GradientView> Drawable { get; }
+        public GradientDrawable<GradientGLView> Drawable { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -46,11 +39,9 @@ namespace MagicGradients.Graphics.Skia
             set => SetValue(MaskProperty, value);
         }
 
-        public GradientView()
+        public GradientGLView()
         {
-            Drawable = new GradientDrawable<GradientView>(this);
-            Drawable.MaskDrawable.PathPainter = new SkiaPathMaskPainter();
-            Drawable.MaskDrawable.TextPainter = new SkiaTextMaskPainter();
+            Drawable = new GradientDrawable<GradientGLView>(this);
         }
 
         protected override void OnBindingContextChanged()
@@ -68,14 +59,14 @@ namespace MagicGradients.Graphics.Skia
             }
         }
 
-        protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
+        protected override void OnPaintSurface(SKPaintGLSurfaceEventArgs e)
         {
             base.OnPaintSurface(e);
 
-            var canvas = new SkiaCanvasEx {Canvas = e.Surface.Canvas};
-            var rect = e.Info.Rect.ToRectF();
-            
-            Drawable.Draw(canvas, rect);
+            var context = new DrawContext(e);
+            context.Measure(GradientSize, Width);
+
+            Drawable.Draw(context);
         }
 
         public void InvalidateCanvas()
