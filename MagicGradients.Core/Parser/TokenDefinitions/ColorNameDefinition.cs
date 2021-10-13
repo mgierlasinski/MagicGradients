@@ -1,7 +1,7 @@
 ﻿using MagicGradients.Builder;
+using Microsoft.Maui.Graphics;
 using System;
 using System.Linq;
-using Xamarin.Forms;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
@@ -34,7 +34,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             // For transparency SkiaSharp needs black color with zero alpha
             return colorName == "transparent" ?
                 Color.FromRgba(0, 0, 0, 0) :
-                (Color)ColorConverter.ConvertFromInvariantString(colorName);
+                Color.Parse(colorName);
         }
     }
 }

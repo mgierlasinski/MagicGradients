@@ -1,5 +1,5 @@
 ﻿using MagicGradients;
-using MagicGradients.Xaml;
+using MagicGradients.Converters;
 using Playground.Data.Infrastructure;
 using Playground.Data.Repositories;
 using PlaygroundMaui.Infrastructure;
@@ -7,7 +7,6 @@ using PlaygroundMaui.Models;
 using PlaygroundMaui.Pages;
 using System.Collections.Generic;
 using System.Linq;
-using Xamarin.Forms;
 
 namespace PlaygroundMaui.ViewModels
 {

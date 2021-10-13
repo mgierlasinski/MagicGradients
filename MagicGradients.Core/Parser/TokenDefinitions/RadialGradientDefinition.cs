@@ -1,15 +1,12 @@
 ﻿using MagicGradients.Builder;
-using MagicGradients.Xaml;
+using Microsoft.Maui.Graphics;
 using System;
-using Xamarin.Forms;
 using static MagicGradients.RadialGradientFlags;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
     public class RadialGradientDefinition : ITokenDefinition
     {
-        protected OffsetTypeConverter OffsetConverter { get; } = new OffsetTypeConverter();
-
         public bool IsMatch(string token) => 
             token == CssToken.RadialGradient || 
             token == CssToken.RepeatingRadialGradient;
@@ -85,7 +82,7 @@ namespace MagicGradients.Parser.TokenDefinitions
                 if (shape == RadialGradientShape.Circle)
                 {
                     var radiusToken = reader.Read();
-                    var isRadius = OffsetConverter.TryExtractOffset(radiusToken, out var radius);
+                    var isRadius = Offset.TryParseWithUnit(radiusToken, out var radius);
 
                     if (isRadius)
                     {
@@ -99,8 +96,8 @@ namespace MagicGradients.Parser.TokenDefinitions
                     var radiusHToken = reader.Read();
                     var radiusVToken = reader.ReadNext();
 
-                    var isRadiusH = OffsetConverter.TryExtractOffset(radiusHToken, out var radiusH);
-                    var isRadiusV = OffsetConverter.TryExtractOffset(radiusVToken, out var radiusV);
+                    var isRadiusH = Offset.TryParseWithUnit(radiusHToken, out var radiusH);
+                    var isRadiusV = Offset.TryParseWithUnit(radiusVToken, out var radiusV);
 
                     if (isRadiusH && isRadiusV)
                     {
@@ -141,8 +138,8 @@ namespace MagicGradients.Parser.TokenDefinitions
                     var tokenX = reader.ReadNext();
                     var tokenY = reader.ReadNext();
 
-                    var isPosX = OffsetConverter.TryExtractOffset(tokenX, out var posX);
-                    var isPosY = OffsetConverter.TryExtractOffset(tokenY, out var posY);
+                    var isPosX = Offset.TryParseWithUnit(tokenX, out var posX);
+                    var isPosY = Offset.TryParseWithUnit(tokenY, out var posY);
 
                     var direction = Vector2.Zero;
 

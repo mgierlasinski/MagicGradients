@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Microsoft.Maui.Graphics;
+using System;
 using System.Linq;
-using Microsoft.Maui.Graphics;
 using static MagicGradients.FlagsHelper;
 
-namespace MagicGradients.Graphics.Drawing
+namespace MagicGradients.Drawing
 {
     public class RadialGradientGeometry : GradientGeometry<RadialGradient>
     {

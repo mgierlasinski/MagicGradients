@@ -1,7 +1,6 @@
-﻿using SkiaSharp;
-using SkiaSharp.Views.Forms;
+﻿using MagicGradients.Drawing;
+using SkiaSharp;
 using System.Linq;
-using MagicGradients.Graphics.Drawing;
 
 namespace MagicGradients.Skia.Forms.Drawing
 {

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Linq;
-using MagicGradients.Graphics.Masks;
+﻿using MagicGradients.Masks;
 using Microsoft.Maui.Graphics;
-using Xamarin.Forms;
+using System;
+using System.Linq;
 using static MagicGradients.BackgroundRepeat;
 using PaintGradientStop = Microsoft.Maui.Graphics.GradientStop;
-using Point = Microsoft.Maui.Graphics.Point;
-using Size = Microsoft.Maui.Graphics.Size;
+using VisualElement = Xamarin.Forms.VisualElement;
 
-namespace MagicGradients.Graphics.Drawing
+namespace MagicGradients.Drawing
 {
     public class GradientDrawable<T> : IDrawable where T : VisualElement, IGradientControl
     {
@@ -36,8 +34,6 @@ namespace MagicGradients.Graphics.Drawing
 
             foreach (var gradient in _control.GradientSource.GetGradients())
             {
-                //gradient.Measure((int)context.RenderRect.Width, (int)context.RenderRect.Height);
-
                 var paint = GetPaint(gradient, context);
                 canvas.SetFillPaint(paint, context.RenderRect);
 
@@ -146,14 +142,14 @@ namespace MagicGradients.Graphics.Drawing
             {
                 return new[]
                 {
-                    new PaintGradientStop(0, gradient.Stops[0].Color.ToMauiColor()),
-                    new PaintGradientStop(1, gradient.Stops[0].Color.ToMauiColor())
+                    new PaintGradientStop(0, gradient.Stops[0].Color),
+                    new PaintGradientStop(1, gradient.Stops[0].Color)
                 };
             }
 
             return gradient.Stops
                 .OrderBy(x => x.RenderOffset)
-                .Select(x => new PaintGradientStop(x.RenderOffset, x.Color.ToMauiColor()))
+                .Select(x => new PaintGradientStop(x.RenderOffset, x.Color))
                 .ToArray();
         }
     }

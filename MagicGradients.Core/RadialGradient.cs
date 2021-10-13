@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.Maui.Graphics;
+using BindableProperty = Xamarin.Forms.BindableProperty;
 
 namespace MagicGradients
 {

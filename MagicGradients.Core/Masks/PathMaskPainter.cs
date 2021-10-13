@@ -1,10 +1,9 @@
-﻿using MagicGradients.Graphics.Drawing;
-using MagicGradients.Masks;
+﻿using MagicGradients.Drawing;
 using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Graphics.Masks
+namespace MagicGradients.Masks
 {
-    public class PathMaskPainter : GradientMaskPainter, IMaskPainter<PathMask, DrawContext>
+    public class PathMaskPainter : MaskPainter, IMaskPainter<PathMask, DrawContext>
     {
         public void Clip(PathMask mask, DrawContext context)
         {

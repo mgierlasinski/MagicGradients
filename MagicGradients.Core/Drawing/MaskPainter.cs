@@ -1,12 +1,16 @@
-﻿using MagicGradients.Graphics.Drawing;
-using MagicGradients.Masks;
+﻿using MagicGradients.Masks;
 using Microsoft.Maui.Graphics;
 using System;
 using System.Collections.Generic;
 
-namespace MagicGradients.Graphics.Masks
+namespace MagicGradients.Drawing
 {
-    public abstract class GradientMaskPainter
+    public interface IMaskPainter<TMask, TContext>
+    {
+        void Clip(TMask mask, TContext context);
+    }
+
+    public abstract class MaskPainter
     {
         private readonly Stack<AffineTransform> _transforms = new Stack<AffineTransform>();
         //private AffineTransform _transform = new AffineTransform();

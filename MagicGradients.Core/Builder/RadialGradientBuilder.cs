@@ -1,5 +1,5 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Microsoft.Maui.Graphics;
+using System;
 
 namespace MagicGradients.Builder
 {

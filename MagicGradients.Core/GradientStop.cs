@@ -1,11 +1,12 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.Maui.Graphics;
+using BindableProperty = Xamarin.Forms.BindableProperty;
 
 namespace MagicGradients
 {
     public class GradientStop : GradientElement
     {
         public static readonly BindableProperty ColorProperty = BindableProperty.Create(
-            nameof(Color), typeof(Color), typeof(GradientStop), Color.White);
+            nameof(Color), typeof(Color), typeof(GradientStop), Colors.White);
 
         public Color Color
         {

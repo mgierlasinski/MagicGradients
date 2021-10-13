@@ -1,5 +1,7 @@
-﻿using MagicGradients.Xaml;
-using Xamarin.Forms;
+﻿using MagicGradients.Converters;
+using System;
+using System.ComponentModel;
+using System.Globalization;
 
 namespace MagicGradients
 {
@@ -25,6 +27,54 @@ namespace MagicGradients
 
         public static bool operator ==(Offset o1, Offset o2) => o1.Value == o2.Value;
         public static bool operator !=(Offset o1, Offset o2) => o1.Value != o2.Value;
+
+        public static Offset Parse(string value, OffsetType defaultType)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return Empty;
+
+            value = value.Trim();
+
+            if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var d))
+            {
+                return new Offset(d, defaultType);
+            }
+
+            if (TryParseWithUnit(value, out var res))
+            {
+                return res;
+            }
+
+            throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(Offset)}");
+        }
+
+        public static bool TryParseWithUnit(string token, out Offset result)
+        {
+            if (token != null)
+            {
+                if (token.TryExtractNumber("%", out var percent))
+                {
+                    var value = Math.Min(percent / 100, 1f); // No bigger than 1
+                    result = new Offset(value, OffsetType.Proportional);
+                    return true;
+                }
+
+                if (token.TryExtractNumber("px", out var pixels))
+                {
+                    result = new Offset(pixels, OffsetType.Absolute);
+                    return true;
+                }
+            }
+
+            result = Zero;
+            return false;
+        }
+
+        public string ToStringWithUnit()
+        {
+            var unit = Type == OffsetType.Absolute ? "px" : "%";
+            return $"{Value.ToString(CultureInfo.InvariantCulture)}{unit}";
+        }
     }
 
     public enum OffsetType

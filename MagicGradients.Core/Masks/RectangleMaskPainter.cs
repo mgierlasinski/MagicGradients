@@ -1,10 +1,9 @@
-﻿using MagicGradients.Graphics.Drawing;
-using MagicGradients.Masks;
+﻿using MagicGradients.Drawing;
 using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Graphics.Masks
+namespace MagicGradients.Masks
 {
-    public class RectangleMaskPainter : GradientMaskPainter, IMaskPainter<RectangleMask, DrawContext>
+    public class RectangleMaskPainter : MaskPainter, IMaskPainter<RectangleMask, DrawContext>
     {
         public void Clip(RectangleMask mask, DrawContext context)
         {

@@ -1,5 +1,4 @@
-﻿using MagicGradients.Graphics.Drawing;
-using MagicGradients.Graphics.Masks;
+﻿using MagicGradients.Drawing;
 using MagicGradients.Graphics.Skia.Drawing;
 using MagicGradients.Masks;
 using Microsoft.Maui.Graphics.Skia;
@@ -7,7 +6,7 @@ using SkiaSharp;
 
 namespace MagicGradients.Graphics.Skia.Masks
 {
-    public class SkiaPathMaskPainter : GradientMaskPainter, IMaskPainter<PathMask, DrawContext>
+    public class SkiaPathMaskPainter : MaskPainter, IMaskPainter<PathMask, DrawContext>
     {
         public void Clip(PathMask mask, DrawContext context)
         {
