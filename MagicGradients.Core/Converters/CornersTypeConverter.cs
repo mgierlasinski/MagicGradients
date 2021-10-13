@@ -28,11 +28,10 @@ namespace MagicGradients.Converters
 
             if (dim.Length == 2)
             {
-                return new Corners(
-                    new Dimensions(Offset.Parse(dim[0], OffsetType.Absolute)),
-                    new Dimensions(Offset.Parse(dim[0], OffsetType.Absolute)),
-                    new Dimensions(Offset.Parse(dim[1], OffsetType.Absolute)),
-                    new Dimensions(Offset.Parse(dim[1], OffsetType.Absolute)));
+                var top = new Dimensions(Offset.Parse(dim[0], OffsetType.Absolute));
+                var bottom = new Dimensions(Offset.Parse(dim[1], OffsetType.Absolute));
+
+                return new Corners(top, top, bottom, bottom);
             }
 
             if (dim.Length == 4)
