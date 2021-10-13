@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics;
 using SkiaSharp;
 using Xamarin.Forms;
 
-namespace MagicGradients.Graphics.Skia.Masks
+namespace MagicGradients.Forms.Skia.Masks
 {
     public class SkiaTextMaskPainter : SkiaPathMaskPainter, IMaskPainter<TextMask, DrawContext>
     {

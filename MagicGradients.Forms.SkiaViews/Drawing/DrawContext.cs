@@ -1,7 +1,7 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
 
-namespace MagicGradients.Skia.Forms.Drawing
+namespace MagicGradients.Forms.SkiaViews.Drawing
 {
     public class DrawContext
     {

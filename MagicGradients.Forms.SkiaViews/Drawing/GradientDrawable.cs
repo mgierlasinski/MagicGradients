@@ -1,10 +1,11 @@
 ﻿using MagicGradients.Drawing;
+using MagicGradients.Forms.SkiaViews.Masks;
 using SkiaSharp;
 using System;
 using Xamarin.Forms;
 using static MagicGradients.BackgroundRepeat;
 
-namespace MagicGradients.Skia.Forms.Drawing
+namespace MagicGradients.Forms.SkiaViews.Drawing
 {
     public class GradientDrawable<T> where T : VisualElement, IGradientControl
     {
@@ -19,10 +20,10 @@ namespace MagicGradients.Skia.Forms.Drawing
             _linearPainter = new LinearGradientPainter();
             _radialPainter = new RadialGradientPainter();
             _maskDrawable = new MaskDrawable<DrawContext>(
-                new Masks.EllipseMaskPainter(),
-                new Masks.RectangleMaskPainter(),
-                new Masks.TextMaskPainter(),
-                new Masks.PathMaskPainter());
+                new EllipseMaskPainter(),
+                new RectangleMaskPainter(),
+                new TextMaskPainter(),
+                new PathMaskPainter());
         }
         
         public void Draw(DrawContext context)

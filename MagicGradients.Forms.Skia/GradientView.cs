@@ -1,6 +1,6 @@
 using MagicGradients.Drawing;
-using MagicGradients.Graphics.Skia.Drawing;
-using MagicGradients.Graphics.Skia.Masks;
+using MagicGradients.Forms.Skia.Drawing;
+using MagicGradients.Forms.Skia.Masks;
 using MagicGradients.Masks;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;

@@ -2,9 +2,9 @@
 using MagicGradients.Masks;
 using SkiaSharp;
 using Xamarin.Forms;
-using DrawContext = MagicGradients.Skia.Forms.Drawing.DrawContext;
+using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
-namespace MagicGradients.Skia.Forms.Masks
+namespace MagicGradients.Forms.SkiaViews.Masks
 {
     public class TextMaskPainter : PathMaskPainter, IMaskPainter<TextMask, DrawContext>
     {

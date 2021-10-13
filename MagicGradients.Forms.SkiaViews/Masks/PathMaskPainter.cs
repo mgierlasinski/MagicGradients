@@ -1,10 +1,9 @@
 ﻿using MagicGradients.Drawing;
-using MagicGradients.Forms.SkiaViews;
 using MagicGradients.Masks;
 using SkiaSharp;
-using DrawContext = MagicGradients.Skia.Forms.Drawing.DrawContext;
+using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
-namespace MagicGradients.Skia.Forms.Masks
+namespace MagicGradients.Forms.SkiaViews.Masks
 {
     public class PathMaskPainter : GradientMaskPainter, IMaskPainter<PathMask, DrawContext>
     {

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace MagicGradients.Skia.Forms.Drawing
+namespace MagicGradients.Forms.SkiaViews.Drawing
 {
     public class GradientPainter
     {

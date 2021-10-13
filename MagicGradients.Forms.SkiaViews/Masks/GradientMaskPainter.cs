@@ -1,9 +1,9 @@
-﻿using MagicGradients.Masks;
-using MagicGradients.Skia.Forms.Drawing;
+﻿using MagicGradients.Forms.SkiaViews.Drawing;
+using MagicGradients.Masks;
 using SkiaSharp;
 using System;
 
-namespace MagicGradients.Skia.Forms.Masks
+namespace MagicGradients.Forms.SkiaViews.Masks
 {
     public abstract class GradientMaskPainter
     {

@@ -1,9 +1,9 @@
 ﻿using MagicGradients.Drawing;
 using MagicGradients.Masks;
 using SkiaSharp;
-using DrawContext = MagicGradients.Skia.Forms.Drawing.DrawContext;
+using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
-namespace MagicGradients.Skia.Forms.Masks
+namespace MagicGradients.Forms.SkiaViews.Masks
 {
     public class EllipseMaskPainter : RectangleMaskPainter, IMaskPainter<EllipseMask, DrawContext>
     {

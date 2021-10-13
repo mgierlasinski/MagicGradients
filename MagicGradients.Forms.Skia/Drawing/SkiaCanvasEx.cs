@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics.Skia;
 using SkiaSharp;
 using System;
 
-namespace MagicGradients.Graphics.Skia.Drawing
+namespace MagicGradients.Forms.Skia.Drawing
 {
     public class SkiaCanvasEx : SkiaCanvas
     {

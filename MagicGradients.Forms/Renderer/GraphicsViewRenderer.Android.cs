@@ -1,16 +1,17 @@
-using System.ComponentModel;
-using Microsoft.Maui.Graphics.Forms.Android;
-using Microsoft.Maui.Graphics.Native;
 using Android.Content;
+using MagicGradients.Forms;
+using MagicGradients.Forms.Android;
+using Microsoft.Maui.Graphics.Native;
+using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(Microsoft.Maui.Graphics.Forms.GraphicsView), typeof(GraphicsViewRenderer))]
-namespace Microsoft.Maui.Graphics.Forms.Android
+[assembly: ExportRenderer(typeof(GraphicsView), typeof(GraphicsViewRenderer))]
+namespace MagicGradients.Forms.Android
 {
     [Preserve]
-    public class GraphicsViewRenderer : ViewRenderer<Microsoft.Maui.Graphics.Forms.GraphicsView, NativeGraphicsView>
+    public class GraphicsViewRenderer : ViewRenderer<GraphicsView, NativeGraphicsView>
     {
         public GraphicsViewRenderer(Context context) : base(context)
         {
@@ -34,9 +35,7 @@ namespace Microsoft.Maui.Graphics.Forms.Android
             }
         }
 
-        protected override void OnElementPropertyChanged(
-            object sender,
-            PropertyChangedEventArgs e)
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
 

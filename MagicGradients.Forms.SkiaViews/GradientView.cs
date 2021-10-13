@@ -1,5 +1,5 @@
+using MagicGradients.Forms.SkiaViews.Drawing;
 using MagicGradients.Masks;
-using MagicGradients.Skia.Forms.Drawing;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 

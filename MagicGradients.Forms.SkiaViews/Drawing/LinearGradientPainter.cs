@@ -1,9 +1,8 @@
 ﻿using MagicGradients.Drawing;
 using SkiaSharp;
 using System.Linq;
-using MagicGradients.Forms.SkiaViews;
 
-namespace MagicGradients.Skia.Forms.Drawing
+namespace MagicGradients.Forms.SkiaViews.Drawing
 {
     public class LinearGradientPainter : GradientPainter
     {

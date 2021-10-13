@@ -1,6 +1,5 @@
 ﻿using MagicGradients.Drawing;
 using MagicGradients.Masks;
-using Microsoft.Maui.Graphics.Forms;
 using Xamarin.Forms;
 
 namespace MagicGradients.Forms

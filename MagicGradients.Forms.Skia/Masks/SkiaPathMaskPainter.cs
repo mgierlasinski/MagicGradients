@@ -1,11 +1,10 @@
 ﻿using MagicGradients.Drawing;
-using MagicGradients.Forms.Skia;
-using MagicGradients.Graphics.Skia.Drawing;
+using MagicGradients.Forms.Skia.Drawing;
 using MagicGradients.Masks;
 using Microsoft.Maui.Graphics.Skia;
 using SkiaSharp;
 
-namespace MagicGradients.Graphics.Skia.Masks
+namespace MagicGradients.Forms.Skia.Masks
 {
     public class SkiaPathMaskPainter : MaskPainter, IMaskPainter<PathMask, DrawContext>
     {
