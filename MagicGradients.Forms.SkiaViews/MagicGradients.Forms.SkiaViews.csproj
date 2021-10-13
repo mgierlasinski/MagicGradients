@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MagicGradients.Core\MagicGradients.Core.csproj" />
+    <ProjectReference Include="..\MagicGradients.Forms\MagicGradients.Forms.csproj" />
   </ItemGroup>
 
 </Project>

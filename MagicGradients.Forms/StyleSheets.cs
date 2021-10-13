@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using Xamarin.Forms.StyleSheets;
-using Registrar = Xamarin.Forms.Internals.Registrar;
 
 namespace MagicGradients
 {
@@ -11,7 +10,7 @@ namespace MagicGradients
     {
         public static void RegisterStyle(string name, Type targetType, string bindablePropertyName)
         {
-            var stylePropertyInfo = typeof(Registrar).GetProperty("StyleProperties", BindingFlags.Static | BindingFlags.NonPublic);
+            var stylePropertyInfo = typeof(Xamarin.Forms.Internals.Registrar).GetProperty("StyleProperties", BindingFlags.Static | BindingFlags.NonPublic);
             var styleProperties = stylePropertyInfo?.GetValue(null);
 
             if (styleProperties == null)
