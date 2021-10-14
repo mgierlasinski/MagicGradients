@@ -3,9 +3,9 @@ using System.Globalization;
 
 namespace MagicGradients
 {
-    public static class StringExtensions
+    internal static class StringExtensions
     {
-        internal static bool TryExtractNumber(this string token, string unit, out double result)
+        public static bool TryExtractNumber(this string token, string unit, out double result)
         {
             if (token.EndsWith(unit))
             {

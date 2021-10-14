@@ -1,3 +1,4 @@
+using MagicGradients.Builder;
 using MagicGradients.Parser;
 using Xamarin.Forms;
 
@@ -26,9 +27,6 @@ namespace MagicGradients
             Gradients = new GradientElements<Gradient>(parsed);
         }
 
-        public static CssGradientSource Parse(string css) => new CssGradientSource
-        {
-            Stylesheet = css
-        };
+        public static CssGradientSource Parse(string css) => new() { Stylesheet = css };
     }
 }

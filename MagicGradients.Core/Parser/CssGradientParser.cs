@@ -22,8 +22,16 @@ namespace MagicGradients.Parser
 
         public Gradient[] ParseCss(string css)
         {
-            var builder = new GradientBuilder();
+            return ParseCss(css, new GradientFactory());
+        }
 
+        public Gradient[] ParseCss(string css, IGradientFactory factory)
+        {
+            return ParseCss(css, new GradientBuilder(factory));
+        }
+
+        public Gradient[] ParseCss(string css, GradientBuilder builder)
+        {
             if (string.IsNullOrWhiteSpace(css))
             {
                 return builder.Build();

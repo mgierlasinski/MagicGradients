@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MagicGradients.Core\MagicGradients.Core.csproj" />
+    <ProjectReference Include="..\MagicGradients.Forms\MagicGradients.Forms.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -25,16 +25,9 @@
             return this;
         }
 
-        public Gradient Construct()
+        public Gradient Construct(IGradientFactory factory)
         {
-            var linearGradient = new LinearGradient
-            {
-                Angle = Angle,
-                IsRepeating = IsRepeating,
-                Stops = new GradientElements<GradientStop>(StopsFactory.Stops)
-            };
-
-            return linearGradient;
+            return factory.Construct(this);
         }
     }
 }
