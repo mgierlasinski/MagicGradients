@@ -23,7 +23,7 @@ namespace MagicGradients
 
         private void InternalParse(string css)
         {
-            var parsed = new CssGradientParser().ParseCss(css, new GradientFactory());
+            var parsed = new CssGradientParser().ParseCss(css);
             Gradients = new GradientElements<Gradient>(parsed);
         }
 

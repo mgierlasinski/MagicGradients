@@ -34,7 +34,8 @@ namespace MagicGradients.Forms.iOS
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (e.PropertyName == nameof(GraphicsView.Drawable)) UpdateDrawable();
+            if (e.PropertyName == nameof(GraphicsView.Drawable)) 
+                UpdateDrawable();
         }
 
         private void UpdateDrawable()
