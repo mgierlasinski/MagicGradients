@@ -1,22 +1,25 @@
 ﻿using System;
-using Xamarin.Forms;
+using System.ComponentModel;
+using System.Globalization;
 
 namespace MagicGradients.Animation
 {
-    [Xamarin.Forms.Xaml.TypeConversion(typeof(RepeatBehavior))]
     public class RepeatBehaviorTypeConverter : TypeConverter
     {
-        public override object ConvertFromInvariantString(string value)
-        {
-            if (!string.IsNullOrWhiteSpace(value))
-            {
-                value = value.Trim();
+        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+            => sourceType == typeof(string);
 
-                if (value.TryExtractNumber("x", out var count))
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+        {
+            var valueStr = value?.ToString()?.Trim();
+
+            if (!string.IsNullOrEmpty(valueStr))
+            {
+                if (valueStr.TryExtractNumber("x", out var count))
                 {
                     return new RepeatBehavior(RepeatBehaviorType.Count, (int)count);
                 }
-                if (value.Equals("Forever", StringComparison.OrdinalIgnoreCase))
+                if (valueStr.Equals("Forever", StringComparison.OrdinalIgnoreCase))
                 {
                     return new RepeatBehavior(RepeatBehaviorType.Forever, 0);
                 }

@@ -1,5 +1,5 @@
 ﻿using MagicGradients.Animation.Tween;
-using Xamarin.Forms;
+using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Animation
 {

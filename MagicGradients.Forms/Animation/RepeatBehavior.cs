@@ -1,4 +1,4 @@
-﻿using Xamarin.Forms;
+﻿using System.ComponentModel;
 
 namespace MagicGradients.Animation
 {
