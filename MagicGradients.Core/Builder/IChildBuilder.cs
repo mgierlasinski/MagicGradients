@@ -3,6 +3,6 @@
     public interface IChildBuilder
     {
         StopsFactory StopsFactory { get; }
-        Gradient Construct();
+        Gradient Construct(IGradientFactory factory);
     }
 }

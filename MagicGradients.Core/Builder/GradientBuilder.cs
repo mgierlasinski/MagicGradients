@@ -7,10 +7,16 @@ namespace MagicGradients.Builder
     public class GradientBuilder : StopsBuilder<GradientBuilder>
     {
         private IChildBuilder _currentBuilder;
-        private readonly List<IChildBuilder> _children = new List<IChildBuilder>();
+        private readonly List<IChildBuilder> _children = new();
+        private readonly IGradientFactory _factory;
 
         protected override GradientBuilder Instance => this;
         public override StopsFactory StopsFactory => GetCurrentBuilder().StopsFactory;
+
+        public GradientBuilder(IGradientFactory factory)
+        {
+            _factory = factory;
+        }
 
         public GradientBuilder AddLinearGradient(Action<LinearGradientBuilder> setup = null)
         {
@@ -46,7 +52,7 @@ namespace MagicGradients.Builder
 
         public Gradient[] Build()
         {
-            return _children.Select(x => x.Construct()).ToArray();
+            return _children.Select(x => x.Construct(_factory)).ToArray();
         }
 
         private IChildBuilder GetCurrentBuilder()

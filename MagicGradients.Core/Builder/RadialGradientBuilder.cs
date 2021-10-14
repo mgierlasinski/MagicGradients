@@ -89,21 +89,9 @@ namespace MagicGradients.Builder
             return this;
         }
 
-        public Gradient Construct()
+        public Gradient Construct(IGradientFactory factory)
         {
-            var radialGradient = new RadialGradient
-            {
-                Center = Center,
-                Shape = Shape,
-                Size = Size,
-                RadiusX = RadiusX,
-                RadiusY = RadiusY,
-                Flags = _flags,
-                IsRepeating = IsRepeating,
-                Stops = new GradientElements<GradientStop>(StopsFactory.Stops)
-            };
-
-            return radialGradient;
+            return factory.Construct(this);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace MagicGradients
 {
-    public static class StringExtensions
+    internal static class StringExtensions
     {
         public static bool TryExtractNumber(this string token, string unit, out double result)
         {
