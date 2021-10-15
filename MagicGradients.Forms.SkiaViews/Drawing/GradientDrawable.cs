@@ -2,19 +2,18 @@
 using MagicGradients.Forms.SkiaViews.Masks;
 using SkiaSharp;
 using System;
-using Xamarin.Forms;
 using static MagicGradients.BackgroundRepeat;
 
 namespace MagicGradients.Forms.SkiaViews.Drawing
 {
-    public class GradientDrawable<T> where T : VisualElement, IGradientControl
+    public class GradientDrawable
     {
-        private readonly T _control;
+        private readonly IGradientControl _control;
         private readonly LinearGradientPainter _linearPainter;
         private readonly RadialGradientPainter _radialPainter;
         private readonly MaskDrawable<DrawContext> _maskDrawable;
 
-        public GradientDrawable(T control)
+        public GradientDrawable(IGradientControl control)
         {
             _control = control;
             _linearPainter = new LinearGradientPainter();
@@ -44,12 +43,12 @@ namespace MagicGradients.Forms.SkiaViews.Drawing
             }
         }
 
-        private SKShader GetShader(Gradient gradient, DrawContext context)
+        private SKShader GetShader(IGradient gradient, DrawContext context)
         {
-            if (gradient is LinearGradient linear)
+            if (gradient is ILinearGradient linear)
                 return _linearPainter.CreateShader(linear, context);
 
-            if (gradient is RadialGradient radial)
+            if (gradient is IRadialGradient radial)
                 return _radialPainter.CreateShader(radial, context);
 
             throw new ArgumentException("Type not supported");

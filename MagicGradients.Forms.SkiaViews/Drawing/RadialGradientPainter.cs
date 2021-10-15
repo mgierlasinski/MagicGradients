@@ -7,7 +7,7 @@ namespace MagicGradients.Forms.SkiaViews.Drawing
 {
     public class RadialGradientPainter : GradientPainter
     {
-        public SKShader CreateShader(RadialGradient gradient, DrawContext context)
+        public SKShader CreateShader(IRadialGradient gradient, DrawContext context)
         {
             var rect = context.RenderRect.ToRectF();
 

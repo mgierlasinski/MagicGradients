@@ -43,14 +43,14 @@ namespace MagicGradients.Forms
 
         public GradientView()
         {
-            Drawable = new GradientDrawable<GradientView>(this);
+            Drawable = new GradientDrawable(this);
         }
 
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
 
-            if (GradientSource != null && GradientSource is BindableObject bindable)
+            if (GradientSource is BindableObject bindable)
             {
                 SetInheritedBindingContext(bindable, BindingContext);
             }

@@ -8,7 +8,7 @@ namespace MagicGradients.Forms.SkiaViews
     [ContentProperty(nameof(GradientSource))]
     public class GradientGLView : SKGLView, IGradientControl, IGradientVisualElement
     {
-        public GradientDrawable<GradientGLView> Drawable { get; protected set; }
+        public GradientDrawable Drawable { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -41,14 +41,14 @@ namespace MagicGradients.Forms.SkiaViews
 
         public GradientGLView()
         {
-            Drawable = new GradientDrawable<GradientGLView>(this);
+            Drawable = new GradientDrawable(this);
         }
 
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
 
-            if (GradientSource != null && GradientSource is BindableObject bindable)
+            if (GradientSource is BindableObject bindable)
             {
                 SetInheritedBindingContext(bindable, BindingContext);
             }

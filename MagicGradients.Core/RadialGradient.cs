@@ -3,7 +3,7 @@ using BindableProperty = Xamarin.Forms.BindableProperty;
 
 namespace MagicGradients
 {
-    public class RadialGradient : Gradient
+    public class RadialGradient : Gradient, IRadialGradient
     {
         public static readonly BindableProperty CenterProperty = BindableProperty.Create(
             nameof(Center), typeof(Point), typeof(RadialGradient), new Point(0.5, 0.5));

@@ -3,23 +3,25 @@ using System.Collections.Generic;
 
 namespace MagicGradients.Drawing
 {
-    public abstract class GradientGeometry<TGradient> where TGradient : Gradient
+    public abstract class GradientGeometry<TGradient> where TGradient : IGradient
     {
         public void CalculateOffsets(TGradient gradient, int width, int height)
         {
-            foreach (var stop in gradient.Stops)
+            var stops = gradient.GetStops();
+
+            foreach (var stop in stops)
             {
                 stop.RenderOffset = !stop.Offset.IsEmpty && stop.Offset.Type == OffsetType.Absolute
                     ? (float)CalculateRenderOffset(gradient, stop.Offset.Value, width, height)
                     : (float)stop.Offset.Value;
             }
 
-            CalculateUndefinedOffsets(gradient.Stops);
+            CalculateUndefinedOffsets(stops);
         }
 
         protected abstract double CalculateRenderOffset(TGradient gradient, double offset, int width, int height);
 
-        private void CalculateUndefinedOffsets(IList<GradientStop> stops)
+        private void CalculateUndefinedOffsets(IReadOnlyList<IGradientStop> stops)
         {
             var fromIndex = 0;
 
@@ -33,7 +35,7 @@ namespace MagicGradients.Drawing
             }
         }
 
-        private void CalculateUndefinedRange(IList<GradientStop> stops, int fromIndex, int toIndex)
+        private void CalculateUndefinedRange(IReadOnlyList<IGradientStop> stops, int fromIndex, int toIndex)
         {
             var currentOffset = Math.Max(stops[fromIndex].RenderOffset, 0);
             var endOffset = Math.Abs(stops[toIndex].RenderOffset);

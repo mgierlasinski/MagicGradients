@@ -6,7 +6,7 @@ namespace MagicGradients.Forms.SkiaViews.Drawing
 {
     public class LinearGradientPainter : GradientPainter
     {
-        public SKShader CreateShader(LinearGradient gradient, DrawContext context)
+        public SKShader CreateShader(ILinearGradient gradient, DrawContext context)
         {
             var rect = context.RenderRect;
 

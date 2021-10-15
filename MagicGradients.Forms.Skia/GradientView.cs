@@ -15,7 +15,7 @@ namespace MagicGradients.Forms.Skia
             StyleSheetsConfig.RegisterStyles<GradientView>();
         }
 
-        public GradientDrawable<GradientView> Drawable { get; }
+        public GradientDrawable Drawable { get; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -48,7 +48,7 @@ namespace MagicGradients.Forms.Skia
 
         public GradientView()
         {
-            Drawable = new GradientDrawable<GradientView>(this);
+            Drawable = new GradientDrawable(this);
             Drawable.MaskDrawable.PathPainter = new SkiaPathMaskPainter();
             Drawable.MaskDrawable.TextPainter = new SkiaTextMaskPainter();
         }
@@ -57,7 +57,7 @@ namespace MagicGradients.Forms.Skia
         {
             base.OnBindingContextChanged();
 
-            if (GradientSource != null && GradientSource is BindableObject bindable)
+            if (GradientSource is BindableObject bindable)
             {
                 SetInheritedBindingContext(bindable, BindingContext);
             }
