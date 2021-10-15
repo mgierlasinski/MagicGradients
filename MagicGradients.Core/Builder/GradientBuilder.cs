@@ -50,11 +50,16 @@ namespace MagicGradients.Builder
             _children.Add(builder);
         }
 
-        public Gradient[] Build()
+        public IEnumerable<IGradient> Build()
         {
-            return _children.Select(x => x.Construct(_factory)).ToArray();
+            return _children.Select(x => x.Construct(_factory));
         }
 
+        public IEnumerable<TCast> BuildAs<TCast>() where TCast : IGradient
+        {
+            return _children.Select(x => (TCast)x.Construct(_factory));
+        }
+        
         private IChildBuilder GetCurrentBuilder()
         {
             if (_currentBuilder == null)

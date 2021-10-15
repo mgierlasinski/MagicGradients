@@ -6,7 +6,7 @@
         {
             return new GradientCollection
             {
-                Gradients = new GradientElements<Gradient>(builder.Build())
+                Gradients = new GradientElements<Gradient>(builder.BuildAs<Gradient>())
             };
         }
     }

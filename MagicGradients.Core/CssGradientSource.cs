@@ -6,6 +6,8 @@ namespace MagicGradients
     [ContentProperty(nameof(Stylesheet))]
     public class CssGradientSource : GradientCollection
     {
+        private readonly CssGradientParser _parser = new CssGradientParser(new GradientFactory());
+
         public static readonly BindableProperty StylesheetProperty = BindableProperty.Create(
             nameof(Stylesheet), typeof(string), typeof(CssGradientSource), propertyChanged: OnStylesheetChanged);
 
@@ -22,7 +24,7 @@ namespace MagicGradients
 
         private void InternalParse(string css)
         {
-            var parsed = new CssGradientParser().ParseCss(css);
+            var parsed = _parser.ParseAs<Gradient>(css);
             Gradients = new GradientElements<Gradient>(parsed);
         }
 

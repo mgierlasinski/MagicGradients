@@ -1,14 +1,16 @@
-﻿namespace MagicGradients.Builder
+﻿using MagicGradients.Builder;
+
+namespace MagicGradients
 {
     public interface IGradientFactory
     {
-        LinearGradient Construct(LinearGradientBuilder builder);
-        RadialGradient Construct(RadialGradientBuilder builder);
+        ILinearGradient Construct(LinearGradientBuilder builder);
+        IRadialGradient Construct(RadialGradientBuilder builder);
     }
 
     public class GradientFactory : IGradientFactory
     {
-        public LinearGradient Construct(LinearGradientBuilder builder)
+        public ILinearGradient Construct(LinearGradientBuilder builder)
         {
             var linearGradient = new LinearGradient
             {
@@ -20,7 +22,7 @@
             return linearGradient;
         }
 
-        public RadialGradient Construct(RadialGradientBuilder builder)
+        public IRadialGradient Construct(RadialGradientBuilder builder)
         {
             var radialGradient = new RadialGradient
             {
