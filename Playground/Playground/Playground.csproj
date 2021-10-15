@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\IcoMoon.ttf" />
+    <None Remove="Styles\Saira-Bold.ttf" />
+    <EmbeddedResource Include="Styles\Saira-Bold.ttf" />
   </ItemGroup>
 
   <ItemGroup>

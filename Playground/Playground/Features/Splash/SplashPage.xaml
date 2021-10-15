@@ -7,23 +7,28 @@
     xmlns:masks="http://magic.com/schemas/gradients">
     <ContentPage.Content>
         <Grid RowDefinitions="*,2*">
+            <magic:GradientView Grid.RowSpan="2"
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand" 
+                                GradientSource="linear-gradient(135deg, rgb(243, 114, 209) 0%,rgb(44, 19, 241) 100%)"/>
+            
             <magic:GradientView HorizontalOptions="Center" 
                                 VerticalOptions="End"
                                 WidthRequest="200"
-                                Mask="{masks:Text 'Magic Gradients', FontAttributes='Bold,Italic', Stretch=AspectFit}">
+                                Mask="{masks:Text 'Magic Gradients', FontAttributes='Bold', FontFamily='SairaBoldFont', Stretch=AspectFit}">
                 <magic:GradientView.Triggers>
                     <masks:AnimationTrigger IsRunning="{Binding .}">
                         <masks:ColorAnimation Target="{x:Reference TextAnimColor}" 
                                               TargetProperty="magic:GradientStop.Color" 
-                                              From="#ad39a6" To="#3d009f" 
-                                              Duration="1000"
-                                              RepeatBehavior="Forever" 
-                                              AutoReverse="True" />
+                                              From="#000000" To="#ffffff" 
+                                              Duration="2000"
+                                              RepeatBehavior="Forever"
+                                              AutoReverse="True"/>
                     </masks:AnimationTrigger>
                 </magic:GradientView.Triggers>
                 <magic:LinearGradient Angle="45">
-                    <magic:GradientStop Color="#ad39a6" />
-                    <magic:GradientStop Color="#ad39a6" x:Name="TextAnimColor" />
+                    <magic:GradientStop Color="#000000" />
+                    <magic:GradientStop Color="#000000" x:Name="TextAnimColor" />
                 </magic:LinearGradient>
             </magic:GradientView>
 
@@ -36,15 +41,15 @@
                     <masks:AnimationTrigger IsRunning="{Binding .}">
                         <masks:ColorAnimation Target="{x:Reference AnimColor}"
                                               TargetProperty="magic:GradientStop.Color"
-                                              From="#ad39a6" To="#3d009f"
-                                              Duration="1000"
+                                              From="#000000" To="#ffffff"
+                                              Duration="2000" 
                                               RepeatBehavior="Forever"
-                                              AutoReverse="True" />
+                                              AutoReverse="True"/>
                     </masks:AnimationTrigger>
                 </magic:GradientView.Triggers>
                 <magic:LinearGradient Angle="45">
-                    <magic:GradientStop Color="#ad39a6" />
-                    <magic:GradientStop Color="#ad39a6" x:Name="AnimColor" />
+                    <magic:GradientStop Color="#000000" />
+                    <magic:GradientStop Color="#000000" x:Name="AnimColor" />
                 </magic:LinearGradient>
                 <magic:GradientView.Mask>
                     <masks:PathMask ClipMode="Include"
@@ -72,10 +77,8 @@
                                  WidthRequest="150"
                                  Margin="5,35,0,0"
                                  HorizontalOptions="Center"  
-                                 VerticalOptions="Start"> 
-                 <magic:LinearGradient> 
-                     <magic:GradientStop Color="#ffffff" /> 
-                 </magic:LinearGradient> 
+                                 VerticalOptions="Start"
+                                 GradientSource="linear-gradient(135deg, rgb(243, 114, 209) 0%,rgb(44, 19, 241) 100%)">
                  <magic:GradientView.Mask> 
                      <masks:PathMask ClipMode="Include" 
                                      Stretch="AspectFit" 

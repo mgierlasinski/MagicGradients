@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using MagicGradients;
 using Playground.Features.Initializer;
@@ -17,9 +18,11 @@ namespace Playground.Features.Splash
 
         protected override void OnAppearing()
         {
-            Task.Run(() =>
+            Task.Run(async () =>
             {
-                SetupIoC();
+                await Task.WhenAll(
+                    Task.Delay(TimeSpan.FromSeconds(1)),
+                    Task.Run(SetupIoC));
                 Device.BeginInvokeOnMainThread(() => Application.Current.MainPage = new AppShell()); 
             });
         }
