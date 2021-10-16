@@ -5,9 +5,9 @@ using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
 namespace MagicGradients.Forms.SkiaViews.Masks
 {
-    public class PathMaskPainter : GradientMaskPainter, IMaskPainter<PathMask, DrawContext>
+    public class PathMaskPainter : GradientMaskPainter, IMaskPainter<IPathMask, DrawContext>
     {
-        public void Clip(PathMask mask, DrawContext context)
+        public void Clip(IPathMask mask, DrawContext context)
         {
             if (!mask.IsActive || string.IsNullOrEmpty(mask.Data))
                 return;
@@ -16,7 +16,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             ClipPath(path, mask, context);
         }
 
-        protected internal void ClipPath(SKPath path, PathMask mask, DrawContext context)
+        protected internal void ClipPath(SKPath path, IPathMask mask, DrawContext context)
         {
             using var canvasLock = new CanvasLock(context.Canvas);
 

@@ -3,9 +3,9 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Masks
 {
-    public class PathMaskPainter : MaskPainter, IMaskPainter<PathMask, DrawContext>
+    public class PathMaskPainter : MaskPainter, IMaskPainter<IPathMask, DrawContext>
     {
-        public void Clip(PathMask mask, DrawContext context)
+        public void Clip(IPathMask mask, DrawContext context)
         {
             if (!mask.IsActive || string.IsNullOrEmpty(mask.Data))
                 return;

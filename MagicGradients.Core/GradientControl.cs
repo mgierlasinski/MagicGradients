@@ -33,10 +33,10 @@ namespace MagicGradients
         {
             var visualElement = (IGradientVisualElement)bindable;
 
-            if (oldValue != null && oldValue is GradientElement oldElem)
+            if (oldValue is GradientElement oldElem)
                 oldElem.Parent = null;
 
-            if (newValue != null && newValue is GradientElement newElem)
+            if (newValue is GradientElement newElem)
                 newElem.Parent = visualElement;
 
             visualElement.InvalidateCanvas();

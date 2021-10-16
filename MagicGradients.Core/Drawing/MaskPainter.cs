@@ -23,7 +23,7 @@ namespace MagicGradients.Drawing
             return new RectangleF(0, 0, width, height);
         }
 
-        protected void LayoutBounds(GradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
+        protected void LayoutBounds(IGradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
         {
             BeginLayout(mask, bounds, context);
 
@@ -64,12 +64,12 @@ namespace MagicGradients.Drawing
             EndLayout(mask, bounds, context);
         }
 
-        protected virtual void BeginLayout(GradientMask mask, RectangleF bounds, DrawContext context)
+        protected virtual void BeginLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
         {
             Translate(context.Canvas, context.RenderRect.Width / 2, context.RenderRect.Height / 2);
         }
 
-        protected virtual void EndLayout(GradientMask mask, RectangleF bounds, DrawContext context)
+        protected virtual void EndLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
         {
             Translate(context.Canvas, -bounds.Center.X, -bounds.Center.Y);
         }

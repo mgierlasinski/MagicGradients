@@ -3,9 +3,9 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Masks
 {
-    public class RectangleMaskPainter : MaskPainter, IMaskPainter<RectangleMask, DrawContext>
+    public class RectangleMaskPainter : MaskPainter, IMaskPainter<IRectangleMask, DrawContext>
     {
-        public void Clip(RectangleMask mask, DrawContext context)
+        public void Clip(IRectangleMask mask, DrawContext context)
         {
             if (!mask.IsActive)
                 return;

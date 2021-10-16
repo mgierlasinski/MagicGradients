@@ -4,16 +4,16 @@ namespace MagicGradients.Drawing
 {
     public class MaskDrawable<TContext>
     {
-        public IMaskPainter<EllipseMask, TContext> EllipsePainter { get; set; }
-        public IMaskPainter<RectangleMask, TContext> RectanglePainter { get; set; }
-        public IMaskPainter<TextMask, TContext> TextPainter { get; set; }
-        public IMaskPainter<PathMask, TContext> PathPainter { get; set; }
+        public IMaskPainter<IEllipseMask, TContext> EllipsePainter { get; set; }
+        public IMaskPainter<IRectangleMask, TContext> RectanglePainter { get; set; }
+        public IMaskPainter<ITextMask, TContext> TextPainter { get; set; }
+        public IMaskPainter<IPathMask, TContext> PathPainter { get; set; }
 
         public MaskDrawable(
-            IMaskPainter<EllipseMask, TContext> ellipsePainter,
-            IMaskPainter<RectangleMask, TContext> rectanglePainter,
-            IMaskPainter<TextMask, TContext> textPainter,
-            IMaskPainter<PathMask, TContext> pathPainter)
+            IMaskPainter<IEllipseMask, TContext> ellipsePainter,
+            IMaskPainter<IRectangleMask, TContext> rectanglePainter,
+            IMaskPainter<ITextMask, TContext> textPainter,
+            IMaskPainter<IPathMask, TContext> pathPainter)
         {
             EllipsePainter = ellipsePainter;
             RectanglePainter = rectanglePainter;
@@ -21,31 +21,31 @@ namespace MagicGradients.Drawing
             PathPainter = pathPainter;
         }
 
-        public void Clip(GradientMask mask, TContext context)
+        public void Clip(IGradientMask mask, TContext context)
         {
             switch (mask)
             {
-                case EllipseMask ellipseMask:
+                case IEllipseMask ellipseMask:
                     EllipsePainter.Clip(ellipseMask, context);
                     break;
-                case RectangleMask rectangleMask:
+                case IRectangleMask rectangleMask:
                     RectanglePainter.Clip(rectangleMask, context);
                     break;
-                case TextMask textMask:
+                case ITextMask textMask:
                     TextPainter.Clip(textMask, context);
                     break;
-                case PathMask pathMask:
+                case IPathMask pathMask:
                     PathPainter.Clip(pathMask, context);
                     break;
-                case MaskCollection maskCollection:
+                case IMaskCollection maskCollection:
                     ClipCollection(maskCollection, context);
                     break;
             }
         }
 
-        private void ClipCollection(MaskCollection maskCollection, TContext context)
+        private void ClipCollection(IMaskCollection maskCollection, TContext context)
         {
-            foreach (var child in maskCollection.Masks)
+            foreach (var child in maskCollection.GetMasks())
             {
                 Clip(child, context);
             }

@@ -2,7 +2,7 @@
 
 namespace MagicGradients.Masks
 {
-    public class TextMask : PathMask
+    public class TextMask : PathMask, ITextMask
     {
         public const double DefaultFontSize = 18d;
 

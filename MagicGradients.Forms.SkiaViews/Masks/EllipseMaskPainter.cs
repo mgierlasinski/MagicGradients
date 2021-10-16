@@ -5,9 +5,9 @@ using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
 namespace MagicGradients.Forms.SkiaViews.Masks
 {
-    public class EllipseMaskPainter : RectangleMaskPainter, IMaskPainter<EllipseMask, DrawContext>
+    public class EllipseMaskPainter : RectangleMaskPainter, IMaskPainter<IEllipseMask, DrawContext>
     {
-        public void Clip(EllipseMask mask, DrawContext context)
+        public void Clip(IEllipseMask mask, DrawContext context)
         {
             if (!mask.IsActive)
                 return;
@@ -16,7 +16,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             ClipRoundRect(ellipse, mask, context);
         }
 
-        private SKRoundRect GetEllipse(EllipseMask mask, DrawContext context)
+        private SKRoundRect GetEllipse(IEllipseMask mask, DrawContext context)
         {
             var bounds = GetBounds(mask.Size, context);
             return new SKRoundRect(bounds, (float)bounds.Width / 2, (float)bounds.Height / 2);

@@ -1,6 +1,6 @@
 ﻿namespace MagicGradients.Masks
 {
-    public class EllipseMask : RectangleMask
+    public class EllipseMask : RectangleMask, IEllipseMask
     {
         
     }

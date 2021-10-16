@@ -6,9 +6,9 @@ using SkiaSharp;
 
 namespace MagicGradients.Forms.Skia.Masks
 {
-    public class SkiaPathMaskPainter : MaskPainter, IMaskPainter<PathMask, DrawContext>
+    public class SkiaPathMaskPainter : MaskPainter, IMaskPainter<IPathMask, DrawContext>
     {
-        public void Clip(PathMask mask, DrawContext context)
+        public void Clip(IPathMask mask, DrawContext context)
         {
             if (!mask.IsActive || string.IsNullOrEmpty(mask.Data))
                 return;
@@ -17,7 +17,7 @@ namespace MagicGradients.Forms.Skia.Masks
             ClipPathNative(path, mask, context);
         }
 
-        protected internal void ClipPathNative(SKPath path, PathMask mask, DrawContext context)
+        protected internal void ClipPathNative(SKPath path, IPathMask mask, DrawContext context)
         {
             var canvas = context.Canvas as SkiaCanvasEx;
             if (canvas == null)

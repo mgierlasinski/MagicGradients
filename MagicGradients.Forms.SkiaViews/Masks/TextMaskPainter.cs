@@ -6,9 +6,9 @@ using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
 namespace MagicGradients.Forms.SkiaViews.Masks
 {
-    public class TextMaskPainter : PathMaskPainter, IMaskPainter<TextMask, DrawContext>
+    public class TextMaskPainter : PathMaskPainter, IMaskPainter<ITextMask, DrawContext>
     {
-        public void Clip(TextMask mask, DrawContext context)
+        public void Clip(ITextMask mask, DrawContext context)
         {
             if (!mask.IsActive || string.IsNullOrEmpty(mask.Text))
                 return;
@@ -19,7 +19,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             ClipPath(textPath, mask, context);
         }
 
-        private SKPaint GetTextPaint(TextMask mask, DrawContext context)
+        private SKPaint GetTextPaint(ITextMask mask, DrawContext context)
         {
             var isBold = (mask.FontAttributes & FontAttributes.Bold) == FontAttributes.Bold;
             var isItalic = (mask.FontAttributes & FontAttributes.Italic) == FontAttributes.Italic;
@@ -37,7 +37,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             };
         }
 
-        protected override void BeginLayout(GradientMask mask, SKRect bounds, DrawContext context)
+        protected override void BeginLayout(IGradientMask mask, SKRect bounds, DrawContext context)
         {
             var textMask = (TextMask)mask;
 
@@ -58,7 +58,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             context.Canvas.Translate(posX, posY);
         }
 
-        protected override void EndLayout(GradientMask mask, SKRect bounds, DrawContext context)
+        protected override void EndLayout(IGradientMask mask, SKRect bounds, DrawContext context)
         {
             var textMask = (TextMask)mask;
 
