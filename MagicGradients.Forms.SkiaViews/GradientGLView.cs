@@ -33,9 +33,9 @@ namespace MagicGradients.Forms.SkiaViews
             set => SetValue(GradientRepeatProperty, value);
         }
 
-        public GradientMask Mask
+        public IGradientMask Mask
         {
-            get => (GradientMask)GetValue(MaskProperty);
+            get => (IGradientMask)GetValue(MaskProperty);
             set => SetValue(MaskProperty, value);
         }
 
@@ -53,9 +53,9 @@ namespace MagicGradients.Forms.SkiaViews
                 SetInheritedBindingContext(bindable, BindingContext);
             }
 
-            if (Mask != null)
+            if (Mask is BindableObject maskBindable)
             {
-                SetInheritedBindingContext(Mask, BindingContext);
+                SetInheritedBindingContext(maskBindable, BindingContext);
             }
         }
 

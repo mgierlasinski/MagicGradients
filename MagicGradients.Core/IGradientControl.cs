@@ -8,6 +8,6 @@ namespace MagicGradients
         IGradientSource GradientSource { get; set; }
         Dimensions GradientSize { get; set; }
         BackgroundRepeat GradientRepeat { get; set; }
-        GradientMask Mask { get; set; }
+        IGradientMask Mask { get; set; }
     }
 }

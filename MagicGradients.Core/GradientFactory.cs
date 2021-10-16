@@ -2,12 +2,6 @@
 
 namespace MagicGradients
 {
-    public interface IGradientFactory
-    {
-        ILinearGradient Construct(LinearGradientBuilder builder);
-        IRadialGradient Construct(RadialGradientBuilder builder);
-    }
-
     public class GradientFactory : IGradientFactory
     {
         public ILinearGradient Construct(LinearGradientBuilder builder)

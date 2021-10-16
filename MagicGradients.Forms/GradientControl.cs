@@ -25,7 +25,7 @@ namespace MagicGradients
 
         public static readonly BindableProperty MaskProperty = BindableProperty.Create(
             nameof(IGradientControl.Mask),
-            typeof(GradientMask), 
+            typeof(IGradientMask), 
             typeof(IGradientControl), 
             propertyChanged: OnGradientElementChanged);
 
