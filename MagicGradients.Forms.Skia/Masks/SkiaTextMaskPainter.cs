@@ -2,7 +2,6 @@
 using MagicGradients.Masks;
 using Microsoft.Maui.Graphics;
 using SkiaSharp;
-using Xamarin.Forms;
 
 namespace MagicGradients.Forms.Skia.Masks
 {

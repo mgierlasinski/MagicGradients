@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Xamarin.Forms;
 
 namespace MagicGradients.Masks
 {

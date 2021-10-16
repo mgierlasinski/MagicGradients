@@ -36,6 +36,14 @@
                     <masks:TextMask Text="Magic" FontSize="80" Stretch="AspectFit" />
                 </gski:GradientView.Mask>
             </gski:GradientView>
+            <gski:GradientView HeightRequest="160" StyleClass="RainbowGradient">
+                <gski:GradientView.Mask>
+                    <masks:TextMask Text="Gradients" FontSize="80" 
+                                    FontAttributes="Bold,Italic" 
+                                    HorizontalTextAlignment="End" 
+                                    VerticalTextAlignment="End" />
+                </gski:GradientView.Mask>
+            </gski:GradientView>
         </StackLayout>
     </ScrollView>
 </ContentPage>
