@@ -12,7 +12,9 @@ namespace MagicGradients.Forms.Skia
     {
         static GradientView()
         {
-            StyleSheetsConfig.RegisterStyles<GradientView>();
+            GlobalSetup.Current
+                .UseXamlGradients()
+                .UseCssStyles<GradientView>();
         }
 
         public GradientDrawable Drawable { get; }

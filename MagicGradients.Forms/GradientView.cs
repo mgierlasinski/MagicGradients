@@ -9,7 +9,9 @@ namespace MagicGradients.Forms
     {
         static GradientView()
         {
-            StyleSheetsConfig.RegisterStyles<GradientView>();
+            GlobalSetup.Current
+                .UseXamlGradients()
+                .UseCssStyles<GradientView>();
         }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;

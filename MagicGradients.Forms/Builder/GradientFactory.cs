@@ -1,6 +1,4 @@
-﻿using MagicGradients.Builder;
-
-namespace MagicGradients
+﻿namespace MagicGradients.Builder
 {
     public class GradientFactory : IGradientFactory
     {
