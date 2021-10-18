@@ -51,6 +51,8 @@ namespace MagicGradients.Forms.Skia
         public GradientView()
         {
             Drawable = new GradientDrawable(this);
+            Drawable.MaskDrawable.RectanglePainter = new SkiaRectangleMaskPainter();
+            Drawable.MaskDrawable.EllipsePainter = new SkiaEllipseMaskPainter();
             Drawable.MaskDrawable.PathPainter = new SkiaPathMaskPainter();
             Drawable.MaskDrawable.TextPainter = new SkiaTextMaskPainter();
         }

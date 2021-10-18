@@ -16,6 +16,12 @@ namespace MagicGradients.Forms.Skia.Drawing
             Canvas.ClipPath(path, operation);
         }
 
+        public void ClipRoundRect(SKRoundRect rect, SKClipOperation operation)
+        {
+            rect.Transform(SKMatrix.CreateScale(CurrentState.ScaleX, CurrentState.ScaleY));
+            Canvas.ClipRoundRect(rect, operation, true);
+        }
+
         public override void SetFillPaint(Paint paint, RectangleF rectangle)
         {
             if (_shader != null)
