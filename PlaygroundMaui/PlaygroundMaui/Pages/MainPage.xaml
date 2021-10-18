@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:PlaygroundMaui.Pages;assembly=PlaygroundMaui"
-             xmlns:gski="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
+             xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
              x:Class="PlaygroundMaui.Pages.MainPage"
              NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Grid>
-            <gski:GradientView StyleClass="RainbowGradient" />
+            <skia:SkiaGradientView StyleClass="RainbowGradient" />
             <Label HorizontalTextAlignment="Center" TextColor="White" Margin="24">
                 <Label.FormattedText>
                     <FormattedString>

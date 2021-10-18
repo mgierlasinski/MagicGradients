@@ -2,34 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Forms"
-             xmlns:gnat="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
-             xmlns:gski="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
-             xmlns:skia="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
+             xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
+             xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
+             xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
              x:Class="PlaygroundMaui.Pages.RadialPage"
              Title="Radial Gradients">
     <ScrollView>
         <StackLayout Spacing="5">
-            <skia:GradientView HeightRequest="160">
+            <skiv:GradientView HeightRequest="160">
                 <magic:RadialGradient>
                     <magic:GradientStop Color="Red" />
                     <magic:GradientStop Color="Green" />
                     <magic:GradientStop Color="Blue" />
                 </magic:RadialGradient>
-            </skia:GradientView>
-            <gski:GradientView HeightRequest="160">
+            </skiv:GradientView>
+            <skia:SkiaGradientView HeightRequest="160">
                 <magic:RadialGradient>
                     <magic:GradientStop Color="Red" />
                     <magic:GradientStop Color="Green" />
                     <magic:GradientStop Color="Blue" />
                 </magic:RadialGradient>
-            </gski:GradientView>
-            <gnat:GradientView HeightRequest="160">
+            </skia:SkiaGradientView>
+            <form:GradientView HeightRequest="160">
                 <magic:RadialGradient>
                     <magic:GradientStop Color="Red" />
                     <magic:GradientStop Color="Green" />
                     <magic:GradientStop Color="Blue" />
                 </magic:RadialGradient>
-            </gnat:GradientView>
+            </form:GradientView>
         </StackLayout>
     </ScrollView>
 </ContentPage>
