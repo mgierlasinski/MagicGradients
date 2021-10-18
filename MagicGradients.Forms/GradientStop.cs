@@ -3,7 +3,7 @@ using BindableProperty = Xamarin.Forms.BindableProperty;
 
 namespace MagicGradients
 {
-    public class GradientStop : GradientElement
+    public class GradientStop : GradientElement, IGradientStop
     {
         public static readonly BindableProperty ColorProperty = BindableProperty.Create(
             nameof(Color), typeof(Color), typeof(GradientStop), Colors.White);

@@ -15,9 +15,9 @@ namespace MagicGradients.Builder
             StyleSheet = styleSheet;
         }
 
-        public Gradient Construct(IGradientFactory factory)
+        public IGradient Construct()
         {
-            var parsed = new CssGradientParser().ParseCss(StyleSheet, factory);
+            var parsed = new CssGradientParser(Factory).Parse(StyleSheet).ToArray();
             if (parsed.Length != 1)
             {
                 throw new InvalidOperationException("StyleSheet must contain single gradient function.");

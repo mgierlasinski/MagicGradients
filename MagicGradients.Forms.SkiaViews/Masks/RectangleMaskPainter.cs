@@ -5,9 +5,9 @@ using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
 namespace MagicGradients.Forms.SkiaViews.Masks
 {
-    public class RectangleMaskPainter : GradientMaskPainter, IMaskPainter<RectangleMask, DrawContext>
+    public class RectangleMaskPainter : GradientMaskPainter, IMaskPainter<IRectangleMask, DrawContext>
     {
-        public void Clip(RectangleMask mask, DrawContext context)
+        public void Clip(IRectangleMask mask, DrawContext context)
         {
             if (!mask.IsActive)
                 return;
@@ -16,7 +16,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             ClipRoundRect(roundRect, mask, context);
         }
 
-        protected internal void ClipRoundRect(SKRoundRect roundRect, GradientMask mask, DrawContext context)
+        protected internal void ClipRoundRect(SKRoundRect roundRect, IGradientMask mask, DrawContext context)
         {
             using var canvasLock = new CanvasLock(context.Canvas);
 
@@ -24,7 +24,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             context.Canvas.ClipRoundRect(roundRect, mask.ClipMode.ToSkOperation(), true);
         }
 
-        private SKRoundRect GetRoundRect(RectangleMask mask, DrawContext context)
+        private SKRoundRect GetRoundRect(IRectangleMask mask, DrawContext context)
         {
             var bounds = GetBounds(mask.Size, context);
             var roundRect = new SKRoundRect();

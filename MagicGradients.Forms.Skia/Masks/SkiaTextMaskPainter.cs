@@ -2,13 +2,12 @@
 using MagicGradients.Masks;
 using Microsoft.Maui.Graphics;
 using SkiaSharp;
-using Xamarin.Forms;
 
 namespace MagicGradients.Forms.Skia.Masks
 {
-    public class SkiaTextMaskPainter : SkiaPathMaskPainter, IMaskPainter<TextMask, DrawContext>
+    public class SkiaTextMaskPainter : SkiaPathMaskPainter, IMaskPainter<ITextMask, DrawContext>
     {
-        public void Clip(TextMask mask, DrawContext context)
+        public void Clip(ITextMask mask, DrawContext context)
         {
             if (!mask.IsActive || string.IsNullOrEmpty(mask.Text))
                 return;
@@ -19,7 +18,7 @@ namespace MagicGradients.Forms.Skia.Masks
             ClipPathNative(textPath, mask, context);
         }
 
-        private SKPaint GetTextPaint(TextMask mask, DrawContext context)
+        private SKPaint GetTextPaint(ITextMask mask, DrawContext context)
         {
             var isBold = (mask.FontAttributes & FontAttributes.Bold) == FontAttributes.Bold;
             var isItalic = (mask.FontAttributes & FontAttributes.Italic) == FontAttributes.Italic;
@@ -37,7 +36,7 @@ namespace MagicGradients.Forms.Skia.Masks
             };
         }
 
-        protected override void BeginLayout(GradientMask mask, RectangleF bounds, DrawContext context)
+        protected override void BeginLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
         {
             var textMask = (TextMask)mask;
 
@@ -58,7 +57,7 @@ namespace MagicGradients.Forms.Skia.Masks
             Translate(context.Canvas, posX, posY);
         }
 
-        protected override void EndLayout(GradientMask mask, RectangleF bounds, DrawContext context)
+        protected override void EndLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
         {
             var textMask = (TextMask)mask;
 

@@ -23,7 +23,7 @@ namespace MagicGradients
             Gradients = new GradientElements<Gradient>();
         }
 
-        public IEnumerable<Gradient> GetGradients() => Gradients;
+        public IReadOnlyList<IGradient> GetGradients() => Gradients;
 
         protected override void OnBindingContextChanged()
         {

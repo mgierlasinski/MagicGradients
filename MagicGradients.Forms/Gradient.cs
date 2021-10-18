@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace MagicGradients
 {
     [ContentProperty(nameof(Stops))]
-    public abstract class Gradient : GradientElement, IGradientSource
+    public abstract class Gradient : GradientElement, IGradient, IGradientSource
     {
         private GradientElements<GradientStop> _stops;
         public GradientElements<GradientStop> Stops
@@ -33,7 +32,8 @@ namespace MagicGradients
             Stops = new GradientElements<GradientStop>();
         }
 
-        public IEnumerable<Gradient> GetGradients() => new[] { this };
+        public IReadOnlyList<IGradientStop> GetStops() => Stops;
+        public IReadOnlyList<IGradient> GetGradients() => new[] { this };
 
         protected override void OnBindingContextChanged()
         {

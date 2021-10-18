@@ -2,7 +2,7 @@
 
 namespace MagicGradients
 {
-    public class LinearGradient : Gradient
+    public class LinearGradient : Gradient, ILinearGradient
     {
         public static readonly BindableProperty AngleProperty = BindableProperty.Create(
             nameof(Angle), typeof(double), typeof(LinearGradient), 0d);

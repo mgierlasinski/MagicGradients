@@ -3,14 +3,14 @@ using System;
 
 namespace MagicGradients.Drawing
 {
-    public class LinearGradientGeometry : GradientGeometry<LinearGradient>
+    public class LinearGradientGeometry : GradientGeometry<ILinearGradient>
     {
         public PointF Start { get; private set; }
         public PointF End { get; private set; }
         public double Length { get; private set; }
         public double Angle { get; private set; }
         
-        protected override double CalculateRenderOffset(LinearGradient gradient, double offset, int width, int height)
+        protected override double CalculateRenderOffset(ILinearGradient gradient, double offset, int width, int height)
         {
             // Here the Pythagorean Theorem + Trigonometry is applied
             // to figure out the length of the gradient, which is needed to accurately calculate offset.
@@ -23,7 +23,7 @@ namespace MagicGradients.Drawing
             return computedLength != 0 ? offset / computedLength : 1;
         }
 
-        public void CalculateGeometry(LinearGradient gradient, RectangleF boxBounds)
+        public void CalculateGeometry(ILinearGradient gradient, RectangleF boxBounds)
         {
             // Calculation
             // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf

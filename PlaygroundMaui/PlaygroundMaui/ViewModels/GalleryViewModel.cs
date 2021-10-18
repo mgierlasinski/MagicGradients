@@ -1,5 +1,6 @@
 ﻿using MagicGradients;
 using MagicGradients.Converters;
+using MagicGradients.Parser;
 using Playground.Data.Infrastructure;
 using Playground.Data.Repositories;
 using PlaygroundMaui.Infrastructure;
@@ -47,7 +48,7 @@ namespace PlaygroundMaui.ViewModels
             var repository = new GradientRepository(new DatabaseProvider());
             GalleryItems = repository.GetByTag(tag).Select(x => new GalleryItem
             {
-                Source = CssGradientSource.Parse(x.Stylesheet),
+                Source = new CssGradientParserSource(x.Stylesheet),
                 Size = (Dimensions)_dimensionsConverter.ConvertFromInvariantString(x.Size)
             }).ToList();
         }

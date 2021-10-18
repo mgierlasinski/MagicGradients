@@ -1,14 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Core"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Forms"
              xmlns:gnat="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
              xmlns:gski="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
              xmlns:skia="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
+             xmlns:viewModels="clr-namespace:PlaygroundMaui.ViewModels;assembly=PlaygroundMaui"
+             x:DataType="viewModels:LinearViewModel"
              x:Class="PlaygroundMaui.Pages.LinearPage"
              Title="Linear Gradients">
+    <ContentPage.BindingContext>
+        <viewModels:LinearViewModel />
+    </ContentPage.BindingContext>
     <ScrollView>
         <StackLayout Spacing="5">
+            <!-- Css Gradient Source  -->
+            <gnat:GradientView HeightRequest="160">
+                <magic:CssGradientSource>
+                    <![CDATA[
+                        linear-gradient(242deg, red, green, orange)
+                    ]]>
+                </magic:CssGradientSource>
+            </gnat:GradientView>
+            <gnat:GradientView HeightRequest="160">
+                <magic:CssGradientSource Stylesheet="{Binding CssGradient}" />
+            </gnat:GradientView>
             <!-- Repeating -->
             <skia:GradientView HeightRequest="160">
                 <magic:LinearGradient Angle="45" IsRepeating="True">
@@ -51,7 +67,6 @@
             <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
             <gski:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
             <gnat:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
-
             <skia:GradientView HeightRequest="160" StyleClass="AngularGradient" />
             <gski:GradientView HeightRequest="160" StyleClass="AngularGradient" />
             <gnat:GradientView HeightRequest="160" StyleClass="AngularGradient" />

@@ -1,15 +1,18 @@
 using MagicGradients.Builder;
 using MagicGradients.Parser.TokenDefinitions;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MagicGradients.Parser
 {
     public class CssGradientParser
     {
+        private readonly IGradientFactory _factory;
         private readonly ITokenDefinition[] _definitions;
 
-        public CssGradientParser()
+        public CssGradientParser(IGradientFactory factory)
         {
+            _factory = factory;
             _definitions = new ITokenDefinition[]
             {
                 new LinearGradientDefinition(),
@@ -19,23 +22,13 @@ namespace MagicGradients.Parser
                 new ColorNameDefinition()
             };
         }
-
-        public Gradient[] ParseCss(string css)
+        
+        public IEnumerable<IGradient> Parse(string css)
         {
-            return ParseCss(css, new GradientFactory());
-        }
+            var builder = new GradientBuilder(_factory);
 
-        public Gradient[] ParseCss(string css, IGradientFactory factory)
-        {
-            return ParseCss(css, new GradientBuilder(factory));
-        }
-
-        public Gradient[] ParseCss(string css, GradientBuilder builder)
-        {
             if (string.IsNullOrWhiteSpace(css))
-            {
                 return builder.Build();
-            }
 
             var reader = new CssReader(css);
 
@@ -49,7 +42,7 @@ namespace MagicGradients.Parser
                 reader.MoveNext();
             }
 
-            return builder.Build().Reverse().ToArray();
+            return builder.Build().Reverse();
         }
     }
 }

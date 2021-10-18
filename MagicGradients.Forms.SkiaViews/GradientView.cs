@@ -10,10 +10,12 @@ namespace MagicGradients.Forms.SkiaViews
     {
         static GradientView()
         {
-            StyleSheetsConfig.RegisterStyles<GradientView>();
+            GlobalSetup.Current
+                .UseXamlGradients()
+                .UseCssStyles<GradientView>();
         }
 
-        public GradientDrawable<GradientView> Drawable { get; protected set; }
+        public GradientDrawable Drawable { get; protected set; }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
         public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
@@ -38,30 +40,21 @@ namespace MagicGradients.Forms.SkiaViews
             set => SetValue(GradientRepeatProperty, value);
         }
 
-        public GradientMask Mask
+        public IGradientMask Mask
         {
-            get => (GradientMask)GetValue(MaskProperty);
+            get => (IGradientMask)GetValue(MaskProperty);
             set => SetValue(MaskProperty, value);
         }
 
         public GradientView()
         {
-            Drawable = new GradientDrawable<GradientView>(this);
+            Drawable = new GradientDrawable(this);
         }
 
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-
-            if (GradientSource != null && GradientSource is BindableObject bindable)
-            {
-                SetInheritedBindingContext(bindable, BindingContext);
-            }
-
-            if (Mask != null)
-            {
-                SetInheritedBindingContext(Mask, BindingContext);
-            }
+            this.SetBindingContext(BindingContext);
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)

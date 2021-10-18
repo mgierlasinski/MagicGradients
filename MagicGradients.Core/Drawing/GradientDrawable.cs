@@ -4,16 +4,15 @@ using System;
 using System.Linq;
 using static MagicGradients.BackgroundRepeat;
 using PaintGradientStop = Microsoft.Maui.Graphics.GradientStop;
-using VisualElement = Xamarin.Forms.VisualElement;
 
 namespace MagicGradients.Drawing
 {
-    public class GradientDrawable<T> : IDrawable where T : VisualElement, IGradientControl
+    public class GradientDrawable : IDrawable
     {
-        private readonly T _control;
+        private readonly IGradientControl _control;
         public MaskDrawable<DrawContext> MaskDrawable { get; }
 
-        public GradientDrawable(T control)
+        public GradientDrawable(IGradientControl control)
         {
             _control = control;
 
@@ -41,18 +40,18 @@ namespace MagicGradients.Drawing
             }
         }
 
-        private Paint GetPaint(Gradient gradient, DrawContext context)
+        private Paint GetPaint(IGradient gradient, DrawContext context)
         {
-            if (gradient is LinearGradient linear)
+            if (gradient is ILinearGradient linear)
                 return CreateLinearPaint(linear, context);
 
-            if (gradient is RadialGradient radial)
+            if (gradient is IRadialGradient radial)
                 return CreateRadialPaint(radial, context);
 
             return new SolidPaint(Colors.Black);
         }
 
-        private Paint CreateLinearPaint(LinearGradient gradient, DrawContext context)
+        private Paint CreateLinearPaint(ILinearGradient gradient, DrawContext context)
         {
             var rect = context.RenderRect;
 
@@ -85,7 +84,7 @@ namespace MagicGradients.Drawing
             return new LinearGradientPaintEx(renderStops, startPoint, endPoint, gradient.IsRepeating);
         }
 
-        private Paint CreateRadialPaint(RadialGradient gradient, DrawContext context)
+        private Paint CreateRadialPaint(IRadialGradient gradient, DrawContext context)
         {
             var rect = context.RenderRect;
 
@@ -136,18 +135,19 @@ namespace MagicGradients.Drawing
             }
         }
 
-        protected PaintGradientStop[] GetRenderStops(Gradient gradient)
+        protected PaintGradientStop[] GetRenderStops(IGradient gradient)
         {
-            if (gradient.Stops.Count == 1)
+            var stops = gradient.GetStops();
+            if (stops.Count == 1)
             {
                 return new[]
                 {
-                    new PaintGradientStop(0, gradient.Stops[0].Color),
-                    new PaintGradientStop(1, gradient.Stops[0].Color)
+                    new PaintGradientStop(0, stops[0].Color),
+                    new PaintGradientStop(1, stops[0].Color)
                 };
             }
 
-            return gradient.Stops
+            return stops
                 .OrderBy(x => x.RenderOffset)
                 .Select(x => new PaintGradientStop(x.RenderOffset, x.Color))
                 .ToArray();

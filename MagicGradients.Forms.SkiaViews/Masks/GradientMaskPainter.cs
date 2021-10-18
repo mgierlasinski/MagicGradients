@@ -15,7 +15,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             return new SKRectI(0, 0, width, height);
         }
 
-        protected void LayoutBounds(GradientMask mask, SKRect bounds, DrawContext context, bool keepAspectRatio)
+        protected void LayoutBounds(IGradientMask mask, SKRect bounds, DrawContext context, bool keepAspectRatio)
         {
             BeginLayout(mask, bounds, context);
 
@@ -47,12 +47,12 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             EndLayout(mask, bounds, context);
         }
 
-        protected virtual void BeginLayout(GradientMask mask, SKRect bounds, DrawContext context)
+        protected virtual void BeginLayout(IGradientMask mask, SKRect bounds, DrawContext context)
         {
             context.Canvas.Translate((float)context.RenderRect.Width / 2, (float)context.RenderRect.Height / 2);
         }
 
-        protected virtual void EndLayout(GradientMask mask, SKRect bounds, DrawContext context)
+        protected virtual void EndLayout(IGradientMask mask, SKRect bounds, DrawContext context)
         {
             context.Canvas.Translate(-bounds.MidX, -bounds.MidY);
         }

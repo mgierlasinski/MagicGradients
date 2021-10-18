@@ -1,9 +1,10 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace MagicGradients.Masks
 {
     [ContentProperty(nameof(Masks))]
-    public class MaskCollection : GradientMask
+    public class MaskCollection : GradientMask, IMaskCollection
     {
         private GradientElements<GradientMask> _masks;
         public GradientElements<GradientMask> Masks
@@ -27,5 +28,7 @@ namespace MagicGradients.Masks
             base.OnBindingContextChanged();
             Masks.SetInheritedBindingContext(BindingContext);
         }
+
+        public IReadOnlyList<IGradientMask> GetMasks() => Masks;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace MagicGradients.Masks
 {
-    public class RectangleMask : GradientMask
+    public class RectangleMask : GradientMask, IRectangleMask
     {
         public static readonly BindableProperty SizeProperty = BindableProperty.Create(nameof(Size),
             typeof(Dimensions), typeof(RectangleMask), Dimensions.Prop(1, 1));

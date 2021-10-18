@@ -9,7 +9,9 @@ namespace MagicGradients.Forms
     {
         static GradientView()
         {
-            StyleSheetsConfig.RegisterStyles<GradientView>();
+            GlobalSetup.Current
+                .UseXamlGradients()
+                .UseCssStyles<GradientView>();
         }
 
         public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
@@ -35,30 +37,21 @@ namespace MagicGradients.Forms
             set => SetValue(GradientRepeatProperty, value);
         }
 
-        public GradientMask Mask
+        public IGradientMask Mask
         {
-            get => (GradientMask)GetValue(MaskProperty);
+            get => (IGradientMask)GetValue(MaskProperty);
             set => SetValue(MaskProperty, value);
         }
 
         public GradientView()
         {
-            Drawable = new GradientDrawable<GradientView>(this);
+            Drawable = new GradientDrawable(this);
         }
 
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-
-            if (GradientSource != null && GradientSource is BindableObject bindable)
-            {
-                SetInheritedBindingContext(bindable, BindingContext);
-            }
-
-            if (Mask != null)
-            {
-                SetInheritedBindingContext(Mask, BindingContext);
-            }
+            this.SetBindingContext(BindingContext);
         }
 
         public void InvalidateCanvas()
