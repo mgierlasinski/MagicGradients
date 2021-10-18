@@ -48,4 +48,20 @@ namespace MagicGradients
             visualElement.InvalidateCanvas();
         }
     }
+
+    public static class GradientControlExtensions
+    {
+        public static void SetBindingContext(this IGradientControl control, object bindingContext)
+        {
+            if (control.GradientSource is BindableObject bindable)
+            {
+                BindableObject.SetInheritedBindingContext(bindable, bindingContext);
+            }
+
+            if (control.Mask is BindableObject maskBindable)
+            {
+                BindableObject.SetInheritedBindingContext(maskBindable, bindingContext);
+            }
+        }
+    }
 }

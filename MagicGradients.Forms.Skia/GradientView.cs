@@ -58,16 +58,7 @@ namespace MagicGradients.Forms.Skia
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-
-            if (GradientSource is BindableObject bindable)
-            {
-                SetInheritedBindingContext(bindable, BindingContext);
-            }
-
-            if (Mask is BindableObject maskBindable)
-            {
-                SetInheritedBindingContext(maskBindable, BindingContext);
-            }
+            this.SetBindingContext(BindingContext);
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)

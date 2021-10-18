@@ -1,16 +1,19 @@
-using System.Linq;
 using MagicGradients.Parser;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace MagicGradients
 {
     [ContentProperty(nameof(Stylesheet))]
-    public class CssGradientSource : GradientCollection
+    public class CssGradientSource : GradientElement, IGradientSource
     {
-        private readonly CssGradientParser _parser = new CssGradientParser(GlobalSetup.Current.GradientFactory);
+        private readonly CssGradientParserSource _parserSource = new();
 
         public static readonly BindableProperty StylesheetProperty = BindableProperty.Create(
-            nameof(Stylesheet), typeof(string), typeof(CssGradientSource), propertyChanged: OnStylesheetChanged);
+            nameof(Stylesheet), 
+            typeof(string), 
+            typeof(CssGradientSource), 
+            propertyChanged: OnStylesheetChanged);
 
         public string Stylesheet
         {
@@ -25,7 +28,12 @@ namespace MagicGradients
 
         private void InternalParse(string css)
         {
-            Gradients = new GradientElements<Gradient>(_parser.Parse(css).Cast<Gradient>());
+            _parserSource.Parse(css);
+        }
+
+        public IReadOnlyList<IGradient> GetGradients()
+        {
+            return _parserSource.GetGradients();
         }
     }
 }

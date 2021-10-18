@@ -51,16 +51,7 @@ namespace MagicGradients.Forms
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-
-            if (GradientSource is BindableObject bindable)
-            {
-                SetInheritedBindingContext(bindable, BindingContext);
-            }
-
-            if (Mask is BindableObject maskBindable)
-            {
-                SetInheritedBindingContext(maskBindable, BindingContext);
-            }
+            this.SetBindingContext(BindingContext);
         }
 
         public void InvalidateCanvas()
