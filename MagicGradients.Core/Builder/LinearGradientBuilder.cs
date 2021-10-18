@@ -25,9 +25,9 @@
             return this;
         }
 
-        public IGradient Construct(IGradientFactory factory)
+        public IGradient Construct()
         {
-            return factory.Construct(this);
+            return Factory.Construct(this);
         }
     }
 }

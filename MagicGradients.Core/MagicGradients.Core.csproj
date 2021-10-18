@@ -8,7 +8,6 @@
 
   <ItemGroup>
 	<PackageReference Include="Microsoft.Maui.Graphics" Version="6.0.101-preview.9.512" />
-	<PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
   </ItemGroup>
 
 </Project>

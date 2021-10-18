@@ -1,3 +1,4 @@
+using System.Linq;
 using MagicGradients.Parser;
 using Xamarin.Forms;
 
@@ -24,8 +25,7 @@ namespace MagicGradients
 
         private void InternalParse(string css)
         {
-            var parsed = _parser.ParseAs<Gradient>(css);
-            Gradients = new GradientElements<Gradient>(parsed);
+            Gradients = new GradientElements<Gradient>(_parser.Parse(css).Cast<Gradient>());
         }
     }
 }

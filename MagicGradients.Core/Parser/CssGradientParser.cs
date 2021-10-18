@@ -23,12 +23,12 @@ namespace MagicGradients.Parser
             };
         }
         
-        private GradientBuilder ParseStylesheet(string css)
+        public IEnumerable<IGradient> Parse(string css)
         {
             var builder = new GradientBuilder(_factory);
 
             if (string.IsNullOrWhiteSpace(css))
-                return builder;
+                return builder.Build();
 
             var reader = new CssReader(css);
 
@@ -42,19 +42,7 @@ namespace MagicGradients.Parser
                 reader.MoveNext();
             }
 
-            return builder;
-        }
-
-        public IEnumerable<IGradient> Parse(string css)
-        {
-            var builder = ParseStylesheet(css);
             return builder.Build().Reverse();
-        }
-
-        public IEnumerable<TCast> ParseAs<TCast>(string css) where TCast : IGradient
-        {
-            var builder = ParseStylesheet(css);
-            return builder.BuildAs<TCast>().Reverse();
         }
     }
 }

@@ -8,14 +8,13 @@ namespace MagicGradients.Builder
     {
         private IChildBuilder _currentBuilder;
         private readonly List<IChildBuilder> _children = new();
-        private readonly IGradientFactory _factory;
 
         protected override GradientBuilder Instance => this;
-        public override StopsFactory StopsFactory => GetCurrentBuilder().StopsFactory;
+        public override List<IGradientStop> Stops => GetCurrentBuilder().Stops;
 
         public GradientBuilder(IGradientFactory factory)
         {
-            _factory = factory;
+            Factory = factory;
         }
 
         public GradientBuilder AddLinearGradient(Action<LinearGradientBuilder> setup = null)
@@ -47,17 +46,13 @@ namespace MagicGradients.Builder
         public void UseBuilder(IChildBuilder builder)
         {
             _currentBuilder = builder;
+            _currentBuilder.Factory = Factory;
             _children.Add(builder);
         }
 
         public IEnumerable<IGradient> Build()
         {
-            return _children.Select(x => x.Construct(_factory));
-        }
-
-        public IEnumerable<TCast> BuildAs<TCast>() where TCast : IGradient
-        {
-            return _children.Select(x => (TCast)x.Construct(_factory));
+            return _children.Select(x => x.Construct());
         }
         
         private IChildBuilder GetCurrentBuilder()

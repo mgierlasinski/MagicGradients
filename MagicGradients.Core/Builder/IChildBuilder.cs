@@ -1,8 +1,11 @@
-﻿namespace MagicGradients.Builder
+﻿using System.Collections.Generic;
+
+namespace MagicGradients.Builder
 {
     public interface IChildBuilder
     {
-        StopsFactory StopsFactory { get; }
-        IGradient Construct(IGradientFactory factory);
+        IGradientFactory Factory { get; set; }
+        List<IGradientStop> Stops { get; }
+        IGradient Construct();
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace MagicGradients.Builder
+﻿using Microsoft.Maui.Graphics;
+using System.Linq;
+
+namespace MagicGradients.Builder
 {
     public class GradientFactory : IGradientFactory
     {
@@ -8,7 +11,7 @@
             {
                 Angle = builder.Angle,
                 IsRepeating = builder.IsRepeating,
-                Stops = new GradientElements<GradientStop>(builder.StopsFactory.Stops)
+                Stops = new GradientElements<GradientStop>(builder.Stops.Cast<GradientStop>())
             };
 
             return linearGradient;
@@ -25,10 +28,21 @@
                 RadiusY = builder.RadiusY,
                 Flags = builder.Flags,
                 IsRepeating = builder.IsRepeating,
-                Stops = new GradientElements<GradientStop>(builder.StopsFactory.Stops)
+                Stops = new GradientElements<GradientStop>(builder.Stops.Cast<GradientStop>())
             };
 
             return radialGradient;
+        }
+
+        public IGradientStop CreateStop(Color color, Offset? offset = null)
+        {
+            var stop = new GradientStop
+            {
+                Color = color,
+                Offset = offset ?? Offset.Empty
+            };
+
+            return stop;
         }
     }
 }

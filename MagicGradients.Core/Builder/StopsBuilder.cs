@@ -5,12 +5,14 @@ namespace MagicGradients.Builder
 {
     public abstract class StopsBuilder<T>
     {
-        public virtual StopsFactory StopsFactory { get; } = new StopsFactory();
         protected abstract T Instance { get; }
 
+        public IGradientFactory Factory { get; set; }
+        public virtual List<IGradientStop> Stops { get; } = new();
+        
         public T AddStop(Color color, Offset? offset = null)
         {
-            StopsFactory.CreateStop(color, offset);
+            Stops.Add(Factory.CreateStop(color, offset));
             return Instance;
         }
 
@@ -18,7 +20,7 @@ namespace MagicGradients.Builder
         {
             foreach (var offset in offsets)
             {
-                StopsFactory.CreateStop(color, offset);
+                Stops.Add(Factory.CreateStop(color, offset));
             }
             return Instance;
         }
@@ -27,7 +29,7 @@ namespace MagicGradients.Builder
         {
             foreach (var color in colors)
             {
-                StopsFactory.CreateStop(color);
+                Stops.Add(Factory.CreateStop(color));
             }
             return Instance;
         }
