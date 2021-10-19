@@ -10,7 +10,7 @@ namespace MagicGradients.Masks
             if (!mask.IsActive)
                 return;
 
-            var bounds = GetBounds(mask.Size, context);
+            var bounds = mask.Size.GetDrawRectangle(context);
 
             var topLeft = GetCornerPoint(mask.Corners.TopLeft, bounds, context.PixelScaling);
             var topRight = GetCornerPoint(mask.Corners.TopRight, bounds, context.PixelScaling);
@@ -25,11 +25,11 @@ namespace MagicGradients.Masks
             RestoreTransform(context.Canvas);
         }
 
-        private PointF GetCornerPoint(Dimensions cornerSize, RectangleF bounds, double pixelScaling)
+        private PointF GetCornerPoint(Dimensions cornerSize, RectangleF bounds, float pixelScaling)
         {
             return new PointF(
-                (float)cornerSize.Width.GetDrawPixels((int)bounds.Width, pixelScaling),
-                (float)cornerSize.Height.GetDrawPixels((int)bounds.Height, pixelScaling));
+                cornerSize.Width.GetDrawPixels(bounds.Width, pixelScaling),
+                cornerSize.Height.GetDrawPixels(bounds.Height, pixelScaling));
         }
     }
 }

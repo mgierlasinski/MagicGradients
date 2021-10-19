@@ -10,7 +10,7 @@ namespace MagicGradients.Masks
             if (!mask.IsActive)
                 return;
 
-            var bounds = GetBounds(mask.Size, context);
+            var bounds = mask.Size.GetDrawRectangle(context);
 
             var path = new PathF();
             path.AppendEllipse(bounds);

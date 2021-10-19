@@ -40,11 +40,11 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             return roundRect;
         }
 
-        private SKPoint GetCornerPoint(Dimensions cornerSize, SKRectI bounds, double pixelScaling)
+        private SKPoint GetCornerPoint(Dimensions cornerSize, SKRectI bounds, float pixelScaling)
         {
             return new SKPoint(
-                (int)cornerSize.Width.GetDrawPixels(bounds.Width, pixelScaling),
-                (int)cornerSize.Height.GetDrawPixels(bounds.Height, pixelScaling));
+                cornerSize.Width.GetDrawPixels(bounds.Width, pixelScaling),
+                cornerSize.Height.GetDrawPixels(bounds.Height, pixelScaling));
         }
     }
 }

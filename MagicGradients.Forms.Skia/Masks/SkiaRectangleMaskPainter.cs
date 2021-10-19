@@ -30,7 +30,7 @@ namespace MagicGradients.Forms.Skia.Masks
 
         private SKRoundRect GetRoundRect(IRectangleMask mask, DrawContext context)
         {
-            var bounds = GetBounds(mask.Size, context).AsSKRect();
+            var bounds = mask.Size.GetDrawRectangle(context).AsSKRect();
             var roundRect = new SKRoundRect();
 
             roundRect.SetRectRadii(bounds, new[]
@@ -44,11 +44,11 @@ namespace MagicGradients.Forms.Skia.Masks
             return roundRect;
         }
 
-        private SKPoint GetCornerPoint(Dimensions cornerSize, SKRect bounds, double pixelScaling)
+        private SKPoint GetCornerPoint(Dimensions cornerSize, SKRect bounds, float pixelScaling)
         {
             return new SKPoint(
-                (int)cornerSize.Width.GetDrawPixels((int)bounds.Width, pixelScaling),
-                (int)cornerSize.Height.GetDrawPixels((int)bounds.Height, pixelScaling));
+                cornerSize.Width.GetDrawPixels(bounds.Width, pixelScaling),
+                cornerSize.Height.GetDrawPixels(bounds.Height, pixelScaling));
         }
     }
 }

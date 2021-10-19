@@ -12,17 +12,9 @@ namespace MagicGradients.Drawing
 
     public abstract class MaskPainter
     {
-        private readonly Stack<AffineTransform> _transforms = new Stack<AffineTransform>();
+        private readonly Stack<AffineTransform> _transforms = new();
         //private AffineTransform _transform = new AffineTransform();
-
-        protected RectangleF GetBounds(Dimensions size, DrawContext context)
-        {
-            var width = (float)size.Width.GetDrawPixels((int)context.CanvasRect.Width, context.PixelScaling);
-            var height = (float)size.Height.GetDrawPixels((int)context.CanvasRect.Height, context.PixelScaling);
-
-            return new RectangleF(0, 0, width, height);
-        }
-
+        
         protected void LayoutBounds(IGradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
         {
             BeginLayout(mask, bounds, context);

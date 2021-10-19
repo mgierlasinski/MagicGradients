@@ -85,11 +85,11 @@ namespace MagicGradients
 
     public static class OffsetExtensions
     {
-        public static double GetDrawPixels(this Offset offset, int sizeInPixels, double pixelScaling)
+        public static float GetDrawPixels(this Offset offset, float sizeInPixels, float pixelScaling)
         {
             return offset.Type == OffsetType.Proportional
-                ? offset.Value * sizeInPixels
-                : offset.Value * pixelScaling;
+                ? (float)(offset.Value * sizeInPixels)
+                : (float)(offset.Value * pixelScaling);
         }
     }
 }
