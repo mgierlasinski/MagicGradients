@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Masks
 {
-    public class EllipseMaskPainter : MaskPainter, IMaskPainter<IEllipseMask, DrawContext>
+    public class EllipseMaskPainter : IMaskPainter<IEllipseMask, DrawContext>
     {
         public void Clip(IEllipseMask mask, DrawContext context)
         {
@@ -15,9 +15,8 @@ namespace MagicGradients.Masks
             var path = new PathF();
             path.AppendEllipse(bounds);
 
-            LayoutBounds(mask, bounds, context, false);
+            using var layout = ShapeMaskLayout.Create(mask, bounds, context, false);
             context.Canvas.ClipPath(path);
-            RestoreTransform(context.Canvas);
         }
     }
 }

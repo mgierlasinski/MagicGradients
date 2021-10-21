@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Graphics;
+using System;
 
 namespace MagicGradients.Drawing
 {
@@ -35,6 +36,14 @@ namespace MagicGradients.Drawing
             {
                 RenderRect = CanvasRect;
             }
+        }
+
+        public TCanvas GetNativeCanvas<TCanvas>() where TCanvas : ICanvas
+        {
+            if (Canvas is TCanvas canvas)
+                return canvas;
+
+            throw new InvalidCastException($"Cannot cast native canvas {Canvas.GetType().Name} into {typeof(TCanvas).Namespace}");
         }
     }
 }

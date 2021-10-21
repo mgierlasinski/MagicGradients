@@ -6,7 +6,7 @@ using SkiaSharp;
 
 namespace MagicGradients.Forms.Skia.Masks
 {
-    public class SkiaRectangleMaskPainter : MaskPainter, IMaskPainter<IRectangleMask, DrawContext>
+    public class SkiaRectangleMaskPainter : IMaskPainter<IRectangleMask, DrawContext>
     {
         public void Clip(IRectangleMask mask, DrawContext context)
         {
@@ -19,13 +19,10 @@ namespace MagicGradients.Forms.Skia.Masks
 
         protected internal void ClipRoundRect(SKRoundRect roundRect, IRectangleMask mask, DrawContext context)
         {
-            var canvas = context.Canvas as SkiaCanvasEx;
-            if (canvas == null)
-                return;
+            var canvas = context.GetNativeCanvas<SkiaCanvasEx>();
 
-            LayoutBounds(mask, roundRect.Rect.AsRectangleF(), context, false);
+            using var layout = ShapeMaskLayout.Create(mask, roundRect.Rect.AsRectangleF(), context, false);
             canvas.ClipRoundRect(roundRect, mask.ClipMode.ToSkOperation());
-            RestoreTransform(context.Canvas);
         }
 
         private SKRoundRect GetRoundRect(IRectangleMask mask, DrawContext context)

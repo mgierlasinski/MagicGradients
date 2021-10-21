@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Masks
 {
-    public class PathMaskPainter : MaskPainter, IMaskPainter<IPathMask, DrawContext>
+    public class PathMaskPainter : IMaskPainter<IPathMask, DrawContext>
     {
         public void Clip(IPathMask mask, DrawContext context)
         {
@@ -14,9 +14,8 @@ namespace MagicGradients.Masks
             //var bounds = path.Bounds;  // Requires native GraphicsService
             var bounds = path.GetBoundsByFlattening();
 
-            LayoutBounds(mask, bounds, context, false);
+            using var layout = ShapeMaskLayout.Create(mask, bounds, context, false);
             context.Canvas.ClipPath(path);
-            RestoreTransform(context.Canvas);
         }
     }
 }

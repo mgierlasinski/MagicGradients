@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Masks
 {
-    public class RectangleMaskPainter : MaskPainter, IMaskPainter<IRectangleMask, DrawContext>
+    public class RectangleMaskPainter : IMaskPainter<IRectangleMask, DrawContext>
     {
         public void Clip(IRectangleMask mask, DrawContext context)
         {
@@ -20,9 +20,8 @@ namespace MagicGradients.Masks
             var path = new PathF();
             path.AppendRoundedRectangle(bounds, topLeft.X, topRight.X, bottomLeft.X, bottomRight.X);
 
-            LayoutBounds(mask, bounds, context, false);
+            using var layout = ShapeMaskLayout.Create(mask, bounds, context, false);
             context.Canvas.ClipPath(path);
-            RestoreTransform(context.Canvas);
         }
 
         private PointF GetCornerPoint(Dimensions cornerSize, RectangleF bounds, float pixelScaling)
