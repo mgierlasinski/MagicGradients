@@ -2,7 +2,7 @@
 
 namespace MagicGradients.Masks
 {
-    public class TextMaskPainter : MaskPainter, IMaskPainter<ITextMask, DrawContext>
+    public class TextMaskPainter : IMaskPainter<ITextMask, DrawContext>
     {
         public void Clip(ITextMask mask, DrawContext context)
         {

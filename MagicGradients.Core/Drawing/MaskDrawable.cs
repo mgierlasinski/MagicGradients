@@ -2,6 +2,11 @@
 
 namespace MagicGradients.Drawing
 {
+    public interface IMaskPainter<TMask, TContext>
+    {
+        void Clip(TMask mask, TContext context);
+    }
+
     public class MaskDrawable<TContext>
     {
         public IMaskPainter<IEllipseMask, TContext> EllipsePainter { get; set; }

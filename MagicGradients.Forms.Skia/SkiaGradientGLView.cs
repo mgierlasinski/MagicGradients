@@ -1,18 +1,19 @@
-using MagicGradients.Forms.SkiaViews.Drawing;
+﻿using MagicGradients.Drawing;
+using MagicGradients.Forms.Skia.Drawing;
 using MagicGradients.Masks;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 
-namespace MagicGradients.Forms.SkiaViews
+namespace MagicGradients.Forms.Skia
 {
     [ContentProperty(nameof(GradientSource))]
-    public class GradientGLView : SKGLView, IGradientControl, IGradientVisualElement
+    public class SkiaGradientGLView : SKGLView, IGradientControl, IGradientVisualElement
     {
-        static GradientGLView()
+        static SkiaGradientGLView()
         {
             GlobalSetup.Current
                 .UseXamlGradients()
-                .UseCssStyles<GradientGLView>();
+                .UseCssStyles<SkiaGradientGLView>();
         }
 
         public GradientDrawable Drawable { get; protected set; }
@@ -24,29 +25,29 @@ namespace MagicGradients.Forms.SkiaViews
 
         public IGradientSource GradientSource
         {
-            get => (IGradientSource)GetValue(GradientSourceProperty);
+            get => (IGradientSource) GetValue(GradientSourceProperty);
             set => SetValue(GradientSourceProperty, value);
         }
 
         public Dimensions GradientSize
         {
-            get => (Dimensions)GetValue(GradientSizeProperty);
+            get => (Dimensions) GetValue(GradientSizeProperty);
             set => SetValue(GradientSizeProperty, value);
         }
 
         public BackgroundRepeat GradientRepeat
         {
-            get => (BackgroundRepeat)GetValue(GradientRepeatProperty);
+            get => (BackgroundRepeat) GetValue(GradientRepeatProperty);
             set => SetValue(GradientRepeatProperty, value);
         }
 
         public IGradientMask Mask
         {
-            get => (IGradientMask)GetValue(MaskProperty);
+            get => (IGradientMask) GetValue(MaskProperty);
             set => SetValue(MaskProperty, value);
         }
 
-        public GradientGLView()
+        public SkiaGradientGLView()
         {
             Drawable = new GradientDrawable(this);
         }
@@ -61,10 +62,10 @@ namespace MagicGradients.Forms.SkiaViews
         {
             base.OnPaintSurface(e);
 
-            var context = new DrawContext(e);
-            context.Measure(GradientSize, Width);
+            var canvas = new SkiaCanvasEx { Canvas = e.Surface.Canvas };
+            var rect = e.BackendRenderTarget.Rect.ToRectF();
 
-            Drawable.Draw(context);
+            Drawable.Draw(canvas, rect);
         }
 
         public void InvalidateCanvas()

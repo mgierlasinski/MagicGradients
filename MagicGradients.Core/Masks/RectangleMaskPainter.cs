@@ -3,14 +3,14 @@ using Microsoft.Maui.Graphics;
 
 namespace MagicGradients.Masks
 {
-    public class RectangleMaskPainter : MaskPainter, IMaskPainter<IRectangleMask, DrawContext>
+    public class RectangleMaskPainter : IMaskPainter<IRectangleMask, DrawContext>
     {
         public void Clip(IRectangleMask mask, DrawContext context)
         {
             if (!mask.IsActive)
                 return;
 
-            var bounds = GetBounds(mask.Size, context);
+            var bounds = mask.Size.GetDrawRectangle(context);
 
             var topLeft = GetCornerPoint(mask.Corners.TopLeft, bounds, context.PixelScaling);
             var topRight = GetCornerPoint(mask.Corners.TopRight, bounds, context.PixelScaling);
@@ -20,16 +20,15 @@ namespace MagicGradients.Masks
             var path = new PathF();
             path.AppendRoundedRectangle(bounds, topLeft.X, topRight.X, bottomLeft.X, bottomRight.X);
 
-            LayoutBounds(mask, bounds, context, false);
+            using var layout = ShapeMaskLayout.Create(mask, bounds, context, false);
             context.Canvas.ClipPath(path);
-            RestoreTransform(context.Canvas);
         }
 
-        private PointF GetCornerPoint(Dimensions cornerSize, RectangleF bounds, double pixelScaling)
+        private PointF GetCornerPoint(Dimensions cornerSize, RectangleF bounds, float pixelScaling)
         {
             return new PointF(
-                (float)cornerSize.Width.GetDrawPixels((int)bounds.Width, pixelScaling),
-                (float)cornerSize.Height.GetDrawPixels((int)bounds.Height, pixelScaling));
+                cornerSize.Width.GetDrawPixels(bounds.Width, pixelScaling),
+                cornerSize.Height.GetDrawPixels(bounds.Height, pixelScaling));
         }
     }
 }

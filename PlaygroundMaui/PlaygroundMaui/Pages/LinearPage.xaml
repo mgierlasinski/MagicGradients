@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Forms"
-             xmlns:gnat="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
-             xmlns:gski="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
-             xmlns:skia="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
+             xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
+             xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
+             xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
              xmlns:viewModels="clr-namespace:PlaygroundMaui.ViewModels;assembly=PlaygroundMaui"
              x:DataType="viewModels:LinearViewModel"
              x:Class="PlaygroundMaui.Pages.LinearPage"
@@ -15,61 +15,62 @@
     <ScrollView>
         <StackLayout Spacing="5">
             <!-- Css Gradient Source  -->
-            <gnat:GradientView HeightRequest="160">
+            <form:GradientView HeightRequest="160">
                 <magic:CssGradientSource>
                     <![CDATA[
                         linear-gradient(242deg, red, green, orange)
                     ]]>
                 </magic:CssGradientSource>
-            </gnat:GradientView>
-            <gnat:GradientView HeightRequest="160">
+            </form:GradientView>
+            <form:GradientView HeightRequest="160">
                 <magic:CssGradientSource Stylesheet="{Binding CssGradient}" />
-            </gnat:GradientView>
+            </form:GradientView>
             <!-- Repeating -->
-            <skia:GradientView HeightRequest="160">
+            <skiv:GradientView HeightRequest="160">
                 <magic:LinearGradient Angle="45" IsRepeating="True">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" Offset="0.5" />
                 </magic:LinearGradient>
-            </skia:GradientView>
-            <gski:GradientView HeightRequest="160">
+            </skiv:GradientView>
+            <skia:SkiaGradientView HeightRequest="160">
                 <magic:LinearGradient Angle="45" IsRepeating="True">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" Offset="0.5" />
                 </magic:LinearGradient>
-            </gski:GradientView>
-            <gnat:GradientView HeightRequest="160">
+            </skia:SkiaGradientView>
+            <form:GradientView HeightRequest="160">
                 <magic:LinearGradient Angle="45" IsRepeating="True">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" Offset="0.5" />
                 </magic:LinearGradient>
-            </gnat:GradientView>
+            </form:GradientView>
             <!-- GradientSize -->
-            <skia:GradientView HeightRequest="160" GradientSize="40">
+            <skiv:GradientView HeightRequest="160" GradientSize="40">
                 <magic:LinearGradient Angle="45">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" />
                 </magic:LinearGradient>
-            </skia:GradientView>
-            <gski:GradientView HeightRequest="160" GradientSize="40">
+            </skiv:GradientView>
+            <skia:SkiaGradientView HeightRequest="160" GradientSize="40">
                 <magic:LinearGradient Angle="45">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" />
                 </magic:LinearGradient>
-            </gski:GradientView>
-            <gnat:GradientView HeightRequest="160" GradientSize="40">
+            </skia:SkiaGradientView>
+            <form:GradientView HeightRequest="160" GradientSize="40">
                 <magic:LinearGradient Angle="45">
                     <magic:GradientStop Color="Blue" />
                     <magic:GradientStop Color="Yellow" />
                 </magic:LinearGradient>
-            </gnat:GradientView>
+            </form:GradientView>
             <!-- CSS -->
-            <skia:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
-            <gski:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
-            <gnat:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
-            <skia:GradientView HeightRequest="160" StyleClass="AngularGradient" />
-            <gski:GradientView HeightRequest="160" StyleClass="AngularGradient" />
-            <gnat:GradientView HeightRequest="160" StyleClass="AngularGradient" />
+            <skiv:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
+            <skia:SkiaGradientView HeightRequest="160" StyleClass="RainbowGradient" />
+            <form:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
+
+            <skiv:GradientView HeightRequest="160" StyleClass="AngularGradient" />
+            <skia:SkiaGradientView HeightRequest="160" StyleClass="AngularGradient" />
+            <form:GradientView HeightRequest="160" StyleClass="AngularGradient" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

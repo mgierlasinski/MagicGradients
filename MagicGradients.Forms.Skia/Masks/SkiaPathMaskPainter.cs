@@ -6,7 +6,7 @@ using SkiaSharp;
 
 namespace MagicGradients.Forms.Skia.Masks
 {
-    public class SkiaPathMaskPainter : MaskPainter, IMaskPainter<IPathMask, DrawContext>
+    public class SkiaPathMaskPainter : IMaskPainter<IPathMask, DrawContext>
     {
         public void Clip(IPathMask mask, DrawContext context)
         {
@@ -14,20 +14,12 @@ namespace MagicGradients.Forms.Skia.Masks
                 return;
 
             using var path = SKPath.ParseSvgPathData(mask.Data);
-            ClipPathNative(path, mask, context);
-        }
-
-        protected internal void ClipPathNative(SKPath path, IPathMask mask, DrawContext context)
-        {
-            var canvas = context.Canvas as SkiaCanvasEx;
-            if (canvas == null)
-                return;
-
             path.GetTightBounds(out var bounds);
 
-            LayoutBounds(mask, bounds.AsRectangleF(), context, true);
+            var canvas = context.GetNativeCanvas<SkiaCanvasEx>();
+
+            using var layout = ShapeMaskLayout.Create(mask, bounds.AsRectangleF(), context, true);
             canvas.ClipPath(path, mask.ClipMode.ToSkOperation());
-            RestoreTransform(context.Canvas);
         }
     }
 }

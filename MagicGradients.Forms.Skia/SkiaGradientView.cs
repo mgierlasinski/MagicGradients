@@ -8,13 +8,13 @@ using Xamarin.Forms;
 namespace MagicGradients.Forms.Skia
 {
     [ContentProperty(nameof(GradientSource))]
-    public class GradientView : SKCanvasView, IGradientControl, IGradientVisualElement
+    public class SkiaGradientView : SKCanvasView, IGradientControl, IGradientVisualElement
     {
-        static GradientView()
+        static SkiaGradientView()
         {
             GlobalSetup.Current
                 .UseXamlGradients()
-                .UseCssStyles<GradientView>();
+                .UseCssStyles<SkiaGradientView>();
         }
 
         public GradientDrawable Drawable { get; }
@@ -48,9 +48,11 @@ namespace MagicGradients.Forms.Skia
             set => SetValue(MaskProperty, value);
         }
 
-        public GradientView()
+        public SkiaGradientView()
         {
             Drawable = new GradientDrawable(this);
+            Drawable.MaskDrawable.RectanglePainter = new SkiaRectangleMaskPainter();
+            Drawable.MaskDrawable.EllipsePainter = new SkiaEllipseMaskPainter();
             Drawable.MaskDrawable.PathPainter = new SkiaPathMaskPainter();
             Drawable.MaskDrawable.TextPainter = new SkiaTextMaskPainter();
         }

@@ -5,25 +5,12 @@ using System.Collections.Generic;
 
 namespace MagicGradients.Drawing
 {
-    public interface IMaskPainter<TMask, TContext>
+    public class MaskLayout
     {
-        void Clip(TMask mask, TContext context);
-    }
-
-    public abstract class MaskPainter
-    {
-        private readonly Stack<AffineTransform> _transforms = new Stack<AffineTransform>();
+        private readonly Stack<AffineTransform> _transforms = new();
         //private AffineTransform _transform = new AffineTransform();
-
-        protected RectangleF GetBounds(Dimensions size, DrawContext context)
-        {
-            var width = (float)size.Width.GetDrawPixels((int)context.CanvasRect.Width, context.PixelScaling);
-            var height = (float)size.Height.GetDrawPixels((int)context.CanvasRect.Height, context.PixelScaling);
-
-            return new RectangleF(0, 0, width, height);
-        }
-
-        protected void LayoutBounds(IGradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
+        
+        public void LayoutBounds(IGradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
         {
             BeginLayout(mask, bounds, context);
 
@@ -73,7 +60,7 @@ namespace MagicGradients.Drawing
         {
             Translate(context.Canvas, -bounds.Center.X, -bounds.Center.Y);
         }
-        
+
         protected void Translate(ICanvas canvas, float tx, float ty)
         {
             canvas.Translate(tx, ty);
@@ -84,11 +71,11 @@ namespace MagicGradients.Drawing
         protected void Scale(ICanvas canvas, float sx, float sy)
         {
             canvas.Scale(sx, sy);
-            _transforms.Push(AffineTransform.GetScaleInstance(sx,sy));
+            _transforms.Push(AffineTransform.GetScaleInstance(sx, sy));
             //_transform.Scale(sx, sy);
         }
 
-        protected void RestoreTransform(ICanvas canvas)
+        public void RestoreTransform(ICanvas canvas)
         {
             while (_transforms.Count > 0)
             {
@@ -115,5 +102,85 @@ namespace MagicGradients.Drawing
         //    canvas.ConcatenateTransform(inverseTransform);
         //    _transform = new AffineTransform();
         //}
+    }
+
+    public class ShapeMaskLayout : MaskLayout, IDisposable
+    {
+        private ICanvas _canvas;
+
+        public static ShapeMaskLayout Create(IGradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
+        {
+            var layout = new ShapeMaskLayout { _canvas = context.Canvas };
+            layout.LayoutBounds(mask, bounds, context, keepAspectRatio);
+
+            return layout;
+        }
+
+        public void Dispose()
+        {
+            RestoreTransform(_canvas);
+            _canvas = null;
+        }
+    }
+
+    public class TextMaskLayout : MaskLayout, IDisposable
+    {
+        private ICanvas _canvas;
+
+        public static TextMaskLayout Create(ITextMask mask, RectangleF bounds, DrawContext context)
+        {
+            var layout = new TextMaskLayout { _canvas = context.Canvas };
+            layout.LayoutBounds(mask, bounds, context, true);
+
+            return layout;
+        }
+
+        public void Dispose()
+        {
+            RestoreTransform(_canvas);
+            _canvas = null;
+        }
+
+        protected override void BeginLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
+        {
+            var textMask = (ITextMask)mask;
+
+            var posX = textMask.HorizontalTextAlignment switch
+            {
+                TextAlignment.Center => context.RenderRect.Width / 2,
+                TextAlignment.End => context.RenderRect.Width,
+                _ => 0
+            };
+
+            var posY = textMask.VerticalTextAlignment switch
+            {
+                TextAlignment.Center => context.RenderRect.Height / 2,
+                TextAlignment.End => context.RenderRect.Height,
+                _ => 0
+            };
+
+            Translate(context.Canvas, posX, posY);
+        }
+
+        protected override void EndLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
+        {
+            var textMask = (ITextMask)mask;
+
+            var movX = textMask.HorizontalTextAlignment switch
+            {
+                TextAlignment.Center => -bounds.Center.X,
+                TextAlignment.End => -bounds.Right,
+                _ => -bounds.Left
+            };
+
+            var movY = textMask.VerticalTextAlignment switch
+            {
+                TextAlignment.Center => -bounds.Center.Y,
+                TextAlignment.End => -bounds.Bottom,
+                _ => -bounds.Top
+            };
+
+            Translate(context.Canvas, movX, movY);
+        }
     }
 }

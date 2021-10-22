@@ -1,11 +1,12 @@
 ﻿using MagicGradients.Drawing;
+using MagicGradients.Forms.Skia.Drawing;
 using MagicGradients.Masks;
+using Microsoft.Maui.Graphics.Skia;
 using SkiaSharp;
-using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
-namespace MagicGradients.Forms.SkiaViews.Masks
+namespace MagicGradients.Forms.Skia.Masks
 {
-    public class RectangleMaskPainter : GradientMaskPainter, IMaskPainter<IRectangleMask, DrawContext>
+    public class SkiaRectangleMaskPainter : IMaskPainter<IRectangleMask, DrawContext>
     {
         public void Clip(IRectangleMask mask, DrawContext context)
         {
@@ -16,17 +17,17 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             ClipRoundRect(roundRect, mask, context);
         }
 
-        protected internal void ClipRoundRect(SKRoundRect roundRect, IGradientMask mask, DrawContext context)
+        protected internal void ClipRoundRect(SKRoundRect roundRect, IRectangleMask mask, DrawContext context)
         {
-            using var canvasLock = new CanvasLock(context.Canvas);
+            var canvas = context.GetNativeCanvas<SkiaCanvasEx>();
 
-            LayoutBounds(mask, roundRect.Rect, context, false);
-            context.Canvas.ClipRoundRect(roundRect, mask.ClipMode.ToSkOperation(), true);
+            using var layout = ShapeMaskLayout.Create(mask, roundRect.Rect.AsRectangleF(), context, false);
+            canvas.ClipRoundRect(roundRect, mask.ClipMode.ToSkOperation());
         }
 
         private SKRoundRect GetRoundRect(IRectangleMask mask, DrawContext context)
         {
-            var bounds = GetBounds(mask.Size, context);
+            var bounds = mask.Size.GetDrawRectangle(context).AsSKRect();
             var roundRect = new SKRoundRect();
 
             roundRect.SetRectRadii(bounds, new[]
@@ -40,7 +41,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
             return roundRect;
         }
 
-        private SKPoint GetCornerPoint(Dimensions cornerSize, SKRectI bounds, float pixelScaling)
+        private SKPoint GetCornerPoint(Dimensions cornerSize, SKRect bounds, float pixelScaling)
         {
             return new SKPoint(
                 cornerSize.Width.GetDrawPixels(bounds.Width, pixelScaling),
