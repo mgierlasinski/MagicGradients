@@ -43,7 +43,7 @@ namespace MagicGradients.Drawing
             if (Canvas is TCanvas canvas)
                 return canvas;
 
-            throw new InvalidCastException($"Cannot cast native canvas {Canvas.GetType().Name} into {typeof(TCanvas).Namespace}");
+            throw new InvalidCastException($"Cannot cast native canvas {Canvas.GetType().Name} into {typeof(TCanvas).Name}");
         }
     }
 }
