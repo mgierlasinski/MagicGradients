@@ -3,13 +3,10 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Animation
 {
-    [Obsolete("Use AnimateBehavior instead")]
-    public class Animate : AnimateBehavior { }
-
     [ContentProperty(nameof(Animation))]
-    public class AnimateBehavior : Behavior<VisualElement>
+    public class AnimationBehavior : Behavior<VisualElement>
     {
-        private static VisualElement _associatedObject;
+        private VisualElement _associatedObject;
 
         public Timeline Animation { get; set; }
 
@@ -21,9 +18,7 @@ namespace MagicGradients.Animation
             if (Animation == null)
                 return;
 
-            if (Animation.Target == null)
-                Animation.Target = _associatedObject;
-
+            Animation.Target ??= _associatedObject;
             _associatedObject.SizeChanged += OnAnimatorLoaded;
         }
 

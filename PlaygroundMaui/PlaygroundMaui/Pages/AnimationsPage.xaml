@@ -12,7 +12,7 @@
         <StackLayout Spacing="5">
             <form:GradientView HeightRequest="160">
                 <form:GradientView.Behaviors>
-                    <anim:AnimateBehavior>
+                    <anim:AnimationBehavior>
                         <anim:ColorAnimation x:Name="ColorAnimation"
                                              Target="{x:Reference AnimColor}" 
                                              TargetProperty="magic:GradientStop.Color" 
@@ -20,7 +20,7 @@
                                              Duration="3000"
                                              RepeatBehavior="Forever" 
                                              AutoReverse="True" />
-                    </anim:AnimateBehavior>
+                    </anim:AnimationBehavior>
                 </form:GradientView.Behaviors>
                 <magic:LinearGradient Angle="45">
                     <magic:GradientStop Color="#00DBDE" />
