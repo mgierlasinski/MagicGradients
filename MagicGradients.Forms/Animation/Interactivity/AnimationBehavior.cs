@@ -26,7 +26,27 @@ namespace MagicGradients.Animation
         {
             var animator = (VisualElement)sender;
             animator.SizeChanged -= OnAnimatorLoaded;
+
+            if (animator.TryFindParent<Page>(out var page))
+            {
+                page.Appearing += PageOnAppearing;
+                page.Disappearing += PageOnDisappearing;
+            }
+
             Animation?.Begin(animator);
+        }
+
+        private void PageOnAppearing(object sender, EventArgs e)
+        {
+            if (Animation?.IsRunning == false)
+            {
+                Animation?.Begin(_associatedObject);
+            }
+        }
+
+        private void PageOnDisappearing(object sender, EventArgs e)
+        {
+            Animation?.End();
         }
 
         protected override void OnDetachingFrom(VisualElement bindable)

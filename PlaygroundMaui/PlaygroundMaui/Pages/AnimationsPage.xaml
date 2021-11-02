@@ -4,7 +4,6 @@
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Forms"
              xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
              xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
-             xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
              xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients.Forms"
              x:Class="PlaygroundMaui.Pages.AnimationsPage"
              Title="Animations">
@@ -27,23 +26,23 @@
                     <magic:GradientStop Color="#FC00FF" x:Name="AnimColor" />
                 </magic:LinearGradient>
             </form:GradientView>
-            <!--<skia:SkiaGradientView HeightRequest="160">
+            <skia:SkiaGradientView HeightRequest="160">
                 <skia:SkiaGradientView.Behaviors>
-                    <anim:AnimateBehavior>
-                        <anim:ColorAnimation x:Name="ColorAnimation"
-                                             Target="{x:Reference AnimColor}" 
+                    <anim:AnimationBehavior>
+                        <anim:ColorAnimation x:Name="ColorAnimation2"
+                                             Target="{x:Reference AnimColor2}" 
                                              TargetProperty="magic:GradientStop.Color" 
                                              From="#C850C0" To="#1FDD15" 
                                              Duration="3000"
                                              RepeatBehavior="Forever" 
                                              AutoReverse="True" />
-                    </anim:AnimateBehavior>
+                    </anim:AnimationBehavior>
                 </skia:SkiaGradientView.Behaviors>
                 <magic:LinearGradient Angle="45">
                     <magic:GradientStop Color="#00DBDE" />
-                    <magic:GradientStop Color="#FC00FF" x:Name="AnimColor" />
+                    <magic:GradientStop Color="#FC00FF" x:Name="AnimColor2" />
                 </magic:LinearGradient>
-            </skia:SkiaGradientView>-->
+            </skia:SkiaGradientView>
         </StackLayout>
     </ScrollView>
 </ContentPage>
