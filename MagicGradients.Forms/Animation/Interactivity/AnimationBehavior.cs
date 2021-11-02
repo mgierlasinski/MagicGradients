@@ -3,13 +3,10 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Animation
 {
-    [Obsolete("Use AnimateBehavior instead")]
-    public class Animate : AnimateBehavior { }
-
     [ContentProperty(nameof(Animation))]
-    public class AnimateBehavior : Behavior<VisualElement>
+    public class AnimationBehavior : Behavior<VisualElement>
     {
-        private static VisualElement _associatedObject;
+        private VisualElement _associatedObject;
 
         public Timeline Animation { get; set; }
 
@@ -21,9 +18,7 @@ namespace MagicGradients.Animation
             if (Animation == null)
                 return;
 
-            if (Animation.Target == null)
-                Animation.Target = _associatedObject;
-
+            Animation.Target ??= _associatedObject;
             _associatedObject.SizeChanged += OnAnimatorLoaded;
         }
 
@@ -31,7 +26,27 @@ namespace MagicGradients.Animation
         {
             var animator = (VisualElement)sender;
             animator.SizeChanged -= OnAnimatorLoaded;
+
+            if (animator.TryFindParent<Page>(out var page))
+            {
+                page.Appearing += PageOnAppearing;
+                page.Disappearing += PageOnDisappearing;
+            }
+
             Animation?.Begin(animator);
+        }
+
+        private void PageOnAppearing(object sender, EventArgs e)
+        {
+            if (Animation?.IsRunning == false)
+            {
+                Animation?.Begin(_associatedObject);
+            }
+        }
+
+        private void PageOnDisappearing(object sender, EventArgs e)
+        {
+            Animation?.End();
         }
 
         protected override void OnDetachingFrom(VisualElement bindable)

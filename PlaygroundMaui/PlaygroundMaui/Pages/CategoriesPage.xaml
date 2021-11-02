@@ -27,7 +27,7 @@
                     <StackLayout Spacing="2">
                         <Label Text="{Binding Name}" FontSize="Large" />
                         <Grid>
-                            <form:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
+                            <skiv:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
                             <Label Text="Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                         <Grid>
@@ -35,7 +35,7 @@
                             <Label Text="Graphics.Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                         <Grid>
-                            <skiv:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
+                            <form:GradientView GradientSource="{Binding Source}" HeightRequest="160" />
                             <Label Text="Graphics.Native" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
                         </Grid>
                     </StackLayout>

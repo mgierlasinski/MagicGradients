@@ -21,6 +21,7 @@
             <Button Text="Linear Gradients" Command="{pages:Navigate {x:Type pages:LinearPage}}" />
             <Button Text="Radial Gradients" Command="{pages:Navigate {x:Type pages:RadialPage}}" />
             <Button Text="Masks" Command="{pages:Navigate {x:Type pages:MasksPage}}" />
+            <Button Text="Animations" Command="{pages:Navigate {x:Type pages:AnimationsPage}}" />
             <Button Text="Gallery" Command="{pages:Navigate {x:Type pages:CategoriesPage}}" />
         </StackLayout>
     </StackLayout>

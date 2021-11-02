@@ -56,7 +56,7 @@ namespace MagicGradients.Forms
 
         public void InvalidateCanvas()
         {
-            //InvalidateSurface();
+            OnPropertyChanged(nameof(Drawable));
         }
     }
 }
