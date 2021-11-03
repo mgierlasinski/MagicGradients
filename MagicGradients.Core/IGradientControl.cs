@@ -4,7 +4,7 @@ namespace MagicGradients
 {
     public interface IGradientControl
     {
-        double Width { get; }
+        double ViewWidth { get; }
         IGradientSource GradientSource { get; set; }
         Dimensions GradientSize { get; set; }
         BackgroundRepeat GradientRepeat { get; set; }

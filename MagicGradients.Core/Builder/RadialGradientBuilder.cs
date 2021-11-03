@@ -8,18 +8,18 @@ namespace MagicGradients.Builder
         protected override RadialGradientBuilder Instance => this;
 
         private RadialGradientFlags _flags;
-        internal RadialGradientFlags Flags
+        public RadialGradientFlags Flags
         {
             get => _flags;
-            set => _flags = value;
+            internal set => _flags = value;
         }
 
-        internal Point Center { get; set; }
-        internal double RadiusX { get; set; }
-        internal double RadiusY { get; set; }
-        internal RadialGradientShape Shape { get; set; }
-        internal RadialGradientSize Size { get; set; }
-        internal bool IsRepeating { get; set; }
+        public Point Center { get; internal set; }
+        public double RadiusX { get; internal set; }
+        public double RadiusY { get; internal set; }
+        public RadialGradientShape Shape { get; internal set; }
+        public RadialGradientSize Size { get; internal set; }
+        public bool IsRepeating { get; internal set; }
 
         public RadialGradientBuilder()
         {

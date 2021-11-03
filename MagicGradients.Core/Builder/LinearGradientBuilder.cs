@@ -4,8 +4,8 @@
     {
         protected override LinearGradientBuilder Instance => this;
 
-        internal double Angle { get; set; }
-        internal bool IsRepeating { get; set; }
+        public double Angle { get; internal set; }
+        public bool IsRepeating { get; internal set; }
 
         public LinearGradientBuilder()
         {
