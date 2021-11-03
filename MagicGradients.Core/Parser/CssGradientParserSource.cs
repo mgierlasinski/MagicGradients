@@ -5,7 +5,7 @@ namespace MagicGradients.Parser
 {
     public class CssGradientParserSource : IGradientSource
     {
-        private readonly CssGradientParser _parser = new(GlobalSetup.Current.GradientFactory);
+        private readonly CssGradientParser _parser = new();
         private List<IGradient> _gradients;
 
         public CssGradientParserSource()

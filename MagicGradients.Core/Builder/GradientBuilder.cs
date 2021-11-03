@@ -12,6 +12,11 @@ namespace MagicGradients.Builder
         protected override GradientBuilder Instance => this;
         public override List<IGradientStop> Stops => GetCurrentBuilder().Stops;
 
+        public GradientBuilder() : this(GlobalSetup.Current.GradientFactory)
+        {
+            
+        }
+
         public GradientBuilder(IGradientFactory factory)
         {
             Factory = factory;

@@ -10,6 +10,10 @@
     <ProjectReference Include="..\MagicGradients.Core\MagicGradients.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'Xamarin.Mac20' Or '$(TargetFramework)' == 'netstandard2.1'">
+    <Reference Include="netstandard" />
+  </ItemGroup>
+
   <Import Project="..\MultiTargeting.targets" />
 
 </Project>
