@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "MagicGradients.Core\MagicGradients.Core.csproj", "{5DF75674-BB19-4171-B572-24EFE4B3B6C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicGradients.Native", "MagicGradients.Native\MagicGradients.Native.csproj", "{6190CB69-1520-4E9A-95CB-F2A558C78A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Native", "MagicGradients.Native\MagicGradients.Native.csproj", "{6190CB69-1520-4E9A-95CB-F2A558C78A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientsApp.Android", "samples\GradientsApp\GradientsApp.Android\GradientsApp.Android.csproj", "{8C226E64-68D8-4FF3-A13B-E7D3754605F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{1929F873-242A-4226-A26F-AE433C67E2B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,18 @@ Global
 		{6190CB69-1520-4E9A-95CB-F2A558C78A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6190CB69-1520-4E9A-95CB-F2A558C78A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6190CB69-1520-4E9A-95CB-F2A558C78A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C226E64-68D8-4FF3-A13B-E7D3754605F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C226E64-68D8-4FF3-A13B-E7D3754605F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C226E64-68D8-4FF3-A13B-E7D3754605F5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8C226E64-68D8-4FF3-A13B-E7D3754605F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C226E64-68D8-4FF3-A13B-E7D3754605F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C226E64-68D8-4FF3-A13B-E7D3754605F5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C226E64-68D8-4FF3-A13B-E7D3754605F5} = {1929F873-242A-4226-A26F-AE433C67E2B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEE45891-AB19-480E-8E46-533C83AEE195}
