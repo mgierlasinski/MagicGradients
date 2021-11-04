@@ -6,6 +6,6 @@ namespace MagicGradients.Builder
     {
         IGradientFactory Factory { get; set; }
         List<IGradientStop> Stops { get; }
-        IGradient Construct();
+        void AddConstructed(List<IGradient> gradients);
     }
 }

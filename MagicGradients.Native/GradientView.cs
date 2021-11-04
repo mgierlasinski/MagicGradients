@@ -22,7 +22,17 @@ namespace MagicGradients
 
         public Dimensions GradientSize { get; set; }
         public BackgroundRepeat GradientRepeat { get; set; }
-        public IGradientMask Mask { get; set; }
+
+        private IGradientMask _mask;
+        public IGradientMask Mask
+        {
+            get => _mask;
+            set
+            {
+                _mask = value;
+                InvalidateNative();
+            }
+        }
 
         partial void InvalidateNative();
     }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace MagicGradients.Builder
 {
@@ -25,18 +24,18 @@ namespace MagicGradients.Builder
         public GradientBuilder AddLinearGradient(Action<LinearGradientBuilder> setup = null)
         {
             var builder = new LinearGradientBuilder();
-            setup?.Invoke(builder);
-
             UseBuilder(builder);
+
+            setup?.Invoke(builder);
             return this;
         }
 
         public GradientBuilder AddRadialGradient(Action<RadialGradientBuilder> setup = null)
         {
             var builder = new RadialGradientBuilder();
-            setup?.Invoke(builder);
-
             UseBuilder(builder);
+
+            setup?.Invoke(builder);
             return this;
         }
 
@@ -55,11 +54,30 @@ namespace MagicGradients.Builder
             _children.Add(builder);
         }
 
-        public IEnumerable<IGradient> Build()
+        public List<IGradient> Build()
         {
-            return _children.Select(x => x.Construct());
+            var gradients = new List<IGradient>();
+
+            foreach (var child in _children)
+            {
+                child.AddConstructed(gradients);
+            }
+
+            return gradients;
         }
-        
+
+        internal List<IGradient> BuildReversed()
+        {
+            var gradients = new List<IGradient>();
+
+            for (var i = _children.Count - 1; i >= 0; i--)
+            {
+                _children[i].AddConstructed(gradients);
+            }
+
+            return gradients;
+        }
+
         private IChildBuilder GetCurrentBuilder()
         {
             if (_currentBuilder == null)

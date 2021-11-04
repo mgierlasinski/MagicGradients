@@ -1,6 +1,5 @@
 ﻿using MagicGradients.Parser;
-using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace MagicGradients.Builder
 {
@@ -15,14 +14,9 @@ namespace MagicGradients.Builder
             StyleSheet = styleSheet;
         }
 
-        public IGradient Construct()
+        public void AddConstructed(List<IGradient> gradients)
         {
-            var parsed = new CssGradientParser().Parse(StyleSheet).ToArray();
-            if (parsed.Length != 1)
-            {
-                throw new InvalidOperationException("StyleSheet must contain single gradient function.");
-            }
-            return parsed.First();
+            gradients.AddRange(new CssGradientParser().Parse(StyleSheet));
         }
     }
 }

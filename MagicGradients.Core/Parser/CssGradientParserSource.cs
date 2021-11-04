@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace MagicGradients.Parser
 {
@@ -20,7 +19,7 @@ namespace MagicGradients.Parser
 
         public void Parse(string css)
         {
-            _gradients = _parser.Parse(css).ToList();
+            _gradients = _parser.Parse(css);
         }
 
         public IReadOnlyList<IGradient> GetGradients()

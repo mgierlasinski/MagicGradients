@@ -9,4 +9,19 @@ namespace MagicGradients
     {
         IReadOnlyList<IGradient> GetGradients();
     }
+
+    public class GenericGradientSource : IGradientSource
+    {
+        private readonly IReadOnlyList<IGradient> _gradients;
+
+        public GenericGradientSource(IReadOnlyList<IGradient> gradients)
+        {
+            _gradients = gradients;
+        }
+        
+        public IReadOnlyList<IGradient> GetGradients()
+        {
+            return _gradients;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 using System;
+using System.Collections.Generic;
 
 namespace MagicGradients.Builder
 {
@@ -89,9 +90,9 @@ namespace MagicGradients.Builder
             return this;
         }
 
-        public IGradient Construct()
+        public void AddConstructed(List<IGradient> gradients)
         {
-            return Factory.Construct(this);
+            gradients.Add(Factory.Construct(this));
         }
     }
 }

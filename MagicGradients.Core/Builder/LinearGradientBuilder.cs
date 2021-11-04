@@ -1,4 +1,6 @@
-﻿namespace MagicGradients.Builder
+﻿using System.Collections.Generic;
+
+namespace MagicGradients.Builder
 {
     public class LinearGradientBuilder : StopsBuilder<LinearGradientBuilder>, IChildBuilder
     {
@@ -25,9 +27,9 @@
             return this;
         }
 
-        public IGradient Construct()
+        public void AddConstructed(List<IGradient> gradients)
         {
-            return Factory.Construct(this);
+            gradients.Add(Factory.Construct(this));
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿using MagicGradients.Builder;
-using Microsoft.Maui.Graphics;
+﻿using Microsoft.Maui.Graphics;
 using System.Collections.Generic;
 
-namespace MagicGradients
+namespace MagicGradients.Builder
 {
     public class GradientFactory : IGradientFactory
     {

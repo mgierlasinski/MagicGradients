@@ -24,7 +24,7 @@ namespace MagicGradients.Masks
         string Data { get; }
     }
 
-    public interface ITextMask : IPathMask
+    public interface ITextMask : IGradientMask
     {
         string Text { get; }
         string FontFamily { get; }

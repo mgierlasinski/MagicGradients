@@ -21,7 +21,7 @@ namespace MagicGradients.Parser
             };
         }
         
-        public IEnumerable<IGradient> Parse(string css)
+        public List<IGradient> Parse(string css)
         {
             var builder = new GradientBuilder();
 
@@ -40,7 +40,7 @@ namespace MagicGradients.Parser
                 reader.MoveNext();
             }
 
-            return builder.Build().Reverse();
+            return builder.BuildReversed();
         }
     }
 }
