@@ -113,6 +113,10 @@
       <Project>{6190cb69-1520-4e9a-95cb-f2a558c78a6a}</Project>
       <Name>MagicGradients.Native</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GradientsApp\GradientsApp.csproj">
+      <Project>{93c87c44-7e5d-4a2b-af33-d046414e496f}</Project>
+      <Name>GradientsApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\gradients_fragment.xml">

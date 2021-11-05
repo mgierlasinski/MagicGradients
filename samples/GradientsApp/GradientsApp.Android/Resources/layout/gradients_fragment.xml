@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 	<MagicGradients.GradientView 
-		android:id="@+id/magicAngular"
+		android:id="@+id/magicBurst"
 		android:layout_width="match_parent"
 		android:layout_height="160dp"
 		android:layout_marginBottom="5dp"/>
 	<MagicGradients.GradientView 
-		android:id="@+id/pathMask"
+		android:id="@+id/magicAngular"
 		android:layout_width="match_parent"
 		android:layout_height="160dp"
 		android:layout_marginBottom="5dp"/>
@@ -19,7 +19,7 @@
 		android:layout_height="160dp"
 		android:layout_marginBottom="5dp"/>
 	<MagicGradients.GradientView 
-		android:id="@+id/magicGradient"
+		android:id="@+id/magicDiamonds"
 		android:layout_width="match_parent"
 		android:layout_height="160dp"
 		android:layout_marginBottom="5dp"/>

@@ -47,7 +47,7 @@ namespace MagicGradients.Builder
             return this;
         }
 
-        public void UseBuilder(IChildBuilder builder)
+        internal void UseBuilder(IChildBuilder builder)
         {
             _currentBuilder = builder;
             _currentBuilder.Factory = Factory;
