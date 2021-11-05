@@ -13,25 +13,34 @@ namespace MagicGradients
         public IGradientSource GradientSource
         {
             get => _gradientSource;
-            set
-            {
-                _gradientSource = value;
-                InvalidateNative();
-            }
+            set => SetValue(ref _gradientSource, value);
         }
 
-        public Dimensions GradientSize { get; set; }
-        public BackgroundRepeat GradientRepeat { get; set; }
+        private Dimensions _gradientSize;
+        public Dimensions GradientSize
+        {
+            get => _gradientSize;
+            set => SetValue(ref _gradientSize, value);
+        }
+
+        private BackgroundRepeat _gradientRepeat;
+        public BackgroundRepeat GradientRepeat
+        {
+            get => _gradientRepeat;
+            set => SetValue(ref _gradientRepeat, value);
+        }
 
         private IGradientMask _mask;
         public IGradientMask Mask
         {
             get => _mask;
-            set
-            {
-                _mask = value;
-                InvalidateNative();
-            }
+            set => SetValue(ref _mask, value);
+        }
+
+        private void SetValue<T>(ref T field, T value)
+        {
+            field = value;
+            InvalidateNative();
         }
 
         partial void InvalidateNative();
