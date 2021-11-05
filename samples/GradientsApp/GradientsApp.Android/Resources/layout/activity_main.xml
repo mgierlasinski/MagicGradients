@@ -5,24 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-	<MagicGradients.GradientView 
-		android:id="@+id/magicAngular"
+	<fragment
+		android:name="GradientsApp.Android.Views.GradientsFragment"
+		android:id="@+id/main_fragment"
 		android:layout_width="match_parent"
-		android:layout_height="160dp"
-		android:layout_marginBottom="5dp"/>
-	<MagicGradients.GradientView 
-		android:id="@+id/pathMask"
-		android:layout_width="match_parent"
-		android:layout_height="160dp"
-		android:layout_marginBottom="5dp"/>
-	<MagicGradients.GradientView 
-        android:id="@+id/magicRainbow"
-	    android:layout_width="match_parent"
-	    android:layout_height="160dp"
-        android:layout_marginBottom="5dp"/>
-	<MagicGradients.GradientView 
-		android:id="@+id/magicGradient"
-		android:layout_width="match_parent"
-		android:layout_height="160dp"
-		android:layout_marginBottom="5dp"/>
+		android:layout_height="match_parent" />
 </LinearLayout>
