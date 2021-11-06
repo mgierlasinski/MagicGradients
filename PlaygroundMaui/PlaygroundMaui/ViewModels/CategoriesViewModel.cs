@@ -1,4 +1,4 @@
-﻿using MagicGradients.Parser;
+﻿using MagicGradients;
 using Playground.Data.Infrastructure;
 using Playground.Data.Repositories;
 using PlaygroundMaui.Infrastructure;
@@ -39,7 +39,7 @@ namespace PlaygroundMaui.ViewModels
             Categories = repository.GetCategories().Select(x => new CategoryItem
             {
                 Name = x.Name,
-                Source = new CssGradientParserSource(x.Stylesheet),
+                Source = new CssGradientSource(x.Stylesheet),
                 Tag = x.Tag
             }).ToList();
         }

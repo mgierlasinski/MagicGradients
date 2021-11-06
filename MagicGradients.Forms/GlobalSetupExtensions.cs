@@ -8,7 +8,7 @@ namespace MagicGradients
         {
             if (setup.GradientFactory != null)
                 return setup;
-            return setup.UseFactory(new GradientFactory());
+            return setup.UseFactory(new XamlGradientFactory());
         }
 
         public static GlobalSetup UseCssStyles<TControl>(this GlobalSetup setup)

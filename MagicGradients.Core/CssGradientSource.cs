@@ -1,18 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using MagicGradients.Parser;
+using System.Collections.Generic;
 
-namespace MagicGradients.Parser
+namespace MagicGradients
 {
-    public class CssGradientParserSource : IGradientSource
+    public class CssGradientSource : IGradientSource
     {
         private readonly CssGradientParser _parser = new();
         private List<IGradient> _gradients;
 
-        public CssGradientParserSource()
+        public CssGradientSource()
         {
             _gradients = new List<IGradient>();
         }
 
-        public CssGradientParserSource(string css)
+        public CssGradientSource(string css)
         {
             Parse(css);
         }
