@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+	<MagicGradients.GradientView 
+		android:id="@+id/magicRainbow"
+		app:gradientSource="linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)"
+		app:gradientSize="120px"
+		app:gradientRepeat="repeat"
+		android:layout_width="match_parent"
+		android:layout_height="160dp"
+		android:layout_marginBottom="5dp"/>
 	<MagicGradients.GradientView 
 		android:id="@+id/magicBurst"
 		android:layout_width="match_parent"
@@ -10,11 +20,6 @@
 		android:layout_marginBottom="5dp"/>
 	<MagicGradients.GradientView 
 		android:id="@+id/magicAngular"
-		android:layout_width="match_parent"
-		android:layout_height="160dp"
-		android:layout_marginBottom="5dp"/>
-	<MagicGradients.GradientView 
-		android:id="@+id/magicRainbow"
 		android:layout_width="match_parent"
 		android:layout_height="160dp"
 		android:layout_marginBottom="5dp"/>
