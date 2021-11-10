@@ -128,7 +128,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\MagicGradients.Forms\MagicGradients.Forms.csproj">
+    <ProjectReference Include="..\..\..\src\MagicGradients.Forms\MagicGradients.Forms.csproj">
       <Project>{17e51d17-392e-476e-8bd4-7606624acfae}</Project>
       <Name>MagicGradients.Forms</Name>
     </ProjectReference>

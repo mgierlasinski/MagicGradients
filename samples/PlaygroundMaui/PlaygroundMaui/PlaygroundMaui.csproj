@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MagicGradients.Forms\MagicGradients.Forms.csproj" />
-    <ProjectReference Include="..\..\MagicGradients.Forms.Skia\MagicGradients.Forms.Skia.csproj" />
-    <ProjectReference Include="..\..\MagicGradients.Forms.SkiaViews\MagicGradients.Forms.SkiaViews.csproj" />
-    <ProjectReference Include="..\..\Playground\Playground.Data\Playground.Data.csproj" />
+    <ProjectReference Include="..\..\..\src\MagicGradients.Forms\MagicGradients.Forms.csproj" />
+    <ProjectReference Include="..\..\..\src\MagicGradients.Forms.Skia\MagicGradients.Forms.Skia.csproj" />
+    <ProjectReference Include="..\..\..\src\MagicGradients.Forms.SkiaViews\MagicGradients.Forms.SkiaViews.csproj" />
+    <ProjectReference Include="..\..\..\Playground\Playground.Data\Playground.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

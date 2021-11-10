@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "MagicGradients.Core\MagicGradients.Core.csproj", "{5DF75674-BB19-4171-B572-24EFE4B3B6C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "src\MagicGradients.Core\MagicGradients.Core.csproj", "{5DF75674-BB19-4171-B572-24EFE4B3B6C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Native", "MagicGradients.Native\MagicGradients.Native.csproj", "{6190CB69-1520-4E9A-95CB-F2A558C78A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Native", "src\MagicGradients.Native\MagicGradients.Native.csproj", "{6190CB69-1520-4E9A-95CB-F2A558C78A6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientsApp.Android", "samples\GradientsApp\GradientsApp.Android\GradientsApp.Android.csproj", "{8C226E64-68D8-4FF3-A13B-E7D3754605F5}"
 EndProject

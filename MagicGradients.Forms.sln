@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundMaui.Android", "PlaygroundMaui\PlaygroundMaui.Android\PlaygroundMaui.Android.csproj", "{8DA67C42-A32D-44A9-B5EF-F695799EA762}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundMaui.Android", "samples\PlaygroundMaui\PlaygroundMaui.Android\PlaygroundMaui.Android.csproj", "{8DA67C42-A32D-44A9-B5EF-F695799EA762}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundMaui.iOS", "PlaygroundMaui\PlaygroundMaui.iOS\PlaygroundMaui.iOS.csproj", "{7F964273-647E-4C04-94DE-32DA3678CBAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundMaui.iOS", "samples\PlaygroundMaui\PlaygroundMaui.iOS\PlaygroundMaui.iOS.csproj", "{7F964273-647E-4C04-94DE-32DA3678CBAF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundMaui", "PlaygroundMaui\PlaygroundMaui\PlaygroundMaui.csproj", "{DFB31BC2-033C-423F-A585-D92C1D2CFFDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundMaui", "samples\PlaygroundMaui\PlaygroundMaui\PlaygroundMaui.csproj", "{DFB31BC2-033C-423F-A585-D92C1D2CFFDB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Forms", "MagicGradients.Forms\MagicGradients.Forms.csproj", "{17E51D17-392E-476E-8BD4-7606624ACFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Forms", "src\MagicGradients.Forms\MagicGradients.Forms.csproj", "{17E51D17-392E-476E-8BD4-7606624ACFAE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Playground", "Playground", "{FA5BD101-83A8-45B9-ACAB-5F03DC75C241}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Forms.SkiaViews", "MagicGradients.Forms.SkiaViews\MagicGradients.Forms.SkiaViews.csproj", "{7A46EA7E-A0D3-4606-89CF-F6140C85CE80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Forms.SkiaViews", "src\MagicGradients.Forms.SkiaViews\MagicGradients.Forms.SkiaViews.csproj", "{7A46EA7E-A0D3-4606-89CF-F6140C85CE80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Forms.Skia", "MagicGradients.Forms.Skia\MagicGradients.Forms.Skia.csproj", "{7A007E7D-11CF-4754-84C4-ED78D7B647F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Forms.Skia", "src\MagicGradients.Forms.Skia\MagicGradients.Forms.Skia.csproj", "{7A007E7D-11CF-4754-84C4-ED78D7B647F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "MagicGradients.Core\MagicGradients.Core.csproj", "{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "src\MagicGradients.Core\MagicGradients.Core.csproj", "{E10CE69B-172A-4B1F-B4C2-70ABC14A4B8D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Data", "Playground\Playground.Data\Playground.Data.csproj", "{1E372DD0-5F01-44BB-BDFA-03719AE579DF}"
 EndProject

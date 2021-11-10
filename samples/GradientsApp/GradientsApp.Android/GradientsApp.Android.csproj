@@ -105,11 +105,11 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MagicGradients.Core\MagicGradients.Core.csproj">
+    <ProjectReference Include="..\..\..\src\MagicGradients.Core\MagicGradients.Core.csproj">
       <Project>{5df75674-bb19-4171-b572-24efe4b3b6c4}</Project>
       <Name>MagicGradients.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\MagicGradients.Native\MagicGradients.Native.csproj">
+    <ProjectReference Include="..\..\..\src\MagicGradients.Native\MagicGradients.Native.csproj">
       <Project>{6190cb69-1520-4e9a-95cb-f2a558c78a6a}</Project>
       <Name>MagicGradients.Native</Name>
     </ProjectReference>

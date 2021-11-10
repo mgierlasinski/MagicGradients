@@ -128,7 +128,7 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MagicGradients.Native\MagicGradients.Native.csproj">
+    <ProjectReference Include="..\..\..\src\MagicGradients.Native\MagicGradients.Native.csproj">
       <Project>{6190cb69-1520-4e9a-95cb-f2a558c78a6a}</Project>
       <Name>MagicGradients.Native</Name>
     </ProjectReference>
