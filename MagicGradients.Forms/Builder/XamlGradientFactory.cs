@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace MagicGradients.Builder
 {
-    public class GradientFactory : IGradientFactory
+    public class XamlGradientFactory : IGradientFactory
     {
         public ILinearGradient Construct(LinearGradientBuilder builder)
         {

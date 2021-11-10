@@ -16,14 +16,14 @@
         <StackLayout Spacing="5">
             <!-- Css Gradient Source  -->
             <form:GradientView HeightRequest="160">
-                <magic:CssGradientSource>
+                <magic:CssGradient>
                     <![CDATA[
                         linear-gradient(242deg, red, green, orange)
                     ]]>
-                </magic:CssGradientSource>
+                </magic:CssGradient>
             </form:GradientView>
             <form:GradientView HeightRequest="160">
-                <magic:CssGradientSource Stylesheet="{Binding CssGradient}" />
+                <magic:CssGradient Stylesheet="{Binding CssGradient}" />
             </form:GradientView>
             <!-- Repeating -->
             <skiv:GradientView HeightRequest="160">

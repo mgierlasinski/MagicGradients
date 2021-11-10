@@ -19,6 +19,8 @@ namespace MagicGradients.Forms
         public static readonly BindableProperty GradientRepeatProperty = GradientControl.GradientRepeatProperty;
         public static readonly BindableProperty MaskProperty = GradientControl.MaskProperty;
 
+        public double ViewWidth => Width;
+
         public IGradientSource GradientSource
         {
             get => (IGradientSource)GetValue(GradientSourceProperty);

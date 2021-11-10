@@ -29,7 +29,7 @@ namespace MagicGradients.Drawing
                 return;
 
             var context = new DrawContext(canvas, dirtyRect);
-            context.Measure(_control.GradientSize, _control.Width);
+            context.Measure(_control.GradientSize, _control.ViewWidth);
 
             foreach (var gradient in _control.GradientSource.GetGradients())
             {

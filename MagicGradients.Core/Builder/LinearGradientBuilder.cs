@@ -1,11 +1,13 @@
-﻿namespace MagicGradients.Builder
+﻿using System.Collections.Generic;
+
+namespace MagicGradients.Builder
 {
     public class LinearGradientBuilder : StopsBuilder<LinearGradientBuilder>, IChildBuilder
     {
         protected override LinearGradientBuilder Instance => this;
 
-        internal double Angle { get; set; }
-        internal bool IsRepeating { get; set; }
+        public double Angle { get; internal set; }
+        public bool IsRepeating { get; internal set; }
 
         public LinearGradientBuilder()
         {
@@ -25,9 +27,9 @@
             return this;
         }
 
-        public IGradient Construct()
+        public void AddConstructed(List<IGradient> gradients)
         {
-            return Factory.Construct(this);
+            gradients.Add(Factory.Construct(this));
         }
     }
 }

@@ -7,12 +7,10 @@ namespace MagicGradients.Parser
 {
     public class CssGradientParser
     {
-        private readonly IGradientFactory _factory;
         private readonly ITokenDefinition[] _definitions;
 
-        public CssGradientParser(IGradientFactory factory)
+        public CssGradientParser()
         {
-            _factory = factory;
             _definitions = new ITokenDefinition[]
             {
                 new LinearGradientDefinition(),
@@ -23,9 +21,9 @@ namespace MagicGradients.Parser
             };
         }
         
-        public IEnumerable<IGradient> Parse(string css)
+        public List<IGradient> Parse(string css)
         {
-            var builder = new GradientBuilder(_factory);
+            var builder = new GradientBuilder();
 
             if (string.IsNullOrWhiteSpace(css))
                 return builder.Build();
@@ -42,7 +40,7 @@ namespace MagicGradients.Parser
                 reader.MoveNext();
             }
 
-            return builder.Build().Reverse();
+            return builder.BuildReversed();
         }
     }
 }

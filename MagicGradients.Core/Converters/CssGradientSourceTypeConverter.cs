@@ -1,5 +1,4 @@
-﻿using MagicGradients.Parser;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Globalization;
 
@@ -17,7 +16,7 @@ namespace MagicGradients.Converters
             if (string.IsNullOrEmpty(valueStr))
                 throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(IGradientSource)}");
 
-            return new CssGradientParserSource(valueStr);
+            return new CssGradientSource(valueStr);
         }
     }
 }
