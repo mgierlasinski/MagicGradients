@@ -1,11 +1,11 @@
-﻿using MagicGradients;
+﻿using GradientsApp.Infrastructure;
+using MagicGradients;
 using MagicGradients.Builder;
-using MagicGradients.Masks;
 using Microsoft.Maui.Graphics;
 
 namespace GradientsApp.ViewModels
 {
-    public class GradientsViewModel
+    public class LinearViewModel : INavigationAware<string>
     {
         public IGradientSource LinearGradient { get; }
         public IGradientSource Rainbow { get; }
@@ -13,9 +13,7 @@ namespace GradientsApp.ViewModels
         public IGradientSource Angular { get; }
         public IGradientSource Diamonds { get; }
 
-        public IPathMask StarMask { get; }
-
-        public GradientsViewModel()
+        public LinearViewModel()
         {
             LinearGradient = new GradientBuilder()
                 .AddLinearGradient(g => g
@@ -34,12 +32,11 @@ namespace GradientsApp.ViewModels
             Diamonds = new GradientBuilder()
                 .AddCssGradient("linear-gradient(45deg, rgba(22, 31, 43, 0.5) 0%, rgba(22, 31, 43, 0.5) 12.5%,rgba(53, 28, 54, 0.5) 12.5%, rgba(53, 28, 54, 0.5) 25%,rgba(83, 25, 65, 0.5) 25%, rgba(83, 25, 65, 0.5) 37.5%,rgba(114, 22, 76, 0.5) 37.5%, rgba(114, 22, 76, 0.5) 50%,rgba(144, 20, 86, 0.5) 50%, rgba(144, 20, 86, 0.5) 62.5%,rgba(175, 17, 97, 0.5) 62.5%, rgba(175, 17, 97, 0.5) 75%,rgba(205, 14, 108, 0.5) 75%, rgba(205, 14, 108, 0.5) 87.5%,rgba(236, 11, 119, 0.5) 87.5%, rgba(236, 11, 119, 0.5) 100%),linear-gradient(135deg, rgb(188, 0, 159) 0%, rgb(188, 0, 159) 12.5%,rgb(173, 4, 150) 12.5%, rgb(173, 4, 150) 25%,rgb(158, 7, 141) 25%, rgb(158, 7, 141) 37.5%,rgb(143, 11, 132) 37.5%, rgb(143, 11, 132) 50%,rgb(129, 15, 124) 50%, rgb(129, 15, 124) 62.5%,rgb(114, 19, 115) 62.5%, rgb(114, 19, 115) 75%,rgb(99, 22, 106) 75%, rgb(99, 22, 106) 87.5%,rgb(84, 26, 97) 87.5%, rgb(84, 26, 97) 100%)")
                 .BuildSource();
+        }
 
-            StarMask = new PathMask
-            {
-                Data = "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z",
-                Stretch = Stretch.AspectFit
-            };
+        public void Prepare(string parameter)
+        {
+            
         }
     }
 }

@@ -61,10 +61,15 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\IBindableFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\GradientsFragment.cs" />
+    <Compile Include="Infrastructure\IFragmentLoader.cs" />
+    <Compile Include="Infrastructure\NavigationService.cs" />
+    <Compile Include="Infrastructure\AppFragment.cs" />
+    <Compile Include="Views\LinearFragment.cs" />
+    <Compile Include="Views\HomeFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -120,6 +125,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\gradients_fragment.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\home_fragment.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
