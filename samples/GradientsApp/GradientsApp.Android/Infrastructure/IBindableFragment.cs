@@ -1,4 +1,6 @@
-﻿namespace GradientsApp.Android.Infrastructure
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace GradientsApp.Android.Infrastructure
 {
     public interface IBindableFragment
     {
@@ -12,7 +14,7 @@
 
         public BindableFragment(int layoutId) : base(layoutId)
         {
-            ViewModel = AppSetup.IoC.GetInstance<TViewModel>();
+            ViewModel = Ioc.Default.GetService<TViewModel>();
         }
     }
 }

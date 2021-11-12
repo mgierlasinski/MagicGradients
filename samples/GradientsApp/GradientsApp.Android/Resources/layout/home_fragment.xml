@@ -7,5 +7,15 @@
 	    android:id="@+id/home_linear"
 	    android:text="Linear"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp" />
+    <Button
+	    android:id="@+id/home_gallery"
+	    android:text="Gallery"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp" />
 </LinearLayout>

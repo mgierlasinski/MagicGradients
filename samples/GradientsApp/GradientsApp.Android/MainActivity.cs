@@ -19,7 +19,7 @@ namespace GradientsApp.Android
             
             SetContentView(Resource.Layout.activity_main);
 
-            new App().Run();
+            new App().ConfigureAndRun();
             LoadFragment(new HomeFragment());
         }
         

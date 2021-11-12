@@ -17,8 +17,11 @@ namespace GradientsApp.Android.Views
         {
             base.OnViewCreated(view, savedInstanceState);
 
-            var button = view.FindViewById<Button>(Resource.Id.home_linear);
-            button.Click += (sender, args) => ViewModel.LinearCommand.Execute(null);
+            var linear = view.FindViewById<Button>(Resource.Id.home_linear);
+            linear.Click += (sender, args) => ViewModel.LinearCommand.Execute(null);
+
+            var gallery = view.FindViewById<Button>(Resource.Id.home_gallery);
+            gallery.Click += (sender, args) => ViewModel.GalleryCommand.Execute(null);
         }
     }
 }

@@ -2,27 +2,29 @@
 using GradientsApp.Android.Views;
 using GradientsApp.Infrastructure;
 using MagicGradients;
-using SimpleInjector;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GradientsApp.Android
 {
-    public class App
+    public class App : AppSetup
     {
-        public void Run()
+        protected override void Configure()
         {
             GlobalSetup.Current.UseNativeGradients();
-
-            ConfigureServices(AppSetup.IoC);
-
-            AppSetup.ConfigureAndRun();
         }
-        
-        private void ConfigureServices(Container ioc)
+
+        protected override void ConfigureServices(IServiceCollection services)
         {
             var navigation = new NavigationService();
-            navigation.RegisterRoute("Linear", typeof(LinearFragment));
+            SetupRoutes(navigation);
 
-            ioc.RegisterInstance<INavigationService>(navigation);
+            services.AddSingleton<INavigationService>(navigation);
+        }
+        
+        private void SetupRoutes(INavigationService navigation)
+        {
+            navigation.RegisterRoute(AppRoutes.Linear, typeof(LinearFragment));
+            navigation.RegisterRoute(AppRoutes.Categories, typeof(CategoriesFragment));
         }
     }
 }

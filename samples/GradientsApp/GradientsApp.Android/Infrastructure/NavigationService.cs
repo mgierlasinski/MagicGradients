@@ -19,6 +19,10 @@ namespace GradientsApp.Android.Infrastructure
             if (_routes.TryGetValue(route, out var type))
             {
                 var fragment = CreateInstance(type);
+
+                if (fragment is IBindableFragment { BindingContext: INavigationAware vm }) 
+                    vm.Prepare();
+
                 FragmentLoader.LoadFragment(fragment);
             }
 
@@ -31,9 +35,13 @@ namespace GradientsApp.Android.Infrastructure
             {
                 var fragment = CreateInstance(type);
 
-                if (fragment is IBindableFragment {BindingContext: INavigationAware<TParameter> vm})
+                if (fragment is IBindableFragment frag)
                 {
-                    vm.Prepare(parameter);
+                    if(frag.BindingContext is INavigationAware vm1)
+                        vm1.Prepare();
+
+                    if (frag.BindingContext is INavigationAware<TParameter> vm2)
+                        vm2.Prepare(parameter);
                 }
 
                 FragmentLoader.LoadFragment(fragment);

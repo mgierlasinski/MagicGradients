@@ -1,48 +1,70 @@
 ﻿using GradientsApp.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 using Playground.Data.Infrastructure;
 using Playground.Data.Repositories;
-using SimpleInjector;
+using System;
 
 namespace GradientsApp
 {
-    public static class AppSetup
+    public class AppSetup
     {
-        public static Container IoC { get; } = new Container();
-
-        public static void ConfigureAndRun()
+        public void ConfigureAndRun()
         {
-            RegisterTypes();
-            RegisterViewModels();
+            Configure();
+
+            var services = new ServiceCollection();
+
+            RegisterTypes(services);
+            RegisterViewModels(services);
+            ConfigureServices(services);
+
+            Ioc.Default = services.BuildServiceProvider();
+
             InitializeDatabase();
         }
 
-        public static void RegisterTypes()
+        private void RegisterTypes(IServiceCollection services)
         {
-            IoC.Register<IDatabaseProvider, DatabaseProvider>();
-            IoC.Register<IDatabaseUpdater, DatabaseUpdater>();
-
-            IoC.Register<IDocumentRepository, DocumentRepository>();
-            IoC.Register<IGradientRepository, GradientRepository>();
-            IoC.Register<ICategoryRepository, CategoryRepository>();
+            services.AddSingleton<IDatabaseProvider, DatabaseProvider>();
+            services.AddSingleton<IDatabaseUpdater, DatabaseUpdater>();
+            services.AddSingleton<IDocumentRepository, DocumentRepository>();
+            services.AddSingleton<IGradientRepository, GradientRepository>();
+            services.AddSingleton<ICategoryRepository, CategoryRepository>();
         }
 
-        public static void RegisterViewModels()
+        private void RegisterViewModels(IServiceCollection services)
         {
-            IoC.Register<HomeViewModel>();
-            IoC.Register<LinearViewModel>();
+            services.AddTransient<HomeViewModel>();
+            services.AddTransient<LinearViewModel>();
+            services.AddTransient<CategoriesViewModel>();
         }
 
-        public static void InitializeDatabase()
+        private void InitializeDatabase()
         {
-            IoC.GetInstance<IDocumentRepository>().SetupMapper();
+            Ioc.Default.GetService<IDocumentRepository>()?.SetupMapper();
 
             var repositories = new ICanUpdateMyself[]
             {
-                IoC.GetInstance<IGradientRepository>(),
-                IoC.GetInstance<ICategoryRepository>()
+                Ioc.Default.GetService<IGradientRepository>(),
+                Ioc.Default.GetService<ICategoryRepository>()
             };
 
-            IoC.GetInstance<IDatabaseUpdater>().RunUpdate(repositories);
+            Ioc.Default.GetService<IDatabaseUpdater>()?.RunUpdate(repositories);
         }
+
+        protected virtual void Configure()
+        {
+
+        }
+
+        protected virtual void ConfigureServices(IServiceCollection services)
+        {
+
+        }
+    }
+
+    public static class Ioc
+    {
+        public static IServiceProvider Default { get; internal set; }
     }
 }

@@ -9,7 +9,7 @@ namespace GradientsApp.Android.Views
     public class LinearFragment : BindableFragment<LinearViewModel>
     {
         public LinearFragment() 
-            : base(Resource.Layout.gradients_fragment)
+            : base(Resource.Layout.linear_fragment)
         {
         }
         
