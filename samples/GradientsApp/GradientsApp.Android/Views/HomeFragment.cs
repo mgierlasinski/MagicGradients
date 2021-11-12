@@ -3,20 +3,14 @@ using Android.Views;
 using Android.Widget;
 using GradientsApp.Android.Infrastructure;
 using GradientsApp.ViewModels;
-using Xamarin.Essentials;
 
 namespace GradientsApp.Android.Views
 {
-    public class HomeFragment : AppFragment, IBindableFragment<HomeViewModel>
+    public class HomeFragment : BindableFragment<HomeViewModel>
     {
-        public object BindingContext => ViewModel;
-        public HomeViewModel ViewModel { get; }
-        
         public HomeFragment() 
             : base(Resource.Layout.home_fragment)
         {
-            var navigationService = (Platform.CurrentActivity as IFragmentLoader)?.Navigation;
-            ViewModel = new HomeViewModel(navigationService);
         }
         
         public override void OnViewCreated(View view, Bundle savedInstanceState)

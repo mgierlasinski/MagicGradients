@@ -2,26 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Fragment = AndroidX.Fragment.App.Fragment;
 
 namespace GradientsApp.Android.Infrastructure
 {
     public class NavigationService : INavigationService
     {
-        private readonly IFragmentLoader _fragmentLoader;
         private readonly Dictionary<string, Type> _routes = new Dictionary<string, Type>();
-        
-        public NavigationService(IFragmentLoader fragmentLoader)
-        {
-            _fragmentLoader = fragmentLoader;
-        }
 
+        private IFragmentLoader _fragmentLoader;
+        protected IFragmentLoader FragmentLoader => _fragmentLoader ??= Platform.CurrentActivity as IFragmentLoader;
+        
         public Task NavigateTo(string route)
         {
             if (_routes.TryGetValue(route, out var type))
             {
                 var fragment = CreateInstance(type);
-                _fragmentLoader.LoadFragment(fragment);
+                FragmentLoader.LoadFragment(fragment);
             }
 
             return Task.CompletedTask;
@@ -38,7 +36,7 @@ namespace GradientsApp.Android.Infrastructure
                     vm.Prepare(parameter);
                 }
 
-                _fragmentLoader.LoadFragment(fragment);
+                FragmentLoader.LoadFragment(fragment);
             }
 
             return Task.CompletedTask;

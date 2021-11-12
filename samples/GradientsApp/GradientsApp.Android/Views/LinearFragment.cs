@@ -6,15 +6,11 @@ using MagicGradients;
 
 namespace GradientsApp.Android.Views
 {
-    public class LinearFragment : AppFragment, IBindableFragment<LinearViewModel>
+    public class LinearFragment : BindableFragment<LinearViewModel>
     {
-        public object BindingContext => ViewModel;
-        public LinearViewModel ViewModel { get; }
-
         public LinearFragment() 
             : base(Resource.Layout.gradients_fragment)
         {
-            ViewModel = new LinearViewModel();
         }
         
         public override void OnViewCreated(View view, Bundle savedInstanceState)

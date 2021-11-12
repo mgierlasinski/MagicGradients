@@ -6,9 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="SimpleInjector" Version="5.3.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Playground\Playground.Data\Playground.Data.csproj" />
     <ProjectReference Include="..\..\..\src\MagicGradients.Core\MagicGradients.Core.csproj" />
   </ItemGroup>
 
