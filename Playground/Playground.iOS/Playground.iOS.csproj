@@ -116,9 +116,6 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splash-1.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splash-2.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splash.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splashscreen-1.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splashscreen-2.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splashscreen.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -147,8 +144,5 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\LaunchScreen.storyboard" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="LaunchScreen.storyboard" />
   </ItemGroup>
 </Project>

@@ -72,9 +72,12 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\mg_splash.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\mg_splash.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\mg_splash.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\mg_splash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\mg_splash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\mg_splash.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mg_splash.png" />
     <AndroidResource Include="Resources\drawable\splash_screen.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
@@ -97,12 +100,6 @@
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
     <AndroidResource Include="Resources\drawable\tab_about.png" />
     <AndroidResource Include="Resources\drawable\tab_feed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\drawable-hdpi\" />
-    <Folder Include="Resources\drawable-xhdpi\" />
-    <Folder Include="Resources\drawable-xxhdpi\" />
-    <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground\Playground.csproj">

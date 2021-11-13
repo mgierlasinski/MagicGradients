@@ -4,4 +4,5 @@
                 android:gravity="fill"
                 android:src="@drawable/mg_splash"/>
     </item>
+    <item android:drawable="@android:color/white"/>
 </layer-list>

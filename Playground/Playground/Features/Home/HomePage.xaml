@@ -8,6 +8,7 @@
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              x:Class="Playground.Features.Home.HomePage"
              Title="Home"
+             BackgroundColor="DodgerBlue"
              vm:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.Resources>
         <StyleSheet Source="/Features/Home/HomePage.css" />
@@ -16,7 +17,8 @@
             <Setter Property="TextColor" Value="White" />
         </Style>
     </ContentPage.Resources>
-    <Grid RowDefinitions="150,*">
+    <Grid RowDefinitions="150,*"
+          BackgroundColor="White">
         <magic:GradientView VerticalOptions="Fill" StyleId="banner" />
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Label Text="{x:Static ic:IcoMoonGlyph.MagicWand}" 
