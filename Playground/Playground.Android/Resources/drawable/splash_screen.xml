@@ -1,8 +1,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white"/>
     <item>
         <bitmap
-                android:gravity="fill"
-                android:src="@drawable/mg_splash"/>
+                android:gravity="center"
+                android:src="@drawable/mg"/>
     </item>
-    <item android:drawable="@android:color/white"/>
 </layer-list>

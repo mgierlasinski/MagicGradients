@@ -20,6 +20,7 @@
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
     <item name="windowActionModeOverlay">true</item>
+    <item name="android:windowBackground">@drawable/splash_screen</item>
 
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
     <item name="android:windowFullscreen">true</item>
@@ -27,13 +28,5 @@
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF4081</item>
-  </style>
-
-  <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
-    <item name="android:windowBackground">@drawable/splash_screen</item>
-    <item name="android:windowNoTitle">true</item>
-    <item name="android:windowFullscreen">true</item>
-    <item name="android:windowContentOverlay">@null</item>
-    <item name="android:windowActionBar">true</item>
   </style>
 </resources>
