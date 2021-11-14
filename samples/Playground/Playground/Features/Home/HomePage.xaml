@@ -16,8 +16,7 @@
             <Setter Property="TextColor" Value="White" />
         </Style>
     </ContentPage.Resources>
-    <Grid RowDefinitions="150,*"
-          BackgroundColor="White">
+    <Grid RowDefinitions="150,*">
         <magic:GradientView VerticalOptions="Fill" StyleId="banner" />
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Label Text="{x:Static ic:IcoMoonGlyph.MagicWand}" 

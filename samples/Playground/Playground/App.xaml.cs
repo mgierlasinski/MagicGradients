@@ -7,9 +7,8 @@ namespace Playground
         public App()
         {
             InitializeComponent();
-#if WINDOWS_UWP
+
             Device.SetFlags(new[] { "Shell_UWP_Experimental" });
-#endif
 
             MagicGradients.Toolkit.Initializer.Init();
             Sharpnado.Shades.Initializer.Initialize(false);

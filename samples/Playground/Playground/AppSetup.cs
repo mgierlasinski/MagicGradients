@@ -18,7 +18,7 @@ namespace Playground
 {
     public static class AppSetup
     {
-        public static Container IoC { get; } = new Container();
+        public static Container IoC { get; } = new Container { Options = { EnableAutoVerification = false }};
 
         public static void ConfigureAndRun()
         {
