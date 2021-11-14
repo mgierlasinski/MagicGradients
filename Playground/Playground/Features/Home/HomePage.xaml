@@ -8,7 +8,6 @@
              xmlns:ic="clr-namespace:Playground.Resources.Fonts;assembly=Playground"
              x:Class="Playground.Features.Home.HomePage"
              Title="Home"
-             BackgroundColor="DodgerBlue"
              vm:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.Resources>
         <StyleSheet Source="/Features/Home/HomePage.css" />
