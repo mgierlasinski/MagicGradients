@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\LICENSE" Pack="True" PackagePath="\" />
-    <None Include="..\Assets\icon.png" Pack="True" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="True" PackagePath="\" />
+    <None Include="..\..\Assets\icon.png" Pack="True" PackagePath="\" />
   </ItemGroup>
 	
   <ItemGroup>
