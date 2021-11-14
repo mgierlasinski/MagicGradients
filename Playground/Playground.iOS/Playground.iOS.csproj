@@ -109,7 +109,13 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splash-1.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splash-2.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\mg_splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -135,5 +141,8 @@
       <Project>{05EBBB6C-3B45-498C-B95E-0755F9FCA6A0}</Project>
       <Name>Playground</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
 </Project>

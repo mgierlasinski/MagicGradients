@@ -19,10 +19,11 @@ namespace Playground.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Xamarin.Forms.Forms.Init();
+            
             Sharpnado.Tabs.iOS.Preserver.Preserve();
             Sharpnado.Shades.iOS.iOSShadowsRenderer.Initialize();
             ColorPicker.iOS.ColorPickerEffects.Init();
-
+            
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

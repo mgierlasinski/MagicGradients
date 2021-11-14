@@ -133,7 +133,7 @@
       <Name>MagicGradients.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlaygroundMaui\PlaygroundMaui.csproj">
-      <Project>{03F4D97F-60A6-48F0-B66D-8C26664740BE}</Project>
+      <Project>{DFB31BC2-033C-423F-A585-D92C1D2CFFDB}</Project>
       <Name>PlaygroundMaui</Name>
     </ProjectReference>
   </ItemGroup>
