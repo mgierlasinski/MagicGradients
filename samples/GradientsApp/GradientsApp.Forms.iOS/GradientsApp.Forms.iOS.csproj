@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7F964273-647E-4C04-94DE-32DA3678CBAF}</ProjectGuid>
+    <ProjectGuid>{33B6D78C-44B3-4BF3-B1FD-51575AFB6477}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -132,9 +132,9 @@
       <Project>{17e51d17-392e-476e-8bd4-7606624acfae}</Project>
       <Name>MagicGradients.Forms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PlaygroundMaui\PlaygroundMaui.csproj">
-      <Project>{03F4D97F-60A6-48F0-B66D-8C26664740BE}</Project>
-      <Name>PlaygroundMaui</Name>
+    <ProjectReference Include="..\GradientsApp.Forms\GradientsApp.Forms.csproj">
+      <Project>{574DBFDB-E7F6-4562-9E23-2B855D38D1C6}</Project>
+      <Name>GradientsApp.Forms</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

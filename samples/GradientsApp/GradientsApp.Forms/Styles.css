@@ -1,0 +1,18 @@
+﻿.RainbowGradient {
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.AngularGradient {
+    background: linear-gradient(57deg, rgba(20, 192, 104, 0.06) 0%, rgba(20, 192, 104, 0.06) 50%,rgba(74, 10, 186, 0.06) 50%, rgba(74, 10, 186, 0.06) 100%),linear-gradient(290deg, rgba(20, 189, 184, 0.06) 0%, rgba(20, 189, 184, 0.06) 50%,rgba(64, 140, 244, 0.06) 50%, rgba(64, 140, 244, 0.06) 100%),linear-gradient(72deg, rgba(97, 175, 116, 0.06) 0%, rgba(97, 175, 116, 0.06) 50%,rgba(224, 171, 147, 0.06) 50%, rgba(224, 171, 147, 0.06) 100%),linear-gradient(311deg, rgba(47, 111, 0, 0.06) 0%, rgba(47, 111, 0, 0.06) 50%,rgba(178, 245, 165, 0.06) 50%, rgba(178, 245, 165, 0.06) 100%),linear-gradient(36deg, rgba(10, 106, 119, 0.06) 0%, rgba(10, 106, 119, 0.06) 50%,rgba(66, 37, 33, 0.06) 50%, rgba(66, 37, 33, 0.06) 100%),linear-gradient(5deg, rgba(233, 224, 121, 0.06) 0%, rgba(233, 224, 121, 0.06) 50%,rgba(112, 50, 63, 0.06) 50%, rgba(112, 50, 63, 0.06) 100%),linear-gradient(175deg, rgba(114, 133, 55, 0.06) 0%, rgba(114, 133, 55, 0.06) 50%,rgba(207, 249, 136, 0.06) 50%, rgba(207, 249, 136, 0.06) 100%),linear-gradient(117deg, rgba(158, 101, 36, 0.06) 0%, rgba(158, 101, 36, 0.06) 50%,rgba(31, 120, 63, 0.06) 50%, rgba(31, 120, 63, 0.06) 100%),linear-gradient(226deg, rgb(64, 248, 4),rgb(20, 220, 101));
+}
+
+.FlexGrid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5;
+}
+
+.FlexGrid > ^VisualElement {
+    flex-basis: 50%;
+    margin: 5;
+}
