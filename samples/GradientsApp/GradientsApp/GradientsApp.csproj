@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Playground\Playground.Data\Playground.Data.csproj" />
+    <ProjectReference Include="..\..\Playground\Playground.Data\Playground.Data.csproj" />
     <ProjectReference Include="..\..\..\src\MagicGradients.Core\MagicGradients.Core.csproj" />
   </ItemGroup>
 

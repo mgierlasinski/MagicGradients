@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Playground\Playground.Data\Playground.Data.csproj" />
+    <ProjectReference Include="..\..\..\samples\Playground\Playground.Data\Playground.Data.csproj" />
     <ProjectReference Include="..\..\..\src\MagicGradients.Forms\MagicGradients.Forms.csproj" />
     <ProjectReference Include="..\..\..\src\MagicGradients.Forms.Skia\MagicGradients.Forms.Skia.csproj" />
     <ProjectReference Include="..\..\..\src\MagicGradients.Forms.SkiaViews\MagicGradients.Forms.SkiaViews.csproj" />

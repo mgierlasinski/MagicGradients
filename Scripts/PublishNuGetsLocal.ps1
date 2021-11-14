@@ -12,9 +12,9 @@
     }
 }
 
-$NuGetPath = '..\MagicGradients\bin\**\Release\*.nupkg'
+$NuGetPath = '..\src\MagicGradients\bin\**\Release\*.nupkg'
 
 Remove-Item $NuGetPath
-Build-Solution('..\MagicGradients\MagicGradients.csproj')
+Build-Solution('..\src\MagicGradients\MagicGradients.csproj')
 
 Get-ChildItem -Path $NuGetPath -Recurse | Copy-Item -Destination 'C:\Packages'
