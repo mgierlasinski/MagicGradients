@@ -1,43 +1,48 @@
-﻿using System;
+﻿using GradientsApp.Infrastructure;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace PlaygroundMaui.Infrastructure
+namespace GradientsApp.Forms.Infrastructure
 {
-    public interface INavigationService
-    {
-        Task NavigateTo(Type type);
-        Task NavigateTo<TPage, TParameter>(TParameter parameter);
-    }
-
     public class NavigationService : INavigationService
     {
-        private readonly Page _mainPage;
+        private readonly Dictionary<string, Type> _routes = new Dictionary<string, Type>();
+        private readonly NavigationViewFactory _viewFactory = new NavigationViewFactory();
 
-        public NavigationService(Page mainPage)
-        {
-            _mainPage = mainPage;
-        }
+        private Page _mainPage;
+        protected Page MainPage => _mainPage ??= Application.Current.MainPage;
 
-        public Task NavigateTo(Type type)
+        public Task NavigateTo(string route)
         {
-            var page = CreateInstance(type);
-            return _mainPage.Navigation.PushAsync(page);
-        }
-
-        public Task NavigateTo<TPage, TParameter>(TParameter parameter)
-        {
-            var page = CreateInstance(typeof(TPage));
-            if (page.BindingContext is INavigationAware<TParameter> navAware)
+            if (_routes.TryGetValue(route, out var type))
             {
-                navAware.Prepare(parameter);
+                var page = _viewFactory.CreateInstance<Page>(type);
+                _viewFactory.CallEvents(page.BindingContext);
+
+                return MainPage.Navigation.PushAsync(page);
             }
-            return _mainPage.Navigation.PushAsync(page);
+
+            return Task.CompletedTask;
         }
 
-        private Page CreateInstance(Type type)
+        public Task NavigateTo<TParameter>(string route, TParameter parameter)
         {
-            return (Page)Activator.CreateInstance(type);
+            if (_routes.TryGetValue(route, out var type))
+            {
+                var page = _viewFactory.CreateInstance<Page>(type);
+                _viewFactory.CallEvents(page.BindingContext, parameter);
+                
+                return MainPage.Navigation.PushAsync(page);
+            }
+
+            return Task.CompletedTask;
+        }
+
+        public void RegisterRoute(string route, Type type)
+        {
+            _routes.Add(route, type);
         }
     }
 }

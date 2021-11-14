@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:PlaygroundMaui.ViewModels;assembly=GradientsApp.Forms"
+             xmlns:viewModels="clr-namespace:GradientsApp.ViewModels;assembly=GradientsApp"
              xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
              xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
              xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
+             xmlns:i="clr-namespace:GradientsApp.Forms.Infrastructure;assembly=GradientsApp.Forms"
              x:Class="PlaygroundMaui.Pages.GradientPage"
              x:DataType="viewModels:GradientViewModel"
+             i:ViewModelLocator.AutoWireViewModel="true"
              Title="Gradient preview">
-    <ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
         <viewModels:GradientViewModel />
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
     <StackLayout>
         <Grid IsVisible="{Binding IsSkiaVisible}" VerticalOptions="FillAndExpand">
             <skiv:GradientView GradientSource="{Binding Source}" 

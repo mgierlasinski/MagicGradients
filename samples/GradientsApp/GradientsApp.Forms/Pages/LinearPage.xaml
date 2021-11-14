@@ -5,13 +5,15 @@
              xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
              xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
              xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
-             xmlns:viewModels="clr-namespace:PlaygroundMaui.ViewModels;assembly=GradientsApp.Forms"
+             xmlns:viewModels="clr-namespace:GradientsApp.ViewModels;assembly=GradientsApp"
+             xmlns:i="clr-namespace:GradientsApp.Forms.Infrastructure;assembly=GradientsApp.Forms"
              x:DataType="viewModels:LinearViewModel"
              x:Class="PlaygroundMaui.Pages.LinearPage"
-             Title="Linear Gradients">
-    <ContentPage.BindingContext>
+             Title="Linear Gradients"
+             i:ViewModelLocator.AutoWireViewModel="true">
+    <!--<ContentPage.BindingContext>
         <viewModels:LinearViewModel />
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
     <ScrollView>
         <StackLayout Spacing="5">
             <!-- Css Gradient Source  -->

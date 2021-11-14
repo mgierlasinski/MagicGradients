@@ -10,6 +10,7 @@ namespace GradientsApp.Android.Infrastructure
     public class NavigationService : INavigationService
     {
         private readonly Dictionary<string, Type> _routes = new Dictionary<string, Type>();
+        private readonly NavigationViewFactory _viewFactory = new NavigationViewFactory();
 
         private IFragmentLoader _fragmentLoader;
         protected IFragmentLoader FragmentLoader => _fragmentLoader ??= Platform.CurrentActivity as IFragmentLoader;
@@ -18,10 +19,10 @@ namespace GradientsApp.Android.Infrastructure
         {
             if (_routes.TryGetValue(route, out var type))
             {
-                var fragment = CreateInstance(type);
+                var fragment = _viewFactory.CreateInstance<Fragment>(type);
 
-                if (fragment is IBindableFragment { BindingContext: INavigationAware vm }) 
-                    vm.Prepare();
+                if (fragment is IBindableFragment bindable)
+                    _viewFactory.CallEvents(bindable.BindingContext);
 
                 FragmentLoader.LoadFragment(fragment);
             }
@@ -33,16 +34,10 @@ namespace GradientsApp.Android.Infrastructure
         {
             if (_routes.TryGetValue(route, out var type))
             {
-                var fragment = CreateInstance(type);
+                var fragment = _viewFactory.CreateInstance<Fragment>(type);
 
-                if (fragment is IBindableFragment frag)
-                {
-                    if(frag.BindingContext is INavigationAware vm1)
-                        vm1.Prepare();
-
-                    if (frag.BindingContext is INavigationAware<TParameter> vm2)
-                        vm2.Prepare(parameter);
-                }
+                if (fragment is IBindableFragment bindable)
+                    _viewFactory.CallEvents(bindable.BindingContext, parameter);
 
                 FragmentLoader.LoadFragment(fragment);
             }
@@ -53,11 +48,6 @@ namespace GradientsApp.Android.Infrastructure
         public void RegisterRoute(string route, Type type)
         {
             _routes.Add(route, type);
-        }
-
-        private Fragment CreateInstance(Type type)
-        {
-            return (Fragment)Activator.CreateInstance(type);
         }
     }
 }

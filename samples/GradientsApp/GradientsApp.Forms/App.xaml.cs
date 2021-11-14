@@ -1,23 +1,17 @@
-﻿using PlaygroundMaui.Infrastructure;
+﻿using GradientsApp.Forms;
 using PlaygroundMaui.Pages;
 using Xamarin.Forms;
 
 namespace PlaygroundMaui
 {
-    public partial class App : Application, INavigationHandler
+    public partial class App : Application
     {
-        public new static App Current { get; private set; }
-        public INavigationService Navigation { get; }
-
         public App()
         {
             InitializeComponent();
 
-            AppSetup.ConfigureAndRun();
-
-            MainPage = new NavigationPage(new MainPage());
-            Navigation = new NavigationService(MainPage);
-            Current = this;
+            MainPage = new NavigationPage(new HomePage());
+            new FormsApp().ConfigureAndRun();
         }
 
         protected override void OnStart()

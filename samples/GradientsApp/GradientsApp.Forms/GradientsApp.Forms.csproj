@@ -22,6 +22,13 @@
     <ProjectReference Include="..\..\..\src\MagicGradients.Forms\MagicGradients.Forms.csproj" />
     <ProjectReference Include="..\..\..\src\MagicGradients.Forms.Skia\MagicGradients.Forms.Skia.csproj" />
     <ProjectReference Include="..\..\..\src\MagicGradients.Forms.SkiaViews\MagicGradients.Forms.SkiaViews.csproj" />
+    <ProjectReference Include="..\GradientsApp\GradientsApp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

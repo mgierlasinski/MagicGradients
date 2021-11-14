@@ -49,6 +49,8 @@ namespace GradientsApp.ViewModels
                 Source = new CssGradientSource(x.Stylesheet),
                 Tag = x.Tag
             }).ToList();
+
+            OnPropertyChanged(nameof(Categories));
         }
     }
 }

@@ -1,27 +1,28 @@
-﻿using PlaygroundMaui.Infrastructure;
+﻿using GradientsApp;
+using GradientsApp.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PlaygroundMaui.Pages
 {
-    [ContentProperty(nameof(Type))]
-    public class NavigateExtension : IMarkupExtension<ICommand>
+    [ContentProperty(nameof(Route))]
+    public class NavigateExtension : Xamarin.Forms.Xaml.IMarkupExtension<ICommand>
     {
-        public Type Type { get; set; }
+        public string Route { get; set; }
 
         public ICommand ProvideValue(IServiceProvider serviceProvider) => new Command(NavigateToType);
-        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider) => ProvideValue(serviceProvider);
+        object Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue(IServiceProvider serviceProvider) => ProvideValue(serviceProvider);
 
         private void NavigateToType()
         {
-            if (Type == null)
+            if (Route == null)
             {
-                throw new ArgumentNullException(nameof(Type));
+                throw new ArgumentNullException(nameof(Route));
             }
 
-            (Application.Current as INavigationHandler)?.Navigation.NavigateTo(Type);
+            Ioc.Default.GetService<INavigationService>()?.NavigateTo(Route);
         }
     }
 }

@@ -1,17 +1,18 @@
-﻿using MagicGradients;
+﻿using GradientsApp.Infrastructure;
+using GradientsApp.Models;
+using MagicGradients;
 using MagicGradients.Converters;
+using MvvmHelpers;
 using Playground.Data.Infrastructure;
 using Playground.Data.Repositories;
-using PlaygroundMaui.Infrastructure;
-using PlaygroundMaui.Models;
-using PlaygroundMaui.Pages;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PlaygroundMaui.ViewModels
+namespace GradientsApp.ViewModels
 {
     public class GalleryViewModel : ObservableObject, INavigationAware<CategoryItem>
     {
+        private readonly INavigationService _navigationService;
         private readonly DimensionsTypeConverter _dimensionsConverter = new DimensionsTypeConverter();
 
         public string Name { get; private set; }
@@ -27,19 +28,27 @@ namespace PlaygroundMaui.ViewModels
         public GalleryItem SelectedItem
         {
             get => _selectedItem;
-            set => SetProperty(ref _selectedItem, value, () =>
+            set => SetProperty(ref _selectedItem, value, onChanged: () =>
             {
                 if (_selectedItem == null)
                     return;
 
-                App.Current.Navigation.NavigateTo<GradientPage, GalleryItem>(_selectedItem);
+                _navigationService.NavigateTo(AppRoutes.Gradient, _selectedItem);
             });
+        }
+
+        public GalleryViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
         }
 
         public void Prepare(CategoryItem parameter)
         {
             Name = parameter.Name;
             LoadGallery(parameter.Tag);
+
+            OnPropertyChanged(nameof(Name));
+            OnPropertyChanged(nameof(GalleryItems));
         }
 
         private void LoadGallery(string tag)

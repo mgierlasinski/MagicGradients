@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:PlaygroundMaui.Pages;assembly=GradientsApp.Forms"
              xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
-             x:Class="PlaygroundMaui.Pages.MainPage"
+             xmlns:core="clr-namespace:GradientsApp;assembly=GradientsApp"
+             x:Class="PlaygroundMaui.Pages.HomePage"
              NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Grid>
@@ -18,11 +19,11 @@
             </Label>
         </Grid>
         <StackLayout Margin="20">
-            <Button Text="Linear Gradients" Command="{pages:Navigate {x:Type pages:LinearPage}}" />
-            <Button Text="Radial Gradients" Command="{pages:Navigate {x:Type pages:RadialPage}}" />
-            <Button Text="Masks" Command="{pages:Navigate {x:Type pages:MasksPage}}" />
-            <Button Text="Animations" Command="{pages:Navigate {x:Type pages:AnimationsPage}}" />
-            <Button Text="Gallery" Command="{pages:Navigate {x:Type pages:CategoriesPage}}" />
+            <Button Text="Linear Gradients" Command="{pages:Navigate {x:Static core:AppRoutes.Linear}}" />
+            <Button Text="Radial Gradients" Command="{pages:Navigate {x:Static core:AppRoutes.Radial}}" />
+            <Button Text="Masks" Command="{pages:Navigate {x:Static core:AppRoutes.Masks}}" />
+            <Button Text="Animations" Command="{pages:Navigate {x:Static core:AppRoutes.Animations}}" />
+            <Button Text="Gallery" Command="{pages:Navigate {x:Static core:AppRoutes.Categories}}" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

@@ -1,10 +1,11 @@
-﻿using MagicGradients;
-using PlaygroundMaui.Infrastructure;
-using PlaygroundMaui.Models;
+﻿using GradientsApp.Infrastructure;
+using GradientsApp.Models;
+using MagicGradients;
+using MvvmHelpers;
+using MvvmHelpers.Commands;
 using System.Windows.Input;
-using Xamarin.Forms;
 
-namespace PlaygroundMaui.ViewModels
+namespace GradientsApp.ViewModels
 {
     public class GradientViewModel : ObservableObject, INavigationAware<GalleryItem>
     {
@@ -37,6 +38,9 @@ namespace PlaygroundMaui.ViewModels
         {
             Source = parameter.Source;
             Size = parameter.Size;
+
+            OnPropertyChanged(nameof(Source));
+            OnPropertyChanged(nameof(Size));
         }
 
         private void ShowTab(object parameter)
@@ -65,9 +69,9 @@ namespace PlaygroundMaui.ViewModels
                     break;
             }
 
-            RaisePropertyChanged(nameof(IsSkiaVisible));
-            RaisePropertyChanged(nameof(IsGraphicsSkiaVisible));
-            RaisePropertyChanged(nameof(IsGraphicsNativeVisible));
+            OnPropertyChanged(nameof(IsSkiaVisible));
+            OnPropertyChanged(nameof(IsGraphicsSkiaVisible));
+            OnPropertyChanged(nameof(IsGraphicsNativeVisible));
         }
     }
 }

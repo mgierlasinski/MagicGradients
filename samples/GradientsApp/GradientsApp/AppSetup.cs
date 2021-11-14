@@ -37,6 +37,8 @@ namespace GradientsApp
             services.AddTransient<HomeViewModel>();
             services.AddTransient<LinearViewModel>();
             services.AddTransient<CategoriesViewModel>();
+            services.AddTransient<GalleryViewModel>();
+            services.AddTransient<GradientViewModel>();
         }
 
         private void InitializeDatabase()
