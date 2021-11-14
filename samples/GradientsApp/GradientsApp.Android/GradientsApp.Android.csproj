@@ -69,7 +69,9 @@
     <Compile Include="Infrastructure\IFragmentLoader.cs" />
     <Compile Include="Infrastructure\NavigationService.cs" />
     <Compile Include="Infrastructure\AppFragment.cs" />
+    <Compile Include="Views\CategoriesAdapter.cs" />
     <Compile Include="Views\CategoriesFragment.cs" />
+    <Compile Include="Views\CategoryViewHolder.cs" />
     <Compile Include="Views\LinearFragment.cs" />
     <Compile Include="Views\HomeFragment.cs" />
   </ItemGroup>
@@ -140,6 +142,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\categories_fragment.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\category_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

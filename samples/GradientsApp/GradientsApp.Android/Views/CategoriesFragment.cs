@@ -1,4 +1,7 @@
-﻿using GradientsApp.Android.Infrastructure;
+﻿using Android.OS;
+using Android.Views;
+using AndroidX.RecyclerView.Widget;
+using GradientsApp.Android.Infrastructure;
 using GradientsApp.ViewModels;
 
 namespace GradientsApp.Android.Views
@@ -8,6 +11,12 @@ namespace GradientsApp.Android.Views
         public CategoriesFragment() 
             : base(Resource.Layout.categories_fragment)
         {
+        }
+
+        public override void OnViewCreated(View view, Bundle savedInstanceState)
+        {
+            var list = view.FindViewById<RecyclerView>(Resource.Id.categories_list);
+            list.SetAdapter(new CategoriesAdapter(ViewModel.Categories));
         }
     }
 }
