@@ -6,7 +6,7 @@
              xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
              xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
              xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
-             x:Class="PlaygroundMaui.Pages.MasksPage"
+             x:Class="GradientsApp.Forms.Pages.MasksPage"
              Title="Masks">
     <ScrollView>
         <StackLayout Spacing="5">

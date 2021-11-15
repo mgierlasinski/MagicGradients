@@ -1,4 +1,4 @@
-﻿namespace PlaygroundMaui.Pages
+﻿namespace GradientsApp.Forms.Pages
 {
     public partial class RadialPage
     {

@@ -1,7 +1,7 @@
 ﻿using GradientsApp.Forms.Infrastructure;
+using GradientsApp.Forms.Pages;
 using GradientsApp.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
-using PlaygroundMaui.Pages;
 
 namespace GradientsApp.Forms
 {

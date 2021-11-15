@@ -8,12 +8,9 @@
              xmlns:viewModels="clr-namespace:GradientsApp.ViewModels;assembly=GradientsApp"
              xmlns:i="clr-namespace:GradientsApp.Forms.Infrastructure;assembly=GradientsApp.Forms"
              x:DataType="viewModels:LinearViewModel"
-             x:Class="PlaygroundMaui.Pages.LinearPage"
-             Title="Linear Gradients"
-             i:ViewModelLocator.AutoWireViewModel="true">
-    <!--<ContentPage.BindingContext>
-        <viewModels:LinearViewModel />
-    </ContentPage.BindingContext>-->
+             x:Class="GradientsApp.Forms.Pages.LinearPage"
+             i:ViewModelLocator.AutoWireViewModel="true"
+             Title="Linear Gradients">
     <ScrollView>
         <StackLayout Spacing="5">
             <!-- Css Gradient Source  -->

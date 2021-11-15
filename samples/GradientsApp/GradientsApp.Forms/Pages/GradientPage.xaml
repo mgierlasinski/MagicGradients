@@ -6,13 +6,10 @@
              xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
              xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
              xmlns:i="clr-namespace:GradientsApp.Forms.Infrastructure;assembly=GradientsApp.Forms"
-             x:Class="PlaygroundMaui.Pages.GradientPage"
+             x:Class="GradientsApp.Forms.Pages.GradientPage"
              x:DataType="viewModels:GradientViewModel"
              i:ViewModelLocator.AutoWireViewModel="true"
              Title="Gradient preview">
-    <!--<ContentPage.BindingContext>
-        <viewModels:GradientViewModel />
-    </ContentPage.BindingContext>-->
     <StackLayout>
         <Grid IsVisible="{Binding IsSkiaVisible}" VerticalOptions="FillAndExpand">
             <skiv:GradientView GradientSource="{Binding Source}" 

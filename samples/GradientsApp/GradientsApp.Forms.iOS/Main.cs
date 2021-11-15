@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using UIKit;
 
-using Foundation;
-using UIKit;
-
-namespace PlaygroundMaui.iOS
+namespace GradientsApp.Forms.iOS
 {
     public class Application
     {

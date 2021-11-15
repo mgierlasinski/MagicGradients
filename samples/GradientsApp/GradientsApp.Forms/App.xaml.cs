@@ -1,8 +1,7 @@
-﻿using GradientsApp.Forms;
-using PlaygroundMaui.Pages;
+﻿using GradientsApp.Forms.Pages;
 using Xamarin.Forms;
 
-namespace PlaygroundMaui
+namespace GradientsApp.Forms
 {
     public partial class App : Application
     {

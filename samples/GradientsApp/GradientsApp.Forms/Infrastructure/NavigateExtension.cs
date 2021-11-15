@@ -1,11 +1,10 @@
-﻿using GradientsApp;
-using GradientsApp.Infrastructure;
+﻿using GradientsApp.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace PlaygroundMaui.Pages
+namespace GradientsApp.Forms.Infrastructure
 {
     [ContentProperty(nameof(Route))]
     public class NavigateExtension : Xamarin.Forms.Xaml.IMarkupExtension<ICommand>

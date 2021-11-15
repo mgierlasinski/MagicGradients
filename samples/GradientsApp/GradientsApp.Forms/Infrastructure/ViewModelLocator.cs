@@ -31,7 +31,6 @@ namespace GradientsApp.Forms.Infrastructure
 
             var viewName = viewType.FullName
                 .Replace("GradientsApp.Forms", "GradientsApp")
-                .Replace("PlaygroundMaui", "GradientsApp")
                 .Replace("Pages", "ViewModels")
                 .Replace("Page", "ViewModel");
 

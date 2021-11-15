@@ -5,7 +5,7 @@
              xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
              xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
              xmlns:anim="clr-namespace:MagicGradients.Animation;assembly=MagicGradients.Forms"
-             x:Class="PlaygroundMaui.Pages.AnimationsPage"
+             x:Class="GradientsApp.Forms.Pages.AnimationsPage"
              Title="Animations">
     <ScrollView>
         <StackLayout Spacing="5">

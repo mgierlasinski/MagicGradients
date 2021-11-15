@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:pages="clr-namespace:PlaygroundMaui.Pages;assembly=GradientsApp.Forms"
              xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
              xmlns:core="clr-namespace:GradientsApp;assembly=GradientsApp"
-             x:Class="PlaygroundMaui.Pages.HomePage"
+             xmlns:i="clr-namespace:GradientsApp.Forms.Infrastructure;assembly=GradientsApp.Forms"
+             x:Class="GradientsApp.Forms.Pages.HomePage"
              NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Grid>
@@ -19,11 +19,11 @@
             </Label>
         </Grid>
         <StackLayout Margin="20">
-            <Button Text="Linear Gradients" Command="{pages:Navigate {x:Static core:AppRoutes.Linear}}" />
-            <Button Text="Radial Gradients" Command="{pages:Navigate {x:Static core:AppRoutes.Radial}}" />
-            <Button Text="Masks" Command="{pages:Navigate {x:Static core:AppRoutes.Masks}}" />
-            <Button Text="Animations" Command="{pages:Navigate {x:Static core:AppRoutes.Animations}}" />
-            <Button Text="Gallery" Command="{pages:Navigate {x:Static core:AppRoutes.Categories}}" />
+            <Button Text="Linear Gradients" Command="{i:Navigate {x:Static core:AppRoutes.Linear}}" />
+            <Button Text="Radial Gradients" Command="{i:Navigate {x:Static core:AppRoutes.Radial}}" />
+            <Button Text="Masks" Command="{i:Navigate {x:Static core:AppRoutes.Masks}}" />
+            <Button Text="Animations" Command="{i:Navigate {x:Static core:AppRoutes.Animations}}" />
+            <Button Text="Gallery" Command="{i:Navigate {x:Static core:AppRoutes.Categories}}" />
         </StackLayout>
     </StackLayout>
 </ContentPage>
