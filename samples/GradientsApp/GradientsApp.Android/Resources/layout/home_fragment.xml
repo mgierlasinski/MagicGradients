@@ -1,21 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <Button
-	    android:id="@+id/home_linear"
-	    android:text="Linear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-	    android:layout_marginTop="10dp"
-	    android:layout_marginLeft="10dp"
-	    android:layout_marginRight="10dp" />
-    <Button
-	    android:id="@+id/home_gallery"
-	    android:text="Gallery"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_marginLeft="10dp"
-	    android:layout_marginRight="10dp" />
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<RelativeLayout 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<MagicGradients.GradientView 
+			android:id="@+id/header_gradient"
+			app:gradientSource="linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_alignTop="@+id/header_title"
+			android:layout_alignBottom="@+id/header_subtitle"/>
+		<TextView
+			android:id="@+id/header_title"
+			android:text="Magic Gradients"
+			android:textSize="30dp"
+			android:textColor="#ffffff"
+			android:paddingTop="20dp"
+			android:layout_centerHorizontal="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/header_subtitle"
+			android:text="using Microsoft.Maui.Graphics"
+			android:textSize="18dp"
+			android:textColor="#ffffff"
+			android:paddingBottom="20dp"
+			android:layout_centerHorizontal="true"
+			android:layout_below="@+id/header_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+	</RelativeLayout>
+	<Button
+		android:id="@+id/home_linear"
+		android:text="Linear"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp" />
+	<Button
+		android:id="@+id/home_radial"
+		android:text="Radial"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp" />
+	<Button
+		android:id="@+id/home_gallery"
+		android:text="Gallery"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp" />
 </LinearLayout>
