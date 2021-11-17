@@ -26,7 +26,7 @@ namespace GradientsApp.iOS.Views
 
         private void SetGradients()
         {
-            var vm = new GradientsViewModel();
+            var vm = new LinearViewModel();
 
             // TODO: setup GradientView
         }

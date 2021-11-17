@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Forms"
+             xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
+             xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
+             xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
+             x:Class="GradientsApp.Forms.Pages.RadialPage"
+             Title="Radial Gradients">
+    <ScrollView>
+        <StackLayout Spacing="5">
+            <skiv:GradientView HeightRequest="160">
+                <magic:RadialGradient>
+                    <magic:GradientStop Color="Red" />
+                    <magic:GradientStop Color="Green" />
+                    <magic:GradientStop Color="Blue" />
+                </magic:RadialGradient>
+            </skiv:GradientView>
+            <skia:SkiaGradientView HeightRequest="160">
+                <magic:RadialGradient>
+                    <magic:GradientStop Color="Red" />
+                    <magic:GradientStop Color="Green" />
+                    <magic:GradientStop Color="Blue" />
+                </magic:RadialGradient>
+            </skia:SkiaGradientView>
+            <form:GradientView HeightRequest="160">
+                <magic:RadialGradient>
+                    <magic:GradientStop Color="Red" />
+                    <magic:GradientStop Color="Green" />
+                    <magic:GradientStop Color="Blue" />
+                </magic:RadialGradient>
+            </form:GradientView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

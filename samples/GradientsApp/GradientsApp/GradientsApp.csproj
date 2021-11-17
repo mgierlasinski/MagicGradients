@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MagicGradients.Native\MagicGradients.Native.csproj" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Playground\Playground.Data\Playground.Data.csproj" />
+    <ProjectReference Include="..\..\..\src\MagicGradients.Core\MagicGradients.Core.csproj" />
   </ItemGroup>
 
 </Project>

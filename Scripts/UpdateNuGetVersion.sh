@@ -3,8 +3,8 @@
 GREEN=`tput setaf 2`
 
 Version=$1
-MagicGradients="../MagicGradients/MagicGradients.csproj"
-MagicGradientsToolkit="../MagicGradients.Toolkit/MagicGradients.Toolkit.csproj"
+MagicGradients="../src/MagicGradients/MagicGradients.csproj"
+MagicGradientsToolkit="../src/MagicGradients.Toolkit/MagicGradients.Toolkit.csproj"
 
 echo "${GREEN}Set new $Version version for $MagicGradients"
 sed -i .tmp "s|<Version>.*|<Version>$Version<\/Version>|" $MagicGradients;

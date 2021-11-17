@@ -2,7 +2,7 @@
 
 GREEN=`tput setaf 2`
 
-NuGetPath="../MagicGradients/bin/**/Release/*.nupkg"
+NuGetPath="../src/MagicGradients/bin/**/Release/*.nupkg"
 PackagesFolder="~/Packages"
 
 echo "${GREEN}Remove all nupkg's"

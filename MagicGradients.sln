@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients", "MagicGradients\MagicGradients.csproj", "{ACAF40E8-226E-4F7E-9D21-D317434F37B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients", "src\MagicGradients\MagicGradients.csproj", "{ACAF40E8-226E-4F7E-9D21-D317434F37B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Tests", "MagicGradients.Tests\MagicGradients.Tests.csproj", "{F0577E80-029B-40E6-8B1F-9B614389D26B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Tests", "tests\MagicGradients.Tests\MagicGradients.Tests.csproj", "{F0577E80-029B-40E6-8B1F-9B614389D26B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Android", "Playground\Playground.Android\Playground.Android.csproj", "{477F1169-FF99-43ED-9F59-6E9145975C83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Android", "samples\Playground\Playground.Android\Playground.Android.csproj", "{477F1169-FF99-43ED-9F59-6E9145975C83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.iOS", "Playground\Playground.iOS\Playground.iOS.csproj", "{067E1502-3887-46BF-8253-84D4AB45E1B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.iOS", "samples\Playground\Playground.iOS\Playground.iOS.csproj", "{067E1502-3887-46BF-8253-84D4AB45E1B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground", "Playground\Playground\Playground.csproj", "{05EBBB6C-3B45-498C-B95E-0755F9FCA6A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground", "samples\Playground\Playground\Playground.csproj", "{05EBBB6C-3B45-498C-B95E-0755F9FCA6A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Playground", "Playground", "{5CF47E73-A7FF-44B7-A56B-E63AEE04C52B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Benchmark", "MagicGradients.Benchmark\MagicGradients.Benchmark.csproj", "{F9D1A84A-F363-4A2A-BAE2-FEE5FC28A5F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Benchmark", "tests\MagicGradients.Benchmark\MagicGradients.Benchmark.csproj", "{F9D1A84A-F363-4A2A-BAE2-FEE5FC28A5F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Data", "Playground\Playground.Data\Playground.Data.csproj", "{B155611E-96F9-41A7-A3E0-47AAEEF2F604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Data", "samples\Playground\Playground.Data\Playground.Data.csproj", "{B155611E-96F9-41A7-A3E0-47AAEEF2F604}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Toolkit", "MagicGradients.Toolkit\MagicGradients.Toolkit.csproj", "{90874480-CA16-43E4-A9E1-01BC04EF2698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Toolkit", "src\MagicGradients.Toolkit\MagicGradients.Toolkit.csproj", "{90874480-CA16-43E4-A9E1-01BC04EF2698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.UWP", "Playground\Playground.UWP\Playground.UWP.csproj", "{F5D68CA9-7C54-4A38-B860-1AA354FD1056}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.UWP", "samples\Playground\Playground.UWP\Playground.UWP.csproj", "{F5D68CA9-7C54-4A38-B860-1AA354FD1056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

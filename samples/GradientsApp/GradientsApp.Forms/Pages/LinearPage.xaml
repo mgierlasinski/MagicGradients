@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients.Forms"
+             xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
+             xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
+             xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
+             xmlns:viewModels="clr-namespace:GradientsApp.ViewModels;assembly=GradientsApp"
+             xmlns:i="clr-namespace:GradientsApp.Forms.Infrastructure;assembly=GradientsApp.Forms"
+             x:DataType="viewModels:LinearViewModel"
+             x:Class="GradientsApp.Forms.Pages.LinearPage"
+             i:ViewModelLocator.AutoWireViewModel="true"
+             Title="Linear Gradients">
+    <ScrollView>
+        <StackLayout Spacing="5">
+            <!-- Css Gradient Source  -->
+            <form:GradientView HeightRequest="160">
+                <magic:CssGradient>
+                    <![CDATA[
+                        linear-gradient(242deg, red, green, orange)
+                    ]]>
+                </magic:CssGradient>
+            </form:GradientView>
+            <form:GradientView HeightRequest="160">
+                <magic:CssGradient Stylesheet="{Binding CssGradient}" />
+            </form:GradientView>
+            <!-- Repeating -->
+            <skiv:GradientView HeightRequest="160">
+                <magic:LinearGradient Angle="45" IsRepeating="True">
+                    <magic:GradientStop Color="Blue" />
+                    <magic:GradientStop Color="Yellow" Offset="0.5" />
+                </magic:LinearGradient>
+            </skiv:GradientView>
+            <skia:SkiaGradientView HeightRequest="160">
+                <magic:LinearGradient Angle="45" IsRepeating="True">
+                    <magic:GradientStop Color="Blue" />
+                    <magic:GradientStop Color="Yellow" Offset="0.5" />
+                </magic:LinearGradient>
+            </skia:SkiaGradientView>
+            <form:GradientView HeightRequest="160">
+                <magic:LinearGradient Angle="45" IsRepeating="True">
+                    <magic:GradientStop Color="Blue" />
+                    <magic:GradientStop Color="Yellow" Offset="0.5" />
+                </magic:LinearGradient>
+            </form:GradientView>
+            <!-- GradientSize -->
+            <skiv:GradientView HeightRequest="160" GradientSize="40">
+                <magic:LinearGradient Angle="45">
+                    <magic:GradientStop Color="Blue" />
+                    <magic:GradientStop Color="Yellow" />
+                </magic:LinearGradient>
+            </skiv:GradientView>
+            <skia:SkiaGradientView HeightRequest="160" GradientSize="40">
+                <magic:LinearGradient Angle="45">
+                    <magic:GradientStop Color="Blue" />
+                    <magic:GradientStop Color="Yellow" />
+                </magic:LinearGradient>
+            </skia:SkiaGradientView>
+            <form:GradientView HeightRequest="160" GradientSize="40">
+                <magic:LinearGradient Angle="45">
+                    <magic:GradientStop Color="Blue" />
+                    <magic:GradientStop Color="Yellow" />
+                </magic:LinearGradient>
+            </form:GradientView>
+            <!-- CSS -->
+            <skiv:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
+            <skia:SkiaGradientView HeightRequest="160" StyleClass="RainbowGradient" />
+            <form:GradientView HeightRequest="160" StyleClass="RainbowGradient" />
+
+            <skiv:GradientView HeightRequest="160" StyleClass="AngularGradient" />
+            <skia:SkiaGradientView HeightRequest="160" StyleClass="AngularGradient" />
+            <form:GradientView HeightRequest="160" StyleClass="AngularGradient" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
