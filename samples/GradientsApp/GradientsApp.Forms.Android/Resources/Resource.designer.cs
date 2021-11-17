@@ -5759,6 +5759,7 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Attribute.collapsedTitleGravity = global::GradientsApp.Forms.Android.Resource.Attribute.collapsedTitleGravity;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.collapsedTitleTextAppearance = global::GradientsApp.Forms.Android.Resource.Attribute.collapsedTitleTextAppearance;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.collapseIcon = global::GradientsApp.Forms.Android.Resource.Attribute.collapseIcon;
+			global::SkiaSharp.Views.Forms.Resource.Attribute.collectionViewStyle = global::GradientsApp.Forms.Android.Resource.Attribute.collectionViewStyle;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.color = global::GradientsApp.Forms.Android.Resource.Attribute.color;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.colorAccent = global::GradientsApp.Forms.Android.Resource.Attribute.colorAccent;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.colorBackgroundFloating = global::GradientsApp.Forms.Android.Resource.Attribute.colorBackgroundFloating;
@@ -5873,6 +5874,7 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Attribute.iconStartPadding = global::GradientsApp.Forms.Android.Resource.Attribute.iconStartPadding;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.iconTint = global::GradientsApp.Forms.Android.Resource.Attribute.iconTint;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.iconTintMode = global::GradientsApp.Forms.Android.Resource.Attribute.iconTintMode;
+			global::SkiaSharp.Views.Forms.Resource.Attribute.ignorePixelScaling = global::GradientsApp.Forms.Android.Resource.Attribute.ignorePixelScaling;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.imageButtonStyle = global::GradientsApp.Forms.Android.Resource.Attribute.imageButtonStyle;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.indeterminateProgressStyle = global::GradientsApp.Forms.Android.Resource.Attribute.indeterminateProgressStyle;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.initialActivityCount = global::GradientsApp.Forms.Android.Resource.Attribute.initialActivityCount;
@@ -5965,6 +5967,7 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Attribute.scrimAnimationDuration = global::GradientsApp.Forms.Android.Resource.Attribute.scrimAnimationDuration;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.scrimBackground = global::GradientsApp.Forms.Android.Resource.Attribute.scrimBackground;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.scrimVisibleHeightTrigger = global::GradientsApp.Forms.Android.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::SkiaSharp.Views.Forms.Resource.Attribute.scrollViewStyle = global::GradientsApp.Forms.Android.Resource.Attribute.scrollViewStyle;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.searchHintIcon = global::GradientsApp.Forms.Android.Resource.Attribute.searchHintIcon;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.searchIcon = global::GradientsApp.Forms.Android.Resource.Attribute.searchIcon;
 			global::SkiaSharp.Views.Forms.Resource.Attribute.searchViewStyle = global::GradientsApp.Forms.Android.Resource.Attribute.searchViewStyle;
@@ -6868,6 +6871,7 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.String.fab_transformation_sheet_behavior = global::GradientsApp.Forms.Android.Resource.String.fab_transformation_sheet_behavior;
 			global::SkiaSharp.Views.Forms.Resource.String.hide_bottom_view_on_scroll_behavior = global::GradientsApp.Forms.Android.Resource.String.hide_bottom_view_on_scroll_behavior;
 			global::SkiaSharp.Views.Forms.Resource.String.mtrl_chip_close_icon_content_description = global::GradientsApp.Forms.Android.Resource.String.mtrl_chip_close_icon_content_description;
+			global::SkiaSharp.Views.Forms.Resource.String.overflow_tab_title = global::GradientsApp.Forms.Android.Resource.String.overflow_tab_title;
 			global::SkiaSharp.Views.Forms.Resource.String.password_toggle_content_description = global::GradientsApp.Forms.Android.Resource.String.password_toggle_content_description;
 			global::SkiaSharp.Views.Forms.Resource.String.path_password_eye = global::GradientsApp.Forms.Android.Resource.String.path_password_eye;
 			global::SkiaSharp.Views.Forms.Resource.String.path_password_eye_mask_strike_through = global::GradientsApp.Forms.Android.Resource.String.path_password_eye_mask_strike_through;
@@ -6881,6 +6885,7 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Style.Animation_AppCompat_DropDownUp = global::GradientsApp.Forms.Android.Resource.Style.Animation_AppCompat_DropDownUp;
 			global::SkiaSharp.Views.Forms.Resource.Style.Animation_AppCompat_Tooltip = global::GradientsApp.Forms.Android.Resource.Style.Animation_AppCompat_Tooltip;
 			global::SkiaSharp.Views.Forms.Resource.Style.Animation_Design_BottomSheetDialog = global::GradientsApp.Forms.Android.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::SkiaSharp.Views.Forms.Resource.Style.AppCompatDialogStyle = global::GradientsApp.Forms.Android.Resource.Style.AppCompatDialogStyle;
 			global::SkiaSharp.Views.Forms.Resource.Style.Base_AlertDialog_AppCompat = global::GradientsApp.Forms.Android.Resource.Style.Base_AlertDialog_AppCompat;
 			global::SkiaSharp.Views.Forms.Resource.Style.Base_AlertDialog_AppCompat_Light = global::GradientsApp.Forms.Android.Resource.Style.Base_AlertDialog_AppCompat_Light;
 			global::SkiaSharp.Views.Forms.Resource.Style.Base_Animation_AppCompat_Dialog = global::GradientsApp.Forms.Android.Resource.Style.Base_Animation_AppCompat_Dialog;
@@ -7072,6 +7077,9 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Style.CardView = global::GradientsApp.Forms.Android.Resource.Style.CardView;
 			global::SkiaSharp.Views.Forms.Resource.Style.CardView_Dark = global::GradientsApp.Forms.Android.Resource.Style.CardView_Dark;
 			global::SkiaSharp.Views.Forms.Resource.Style.CardView_Light = global::GradientsApp.Forms.Android.Resource.Style.CardView_Light;
+			global::SkiaSharp.Views.Forms.Resource.Style.collectionViewTheme = global::GradientsApp.Forms.Android.Resource.Style.collectionViewTheme;
+			global::SkiaSharp.Views.Forms.Resource.Style.MainTheme = global::GradientsApp.Forms.Android.Resource.Style.MainTheme;
+			global::SkiaSharp.Views.Forms.Resource.Style.MainTheme_Base = global::GradientsApp.Forms.Android.Resource.Style.MainTheme_Base;
 			global::SkiaSharp.Views.Forms.Resource.Style.Platform_AppCompat = global::GradientsApp.Forms.Android.Resource.Style.Platform_AppCompat;
 			global::SkiaSharp.Views.Forms.Resource.Style.Platform_AppCompat_Light = global::GradientsApp.Forms.Android.Resource.Style.Platform_AppCompat_Light;
 			global::SkiaSharp.Views.Forms.Resource.Style.Platform_MaterialComponents = global::GradientsApp.Forms.Android.Resource.Style.Platform_MaterialComponents;
@@ -7103,6 +7111,8 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::GradientsApp.Forms.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
 			global::SkiaSharp.Views.Forms.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::GradientsApp.Forms.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
 			global::SkiaSharp.Views.Forms.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::GradientsApp.Forms.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::SkiaSharp.Views.Forms.Resource.Style.scrollViewScrollBars = global::GradientsApp.Forms.Android.Resource.Style.scrollViewScrollBars;
+			global::SkiaSharp.Views.Forms.Resource.Style.scrollViewTheme = global::GradientsApp.Forms.Android.Resource.Style.scrollViewTheme;
 			global::SkiaSharp.Views.Forms.Resource.Style.TextAppearance_AppCompat = global::GradientsApp.Forms.Android.Resource.Style.TextAppearance_AppCompat;
 			global::SkiaSharp.Views.Forms.Resource.Style.TextAppearance_AppCompat_Body1 = global::GradientsApp.Forms.Android.Resource.Style.TextAppearance_AppCompat_Body1;
 			global::SkiaSharp.Views.Forms.Resource.Style.TextAppearance_AppCompat_Body2 = global::GradientsApp.Forms.Android.Resource.Style.TextAppearance_AppCompat_Body2;
@@ -7787,6 +7797,8 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Styleable.GradientColor_android_startY = global::GradientsApp.Forms.Android.Resource.Styleable.GradientColor_android_startY;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.GradientColor_android_tileMode = global::GradientsApp.Forms.Android.Resource.Styleable.GradientColor_android_tileMode;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.GradientColor_android_type = global::GradientsApp.Forms.Android.Resource.Styleable.GradientColor_android_type;
+			global::SkiaSharp.Views.Forms.Resource.Styleable.ItemsViewRendererTheme = global::GradientsApp.Forms.Android.Resource.Styleable.ItemsViewRendererTheme;
+			global::SkiaSharp.Views.Forms.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle = global::GradientsApp.Forms.Android.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.LinearLayoutCompat = global::GradientsApp.Forms.Android.Resource.Styleable.LinearLayoutCompat;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::GradientsApp.Forms.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::GradientsApp.Forms.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
@@ -7904,6 +7916,8 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::GradientsApp.Forms.Android.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.ScrollingViewBehavior_Layout = global::GradientsApp.Forms.Android.Resource.Styleable.ScrollingViewBehavior_Layout;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::GradientsApp.Forms.Android.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::SkiaSharp.Views.Forms.Resource.Styleable.ScrollViewRendererTheme = global::GradientsApp.Forms.Android.Resource.Styleable.ScrollViewRendererTheme;
+			global::SkiaSharp.Views.Forms.Resource.Styleable.ScrollViewRendererTheme_scrollViewStyle = global::GradientsApp.Forms.Android.Resource.Styleable.ScrollViewRendererTheme_scrollViewStyle;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.SearchView = global::GradientsApp.Forms.Android.Resource.Styleable.SearchView;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.SearchView_android_focusable = global::GradientsApp.Forms.Android.Resource.Styleable.SearchView_android_focusable;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.SearchView_android_imeOptions = global::GradientsApp.Forms.Android.Resource.Styleable.SearchView_android_imeOptions;
@@ -7922,6 +7936,8 @@ namespace GradientsApp.Forms.Android
 			global::SkiaSharp.Views.Forms.Resource.Styleable.SearchView_submitBackground = global::GradientsApp.Forms.Android.Resource.Styleable.SearchView_submitBackground;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.SearchView_suggestionRowLayout = global::GradientsApp.Forms.Android.Resource.Styleable.SearchView_suggestionRowLayout;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.SearchView_voiceIcon = global::GradientsApp.Forms.Android.Resource.Styleable.SearchView_voiceIcon;
+			global::SkiaSharp.Views.Forms.Resource.Styleable.SKCanvasView = global::GradientsApp.Forms.Android.Resource.Styleable.SKCanvasView;
+			global::SkiaSharp.Views.Forms.Resource.Styleable.SKCanvasView_ignorePixelScaling = global::GradientsApp.Forms.Android.Resource.Styleable.SKCanvasView_ignorePixelScaling;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.Snackbar = global::GradientsApp.Forms.Android.Resource.Styleable.Snackbar;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.SnackbarLayout = global::GradientsApp.Forms.Android.Resource.Styleable.SnackbarLayout;
 			global::SkiaSharp.Views.Forms.Resource.Styleable.SnackbarLayout_android_maxWidth = global::GradientsApp.Forms.Android.Resource.Styleable.SnackbarLayout_android_maxWidth;
