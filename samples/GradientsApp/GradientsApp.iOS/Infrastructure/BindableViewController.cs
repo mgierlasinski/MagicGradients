@@ -13,5 +13,15 @@ namespace GradientsApp.iOS.Infrastructure
         {
             ViewModel = Ioc.Default.GetService<TViewModel>();
         }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            if (BindingContext is IHaveTitle bindingTitle)
+            {
+                NavigationController.Title = bindingTitle.Title;
+            }
+        }
     }
 }

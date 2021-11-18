@@ -23,7 +23,6 @@ namespace GradientsApp.Android.Views
         {
             view.FindViewById<GradientView>(Resource.Id.magicBurst).GradientSource = ViewModel.Burst;
             view.FindViewById<GradientView>(Resource.Id.magicAngular).GradientSource = ViewModel.Angular;
-            //view.FindViewById<GradientView>(Resource.Id.magicRainbow).GradientSource = ViewModel.Rainbow;
             view.FindViewById<GradientView>(Resource.Id.magicDiamonds).GradientSource = ViewModel.Diamonds;
         }
     }

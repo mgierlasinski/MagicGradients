@@ -1,4 +1,6 @@
-﻿using GradientsApp.Infrastructure;
+﻿using Android.OS;
+using Android.Views;
+using GradientsApp.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GradientsApp.Android.Infrastructure
@@ -8,9 +10,20 @@ namespace GradientsApp.Android.Infrastructure
         public object BindingContext => ViewModel;
         public TViewModel ViewModel { get; }
 
-        public BindableFragment(int layoutId) : base(layoutId)
+        public BindableFragment(int layoutId, string title = null) 
+            : base(layoutId, title)
         {
             ViewModel = Ioc.Default.GetService<TViewModel>();
+        }
+
+        public override void OnViewCreated(View view, Bundle savedInstanceState)
+        {
+            base.OnViewCreated(view, savedInstanceState);
+
+            if (BindingContext is IHaveTitle bindingTitle)
+            {
+                Toolbar.SetTitle(bindingTitle.Title);
+            }
         }
     }
 }

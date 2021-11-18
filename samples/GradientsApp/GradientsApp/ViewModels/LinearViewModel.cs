@@ -1,11 +1,14 @@
-﻿using MagicGradients;
+﻿using GradientsApp.Infrastructure;
+using MagicGradients;
 using MagicGradients.Builder;
 using Microsoft.Maui.Graphics;
 
 namespace GradientsApp.ViewModels
 {
-    public class LinearViewModel
+    public class LinearViewModel : IHaveTitle
     {
+        public string Title => "Linear Gradients";
+
         public string CssGradient { get; } = "linear-gradient(red, orange, yellow)";
 
         public IGradientSource LinearGradient { get; }

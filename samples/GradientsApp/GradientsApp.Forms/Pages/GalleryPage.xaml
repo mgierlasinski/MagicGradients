@@ -10,7 +10,7 @@
              x:Class="GradientsApp.Forms.Pages.GalleryPage"
              x:DataType="viewModels:GalleryViewModel"
              i:ViewModelLocator.AutoWireViewModel="true"
-             Title="{Binding Name}">
+             Title="{Binding Title}">
     <CollectionView x:Name="GradientList"
                     ItemsSource="{Binding GalleryItems}"
                     SelectionMode="Single"

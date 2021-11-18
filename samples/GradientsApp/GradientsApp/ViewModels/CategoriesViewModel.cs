@@ -8,12 +8,19 @@ using System.Linq;
 
 namespace GradientsApp.ViewModels
 {
-    public class CategoriesViewModel : ObservableObject, INavigationAware
+    public class CategoriesViewModel : ObservableObject, INavigationAware, IHaveTitle
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly INavigationService _navigationService;
 
-        public List<CategoryItem> Categories { get; private set; }
+        public string Title => "Categories";
+
+        private List<CategoryItem> _categories;
+        public List<CategoryItem> Categories
+        {
+            get => _categories;
+            private set => SetProperty(ref _categories, value);
+        }
 
         private CategoryItem _selectedCategory;
         public CategoryItem SelectedCategory
@@ -49,8 +56,6 @@ namespace GradientsApp.ViewModels
                 Source = new CssGradientSource(x.Stylesheet),
                 Tag = x.Tag
             }).ToList();
-
-            OnPropertyChanged(nameof(Categories));
         }
     }
 }

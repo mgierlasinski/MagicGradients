@@ -5,7 +5,7 @@ namespace GradientsApp.Android.Views
     public class MasksFragment : AppFragment
     {
         public MasksFragment() 
-            : base(Resource.Layout.masks_fragment)
+            : base(Resource.Layout.masks_fragment, "Masks")
         {
         }
     }

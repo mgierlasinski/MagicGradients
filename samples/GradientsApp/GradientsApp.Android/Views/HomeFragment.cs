@@ -11,11 +11,14 @@ namespace GradientsApp.Android.Views
         public HomeFragment() 
             : base(Resource.Layout.home_fragment)
         {
+            
         }
         
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
+
+            Toolbar.Hide();
 
             var linear = view.FindViewById<Button>(Resource.Id.home_linear);
             linear.Click += (sender, args) => ViewModel.NavigateCommand.Execute(AppRoutes.Linear);

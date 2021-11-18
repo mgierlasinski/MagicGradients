@@ -10,12 +10,17 @@ using System.Linq;
 
 namespace GradientsApp.ViewModels
 {
-    public class GalleryViewModel : ObservableObject, INavigationAware<CategoryItem>
+    public class GalleryViewModel : ObservableObject, INavigationAware<CategoryItem>, IHaveTitle
     {
         private readonly INavigationService _navigationService;
         private readonly DimensionsTypeConverter _dimensionsConverter = new DimensionsTypeConverter();
 
-        public string Name { get; private set; }
+        private string _title;
+        public string Title
+        {
+            get => _title;
+            private set => SetProperty(ref _title, value);
+        }
 
         private List<GalleryItem> _galleryItems;
         public List<GalleryItem> GalleryItems
@@ -44,16 +49,14 @@ namespace GradientsApp.ViewModels
 
         public void Prepare(CategoryItem parameter)
         {
-            Name = parameter.Name;
+            Title = parameter.Name;
             LoadGallery(parameter.Tag);
-
-            OnPropertyChanged(nameof(Name));
-            OnPropertyChanged(nameof(GalleryItems));
         }
 
         private void LoadGallery(string tag)
         {
             var repository = new GradientRepository(new DatabaseProvider());
+
             GalleryItems = repository.GetByTag(tag).Select(x => new GalleryItem
             {
                 Source = new CssGradientSource(x.Stylesheet),

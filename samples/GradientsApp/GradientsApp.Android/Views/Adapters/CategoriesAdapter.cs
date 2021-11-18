@@ -3,7 +3,7 @@ using AndroidX.RecyclerView.Widget;
 using GradientsApp.Models;
 using System.Collections.Generic;
 
-namespace GradientsApp.Android.Views
+namespace GradientsApp.Android.Views.Adapters
 {
     public class CategoriesAdapter : RecyclerView.Adapter
     {
