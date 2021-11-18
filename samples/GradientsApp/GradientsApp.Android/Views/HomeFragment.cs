@@ -23,6 +23,9 @@ namespace GradientsApp.Android.Views
             var radial = view.FindViewById<Button>(Resource.Id.home_radial);
             radial.Click += (sender, args) => ViewModel.NavigateCommand.Execute(AppRoutes.Radial);
 
+            var masks = view.FindViewById<Button>(Resource.Id.home_masks);
+            masks.Click += (sender, args) => ViewModel.NavigateCommand.Execute(AppRoutes.Masks);
+
             var gallery = view.FindViewById<Button>(Resource.Id.home_gallery);
             gallery.Click += (sender, args) => ViewModel.NavigateCommand.Execute(AppRoutes.Categories);
         }

@@ -25,6 +25,7 @@ namespace GradientsApp.Android
         {
             navigation.RegisterRoute(AppRoutes.Linear, typeof(LinearFragment));
             navigation.RegisterRoute(AppRoutes.Radial, typeof(RadialFragment));
+            navigation.RegisterRoute(AppRoutes.Masks, typeof(MasksFragment));
             navigation.RegisterRoute(AppRoutes.Categories, typeof(CategoriesFragment));
         }
     }

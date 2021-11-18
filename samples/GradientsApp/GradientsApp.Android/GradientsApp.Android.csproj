@@ -74,6 +74,7 @@
     <Compile Include="Views\CategoryViewHolder.cs" />
     <Compile Include="Views\LinearFragment.cs" />
     <Compile Include="Views\HomeFragment.cs" />
+    <Compile Include="Views\MasksFragment.cs" />
     <Compile Include="Views\RadialFragment.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\radial_fragment.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\masks_fragment.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
