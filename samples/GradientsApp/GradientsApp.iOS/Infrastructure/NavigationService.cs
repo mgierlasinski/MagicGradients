@@ -2,29 +2,29 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
-using Fragment = AndroidX.Fragment.App.Fragment;
+using UIKit;
 
-namespace GradientsApp.Android.Infrastructure
+namespace GradientsApp.iOS.Infrastructure
 {
     public class NavigationService : INavigationService
     {
         private readonly Dictionary<string, Type> _routes = new Dictionary<string, Type>();
         private readonly NavigationViewFactory _viewFactory = new NavigationViewFactory();
 
-        private IFragmentLoader _fragmentLoader;
-        protected IFragmentLoader FragmentLoader => _fragmentLoader ??= Platform.CurrentActivity as IFragmentLoader;
-        
+        private UINavigationController _navigationController;
+        protected UINavigationController NavigationController => _navigationController ??= 
+            UIApplication.SharedApplication.KeyWindow.RootViewController as UINavigationController;
+
         public Task NavigateTo(string route)
         {
             if (_routes.TryGetValue(route, out var type))
             {
-                var fragment = _viewFactory.CreateInstance<Fragment>(type);
+                var viewController = _viewFactory.CreateInstance<UIViewController>(type);
 
-                if (fragment is IBindableView bindable)
+                if (viewController is IBindableView bindable)
                     _viewFactory.CallEvents(bindable.BindingContext);
 
-                FragmentLoader.LoadFragment(fragment);
+                NavigationController.PushViewController(viewController, true);
             }
 
             return Task.CompletedTask;
@@ -34,12 +34,12 @@ namespace GradientsApp.Android.Infrastructure
         {
             if (_routes.TryGetValue(route, out var type))
             {
-                var fragment = _viewFactory.CreateInstance<Fragment>(type);
+                var viewController = _viewFactory.CreateInstance<UIViewController>(type);
 
-                if (fragment is IBindableView bindable)
+                if (viewController is IBindableView bindable)
                     _viewFactory.CallEvents(bindable.BindingContext, parameter);
 
-                FragmentLoader.LoadFragment(fragment);
+                NavigationController.PushViewController(viewController, true);
             }
 
             return Task.CompletedTask;
