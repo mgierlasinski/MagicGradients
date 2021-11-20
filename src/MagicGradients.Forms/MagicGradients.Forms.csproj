@@ -2,36 +2,22 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;Xamarin.Mac20</TargetFrameworks>
-	<LangVersion>latest</LangVersion>
-	<RootNamespace>MagicGradients</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>MagicGradients</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MagicGradients.Core\MagicGradients.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'Xamarin.Mac20' Or '$(TargetFramework)' == 'netstandard2.1'">
     <Reference Include="netstandard" />
   </ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) != true ">
-    <Compile Remove="**\*.iOS.cs" />
-    <None Include="**\*.iOS.cs" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.Mac')) != true ">
-    <Compile Remove="**\*.Mac.cs" />
-    <None Include="**\*.Mac.cs" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework.StartsWith('MonoAndroid')) != true ">
-    <Compile Remove="**\*.Android.cs" />
-    <None Include="**\*.Android.cs" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard')) != true ">
-    <Compile Remove="**\*.Standard.cs" />
-    <None Include="**\*.Standard.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MagicGradients.Core\MagicGradients.Core.csproj" />
-  </ItemGroup>
+  <Import Project="..\MultiTargeting.targets" />
 
 </Project>
