@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using GradientsApp.iOS.Views;
 using UIKit;
 
 namespace GradientsApp.iOS
@@ -20,10 +21,11 @@ namespace GradientsApp.iOS
         {
             // create a new window instance based on the screen size
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
-            Window.RootViewController = new UIViewController();
+            Window.RootViewController = new UINavigationController(new HomeViewController());
 
             // make the window visible
             Window.MakeKeyAndVisible();
+            new App().ConfigureAndRun();
 
             return true;
         }

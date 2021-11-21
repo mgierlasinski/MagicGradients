@@ -1,10 +1,10 @@
-﻿using GradientsApp.Android.Infrastructure;
-using GradientsApp.Android.Views;
-using GradientsApp.Infrastructure;
+﻿using GradientsApp.Infrastructure;
+using GradientsApp.iOS.Infrastructure;
+using GradientsApp.iOS.Views;
 using MagicGradients;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GradientsApp.Android
+namespace GradientsApp.iOS
 {
     public class App : AppSetup
     {
@@ -20,13 +20,10 @@ namespace GradientsApp.Android
 
             services.AddSingleton<INavigationService>(navigation);
         }
-        
+
         private void SetupRoutes(INavigationService navigation)
         {
-            navigation.RegisterRoute(AppRoutes.Linear, typeof(LinearFragment));
-            navigation.RegisterRoute(AppRoutes.Radial, typeof(RadialFragment));
-            navigation.RegisterRoute(AppRoutes.Masks, typeof(MasksFragment));
-            navigation.RegisterRoute(AppRoutes.Categories, typeof(CategoriesFragment));
+            navigation.RegisterRoute(AppRoutes.Linear, typeof(LinearViewController));
         }
     }
 }

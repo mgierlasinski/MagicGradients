@@ -10,7 +10,7 @@
              x:DataType="viewModels:LinearViewModel"
              x:Class="GradientsApp.Forms.Pages.LinearPage"
              i:ViewModelLocator.AutoWireViewModel="true"
-             Title="Linear Gradients">
+             Title="{Binding Title, Mode=OneTime}">
     <ScrollView>
         <StackLayout Spacing="5">
             <!-- Css Gradient Source  -->

@@ -10,7 +10,7 @@
              x:Class="GradientsApp.Forms.Pages.CategoriesPage"
              x:DataType="viewModels:CategoriesViewModel"
              i:ViewModelLocator.AutoWireViewModel="true"
-             Title="Categories">
+             Title="{Binding Title, Mode=OneTime}">
     <CollectionView x:Name="CategoriesList"
                     ItemsSource="{Binding Categories}"
                     SelectionMode="Single"

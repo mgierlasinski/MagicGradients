@@ -9,4 +9,9 @@
     {
         void Prepare(TParameter parameter);
     }
+
+    public interface IHaveTitle
+    {
+        string Title { get; }
+    }
 }

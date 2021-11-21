@@ -62,18 +62,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Infrastructure\IBindableFragment.cs" />
+    <Compile Include="Infrastructure\BindableFragment.cs" />
+    <Compile Include="Infrastructure\IToolbarManager.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\IFragmentLoader.cs" />
     <Compile Include="Infrastructure\NavigationService.cs" />
     <Compile Include="Infrastructure\AppFragment.cs" />
-    <Compile Include="Views\CategoriesAdapter.cs" />
+    <Compile Include="Views\Adapters\CategoriesAdapter.cs" />
     <Compile Include="Views\CategoriesFragment.cs" />
-    <Compile Include="Views\CategoryViewHolder.cs" />
+    <Compile Include="Views\Adapters\CategoryViewHolder.cs" />
     <Compile Include="Views\LinearFragment.cs" />
     <Compile Include="Views\HomeFragment.cs" />
+    <Compile Include="Views\MasksFragment.cs" />
     <Compile Include="Views\RadialFragment.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +155,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\radial_fragment.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\masks_fragment.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

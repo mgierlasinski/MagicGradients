@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Graphics.Skia" Version="6.0.101-preview.9.512" />
-    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
+    <PackageReference Include="Microsoft.Maui.Graphics.Skia" Version="6.0.101-preview.10.640" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.0-preview.155" />
   </ItemGroup>
 
   <ItemGroup>

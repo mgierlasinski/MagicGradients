@@ -3,7 +3,7 @@ using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using MagicGradients;
 
-namespace GradientsApp.Android.Views
+namespace GradientsApp.Android.Views.Adapters
 {
     public class CategoryViewHolder : RecyclerView.ViewHolder
     {

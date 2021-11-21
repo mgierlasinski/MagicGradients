@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.0-preview.155" />
   </ItemGroup>
 
   <ItemGroup>

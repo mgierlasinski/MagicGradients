@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;Xamarin.Mac20</TargetFrameworks>
-	<LangVersion>latest</LangVersion>
-	<RootNamespace>MagicGradients</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>MagicGradients</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
-	<AndroidResource Include="Resources\**\*.xml" SubType="Designer" Generator="MSBuild:UpdateAndroidResources" />
+    <AndroidResource Include="Resources\**\*.xml" SubType="Designer" Generator="MSBuild:UpdateAndroidResources" />
   </ItemGroup>
 
   <Import Project="..\MultiTargeting.targets" />

@@ -1,12 +1,13 @@
 ﻿using Foundation;
-using UIKit;
+using GradientsApp.iOS.Infrastructure;
+using GradientsApp.ViewModels;
 
 namespace GradientsApp.iOS.Views
 {
-    [Register("ViewController")]
-    public class ViewController : UIViewController
+    [Register("HomeViewController")]
+    public class HomeViewController : BindableViewController<HomeViewModel>
     {
-        public ViewController()
+        public HomeViewController()
         {
         }
 
@@ -20,8 +21,6 @@ namespace GradientsApp.iOS.Views
 
         public override void ViewDidLoad()
         {
-            View = new GradientsView();
-
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view
