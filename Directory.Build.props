@@ -13,11 +13,13 @@
     <PackageTags>magic;gradients;linear;radial;skiasharp;xamarin;forms;android;ios;uwp</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(IsNuGetProject)' == 'true'">
     <None Include="$(MSBuildThisFileDirectory)\LICENSE" Pack="true" PackagePath="\" />
     <None Include="$(MSBuildThisFileDirectory)\Assets\icon.png" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)\docs\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   
 </Project>
