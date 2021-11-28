@@ -1,8 +1,16 @@
 var target = Argument("target", "Pack");
 var configuration = Argument("configuration", "Release");
-var output = "C:\\Packages";
+var output = Argument("output", IsRunningOnWindows() ? "C:\\Packages" : "~/Packages");
 
-Task("LegacyBuild")
+Task("Clean")
+    .Does(() => 
+    {
+        CleanDirectories("src/**/bin");
+        CleanDirectories("src/**/obj");
+    });
+
+Task("MGBuild")
+    //.IsDependentOn("Clean")
     .Does(() => 
     {
         DotNetCoreBuild("src/MagicGradients/MagicGradients.csproj", new DotNetCoreBuildSettings()
@@ -11,54 +19,37 @@ Task("LegacyBuild")
         });
     });
 
-Task("LegacyPack")
-    .IsDependentOn("LegacyBuild")
+Task("MGPack")
+    .IsDependentOn("MGBuild")
     .Does(() => 
     {
         DotNetCorePack("src/MagicGradients/MagicGradients.csproj", new DotNetCorePackSettings()
         {
             Configuration = configuration,
             NoBuild = true,
+            NoRestore = true,
+            //IncludeSymbols = true,
+            //SymbolPackageFormat = "snupkg",
             OutputDirectory = output
         });
     });
 
-Task("Build")
-    .Does(() => 
-    {
-        var settings = new MSBuildSettings()
-            .SetConfiguration(configuration)
-            .WithRestore()
-            .WithTarget("Rebuild");
-
-        MSBuild("src/MagicGradients.Forms/MagicGradients.Forms.csproj", settings);
-    });
-
 Task("Pack")
+    //.IsDependentOn("Clean")
     .Does(() => 
     {
         var settings = new MSBuildSettings()
             .SetConfiguration(configuration)
+            //.SetIncludeSymbols(true)
+            //.SetSymbolPackageFormat("snupkg")
             .WithRestore()
-            //.WithTarget("Rebuild")
             .WithTarget("Pack")
             .WithProperty("PackageOutputPath", output);
 
+        MSBuild("src/MagicGradients.Core/MagicGradients.Core.csproj", settings);
+        //MSBuild("src/MagicGradients.Native/MagicGradients.Native.csproj", settings);
         MSBuild("src/MagicGradients.Forms/MagicGradients.Forms.csproj", settings);
+        //MSBuild("src/MagicGradients.Forms.Skia/MagicGradients.Forms.Skia.csproj", settings);
     });
-
-/*
-Task("PackNuGet")
-    .Does(() => 
-    {
-        NuGetPack("src/MagicGradients.Forms/MagicGradients.Forms.csproj", new NuGetPackSettings()
-        {
-            OutputDirectory = output,
-            ArgumentCustomization = args => args
-                .Append("-Build")
-                .Append("-Prop Configuration=" + configuration)
-        });
-    });
-*/
 
 RunTarget(target);
