@@ -13,7 +13,7 @@
     <ProjectReference Include="..\MagicGradients.Core\MagicGradients.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'Xamarin.Mac20' Or '$(TargetFramework)' == 'netstandard2.1'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'Xamarin.iOS10' Or '$(TargetFramework)' == 'Xamarin.Mac20'">
     <Reference Include="netstandard" />
   </ItemGroup>
 
