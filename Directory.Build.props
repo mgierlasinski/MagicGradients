@@ -9,7 +9,8 @@
     <Authors>Marcin Gierlasiński, Bohdan Benetskyi</Authors>
     <Product>Magic Gradients</Product>
     <Description>Draw breathtaking backgrounds in your mobile application. It's a kind of magic.</Description>
-    <PackageProjectUrl>https://github.com/mgierlasinski/MagicGradients/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/mgierlasinski/MagicGradients</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/mgierlasinski/MagicGradients/releases</PackageReleaseNotes>
     <PackageTags>magic;gradients;linear;radial;skiasharp;xamarin;forms;android;ios;uwp</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
@@ -17,9 +18,9 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(IsNuGetProject)' == 'true'">
-    <None Include="$(MSBuildThisFileDirectory)\LICENSE" Pack="true" PackagePath="\" />
-    <None Include="$(MSBuildThisFileDirectory)\Assets\icon.png" Pack="true" PackagePath="\" />
-    <None Include="$(MSBuildThisFileDirectory)\docs\README.md" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)\LICENSE" Visible="false" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)\Assets\icon.png" Visible="false" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)\docs\README.md" Visible="false" Pack="true" PackagePath="\" />
   </ItemGroup>
   
 </Project>
