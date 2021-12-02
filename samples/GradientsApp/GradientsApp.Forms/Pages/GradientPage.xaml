@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="http://magic.com/schemas/gradients"
+             xmlns:skia="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
              xmlns:viewModels="clr-namespace:GradientsApp.ViewModels;assembly=GradientsApp"
-             xmlns:form="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Forms"
-             xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
-             xmlns:skiv="clr-namespace:MagicGradients.Forms.SkiaViews;assembly=MagicGradients.Forms.SkiaViews"
              xmlns:i="clr-namespace:GradientsApp.Forms.Infrastructure;assembly=GradientsApp.Forms"
              x:Class="GradientsApp.Forms.Pages.GradientPage"
              x:DataType="viewModels:GradientViewModel"
@@ -12,21 +11,21 @@
              Title="Gradient preview">
     <StackLayout>
         <Grid IsVisible="{Binding IsSkiaVisible}" VerticalOptions="FillAndExpand">
-            <skiv:GradientView GradientSource="{Binding Source}" 
+            <skia:GradientView GradientSource="{Binding Source}" 
                                GradientSize="{Binding Size}" 
                                HeightRequest="160" />
             <Label Text="Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
         </Grid>
         <Grid IsVisible="{Binding IsGraphicsSkiaVisible}" VerticalOptions="FillAndExpand">
-            <skia:SkiaGradientView GradientSource="{Binding Source}" 
-                                   GradientSize="{Binding Size}" 
-                                   HeightRequest="160" />
+            <magic:SkiaGradientView GradientSource="{Binding Source}" 
+                                    GradientSize="{Binding Size}" 
+                                    HeightRequest="160" />
             <Label Text="Graphics.Skia" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
         </Grid>
         <Grid IsVisible="{Binding IsGraphicsNativeVisible}" VerticalOptions="FillAndExpand">
-            <form:GradientView GradientSource="{Binding Source}" 
-                               GradientSize="{Binding Size}" 
-                               HeightRequest="160" />
+            <magic:GradientView GradientSource="{Binding Source}" 
+                                GradientSize="{Binding Size}" 
+                                HeightRequest="160" />
             <Label Text="Graphics.Native" TextColor="WhiteSmoke" HorizontalOptions="Start" VerticalOptions="End" Margin="5" />
         </Grid>
         <Grid ColumnDefinitions="*,*,*,*" VerticalOptions="End">
