@@ -1,9 +1,8 @@
-﻿using MagicGradients.Animation.Tween;
-using System;
+﻿using System;
 using System.Diagnostics;
 using Xamarin.Forms;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     public abstract class PropertyAnimation<TValue> : Timeline
     {

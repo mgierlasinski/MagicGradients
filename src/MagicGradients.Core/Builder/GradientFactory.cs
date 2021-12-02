@@ -1,26 +1,23 @@
-﻿using MagicGradients.Builder;
-using Microsoft.Maui.Graphics;
-using System.Linq;
+﻿using Microsoft.Maui.Graphics;
+using System.Collections.Generic;
 
-namespace MagicGradients.Forms.Builder
+namespace MagicGradients.Builder
 {
-    public class XamlGradientFactory : IGradientFactory
+    public class GradientFactory : IGradientFactory
     {
         public ILinearGradient Construct(LinearGradientBuilder builder)
         {
-            var linearGradient = new LinearGradient
+            return new LinearGradient
             {
                 Angle = builder.Angle,
                 IsRepeating = builder.IsRepeating,
-                Stops = new GradientElements<GradientStop>(builder.Stops.Cast<GradientStop>())
+                Stops = new List<IGradientStop>(builder.Stops)
             };
-
-            return linearGradient;
         }
 
         public IRadialGradient Construct(RadialGradientBuilder builder)
         {
-            var radialGradient = new RadialGradient
+            return new RadialGradient
             {
                 Center = builder.Center,
                 Shape = builder.Shape,
@@ -29,21 +26,17 @@ namespace MagicGradients.Forms.Builder
                 RadiusY = builder.RadiusY,
                 Flags = builder.Flags,
                 IsRepeating = builder.IsRepeating,
-                Stops = new GradientElements<GradientStop>(builder.Stops.Cast<GradientStop>())
+                Stops = new List<IGradientStop>(builder.Stops)
             };
-
-            return radialGradient;
         }
 
         public IGradientStop CreateStop(Color color, Offset? offset = null)
         {
-            var stop = new GradientStop
+            return new GradientStop
             {
                 Color = color,
                 Offset = offset ?? Offset.Empty
             };
-
-            return stop;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Animation.Tween
+namespace MagicGradients.Forms.Animation
 {
     public class ColorTweener : ITweener<Color>
     {

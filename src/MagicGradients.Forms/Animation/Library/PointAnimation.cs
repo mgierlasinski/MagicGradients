@@ -1,7 +1,6 @@
-﻿using MagicGradients.Animation.Tween;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     public class PointAnimation : PropertyAnimation<Point>
     {

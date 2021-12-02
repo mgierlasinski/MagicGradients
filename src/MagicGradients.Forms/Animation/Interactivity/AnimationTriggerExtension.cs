@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     [ContentProperty(nameof(Animation))]
     public class AnimationTriggerExtension : IMarkupExtension<TriggerBase>

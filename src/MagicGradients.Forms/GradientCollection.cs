@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
-namespace MagicGradients
+namespace MagicGradients.Forms
 {
     [ContentProperty(nameof(Gradients))]
     public class GradientCollection : GradientElement, IGradientSource

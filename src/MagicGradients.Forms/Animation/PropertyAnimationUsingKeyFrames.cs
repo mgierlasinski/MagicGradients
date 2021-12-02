@@ -1,10 +1,9 @@
-﻿using MagicGradients.Animation.Tween;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     [ContentProperty(nameof(KeyFrames))]
     public abstract class PropertyAnimationUsingKeyFrames<TValue> : Timeline

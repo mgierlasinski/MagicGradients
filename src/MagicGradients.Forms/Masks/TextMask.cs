@@ -1,6 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using MagicGradients.Masks;
+using Xamarin.Forms;
 
-namespace MagicGradients.Masks
+namespace MagicGradients.Forms.Masks
 {
     public class TextMask : PathMask, ITextMask
     {

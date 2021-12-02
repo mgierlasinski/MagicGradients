@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Xamarin.Forms.StyleSheets;
 
-namespace MagicGradients
+namespace MagicGradients.Forms
 {
     public static class StyleSheets
     {

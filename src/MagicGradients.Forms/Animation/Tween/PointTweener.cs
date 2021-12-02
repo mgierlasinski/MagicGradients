@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace MagicGradients.Animation.Tween
+namespace MagicGradients.Forms.Animation
 {
     public class PointTweener : ITweener<Point>
     {

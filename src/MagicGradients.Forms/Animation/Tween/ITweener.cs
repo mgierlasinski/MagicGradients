@@ -1,4 +1,4 @@
-﻿namespace MagicGradients.Animation.Tween
+﻿namespace MagicGradients.Forms.Animation
 {
     public interface ITweener<TValue>
     {

@@ -1,6 +1,4 @@
-﻿using MagicGradients.Animation.Tween;
-
-namespace MagicGradients.Animation
+﻿namespace MagicGradients.Forms.Animation
 {
     public class DimensionsAnimation : PropertyAnimation<Dimensions>
     {

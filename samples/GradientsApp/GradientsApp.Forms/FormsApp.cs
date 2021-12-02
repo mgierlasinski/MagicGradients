@@ -2,6 +2,7 @@
 using GradientsApp.Forms.Pages;
 using GradientsApp.Infrastructure;
 using MagicGradients;
+using MagicGradients.Forms;
 using MagicGradients.Forms.Skia;
 using Microsoft.Extensions.DependencyInjection;
 

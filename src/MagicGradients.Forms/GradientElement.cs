@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace MagicGradients
+namespace MagicGradients.Forms
 {
     public abstract class GradientElement : BindableObject, IGradientVisualElement
     {

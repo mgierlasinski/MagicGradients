@@ -1,7 +1,6 @@
-﻿using MagicGradients.Animation.Tween;
-using Microsoft.Maui.Graphics;
+﻿using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     public class ColorAnimation : PropertyAnimation<Color>
     {

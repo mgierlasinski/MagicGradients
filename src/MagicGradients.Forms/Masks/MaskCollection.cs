@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using MagicGradients.Masks;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
-namespace MagicGradients.Masks
+namespace MagicGradients.Forms.Masks
 {
     [ContentProperty(nameof(Masks))]
     public class MaskCollection : GradientMask, IMaskCollection
