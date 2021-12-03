@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<declare-styleable name="GradientView">
+		<attr name="gradientSource" format="string" />
+		<attr name="gradientSize" format="string" />
+		<attr name="gradientRepeat" format="enum">
+			<enum name="repeat" value="0"/>
+			<enum name="repeat_x" value="1"/>
+			<enum name="repeat_y" value="2"/>
+			<enum name="no_repeat" value="3"/>
+		</attr>
+		<attr name="maskShape" format="enum">
+			<enum name="rectangle" value="0"/>
+			<enum name="ellipse" value="1"/>
+			<enum name="path" value="2"/>
+		</attr>
+		<attr name="maskStretch" format="enum">
+			<enum name="none" value="0"/>
+			<enum name="aspect_fit" value="1"/>
+			<enum name="aspect_fill" value="2"/>
+			<enum name="fill" value="3"/>
+		</attr>
+		<attr name="maskSize" format="string" />
+		<attr name="maskCorners" format="string" />
+		<attr name="maskData" format="string" />
+	</declare-styleable>
+</resources>
+
