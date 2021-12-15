@@ -8,6 +8,8 @@ namespace MagicGradients.Platform
 {
     public class AttributeReader
     {
+        enum MaskShape { Rectangle = 0, Ellipse = 1, Path = 2 }
+
         public void ReadAttributes(IGradientControl view, Context context, IAttributeSet attrs)
         {
             var typedArray = context.ObtainStyledAttributes(attrs, Resource.Styleable.GradientView);
@@ -47,16 +49,16 @@ namespace MagicGradients.Platform
 
         private void ReadMask(IGradientControl view, TypedArray typedArray)
         {
-            var maskShape = typedArray.GetInt(Resource.Styleable.GradientView_maskShape, 0);
+            var maskShape = (MaskShape)typedArray.GetInt(Resource.Styleable.GradientView_maskShape, 0);
             GradientMask mask = maskShape switch
             {
-                0 => new RectangleMask
+                MaskShape.Rectangle => new RectangleMask
                 {
                     Size = GetSize(typedArray),
                     Corners = GetCorners(typedArray)
                 },
-                1 => new EllipseMask { Size = GetSize(typedArray) },
-                2 => new PathMask { Data = typedArray.GetString(Resource.Styleable.GradientView_maskData) },
+                MaskShape.Ellipse => new EllipseMask { Size = GetSize(typedArray) },
+                MaskShape.Path => new PathMask { Data = typedArray.GetString(Resource.Styleable.GradientView_maskData) },
                 _ => null
             };
 
