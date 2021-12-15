@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     public class KeyFrame
     {

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:MagicGradients.Forms.Skia;assembly=MagicGradients.Forms.Skia"
+             xmlns:magic="http://magic.com/schemas/gradients"
              xmlns:core="clr-namespace:GradientsApp;assembly=GradientsApp"
              xmlns:i="clr-namespace:GradientsApp.Forms.Infrastructure;assembly=GradientsApp.Forms"
              x:Class="GradientsApp.Forms.Pages.HomePage"
              NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Grid>
-            <skia:SkiaGradientView StyleClass="RainbowGradient" />
+            <magic:SkiaGradientView StyleClass="RainbowGradient" />
             <Label HorizontalTextAlignment="Center" TextColor="White" Margin="24">
                 <Label.FormattedText>
                     <FormattedString>

@@ -1,12 +1,21 @@
 ﻿using GradientsApp.Forms.Infrastructure;
 using GradientsApp.Forms.Pages;
 using GradientsApp.Infrastructure;
+using MagicGradients;
+using MagicGradients.Forms;
+using MagicGradients.Forms.Skia;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GradientsApp.Forms
 {
     public class FormsApp : AppSetup
     {
+        protected override void Configure()
+        {
+            GlobalSetup.Current.UseXamlGradients();
+            GlobalSetup.Current.UseSkiaXamlGradients();
+        }
+
         protected override void ConfigureServices(IServiceCollection services)
         {
             var navigation = new NavigationService();

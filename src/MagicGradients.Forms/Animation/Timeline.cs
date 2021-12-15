@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     public abstract class Timeline : BindableObject
     {

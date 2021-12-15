@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MagicGradients.Masks
+namespace MagicGradients.Forms.Masks
 {
     [ContentProperty(nameof(Data))]
     public class PathExtension : MaskExtension, IMarkupExtension<PathMask>

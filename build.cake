@@ -47,7 +47,6 @@ Task("Pack")
             .WithProperty("PackageOutputPath", output);
 
         MSBuild("src/MagicGradients.Core/MagicGradients.Core.csproj", settings);
-        MSBuild("src/MagicGradients.Native/MagicGradients.Native.csproj", settings);
         MSBuild("src/MagicGradients.Forms/MagicGradients.Forms.csproj", settings);
         MSBuild("src/MagicGradients.Forms.Skia/MagicGradients.Forms.Skia.csproj", settings);
     });

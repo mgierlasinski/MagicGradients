@@ -1,7 +1,7 @@
 ﻿using MagicGradients.Masks;
 using Xamarin.Forms;
 
-namespace MagicGradients
+namespace MagicGradients.Forms
 {
     public static class GradientControl
     {

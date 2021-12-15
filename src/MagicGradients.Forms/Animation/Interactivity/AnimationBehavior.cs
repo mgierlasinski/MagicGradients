@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     [ContentProperty(nameof(Animation))]
     public class AnimationBehavior : Behavior<VisualElement>

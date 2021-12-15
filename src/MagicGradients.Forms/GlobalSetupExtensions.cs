@@ -1,6 +1,6 @@
-﻿using MagicGradients.Builder;
+﻿using MagicGradients.Forms.Builder;
 
-namespace MagicGradients
+namespace MagicGradients.Forms
 {
     public static class GlobalSetupExtensions
     {

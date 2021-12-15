@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     public class RepeatBehaviorTypeConverter : TypeConverter
     {

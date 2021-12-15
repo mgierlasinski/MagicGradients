@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace MagicGradients.Animation
+namespace MagicGradients.Forms.Animation
 {
     [TypeConverter(typeof(RepeatBehaviorTypeConverter))]
     public struct RepeatBehavior

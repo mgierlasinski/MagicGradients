@@ -1,7 +1,8 @@
-﻿using Microsoft.Maui.Graphics;
+﻿using MagicGradients.Builder;
+using Microsoft.Maui.Graphics;
 using System.Linq;
 
-namespace MagicGradients.Builder
+namespace MagicGradients.Forms.Builder
 {
     public class XamlGradientFactory : IGradientFactory
     {

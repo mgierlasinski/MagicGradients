@@ -1,7 +1,7 @@
 ﻿using Microsoft.Maui.Graphics;
 using BindableProperty = Xamarin.Forms.BindableProperty;
 
-namespace MagicGradients
+namespace MagicGradients.Forms
 {
     public class GradientStop : GradientElement, IGradientStop
     {

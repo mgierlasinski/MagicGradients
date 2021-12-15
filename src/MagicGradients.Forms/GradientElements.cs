@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using Xamarin.Forms;
 
-namespace MagicGradients
+namespace MagicGradients.Forms
 {
     public class GradientElements<TElement> : ObservableCollection<TElement> where TElement : GradientElement
     {
