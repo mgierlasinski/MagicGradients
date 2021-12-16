@@ -1,7 +1,6 @@
 ﻿using MagicGradients.Drawing;
 using MagicGradients.Masks;
 using SkiaSharp;
-using Xamarin.Forms;
 using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
 namespace MagicGradients.Forms.SkiaViews.Masks
@@ -39,7 +38,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
 
         protected override void BeginLayout(IGradientMask mask, SKRect bounds, DrawContext context)
         {
-            var textMask = (TextMask)mask;
+            var textMask = (ITextMask)mask;
 
             var posX = textMask.HorizontalTextAlignment switch
             {
@@ -60,7 +59,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
 
         protected override void EndLayout(IGradientMask mask, SKRect bounds, DrawContext context)
         {
-            var textMask = (TextMask)mask;
+            var textMask = (ITextMask)mask;
 
             var movX = textMask.HorizontalTextAlignment switch
             {
