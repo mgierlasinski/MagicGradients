@@ -1,6 +1,6 @@
 <Project>
   <ItemGroup>
-    <Reference Include="netstandard" Condition="'$(TargetFramework)' == 'Xamarin.iOS10' Or '$(TargetFramework)' == 'Xamarin.Mac20'" />
+    <Reference Include="netstandard" Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) Or $(TargetFramework.StartsWith('Xamarin.Mac'))" />
     <Reference Include="System.Numerics" Condition="$(TargetFramework.StartsWith('netstandard')) != true" />
     <Reference Include="System.Numerics.Vectors" Condition="$(TargetFramework.StartsWith('netstandard')) != true" />
   </ItemGroup>

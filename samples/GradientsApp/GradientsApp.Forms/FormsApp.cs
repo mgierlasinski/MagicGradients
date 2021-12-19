@@ -12,8 +12,9 @@ namespace GradientsApp.Forms
     {
         protected override void Configure()
         {
-            GlobalSetup.Current.UseXamlGradients();
-            GlobalSetup.Current.UseSkiaXamlGradients();
+            GlobalSetup.Current
+                .UseFormsGradients()
+                .UseFormsSkiaGradients();
         }
 
         protected override void ConfigureServices(IServiceCollection services)

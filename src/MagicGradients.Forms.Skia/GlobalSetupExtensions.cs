@@ -2,8 +2,9 @@
 {
     public static class GlobalSetupExtensions
     {
-        public static GlobalSetup UseSkiaXamlGradients(this GlobalSetup setup)
+        public static GlobalSetup UseFormsSkiaGradients(this GlobalSetup setup)
         {
+            // Init() as GlobalSetup extension
             return setup;
         }
     }

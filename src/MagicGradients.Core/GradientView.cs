@@ -4,11 +4,6 @@ namespace MagicGradients
 {
     public partial class GradientView
     {
-        static GradientView()
-        {
-            GlobalSetup.Current.UseNativeGradients();
-        }
-
         private IGradientSource _gradientSource;
         public IGradientSource GradientSource
         {

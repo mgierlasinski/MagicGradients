@@ -1,14 +1,11 @@
-﻿using MagicGradients.Forms.Builder;
-
-namespace MagicGradients.Forms
+﻿namespace MagicGradients.Forms
 {
     public static class GlobalSetupExtensions
     {
-        public static GlobalSetup UseXamlGradients(this GlobalSetup setup)
+        public static GlobalSetup UseFormsGradients(this GlobalSetup setup)
         {
-            if (setup.GradientFactory != null)
-                return setup;
-            return setup.UseFactory(new XamlGradientFactory());
+            // Init() as GlobalSetup extension
+            return setup;
         }
 
         public static GlobalSetup UseCssStyles<TControl>(this GlobalSetup setup)
