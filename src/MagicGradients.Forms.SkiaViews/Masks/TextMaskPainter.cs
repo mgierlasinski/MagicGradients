@@ -5,7 +5,7 @@ using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
 namespace MagicGradients.Forms.SkiaViews.Masks
 {
-    public class TextMaskPainter : PathMaskPainter, IMaskPainter<ITextMask, DrawContext>
+    public class TextMaskPainter : GradientMaskPainter, IMaskPainter<ITextMask, DrawContext>
     {
         public void Clip(ITextMask mask, DrawContext context)
         {
@@ -14,10 +14,13 @@ namespace MagicGradients.Forms.SkiaViews.Masks
 
             using var textPaint = GetTextPaint(mask, context);
             using var textPath = textPaint.GetTextPath(mask.Text, 0, 0);
+            textPath.GetTightBounds(out var bounds);
 
-            ClipPath(textPath, mask, context);
+            using var canvasLock = new CanvasLock(context.Canvas);
+            LayoutBounds(mask, bounds, context, true);
+            context.Canvas.ClipPath(textPath, mask.ClipMode.ToSkOperation());
         }
-
+        
         private SKPaint GetTextPaint(ITextMask mask, DrawContext context)
         {
             var isBold = (mask.FontAttributes & FontAttributes.Bold) == FontAttributes.Bold;

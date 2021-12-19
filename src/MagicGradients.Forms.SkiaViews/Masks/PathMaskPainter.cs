@@ -13,16 +13,10 @@ namespace MagicGradients.Forms.SkiaViews.Masks
                 return;
 
             using var path = SKPath.ParseSvgPathData(mask.Data);
-            ClipPath(path, mask, context);
-        }
-
-        protected internal void ClipPath(SKPath path, IPathMask mask, DrawContext context)
-        {
-            using var canvasLock = new CanvasLock(context.Canvas);
-
             path.GetTightBounds(out var bounds);
-            LayoutBounds(mask, bounds, context, true);
 
+            using var canvasLock = new CanvasLock(context.Canvas);
+            LayoutBounds(mask, bounds, context, true);
             context.Canvas.ClipPath(path, mask.ClipMode.ToSkOperation());
         }
     }
