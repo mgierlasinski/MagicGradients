@@ -2,13 +2,13 @@
 using Microsoft.Maui.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace MagicGradients.Drawing
 {
     public class MaskLayout
     {
-        private readonly Stack<AffineTransform> _transforms = new();
-        //private AffineTransform _transform = new AffineTransform();
+        private readonly Stack<Matrix3x2> _transforms = new();
         
         public void LayoutBounds(IGradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
         {
@@ -64,15 +64,13 @@ namespace MagicGradients.Drawing
         protected void Translate(ICanvas canvas, float tx, float ty)
         {
             canvas.Translate(tx, ty);
-            _transforms.Push(AffineTransform.GetTranslateInstance(tx, ty));
-            //_transform.Translate(tx, ty);
+            _transforms.Push(Matrix3x2.CreateTranslation(tx, ty));
         }
 
         protected void Scale(ICanvas canvas, float sx, float sy)
         {
             canvas.Scale(sx, sy);
-            _transforms.Push(AffineTransform.GetScaleInstance(sx, sy));
-            //_transform.Scale(sx, sy);
+            _transforms.Push(Matrix3x2.CreateScale(sx, sy));
         }
 
         public void RestoreTransform(ICanvas canvas)
@@ -80,28 +78,18 @@ namespace MagicGradients.Drawing
             while (_transforms.Count > 0)
             {
                 var transform = _transforms.Pop();
+                var scaleX = transform.M11;
+                var scaleY = transform.M22;
+                var transX = transform.M31;
+                var transY = transform.M32;
 
-                if (transform.ScaleX > 0 && transform.ScaleY > 0)
-                    canvas.Scale(1 / transform.ScaleX, 1 / transform.ScaleY);
+                if (scaleX > 0 && scaleY > 0)
+                    canvas.Scale(1 / scaleX, 1 / scaleY);
 
-                if (transform.TranslateX != 0 || transform.TranslateY != 0)
-                    canvas.Translate(-transform.TranslateX, -transform.TranslateY);
+                if (transX != 0 || transY != 0)
+                    canvas.Translate(-transX, -transY);
             }
         }
-
-        //private void RestoreWithMatrix(ICanvas canvas)
-        //{
-        //    var movX = -_transform.TranslateX;
-        //    var movY = -_transform.TranslateY;
-        //    var scaleX = 1 / _transform.ScaleX;
-        //    var scaleY = 1 / _transform.ScaleY;
-
-        //    var inverseTransform = AffineTransform.GetScaleInstance(scaleX, scaleY);
-        //    inverseTransform.Translate(movX, movY);
-
-        //    canvas.ConcatenateTransform(inverseTransform);
-        //    _transform = new AffineTransform();
-        //}
     }
 
     public class ShapeMaskLayout : MaskLayout, IDisposable

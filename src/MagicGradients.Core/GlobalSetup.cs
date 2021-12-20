@@ -6,7 +6,7 @@ namespace MagicGradients
     {
         public static GlobalSetup Current { get; } = new GlobalSetup();
 
-        public IGradientFactory GradientFactory { get; private set; }
+        public IGradientFactory GradientFactory { get; private set; } = new GradientFactory();
 
         public GlobalSetup UseFactory(IGradientFactory factory)
         {

@@ -23,7 +23,7 @@
         public string Data { get; set; }
     }
 
-    public class TextMask : PathMask, ITextMask
+    public class TextMask : GradientMask, ITextMask
     {
         public string Text { get; set; }
         public string FontFamily { get; set; }

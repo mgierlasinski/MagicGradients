@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace MagicGradients.Forms.Masks
 {
-    public class TextMask : PathMask, ITextMask
+    public class TextMask : GradientMask, ITextMask
     {
         public const double DefaultFontSize = 18d;
 

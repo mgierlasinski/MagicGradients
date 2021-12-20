@@ -1,4 +1,9 @@
 <Project>
+  <ItemGroup>
+    <Reference Include="netstandard" Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) Or $(TargetFramework.StartsWith('Xamarin.Mac'))" />
+    <Reference Include="System.Numerics" Condition="$(TargetFramework.StartsWith('netstandard')) != true" />
+    <Reference Include="System.Numerics.Vectors" Condition="$(TargetFramework.StartsWith('netstandard')) != true" />
+  </ItemGroup>
   <ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) != true And '$(TargetPlatformIdentifier)' != 'ios' And '$(TargetPlatformIdentifier)' != 'maccatalyst'">
     <Compile Remove="**\*.iOS.cs"/>
     <None Include="**\*.iOS.cs"/>

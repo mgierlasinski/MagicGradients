@@ -1,12 +1,11 @@
 ﻿using MagicGradients.Drawing;
 using MagicGradients.Masks;
 using SkiaSharp;
-using Xamarin.Forms;
 using DrawContext = MagicGradients.Forms.SkiaViews.Drawing.DrawContext;
 
 namespace MagicGradients.Forms.SkiaViews.Masks
 {
-    public class TextMaskPainter : PathMaskPainter, IMaskPainter<ITextMask, DrawContext>
+    public class TextMaskPainter : GradientMaskPainter, IMaskPainter<ITextMask, DrawContext>
     {
         public void Clip(ITextMask mask, DrawContext context)
         {
@@ -15,10 +14,13 @@ namespace MagicGradients.Forms.SkiaViews.Masks
 
             using var textPaint = GetTextPaint(mask, context);
             using var textPath = textPaint.GetTextPath(mask.Text, 0, 0);
+            textPath.GetTightBounds(out var bounds);
 
-            ClipPath(textPath, mask, context);
+            using var canvasLock = new CanvasLock(context.Canvas);
+            LayoutBounds(mask, bounds, context, true);
+            context.Canvas.ClipPath(textPath, mask.ClipMode.ToSkOperation());
         }
-
+        
         private SKPaint GetTextPaint(ITextMask mask, DrawContext context)
         {
             var isBold = (mask.FontAttributes & FontAttributes.Bold) == FontAttributes.Bold;
@@ -39,7 +41,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
 
         protected override void BeginLayout(IGradientMask mask, SKRect bounds, DrawContext context)
         {
-            var textMask = (TextMask)mask;
+            var textMask = (ITextMask)mask;
 
             var posX = textMask.HorizontalTextAlignment switch
             {
@@ -60,7 +62,7 @@ namespace MagicGradients.Forms.SkiaViews.Masks
 
         protected override void EndLayout(IGradientMask mask, SKRect bounds, DrawContext context)
         {
-            var textMask = (TextMask)mask;
+            var textMask = (ITextMask)mask;
 
             var movX = textMask.HorizontalTextAlignment switch
             {
