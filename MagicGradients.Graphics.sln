@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Native", "Native", "{B73A12
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{F65F8728-9E2D-4FE2-93BF-871043C8109A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicGradients.Core.Tests", "tests\MagicGradients.Core.Tests\MagicGradients.Core.Tests.csproj", "{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +183,18 @@ Global
 		{95FC87D1-0E91-4432-9521-18E55AC60752}.Release|iPhone.Build.0 = Release|iPhone
 		{95FC87D1-0E91-4432-9521-18E55AC60752}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{95FC87D1-0E91-4432-9521-18E55AC60752}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Release|iPhone.Build.0 = Release|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{1F9D6988-3DCB-4CF8-B6A2-2F1C619934F3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

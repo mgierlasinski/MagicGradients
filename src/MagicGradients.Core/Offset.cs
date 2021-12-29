@@ -30,22 +30,33 @@ namespace MagicGradients
 
         public static Offset Parse(string value, OffsetType defaultType)
         {
-            if (string.IsNullOrWhiteSpace(value))
-                return Empty;
-
-            value = value.Trim();
-
-            if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var d))
-            {
-                return new Offset(d, defaultType);
-            }
-
-            if (TryParseWithUnit(value, out var res))
-            {
-                return res;
-            }
-
+            if (TryParse(value, defaultType, out var result))
+                return result;
+                
             throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(Offset)}");
+        }
+
+        public static bool TryParse(string value, OffsetType defaultType, out Offset result)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                value = value.Trim();
+
+                if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var d))
+                {
+                    result = new Offset(d, defaultType);
+                    return true;
+                }
+
+                if (TryParseWithUnit(value, out var res))
+                {
+                    result = res;
+                    return true;
+                }
+            }
+
+            result = Empty;
+            return false;
         }
 
         public static bool TryParseWithUnit(string token, out Offset result)
@@ -72,8 +83,13 @@ namespace MagicGradients
 
         public string ToStringWithUnit()
         {
-            var unit = Type == OffsetType.Absolute ? "px" : "%";
-            return $"{Value.ToString(CultureInfo.InvariantCulture)}{unit}";
+            if (IsEmpty)
+                return string.Empty;
+
+            var value = Type == OffsetType.Proportional ? Value * 100 : Value;
+            var unit = Type == OffsetType.Proportional ? "%" : "px";
+
+            return $"{value.ToString(CultureInfo.InvariantCulture)}{unit}";
         }
     }
 
