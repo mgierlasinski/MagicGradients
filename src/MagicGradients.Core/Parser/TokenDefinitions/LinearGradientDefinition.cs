@@ -33,7 +33,7 @@ namespace MagicGradients.Parser.TokenDefinitions
 
         internal bool TryConvertDegreeToAngle(string token, out double angle)
         {
-            if (token.TryExtractNumber("deg", out var degrees))
+            if (Offset.TryExtractNumber(token, "deg", out var degrees))
             {
                 angle = GradientMath.FromDegrees(degrees);
                 return true;
@@ -52,7 +52,7 @@ namespace MagicGradients.Parser.TokenDefinitions
 
         internal bool TryConvertTurnToAngle(string token, out double angle)
         {
-            if (token.TryExtractNumber("turn", out var turn))
+            if (Offset.TryExtractNumber(token, "turn", out var turn))
             {
                 angle = GradientMath.FromDegrees(360 * turn);
                 return true;

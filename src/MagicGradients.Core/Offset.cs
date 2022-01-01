@@ -8,8 +8,8 @@ namespace MagicGradients
     [TypeConverter(typeof(OffsetTypeConverter))]
     public struct Offset
     {
-        public static Offset Empty { get; } = new Offset(-1, OffsetType.Proportional);
-        public static Offset Zero { get; } = new Offset(0, OffsetType.Proportional);
+        public static Offset Empty { get; } = new(-1, OffsetType.Proportional);
+        public static Offset Zero { get; } = new(0, OffsetType.Proportional);
 
         public double Value { get; set; }
         public OffsetType Type { get; set; }
@@ -22,11 +22,26 @@ namespace MagicGradients
             Type = type;
         }
 
-        public static Offset Prop(double value) => new Offset(value, OffsetType.Proportional);
-        public static Offset Abs(double value) => new Offset(value, OffsetType.Absolute);
+        public static Offset Prop(double value) => new(value, OffsetType.Proportional);
+        public static Offset Abs(double value) => new(value, OffsetType.Absolute);
 
-        public static bool operator ==(Offset o1, Offset o2) => o1.Value == o2.Value;
-        public static bool operator !=(Offset o1, Offset o2) => o1.Value != o2.Value;
+        public override bool Equals(object obj)
+        {
+            if (obj is Offset other)
+            {
+                return Math.Abs(Value - other.Value) < 0.01 && Type == other.Type;
+            }
+                
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode() ^ (Type.GetHashCode() * 397);
+        }
+        
+        public static bool operator ==(Offset o1, Offset o2) => o1.Value == o2.Value && o1.Type == o2.Type;
+        public static bool operator !=(Offset o1, Offset o2) => o1.Value != o2.Value || o1.Type != o2.Type;
 
         public static Offset Parse(string value, OffsetType defaultType)
         {
@@ -63,14 +78,14 @@ namespace MagicGradients
         {
             if (token != null)
             {
-                if (token.TryExtractNumber("%", out var percent))
+                if (TryExtractNumber(token, "%", out var percent))
                 {
                     var value = Math.Min(percent / 100, 1f); // No bigger than 1
                     result = new Offset(value, OffsetType.Proportional);
                     return true;
                 }
 
-                if (token.TryExtractNumber("px", out var pixels))
+                if (TryExtractNumber(token, "px", out var pixels))
                 {
                     result = new Offset(pixels, OffsetType.Absolute);
                     return true;
@@ -78,6 +93,24 @@ namespace MagicGradients
             }
 
             result = Zero;
+            return false;
+        }
+
+        public static bool TryExtractNumber(string token, string unit, out double result)
+        {
+            if (token.EndsWith(unit))
+            {
+                var index = token.LastIndexOf(unit, StringComparison.OrdinalIgnoreCase);
+                var number = token.Substring(0, index);
+
+                if (double.TryParse(number, NumberStyles.Any, CultureInfo.InvariantCulture, out var value))
+                {
+                    result = value;
+                    return true;
+                }
+            }
+
+            result = 0;
             return false;
         }
 
@@ -97,15 +130,5 @@ namespace MagicGradients
     {
         Proportional,
         Absolute
-    }
-
-    public static class OffsetExtensions
-    {
-        public static float GetDrawPixels(this Offset offset, float sizeInPixels, float pixelScaling)
-        {
-            return offset.Type == OffsetType.Proportional
-                ? (float)(offset.Value * sizeInPixels)
-                : (float)(offset.Value * pixelScaling);
-        }
     }
 }
