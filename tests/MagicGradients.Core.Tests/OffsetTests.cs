@@ -5,7 +5,7 @@ using Xunit;
 
 namespace MagicGradients.Core.Tests
 {
-    [Trait("Feature", "Core")]
+    [Trait("Primitive", "Offset")]
     public class OffsetTests
     {
         public static IEnumerable<object[]> TestCases => new List<object[]>

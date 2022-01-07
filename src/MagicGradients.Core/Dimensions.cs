@@ -1,8 +1,10 @@
 ﻿using MagicGradients.Converters;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace MagicGradients
 {
+    [DebuggerDisplay("Width={Width}, Height={Height}")]
     [TypeConverter(typeof(DimensionsTypeConverter))]
     public struct Dimensions
     {

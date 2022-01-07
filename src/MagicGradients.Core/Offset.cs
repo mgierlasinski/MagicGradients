@@ -1,10 +1,12 @@
 ﻿using MagicGradients.Converters;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace MagicGradients
 {
+    [DebuggerDisplay("Value={Value}, Type={Type}")]
     [TypeConverter(typeof(OffsetTypeConverter))]
     public struct Offset
     {

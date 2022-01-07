@@ -4,7 +4,7 @@ using Xunit;
 
 namespace MagicGradients.Core.Tests.Converters
 {
-    [Trait("Feature", "Converters")]
+    [Trait("Converter", "BackgroundRepeat")]
     public class BackgroundRepeatTypeConverterTests : TypeConverterTests<BackgroundRepeat, BackgroundRepeatTypeConverter>
     {
         public static IEnumerable<object[]> ValidValues => new List<object[]>

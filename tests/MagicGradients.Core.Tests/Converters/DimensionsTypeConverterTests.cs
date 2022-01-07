@@ -4,7 +4,7 @@ using Xunit;
 
 namespace MagicGradients.Core.Tests.Converters
 {
-    [Trait("Feature", "Converters")]
+    [Trait("Converter", "Dimensions")]
     public class DimensionsTypeConverterTests : TypeConverterTests<Dimensions, DimensionsTypeConverter>
     {
         public static IEnumerable<object[]> ValidValuesFrom => new List<object[]>

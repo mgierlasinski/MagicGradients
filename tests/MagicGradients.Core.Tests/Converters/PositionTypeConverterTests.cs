@@ -4,24 +4,25 @@ using Xunit;
 
 namespace MagicGradients.Core.Tests.Converters
 {
-    [Trait("Converter", "Offset")]
-    public class OffsetTypeConverterTests : TypeConverterTests<Offset, OffsetTypeConverter>
+    [Trait("Converter", "Position")]
+    public class PositionTypeConverterTests : TypeConverterTests<Position, PositionTypeConverter>
     {
         public static IEnumerable<object[]> ValidValuesFrom => new List<object[]>
         {
-            new object[] { "-1", Offset.Empty },
-            new object[] { "0", Offset.Zero },
-            new object[] { "0.5", Offset.Prop(0.5) },
-            new object[] { " 80%", Offset.Prop(0.8) },
-            new object[] { "40px ", Offset.Abs(40) }
+            new object[] { "80% 40%", Position.Prop(0.8, 0.4) },
+            new object[] { "20%,30%", Position.Prop(0.2, 0.3) },
+            new object[] { "40px 65px", Position.Abs(40, 65) },
+            new object[] { "15px,70px", Position.Abs(15, 70) },
+            new object[] { "90,200", Position.Abs(90, 200) },
+            new object[] { "300, 500", Position.Abs(300, 500) },
+            new object[] { "250 ,400", Position.Abs(250, 400) }
         };
 
         public static IEnumerable<object[]> ValidValuesTo => new List<object[]>
         {
-            new object[] { Offset.Empty, "" },
-            new object[] { Offset.Zero, "0%" },
-            new object[] { Offset.Prop(0.5), "50%" },
-            new object[] { Offset.Abs(40), "40px" }
+            new object[] { Position.Zero, "0px 0px" },
+            new object[] { Position.Abs(40, 65), "40px 65px" },
+            new object[] { Position.Prop(0.8, 0.4), "80% 40%" }
         };
 
         public static IEnumerable<object[]> InvalidValues => new List<object[]>
@@ -29,13 +30,13 @@ namespace MagicGradients.Core.Tests.Converters
             new object[] { null },
             new object[] { "" },
             new object[] { " " },
-            new object[] { "30sp" },
-            new object[] { "15%%" }
+            new object[] { "30dp" },
+            new object[] { "15em" }
         };
 
         [Theory]
         [MemberData(nameof(ValidValuesFrom))]
-        public void ConvertFrom_ValidValue_IsExpected(string value, Offset expected)
+        public void ConvertFrom_ValidValue_ValueConverted(string value, Position expected)
         {
             // Assert
             Assert_ConvertFrom_IsExpected(value, expected);
@@ -43,7 +44,7 @@ namespace MagicGradients.Core.Tests.Converters
 
         [Theory]
         [MemberData(nameof(ValidValuesTo))]
-        public void ConvertTo_ValidValue_IsExpected(Offset value, string expected)
+        public void ConvertTo_ValidValue_IsExpected(Position value, string expected)
         {
             // Assert
             Assert_ConvertTo_IsExpected(value, expected);
@@ -56,7 +57,7 @@ namespace MagicGradients.Core.Tests.Converters
             // Assert
             Assert_ConvertFrom_ThrowsException(value);
         }
-        
-        public OffsetTypeConverterTests(OffsetTypeConverter converter) : base(converter) { }
+
+        public PositionTypeConverterTests(PositionTypeConverter converter) : base(converter) { }
     }
 }
