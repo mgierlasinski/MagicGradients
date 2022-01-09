@@ -15,7 +15,7 @@ namespace MagicGradients.Builder
             internal set => _flags = value;
         }
 
-        public Point Center { get; internal set; }
+        public Position Center { get; internal set; }
         public double RadiusX { get; internal set; }
         public double RadiusY { get; internal set; }
         public RadialGradientShape Shape { get; internal set; }
@@ -24,7 +24,7 @@ namespace MagicGradients.Builder
 
         public RadialGradientBuilder()
         {
-            Center = new Point(0.5, 0.5);
+            Center = Position.Prop(0.5, 0.5);
             RadiusX = -1d;
             RadiusY = -1d;
             Shape = RadialGradientShape.Ellipse;
@@ -45,13 +45,20 @@ namespace MagicGradients.Builder
             return this;
         }
 
+        public RadialGradientBuilder At(Position position)
+        {
+            Center = position;
+            return this;
+        }
+
         public RadialGradientBuilder At(Point position, Action<DimenOptions> setup = null)
         {
             var options = new DimenOptions().Proportional();
             setup?.Invoke(options);
 
-            Center = position;
-            FlagsHelper.SetValue(ref _flags, RadialGradientFlags.PositionProportional, options.IsProportional);
+            Center = options.IsProportional 
+                ? Position.Prop(position.X, position.Y) 
+                : Position.Abs(position.X, position.Y);
 
             return this;
         }

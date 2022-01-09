@@ -14,18 +14,18 @@ namespace MagicGradients.Converters
 
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            var valueStr = value?.ToString();
+            var valueStr = value?.ToString()?.Trim();
 
-            if (!string.IsNullOrEmpty(valueStr))
+            if (string.IsNullOrEmpty(valueStr))
+                return Position.Zero;
+
+            var pos = valueStr.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (pos.Length == 2)
             {
-                var pos = valueStr.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                
-                if (pos.Length == 2)
-                {
-                    return new Position(
-                        Offset.Parse(pos[0], OffsetType.Absolute),
-                        Offset.Parse(pos[1], OffsetType.Absolute));
-                }
+                return new Position(
+                    Offset.Parse(pos[0], OffsetType.Absolute),
+                    Offset.Parse(pos[1], OffsetType.Absolute));
             }
 
             throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(Position)}");

@@ -1,16 +1,15 @@
-﻿using Microsoft.Maui.Graphics;
-using BindableProperty = Xamarin.Forms.BindableProperty;
+﻿using BindableProperty = Xamarin.Forms.BindableProperty;
 
 namespace MagicGradients.Forms
 {
     public class RadialGradient : Gradient, IRadialGradient
     {
         public static readonly BindableProperty CenterProperty = BindableProperty.Create(
-            nameof(Center), typeof(Point), typeof(RadialGradient), new Point(0.5, 0.5));
+            nameof(Center), typeof(Position), typeof(RadialGradient), Position.Prop(0.5, 0.5));
 
-        public Point Center
+        public Position Center
         {
-            get => (Point)GetValue(CenterProperty);
+            get => (Position)GetValue(CenterProperty);
             set => SetValue(CenterProperty, value);
         }
 

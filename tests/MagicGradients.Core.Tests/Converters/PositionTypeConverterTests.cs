@@ -9,6 +9,9 @@ namespace MagicGradients.Core.Tests.Converters
     {
         public static IEnumerable<object[]> ValidValuesFrom => new List<object[]>
         {
+            new object[] { null, Position.Zero },
+            new object[] { "", Position.Zero },
+            new object[] { " ", Position.Zero },
             new object[] { "80% 40%", Position.Prop(0.8, 0.4) },
             new object[] { "20%,30%", Position.Prop(0.2, 0.3) },
             new object[] { "40px 65px", Position.Abs(40, 65) },
@@ -27,9 +30,6 @@ namespace MagicGradients.Core.Tests.Converters
 
         public static IEnumerable<object[]> InvalidValues => new List<object[]>
         {
-            new object[] { null },
-            new object[] { "" },
-            new object[] { " " },
             new object[] { "30dp" },
             new object[] { "15em" }
         };

@@ -23,7 +23,7 @@ namespace MagicGradients
 
     public interface IRadialGradient : IGradient
     {
-        Point Center { get; }
+        Position Center { get; }
         double RadiusX { get; }
         double RadiusY { get; }
         RadialGradientFlags Flags { get; }

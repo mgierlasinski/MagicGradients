@@ -22,7 +22,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             var (hasShape, shape) = GetShape(internalReader);
             var (hasSize, size) = GetSize(internalReader);
             var (hasRadius, radius) = GeRadius(internalReader, shape, ref flags);
-            var (hasPos, position) = GetPosition(internalReader, ref flags);
+            var (hasPos, position) = GetPosition(internalReader);
 
             builder.UseBuilder(new RadialGradientBuilder
             {
@@ -127,7 +127,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             return (false, new Size(-1, -1));
         }
 
-        private (bool, Point) GetPosition(CssReader reader, ref RadialGradientFlags flags)
+        private (bool, Position) GetPosition(CssReader reader)
         {
             if (reader.CanRead)
             {
@@ -152,23 +152,16 @@ namespace MagicGradients.Parser.TokenDefinitions
                     {
                         direction.SetNamedDirection(tokenY);
                     }
-
-                    if(!isPosX || posX.Type == OffsetType.Proportional)
-                        FlagsHelper.Set(ref flags, XProportional);
-
-                    if (!isPosY || posY.Type == OffsetType.Proportional)
-                        FlagsHelper.Set(ref flags, YProportional);
-
-                    var center = new Point(
-                        isPosX ? posX.Value : (direction.X + 1) / 2,
-                        isPosY ? posY.Value : (direction.Y + 1) / 2);
+                    
+                    var center = new Position(
+                        isPosX ? posX : Offset.Prop((direction.X + 1) / 2),
+                        isPosY ? posY : Offset.Prop((direction.Y + 1) / 2));
 
                     return (true, center);
                 }
             }
 
-            FlagsHelper.Set(ref flags, PositionProportional);
-            return (false, new Point(0.5, 0.5));
+            return (false, Position.Prop(0.5, 0.5));
         }
     }
 }

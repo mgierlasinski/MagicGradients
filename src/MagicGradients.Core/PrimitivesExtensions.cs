@@ -1,5 +1,4 @@
-﻿using MagicGradients.Drawing;
-using Microsoft.Maui.Graphics;
+﻿using Microsoft.Maui.Graphics;
 
 namespace MagicGradients
 {
@@ -12,11 +11,18 @@ namespace MagicGradients
                 : (float)(offset.Value * pixelScaling);
         }
 
-        public static RectangleF GetDrawRectangle(this Dimensions size, DrawContext context)
+        public static PointF GetDrawPoint(this Position position, RectangleF rect, float pixelScaling)
+        {
+            return new PointF(
+                position.X.GetDrawPixels(rect.Width, pixelScaling),
+                position.Y.GetDrawPixels(rect.Height, pixelScaling));
+        }
+
+        public static RectangleF GetDrawRectangle(this Dimensions dimensions, RectangleF rect, float pixelScaling)
         {
             return new RectangleF(0, 0,
-                size.Width.GetDrawPixels(context.CanvasRect.Width, context.PixelScaling),
-                size.Height.GetDrawPixels(context.CanvasRect.Height, context.PixelScaling));
+                dimensions.Width.GetDrawPixels(rect.Width, pixelScaling),
+                dimensions.Height.GetDrawPixels(rect.Height, pixelScaling));
         }
     }
 }

@@ -18,7 +18,7 @@ namespace MagicGradients.Forms.Skia.Masks
 
         private SKRoundRect GetEllipse(IEllipseMask mask, DrawContext context)
         {
-            var bounds = mask.Size.GetDrawRectangle(context).AsSKRect();
+            var bounds = mask.Size.GetDrawRectangle(context.CanvasRect, context.PixelScaling).AsSKRect();
             return new SKRoundRect(bounds, bounds.Width / 2, bounds.Height / 2);
         }
     }

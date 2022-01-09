@@ -14,7 +14,7 @@ namespace MagicGradients.Drawing
         {
             var rect = new RectangleF(0, 0, width, height);
 
-            var center = GetCenter(gradient, rect, 1);
+            var center = gradient.Center.GetDrawPoint(rect, 1);
             var radius = GetRadius(gradient, center, rect, 1, 1);
 
             // Use lower dimension (scale = 1) 
@@ -23,20 +23,8 @@ namespace MagicGradients.Drawing
 
         public void CalculateGeometry(IRadialGradient gradient, RectangleF rect, float offset, float pixelScaling)
         {
-            Center = GetCenter(gradient, rect, pixelScaling);
+            Center = gradient.Center.GetDrawPoint(rect, pixelScaling);
             Radius = GetRadius(gradient, Center, rect, offset, pixelScaling);
-        }
-
-        private PointF GetCenter(IRadialGradient gradient, RectangleF rect, float pixelScaling)
-        {
-            var point = gradient.Center;
-
-            var xIsProportional = IsSet(gradient.Flags, RadialGradientFlags.XProportional);
-            var yIsProportional = IsSet(gradient.Flags, RadialGradientFlags.YProportional);
-            
-            return new PointF(
-                (float)(xIsProportional ? rect.Width * point.X : point.X * pixelScaling),
-                (float)(yIsProportional ? rect.Height * point.Y : point.Y * pixelScaling));
         }
         
         private SizeF GetRadius(IRadialGradient gradient, PointF center, RectangleF rect, float offset, float pixelScaling)
