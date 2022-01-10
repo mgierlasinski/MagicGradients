@@ -24,9 +24,7 @@ namespace MagicGradients
     public interface IRadialGradient : IGradient
     {
         Position Center { get; }
-        double RadiusX { get; }
-        double RadiusY { get; }
-        RadialGradientFlags Flags { get; }
+        Dimensions Radius { get; }
         RadialGradientShape Shape { get; }
         RadialGradientSize Size { get; }
     }

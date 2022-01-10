@@ -7,17 +7,9 @@ namespace MagicGradients.Builder
     public class RadialGradientBuilder : StopsBuilder<RadialGradientBuilder>, IChildBuilder
     {
         protected override RadialGradientBuilder Instance => this;
-
-        private RadialGradientFlags _flags;
-        public RadialGradientFlags Flags
-        {
-            get => _flags;
-            internal set => _flags = value;
-        }
-
+        
         public Position Center { get; internal set; }
-        public double RadiusX { get; internal set; }
-        public double RadiusY { get; internal set; }
+        public Dimensions Radius { get; internal set; }
         public RadialGradientShape Shape { get; internal set; }
         public RadialGradientSize Size { get; internal set; }
         public bool IsRepeating { get; internal set; }
@@ -25,12 +17,10 @@ namespace MagicGradients.Builder
         public RadialGradientBuilder()
         {
             Center = Position.Prop(0.5, 0.5);
-            RadiusX = -1d;
-            RadiusY = -1d;
+            Radius = Dimensions.Zero;
             Shape = RadialGradientShape.Ellipse;
             Size = RadialGradientSize.FarthestCorner;
             IsRepeating = false;
-            Flags = RadialGradientFlags.PositionProportional;
         }
 
         public RadialGradientBuilder Circle()
@@ -51,37 +41,43 @@ namespace MagicGradients.Builder
             return this;
         }
 
-        public RadialGradientBuilder At(Point position, Action<DimenOptions> setup = null)
+        public RadialGradientBuilder At(Point position, Action<OffsetOptions> setup = null)
         {
-            var options = new DimenOptions().Proportional();
+            return At(position.X, position.Y, setup);
+        }
+
+        public RadialGradientBuilder At(double x, double y, Action<OffsetOptions> setup = null)
+        {
+            var options = new OffsetOptions().Proportional();
             setup?.Invoke(options);
 
-            Center = options.IsProportional 
-                ? Position.Prop(position.X, position.Y) 
-                : Position.Abs(position.X, position.Y);
+            Center = options.IsProportional
+                ? Position.Prop(x, y)
+                : Position.Abs(x, y);
 
             return this;
         }
 
-        public RadialGradientBuilder At(double x, double y, Action<DimenOptions> setup = null)
+        public RadialGradientBuilder Resize(Dimensions radius)
         {
-            return At(new Point(x, y), setup);
+            Radius = radius;
+            return this;
         }
 
-        public RadialGradientBuilder Radius(Size radius, Action<DimenOptions> setup = null)
+        public RadialGradientBuilder Resize(Size radius, Action<OffsetOptions> setup = null)
         {
-            return Radius(radius.Width, radius.Height, setup);
+            return Resize(radius.Width, radius.Height, setup);
         }
 
-        public RadialGradientBuilder Radius(double radiusX, double radiusY, Action<DimenOptions> setup = null)
+        public RadialGradientBuilder Resize(double radiusX, double radiusY, Action<OffsetOptions> setup = null)
         {
-            var options = new DimenOptions();
+            var options = new OffsetOptions();
             setup?.Invoke(options);
 
-            RadiusX = radiusX;
-            RadiusY = radiusY;
-            FlagsHelper.SetValue(ref _flags, RadialGradientFlags.SizeProportional, options.IsProportional);
-
+            Radius = options.IsProportional
+                ? Dimensions.Prop(radiusX, radiusY)
+                : Dimensions.Abs(radiusX, radiusY);
+            
             return this;
         }
 

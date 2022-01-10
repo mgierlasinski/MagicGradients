@@ -1,7 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 using System;
 using System.Linq;
-using static MagicGradients.FlagsHelper;
 
 namespace MagicGradients.Drawing
 {
@@ -53,16 +52,14 @@ namespace MagicGradients.Drawing
                 radiusY = distanceXY;
             }
 
-            if (gradient.RadiusX > -1)
+            if (gradient.Radius.Width.Value > 0)
             {
-                var widthIsProportional = IsSet(gradient.Flags, RadialGradientFlags.WidthProportional);
-                radiusX = widthIsProportional ? rect.Width * (float)gradient.RadiusX : (float)gradient.RadiusX * pixelScaling;
+                radiusX = gradient.Radius.Width.GetDrawPixels(rect.Width, pixelScaling);
             }
 
-            if (gradient.RadiusY > -1)
+            if (gradient.Radius.Height.Value > 0)
             {
-                var heightIsProportional = IsSet(gradient.Flags, RadialGradientFlags.HeightProportional);
-                radiusY = heightIsProportional ? rect.Height * (float)gradient.RadiusY : (float)gradient.RadiusY * pixelScaling;
+                radiusY = gradient.Radius.Height.GetDrawPixels(rect.Height, pixelScaling);
             }
 
             return new SizeF(radiusX * offset, radiusY * offset);

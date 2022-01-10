@@ -29,7 +29,7 @@ namespace MagicGradients.Drawing
             // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf
 
             var angleDegrees = gradient.Angle;
-            var angleRadians = GradientMath.ToRadians(GradientMath.FromDegrees(angleDegrees));
+            var angleRadians = GradientMath.ToRadians(GradientMath.RotateBy180(angleDegrees));
 
             var lineLength =
                 Math.Abs(boxBounds.Width * Math.Sin(angleRadians)) +

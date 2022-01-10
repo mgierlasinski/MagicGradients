@@ -1,5 +1,4 @@
 ﻿using MagicGradients.Converters;
-using System;
 using System.ComponentModel;
 
 namespace MagicGradients
@@ -12,20 +11,7 @@ namespace MagicGradients
         RepeatY, 
         NoRepeat
     }
-
-    [Flags]
-    public enum RadialGradientFlags
-    {
-        None = 0,
-        XProportional = 1 << 0,
-        YProportional = 1 << 1,
-        WidthProportional = 1 << 2,
-        HeightProportional = 1 << 3,
-        PositionProportional = 1 | 1 << 1,
-        SizeProportional = 1 << 2 | 1 << 3,
-        All = ~0
-    }
-
+    
     public enum RadialGradientShape
     {
         Ellipse,
@@ -46,31 +32,5 @@ namespace MagicGradients
         public static bool IsFarthest(this RadialGradientSize size) => (int)size >= 3;
         public static bool IsCorner(this RadialGradientSize size) => (int)size % 2 == 0;
         public static bool IsSide(this RadialGradientSize size) => (int)size % 2 != 0;
-    }
-
-    public static class FlagsHelper
-    {
-        public static void Set(ref RadialGradientFlags flags, RadialGradientFlags flagToSet)
-        {
-            flags |= flagToSet;
-        }
-
-        public static void Unset(ref RadialGradientFlags flags, RadialGradientFlags flagToSet)
-        {
-            flags &= ~flagToSet;
-        }
-
-        public static void SetValue(ref RadialGradientFlags flags, RadialGradientFlags flagToSet, bool value)
-        {
-            if (value)
-                Set(ref flags, flagToSet);
-            else
-                Unset(ref flags, flagToSet);
-        }
-
-        public static bool IsSet(RadialGradientFlags flags, RadialGradientFlags flagToCheck)
-        {
-            return (flags & flagToCheck) == flagToCheck;
-        }
     }
 }

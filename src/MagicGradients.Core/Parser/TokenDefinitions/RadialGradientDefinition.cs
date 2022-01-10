@@ -1,7 +1,5 @@
 ﻿using MagicGradients.Builder;
-using Microsoft.Maui.Graphics;
 using System;
-using static MagicGradients.RadialGradientFlags;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
@@ -16,12 +14,10 @@ namespace MagicGradients.Parser.TokenDefinitions
             var isRepeating = reader.Read().Trim() == CssToken.RepeatingRadialGradient;
             var token = reader.ReadNext().Trim();
             var internalReader = new CssReader(token, ' ');
-
-            var flags = None;
-
+            
             var (hasShape, shape) = GetShape(internalReader);
             var (hasSize, size) = GetSize(internalReader);
-            var (hasRadius, radius) = GeRadius(internalReader, shape, ref flags);
+            var (hasRadius, radius) = GeRadius(internalReader, shape);
             var (hasPos, position) = GetPosition(internalReader);
 
             builder.UseBuilder(new RadialGradientBuilder
@@ -29,9 +25,7 @@ namespace MagicGradients.Parser.TokenDefinitions
                 Center = position,
                 Shape = shape,
                 Size = size,
-                RadiusX = radius.Width,
-                RadiusY = radius.Height,
-                Flags = flags,
+                Radius = radius,
                 IsRepeating = isRepeating
             });
 
@@ -73,7 +67,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             return (false, RadialGradientSize.FarthestCorner);
         }
 
-        private (bool, Size) GeRadius(CssReader reader, RadialGradientShape shape, ref RadialGradientFlags flags)
+        private (bool, Dimensions) GeRadius(CssReader reader, RadialGradientShape shape)
         {
             if (reader.CanRead)
             {
@@ -112,19 +106,10 @@ namespace MagicGradients.Parser.TokenDefinitions
                 }
 
                 if (size != Dimensions.Zero)
-                {
-                    if (size.Width.Type == OffsetType.Proportional)
-                        FlagsHelper.Set(ref flags, WidthProportional);
-
-                    if (size.Height.Type == OffsetType.Proportional)
-                        FlagsHelper.Set(ref flags, HeightProportional);
-
-                    return (true, new Size(size.Width.Value, size.Height.Value));
-                }
+                    return (true, size);
             }
 
-            // Value -1 means undefined for RadialGradientShader
-            return (false, new Size(-1, -1));
+            return (false, Dimensions.Zero);
         }
 
         private (bool, Position) GetPosition(CssReader reader)
