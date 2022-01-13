@@ -23,20 +23,23 @@ namespace MagicGradients
 
         public static Position Prop(double x, double y) => new(Offset.Prop(x), Offset.Prop(y));
         public static Position Abs(double x, double y) => new(Offset.Abs(x), Offset.Abs(y));
+        
+        public bool Equals(Position other)
+        {
+            return X.Equals(other.X) && Y.Equals(other.Y);
+        }
 
         public override bool Equals(object obj)
         {
-            if (obj is Position other)
-            {
-                return X.Equals(other.X) && Y.Equals(other.Y);
-            }
-
-            return base.Equals(obj);
+            return obj is Position other && Equals(other);
         }
 
         public override int GetHashCode()
         {
-            return X.GetHashCode() ^ (Y.GetHashCode() * 397);
+            unchecked
+            {
+                return (X.GetHashCode() * 397) ^ Y.GetHashCode();
+            }
         }
 
         public static bool operator ==(Position p1, Position p2) => p1.X == p2.X && p1.Y == p2.Y;

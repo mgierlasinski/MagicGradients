@@ -27,21 +27,24 @@ namespace MagicGradients
         public static Offset Prop(double value) => new(value, OffsetType.Proportional);
         public static Offset Abs(double value) => new(value, OffsetType.Absolute);
 
+        public bool Equals(Offset other)
+        {
+            return Value.Equals(other.Value) && Type == other.Type;
+        }
+
         public override bool Equals(object obj)
         {
-            if (obj is Offset other)
-            {
-                return Math.Abs(Value - other.Value) < 0.01 && Type == other.Type;
-            }
-                
-            return base.Equals(obj);
+            return obj is Offset other && Equals(other);
         }
 
         public override int GetHashCode()
         {
-            return Value.GetHashCode() ^ (Type.GetHashCode() * 397);
+            unchecked
+            {
+                return (Value.GetHashCode() * 397) ^ (int)Type;
+            }
         }
-        
+
         public static bool operator ==(Offset o1, Offset o2) => o1.Value == o2.Value && o1.Type == o2.Type;
         public static bool operator !=(Offset o1, Offset o2) => o1.Value != o2.Value || o1.Type != o2.Type;
 

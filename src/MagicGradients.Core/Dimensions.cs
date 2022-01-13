@@ -29,19 +29,22 @@ namespace MagicGradients
         public static Dimensions Prop(double width, double height) => new(Offset.Prop(width), Offset.Prop(height));
         public static Dimensions Abs(double width, double height) => new(Offset.Abs(width), Offset.Abs(height));
 
+        public bool Equals(Dimensions other)
+        {
+            return Width.Equals(other.Width) && Height.Equals(other.Height);
+        }
+
         public override bool Equals(object obj)
         {
-            if (obj is Dimensions other)
-            {
-                return Width.Equals(other.Width) && Height.Equals(other.Height);
-            }
-
-            return base.Equals(obj);
+            return obj is Dimensions other && Equals(other);
         }
 
         public override int GetHashCode()
         {
-            return Width.GetHashCode() ^ (Height.GetHashCode() * 397);
+            unchecked
+            {
+                return (Width.GetHashCode() * 397) ^ Height.GetHashCode();
+            }
         }
 
         public static bool operator ==(Dimensions d1, Dimensions d2) => d1.Width == d2.Width && d1.Height == d2.Height;
