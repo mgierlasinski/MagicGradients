@@ -15,7 +15,7 @@ namespace MagicGradients.Forms.Animation
 
             if (!string.IsNullOrEmpty(valueStr))
             {
-                if (valueStr.TryExtractNumber("x", out var count))
+                if (Offset.TryExtractNumber(valueStr, "x", out var count))
                 {
                     return new RepeatBehavior(RepeatBehaviorType.Count, (int)count);
                 }

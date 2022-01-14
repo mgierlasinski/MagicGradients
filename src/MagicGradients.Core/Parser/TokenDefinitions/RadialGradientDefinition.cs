@@ -1,7 +1,5 @@
 ﻿using MagicGradients.Builder;
-using Microsoft.Maui.Graphics;
 using System;
-using static MagicGradients.RadialGradientFlags;
 
 namespace MagicGradients.Parser.TokenDefinitions
 {
@@ -16,22 +14,18 @@ namespace MagicGradients.Parser.TokenDefinitions
             var isRepeating = reader.Read().Trim() == CssToken.RepeatingRadialGradient;
             var token = reader.ReadNext().Trim();
             var internalReader = new CssReader(token, ' ');
-
-            var flags = None;
-
+            
             var (hasShape, shape) = GetShape(internalReader);
             var (hasSize, size) = GetSize(internalReader);
-            var (hasRadius, radius) = GeRadius(internalReader, shape, ref flags);
-            var (hasPos, position) = GetPosition(internalReader, ref flags);
+            var (hasRadius, radius) = GeRadius(internalReader, shape);
+            var (hasPos, position) = GetPosition(internalReader);
 
             builder.UseBuilder(new RadialGradientBuilder
             {
                 Center = position,
                 Shape = shape,
                 Size = size,
-                RadiusX = radius.Width,
-                RadiusY = radius.Height,
-                Flags = flags,
+                Radius = radius,
                 IsRepeating = isRepeating
             });
 
@@ -73,7 +67,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             return (false, RadialGradientSize.FarthestCorner);
         }
 
-        private (bool, Size) GeRadius(CssReader reader, RadialGradientShape shape, ref RadialGradientFlags flags)
+        private (bool, Dimensions) GeRadius(CssReader reader, RadialGradientShape shape)
         {
             if (reader.CanRead)
             {
@@ -112,22 +106,13 @@ namespace MagicGradients.Parser.TokenDefinitions
                 }
 
                 if (size != Dimensions.Zero)
-                {
-                    if (size.Width.Type == OffsetType.Proportional)
-                        FlagsHelper.Set(ref flags, WidthProportional);
-
-                    if (size.Height.Type == OffsetType.Proportional)
-                        FlagsHelper.Set(ref flags, HeightProportional);
-
-                    return (true, new Size(size.Width.Value, size.Height.Value));
-                }
+                    return (true, size);
             }
 
-            // Value -1 means undefined for RadialGradientShader
-            return (false, new Size(-1, -1));
+            return (false, Dimensions.Zero);
         }
 
-        private (bool, Point) GetPosition(CssReader reader, ref RadialGradientFlags flags)
+        private (bool, Position) GetPosition(CssReader reader)
         {
             if (reader.CanRead)
             {
@@ -152,23 +137,16 @@ namespace MagicGradients.Parser.TokenDefinitions
                     {
                         direction.SetNamedDirection(tokenY);
                     }
-
-                    if(!isPosX || posX.Type == OffsetType.Proportional)
-                        FlagsHelper.Set(ref flags, XProportional);
-
-                    if (!isPosY || posY.Type == OffsetType.Proportional)
-                        FlagsHelper.Set(ref flags, YProportional);
-
-                    var center = new Point(
-                        isPosX ? posX.Value : (direction.X + 1) / 2,
-                        isPosY ? posY.Value : (direction.Y + 1) / 2);
+                    
+                    var center = new Position(
+                        isPosX ? posX : Offset.Prop((direction.X + 1) / 2),
+                        isPosY ? posY : Offset.Prop((direction.Y + 1) / 2));
 
                     return (true, center);
                 }
             }
 
-            FlagsHelper.Set(ref flags, PositionProportional);
-            return (false, new Point(0.5, 0.5));
+            return (false, Position.Prop(0.5, 0.5));
         }
     }
 }

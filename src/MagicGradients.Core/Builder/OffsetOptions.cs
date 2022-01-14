@@ -1,16 +1,16 @@
 ﻿namespace MagicGradients.Builder
 {
-    public class DimenOptions
+    public class OffsetOptions
     {
         public bool IsProportional { get; private set; }
 
-        public DimenOptions Absolute()
+        public OffsetOptions Absolute()
         {
             IsProportional = false;
             return this;
         }
 
-        public DimenOptions Proportional()
+        public OffsetOptions Proportional()
         {
             IsProportional = true;
             return this;

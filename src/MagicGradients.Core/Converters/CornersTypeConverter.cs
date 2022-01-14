@@ -16,7 +16,7 @@ namespace MagicGradients.Converters
         {
             var valueStr = value?.ToString()?.Trim();
 
-            if (string.IsNullOrWhiteSpace(valueStr))
+            if (string.IsNullOrEmpty(valueStr))
                 return Corners.Zero;
 
             var dim = valueStr.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);

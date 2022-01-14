@@ -27,7 +27,7 @@ namespace MagicGradients.Forms.Skia.Masks
 
         private SKRoundRect GetRoundRect(IRectangleMask mask, DrawContext context)
         {
-            var bounds = mask.Size.GetDrawRectangle(context).AsSKRect();
+            var bounds = mask.Size.GetDrawRectangle(context.CanvasRect, context.PixelScaling).AsSKRect();
             var roundRect = new SKRoundRect();
 
             roundRect.SetRectRadii(bounds, new[]

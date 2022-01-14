@@ -23,10 +23,8 @@ namespace MagicGradients
 
     public interface IRadialGradient : IGradient
     {
-        Point Center { get; }
-        double RadiusX { get; }
-        double RadiusY { get; }
-        RadialGradientFlags Flags { get; }
+        Position Center { get; }
+        Dimensions Radius { get; }
         RadialGradientShape Shape { get; }
         RadialGradientSize Size { get; }
     }

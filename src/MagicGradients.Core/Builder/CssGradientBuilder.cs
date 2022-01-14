@@ -7,7 +7,7 @@ namespace MagicGradients.Builder
     {
         protected override CssGradientBuilder Instance => this;
 
-        internal string StyleSheet { get; set; }
+        internal string StyleSheet { get; }
 
         public CssGradientBuilder(string styleSheet)
         {

@@ -25,9 +25,7 @@ namespace MagicGradients.Forms.Builder
                 Center = builder.Center,
                 Shape = builder.Shape,
                 Size = builder.Size,
-                RadiusX = builder.RadiusX,
-                RadiusY = builder.RadiusY,
-                Flags = builder.Flags,
+                Radius = builder.Radius,
                 IsRepeating = builder.IsRepeating,
                 Stops = new GradientElements<GradientStop>(builder.Stops.Cast<GradientStop>())
             };

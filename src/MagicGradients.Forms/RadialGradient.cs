@@ -1,46 +1,27 @@
-﻿using Microsoft.Maui.Graphics;
-using BindableProperty = Xamarin.Forms.BindableProperty;
+﻿using BindableProperty = Xamarin.Forms.BindableProperty;
 
 namespace MagicGradients.Forms
 {
     public class RadialGradient : Gradient, IRadialGradient
     {
         public static readonly BindableProperty CenterProperty = BindableProperty.Create(
-            nameof(Center), typeof(Point), typeof(RadialGradient), new Point(0.5, 0.5));
+            nameof(Center), typeof(Position), typeof(RadialGradient), Position.Prop(0.5, 0.5));
 
-        public Point Center
+        public Position Center
         {
-            get => (Point)GetValue(CenterProperty);
+            get => (Position)GetValue(CenterProperty);
             set => SetValue(CenterProperty, value);
         }
 
-        public static readonly BindableProperty RadiusXProperty = BindableProperty.Create(
-            nameof(RadiusXProperty), typeof(double), typeof(RadialGradient), -1d);
+        public static readonly BindableProperty RadiusProperty = BindableProperty.Create(
+            nameof(RadiusProperty), typeof(Dimensions), typeof(RadialGradient), Dimensions.Zero);
 
-        public double RadiusX
+        public Dimensions Radius
         {
-            get => (double)GetValue(RadiusXProperty);
-            set => SetValue(RadiusXProperty, value);
+            get => (Dimensions)GetValue(RadiusProperty);
+            set => SetValue(RadiusProperty, value);
         }
-
-        public static readonly BindableProperty RadiusYProperty = BindableProperty.Create(
-            nameof(RadiusYProperty), typeof(double), typeof(RadialGradient), -1d);
-
-        public double RadiusY
-        {
-            get => (double)GetValue(RadiusYProperty);
-            set => SetValue(RadiusYProperty, value);
-        }
-
-        public static readonly BindableProperty FlagsProperty = BindableProperty.Create(
-            nameof(Flags), typeof(RadialGradientFlags), typeof(RadialGradient), RadialGradientFlags.PositionProportional);
-
-        public RadialGradientFlags Flags
-        {
-            get => (RadialGradientFlags)GetValue(FlagsProperty);
-            set => SetValue(FlagsProperty, value);
-        }
-
+        
         public static readonly BindableProperty ShapeProperty = BindableProperty.Create(
             nameof(Shape), typeof(RadialGradientShape), typeof(RadialGradient), RadialGradientShape.Ellipse);
 

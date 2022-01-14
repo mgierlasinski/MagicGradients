@@ -24,10 +24,8 @@ namespace MagicGradients
 
     public class RadialGradient : Gradient, IRadialGradient
     {
-        public Point Center { get; set; }
-        public double RadiusX { get; set; }
-        public double RadiusY { get; set; }
-        public RadialGradientFlags Flags { get; set; }
+        public Position Center { get; set; }
+        public Dimensions Radius { get; set; }
         public RadialGradientShape Shape { get; set; }
         public RadialGradientSize Size { get; set; }
     }

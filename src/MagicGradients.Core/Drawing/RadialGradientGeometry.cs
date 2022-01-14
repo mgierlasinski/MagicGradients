@@ -1,7 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 using System;
 using System.Linq;
-using static MagicGradients.FlagsHelper;
 
 namespace MagicGradients.Drawing
 {
@@ -14,7 +13,7 @@ namespace MagicGradients.Drawing
         {
             var rect = new RectangleF(0, 0, width, height);
 
-            var center = GetCenter(gradient, rect, 1);
+            var center = gradient.Center.GetDrawPoint(rect, 1);
             var radius = GetRadius(gradient, center, rect, 1, 1);
 
             // Use lower dimension (scale = 1) 
@@ -23,20 +22,8 @@ namespace MagicGradients.Drawing
 
         public void CalculateGeometry(IRadialGradient gradient, RectangleF rect, float offset, float pixelScaling)
         {
-            Center = GetCenter(gradient, rect, pixelScaling);
+            Center = gradient.Center.GetDrawPoint(rect, pixelScaling);
             Radius = GetRadius(gradient, Center, rect, offset, pixelScaling);
-        }
-
-        private PointF GetCenter(IRadialGradient gradient, RectangleF rect, float pixelScaling)
-        {
-            var point = gradient.Center;
-
-            var xIsProportional = IsSet(gradient.Flags, RadialGradientFlags.XProportional);
-            var yIsProportional = IsSet(gradient.Flags, RadialGradientFlags.YProportional);
-            
-            return new PointF(
-                (float)(xIsProportional ? rect.Width * point.X : point.X * pixelScaling),
-                (float)(yIsProportional ? rect.Height * point.Y : point.Y * pixelScaling));
         }
         
         private SizeF GetRadius(IRadialGradient gradient, PointF center, RectangleF rect, float offset, float pixelScaling)
@@ -65,16 +52,14 @@ namespace MagicGradients.Drawing
                 radiusY = distanceXY;
             }
 
-            if (gradient.RadiusX > -1)
+            if (gradient.Radius.Width.Value > 0)
             {
-                var widthIsProportional = IsSet(gradient.Flags, RadialGradientFlags.WidthProportional);
-                radiusX = widthIsProportional ? rect.Width * (float)gradient.RadiusX : (float)gradient.RadiusX * pixelScaling;
+                radiusX = gradient.Radius.Width.GetDrawPixels(rect.Width, pixelScaling);
             }
 
-            if (gradient.RadiusY > -1)
+            if (gradient.Radius.Height.Value > 0)
             {
-                var heightIsProportional = IsSet(gradient.Flags, RadialGradientFlags.HeightProportional);
-                radiusY = heightIsProportional ? rect.Height * (float)gradient.RadiusY : (float)gradient.RadiusY * pixelScaling;
+                radiusY = gradient.Radius.Height.GetDrawPixels(rect.Height, pixelScaling);
             }
 
             return new SizeF(radiusX * offset, radiusY * offset);

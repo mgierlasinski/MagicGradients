@@ -1,10 +1,10 @@
 ﻿using MagicGradients.Converters;
-using MagicGradients.Drawing;
-using Microsoft.Maui.Graphics;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace MagicGradients
 {
+    [DebuggerDisplay("Width={Width}, Height={Height}")]
     [TypeConverter(typeof(DimensionsTypeConverter))]
     public struct Dimensions
     {
@@ -26,20 +26,28 @@ namespace MagicGradients
             Height = height;
         }
 
-        public static Dimensions Prop(double width, double height) => new Dimensions(Offset.Prop(width), Offset.Prop(height));
-        public static Dimensions Abs(double width, double height) => new Dimensions(Offset.Abs(width), Offset.Abs(height));
+        public static Dimensions Prop(double width, double height) => new(Offset.Prop(width), Offset.Prop(height));
+        public static Dimensions Abs(double width, double height) => new(Offset.Abs(width), Offset.Abs(height));
 
-        public static bool operator ==(Dimensions d1, Dimensions d2) => (d1.Width == d2.Width) && (d1.Height == d2.Height);
-        public static bool operator !=(Dimensions d1, Dimensions d2) => (d1.Width != d2.Width) || (d1.Height != d2.Height);
-    }
-
-    public static class DimensionsExtensions
-    {
-        public static RectangleF GetDrawRectangle(this Dimensions size, DrawContext context)
+        public bool Equals(Dimensions other)
         {
-            return new RectangleF(0, 0, 
-                size.Width.GetDrawPixels(context.CanvasRect.Width, context.PixelScaling),
-                size.Height.GetDrawPixels(context.CanvasRect.Height, context.PixelScaling));
+            return Width.Equals(other.Width) && Height.Equals(other.Height);
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Dimensions other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (Width.GetHashCode() * 397) ^ Height.GetHashCode();
+            }
+        }
+
+        public static bool operator ==(Dimensions d1, Dimensions d2) => d1.Width == d2.Width && d1.Height == d2.Height;
+        public static bool operator !=(Dimensions d1, Dimensions d2) => d1.Width != d2.Width || d1.Height != d2.Height;
     }
 }
