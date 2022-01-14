@@ -8,7 +8,7 @@ namespace MagicGradients.Core.Tests
     [Trait("Primitive", "Offset")]
     public class OffsetTests
     {
-        public static IEnumerable<object[]> TestCases => new List<object[]>
+        public static IEnumerable<object[]> IsEmptyData => new List<object[]>
         {
             new object[] { Offset.Empty, true },
             new object[] { Offset.Zero, false },
@@ -19,14 +19,96 @@ namespace MagicGradients.Core.Tests
             new object[] { Offset.Abs(-10), true }
         };
 
+        public static IEnumerable<object[]> NotEqualData => new List<object[]>
+        {
+            new object[] { Offset.Abs(30), Offset.Abs(40) },
+            new object[] { Offset.Prop(0.8), Offset.Prop(0.9) },
+            new object[] { Offset.Abs(1), Offset.Prop(1) }
+        };
+
         [Theory]
-        [MemberData(nameof(TestCases))]
-        public void ValueSet_IsEmpty_HasExpectedValue(Offset offset, bool isEmpty)
+        [MemberData(nameof(IsEmptyData))]
+        public void IsEmpty_HasExpectedValue(Offset offset, bool isEmpty)
         {
             // Assert
             offset.IsEmpty.Should().Be(isEmpty);
         }
-        
+
+        [Fact]
+        public void Equals_SameValues_IsTrue()
+        {
+            // Arrange
+            var value1 = Offset.Abs(100);
+            var value2 = Offset.Abs(100);
+
+            // Act
+            var result = value1.Equals(value2);
+
+            // Assert
+            result.Should().BeTrue();
+        }
+
+        [Theory]
+        [MemberData(nameof(NotEqualData))]
+        public void Equals_DifferentValues_IsFalse(Offset value1, Offset value2)
+        {
+            // Arrange & Act
+            var result = value1.Equals(value2);
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public void OperatorEquals_SameValues_IsTrue()
+        {
+            // Arrange
+            var value1 = Offset.Abs(100);
+            var value2 = Offset.Abs(100);
+
+            // Act
+            var result = value1 == value2;
+
+            // Assert
+            result.Should().BeTrue();
+        }
+
+        [Theory]
+        [MemberData(nameof(NotEqualData))]
+        public void OperatorEquals_DifferentValues_IsFalse(Offset value1, Offset value2)
+        {
+            // Arrange & Act
+            var result = value1 == value2;
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public void OperatorNotEqual_SameValues_IsFalse()
+        {
+            // Arrange
+            var value1 = Offset.Abs(100);
+            var value2 = Offset.Abs(100);
+
+            // Act
+            var result = value1 != value2;
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Theory]
+        [MemberData(nameof(NotEqualData))]
+        public void OperatorNotEqual_DifferentValues_IsTrue(Offset value1, Offset value2)
+        {
+            // Arrange & Act
+            var result = value1 != value2;
+
+            // Assert
+            result.Should().BeTrue();
+        }
+
         [Theory]
         [InlineData("%", 0, false)]
         [InlineData("", 0, false)]
