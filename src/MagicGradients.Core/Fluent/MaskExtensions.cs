@@ -1,5 +1,5 @@
 ﻿using MagicGradients.Masks;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace MagicGradients.Fluent
 {
@@ -13,7 +13,7 @@ namespace MagicGradients.Fluent
 
         public static IGradientControl Mask(this IGradientControl control, params IGradientMask[] masks)
         {
-            control.Mask = new MaskCollection { Masks = masks };
+            control.Mask = new MaskCollection { Masks = new List<IGradientMask>(masks) };
             return control;
         }
     }

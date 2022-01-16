@@ -5,16 +5,21 @@ namespace MagicGradients
 {
     public class GradientStop : IGradientStop
     {
-        public Color Color { get; set; }
-        public Offset Offset { get; set; }
+        public Color Color { get; }
+        public Offset Offset { get; }
         public float RenderOffset { get; set; }
+
+        public GradientStop(Color color, Offset? offset = null)
+        {
+            Color = color;
+            Offset = offset ?? Offset.Empty;
+        }
     }
 
     public class Gradient : IGradient, IGradientSource
     {
         public bool IsRepeating { get; set; }
         public List<IGradientStop> Stops { get; set; }
-
         public IReadOnlyList<IGradientStop> GetStops() => Stops;
         public IReadOnlyList<IGradient> GetGradients() => new[] { this };
     }

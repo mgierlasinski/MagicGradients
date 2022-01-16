@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Graphics;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace MagicGradients.Builder
 {
@@ -40,22 +38,10 @@ namespace MagicGradients.Builder
             Center = position;
             return this;
         }
-
-        public RadialGradientBuilder At(Point position, Action<OffsetOptions> setup = null)
+        
+        public RadialGradientBuilder At(double x, double y, OffsetType type = OffsetType.Proportional)
         {
-            return At(position.X, position.Y, setup);
-        }
-
-        public RadialGradientBuilder At(double x, double y, Action<OffsetOptions> setup = null)
-        {
-            var options = new OffsetOptions().Proportional();
-            setup?.Invoke(options);
-
-            Center = options.IsProportional
-                ? Position.Prop(x, y)
-                : Position.Abs(x, y);
-
-            return this;
+            return At(type == OffsetType.Proportional ? Position.Prop(x, y) : Position.Abs(x, y));
         }
 
         public RadialGradientBuilder Resize(Dimensions radius)
@@ -63,22 +49,10 @@ namespace MagicGradients.Builder
             Radius = radius;
             return this;
         }
-
-        public RadialGradientBuilder Resize(Size radius, Action<OffsetOptions> setup = null)
+        
+        public RadialGradientBuilder Resize(double radiusX, double radiusY, OffsetType type = OffsetType.Absolute)
         {
-            return Resize(radius.Width, radius.Height, setup);
-        }
-
-        public RadialGradientBuilder Resize(double radiusX, double radiusY, Action<OffsetOptions> setup = null)
-        {
-            var options = new OffsetOptions();
-            setup?.Invoke(options);
-
-            Radius = options.IsProportional
-                ? Dimensions.Prop(radiusX, radiusY)
-                : Dimensions.Abs(radiusX, radiusY);
-            
-            return this;
+            return Resize(type == OffsetType.Proportional ? Dimensions.Prop(radiusX, radiusY) : Dimensions.Abs(radiusX, radiusY));
         }
 
         public RadialGradientBuilder StretchTo(RadialGradientSize size)

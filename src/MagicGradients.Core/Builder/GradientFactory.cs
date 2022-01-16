@@ -30,11 +30,7 @@ namespace MagicGradients.Builder
 
         public IGradientStop CreateStop(Color color, Offset? offset = null)
         {
-            return new GradientStop
-            {
-                Color = color,
-                Offset = offset ?? Offset.Empty
-            };
+            return new GradientStop(color, offset);
         }
     }
 }

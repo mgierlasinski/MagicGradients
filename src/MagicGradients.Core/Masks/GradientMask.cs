@@ -37,7 +37,7 @@ namespace MagicGradients.Masks
 
     public class MaskCollection : GradientMask, IMaskCollection
     {
-        public IReadOnlyList<IGradientMask> Masks { get; set; }
+        public List<IGradientMask> Masks { get; set; }
         public IReadOnlyList<IGradientMask> GetMasks() => Masks;
     }
 }

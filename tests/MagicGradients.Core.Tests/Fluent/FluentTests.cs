@@ -10,8 +10,19 @@ namespace MagicGradients.Core.Tests.Fluent
         {
             var view = new GradientView()
                 .Source(
-                    new LinearGradient(),
-                    new RadialGradient());
+                    new LinearGradient()
+                        .Stops(Colors.Red, Colors.Green)
+                        .Rotate(45)
+                        .Repeat(),
+                    new RadialGradient()
+                        .Circle().At(100, 100, OffsetType.Absolute)
+                        .Resize(200, 150)
+                        .StretchTo(RadialGradientSize.ClosestSide)
+                        .Repeat()
+                        .Stops(
+                            new GradientStop(Colors.Orange, Offset.Prop(0)), 
+                            new GradientStop(Colors.Orange, Offset.Prop(0)),
+                            new GradientStop(Colors.Orange, Offset.Prop(0))));
         }
 
         public void SourceBuilder()
