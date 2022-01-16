@@ -41,7 +41,7 @@ namespace MagicGradients.Builder
         
         public RadialGradientBuilder At(double x, double y, OffsetType type = OffsetType.Proportional)
         {
-            return At(type == OffsetType.Proportional ? Position.Prop(x, y) : Position.Abs(x, y));
+            return At(new Position(x, y, type));
         }
 
         public RadialGradientBuilder Resize(Dimensions radius)
@@ -52,7 +52,7 @@ namespace MagicGradients.Builder
         
         public RadialGradientBuilder Resize(double radiusX, double radiusY, OffsetType type = OffsetType.Absolute)
         {
-            return Resize(type == OffsetType.Proportional ? Dimensions.Prop(radiusX, radiusY) : Dimensions.Abs(radiusX, radiusY));
+            return Resize(new Dimensions(radiusX, radiusY, type));
         }
 
         public RadialGradientBuilder StretchTo(RadialGradientSize size)

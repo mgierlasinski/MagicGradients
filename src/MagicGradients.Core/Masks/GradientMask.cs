@@ -23,6 +23,11 @@ namespace MagicGradients.Masks
     public class PathMask : GradientMask, IPathMask
     {
         public string Data { get; set; }
+
+        public PathMask(string data)
+        {
+            Data = data;
+        }
     }
 
     public class TextMask : GradientMask, ITextMask
@@ -33,6 +38,11 @@ namespace MagicGradients.Masks
         public FontAttributes FontAttributes { get; set; }
         public TextAlignment HorizontalTextAlignment { get; set; }
         public TextAlignment VerticalTextAlignment { get; set; }
+
+        public TextMask(string text)
+        {
+            Text = text;
+        }
     }
 
     public class MaskCollection : GradientMask, IMaskCollection

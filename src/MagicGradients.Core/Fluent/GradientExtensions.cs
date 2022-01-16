@@ -14,7 +14,7 @@ namespace MagicGradients.Fluent
 
         public static T Stops<T>(this T gradient, params Color[] colors) where T : Gradient
         {
-            gradient.Stops = colors.Select(x => GlobalSetup.Current.GradientFactory.CreateStop(x)).ToList();
+            gradient.Stops = colors.Select(x => (IGradientStop)new GradientStop(x)).ToList();
             return gradient;
         }
 
@@ -50,7 +50,7 @@ namespace MagicGradients.Fluent
 
         public static RadialGradient At(this RadialGradient gradient, double x, double y, OffsetType type = OffsetType.Proportional)
         {
-            return gradient.At(type == OffsetType.Proportional ? Position.Prop(x, y) : Position.Abs(x, y));
+            return gradient.At(new Position(x, y, type));
         }
 
         public static RadialGradient Resize(this RadialGradient gradient, Dimensions radius)
@@ -61,7 +61,7 @@ namespace MagicGradients.Fluent
 
         public static RadialGradient Resize(this RadialGradient gradient, double radiusX, double radiusY, OffsetType type = OffsetType.Absolute)
         {
-            return gradient.Resize(type == OffsetType.Proportional ? Dimensions.Prop(radiusX, radiusY) : Dimensions.Abs(radiusX, radiusY));
+            return gradient.Resize(new Dimensions(radiusX, radiusY, type));
         }
 
         public static RadialGradient StretchTo(this RadialGradient gradient, RadialGradientSize size)

@@ -26,6 +26,12 @@ namespace MagicGradients
             Height = height;
         }
 
+        public Dimensions(double width, double height, OffsetType type)
+        {
+            Width = new Offset(width, type);
+            Height = new Offset(height, type);
+        }
+
         public static Dimensions Prop(double width, double height) => new(Offset.Prop(width), Offset.Prop(height));
         public static Dimensions Abs(double width, double height) => new(Offset.Abs(width), Offset.Abs(height));
 
