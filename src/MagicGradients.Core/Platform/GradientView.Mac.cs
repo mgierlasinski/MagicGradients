@@ -3,13 +3,12 @@ using Microsoft.Maui.Graphics.Native;
 
 namespace MagicGradients
 {
-    public partial class GradientView : NativeGraphicsView, IGradientControl
+    public partial class GradientView : NativeGraphicsView
     {
-        public double ViewWidth => Bounds.Width;
-
         public GradientView()
         {
             Drawable = new GradientDrawable(this);
+            _getWidth = () => Bounds.Width;
         }
 
         partial void InvalidateNative()

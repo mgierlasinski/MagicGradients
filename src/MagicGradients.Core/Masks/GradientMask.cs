@@ -1,4 +1,6 @@
-﻿namespace MagicGradients.Masks
+﻿using System.Collections.Generic;
+
+namespace MagicGradients.Masks
 {
     public class GradientMask : IGradientMask
     {
@@ -31,5 +33,11 @@
         public FontAttributes FontAttributes { get; set; }
         public TextAlignment HorizontalTextAlignment { get; set; }
         public TextAlignment VerticalTextAlignment { get; set; }
+    }
+
+    public class MaskCollection : GradientMask, IMaskCollection
+    {
+        public IReadOnlyList<IGradientMask> Masks { get; set; }
+        public IReadOnlyList<IGradientMask> GetMasks() => Masks;
     }
 }

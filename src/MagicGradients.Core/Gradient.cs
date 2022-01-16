@@ -3,18 +3,20 @@ using System.Collections.Generic;
 
 namespace MagicGradients
 {
-    public class Gradient : IGradient
-    {
-        public bool IsRepeating { get; set; }
-        public List<IGradientStop> Stops { get; set; }
-        public IReadOnlyList<IGradientStop> GetStops() => Stops;
-    }
-
     public class GradientStop : IGradientStop
     {
         public Color Color { get; set; }
         public Offset Offset { get; set; }
         public float RenderOffset { get; set; }
+    }
+
+    public class Gradient : IGradient, IGradientSource
+    {
+        public bool IsRepeating { get; set; }
+        public List<IGradientStop> Stops { get; set; }
+
+        public IReadOnlyList<IGradientStop> GetStops() => Stops;
+        public IReadOnlyList<IGradient> GetGradients() => new[] { this };
     }
 
     public class LinearGradient : Gradient, ILinearGradient
