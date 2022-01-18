@@ -34,6 +34,7 @@ namespace GradientsApp.Forms
             navigation.RegisterRoute(AppRoutes.Categories, typeof(CategoriesPage));
             navigation.RegisterRoute(AppRoutes.Gallery, typeof(GalleryPage));
             navigation.RegisterRoute(AppRoutes.Gradient, typeof(GradientPage));
+            navigation.RegisterRoute(AppRoutes.Mvu, typeof(MvuPage));
         }
     }
 }

@@ -7,8 +7,8 @@ namespace MagicGradients
     {
         public GradientView()
         {
+            // TODO: set ViewWidth to Bounds.Width
             Drawable = new GradientDrawable(this);
-            _getWidth = () => Bounds.Width;
         }
 
         partial void InvalidateNative()

@@ -16,12 +16,11 @@ namespace MagicGradients
         }
     }
 
-    public class Gradient : IGradient, IGradientSource
+    public class Gradient : IGradient
     {
         public bool IsRepeating { get; set; }
         public List<IGradientStop> Stops { get; set; }
         public IReadOnlyList<IGradientStop> GetStops() => Stops;
-        public IReadOnlyList<IGradient> GetGradients() => new[] { this };
     }
 
     public class LinearGradient : Gradient, ILinearGradient

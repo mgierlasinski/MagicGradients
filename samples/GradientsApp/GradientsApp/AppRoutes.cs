@@ -9,5 +9,6 @@
         public const string Categories = "Categories";
         public const string Gallery = "Gallery";
         public const string Gradient = "Gradient";
+        public const string Mvu = "Mvu";
     }
 }

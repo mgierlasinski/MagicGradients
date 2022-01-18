@@ -5,9 +5,7 @@ namespace MagicGradients
 {
     public partial class GradientView : IGradientControl
     {
-        private Func<double> _getWidth;
-
-        public double ViewWidth => _getWidth?.Invoke() ?? 0;
+        public double ViewWidth { get; private set; }
 
         private IGradientSource _gradientSource;
         public IGradientSource GradientSource

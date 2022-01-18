@@ -14,15 +14,19 @@ namespace MagicGradients
         {
             Drawable = new GradientDrawable(this);
             _attributeReader.ReadAttributes(this, context, attrs);
-            _getWidth = () => ViewWidth;
         }
 
         public GradientView(Context context) : base(context)
         {
             Drawable = new GradientDrawable(this);
-            _getWidth = () => ViewWidth;
         }
-        
+
+        protected override void OnSizeChanged(int width, int height, int oldWidth, int oldHeight)
+        {
+            ViewWidth = width;
+            base.OnSizeChanged(width, height, oldWidth, oldHeight);
+        }
+
         partial void InvalidateNative()
         {
             Invalidate();

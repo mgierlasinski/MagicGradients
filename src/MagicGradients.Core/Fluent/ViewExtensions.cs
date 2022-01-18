@@ -7,25 +7,25 @@ namespace MagicGradients.Fluent
 {
     public static class ViewExtensions
     {
-        public static IGradientControl Source(this IGradientControl control, IGradientSource source)
+        public static T Source<T>(this T control, IGradientSource source) where T : IGradientControl
         {
             control.GradientSource = source;
             return control;
         }
 
-        public static IGradientControl Source(this IGradientControl control, params IGradient[] gradients)
+        public static T Source<T>(this T control, params IGradient[] gradients) where T : IGradientControl
         {
             control.GradientSource = new GenericGradientSource(gradients);
             return control;
         }
 
-        public static IGradientControl Source(this IGradientControl control, string css)
+        public static T Source<T>(this T control, string css) where T : IGradientControl
         {
             control.GradientSource = new CssGradientSource(css);
             return control;
         }
 
-        public static IGradientControl Source(this IGradientControl control, Action<GradientBuilder> build)
+        public static T Source<T>(this T control, Action<GradientBuilder> build) where T : IGradientControl
         {
             var builder = new GradientBuilder();
             build.Invoke(builder);
@@ -34,31 +34,31 @@ namespace MagicGradients.Fluent
             return control;
         }
 
-        public static IGradientControl Mask(this IGradientControl control, IGradientMask mask)
+        public static T Mask<T>(this T control, IGradientMask mask) where T : IGradientControl
         {
             control.Mask = mask;
             return control;
         }
 
-        public static IGradientControl Mask(this IGradientControl control, params IGradientMask[] masks)
+        public static T Mask<T>(this T control, params IGradientMask[] masks) where T : IGradientControl
         {
             control.Mask = new MaskCollection { Masks = new List<IGradientMask>(masks) };
             return control;
         }
 
-        public static IGradientControl Size(this IGradientControl control, Dimensions size)
+        public static T Size<T>(this T control, Dimensions size) where T : IGradientControl
         {
             control.GradientSize = size;
             return control;
         }
 
-        public static IGradientControl Size(this IGradientControl control, double width, double height, OffsetType type = OffsetType.Absolute)
+        public static T Size<T>(this T control, double width, double height, OffsetType type = OffsetType.Absolute) where T : IGradientControl
         {
             control.GradientSize = new Dimensions(width, height, type);
             return control;
         }
 
-        public static IGradientControl Repeat(this IGradientControl control, BackgroundRepeat repeat)
+        public static T Repeat<T>(this T control, BackgroundRepeat repeat) where T : IGradientControl
         {
             control.GradientRepeat = repeat;
             return control;
