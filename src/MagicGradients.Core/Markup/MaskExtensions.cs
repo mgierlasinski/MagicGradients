@@ -1,6 +1,6 @@
 ﻿using MagicGradients.Masks;
 
-namespace MagicGradients.Fluent
+namespace MagicGradients.Markup
 {
     public static class MaskExtensions
     {

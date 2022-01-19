@@ -1,10 +1,10 @@
-﻿using MagicGradients.Fluent;
+﻿using MagicGradients.Markup;
 using MagicGradients.Masks;
 using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Core.Tests.Fluent
+namespace MagicGradients.Core.Tests.Markup
 {
-    public class FluentTests
+    public class MarkupTests
     {
         public void SourceParams()
         {

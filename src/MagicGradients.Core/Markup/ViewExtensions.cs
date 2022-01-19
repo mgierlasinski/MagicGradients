@@ -1,9 +1,9 @@
-﻿using MagicGradients.Builder;
-using MagicGradients.Masks;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using MagicGradients.Builder;
+using MagicGradients.Masks;
 
-namespace MagicGradients.Fluent
+namespace MagicGradients.Markup
 {
     public static class ViewExtensions
     {

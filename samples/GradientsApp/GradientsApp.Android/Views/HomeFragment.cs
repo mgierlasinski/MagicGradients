@@ -20,17 +20,17 @@ namespace GradientsApp.Android.Views
 
             Toolbar.Hide();
 
-            var linear = view.FindViewById<Button>(Resource.Id.home_linear);
-            linear.Click += (sender, args) => ViewModel.NavigateCommand.Execute(AppRoutes.Linear);
+            AddNavigation(Resource.Id.home_linear, AppRoutes.Linear, view);
+            AddNavigation(Resource.Id.home_radial, AppRoutes.Radial, view);
+            AddNavigation(Resource.Id.home_masks, AppRoutes.Masks, view);
+            AddNavigation(Resource.Id.home_gallery, AppRoutes.Categories, view);
+            AddNavigation(Resource.Id.home_markup, AppRoutes.Markup, view);
+        }
 
-            var radial = view.FindViewById<Button>(Resource.Id.home_radial);
-            radial.Click += (sender, args) => ViewModel.NavigateCommand.Execute(AppRoutes.Radial);
-
-            var masks = view.FindViewById<Button>(Resource.Id.home_masks);
-            masks.Click += (sender, args) => ViewModel.NavigateCommand.Execute(AppRoutes.Masks);
-
-            var gallery = view.FindViewById<Button>(Resource.Id.home_gallery);
-            gallery.Click += (sender, args) => ViewModel.NavigateCommand.Execute(AppRoutes.Categories);
+        private void AddNavigation(int id, string route, View view)
+        {
+            var button = view.FindViewById<Button>(id);
+            button.Click += (_, _) => ViewModel.NavigateCommand.Execute(route);
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using Microsoft.Maui.Graphics;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Maui.Graphics;
 
-namespace MagicGradients.Fluent
+namespace MagicGradients.Markup
 {
     public static class GradientExtensions
     {
