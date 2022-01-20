@@ -11,6 +11,7 @@ namespace GradientsApp.Forms.Pages
     {
         public MarkupPage()
         {
+            Title = "Markup";
             Content = Body();
         }
 

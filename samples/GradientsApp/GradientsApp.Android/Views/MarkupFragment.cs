@@ -19,13 +19,13 @@ namespace GradientsApp.Android.Views
         private View Body() => new LinearLayout(Context).Vertical().Children(new View[]
         {
             new GradientView(Context)
-                .Height(160)
+                .Height(300)
                 .Source(
                     new LinearGradient()
                         .Stops(Colors.Orange, Colors.Yellow)
                         .Rotate(90)),
             new GradientView(Context)
-                .Height(160)
+                .Height(300)
                 .Source("linear-gradient(green, orange)")
         });
 

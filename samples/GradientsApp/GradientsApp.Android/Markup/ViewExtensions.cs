@@ -10,7 +10,7 @@ namespace GradientsApp.Android.Markup
             if (view.LayoutParameters != null)
                 view.LayoutParameters.Height = height;
             else
-                view.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, height);
+                view.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, height);
 
             return view;
         }
