@@ -64,9 +64,9 @@ namespace MagicGradients.Markup
             return gradient.Resize(new Dimensions(radiusX, radiusY, type));
         }
 
-        public static RadialGradient StretchTo(this RadialGradient gradient, RadialGradientSize size)
+        public static RadialGradient StretchTo(this RadialGradient gradient, RadialGradientStretch stretch)
         {
-            gradient.Size = size;
+            gradient.Stretch = stretch;
             return gradient;
         }
     }

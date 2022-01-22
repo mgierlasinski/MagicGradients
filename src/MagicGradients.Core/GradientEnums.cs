@@ -18,7 +18,7 @@ namespace MagicGradients
         Circle
     }
 
-    public enum RadialGradientSize
+    public enum RadialGradientStretch
     {
         ClosestSide = 1,
         ClosestCorner = 2,
@@ -26,11 +26,11 @@ namespace MagicGradients
         FarthestCorner = 4
     }
 
-    public static class RadialGradientSizeExtensions
+    public static class RadialGradientStretchExtensions
     {
-        public static bool IsClosest(this RadialGradientSize size) => (int)size < 3;
-        public static bool IsFarthest(this RadialGradientSize size) => (int)size >= 3;
-        public static bool IsCorner(this RadialGradientSize size) => (int)size % 2 == 0;
-        public static bool IsSide(this RadialGradientSize size) => (int)size % 2 != 0;
+        public static bool IsClosest(this RadialGradientStretch stretch) => (int)stretch < 3;
+        public static bool IsFarthest(this RadialGradientStretch stretch) => (int)stretch >= 3;
+        public static bool IsCorner(this RadialGradientStretch stretch) => (int)stretch % 2 == 0;
+        public static bool IsSide(this RadialGradientStretch stretch) => (int)stretch % 2 != 0;
     }
 }

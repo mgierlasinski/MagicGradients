@@ -33,6 +33,6 @@ namespace MagicGradients
         public Position Center { get; set; }
         public Dimensions Radius { get; set; }
         public RadialGradientShape Shape { get; set; }
-        public RadialGradientSize Size { get; set; }
+        public RadialGradientStretch Stretch { get; set; }
     }
 }

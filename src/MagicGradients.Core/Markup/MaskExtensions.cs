@@ -59,19 +59,7 @@ namespace MagicGradients.Markup
                 new Dimensions(bottomLeft, bottomLeft, type));
             return mask;
         }
-
-        //public static TextMask Font(this TextMask mask, string family = null, double size = 0, FontAttributes attributes = MagicGradients.FontAttributes.None)
-        //{
-        //    if(family != null)
-        //        mask.FontFamily = family;
-
-        //    if (size > 0)
-        //        mask.FontSize = size;
-
-        //    mask.FontAttributes = attributes;
-        //    return mask;
-        //}
-
+        
         public static TextMask FontFamily(this TextMask mask, string fontFamily)
         {
             mask.FontFamily = fontFamily;
@@ -89,14 +77,7 @@ namespace MagicGradients.Markup
             mask.FontAttributes = fontAttributes;
             return mask;
         }
-
-        //public static TextMask TextAlignment(this TextMask mask, TextAlignment horizontal = MagicGradients.TextAlignment.Center, TextAlignment vertical = MagicGradients.TextAlignment.Center)
-        //{
-        //    mask.HorizontalTextAlignment = horizontal;
-        //    mask.VerticalTextAlignment = vertical;
-        //    return mask;
-        //}
-
+        
         public static TextMask HorizontalTextAlignment(this TextMask mask, TextAlignment alignment)
         {
             mask.HorizontalTextAlignment = alignment;

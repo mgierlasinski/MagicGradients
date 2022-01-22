@@ -92,7 +92,7 @@ namespace MagicGradients.Core.Tests.Builder
                 .AddRadialGradient(g => g
                     .Circle().At(0.5, 0.5, OffsetType.Proportional)
                     .Resize(200, 200, OffsetType.Absolute)
-                    .StretchTo(RadialGradientSize.FarthestSide)
+                    .StretchTo(RadialGradientStretch.FarthestSide)
                     .Repeat()
                     .AddStops(Colors.Red, Colors.Green, Colors.Blue))
                 .Build();
@@ -139,7 +139,7 @@ namespace MagicGradients.Core.Tests.Builder
                 radial.Center.Should().BeEquivalentTo(Position.Prop(0.5, 0.5));
                 radial.Radius.Should().BeEquivalentTo(Dimensions.Zero);
                 radial.Shape.Should().Be(RadialGradientShape.Ellipse);
-                radial.Size.Should().Be(RadialGradientSize.FarthestCorner);
+                radial.Stretch.Should().Be(RadialGradientStretch.FarthestCorner);
                 radial.IsRepeating.Should().BeFalse();
             }
         }

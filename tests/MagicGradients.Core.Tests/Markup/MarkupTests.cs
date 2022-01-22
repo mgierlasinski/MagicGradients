@@ -17,7 +17,7 @@ namespace MagicGradients.Core.Tests.Markup
                     new RadialGradient()
                         .Circle().At(100, 100, OffsetType.Absolute)
                         .Resize(200, 150)
-                        .StretchTo(RadialGradientSize.ClosestSide)
+                        .StretchTo(RadialGradientStretch.ClosestSide)
                         .Repeat()
                         .Stops(
                             new GradientStop(Colors.Orange, Offset.Prop(0)), 

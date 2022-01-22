@@ -9,7 +9,7 @@ namespace MagicGradients.Builder
         public Position Center { get; internal set; }
         public Dimensions Radius { get; internal set; }
         public RadialGradientShape Shape { get; internal set; }
-        public RadialGradientSize Size { get; internal set; }
+        public RadialGradientStretch Stretch { get; internal set; }
         public bool IsRepeating { get; internal set; }
 
         public RadialGradientBuilder()
@@ -17,7 +17,7 @@ namespace MagicGradients.Builder
             Center = Position.Prop(0.5, 0.5);
             Radius = Dimensions.Zero;
             Shape = RadialGradientShape.Ellipse;
-            Size = RadialGradientSize.FarthestCorner;
+            Stretch = RadialGradientStretch.FarthestCorner;
             IsRepeating = false;
         }
 
@@ -55,9 +55,9 @@ namespace MagicGradients.Builder
             return Resize(new Dimensions(radiusX, radiusY, type));
         }
 
-        public RadialGradientBuilder StretchTo(RadialGradientSize size)
+        public RadialGradientBuilder StretchTo(RadialGradientStretch stretch)
         {
-            Size = size;
+            Stretch = stretch;
             return this;
         }
 

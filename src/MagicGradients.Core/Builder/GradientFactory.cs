@@ -21,7 +21,7 @@ namespace MagicGradients.Builder
             {
                 Center = builder.Center,
                 Shape = builder.Shape,
-                Size = builder.Size,
+                Stretch = builder.Stretch,
                 Radius = builder.Radius,
                 IsRepeating = builder.IsRepeating,
                 Stops = new List<IGradientStop>(builder.Stops)

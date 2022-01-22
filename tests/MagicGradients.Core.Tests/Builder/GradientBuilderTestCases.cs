@@ -31,7 +31,7 @@ namespace MagicGradients.Core.Tests.Builder
         {
             builder.AddRadialGradient(g => g
                 .Circle().At(0.5, 0.5)
-                .StretchTo(RadialGradientSize.ClosestSide));
+                .StretchTo(RadialGradientStretch.ClosestSide));
         }
     }
 }
