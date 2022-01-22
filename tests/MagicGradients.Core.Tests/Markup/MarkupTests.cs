@@ -1,13 +1,18 @@
-﻿using MagicGradients.Markup;
+﻿using FluentAssertions;
+using MagicGradients.Markup;
 using MagicGradients.Masks;
 using Microsoft.Maui.Graphics;
+using Xunit;
 
 namespace MagicGradients.Core.Tests.Markup
 {
+    [Trait("Feature", "Markup")]
     public class MarkupTests
     {
-        public void SourceParams()
+        [Fact]
+        public void SourceExtension_UseParamsOverload_SetupSource()
         {
+            // Arrange
             var view = new GradientView()
                 .Source(
                     new LinearGradient()
@@ -16,17 +21,22 @@ namespace MagicGradients.Core.Tests.Markup
                         .Repeat(),
                     new RadialGradient()
                         .Circle().At(100, 100, OffsetType.Absolute)
-                        .Resize(200, 150)
+                        .Size(200, 150)
                         .StretchTo(RadialGradientStretch.ClosestSide)
                         .Repeat()
                         .Stops(
                             new GradientStop(Colors.Orange, Offset.Prop(0)), 
                             new GradientStop(Colors.Blue, Offset.Prop(0.6)),
                             new GradientStop(Colors.Chocolate, Offset.Prop(1))));
+
+            // Assert
+            view.GradientSource.GetGradients().Should().HaveCount(2);
         }
 
-        public void SourceBuilder()
+        [Fact]
+        public void SourceExtension_UseBuilderOverload_SetupSource()
         {
+            // Arrange
             var view = new GradientView()
                 .Source(b => b
                     .AddLinearGradient(o => o
@@ -39,18 +49,28 @@ namespace MagicGradients.Core.Tests.Markup
                         .AddStop(Colors.Red, Offset.Prop(0.3))
                         .AddStop(Colors.Magenta, Offset.Prop(1)))
                     .AddCssGradient("linear-gradient(red, green)"));
+
+            // Assert
+            view.GradientSource.GetGradients().Should().HaveCount(3);
         }
 
-        public void SourceCss()
+        [Fact]
+        public void ViewExtensions_CssSourceWithSizeAndRepeat_SetupSource()
         {
+            // Arrange
             var view = new GradientView()
                 .Source("linear-gradient(red, green)")
                 .Size(20, 20)
                 .Repeat(BackgroundRepeat.RepeatX);
+
+            // Assert
+            view.GradientSource.GetGradients().Should().HaveCount(1);
         }
 
-        public void MaskParams()
+        [Fact]
+        public void MaskExtension_UseParamsOverload_SetupMaskCollection()
         {
+            // Arrange
             var view = new GradientView()
                 .Mask(
                     new RectangleMask()
@@ -66,6 +86,9 @@ namespace MagicGradients.Core.Tests.Markup
                         .VerticalTextAlignment(TextAlignment.Start)
                         .HorizontalTextAlignment(TextAlignment.End)
                         .ClipMode(ClipMode.Exclude));
+
+            // Assert
+            view.Mask.Should().BeOfType<MaskCollection>();
         }
     }
 }

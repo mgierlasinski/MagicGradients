@@ -53,15 +53,15 @@ namespace MagicGradients.Markup
             return gradient.At(new Position(x, y, type));
         }
 
-        public static RadialGradient Resize(this RadialGradient gradient, Dimensions radius)
+        public static RadialGradient Size(this RadialGradient gradient, Dimensions size)
         {
-            gradient.Radius = radius;
+            gradient.Radius = size;
             return gradient;
         }
 
-        public static RadialGradient Resize(this RadialGradient gradient, double radiusX, double radiusY, OffsetType type = OffsetType.Absolute)
+        public static RadialGradient Size(this RadialGradient gradient, double width, double height, OffsetType type = OffsetType.Absolute)
         {
-            return gradient.Resize(new Dimensions(radiusX, radiusY, type));
+            return gradient.Size(new Dimensions(width, height, type));
         }
 
         public static RadialGradient StretchTo(this RadialGradient gradient, RadialGradientStretch stretch)

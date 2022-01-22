@@ -15,7 +15,7 @@ namespace GradientsApp.Android.Markup
             return view;
         }
 
-        public static T Children<T>(this T view, View[] children) where T : ViewGroup
+        public static T Children<T>(this T view, params View[] children) where T : ViewGroup
         {
             foreach (var child in children)
             {

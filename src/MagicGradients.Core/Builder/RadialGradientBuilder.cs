@@ -44,15 +44,15 @@ namespace MagicGradients.Builder
             return At(new Position(x, y, type));
         }
 
-        public RadialGradientBuilder Resize(Dimensions radius)
+        public RadialGradientBuilder Size(Dimensions size)
         {
-            Radius = radius;
+            Radius = size;
             return this;
         }
         
-        public RadialGradientBuilder Resize(double radiusX, double radiusY, OffsetType type = OffsetType.Absolute)
+        public RadialGradientBuilder Size(double width, double height, OffsetType type = OffsetType.Absolute)
         {
-            return Resize(new Dimensions(radiusX, radiusY, type));
+            return Size(new Dimensions(width, height, type));
         }
 
         public RadialGradientBuilder StretchTo(RadialGradientStretch stretch)

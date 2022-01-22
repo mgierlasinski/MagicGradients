@@ -91,7 +91,7 @@ namespace MagicGradients.Core.Tests.Builder
                     .AddStop(Colors.Blue, Offset.Prop(0.4)))
                 .AddRadialGradient(g => g
                     .Circle().At(0.5, 0.5, OffsetType.Proportional)
-                    .Resize(200, 200, OffsetType.Absolute)
+                    .Size(200, 200, OffsetType.Absolute)
                     .StretchTo(RadialGradientStretch.FarthestSide)
                     .Repeat()
                     .AddStops(Colors.Red, Colors.Green, Colors.Blue))
