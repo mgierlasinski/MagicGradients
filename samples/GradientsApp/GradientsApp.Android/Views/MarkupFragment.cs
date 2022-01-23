@@ -50,8 +50,8 @@ namespace GradientsApp.Android.Views
             new GradientView(Context)
                 .Height(GHeight)
                 .Source("linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)")
-                .Size(GHeight, GHeight, OffsetType.Absolute)
-                .Repeat(BackgroundRepeat.RepeatX),
+                .GradientSize(GHeight, GHeight)
+                .GradientRepeat(BackgroundRepeat.RepeatX),
             new GradientView(Context)
                 .Height(GHeight)
                 .Source("linear-gradient(242deg, red, green, orange)")

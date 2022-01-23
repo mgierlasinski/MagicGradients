@@ -60,8 +60,8 @@ namespace MagicGradients.Core.Tests.Markup
             // Arrange
             var view = new GradientView()
                 .Source("linear-gradient(red, green)")
-                .Size(20, 20)
-                .Repeat(BackgroundRepeat.RepeatX);
+                .GradientSize(20, 20)
+                .GradientRepeat(BackgroundRepeat.RepeatX);
 
             // Assert
             view.GradientSource.GetGradients().Should().HaveCount(1);

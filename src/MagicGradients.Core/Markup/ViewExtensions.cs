@@ -46,19 +46,19 @@ namespace MagicGradients.Markup
             return control;
         }
 
-        public static T Size<T>(this T control, Dimensions size) where T : IGradientControl
+        public static T GradientSize<T>(this T control, Dimensions size) where T : IGradientControl
         {
             control.GradientSize = size;
             return control;
         }
 
-        public static T Size<T>(this T control, double width, double height, OffsetType type = OffsetType.Absolute) where T : IGradientControl
+        public static T GradientSize<T>(this T control, double width, double height, OffsetType type = OffsetType.Absolute) where T : IGradientControl
         {
             control.GradientSize = new Dimensions(width, height, type);
             return control;
         }
 
-        public static T Repeat<T>(this T control, BackgroundRepeat repeat) where T : IGradientControl
+        public static T GradientRepeat<T>(this T control, BackgroundRepeat repeat) where T : IGradientControl
         {
             control.GradientRepeat = repeat;
             return control;
