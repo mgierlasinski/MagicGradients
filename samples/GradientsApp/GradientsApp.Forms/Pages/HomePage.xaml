@@ -24,6 +24,7 @@
             <Button Text="Masks" Command="{i:Navigate {x:Static core:AppRoutes.Masks}}" />
             <Button Text="Animations" Command="{i:Navigate {x:Static core:AppRoutes.Animations}}" />
             <Button Text="Gallery" Command="{i:Navigate {x:Static core:AppRoutes.Categories}}" />
+            <Button Text="Markup" Command="{i:Navigate {x:Static core:AppRoutes.Markup}}" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

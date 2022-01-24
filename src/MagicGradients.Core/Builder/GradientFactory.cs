@@ -21,7 +21,7 @@ namespace MagicGradients.Builder
             {
                 Center = builder.Center,
                 Shape = builder.Shape,
-                Size = builder.Size,
+                Stretch = builder.Stretch,
                 Radius = builder.Radius,
                 IsRepeating = builder.IsRepeating,
                 Stops = new List<IGradientStop>(builder.Stops)
@@ -30,11 +30,7 @@ namespace MagicGradients.Builder
 
         public IGradientStop CreateStop(Color color, Offset? offset = null)
         {
-            return new GradientStop
-            {
-                Color = color,
-                Offset = offset ?? Offset.Empty
-            };
+            return new GradientStop(color, offset);
         }
     }
 }

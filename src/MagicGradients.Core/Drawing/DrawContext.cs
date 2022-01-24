@@ -18,7 +18,7 @@ namespace MagicGradients.Drawing
 
         public void Measure(Dimensions size, double viewWidth)
         {
-            PixelScaling = (float)(CanvasRect.Width / viewWidth);
+            PixelScaling = viewWidth > 0 ? (float)(CanvasRect.Width / viewWidth) : 1;
 
             if (size.Width.Value > 0 && size.Height.Value > 0)
             {

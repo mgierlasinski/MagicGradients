@@ -16,7 +16,7 @@ namespace MagicGradients.Parser.TokenDefinitions
             var internalReader = new CssReader(token, ' ');
             
             var (hasShape, shape) = GetShape(internalReader);
-            var (hasSize, size) = GetSize(internalReader);
+            var (hasStretch, stretch) = GetStretch(internalReader);
             var (hasRadius, radius) = GeRadius(internalReader, shape);
             var (hasPos, position) = GetPosition(internalReader);
 
@@ -24,12 +24,12 @@ namespace MagicGradients.Parser.TokenDefinitions
             {
                 Center = position,
                 Shape = shape,
-                Size = size,
+                Stretch = stretch,
                 Radius = radius,
                 IsRepeating = isRepeating
             });
 
-            if (!hasShape && !hasSize && !hasRadius && !hasPos)
+            if (!hasShape && !hasStretch && !hasRadius && !hasPos)
             {
                 reader.Rollback();
             }
@@ -51,20 +51,20 @@ namespace MagicGradients.Parser.TokenDefinitions
             return (false, RadialGradientShape.Ellipse);
         }
 
-        private (bool, RadialGradientSize) GetSize(CssReader reader)
+        private (bool, RadialGradientStretch) GetStretch(CssReader reader)
         {
             if (reader.CanRead)
             {
                 var token = reader.Read().Replace("-", "").Trim();
 
-                if (Enum.TryParse<RadialGradientSize>(token, true, out var shapeSize))
+                if (Enum.TryParse<RadialGradientStretch>(token, true, out var stretch))
                 {
                     reader.MoveNext();
-                    return (true, shapeSize);
+                    return (true, stretch);
                 }
             }
 
-            return (false, RadialGradientSize.FarthestCorner);
+            return (false, RadialGradientStretch.FarthestCorner);
         }
 
         private (bool, Dimensions) GeRadius(CssReader reader, RadialGradientShape shape)

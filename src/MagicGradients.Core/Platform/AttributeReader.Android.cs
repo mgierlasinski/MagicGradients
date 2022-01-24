@@ -58,7 +58,7 @@ namespace MagicGradients.Platform
                     Corners = GetCorners(typedArray)
                 },
                 MaskShape.Ellipse => new EllipseMask { Size = GetSize(typedArray) },
-                MaskShape.Path => new PathMask { Data = typedArray.GetString(Resource.Styleable.GradientView_maskData) },
+                MaskShape.Path => new PathMask(typedArray.GetString(Resource.Styleable.GradientView_maskData)),
                 _ => null
             };
 

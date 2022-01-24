@@ -26,6 +26,6 @@ namespace MagicGradients
         Position Center { get; }
         Dimensions Radius { get; }
         RadialGradientShape Shape { get; }
-        RadialGradientSize Size { get; }
+        RadialGradientStretch Stretch { get; }
     }
 }

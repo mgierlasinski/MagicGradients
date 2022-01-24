@@ -6,7 +6,7 @@ namespace MagicGradients
     [TypeConverter(typeof(CornersTypeConverter))]
     public struct Corners
     {
-        public static Corners Zero { get; } = new Corners(Dimensions.Zero);
+        public static Corners Zero { get; } = new(Dimensions.Zero);
 
         public Dimensions TopLeft { get; set; }
         public Dimensions TopRight { get; set; }

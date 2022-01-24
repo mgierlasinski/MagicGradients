@@ -21,6 +21,12 @@ namespace MagicGradients
             Y = y;
         }
 
+        public Position(double x, double y, OffsetType type)
+        {
+            X = new Offset(x, type);
+            Y = new Offset(y, type);
+        }
+
         public static Position Prop(double x, double y) => new(Offset.Prop(x), Offset.Prop(y));
         public static Position Abs(double x, double y) => new(Offset.Abs(x), Offset.Abs(y));
         

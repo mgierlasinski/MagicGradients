@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Graphics;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace MagicGradients.Builder
 {
@@ -11,7 +9,7 @@ namespace MagicGradients.Builder
         public Position Center { get; internal set; }
         public Dimensions Radius { get; internal set; }
         public RadialGradientShape Shape { get; internal set; }
-        public RadialGradientSize Size { get; internal set; }
+        public RadialGradientStretch Stretch { get; internal set; }
         public bool IsRepeating { get; internal set; }
 
         public RadialGradientBuilder()
@@ -19,7 +17,7 @@ namespace MagicGradients.Builder
             Center = Position.Prop(0.5, 0.5);
             Radius = Dimensions.Zero;
             Shape = RadialGradientShape.Ellipse;
-            Size = RadialGradientSize.FarthestCorner;
+            Stretch = RadialGradientStretch.FarthestCorner;
             IsRepeating = false;
         }
 
@@ -40,50 +38,26 @@ namespace MagicGradients.Builder
             Center = position;
             return this;
         }
-
-        public RadialGradientBuilder At(Point position, Action<OffsetOptions> setup = null)
+        
+        public RadialGradientBuilder At(double x, double y, OffsetType type = OffsetType.Proportional)
         {
-            return At(position.X, position.Y, setup);
+            return At(new Position(x, y, type));
         }
 
-        public RadialGradientBuilder At(double x, double y, Action<OffsetOptions> setup = null)
+        public RadialGradientBuilder Size(Dimensions size)
         {
-            var options = new OffsetOptions().Proportional();
-            setup?.Invoke(options);
-
-            Center = options.IsProportional
-                ? Position.Prop(x, y)
-                : Position.Abs(x, y);
-
+            Radius = size;
             return this;
         }
-
-        public RadialGradientBuilder Resize(Dimensions radius)
+        
+        public RadialGradientBuilder Size(double width, double height, OffsetType type = OffsetType.Absolute)
         {
-            Radius = radius;
-            return this;
+            return Size(new Dimensions(width, height, type));
         }
 
-        public RadialGradientBuilder Resize(Size radius, Action<OffsetOptions> setup = null)
+        public RadialGradientBuilder StretchTo(RadialGradientStretch stretch)
         {
-            return Resize(radius.Width, radius.Height, setup);
-        }
-
-        public RadialGradientBuilder Resize(double radiusX, double radiusY, Action<OffsetOptions> setup = null)
-        {
-            var options = new OffsetOptions();
-            setup?.Invoke(options);
-
-            Radius = options.IsProportional
-                ? Dimensions.Prop(radiusX, radiusY)
-                : Dimensions.Abs(radiusX, radiusY);
-            
-            return this;
-        }
-
-        public RadialGradientBuilder StretchTo(RadialGradientSize size)
-        {
-            Size = size;
+            Stretch = stretch;
             return this;
         }
 

@@ -1,9 +1,12 @@
-﻿using MagicGradients.Masks;
+﻿using System;
+using MagicGradients.Masks;
 
 namespace MagicGradients
 {
-    public partial class GradientView
+    public partial class GradientView : IGradientControl
     {
+        public double ViewWidth { get; private set; }
+
         private IGradientSource _gradientSource;
         public IGradientSource GradientSource
         {

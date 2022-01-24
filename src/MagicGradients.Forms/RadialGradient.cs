@@ -31,13 +31,13 @@ namespace MagicGradients.Forms
             set => SetValue(ShapeProperty, value);
         }
 
-        public static readonly BindableProperty SizeProperty = BindableProperty.Create(
-            nameof(Size), typeof(RadialGradientSize), typeof(RadialGradient), RadialGradientSize.FarthestCorner);
+        public static readonly BindableProperty StretchProperty = BindableProperty.Create(
+            nameof(Stretch), typeof(RadialGradientStretch), typeof(RadialGradient), RadialGradientStretch.FarthestCorner);
 
-        public RadialGradientSize Size
+        public RadialGradientStretch Stretch
         {
-            get => (RadialGradientSize)GetValue(SizeProperty);
-            set => SetValue(SizeProperty, value);
+            get => (RadialGradientStretch)GetValue(StretchProperty);
+            set => SetValue(StretchProperty, value);
         }
     }
 }

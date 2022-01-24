@@ -6,10 +6,9 @@ using Microsoft.Maui.Graphics.Native;
 
 namespace MagicGradients
 {
-    public partial class GradientView : NativeGraphicsView, IGradientControl
+    public partial class GradientView : NativeGraphicsView
     {
         private readonly AttributeReader _attributeReader = new AttributeReader();
-        public double ViewWidth => Width;
 
         public GradientView(Context context, IAttributeSet attrs) : base(context, attrs)
         {
@@ -21,7 +20,13 @@ namespace MagicGradients
         {
             Drawable = new GradientDrawable(this);
         }
-        
+
+        protected override void OnSizeChanged(int width, int height, int oldWidth, int oldHeight)
+        {
+            ViewWidth = width;
+            base.OnSizeChanged(width, height, oldWidth, oldHeight);
+        }
+
         partial void InvalidateNative()
         {
             Invalidate();

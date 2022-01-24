@@ -39,14 +39,14 @@ namespace MagicGradients.Drawing
 
                 // https://github.com/mgierlasinski/MagicGradients/issues/25
 
-                radiusX = gradient.Size.IsClosest() ? distanceX.Min() : distanceX.Max();
-                radiusY = gradient.Size.IsClosest() ? distanceY.Min() : distanceY.Max();
+                radiusX = gradient.Stretch.IsClosest() ? distanceX.Min() : distanceX.Max();
+                radiusY = gradient.Stretch.IsClosest() ? distanceY.Min() : distanceY.Max();
             }
 
             if (gradient.Shape == RadialGradientShape.Circle)
             {
                 var distances = GetEuclideanDistance(gradient, center, rect);
-                var distanceXY = gradient.Size.IsClosest() ? distances.Min() : distances.Max();
+                var distanceXY = gradient.Stretch.IsClosest() ? distances.Min() : distances.Max();
 
                 radiusX = distanceXY;
                 radiusY = distanceXY;
@@ -93,7 +93,7 @@ namespace MagicGradients.Drawing
 
         private PointF[] GetDistanceInPoints(IRadialGradient gradient, PointF center, RectangleF rect)
         {
-            var points = gradient.Size.IsCorner() ?
+            var points = gradient.Stretch.IsCorner() ?
                 GetCornerPoints(rect) :
                 GetSidePoints(center, rect);
 
@@ -109,7 +109,7 @@ namespace MagicGradients.Drawing
 
         private float[] GetEuclideanDistance(IRadialGradient gradient, PointF center, RectangleF rect)
         {
-            var points = gradient.Size.IsCorner() ?
+            var points = gradient.Stretch.IsCorner() ?
                 GetCornerPoints(rect) :
                 GetSidePoints(center, rect);
 
