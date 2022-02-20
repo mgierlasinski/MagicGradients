@@ -1,9 +1,9 @@
 ﻿using MagicGradients.Drawing;
-using Microsoft.Maui.Graphics.Native;
+using Microsoft.Maui.Graphics.Platform;
 
 namespace MagicGradients
 {
-    public partial class GradientView : NativeGraphicsView
+    public partial class GradientView : PlatformGraphicsView
     {
         public GradientView()
         {

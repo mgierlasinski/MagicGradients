@@ -14,7 +14,7 @@ namespace GradientsApp.Forms.Android
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.1.0.11")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.0.155")]
 	public partial class Resource
 	{
 		
@@ -5620,6 +5620,9 @@ namespace GradientsApp.Forms.Android
 			global::MagicGradients.Forms.Resource.Xml.standalone_badge_gravity_bottom_start = global::GradientsApp.Forms.Android.Resource.Xml.standalone_badge_gravity_bottom_start;
 			global::MagicGradients.Forms.Resource.Xml.standalone_badge_gravity_top_start = global::GradientsApp.Forms.Android.Resource.Xml.standalone_badge_gravity_top_start;
 			global::MagicGradients.Forms.Resource.Xml.standalone_badge_offset = global::GradientsApp.Forms.Android.Resource.Xml.standalone_badge_offset;
+			global::Microsoft.Maui.Graphics.Skia.Resource.Attribute.ignorePixelScaling = global::GradientsApp.Forms.Android.Resource.Attribute.ignorePixelScaling;
+			global::Microsoft.Maui.Graphics.Skia.Resource.Styleable.SKCanvasView = global::GradientsApp.Forms.Android.Resource.Styleable.SKCanvasView;
+			global::Microsoft.Maui.Graphics.Skia.Resource.Styleable.SKCanvasView_ignorePixelScaling = global::GradientsApp.Forms.Android.Resource.Styleable.SKCanvasView_ignorePixelScaling;
 			global::SkiaSharp.Views.Android.Resource.Attribute.ignorePixelScaling = global::GradientsApp.Forms.Android.Resource.Attribute.ignorePixelScaling;
 			global::SkiaSharp.Views.Android.Resource.Styleable.SKCanvasView = global::GradientsApp.Forms.Android.Resource.Styleable.SKCanvasView;
 			global::SkiaSharp.Views.Android.Resource.Styleable.SKCanvasView_ignorePixelScaling = global::GradientsApp.Forms.Android.Resource.Styleable.SKCanvasView_ignorePixelScaling;

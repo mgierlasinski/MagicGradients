@@ -70,7 +70,7 @@ namespace MagicGradients.Forms.Skia.Drawing
             }
             catch (Exception exc)
             {
-                Logger.Debug(exc);
+                System.Diagnostics.Debug.WriteLine(exc);
                 FillColor = paint.BlendStartAndEndColors();
             }
         }
@@ -105,7 +105,7 @@ namespace MagicGradients.Forms.Skia.Drawing
             }
             catch (Exception exc)
             {
-                Logger.Debug(exc);
+                System.Diagnostics.Debug.WriteLine(exc);
                 FillColor = paint.BlendStartAndEndColors();
             }
         }

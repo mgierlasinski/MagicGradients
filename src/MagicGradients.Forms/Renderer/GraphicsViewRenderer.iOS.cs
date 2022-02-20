@@ -1,7 +1,7 @@
 using Foundation;
 using MagicGradients.Forms;
 using MagicGradients.Forms.iOS;
-using Microsoft.Maui.Graphics.Native;
+using Microsoft.Maui.Graphics.Platform;
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -11,7 +11,7 @@ using Xamarin.Forms.Platform.iOS;
 namespace MagicGradients.Forms.iOS
 {
     [Preserve]
-    public class GraphicsViewRenderer : ViewRenderer<GraphicsView, NativeGraphicsView>
+    public class GraphicsViewRenderer : ViewRenderer<GraphicsView, PlatformGraphicsView>
     {
         protected override void OnElementChanged(ElementChangedEventArgs<GraphicsView> e)
         {
@@ -25,7 +25,7 @@ namespace MagicGradients.Forms.iOS
 
             if (e.NewElement != null)
             {
-                SetNativeControl(new NativeGraphicsView());
+                SetNativeControl(new PlatformGraphicsView());
                 UpdateDrawable();
             }
         }

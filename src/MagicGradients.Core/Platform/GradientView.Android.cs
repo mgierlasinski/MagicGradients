@@ -2,11 +2,11 @@
 using Android.Util;
 using MagicGradients.Drawing;
 using MagicGradients.Platform;
-using Microsoft.Maui.Graphics.Native;
+using Microsoft.Maui.Graphics.Platform;
 
 namespace MagicGradients
 {
-    public partial class GradientView : NativeGraphicsView
+    public partial class GradientView : PlatformGraphicsView
     {
         private readonly AttributeReader _attributeReader = new AttributeReader();
 
