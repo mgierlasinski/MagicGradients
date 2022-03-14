@@ -37,7 +37,7 @@ To start using `Magic Gradients` in XAML import namespace:
 
 ## Sample app
 
-In `Magic Gradients` repository you can find [`Magic Playground`](https://github.com/mgierlasinski/MagicGradients/tree/master/Playground) app for browsing and creating gradients visually. Android, iOS and UWP are supported.
+In `Magic Gradients` repository you can find [`Magic Playground`](https://github.com/mgierlasinski/MagicGradients/tree/master/samples/Playground) app for browsing and creating gradients visually. Android, iOS and UWP are supported.
 
 `Magic Playground` contains samples for all kinds of gradients, animations, masks and other features. It's the best place to start and see gradients in action.
 
