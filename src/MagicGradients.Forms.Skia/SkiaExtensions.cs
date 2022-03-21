@@ -15,8 +15,8 @@ namespace MagicGradients.Forms.Skia
         public static SKPoint ToSKPoint(this PointF point) =>
             new SKPoint(point.X, point.Y);
 
-        public static RectangleF ToRectF(this SKRectI rect) =>
-            new RectangleF(rect.Left, rect.Top, rect.Width, rect.Height);
+        public static RectF ToRectF(this SKRectI rect) =>
+            new RectF(rect.Left, rect.Top, rect.Width, rect.Height);
 
         public static SKClipOperation ToSkOperation(this ClipMode mode) =>
             mode == ClipMode.Include ? SKClipOperation.Intersect : SKClipOperation.Difference;

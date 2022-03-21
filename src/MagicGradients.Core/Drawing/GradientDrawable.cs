@@ -23,7 +23,7 @@ namespace MagicGradients.Drawing
                 new PathMaskPainter());
         }
 
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             if (_control.GradientSource == null)
                 return;

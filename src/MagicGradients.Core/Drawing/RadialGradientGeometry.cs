@@ -11,7 +11,7 @@ namespace MagicGradients.Drawing
         
         protected override double CalculateRenderOffset(IRadialGradient gradient, double offset, int width, int height)
         {
-            var rect = new RectangleF(0, 0, width, height);
+            var rect = new RectF(0, 0, width, height);
 
             var center = gradient.Center.GetDrawPoint(rect, 1);
             var radius = GetRadius(gradient, center, rect, 1, 1);
@@ -20,13 +20,13 @@ namespace MagicGradients.Drawing
             return radius.Width < radius.Height ? offset / radius.Width : offset / Radius.Height;
         }
 
-        public void CalculateGeometry(IRadialGradient gradient, RectangleF rect, float offset, float pixelScaling)
+        public void CalculateGeometry(IRadialGradient gradient, RectF rect, float offset, float pixelScaling)
         {
             Center = gradient.Center.GetDrawPoint(rect, pixelScaling);
             Radius = GetRadius(gradient, Center, rect, offset, pixelScaling);
         }
         
-        private SizeF GetRadius(IRadialGradient gradient, PointF center, RectangleF rect, float offset, float pixelScaling)
+        private SizeF GetRadius(IRadialGradient gradient, PointF center, RectF rect, float offset, float pixelScaling)
         {
             var radiusX = 0f;
             var radiusY = 0f;
@@ -65,7 +65,7 @@ namespace MagicGradients.Drawing
             return new SizeF(radiusX * offset, radiusY * offset);
         }
 
-        private PointF[] GetCornerPoints(RectangleF rect)
+        private PointF[] GetCornerPoints(RectF rect)
         {
             var points = new[]
             {
@@ -78,7 +78,7 @@ namespace MagicGradients.Drawing
             return points;
         }
 
-        private PointF[] GetSidePoints(PointF center, RectangleF rect)
+        private PointF[] GetSidePoints(PointF center, RectF rect)
         {
             var points = new[]
             {
@@ -91,7 +91,7 @@ namespace MagicGradients.Drawing
             return points;
         }
 
-        private PointF[] GetDistanceInPoints(IRadialGradient gradient, PointF center, RectangleF rect)
+        private PointF[] GetDistanceInPoints(IRadialGradient gradient, PointF center, RectF rect)
         {
             var points = gradient.Stretch.IsCorner() ?
                 GetCornerPoints(rect) :
@@ -107,7 +107,7 @@ namespace MagicGradients.Drawing
             return distances;
         }
 
-        private float[] GetEuclideanDistance(IRadialGradient gradient, PointF center, RectangleF rect)
+        private float[] GetEuclideanDistance(IRadialGradient gradient, PointF center, RectF rect)
         {
             var points = gradient.Stretch.IsCorner() ?
                 GetCornerPoints(rect) :

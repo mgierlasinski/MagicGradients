@@ -6,11 +6,11 @@ namespace MagicGradients.Drawing
     public class DrawContext
     {
         public ICanvas Canvas { get; }
-        public RectangleF CanvasRect { get; }
-        public RectangleF RenderRect { get; private set; }
+        public RectF CanvasRect { get; }
+        public RectF RenderRect { get; private set; }
         public float PixelScaling { get; private set; }
 
-        public DrawContext(ICanvas canvas, RectangleF canvasRect)
+        public DrawContext(ICanvas canvas, RectF canvasRect)
         {
             Canvas = canvas;
             CanvasRect = canvasRect;
@@ -30,7 +30,7 @@ namespace MagicGradients.Drawing
                     ? size.Height.Value * CanvasRect.Height
                     : size.Height.Value * PixelScaling;
 
-                RenderRect = new RectangleF(0, 0, (int)width, (int)height);
+                RenderRect = new RectF(0, 0, (int)width, (int)height);
             }
             else
             {

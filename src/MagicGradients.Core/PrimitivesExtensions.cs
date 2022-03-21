@@ -11,16 +11,16 @@ namespace MagicGradients
                 : (float)(offset.Value * pixelScaling);
         }
 
-        public static PointF GetDrawPoint(this Position position, RectangleF rect, float pixelScaling)
+        public static PointF GetDrawPoint(this Position position, RectF rect, float pixelScaling)
         {
             return new PointF(
                 position.X.GetDrawPixels(rect.Width, pixelScaling),
                 position.Y.GetDrawPixels(rect.Height, pixelScaling));
         }
 
-        public static RectangleF GetDrawRectangle(this Dimensions dimensions, RectangleF rect, float pixelScaling)
+        public static RectF GetDrawRectangle(this Dimensions dimensions, RectF rect, float pixelScaling)
         {
-            return new RectangleF(0, 0,
+            return new RectF(0, 0,
                 dimensions.Width.GetDrawPixels(rect.Width, pixelScaling),
                 dimensions.Height.GetDrawPixels(rect.Height, pixelScaling));
         }
