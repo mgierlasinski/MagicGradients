@@ -9,7 +9,7 @@ namespace MagicGradients.Drawing
         public bool IsRepeating { get; set; }
 
         public RadialGradientPaintEx(
-            Microsoft.Maui.Graphics.GradientStop[] gradientStops, 
+            PaintGradientStop[] gradientStops, 
             Point center, 
             Size size, 
             bool isRepeating) : base(gradientStops)

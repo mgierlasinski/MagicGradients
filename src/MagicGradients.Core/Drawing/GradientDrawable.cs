@@ -3,7 +3,6 @@ using Microsoft.Maui.Graphics;
 using System;
 using System.Linq;
 using static MagicGradients.BackgroundRepeat;
-using PaintGradientStop = Microsoft.Maui.Graphics.GradientStop;
 
 namespace MagicGradients.Drawing
 {
