@@ -23,7 +23,7 @@ namespace MagicGradients.Drawing
             return computedLength != 0 ? offset / computedLength : 1;
         }
 
-        public void CalculateGeometry(ILinearGradient gradient, RectangleF boxBounds)
+        public void CalculateGeometry(ILinearGradient gradient, RectF boxBounds)
         {
             // Calculation
             // https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf

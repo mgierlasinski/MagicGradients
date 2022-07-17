@@ -10,7 +10,7 @@ namespace MagicGradients.Drawing
     {
         private readonly Stack<Matrix3x2> _transforms = new();
         
-        public void LayoutBounds(IGradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
+        public void LayoutBounds(IGradientMask mask, RectF bounds, DrawContext context, bool keepAspectRatio)
         {
             BeginLayout(mask, bounds, context);
 
@@ -51,12 +51,12 @@ namespace MagicGradients.Drawing
             EndLayout(mask, bounds, context);
         }
 
-        protected virtual void BeginLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
+        protected virtual void BeginLayout(IGradientMask mask, RectF bounds, DrawContext context)
         {
             Translate(context.Canvas, context.RenderRect.Width / 2, context.RenderRect.Height / 2);
         }
 
-        protected virtual void EndLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
+        protected virtual void EndLayout(IGradientMask mask, RectF bounds, DrawContext context)
         {
             Translate(context.Canvas, -bounds.Center.X, -bounds.Center.Y);
         }
@@ -96,7 +96,7 @@ namespace MagicGradients.Drawing
     {
         private ICanvas _canvas;
 
-        public static ShapeMaskLayout Create(IGradientMask mask, RectangleF bounds, DrawContext context, bool keepAspectRatio)
+        public static ShapeMaskLayout Create(IGradientMask mask, RectF bounds, DrawContext context, bool keepAspectRatio)
         {
             var layout = new ShapeMaskLayout { _canvas = context.Canvas };
             layout.LayoutBounds(mask, bounds, context, keepAspectRatio);
@@ -115,7 +115,7 @@ namespace MagicGradients.Drawing
     {
         private ICanvas _canvas;
 
-        public static TextMaskLayout Create(ITextMask mask, RectangleF bounds, DrawContext context)
+        public static TextMaskLayout Create(ITextMask mask, RectF bounds, DrawContext context)
         {
             var layout = new TextMaskLayout { _canvas = context.Canvas };
             layout.LayoutBounds(mask, bounds, context, true);
@@ -129,7 +129,7 @@ namespace MagicGradients.Drawing
             _canvas = null;
         }
 
-        protected override void BeginLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
+        protected override void BeginLayout(IGradientMask mask, RectF bounds, DrawContext context)
         {
             var textMask = (ITextMask)mask;
 
@@ -150,7 +150,7 @@ namespace MagicGradients.Drawing
             Translate(context.Canvas, posX, posY);
         }
 
-        protected override void EndLayout(IGradientMask mask, RectangleF bounds, DrawContext context)
+        protected override void EndLayout(IGradientMask mask, RectF bounds, DrawContext context)
         {
             var textMask = (ITextMask)mask;
 

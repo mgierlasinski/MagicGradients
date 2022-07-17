@@ -24,7 +24,7 @@ namespace MagicGradients.Masks
             context.Canvas.ClipPath(path);
         }
 
-        private PointF GetCornerPoint(Dimensions cornerSize, RectangleF bounds, float pixelScaling)
+        private PointF GetCornerPoint(Dimensions cornerSize, RectF bounds, float pixelScaling)
         {
             return new PointF(
                 cornerSize.Width.GetDrawPixels(bounds.Width, pixelScaling),

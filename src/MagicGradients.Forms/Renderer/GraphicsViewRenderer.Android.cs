@@ -1,7 +1,7 @@
 using Android.Content;
 using MagicGradients.Forms;
 using MagicGradients.Forms.Android;
-using Microsoft.Maui.Graphics.Native;
+using Microsoft.Maui.Graphics.Platform;
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -11,7 +11,7 @@ using Xamarin.Forms.Platform.Android;
 namespace MagicGradients.Forms.Android
 {
     [Preserve]
-    public class GraphicsViewRenderer : ViewRenderer<GraphicsView, NativeGraphicsView>
+    public class GraphicsViewRenderer : ViewRenderer<GraphicsView, PlatformGraphicsView>
     {
         public GraphicsViewRenderer(Context context) : base(context)
         {
@@ -30,7 +30,7 @@ namespace MagicGradients.Forms.Android
 
             if (e.NewElement != null)
             {
-                SetNativeControl(new NativeGraphicsView(Context));
+                SetNativeControl(new PlatformGraphicsView(Context));
                 UpdateDrawable();
             }
         }

@@ -7,7 +7,7 @@ namespace MagicGradients.Drawing
         public bool IsRepeating { get; set; }
 
         public LinearGradientPaintEx(
-            Microsoft.Maui.Graphics.GradientStop[] gradientStops, 
+            PaintGradientStop[] gradientStops, 
             Point startPoint, 
             Point endPoint, 
             bool isRepeating) : base(gradientStops, startPoint, endPoint)

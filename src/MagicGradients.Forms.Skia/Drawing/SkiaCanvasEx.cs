@@ -22,7 +22,7 @@ namespace MagicGradients.Forms.Skia.Drawing
             Canvas.ClipRoundRect(rect, operation, true);
         }
 
-        public override void SetFillPaint(Paint paint, RectangleF rectangle)
+        public override void SetFillPaint(Paint paint, RectF rectangle)
         {
             if (_shader != null)
             {
@@ -45,7 +45,7 @@ namespace MagicGradients.Forms.Skia.Drawing
             }
         }
         
-        private void DrawLinearGradient(LinearGradientPaintEx paint, RectangleF rectangle)
+        private void DrawLinearGradient(LinearGradientPaintEx paint, RectF rectangle)
         {
             var colors = new SKColor[paint.GradientStops.Length];
             var stops = new float[colors.Length];
@@ -70,12 +70,12 @@ namespace MagicGradients.Forms.Skia.Drawing
             }
             catch (Exception exc)
             {
-                Logger.Debug(exc);
+                System.Diagnostics.Debug.WriteLine(exc);
                 FillColor = paint.BlendStartAndEndColors();
             }
         }
 
-        private void DrawRadialGradient(RadialGradientPaintEx paint, RectangleF rectangle)
+        private void DrawRadialGradient(RadialGradientPaintEx paint, RectF rectangle)
         {
             var colors = new SKColor[paint.GradientStops.Length];
             var stops = new float[colors.Length];
@@ -105,12 +105,12 @@ namespace MagicGradients.Forms.Skia.Drawing
             }
             catch (Exception exc)
             {
-                Logger.Debug(exc);
+                System.Diagnostics.Debug.WriteLine(exc);
                 FillColor = paint.BlendStartAndEndColors();
             }
         }
 
-        private SKPoint GetPoint(Point point, RectangleF rectangle)
+        private SKPoint GetPoint(Point point, RectF rectangle)
         {
             return new SKPoint(
                 (float)(point.X * rectangle.Width) + rectangle.X,
