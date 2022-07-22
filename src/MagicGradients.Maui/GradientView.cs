@@ -6,11 +6,6 @@ namespace MagicGradients.Forms;
 [ContentProperty(nameof(GradientSource))]
 public class GradientView : GraphicsView, IGradientControl, IGradientVisualElement
 {
-    static GradientView()
-    {
-        GlobalSetup.Current.UseCssStyles<GradientView>();
-    }
-
     public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
     public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
     public static readonly BindableProperty GradientRepeatProperty = GradientControl.GradientRepeatProperty;

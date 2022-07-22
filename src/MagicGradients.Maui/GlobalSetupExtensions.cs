@@ -2,12 +2,6 @@
 
 public static class GlobalSetupExtensions
 {
-    //public static GlobalSetup UseFormsGradients(this GlobalSetup setup)
-    //{
-    //    // Init() as GlobalSetup extension
-    //    return setup;
-    //}
-
     public static GlobalSetup UseCssStyles<TControl>(this GlobalSetup setup)
     {
         StyleSheets.RegisterStyle("background", typeof(TControl), nameof(GradientControl.GradientSourceProperty));

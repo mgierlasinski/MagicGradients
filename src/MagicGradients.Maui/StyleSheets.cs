@@ -15,7 +15,7 @@ public static class StyleSheets
             return;
 
         var stylePropertiesType = styleProperties.GetType();
-        var styleAttributeType = typeof(StyleSheet).Assembly.GetType("Xamarin.Forms.StyleSheets.StylePropertyAttribute");
+        var styleAttributeType = typeof(StyleSheet).Assembly.GetType("Microsoft.Maui.Controls.StyleSheets.StylePropertyAttribute");
         var styleAttributeInstance = Activator.CreateInstance(styleAttributeType, name, targetType, bindablePropertyName);
 
         var containsKeyMethod = stylePropertiesType.GetMethod("ContainsKey");

@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32708.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "src\MagicGradients.Core\MagicGradients.Core.csproj", "{C5AB0CB6-5189-48E4-85DF-D254662C2AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicGradients.Maui", "src\MagicGradients.Maui\MagicGradients.Maui.csproj", "{377384E9-6680-4E36-BD4F-5607DF30469B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Maui", "src\MagicGradients.Maui\MagicGradients.Maui.csproj", "{377384E9-6680-4E36-BD4F-5607DF30469B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientsApp.Maui", "samples\GradientsApp\GradientsApp.Maui\GradientsApp.Maui.csproj", "{6FFB471B-658B-421D-A446-5C94EA543CC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{377384E9-6680-4E36-BD4F-5607DF30469B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{377384E9-6680-4E36-BD4F-5607DF30469B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{377384E9-6680-4E36-BD4F-5607DF30469B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
