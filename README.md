@@ -14,7 +14,7 @@ Draw breathtaking backgrounds in your Xamarin.Forms application today, from simp
 
 - Linear and radial gradients supported
 - Draw as many gradients as you want with single control, blend them together for unique effects
-- Supports CSS gradients, find your ideal background [somewhere on the web](https://www.gradientmagic.com/) and copy + paste into your app
+- Supports [CSS gradients](https://www.scaler.com/topics/css/linear-gradient-css/), find your ideal background [somewhere on the web](https://www.gradientmagic.com/) and copy + paste into your app
 - Make your background alive with built-in XAML animations
 - Gradient'em all - paint gradient on any shape or text with clipping masks
 - Powered by [![Nuget](https://img.shields.io/badge/SkiaSharp-v1.68.1-blue)](https://www.nuget.org/packages/SkiaSharp/)
