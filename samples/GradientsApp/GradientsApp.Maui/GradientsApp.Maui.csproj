@@ -50,6 +50,13 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\..\src\MagicGradients.Maui\MagicGradients.Maui.csproj" />
+	  <ProjectReference Include="..\GradientsApp\GradientsApp.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

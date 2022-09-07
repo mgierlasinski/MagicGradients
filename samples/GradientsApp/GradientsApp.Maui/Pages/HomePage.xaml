@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Maui"
+             x:Class="GradientsApp.Maui.Pages.HomePage"
+             Title="HomePage"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+        <Grid>
+            <magic:GradientView GradientSource="linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)" />
+            <!--<magic:SkiaGradientView StyleClass="RainbowGradient" />-->
+            <Label HorizontalTextAlignment="Center" TextColor="White" Margin="24">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Magic Gradients" FontSize="36" />
+                        <Span Text="&#x0a;using Microsoft.Maui.Graphics" FontSize="18" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+        <VerticalStackLayout Margin="20">
+            <Button Text="Linear Gradients" />
+            <Button Text="Radial Gradients" />
+            <Button Text="Masks" />
+            <Button Text="Animations" />
+            <Button Text="Gallery" />
+            <Button Text="Markup" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

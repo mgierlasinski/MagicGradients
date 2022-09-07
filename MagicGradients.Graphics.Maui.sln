@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Maui", "src\MagicGradients.Maui\MagicGradients.Maui.csproj", "{377384E9-6680-4E36-BD4F-5607DF30469B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientsApp.Maui", "samples\GradientsApp\GradientsApp.Maui\GradientsApp.Maui.csproj", "{6FFB471B-658B-421D-A446-5C94EA543CC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp.Maui", "samples\GradientsApp\GradientsApp.Maui\GradientsApp.Maui.csproj", "{6FFB471B-658B-421D-A446-5C94EA543CC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp", "samples\GradientsApp\GradientsApp\GradientsApp.csproj", "{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp.Data", "samples\GradientsApp\GradientsApp.Data\GradientsApp.Data.csproj", "{9BF556C5-C446-4F51-8EF1-2E488424485B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,14 @@ Global
 		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF556C5-C446-4F51-8EF1-2E488424485B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF556C5-C446-4F51-8EF1-2E488424485B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF556C5-C446-4F51-8EF1-2E488424485B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF556C5-C446-4F51-8EF1-2E488424485B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

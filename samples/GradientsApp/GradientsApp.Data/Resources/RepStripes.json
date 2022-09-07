@@ -1,0 +1,597 @@
+[
+  {
+    "slug": "e5f5bdf1-af2a-4ab7-aa5d-9340abf409a8",
+    "stylesheet": "repeating-linear-gradient(135deg, rgb(216, 62, 60) 0px, rgb(216, 62, 60) 116px, rgb(167, 20, 66) 116px, rgb(167, 20, 66) 157px, rgb(192, 41, 63) 157px, rgb(192, 41, 63) 271px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "c0101832-d69f-4b9b-8b49-1cd284cd7b14",
+    "stylesheet": "repeating-linear-gradient(135deg, rgb(236, 171, 42) 0px, rgb(236, 171, 42) 23px, rgb(199, 51, 188) 23px, rgb(199, 51, 188) 55px, rgb(218, 111, 115) 55px, rgb(218, 111, 115) 63px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "d7e4f31b-f86a-43c1-b24e-c70a67fa3876",
+    "stylesheet": "repeating-linear-gradient(135deg, rgb(18, 182, 56) 0px, rgb(18, 182, 56) 16px, rgb(13, 209, 68) 16px, rgb(13, 209, 68) 108px, rgb(23, 154, 43) 108px, rgb(23, 154, 43) 246px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "e04a5c9f-7e46-4133-bae9-6c60cca2b414",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(227, 129, 127) 0px, rgb(227, 129, 127) 22px, rgb(237, 190, 195) 22px, rgb(237, 190, 195) 29px, rgb(216, 67, 59) 29px, rgb(216, 67, 59) 120px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "088e501e-f194-4586-9748-43fd932d2fc2",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(192, 47, 108) 0px, rgb(192, 47, 108) 17px, rgb(241, 40, 120) 17px, rgb(241, 40, 120) 32px, rgb(142, 53, 96) 32px, rgb(142, 53, 96) 159px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "dc0f946c-6e3b-4bf8-b346-8c5dd1d2abfa",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(133, 208, 224) 0px, rgb(133, 208, 224) 67px, rgb(221, 231, 229) 67px, rgb(221, 231, 229) 86px, rgb(44, 184, 219) 86px, rgb(44, 184, 219) 130px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "8b3a8234-35bd-43d2-8ee8-1083cf993a1b",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(28, 34, 80) 0px, rgb(28, 34, 80) 28px, rgb(23, 58, 144) 28px, rgb(23, 58, 144) 74px, rgb(33, 9, 15) 74px, rgb(33, 9, 15) 206px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "e1fed0bb-8415-4a8e-8cf9-f508a7be0ca0",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(157, 68, 241) 0px, rgb(157, 68, 241) 28px, rgb(106, 61, 170) 28px, rgb(106, 61, 170) 147px, rgb(132, 65, 206) 147px, rgb(132, 65, 206) 216px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "44a1d55a-3c82-425b-a160-a0ae83ce8389",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(89, 223, 241) 0px, rgb(89, 223, 241) 57px, rgb(103, 228, 238) 57px, rgb(103, 228, 238) 181px, rgb(61, 211, 245) 181px, rgb(61, 211, 245) 291px, rgb(117, 234, 236) 291px, rgb(117, 234, 236) 357px, rgb(75, 217, 243) 357px, rgb(75, 217, 243) 472px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "a0a0f744-7b15-452b-870e-8a3b330816b6",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(223, 152, 211) 0px, rgb(223, 152, 211) 19px, rgb(253, 236, 249) 19px, rgb(253, 236, 249) 91px, rgb(246, 215, 240) 91px, rgb(246, 215, 240) 167px, rgb(231, 173, 221) 167px, rgb(231, 173, 221) 252px, rgb(238, 194, 230) 252px, rgb(238, 194, 230) 320px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "2fea0fa5-79f8-4fec-9d2b-4e34d75dba57",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(223, 142, 17) 0px, rgb(223, 142, 17) 41px, rgb(221, 125, 11) 41px, rgb(221, 125, 11) 102px, rgb(225, 158, 23) 102px, rgb(225, 158, 23) 187px, rgb(227, 175, 29) 187px, rgb(227, 175, 29) 197px, rgb(229, 191, 35) 197px, rgb(229, 191, 35) 211px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "475f6b49-61fd-4ca2-9277-4a98fa9f3353",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(205, 113, 150) 0px, rgb(205, 113, 150) 25px, rgb(193, 111, 154) 25px, rgb(193, 111, 154) 29px, rgb(217, 114, 147) 29px, rgb(217, 114, 147) 41px, rgb(181, 110, 157) 41px, rgb(181, 110, 157) 87px, rgb(229, 115, 143) 87px, rgb(229, 115, 143) 169px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "af6b6d55-5495-4f08-ae5b-787ef6e41728",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(208, 136, 248) 0px, rgb(208, 136, 248) 98px, rgb(237, 183, 253) 98px, rgb(237, 183, 253) 141px, rgb(252, 206, 255) 141px, rgb(252, 206, 255) 238px, rgb(222, 159, 251) 238px, rgb(222, 159, 251) 267px, rgb(178, 89, 244) 267px, rgb(178, 89, 244) 363px, rgb(193, 112, 246) 363px, rgb(193, 112, 246) 479px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "7f22c9e7-16ad-4eb7-a15c-9e7668556219",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(148, 203, 49) 0px, rgb(148, 203, 49) 94px, rgb(12, 169, 67) 94px, rgb(12, 169, 67) 108px, rgb(238, 226, 37) 108px, rgb(238, 226, 37) 112px, rgb(102, 192, 55) 112px, rgb(102, 192, 55) 146px, rgb(193, 215, 43) 146px, rgb(193, 215, 43) 198px, rgb(57, 180, 61) 198px, rgb(57, 180, 61) 330px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "82e70a00-d039-4920-8bfb-04683e3674d0",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(133, 205, 30) 0px, rgb(133, 205, 30) 59px, rgb(69, 162, 7) 59px, rgb(69, 162, 7) 121px, rgb(149, 216, 36) 121px, rgb(149, 216, 36) 175px, rgb(117, 194, 24) 175px, rgb(117, 194, 24) 256px, rgb(101, 184, 19) 256px, rgb(101, 184, 19) 315px, rgb(85, 173, 13) 315px, rgb(85, 173, 13) 368px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "b2c11067-0108-4d8f-9477-1bd3e66ddec8",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(42, 111, 116) 0px, rgb(42, 111, 116) 80px, rgb(59, 163, 106) 80px, rgb(59, 163, 106) 171px, rgb(64, 181, 103) 171px, rgb(64, 181, 103) 217px, rgb(53, 146, 110) 217px, rgb(53, 146, 110) 293px, rgb(70, 198, 100) 293px, rgb(70, 198, 100) 382px, rgb(48, 128, 113) 382px, rgb(48, 128, 113) 476px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "07ab19a9-eb43-4196-80fd-e994745b8bbd",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(177, 19, 31) 0px, rgb(177, 19, 31) 63px, rgb(189, 27, 25) 63px, rgb(189, 27, 25) 133px, rgb(227, 49, 7) 133px, rgb(227, 49, 7) 227px, rgb(202, 34, 19) 227px, rgb(202, 34, 19) 298px, rgb(164, 12, 37) 298px, rgb(164, 12, 37) 363px, rgb(214, 42, 13) 363px, rgb(214, 42, 13) 434px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "65b82e2b-2266-4162-8734-10ea7d668522",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(180, 96, 226) 0px, rgb(180, 96, 226) 45px, rgb(196, 124, 232) 45px, rgb(196, 124, 232) 76px, rgb(165, 69, 221) 76px, rgb(165, 69, 221) 114px, rgb(211, 151, 237) 114px, rgb(211, 151, 237) 127px, rgb(242, 206, 248) 127px, rgb(242, 206, 248) 139px, rgb(227, 179, 243) 139px, rgb(227, 179, 243) 170px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "64ecf7dd-4fa9-4a59-82b5-589122a72bce",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(249, 249, 249) 0px, rgb(249, 249, 249) 109px, rgb(234, 234, 234) 109px, rgb(234, 234, 234) 218px, rgb(242, 242, 242) 218px, rgb(242, 242, 242) 327px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "5cbf75eb-2495-49f9-b022-c41c9145ea4b",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(241, 241, 241) 0px, rgb(241, 241, 241) 144px, rgb(207, 207, 207) 144px, rgb(207, 207, 207) 288px, rgb(224, 224, 224) 288px, rgb(224, 224, 224) 432px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "73070569-b619-489c-85c0-2c8eefecc02c",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(237, 237, 237) 0px, rgb(237, 237, 237) 92px, rgb(242, 242, 242) 92px, rgb(242, 242, 242) 184px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "2a73f7ca-26e6-46f2-b22b-53c9d8323f44",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(3, 3, 3) 0px, rgb(3, 3, 3) 113px, rgb(15, 15, 15) 113px, rgb(15, 15, 15) 226px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "94da30c2-7d16-4445-ab76-15125ef491fc",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(80, 80, 80) 0px, rgb(80, 80, 80) 80px, rgb(70, 70, 70) 80px, rgb(70, 70, 70) 160px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "0dc24329-f864-4194-9bff-4a94abdf5497",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(235, 235, 235) 0px, rgb(235, 235, 235) 110px, rgb(241, 241, 241) 110px, rgb(241, 241, 241) 220px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "455c049d-b916-4efb-8d34-457830144f88",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(101, 177, 30) 0px, rgb(101, 177, 30) 32px, rgb(137, 199, 57) 32px, rgb(137, 199, 57) 64px, rgb(65, 155, 2) 64px, rgb(65, 155, 2) 96px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "41e3f2f6-ec96-4e8b-bd84-4972c7b95c4a",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(110, 60, 132) 0px, rgb(110, 60, 132) 17px, rgb(167, 70, 127) 17px, rgb(167, 70, 127) 34px, rgb(52, 50, 136) 34px, rgb(52, 50, 136) 51px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "6f9385f7-795b-4c4a-8135-e36be791e2d0",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(99, 189, 51) 0px, rgb(99, 189, 51) 18px, rgb(119, 206, 80) 18px, rgb(119, 206, 80) 36px, rgb(138, 222, 108) 36px, rgb(138, 222, 108) 54px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "5d0e678a-5b6e-485b-a1df-ccbb25cb0863",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(74, 182, 219) 0px, rgb(74, 182, 219) 68px, rgb(43, 206, 223) 68px, rgb(43, 206, 223) 136px, rgb(12, 229, 227) 136px, rgb(12, 229, 227) 204px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "6749d6b9-fdc5-4307-896c-9e855452a749",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(227, 197, 50) 0px, rgb(227, 197, 50) 145px, rgb(235, 213, 51) 145px, rgb(235, 213, 51) 290px, rgb(243, 229, 51) 290px, rgb(243, 229, 51) 435px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "b26e739c-a0f8-49e2-932a-97b42729964c",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(178, 18, 74) 0px, rgb(178, 18, 74) 74px, rgb(213, 20, 69) 74px, rgb(213, 20, 69) 148px, rgb(248, 22, 63) 148px, rgb(248, 22, 63) 222px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "37c6fd4d-80b1-499e-b4f4-865b6144e3cf",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(218, 110, 165) 0px, rgb(218, 110, 165) 40px, rgb(189, 89, 160) 40px, rgb(189, 89, 160) 80px, rgb(246, 131, 170) 80px, rgb(246, 131, 170) 120px, rgb(175, 78, 158) 120px, rgb(175, 78, 158) 160px, rgb(147, 57, 153) 160px, rgb(147, 57, 153) 200px, rgb(161, 68, 155) 200px, rgb(161, 68, 155) 240px, rgb(204, 99, 163) 240px, rgb(204, 99, 163) 280px, rgb(232, 120, 168) 280px, rgb(232, 120, 168) 320px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "cbc461d4-0d7c-4f0b-b0c5-b7da25df59cd",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(79, 191, 86) 0px, rgb(79, 191, 86) 16px, rgb(59, 180, 83) 16px, rgb(59, 180, 83) 32px, rgb(30, 162, 80) 32px, rgb(30, 162, 80) 48px, rgb(40, 168, 81) 48px, rgb(40, 168, 81) 64px, rgb(88, 197, 87) 64px, rgb(88, 197, 87) 80px, rgb(98, 203, 88) 80px, rgb(98, 203, 88) 96px, rgb(49, 174, 82) 96px, rgb(49, 174, 82) 112px, rgb(69, 185, 85) 112px, rgb(69, 185, 85) 128px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "9f9c1d35-522b-47bb-aeb7-7cc6a5933025",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(165, 202, 216) 0px, rgb(165, 202, 216) 42px, rgb(1, 148, 232) 42px, rgb(1, 148, 232) 84px, rgb(71, 171, 225) 84px, rgb(71, 171, 225) 126px, rgb(48, 163, 227) 126px, rgb(48, 163, 227) 168px, rgb(24, 156, 230) 168px, rgb(24, 156, 230) 210px, rgb(142, 194, 218) 210px, rgb(142, 194, 218) 252px, rgb(118, 187, 221) 252px, rgb(118, 187, 221) 294px, rgb(95, 179, 223) 294px, rgb(95, 179, 223) 336px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "c5952b71-76fd-477e-8300-181693cb4bf0",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(20, 159, 184) 0px, rgb(20, 159, 184) 31px, rgb(72, 182, 168) 31px, rgb(72, 182, 168) 62px, rgb(176, 228, 135) 62px, rgb(176, 228, 135) 93px, rgb(98, 193, 160) 93px, rgb(98, 193, 160) 124px, rgb(150, 216, 143) 124px, rgb(150, 216, 143) 155px, rgb(124, 205, 151) 155px, rgb(124, 205, 151) 186px, rgb(202, 239, 127) 186px, rgb(202, 239, 127) 217px, rgb(46, 170, 176) 217px, rgb(46, 170, 176) 248px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "f605f9b8-7c34-442e-974e-052b319c879c",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(196, 28, 161) 0px, rgb(196, 28, 161) 22px, rgb(232, 86, 235) 22px, rgb(232, 86, 235) 44px, rgb(208, 47, 186) 44px, rgb(208, 47, 186) 66px, rgb(214, 57, 198) 66px, rgb(214, 57, 198) 88px, rgb(226, 77, 222) 88px, rgb(226, 77, 222) 110px, rgb(238, 96, 247) 110px, rgb(238, 96, 247) 132px, rgb(202, 38, 173) 132px, rgb(202, 38, 173) 154px, rgb(220, 67, 210) 154px, rgb(220, 67, 210) 176px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "d21dc2e1-57af-4008-85ae-41c45eb3f166",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(46, 102, 116) 0px, rgb(46, 102, 116) 18px, rgb(28, 81, 109) 18px, rgb(28, 81, 109) 36px, rgb(136, 209, 150) 36px, rgb(136, 209, 150) 54px, rgb(64, 124, 123) 54px, rgb(64, 124, 123) 72px, rgb(118, 187, 143) 72px, rgb(118, 187, 143) 90px, rgb(154, 230, 157) 90px, rgb(154, 230, 157) 108px, rgb(100, 166, 136) 108px, rgb(100, 166, 136) 126px, rgb(82, 145, 130) 126px, rgb(82, 145, 130) 144px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "250383c3-7d71-4e09-b95c-129fd898cbc8",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(94, 64, 68) 0px, rgb(94, 64, 68) 26px, rgb(173, 74, 82) 26px, rgb(173, 74, 82) 52px, rgb(41, 57, 59) 52px, rgb(41, 57, 59) 78px, rgb(147, 71, 77) 78px, rgb(147, 71, 77) 104px, rgb(200, 78, 86) 104px, rgb(200, 78, 86) 130px, rgb(67, 60, 64) 130px, rgb(67, 60, 64) 156px, rgb(120, 67, 73) 156px, rgb(120, 67, 73) 182px, rgb(226, 81, 91) 182px, rgb(226, 81, 91) 208px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "69ae9abf-7ce5-4f26-ad31-0f68a737efde",
+    "stylesheet": "repeating-linear-gradient(135deg, hsl(204, 76%, 70%) 0px, hsl(204, 76%, 70%) 105px, hsl(249, 76%, 70%) 105px, hsl(249, 76%, 70%) 210px, hsl(294, 76%, 70%) 210px, hsl(294, 76%, 70%) 315px, hsl(339, 76%, 70%) 315px, hsl(339, 76%, 70%) 420px, hsl(24, 76%, 70%) 420px, hsl(24, 76%, 70%) 525px, hsl(69, 76%, 70%) 525px, hsl(69, 76%, 70%) 630px, hsl(114, 76%, 70%) 630px, hsl(114, 76%, 70%) 735px, hsl(159, 76%, 70%) 735px, hsl(159, 76%, 70%) 840px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "4c8804d5-ad72-4026-a831-c0d6d4e83015",
+    "stylesheet": "repeating-linear-gradient(90deg, hsl(139, 83%, 66%) 0px, hsl(139, 83%, 66%) 99px, hsl(184, 83%, 66%) 99px, hsl(184, 83%, 66%) 198px, hsl(229, 83%, 66%) 198px, hsl(229, 83%, 66%) 297px, hsl(274, 83%, 66%) 297px, hsl(274, 83%, 66%) 396px, hsl(319, 83%, 66%) 396px, hsl(319, 83%, 66%) 495px, hsl(4, 83%, 66%) 495px, hsl(4, 83%, 66%) 594px, hsl(49, 83%, 66%) 594px, hsl(49, 83%, 66%) 693px, hsl(94, 83%, 66%) 693px, hsl(94, 83%, 66%) 792px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "218061d6-617f-4bc2-9e50-e585441eca95",
+    "stylesheet": "repeating-linear-gradient(135deg, hsl(277, 69%, 60%) 0px, hsl(277, 69%, 60%) 94px, hsl(322, 69%, 60%) 94px, hsl(322, 69%, 60%) 188px, hsl(7, 69%, 60%) 188px, hsl(7, 69%, 60%) 282px, hsl(52, 69%, 60%) 282px, hsl(52, 69%, 60%) 376px, hsl(97, 69%, 60%) 376px, hsl(97, 69%, 60%) 470px, hsl(142, 69%, 60%) 470px, hsl(142, 69%, 60%) 564px, hsl(187, 69%, 60%) 564px, hsl(187, 69%, 60%) 658px, hsl(232, 69%, 60%) 658px, hsl(232, 69%, 60%) 752px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "0544bb21-382e-48ec-bffe-ee38a6bc8ae6",
+    "stylesheet": "repeating-linear-gradient(135deg, hsl(307, 61%, 65%) 0px, hsl(307, 61%, 65%) 129px, hsl(352, 61%, 65%) 129px, hsl(352, 61%, 65%) 258px, hsl(37, 61%, 65%) 258px, hsl(37, 61%, 65%) 387px, hsl(82, 61%, 65%) 387px, hsl(82, 61%, 65%) 516px, hsl(127, 61%, 65%) 516px, hsl(127, 61%, 65%) 645px, hsl(172, 61%, 65%) 645px, hsl(172, 61%, 65%) 774px, hsl(217, 61%, 65%) 774px, hsl(217, 61%, 65%) 903px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "c6f363de-6708-4775-b644-6010317f2703",
+    "stylesheet": "repeating-linear-gradient(90deg, hsl(355, 77%, 74%) 0px, hsl(355, 77%, 74%) 70px, hsl(40, 77%, 74%) 70px, hsl(40, 77%, 74%) 140px, hsl(85, 77%, 74%) 140px, hsl(85, 77%, 74%) 210px, hsl(130, 77%, 74%) 210px, hsl(130, 77%, 74%) 280px, hsl(175, 77%, 74%) 280px, hsl(175, 77%, 74%) 350px, hsl(220, 77%, 74%) 350px, hsl(220, 77%, 74%) 420px, hsl(265, 77%, 74%) 420px, hsl(265, 77%, 74%) 490px, hsl(310, 77%, 74%) 490px, hsl(310, 77%, 74%) 560px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "23a8afa6-5edf-4f39-9562-a3bbec79e2af",
+    "stylesheet": "repeating-linear-gradient(90deg, hsl(315, 84%, 71%) 0px, hsl(315, 84%, 71%) 106px, hsl(0, 84%, 71%) 106px, hsl(0, 84%, 71%) 212px, hsl(45, 84%, 71%) 212px, hsl(45, 84%, 71%) 318px, hsl(90, 84%, 71%) 318px, hsl(90, 84%, 71%) 424px, hsl(135, 84%, 71%) 424px, hsl(135, 84%, 71%) 530px, hsl(180, 84%, 71%) 530px, hsl(180, 84%, 71%) 636px, hsl(225, 84%, 71%) 636px, hsl(225, 84%, 71%) 742px, hsl(270, 84%, 71%) 742px, hsl(270, 84%, 71%) 848px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "87f71284-84d7-4978-bc3c-6bfe6c26bf20",
+    "stylesheet": "repeating-linear-gradient(135deg, hsl(46, 80%, 67%) 0px, hsl(46, 80%, 67%) 14px, hsl(91, 80%, 67%) 14px, hsl(91, 80%, 67%) 28px, hsl(136, 80%, 67%) 28px, hsl(136, 80%, 67%) 42px, hsl(181, 80%, 67%) 42px, hsl(181, 80%, 67%) 56px, hsl(226, 80%, 67%) 56px, hsl(226, 80%, 67%) 70px, hsl(271, 80%, 67%) 70px, hsl(271, 80%, 67%) 84px, hsl(316, 80%, 67%) 84px, hsl(316, 80%, 67%) 98px, hsl(1, 80%, 67%) 98px, hsl(1, 80%, 67%) 112px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "822b1563-fabc-4110-b10d-66a943110174",
+    "stylesheet": "repeating-linear-gradient(45deg, hsl(64, 83%, 66%) 0px, hsl(64, 83%, 66%) 6px, hsl(109, 83%, 66%) 6px, hsl(109, 83%, 66%) 12px, hsl(154, 83%, 66%) 12px, hsl(154, 83%, 66%) 18px, hsl(199, 83%, 66%) 18px, hsl(199, 83%, 66%) 24px, hsl(244, 83%, 66%) 24px, hsl(244, 83%, 66%) 30px, hsl(289, 83%, 66%) 30px, hsl(289, 83%, 66%) 36px, hsl(334, 83%, 66%) 36px, hsl(334, 83%, 66%) 42px, hsl(19, 83%, 66%) 42px, hsl(19, 83%, 66%) 48px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "836afe96-c14f-4699-8502-66681ae1c741",
+    "stylesheet": "repeating-linear-gradient(135deg, hsl(285, 76%, 57%) 0px, hsl(285, 76%, 57%) 44px, hsl(330, 76%, 57%) 44px, hsl(330, 76%, 57%) 88px, hsl(15, 76%, 57%) 88px, hsl(15, 76%, 57%) 132px, hsl(60, 76%, 57%) 132px, hsl(60, 76%, 57%) 176px, hsl(105, 76%, 57%) 176px, hsl(105, 76%, 57%) 220px, hsl(150, 76%, 57%) 220px, hsl(150, 76%, 57%) 264px, hsl(195, 76%, 57%) 264px, hsl(195, 76%, 57%) 308px, hsl(240, 76%, 57%) 308px, hsl(240, 76%, 57%) 352px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "8a2d5130-48a8-43ea-84f6-7edad7839af5",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(247, 247, 247) 0px, rgb(247, 247, 247) 20px, rgb(249, 249, 249) 20px, rgb(249, 249, 249) 30px, rgb(240, 240, 240) 30px, rgb(240, 240, 240) 55px, rgb(245, 245, 245) 55px, rgb(245, 245, 245) 95px, rgb(243, 243, 243) 95px, rgb(243, 243, 243) 124px, rgb(251, 251, 251) 124px, rgb(251, 251, 251) 169px, rgb(248, 248, 248) 169px, rgb(248, 248, 248) 206px, rgb(241, 241, 241) 206px, rgb(241, 241, 241) 225px, rgb(244, 244, 244) 225px, rgb(244, 244, 244) 250px, rgb(252, 252, 252) 250px, rgb(252, 252, 252) 294px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "8bd58574-a012-47de-b9e7-a23323c2535a",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(236, 236, 236) 0px, rgb(236, 236, 236) 4px, rgb(236, 236, 236) 4px, rgb(236, 236, 236) 8px, rgb(238, 238, 238) 8px, rgb(238, 238, 238) 12px, rgb(234, 234, 234) 12px, rgb(234, 234, 234) 16px, rgb(234, 234, 234) 16px, rgb(234, 234, 234) 20px, rgb(239, 239, 239) 20px, rgb(239, 239, 239) 24px, rgb(235, 235, 235) 24px, rgb(235, 235, 235) 28px, rgb(237, 237, 237) 28px, rgb(237, 237, 237) 32px, rgb(238, 238, 238) 32px, rgb(238, 238, 238) 36px, rgb(233, 233, 233) 36px, rgb(233, 233, 233) 40px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "0a605054-fed3-4650-9a4b-364293a59caf",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(218, 218, 218) 0px, rgb(218, 218, 218) 5px, rgb(232, 232, 232) 5px, rgb(232, 232, 232) 10px, rgb(234, 234, 234) 10px, rgb(234, 234, 234) 15px, rgb(216, 216, 216) 15px, rgb(216, 216, 216) 20px, rgb(221, 221, 221) 20px, rgb(221, 221, 221) 25px, rgb(224, 224, 224) 25px, rgb(224, 224, 224) 30px, rgb(213, 213, 213) 30px, rgb(213, 213, 213) 35px, rgb(226, 226, 226) 35px, rgb(226, 226, 226) 40px, rgb(237, 237, 237) 40px, rgb(237, 237, 237) 45px, rgb(229, 229, 229) 45px, rgb(229, 229, 229) 50px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "7dc657fa-875b-4ab0-bc30-488596ac0c21",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(253, 253, 253) 0px, rgb(253, 253, 253) 7px, rgb(245, 245, 245) 7px, rgb(245, 245, 245) 14px, rgb(238, 238, 238) 14px, rgb(238, 238, 238) 21px, rgb(242, 242, 242) 21px, rgb(242, 242, 242) 28px, rgb(240, 240, 240) 28px, rgb(240, 240, 240) 35px, rgb(255, 255, 255) 35px, rgb(255, 255, 255) 42px, rgb(244, 244, 244) 42px, rgb(244, 244, 244) 49px, rgb(249, 249, 249) 49px, rgb(249, 249, 249) 56px, rgb(251, 251, 251) 56px, rgb(251, 251, 251) 63px, rgb(236, 236, 236) 63px, rgb(236, 236, 236) 70px, rgb(247, 247, 247) 70px, rgb(247, 247, 247) 77px, rgb(234, 234, 234) 77px, rgb(234, 234, 234) 84px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "e330d8c7-6049-4208-a85c-0b842c4c5152",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(245, 245, 245) 0px, rgb(245, 245, 245) 42px, rgb(247, 247, 247) 42px, rgb(247, 247, 247) 84px, rgb(244, 244, 244) 84px, rgb(244, 244, 244) 126px, rgb(247, 247, 247) 126px, rgb(247, 247, 247) 168px, rgb(245, 245, 245) 168px, rgb(245, 245, 245) 210px, rgb(244, 244, 244) 210px, rgb(244, 244, 244) 252px, rgb(246, 246, 246) 252px, rgb(246, 246, 246) 294px, rgb(246, 246, 246) 294px, rgb(246, 246, 246) 336px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "2e38b425-19bf-488b-8b55-0df5c2bcdc7d",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(248, 248, 248) 0px, rgb(248, 248, 248) 15px, rgb(234, 234, 234) 15px, rgb(234, 234, 234) 30px, rgb(237, 237, 237) 30px, rgb(237, 237, 237) 45px, rgb(246, 246, 246) 45px, rgb(246, 246, 246) 60px, rgb(232, 232, 232) 60px, rgb(232, 232, 232) 75px, rgb(243, 243, 243) 75px, rgb(243, 243, 243) 90px, rgb(239, 239, 239) 90px, rgb(239, 239, 239) 105px, rgb(241, 241, 241) 105px, rgb(241, 241, 241) 120px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "adf62c0e-de66-4fa5-a0d2-eac0614aa06d",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(49, 49, 49) 0px, rgb(49, 49, 49) 45px, rgb(50, 50, 50) 45px, rgb(50, 50, 50) 90px, rgb(40, 40, 40) 90px, rgb(40, 40, 40) 135px, rgb(46, 46, 46) 135px, rgb(46, 46, 46) 180px, rgb(44, 44, 44) 180px, rgb(44, 44, 44) 225px, rgb(41, 41, 41) 225px, rgb(41, 41, 41) 270px, rgb(43, 43, 43) 270px, rgb(43, 43, 43) 315px, rgb(47, 47, 47) 315px, rgb(47, 47, 47) 360px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "5409e877-2247-4f5c-8297-9257e921b313",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(80, 80, 80) 0px, rgb(80, 80, 80) 14px, rgb(81, 81, 81) 14px, rgb(81, 81, 81) 28px, rgb(86, 86, 86) 28px, rgb(86, 86, 86) 42px, rgb(83, 83, 83) 42px, rgb(83, 83, 83) 56px, rgb(82, 82, 82) 56px, rgb(82, 82, 82) 70px, rgb(88, 88, 88) 70px, rgb(88, 88, 88) 84px, rgb(85, 85, 85) 84px, rgb(85, 85, 85) 98px, rgb(87, 87, 87) 98px, rgb(87, 87, 87) 112px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "43734a9a-bac0-4844-a2c6-e48b42da5293",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(30, 30, 30) 0px, rgb(30, 30, 30) 42px, rgb(32, 32, 32) 42px, rgb(32, 32, 32) 84px, rgb(33, 33, 33) 84px, rgb(33, 33, 33) 126px, rgb(31, 31, 31) 126px, rgb(31, 31, 31) 168px, rgb(31, 31, 31) 168px, rgb(31, 31, 31) 210px, rgb(32, 32, 32) 210px, rgb(32, 32, 32) 252px, rgb(34, 34, 34) 252px, rgb(34, 34, 34) 294px, rgb(33, 33, 33) 294px, rgb(33, 33, 33) 336px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "8a809869-4c24-4dc6-baf2-366687d70ccf",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(133, 133, 133) 0px, rgb(133, 133, 133) 22px, rgb(118, 118, 118) 22px, rgb(118, 118, 118) 44px, rgb(110, 110, 110) 44px, rgb(110, 110, 110) 66px, rgb(88, 88, 88) 66px, rgb(88, 88, 88) 88px, rgb(80, 80, 80) 88px, rgb(80, 80, 80) 110px, rgb(95, 95, 95) 110px, rgb(95, 95, 95) 132px, rgb(103, 103, 103) 132px, rgb(103, 103, 103) 154px, rgb(125, 125, 125) 154px, rgb(125, 125, 125) 176px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "cb4dd956-3cf5-45ce-8732-e50bef085bad",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(16, 16, 16) 0px, rgb(16, 16, 16) 35px, rgb(9, 9, 9) 35px, rgb(9, 9, 9) 70px, rgb(1, 1, 1) 70px, rgb(1, 1, 1) 105px, rgb(6, 6, 6) 105px, rgb(6, 6, 6) 140px, rgb(4, 4, 4) 140px, rgb(4, 4, 4) 175px, rgb(14, 14, 14) 175px, rgb(14, 14, 14) 210px, rgb(11, 11, 11) 210px, rgb(11, 11, 11) 245px, rgb(19, 19, 19) 245px, rgb(19, 19, 19) 280px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "d00adde9-130c-4d93-a0d4-09c21f21ec86",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(200, 200, 200) 0px, rgb(200, 200, 200) 49px, rgb(198, 198, 198) 49px, rgb(198, 198, 198) 98px, rgb(202, 202, 202) 98px, rgb(202, 202, 202) 147px, rgb(211, 211, 211) 147px, rgb(211, 211, 211) 196px, rgb(205, 205, 205) 196px, rgb(205, 205, 205) 245px, rgb(207, 207, 207) 245px, rgb(207, 207, 207) 294px, rgb(209, 209, 209) 294px, rgb(209, 209, 209) 343px, rgb(204, 204, 204) 343px, rgb(204, 204, 204) 392px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "cc0c1519-4003-4aa9-9e75-42de047ea553",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(227, 227, 227) 0px, rgb(227, 227, 227) 97px, rgb(230, 230, 230) 97px, rgb(230, 230, 230) 194px, rgb(229, 229, 229) 194px, rgb(229, 229, 229) 291px, rgb(232, 232, 232) 291px, rgb(232, 232, 232) 388px, rgb(228, 228, 228) 388px, rgb(228, 228, 228) 485px, rgb(233, 233, 233) 485px, rgb(233, 233, 233) 582px, rgb(235, 235, 235) 582px, rgb(235, 235, 235) 679px, rgb(234, 234, 234) 679px, rgb(234, 234, 234) 776px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "c09f5518-e099-4460-a7ee-3d3c2ab7d72b",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(14, 14, 14) 0px, rgb(14, 14, 14) 72px, rgb(16, 16, 16) 72px, rgb(16, 16, 16) 144px, rgb(19, 19, 19) 144px, rgb(19, 19, 19) 216px, rgb(21, 21, 21) 216px, rgb(21, 21, 21) 288px, rgb(11, 11, 11) 288px, rgb(11, 11, 11) 360px, rgb(6, 6, 6) 360px, rgb(6, 6, 6) 432px, rgb(4, 4, 4) 432px, rgb(4, 4, 4) 504px, rgb(9, 9, 9) 504px, rgb(9, 9, 9) 576px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "716b376c-7444-4852-996a-a3db16ce7e41",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(61, 61, 61) 0px, rgb(61, 61, 61) 93px, rgb(64, 64, 64) 93px, rgb(64, 64, 64) 186px, rgb(50, 50, 50) 186px, rgb(50, 50, 50) 279px, rgb(47, 47, 47) 279px, rgb(47, 47, 47) 372px, rgb(67, 67, 67) 372px, rgb(67, 67, 67) 465px, rgb(56, 56, 56) 465px, rgb(56, 56, 56) 558px, rgb(58, 58, 58) 558px, rgb(58, 58, 58) 651px, rgb(53, 53, 53) 651px, rgb(53, 53, 53) 744px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "12ff8a2e-6019-4d5e-981f-facf6a2dd172",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(224, 224, 224) 0px, rgb(224, 224, 224) 75px, rgb(237, 237, 237) 75px, rgb(237, 237, 237) 150px, rgb(249, 249, 249) 150px, rgb(249, 249, 249) 225px, rgb(232, 232, 232) 225px, rgb(232, 232, 232) 300px, rgb(228, 228, 228) 300px, rgb(228, 228, 228) 375px, rgb(245, 245, 245) 375px, rgb(245, 245, 245) 450px, rgb(220, 220, 220) 450px, rgb(220, 220, 220) 525px, rgb(241, 241, 241) 525px, rgb(241, 241, 241) 600px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "556fd3a0-6b8a-4131-b551-33d89372bab7",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(59, 59, 59) 0px, rgb(59, 59, 59) 51px, rgb(63, 63, 63) 51px, rgb(63, 63, 63) 102px, rgb(60, 60, 60) 102px, rgb(60, 60, 60) 153px, rgb(54, 54, 54) 153px, rgb(54, 54, 54) 204px, rgb(62, 62, 62) 204px, rgb(62, 62, 62) 255px, rgb(57, 57, 57) 255px, rgb(57, 57, 57) 306px, rgb(58, 58, 58) 306px, rgb(58, 58, 58) 357px, rgb(55, 55, 55) 357px, rgb(55, 55, 55) 408px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "96fd3a29-31c1-4088-ad76-e87ad9a200f7",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(246, 246, 246) 0px, rgb(246, 246, 246) 85px, rgb(250, 250, 250) 85px, rgb(250, 250, 250) 170px, rgb(248, 248, 248) 170px, rgb(248, 248, 248) 255px, rgb(244, 244, 244) 255px, rgb(244, 244, 244) 340px, rgb(245, 245, 245) 340px, rgb(245, 245, 245) 425px, rgb(249, 249, 249) 425px, rgb(249, 249, 249) 510px, rgb(243, 243, 243) 510px, rgb(243, 243, 243) 595px, rgb(251, 251, 251) 595px, rgb(251, 251, 251) 680px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "fec97342-1a80-4e6d-8f17-c4756a37112c",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(86, 86, 86) 0px, rgb(86, 86, 86) 84px, rgb(98, 98, 98) 84px, rgb(98, 98, 98) 168px, rgb(93, 93, 93) 168px, rgb(93, 93, 93) 252px, rgb(83, 83, 83) 252px, rgb(83, 83, 83) 336px, rgb(96, 96, 96) 336px, rgb(96, 96, 96) 420px, rgb(88, 88, 88) 420px, rgb(88, 88, 88) 504px, rgb(81, 81, 81) 504px, rgb(81, 81, 81) 588px, rgb(91, 91, 91) 588px, rgb(91, 91, 91) 672px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "623874bb-c886-4789-bbad-d688ee0d97df",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(68, 68, 68) 0px, rgb(68, 68, 68) 55px, rgb(74, 74, 74) 55px, rgb(74, 74, 74) 110px, rgb(70, 70, 70) 110px, rgb(70, 70, 70) 165px, rgb(60, 60, 60) 165px, rgb(60, 60, 60) 220px, rgb(72, 72, 72) 220px, rgb(72, 72, 72) 275px, rgb(64, 64, 64) 275px, rgb(64, 64, 64) 330px, rgb(62, 62, 62) 330px, rgb(62, 62, 62) 385px, rgb(66, 66, 66) 385px, rgb(66, 66, 66) 440px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "37c28a48-7f8a-4903-9dbf-0cde92c0cc83",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(221, 221, 221) 0px, rgb(221, 221, 221) 126px, rgb(219, 219, 219) 126px, rgb(219, 219, 219) 252px, rgb(224, 224, 224) 252px, rgb(224, 224, 224) 378px, rgb(227, 227, 227) 378px, rgb(227, 227, 227) 504px, rgb(228, 228, 228) 504px, rgb(228, 228, 228) 630px, rgb(225, 225, 225) 630px, rgb(225, 225, 225) 756px, rgb(222, 222, 222) 756px, rgb(222, 222, 222) 882px, rgb(218, 218, 218) 882px, rgb(218, 218, 218) 1008px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "9c90e07a-95bd-487a-822d-c525a92be988",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(88, 88, 88) 0px, rgb(88, 88, 88) 95px, rgb(204, 204, 204) 95px, rgb(204, 204, 204) 190px, rgb(184, 184, 184) 190px, rgb(184, 184, 184) 285px, rgb(223, 223, 223) 285px, rgb(223, 223, 223) 380px, rgb(107, 107, 107) 380px, rgb(107, 107, 107) 475px, rgb(127, 127, 127) 475px, rgb(127, 127, 127) 570px, rgb(146, 146, 146) 570px, rgb(146, 146, 146) 665px, rgb(165, 165, 165) 665px, rgb(165, 165, 165) 760px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "b7ec51f1-6269-48ad-b0ec-84ecb0918cfe",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(36, 36, 36) 0px, rgb(36, 36, 36) 143px, rgb(38, 38, 38) 143px, rgb(38, 38, 38) 286px, rgb(33, 33, 33) 286px, rgb(33, 33, 33) 429px, rgb(26, 26, 26) 429px, rgb(26, 26, 26) 572px, rgb(28, 28, 28) 572px, rgb(28, 28, 28) 715px, rgb(31, 31, 31) 715px, rgb(31, 31, 31) 858px, rgb(35, 35, 35) 858px, rgb(35, 35, 35) 1001px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "47604eb4-b3c5-42e1-bb71-faa4f7392396",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(126, 57, 241) 0px, rgb(126, 57, 241) 105px, rgb(107, 59, 244) 105px, rgb(107, 59, 244) 210px, rgb(144, 55, 238) 210px, rgb(144, 55, 238) 315px, rgb(201, 49, 229) 315px, rgb(201, 49, 229) 420px, rgb(238, 45, 223) 420px, rgb(238, 45, 223) 525px, rgb(182, 51, 232) 525px, rgb(182, 51, 232) 630px, rgb(163, 53, 235) 630px, rgb(163, 53, 235) 735px, rgb(219, 47, 226) 735px, rgb(219, 47, 226) 840px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "44ec7219-7c8f-4452-a13c-b9326616fa0d",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(229, 171, 68) 0px, rgb(229, 171, 68) 166px, rgb(230, 198, 61) 166px, rgb(230, 198, 61) 332px, rgb(229, 131, 78) 332px, rgb(229, 131, 78) 498px, rgb(229, 158, 71) 498px, rgb(229, 158, 71) 664px, rgb(229, 144, 75) 664px, rgb(229, 144, 75) 830px, rgb(230, 225, 54) 830px, rgb(230, 225, 54) 996px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "92e4fca4-db65-404e-a0c1-7d1d186a67c6",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(75, 117, 213) 0px, rgb(75, 117, 213) 102px, rgb(41, 95, 208) 102px, rgb(41, 95, 208) 204px, rgb(66, 112, 212) 204px, rgb(66, 112, 212) 306px, rgb(32, 90, 207) 306px, rgb(32, 90, 207) 408px, rgb(58, 106, 211) 408px, rgb(58, 106, 211) 510px, rgb(83, 123, 214) 510px, rgb(83, 123, 214) 612px, rgb(24, 84, 206) 612px, rgb(24, 84, 206) 714px, rgb(49, 101, 209) 714px, rgb(49, 101, 209) 816px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "61559dd3-8072-4b47-8e98-5700667eb931",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(234, 131, 73) 0px, rgb(234, 131, 73) 236px, rgb(254, 159, 71) 236px, rgb(254, 159, 71) 472px, rgb(224, 117, 74) 472px, rgb(224, 117, 74) 708px, rgb(244, 145, 72) 708px, rgb(244, 145, 72) 944px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "61a31058-ac59-4e4d-87bb-d2d398c11d1c",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(239, 188, 106) 0px, rgb(239, 188, 106) 115px, rgb(240, 195, 107) 115px, rgb(240, 195, 107) 230px, rgb(231, 150, 104) 230px, rgb(231, 150, 104) 345px, rgb(237, 180, 106) 345px, rgb(237, 180, 106) 460px, rgb(234, 165, 105) 460px, rgb(234, 165, 105) 575px, rgb(233, 158, 104) 575px, rgb(233, 158, 104) 690px, rgb(236, 173, 105) 690px, rgb(236, 173, 105) 805px, rgb(242, 203, 107) 805px, rgb(242, 203, 107) 920px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "a9afdf76-b6a0-41ec-87f9-17f1f32cbdd4",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(127, 226, 176) 0px, rgb(127, 226, 176) 70px, rgb(192, 252, 165) 70px, rgb(192, 252, 165) 140px, rgb(149, 235, 172) 140px, rgb(149, 235, 172) 210px, rgb(41, 192, 190) 210px, rgb(41, 192, 190) 280px, rgb(63, 201, 186) 280px, rgb(63, 201, 186) 350px, rgb(106, 218, 179) 350px, rgb(106, 218, 179) 420px, rgb(84, 209, 183) 420px, rgb(84, 209, 183) 490px, rgb(170, 243, 169) 490px, rgb(170, 243, 169) 560px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "fb3b8151-3a04-4cf3-bc63-a4e7263bc186",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(160, 39, 102) 0px, rgb(160, 39, 102) 68px, rgb(124, 46, 105) 68px, rgb(124, 46, 105) 136px, rgb(136, 44, 104) 136px, rgb(136, 44, 104) 204px, rgb(148, 41, 103) 204px, rgb(148, 41, 103) 272px, rgb(171, 37, 101) 272px, rgb(171, 37, 101) 340px, rgb(195, 32, 99) 340px, rgb(195, 32, 99) 408px, rgb(183, 35, 100) 408px, rgb(183, 35, 100) 476px, rgb(207, 30, 98) 476px, rgb(207, 30, 98) 544px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "f5039490-5ed0-493a-b766-de6970473584",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(201, 250, 162) 0px, rgb(201, 250, 162) 107px, rgb(162, 222, 117) 107px, rgb(162, 222, 117) 214px, rgb(104, 181, 49) 214px, rgb(104, 181, 49) 321px, rgb(123, 195, 72) 321px, rgb(123, 195, 72) 428px, rgb(65, 153, 4) 428px, rgb(65, 153, 4) 535px, rgb(84, 167, 27) 535px, rgb(84, 167, 27) 642px, rgb(182, 236, 139) 642px, rgb(182, 236, 139) 749px, rgb(143, 208, 94) 749px, rgb(143, 208, 94) 856px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "199cfd57-2e50-49df-af4f-685bb5fa939c",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(132, 195, 84) 0px, rgb(132, 195, 84) 57px, rgb(55, 134, 6) 57px, rgb(55, 134, 6) 114px, rgb(93, 165, 45) 114px, rgb(93, 165, 45) 171px, rgb(170, 226, 123) 171px, rgb(170, 226, 123) 228px, rgb(151, 210, 103) 228px, rgb(151, 210, 103) 285px, rgb(189, 241, 142) 285px, rgb(189, 241, 142) 342px, rgb(74, 149, 25) 342px, rgb(74, 149, 25) 399px, rgb(112, 180, 64) 399px, rgb(112, 180, 64) 456px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "2f155bcf-43fc-4329-bbf2-0cbef15cb263",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(30, 111, 244) 0px, rgb(30, 111, 244) 65px, rgb(42, 154, 252) 65px, rgb(42, 154, 252) 130px, rgb(7, 26, 228) 130px, rgb(7, 26, 228) 195px, rgb(36, 133, 248) 195px, rgb(36, 133, 248) 260px, rgb(24, 90, 240) 260px, rgb(24, 90, 240) 325px, rgb(13, 48, 232) 325px, rgb(13, 48, 232) 390px, rgb(1, 5, 224) 390px, rgb(1, 5, 224) 455px, rgb(19, 69, 236) 455px, rgb(19, 69, 236) 520px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "cc0549cf-8258-4bb3-8da5-ee8b3e2131e5",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(85, 39, 14) 0px, rgb(85, 39, 14) 15px, rgb(127, 33, 15) 15px, rgb(127, 33, 15) 30px, rgb(189, 25, 16) 30px, rgb(189, 25, 16) 45px, rgb(148, 30, 15) 45px, rgb(148, 30, 15) 60px, rgb(231, 19, 17) 60px, rgb(231, 19, 17) 75px, rgb(210, 22, 17) 75px, rgb(210, 22, 17) 90px, rgb(106, 36, 14) 90px, rgb(106, 36, 14) 105px, rgb(168, 28, 16) 105px, rgb(168, 28, 16) 120px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "41c28248-653b-4fde-90b1-a2ee3e4fbe97",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(118, 98, 243) 0px, rgb(118, 98, 243) 46px, rgb(61, 163, 245) 46px, rgb(61, 163, 245) 92px, rgb(107, 111, 244) 92px, rgb(107, 111, 244) 138px, rgb(72, 150, 244) 138px, rgb(72, 150, 244) 184px, rgb(95, 124, 244) 184px, rgb(95, 124, 244) 230px, rgb(49, 176, 245) 230px, rgb(49, 176, 245) 276px, rgb(130, 85, 243) 276px, rgb(130, 85, 243) 322px, rgb(84, 137, 244) 322px, rgb(84, 137, 244) 368px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "4bb02006-8dee-4e49-aea1-412bab127a45",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(115, 167, 69) 0px, rgb(115, 167, 69) 10px, rgb(101, 135, 71) 10px, rgb(101, 135, 71) 20px, rgb(121, 183, 69) 20px, rgb(121, 183, 69) 30px, rgb(128, 199, 68) 30px, rgb(128, 199, 68) 40px, rgb(108, 151, 70) 40px, rgb(108, 151, 70) 50px, rgb(88, 103, 72) 50px, rgb(88, 103, 72) 60px, rgb(95, 119, 71) 60px, rgb(95, 119, 71) 70px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "dd707a12-4f68-4ca4-b6e9-28b3040fb9ba",
+    "stylesheet": "repeating-linear-gradient(90deg, rgb(95, 152, 225) 0px, rgb(95, 152, 225) 10px, rgb(115, 164, 229) 10px, rgb(115, 164, 229) 20px, rgb(135, 175, 233) 20px, rgb(135, 175, 233) 30px, rgb(214, 222, 250) 30px, rgb(214, 222, 250) 40px, rgb(174, 199, 242) 40px, rgb(174, 199, 242) 50px, rgb(155, 187, 238) 50px, rgb(155, 187, 238) 60px, rgb(194, 210, 246) 60px, rgb(194, 210, 246) 70px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "48923a37-b5be-4042-98de-f1ead7987121",
+    "stylesheet": "repeating-linear-gradient(135deg, rgb(171, 44, 42) 0px, rgb(171, 44, 42) 35px, rgb(207, 49, 34) 35px, rgb(207, 49, 34) 70px, rgb(123, 26, 26) 70px, rgb(123, 26, 26) 105px)",
+    "tags": [
+      "repstripes"
+    ]
+  },
+  {
+    "slug": "1de476e4-a93b-45f0-95ca-2dc3a51a94c4",
+    "stylesheet": "repeating-linear-gradient(45deg, rgb(62, 123, 62) 0px, rgb(62, 123, 62) 14px, rgb(110, 191, 101) 14px, rgb(110, 191, 101) 28px, rgb(49, 160, 55) 28px, rgb(49, 160, 55) 42px, rgb(65, 140, 63) 42px, rgb(65, 140, 63) 56px, rgb(57, 114, 53) 56px, rgb(57, 114, 53) 70px)",
+    "tags": [
+      "repstripes"
+    ]
+  }
+]

@@ -2,10 +2,11 @@
 {
     public partial class App : Application
     {
-        public App()
+        public App(AppStartup startup)
         {
             InitializeComponent();
 
+            startup.Run();
             MainPage = new AppShell();
         }
     }
