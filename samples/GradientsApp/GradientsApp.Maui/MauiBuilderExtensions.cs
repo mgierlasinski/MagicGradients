@@ -1,17 +1,16 @@
-﻿using GradientsApp.Infrastructure;
+﻿using GradientsApp.Extensions;
+using GradientsApp.Infrastructure;
 using GradientsApp.Maui.Infrastructure;
 
-namespace GradientsApp.Maui
+namespace GradientsApp.Maui;
+
+public static class MauiBuilderExtensions
 {
-    public static class MauiBuilderExtensions
+    public static MauiAppBuilder ConfigureServices(this MauiAppBuilder builder)
     {
-        public static MauiAppBuilder ConfigureServices(this MauiAppBuilder builder)
-        {
-            new AppSetupNew().Setup(builder.Services);
+        builder.Services.AddServicesAndViewModels();
+        builder.Services.AddSingleton<INavigationService, NavigationService>();
 
-            builder.Services.AddSingleton<INavigationService, NavigationService>();
-
-            return builder;
-        }
+        return builder;
     }
 }

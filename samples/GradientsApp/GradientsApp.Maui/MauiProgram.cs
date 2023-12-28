@@ -1,22 +1,28 @@
 ﻿using MagicGradients.Maui;
+using Microsoft.Extensions.Logging;
 
-namespace GradientsApp.Maui;
-
-public static class MauiProgram
+namespace GradientsApp.Maui
 {
-    public static MauiApp CreateMauiApp()
+    public static class MauiProgram
     {
-        var builder = MauiApp.CreateBuilder();
-        builder
-            .UseMauiApp<App>()
-            .ConfigureServices()
-            .UseMagicGradients()
-            .ConfigureFonts(fonts =>
-            {
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            });
-        
-        return builder.Build();
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureServices()
+                .UseMagicGradients()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                });
+
+#if DEBUG
+    		builder.Logging.AddDebug();
+#endif
+
+            return builder.Build();
+        }
     }
 }

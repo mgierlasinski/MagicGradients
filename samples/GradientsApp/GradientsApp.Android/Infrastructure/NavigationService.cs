@@ -1,8 +1,5 @@
 ﻿using GradientsApp.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
+using Microsoft.Maui.ApplicationModel;
 using Fragment = AndroidX.Fragment.App.Fragment;
 
 namespace GradientsApp.Android.Infrastructure
@@ -12,8 +9,8 @@ namespace GradientsApp.Android.Infrastructure
         private readonly Dictionary<string, Type> _routes = new Dictionary<string, Type>();
         private readonly NavigationViewFactory _viewFactory = new NavigationViewFactory();
 
-        private IFragmentLoader _fragmentLoader;
-        protected IFragmentLoader FragmentLoader => _fragmentLoader ??= Platform.CurrentActivity as IFragmentLoader;
+        private IFragmentLoader? _fragmentLoader;
+        protected IFragmentLoader? FragmentLoader => _fragmentLoader ??= Platform.CurrentActivity as IFragmentLoader;
         
         public Task NavigateTo(string route)
         {
@@ -24,7 +21,7 @@ namespace GradientsApp.Android.Infrastructure
                 if (fragment is IBindableView bindable)
                     _viewFactory.CallEvents(bindable.BindingContext);
 
-                FragmentLoader.LoadFragment(fragment);
+                FragmentLoader?.LoadFragment(fragment);
             }
 
             return Task.CompletedTask;
@@ -39,7 +36,7 @@ namespace GradientsApp.Android.Infrastructure
                 if (fragment is IBindableView bindable)
                     _viewFactory.CallEvents(bindable.BindingContext, parameter);
 
-                FragmentLoader.LoadFragment(fragment);
+                FragmentLoader?.LoadFragment(fragment);
             }
 
             return Task.CompletedTask;

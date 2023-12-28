@@ -125,11 +125,11 @@ namespace MagicGradients.Drawing
             {
                 for (var col = 0; col < cols; col++)
                 {
-                    context.Canvas.SaveState();
+                    //context.Canvas.SaveState();
                     context.Canvas.Translate(col * tileWidth, row * tileHeight);
                     MaskDrawable.Clip(_control.Mask, context);
                     context.Canvas.FillRectangle(context.RenderRect);
-                    context.Canvas.RestoreState();
+                    //context.Canvas.RestoreState();
                 }
             }
         }

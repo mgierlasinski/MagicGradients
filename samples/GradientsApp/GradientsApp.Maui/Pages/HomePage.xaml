@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:magic="clr-namespace:MagicGradients.Forms;assembly=MagicGradients.Maui"
              x:Class="GradientsApp.Maui.Pages.HomePage"
-             Title="HomePage"
+             Title="Home Page"
+             Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False">
     <VerticalStackLayout>
         <Grid>
             <magic:GradientView GradientSource="linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)" />
-            <!--<magic:SkiaGradientView StyleClass="RainbowGradient" />-->
             <Label HorizontalTextAlignment="Center" TextColor="White" Margin="24">
                 <Label.FormattedText>
                     <FormattedString>
@@ -18,7 +18,7 @@
                 </Label.FormattedText>
             </Label>
         </Grid>
-        <VerticalStackLayout Margin="20">
+        <VerticalStackLayout Margin="20" Spacing="10">
             <Button Text="Linear Gradients" />
             <Button Text="Radial Gradients" />
             <Button Text="Masks" />

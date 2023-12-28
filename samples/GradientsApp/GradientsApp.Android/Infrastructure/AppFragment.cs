@@ -1,6 +1,5 @@
-﻿using Android.OS;
-using Android.Views;
-using Xamarin.Essentials;
+﻿using Android.Views;
+using Microsoft.Maui.ApplicationModel;
 using Fragment = AndroidX.Fragment.App.Fragment;
 
 namespace GradientsApp.Android.Infrastructure
@@ -8,12 +7,12 @@ namespace GradientsApp.Android.Infrastructure
     public class AppFragment : Fragment
     {
         private readonly int _layoutId;
-        private readonly string _title;
+        private readonly string? _title;
 
-        private IToolbarManager _toolbar;
-        protected IToolbarManager Toolbar => _toolbar ??= Platform.CurrentActivity as IToolbarManager;
+        private IToolbarManager? _toolbar;
+        protected IToolbarManager? Toolbar => _toolbar ??= Platform.CurrentActivity as IToolbarManager;
 
-        public AppFragment(int layoutId, string title = null)
+        public AppFragment(int layoutId, string? title = null)
         {
             _layoutId = layoutId;
             _title = title;
@@ -26,8 +25,8 @@ namespace GradientsApp.Android.Infrastructure
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
-            Toolbar.Show();
-            Toolbar.SetTitle(_title);
+            Toolbar?.Show();
+            Toolbar?.SetTitle(_title);
         }
     }
 }

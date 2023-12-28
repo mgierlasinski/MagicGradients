@@ -1,0 +1,41 @@
+<Project>
+  <!--
+  <ItemGroup>
+    <Reference Include="netstandard" Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) Or $(TargetFramework.StartsWith('Xamarin.Mac'))" />
+    <Reference Include="System.Numerics" Condition="$(TargetFramework.StartsWith('netstandard')) != true" />
+    <Reference Include="System.Numerics.Vectors" Condition="$(TargetFramework.StartsWith('netstandard')) != true" />
+  </ItemGroup>
+  -->
+  <ItemGroup Condition="$(Platform_iOS) != true">
+    <Compile Remove="**\*.iOS.cs"/>
+    <None Include="**\*.iOS.cs"/>
+    <Compile Remove="**\iOS\*.cs"/>
+    <None Include="**\iOS\*.cs"/>
+    <Compile Remove="**\iOS\**\*.cs"/>
+    <None Include="**\iOS\**\*.cs"/>
+  </ItemGroup>
+  <ItemGroup Condition="$(Platform_MacCatalyst) != true">
+    <Compile Remove="**\*.Mac.cs"/>
+    <None Include="**\*.Mac.cs"/>
+    <Compile Remove="**\Mac\*.cs"/>
+    <None Include="**\Mac\*.cs"/>
+    <Compile Remove="**\Mac\**\*.cs"/>
+    <None Include="**\Mac\**\*.cs"/>
+  </ItemGroup>
+  <ItemGroup Condition="$(Platform_Android) != true">
+    <Compile Remove="**\*.Android.cs"/>
+    <None Include="**\*.Android.cs"/>
+    <Compile Remove="**\Android\*.cs"/>
+    <None Include="**\Android\*.cs"/>
+    <Compile Remove="**\Android\**\*.cs"/>
+    <None Include="**\Android\**\*.cs"/>
+  </ItemGroup>
+  <ItemGroup Condition="$(Platform_Windows) != true">
+    <Compile Remove="**\*.Windows.cs"/>
+    <None Include="**\*.Windows.cs"/>
+    <Compile Remove="**\Windows\*.cs"/>
+    <None Include="**\Windows\*.cs"/>
+    <Compile Remove="**\Windows\**\*.cs"/>
+    <None Include="**\Windows\**\*.cs"/>
+  </ItemGroup>
+</Project>

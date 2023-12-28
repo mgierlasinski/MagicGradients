@@ -1,6 +1,5 @@
 ﻿using GradientsApp.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
-using UIKit;
 
 namespace GradientsApp.iOS.Infrastructure
 {
@@ -11,7 +10,7 @@ namespace GradientsApp.iOS.Infrastructure
 
         public BindableViewController()
         {
-            ViewModel = Ioc.Default.GetService<TViewModel>();
+            ViewModel = Ioc.ServiceProvider.GetService<TViewModel>();
         }
 
         public override void ViewDidLoad()

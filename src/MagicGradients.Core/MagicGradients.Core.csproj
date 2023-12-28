@@ -1,19 +1,27 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;netstandard2.0;Xamarin.iOS10;MonoAndroid12.0;Xamarin.Mac20</TargetFrameworks>
+    <TargetFrameworks>net8.0;net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <RootNamespace>MagicGradients</RootNamespace>
     <AssemblyName>MagicGradients</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+		<UseRidGraph>true</UseRidGraph>
+		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+	</PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Graphics" Version="6.0.403" />
+    <PackageReference Include="Microsoft.Maui.Graphics" Version="8.0.3" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
     <AndroidResource Include="Resources\**\*.xml" SubType="Designer" Generator="MSBuild:UpdateAndroidResources" />
   </ItemGroup>
 
-  <Import Project="..\MultiTargeting.targets" />
-  
+  <Import Project="..\MultiTargetingNew.targets" />
+
 </Project>

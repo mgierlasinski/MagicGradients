@@ -4,6 +4,18 @@
     <IsNuGetProject>$(MSBuildProjectName.Contains('MagicGradients'))</IsNuGetProject>
   </PropertyGroup>
   
+  <PropertyGroup>
+    <PlatformIdentifier>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</PlatformIdentifier>
+    <Platform_iOS>False</Platform_iOS>
+    <Platform_iOS Condition="$(PlatformIdentifier) == 'ios'">True</Platform_iOS>
+    <Platform_MacCatalyst>False</Platform_MacCatalyst>
+    <Platform_MacCatalyst Condition="$(PlatformIdentifier) == 'maccatalyst'">True</Platform_MacCatalyst>
+    <Platform_Android>False</Platform_Android>
+    <Platform_Android Condition="$(PlatformIdentifier) == 'android'">True</Platform_Android>
+    <Platform_Windows>False</Platform_Windows>
+    <Platform_Windows Condition="$(PlatformIdentifier) == 'windows'">True</Platform_Windows>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(IsNuGetProject)' == 'true'">
     <Version>2.0.0-preview.100</Version>
     <Authors>Marcin Gierlasiński, Bohdan Benetskyi</Authors>

@@ -21,4 +21,5 @@
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
+
 }

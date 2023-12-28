@@ -13,7 +13,7 @@ namespace GradientsApp.Android.Infrastructure
         public BindableFragment(int layoutId, string title = null) 
             : base(layoutId, title)
         {
-            ViewModel = Ioc.Default.GetService<TViewModel>();
+            ViewModel = Ioc.ServiceProvider.GetService<TViewModel>();
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)

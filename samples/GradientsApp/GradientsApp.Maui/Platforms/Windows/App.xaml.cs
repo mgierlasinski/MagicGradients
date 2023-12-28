@@ -21,4 +21,5 @@ namespace GradientsApp.Maui.WinUI
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
     }
+
 }

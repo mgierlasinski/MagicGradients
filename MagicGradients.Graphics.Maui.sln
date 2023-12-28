@@ -3,15 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32708.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "src\MagicGradients.Core\MagicGradients.Core.csproj", "{C5AB0CB6-5189-48E4-85DF-D254662C2AED}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Maui", "src\MagicGradients.Maui\MagicGradients.Maui.csproj", "{377384E9-6680-4E36-BD4F-5607DF30469B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp.Maui", "samples\GradientsApp\GradientsApp.Maui\GradientsApp.Maui.csproj", "{6FFB471B-658B-421D-A446-5C94EA543CC9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp", "samples\GradientsApp\GradientsApp\GradientsApp.csproj", "{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp.Data", "samples\GradientsApp\GradientsApp.Data\GradientsApp.Data.csproj", "{9BF556C5-C446-4F51-8EF1-2E488424485B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Maui", "src\MagicGradients.Maui\MagicGradients.Maui.csproj", "{4B821887-494F-475B-B65E-4B39D45D68E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp.Maui", "samples\GradientsApp\GradientsApp.Maui\GradientsApp.Maui.csproj", "{AC494E6D-3127-4A59-937F-04B8FB5B1742}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "src\MagicGradients.Core\MagicGradients.Core.csproj", "{7D820C43-F448-4384-872C-C847F78D7D22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientsApp.Android", "samples\GradientsApp\GradientsApp.Android\GradientsApp.Android.csproj", "{58782C65-B64E-456D-A9FD-D57CAC27930D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{2D51763F-24B2-4FB1-AB26-C570078353F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppNative", "AppNative", "{F6EC4990-2E93-477A-B6A1-7236446D4891}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientsApp.iOS", "samples\GradientsApp\GradientsApp.iOS\GradientsApp.iOS.csproj", "{462EAEA2-705F-4458-B22C-F7BDE131FCDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,20 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C5AB0CB6-5189-48E4-85DF-D254662C2AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5AB0CB6-5189-48E4-85DF-D254662C2AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5AB0CB6-5189-48E4-85DF-D254662C2AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5AB0CB6-5189-48E4-85DF-D254662C2AED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{377384E9-6680-4E36-BD4F-5607DF30469B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{377384E9-6680-4E36-BD4F-5607DF30469B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{377384E9-6680-4E36-BD4F-5607DF30469B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{377384E9-6680-4E36-BD4F-5607DF30469B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FFB471B-658B-421D-A446-5C94EA543CC9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,9 +35,42 @@ Global
 		{9BF556C5-C446-4F51-8EF1-2E488424485B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BF556C5-C446-4F51-8EF1-2E488424485B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BF556C5-C446-4F51-8EF1-2E488424485B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B821887-494F-475B-B65E-4B39D45D68E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B821887-494F-475B-B65E-4B39D45D68E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B821887-494F-475B-B65E-4B39D45D68E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B821887-494F-475B-B65E-4B39D45D68E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC494E6D-3127-4A59-937F-04B8FB5B1742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC494E6D-3127-4A59-937F-04B8FB5B1742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC494E6D-3127-4A59-937F-04B8FB5B1742}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AC494E6D-3127-4A59-937F-04B8FB5B1742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC494E6D-3127-4A59-937F-04B8FB5B1742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC494E6D-3127-4A59-937F-04B8FB5B1742}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7D820C43-F448-4384-872C-C847F78D7D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D820C43-F448-4384-872C-C847F78D7D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D820C43-F448-4384-872C-C847F78D7D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D820C43-F448-4384-872C-C847F78D7D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58782C65-B64E-456D-A9FD-D57CAC27930D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58782C65-B64E-456D-A9FD-D57CAC27930D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58782C65-B64E-456D-A9FD-D57CAC27930D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{58782C65-B64E-456D-A9FD-D57CAC27930D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58782C65-B64E-456D-A9FD-D57CAC27930D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58782C65-B64E-456D-A9FD-D57CAC27930D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7AC4F29F-0D47-4E62-A0A4-22D32355DAA8} = {2D51763F-24B2-4FB1-AB26-C570078353F7}
+		{9BF556C5-C446-4F51-8EF1-2E488424485B} = {2D51763F-24B2-4FB1-AB26-C570078353F7}
+		{AC494E6D-3127-4A59-937F-04B8FB5B1742} = {2D51763F-24B2-4FB1-AB26-C570078353F7}
+		{58782C65-B64E-456D-A9FD-D57CAC27930D} = {F6EC4990-2E93-477A-B6A1-7236446D4891}
+		{462EAEA2-705F-4458-B22C-F7BDE131FCDA} = {F6EC4990-2E93-477A-B6A1-7236446D4891}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {62741492-0090-41BB-B668-931CB235C717}
