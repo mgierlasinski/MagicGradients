@@ -13,13 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp.Maui", "sample
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicGradients.Core", "src\MagicGradients.Core\MagicGradients.Core.csproj", "{7D820C43-F448-4384-872C-C847F78D7D22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientsApp.Android", "samples\GradientsApp\GradientsApp.Android\GradientsApp.Android.csproj", "{58782C65-B64E-456D-A9FD-D57CAC27930D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp.Android", "samples\GradientsApp\GradientsApp.Android\GradientsApp.Android.csproj", "{58782C65-B64E-456D-A9FD-D57CAC27930D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{2D51763F-24B2-4FB1-AB26-C570078353F7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppNative", "AppNative", "{F6EC4990-2E93-477A-B6A1-7236446D4891}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientsApp.iOS", "samples\GradientsApp\GradientsApp.iOS\GradientsApp.iOS.csproj", "{462EAEA2-705F-4458-B22C-F7BDE131FCDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradientsApp.iOS", "samples\GradientsApp\GradientsApp.iOS\GradientsApp.iOS.csproj", "{462EAEA2-705F-4458-B22C-F7BDE131FCDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicGradients.Maui.Skia", "src\MagicGradients.Maui.Skia\MagicGradients.Maui.Skia.csproj", "{756C550B-662C-4B7D-86E3-8B7320AF1E2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{462EAEA2-705F-4458-B22C-F7BDE131FCDA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{756C550B-662C-4B7D-86E3-8B7320AF1E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{756C550B-662C-4B7D-86E3-8B7320AF1E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{756C550B-662C-4B7D-86E3-8B7320AF1E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{756C550B-662C-4B7D-86E3-8B7320AF1E2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
-﻿using MagicGradients.Masks;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using MagicGradients.Masks;
 
-namespace MagicGradients.Forms.Masks;
+namespace MagicGradients.Maui.Masks;
 
 public class TextMask : GradientMask, ITextMask
 {

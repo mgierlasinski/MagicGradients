@@ -1,6 +1,6 @@
 ﻿using MagicGradients.Masks;
 
-namespace MagicGradients.Forms.Masks;
+namespace MagicGradients.Maui.Masks;
 
 [ContentProperty(nameof(Masks))]
 public class MaskCollection : GradientMask, IMaskCollection

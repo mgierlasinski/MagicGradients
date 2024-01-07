@@ -1,4 +1,4 @@
-namespace MagicGradients.Forms;
+namespace MagicGradients.Maui;
 
 [ContentProperty(nameof(Stylesheet))]
 public class CssGradient : GradientElement, IGradientSource

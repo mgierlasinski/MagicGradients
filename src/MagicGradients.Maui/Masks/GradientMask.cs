@@ -1,7 +1,7 @@
 ﻿using MagicGradients.Masks;
 using Stretch = MagicGradients.Masks.Stretch;
 
-namespace MagicGradients.Forms.Masks;
+namespace MagicGradients.Maui.Masks;
 
 public class GradientMask : GradientElement, IGradientMask
 {

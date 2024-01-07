@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace MagicGradients.Forms;
+namespace MagicGradients.Maui;
 
 public class GradientElements<TElement> : ObservableCollection<TElement> where TElement : GradientElement
 {

@@ -1,11 +1,19 @@
-﻿using MagicGradients.Drawing;
+using MagicGradients.Drawing;
+using MagicGradients.Forms;
+using MagicGradients.Forms.Skia;
+using MagicGradients.Forms.Skia.Drawing;
+using MagicGradients.Forms.Skia.Masks;
 using MagicGradients.Masks;
+using SkiaSharp.Views.Maui;
+using SkiaSharp.Views.Maui.Controls;
 
-namespace MagicGradients.Maui;
+namespace MagicGradients.Maui.Skia;
 
 [ContentProperty(nameof(GradientSource))]
-public class GradientView : GraphicsView, IGradientControl, IGradientVisualElement
+public class SkiaGradientView : SKCanvasView, IGradientControl, IGradientVisualElement
 {
+    public GradientDrawable Drawable { get; }
+
     public static readonly BindableProperty GradientSourceProperty = GradientControl.GradientSourceProperty;
     public static readonly BindableProperty GradientSizeProperty = GradientControl.GradientSizeProperty;
     public static readonly BindableProperty GradientRepeatProperty = GradientControl.GradientRepeatProperty;
@@ -37,9 +45,13 @@ public class GradientView : GraphicsView, IGradientControl, IGradientVisualEleme
         set => SetValue(MaskProperty, value);
     }
 
-    public GradientView()
+    public SkiaGradientView()
     {
         Drawable = new GradientDrawable(this);
+        Drawable.MaskDrawable.RectanglePainter = new SkiaRectangleMaskPainter();
+        Drawable.MaskDrawable.EllipsePainter = new SkiaEllipseMaskPainter();
+        Drawable.MaskDrawable.PathPainter = new SkiaPathMaskPainter();
+        Drawable.MaskDrawable.TextPainter = new SkiaTextMaskPainter();
     }
 
     protected override void OnBindingContextChanged()
@@ -48,8 +60,18 @@ public class GradientView : GraphicsView, IGradientControl, IGradientVisualEleme
         this.SetBindingContext(BindingContext);
     }
 
+    protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
+    {
+        base.OnPaintSurface(e);
+
+        var canvas = new SkiaCanvasEx {Canvas = e.Surface.Canvas};
+        var rect = e.Info.Rect.ToRectF();
+            
+        Drawable.Draw(canvas, rect);
+    }
+
     public void InvalidateCanvas()
     {
-        OnPropertyChanged(nameof(Drawable));
+        InvalidateSurface();
     }
 }

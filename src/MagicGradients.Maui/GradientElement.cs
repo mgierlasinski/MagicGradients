@@ -1,4 +1,4 @@
-﻿namespace MagicGradients.Forms;
+﻿namespace MagicGradients.Maui;
 
 public abstract class GradientElement : BindableObject, IGradientVisualElement
 {

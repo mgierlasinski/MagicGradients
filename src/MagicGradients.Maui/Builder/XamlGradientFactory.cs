@@ -1,6 +1,6 @@
 ﻿using MagicGradients.Builder;
 
-namespace MagicGradients.Forms.Builder;
+namespace MagicGradients.Maui.Builder;
 
 public class XamlGradientFactory : IGradientFactory
 {

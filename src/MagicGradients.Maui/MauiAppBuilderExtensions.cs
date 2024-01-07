@@ -1,5 +1,4 @@
-﻿using MagicGradients.Forms;
-using MagicGradients.Forms.Builder;
+﻿using MagicGradients.Maui.Builder;
 
 namespace MagicGradients.Maui;
 

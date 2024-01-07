@@ -1,4 +1,4 @@
-﻿namespace MagicGradients.Forms;
+﻿namespace MagicGradients.Maui;
 
 [ContentProperty(nameof(Gradients))]
 public class GradientCollection : GradientElement, IGradientSource

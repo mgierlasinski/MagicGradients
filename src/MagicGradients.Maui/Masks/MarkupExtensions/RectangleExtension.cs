@@ -1,4 +1,4 @@
-﻿namespace MagicGradients.Forms.Masks;
+﻿namespace MagicGradients.Maui.Masks;
 
 [ContentProperty(nameof(Size))]
 public class RectangleExtension : MaskExtension, IMarkupExtension<RectangleMask>

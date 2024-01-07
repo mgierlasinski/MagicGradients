@@ -2,7 +2,7 @@ using Microsoft.Maui.Controls.StyleSheets;
 using System.Collections;
 using System.Reflection;
 
-namespace MagicGradients.Forms;
+namespace MagicGradients.Maui;
 
 public static class StyleSheets
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace MagicGradients.Forms.Masks;
+namespace MagicGradients.Maui.Masks;
 
 [ContentProperty(nameof(Text))]
 public class TextExtension : MaskExtension, IMarkupExtension<TextMask>

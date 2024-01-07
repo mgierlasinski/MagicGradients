@@ -1,66 +1,66 @@
-﻿using MagicGradients.Masks;
+﻿using MagicGradients.Forms;
+using MagicGradients.Masks;
 
-namespace MagicGradients.Forms
+namespace MagicGradients.Maui;
+
+public static class GradientControl
 {
-    public static class GradientControl
+    public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
+        nameof(IGradientControl.GradientSource), 
+        typeof(IGradientSource),
+        typeof(IGradientControl), 
+        propertyChanged: OnGradientElementChanged);
+
+    public static readonly BindableProperty GradientSizeProperty = BindableProperty.Create(
+        nameof(IGradientControl.GradientSize), 
+        typeof(Dimensions), 
+        typeof(IGradientControl), 
+        propertyChanged: UpdateCanvas);
+
+    public static readonly BindableProperty GradientRepeatProperty = BindableProperty.Create(
+        nameof(IGradientControl.GradientRepeat), 
+        typeof(BackgroundRepeat), 
+        typeof(IGradientControl), 
+        propertyChanged: UpdateCanvas);
+
+    public static readonly BindableProperty MaskProperty = BindableProperty.Create(
+        nameof(IGradientControl.Mask),
+        typeof(IGradientMask), 
+        typeof(IGradientControl), 
+        propertyChanged: OnGradientElementChanged);
+
+    private static void OnGradientElementChanged(BindableObject bindable, object oldValue, object newValue)
     {
-        public static readonly BindableProperty GradientSourceProperty = BindableProperty.Create(
-            nameof(IGradientControl.GradientSource), 
-            typeof(IGradientSource),
-            typeof(IGradientControl), 
-            propertyChanged: OnGradientElementChanged);
+        var visualElement = (IGradientVisualElement)bindable;
 
-        public static readonly BindableProperty GradientSizeProperty = BindableProperty.Create(
-            nameof(IGradientControl.GradientSize), 
-            typeof(Dimensions), 
-            typeof(IGradientControl), 
-            propertyChanged: UpdateCanvas);
+        if (oldValue is GradientElement oldElem)
+            oldElem.Parent = null;
 
-        public static readonly BindableProperty GradientRepeatProperty = BindableProperty.Create(
-            nameof(IGradientControl.GradientRepeat), 
-            typeof(BackgroundRepeat), 
-            typeof(IGradientControl), 
-            propertyChanged: UpdateCanvas);
+        if (newValue is GradientElement newElem)
+            newElem.Parent = visualElement;
 
-        public static readonly BindableProperty MaskProperty = BindableProperty.Create(
-            nameof(IGradientControl.Mask),
-            typeof(IGradientMask), 
-            typeof(IGradientControl), 
-            propertyChanged: OnGradientElementChanged);
-
-        private static void OnGradientElementChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            var visualElement = (IGradientVisualElement)bindable;
-
-            if (oldValue is GradientElement oldElem)
-                oldElem.Parent = null;
-
-            if (newValue is GradientElement newElem)
-                newElem.Parent = visualElement;
-
-            visualElement.InvalidateCanvas();
-        }
-
-        static void UpdateCanvas(BindableObject bindable, object oldValue, object newValue)
-        {
-            var visualElement = (IGradientVisualElement)bindable;
-            visualElement.InvalidateCanvas();
-        }
+        visualElement.InvalidateCanvas();
     }
 
-    public static class GradientControlExtensions
+    static void UpdateCanvas(BindableObject bindable, object oldValue, object newValue)
     {
-        public static void SetBindingContext(this IGradientControl control, object bindingContext)
-        {
-            if (control.GradientSource is BindableObject bindable)
-            {
-                BindableObject.SetInheritedBindingContext(bindable, bindingContext);
-            }
+        var visualElement = (IGradientVisualElement)bindable;
+        visualElement.InvalidateCanvas();
+    }
+}
 
-            if (control.Mask is BindableObject maskBindable)
-            {
-                BindableObject.SetInheritedBindingContext(maskBindable, bindingContext);
-            }
+public static class GradientControlExtensions
+{
+    public static void SetBindingContext(this IGradientControl control, object bindingContext)
+    {
+        if (control.GradientSource is BindableObject bindable)
+        {
+            BindableObject.SetInheritedBindingContext(bindable, bindingContext);
+        }
+
+        if (control.Mask is BindableObject maskBindable)
+        {
+            BindableObject.SetInheritedBindingContext(maskBindable, bindingContext);
         }
     }
 }

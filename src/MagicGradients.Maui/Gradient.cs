@@ -1,4 +1,4 @@
-﻿namespace MagicGradients.Forms;
+﻿namespace MagicGradients.Maui;
 
 [ContentProperty(nameof(Stops))]
 public abstract class Gradient : GradientElement, IGradient, IGradientSource

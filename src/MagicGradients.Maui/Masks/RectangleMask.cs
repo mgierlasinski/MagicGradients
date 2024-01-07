@@ -1,6 +1,6 @@
 ﻿using MagicGradients.Masks;
 
-namespace MagicGradients.Forms.Masks;
+namespace MagicGradients.Maui.Masks;
 
 public class RectangleMask : GradientMask, IRectangleMask
 {

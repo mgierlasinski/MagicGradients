@@ -1,4 +1,4 @@
-﻿namespace MagicGradients.Forms.Masks;
+﻿namespace MagicGradients.Maui.Masks;
 
 [ContentProperty(nameof(Data))]
 public class PathExtension : MaskExtension, IMarkupExtension<PathMask>
